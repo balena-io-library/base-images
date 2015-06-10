@@ -8,6 +8,8 @@ aliases=(
 
 cd "$(dirname "$(readlink -f "$BASH_SOURCE")")"
 
+repo=${PWD##*/}
+
 devices=( "$@" )
 if [ ${#devices[@]} -eq 0 ]; then
 	devices=( */ )
@@ -23,7 +25,7 @@ for device in "${devices[@]}"; do
 	versions=( */ )
 	versions=( "${versions[@]%/}" )
 	cd ..
-	url='git://github.com/resin-io-library/docker-node'
+	url='git://github.com/resin-io-library/base-images'
 	for version in "${versions[@]}"; do
 		commit="$(git log -1 --format='format:%H' -- "$device/$version")"
 		fullVersion="$(grep -m1 'ENV NODE_VERSION ' "$device/$version/Dockerfile" | cut -d' ' -f3)"
@@ -31,7 +33,7 @@ for device in "${devices[@]}"; do
 
 		echo
 		for va in "${versionAliases[@]}"; do
-			echo "$va: ${url}@${commit} $device/$version"
+			echo "$va: ${url}@${commit} $repo/$device/$version"
 		done
 	
 		for variant in onbuild slim wheezy; do
@@ -43,7 +45,7 @@ for device in "${devices[@]}"; do
 				else
 					va="$va-$variant"
 				fi
-				echo "$va: ${url}@${commit} $device/$version/$variant"
+				echo "$va: ${url}@${commit} $repo/$device/$version/$variant"
 			done
 		done
 
@@ -58,7 +60,7 @@ for device in "${devices[@]}"; do
 				else
 					va="$va-$variant"
 				fi
-				echo "$va: ${url}@${commit} $device/$version/$variant"
+				echo "$va: ${url}@${commit} $repo/$device/$version/$variant"
 			done
 		fi
 

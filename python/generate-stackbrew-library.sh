@@ -9,9 +9,11 @@ aliases=(
 cd "$(dirname "$(readlink -f "$BASH_SOURCE")")"
 echo '# maintainer: Trong Nghia Nguyen - resin.io <james@resin.io>'
 
+repo=${PWD##*/}
+
 devices=( */ )
 devices=( "${devices[@]%/}" )
-url='git://github.com/nghiant2710/image-tree'
+url='git://github.com/resin-io-library/base-images'
 for device in "${devices[@]}"; do
 
 	cd $device
@@ -23,17 +25,9 @@ for device in "${devices[@]}"; do
 		suiteAliases=( $suite ${aliases[$suite]} )
 		commit="$(git log -1 --format='format:%H' -- "$device/$suite")"
 		echo
-		for va in "${deviceAliases[@]}"; do
-			echo "$va: ${url}@${commit} $device/$suite"
+		for va in "${suiteAliases[@]}"; do
+			echo "$va: ${url}@${commit} $repo/$device/$suite"
 		done
-			
-		# Only for armv7hf devices
-		if [ $device == "raspberry-pi2" ] || [ $device == "beaglebone-black" ]; then
-			suite='sid'
-			commit="$(git log -1 --format='format:%H' -- "$device/$suite")"
-			echo
-			echo "$va: ${url}@${commit} $device/$suite"
-		fi
 	done
 done
 
