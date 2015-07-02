@@ -4,6 +4,10 @@ HOSTNAME=$(cat /etc/hostname)
 echo "127.0.1.1 $HOSTNAME" >> /etc/hosts
 hostname $HOSTNAME
 
+mount -t devtmpfs none /dev
+udevd &
+udevadm trigger
+
 if [ "$INITSYSTEM" = "on" ]; then
 	GREEN='\033[0;32m'
 	echo -e "${GREEN}Systemd init system enabled."
@@ -13,8 +17,6 @@ if [ "$INITSYSTEM" = "on" ]; then
 	chmod +x /etc/resinApp.cmd
 
 	systemctl --quiet enable /etc/systemd/system/launch.service &> /dev/null
-
-	mount -t devtmpfs none /dev
 
 	exec /sbin/init quiet
 else
