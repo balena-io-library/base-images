@@ -2,7 +2,6 @@
 Description=Resin.io User Application
 
 [Service]
-WorkingDirectory=/usr/bin/
 EnvironmentFile=/etc/docker.env
 ExecStart=/etc/resinApp.cmd
 StandardOutput=tty

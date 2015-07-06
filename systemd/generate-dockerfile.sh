@@ -9,7 +9,7 @@ for repo in $repos; do
 	'rpi')
 		baseImage='rpi-raspbian'
 	;;
-	'armv7')
+	'armv7hf')
 		baseImage='armv7hf-debian'
 	;;
 	'i386')

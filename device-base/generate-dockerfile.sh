@@ -25,14 +25,16 @@ for device in $devices; do
 
 		dockerfilePath="$device"
 		mkdir -p $dockerfilePath/$suite
-		sed -e s~#{FROM}~resin/$baseImage:$suite~g $template > $dockerfilePath/$suite/Dockerfile
+		sed -e s~#{FROM}~resin/$baseImage:$suite~g \
+			-e s~#{SUITE}~$suite~g $template > $dockerfilePath/$suite/Dockerfile
 
 	done
 
 	# Only for armv7hf devices
 	if [ $device == 'raspberry-pi2' ] || [ $device == 'beaglebone-black' ]; then
 		mkdir -p $dockerfilePath/sid
-		sed -e s~#{FROM}~resin/$baseImage:sid~g $template > $dockerfilePath/sid/Dockerfile		
+		sed -e s~#{FROM}~resin/$baseImage:sid~g \
+			-e s~#{SUITE}~sid~g $template > $dockerfilePath/sid/Dockerfile		
 	fi
 
 done

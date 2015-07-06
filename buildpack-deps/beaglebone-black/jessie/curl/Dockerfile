@@ -1,4 +1,4 @@
-FROM resin/beaglebone-black:jessie
+FROM resin/beaglebone-black-debian:jessie
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		ca-certificates \

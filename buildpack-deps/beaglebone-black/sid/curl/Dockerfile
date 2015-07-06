@@ -1,4 +1,4 @@
-FROM resin/beaglebone-black:sid
+FROM resin/beaglebone-black-debian:sid
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		ca-certificates \

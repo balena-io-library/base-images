@@ -1,4 +1,4 @@
-FROM resin/:wheezy
+FROM resin/armv7hf-debian:wheezy
 
 # Install Systemd
 
@@ -22,5 +22,7 @@ RUN systemctl mask \
 
 COPY entry.sh /usr/bin/entry.sh    
 COPY launch.service /etc/systemd/system/launch.service
+
+RUN systemctl enable /etc/systemd/system/launch.service
 
 ENTRYPOINT ["/usr/bin/entry.sh"]

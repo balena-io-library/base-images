@@ -1,4 +1,4 @@
-FROM resin/raspberry-pi2:wheezy
+FROM resin/raspberry-pi2-debian:wheezy
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		ca-certificates \

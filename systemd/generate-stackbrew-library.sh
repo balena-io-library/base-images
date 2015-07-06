@@ -8,7 +8,7 @@ aliases=(
 
 cd "$(dirname "$(readlink -f "$BASH_SOURCE[0]")")"
 
-repo=${PWD##*/}
+root=${PWD##*/}
 
 repos=( "$@" )
 if [ ${#repos[@]} -eq 0 ]; then
@@ -33,7 +33,7 @@ for repo in "${repos[@]}"; do
 		commit="$(git log -1 --format='format:%H' -- "$repo/$version")"
 		echo
 		for va in "${versionAliases[@]}"; do
-			echo "$va: ${url}@${commit} $repo/$repo/$version"
+			echo "$va: ${url}@${commit} $root/$repo/$version"
 		done
 	done
 done

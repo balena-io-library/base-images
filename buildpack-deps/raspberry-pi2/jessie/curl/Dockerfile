@@ -1,4 +1,4 @@
-FROM resin/raspberry-pi2:jessie
+FROM resin/raspberry-pi2-debian:jessie
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		ca-certificates \

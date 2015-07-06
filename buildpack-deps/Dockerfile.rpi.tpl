@@ -2,8 +2,12 @@ FROM #{FROM}
 
 RUN apt-get update && apt-get install -y \
 		autoconf \
-		build-essential \
+		build-essential \		
+		i2c-tools \
 		imagemagick \
+		iputils-ping \	
+		ifupdown \	
+		less \
 		libbz2-dev \
 		libcurl4-openssl-dev \
 		libevent-dev \
@@ -15,20 +19,16 @@ RUN apt-get update && apt-get install -y \
 		libmysqlclient-dev \
 		libncurses-dev \
 		libpq-dev \
+		libraspberrypi-bin \
 		libreadline-dev \
 		libsqlite3-dev \
 		libssl-dev \
 		libxml2-dev \
 		libxslt-dev \
 		libyaml-dev \
-		zlib1g-dev \
-		usbutils \
-		net-tools \
-		iputils-ping \
 		module-init-tools \
-		ifupdown \
-		less \
-		i2c-tools \
-		libraspberrypi-bin \
 		nano \
+		net-tools \
+		zlib1g-dev \
+		usbutils \		
 	&& rm -rf /var/lib/apt/lists/*

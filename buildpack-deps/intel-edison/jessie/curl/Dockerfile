@@ -1,4 +1,4 @@
-FROM resin/intel-edison:jessie
+FROM resin/intel-edison-debian:jessie
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		ca-certificates \
