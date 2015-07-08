@@ -1,11 +1,11 @@
 #!/bin/bash
 set -e
 
-devices='raspberry-pi raspberry-pi2 beaglebone-black intel-edison'
+devices='raspberrypi raspberrypi2 beaglebone edison'
 suites='jessie wheezy'
 
 for device in $devices; do
-	if [ $device == 'intel-edison' ]; then
+	if [ $device == 'edison' ]; then
 		template='Dockerfile.i386.edison.tpl'
 	else
 		template='Dockerfile.tpl'
@@ -16,7 +16,7 @@ for device in $devices; do
 		sed -e s~#{FROM}~resin/$device-buildpack-deps:$suite~g $template > $dockerfilePath/$suite/Dockerfile
  
 		# Only for ARMv7 device
-		if [ $device == "raspberry-pi2" ] || [ $device == "beaglebone-black" ]; then
+		if [ $device == "raspberrypi2" ] || [ $device == "beaglebone" ]; then
 
 			mkdir -p $dockerfilePath/sid
 			sed -e s~#{FROM}~resin/$baseImage:$suite~g $template > $dockerfilePath/sid/Dockerfile		
