@@ -1,21 +1,21 @@
 #!/bin/bash
 set -e
 
-devices='raspberry-pi2 beaglebone-black intel-edison'
+devices='raspberrypi2 beaglebone edison'
 suites='jessie wheezy'
 
 for device in $devices; do
 
 	case "$device" in
-	'raspberry-pi2')
+	'raspberrypi2')
 		template='Dockerfile.armv7hf.rpi.tpl'
 		baseImage='armv7hf-systemd'
 	;;
-	'beaglebone-black')
+	'beaglebone')
 		template='Dockerfile.armv7hf.bbb.tpl'
 		baseImage='armv7hf-systemd'
 	;;
-	'intel-edison')
+	'edison')
 		template='Dockerfile.i386.edison.tpl'
 		baseImage='i386-systemd'
 	;;
@@ -31,7 +31,7 @@ for device in $devices; do
 	done
 
 	# Only for armv7hf devices
-	if [ $device == 'raspberry-pi2' ] || [ $device == 'beaglebone-black' ]; then
+	if [ $device == 'raspberrypi2' ] || [ $device == 'beaglebone' ]; then
 		mkdir -p $dockerfilePath/sid
 		sed -e s~#{FROM}~resin/$baseImage:sid~g \
 			-e s~#{SUITE}~sid~g $template > $dockerfilePath/sid/Dockerfile		

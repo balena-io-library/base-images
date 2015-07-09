@@ -1,12 +1,12 @@
 #!/bin/bash
 set -e
 
-devices='raspberry-pi raspberry-pi2 beaglebone-black intel-edison'
+devices='raspberrypi raspberrypi2 beaglebone edison'
 suites='jessie wheezy'
 
 for device in $devices; do
 
-	if [ $device == 'raspberry-pi' ]; then
+	if [ $device == 'raspberrypi' ]; then
 		baseImage="$device-systemd"
 	else
 		baseImage="$device"
@@ -25,16 +25,16 @@ for device in $devices; do
 		sed -e s~#{FROM}~resin/$baseImage-buildpack-deps:$suite-curl~g Dockerfile.scm.tpl > $dockerfilePath/scm/Dockerfile
 
 		# Only for rpi
-		if [ $device == 'raspberry-pi' ]; then
-			sed -e s~#{FROM}~resin/raspberry-pi-buildpack-deps:$suite-scm~g Dockerfile.rpi.tpl > $dockerfilePath/Dockerfile
-			sed -e s~#{FROM}~resin/raspberry-pi-buildpack-deps:$suite-curl~g Dockerfile.scm.tpl > $dockerfilePath/scm/Dockerfile
+		if [ $device == 'raspberrypi' ]; then
+			sed -e s~#{FROM}~resin/raspberrypi-buildpack-deps:$suite-scm~g Dockerfile.rpi.tpl > $dockerfilePath/Dockerfile
+			sed -e s~#{FROM}~resin/raspberrypi-buildpack-deps:$suite-curl~g Dockerfile.scm.tpl > $dockerfilePath/scm/Dockerfile
 			sed -e s~#{FROM}~resin/$baseImage:$suite~g Dockerfile.curl.tpl > $dockerfilePath/curl/Dockerfile
 		fi
 
 	done
 
 	# Only for armv7hf devices
-	if [ $device == 'raspberry-pi2' ] || [ $device == 'beaglebone-black' ]; then
+	if [ $device == 'raspberrypi2' ] || [ $device == 'beaglebone' ]; then
 		suite='sid'
 		dockerfilePath=$device/$suite
 		

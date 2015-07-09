@@ -50,7 +50,7 @@ for device in "${devices[@]}"; do
 		done
 
 		# Only for armv7hf devices
-		if [ $device == 'raspberry-pi2' ] || [ $device == 'beaglebone-black' ]; then
+		if [ $device == 'raspberrypi2' ] || [ $device == 'beaglebone' ]; then
 			variant='sid'
 			commit="$(git log -1 --format='format:%H' -- "$device/$version/$variant")"
 			echo
