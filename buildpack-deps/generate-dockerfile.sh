@@ -30,22 +30,5 @@ for device in $devices; do
 			sed -e s~#{FROM}~resin/raspberrypi-buildpack-deps:$suite-curl~g Dockerfile.scm.tpl > $dockerfilePath/scm/Dockerfile
 			sed -e s~#{FROM}~resin/$baseImage:$suite~g Dockerfile.curl.tpl > $dockerfilePath/curl/Dockerfile
 		fi
-
 	done
-
-	# Only for armv7hf devices
-	if [ $device == 'raspberrypi2' ] || [ $device == 'beaglebone' ]; then
-		suite='sid'
-		dockerfilePath=$device/$suite
-		
-		mkdir -p $dockerfilePath
-		sed -e s~#{FROM}~resin/$baseImage-buildpack-deps:$suite-scm~g Dockerfile.tpl > $dockerfilePath/Dockerfile
-
-		mkdir -p $dockerfilePath/curl
-		sed -e s~#{FROM}~resin/$baseImage-debian:$suite~g Dockerfile.curl.tpl > $dockerfilePath/curl/Dockerfile
-
-		mkdir -p $dockerfilePath/scm
-		sed -e s~#{FROM}~resin/$baseImage-buildpack-deps:$suite-curl~g Dockerfile.scm.tpl > $dockerfilePath/scm/Dockerfile
-	fi	
-
 done

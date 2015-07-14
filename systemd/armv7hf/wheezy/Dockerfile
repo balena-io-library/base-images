@@ -2,6 +2,10 @@ FROM resin/armv7hf-debian:wheezy
 
 # Install Systemd
 
+RUN echo "deb http://ftp.debian.org/debian/ wheezy-backports main contrib non-free" >> /etc/apt/sources.list
+RUN apt-get update && apt-get --target-release wheezy-backports install -y systemd \
+    && rm -rf /var/lib/apt/lists/*
+
 ENV container lxc
 
 # We never want these to run in a container

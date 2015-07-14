@@ -64,13 +64,5 @@ for device in $devices; do
 		fi
 
 	done
-
-	# Only for armv7hf devices
-#	if [ $device == 'raspberrypi2' ] || [ $device == 'beaglebone' ]; then
-#		mkdir -p $dockerfilePath/sid
-#		sed -e s~#{FROM}~resin/$baseImage:sid~g \
-#			-e s~#{SUITE}~sid~g $template > $dockerfilePath/sid/Dockerfile		
-#	fi
-
 done
 

@@ -75,15 +75,6 @@ for device in $devices; do
 				-e s~#{NODE_VERSION}~$nodeVersion~g \
 				-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.i386.edison.slim.tpl > $dockerfilePath/slim/Dockerfile
 
-		fi	
- 
-		# Only for armv7 devices
-		if [ $binary_arch == "armv7hf" ]; then
-			mkdir -p $dockerfilePath/sid
-			sed -e s~#{FROM}~resin/$device-buildpack-deps:sid~g \
-				-e s~#{BINARY_URL}~$binary_url~g \
-				-e s~#{NODE_VERSION}~$nodeVersion~g \
-				-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.tpl > $dockerfilePath/sid/Dockerfile			
 		fi
 	done
 done
