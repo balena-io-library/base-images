@@ -4,7 +4,7 @@ set -e
 repos='armv7hf rpi i386'
 suites='jessie wheezy'
 
-chmod +x entry.sh
+chmod +x entry.sh entry-nosystemd.sh
 for repo in $repos; do
 	case "$repo" in
 	'rpi')
@@ -21,20 +21,14 @@ for repo in $repos; do
 		dockerfilePath=$repo/$suite
 		mkdir -p $dockerfilePath
 		
-		# wheezy images except rpi will use wheezy template which installs systemd from backports repository
-		if [ $suite == 'wheezy' ] && [ $repo != 'rpi' ]; then
-			sed -e s~#{FROM}~resin/$baseImage:$suite~g Dockerfile.wheezy.tpl > $dockerfilePath/Dockerfile
-			cp entry.sh launch.service $dockerfilePath/
+		# systemd won't be installed on wheezy images
+		if [ $suite == 'wheezy' ]; then
+			sed -e s~#{FROM}~resin/$baseImage:$suite~g Dockerfile.nosystemd.tpl > $dockerfilePath/Dockerfile
+			cp entry-nosystemd.sh $dockerfilePath/entry.sh
 		else
-			# systemd won't be installed on rpi-raspbian wheezy	
-			if [ $suite == 'wheezy' ] && [ $repo == 'rpi' ]; then
-				sed -e s~#{FROM}~resin/$baseImage:$suite~g Dockerfile.nosystemd.tpl > $dockerfilePath/Dockerfile
-				cp entry.sh $dockerfilePath/
-			else
-				# jessie and sid images use normal template
-				sed -e s~#{FROM}~resin/$baseImage:$suite~g Dockerfile.tpl > $dockerfilePath/Dockerfile
-				cp entry.sh launch.service $dockerfilePath/
-			fi
+			# jessie and sid images use normal template
+			sed -e s~#{FROM}~resin/$baseImage:$suite~g Dockerfile.tpl > $dockerfilePath/Dockerfile
+			cp entry.sh launch.service $dockerfilePath/
 		fi
 	done
 
