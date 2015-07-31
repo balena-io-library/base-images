@@ -1,0 +1,12 @@
+[Unit]
+Description=Device Directory
+DefaultDependencies=no
+Before=launch.service
+
+[Mount]
+What=nodev
+Where=/sys/kernel/debug
+Type=debugfs
+
+[Install]
+WantedBy=basic.target

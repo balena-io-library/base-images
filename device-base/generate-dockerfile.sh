@@ -40,7 +40,6 @@ for device in $devices; do
 		mkdir -p $dockerfilePath/$suite
 
 		if [ $device == 'beaglebone' ]; then
-
 			case "$suite" in
 			'wheezy')
 				sourcelist="$bb_sourceslist_wheezy_cmd"
@@ -61,8 +60,23 @@ for device in $devices; do
 		else
 			sed -e s~#{FROM}~resin/$baseImage:$suite~g \
 				-e s~#{SUITE}~$suite~g $template > $dockerfilePath/$suite/Dockerfile
+			# Copy new scripts to edison images
+			if [ $device == 'edison' ]; then
+				case "$suite" in
+				'wheezy')
+					# For wheezy images, replace entry.sh script
+					cp entry-edison-nosystemd.sh $dockerfilePath/$suite/entry.sh
+					echo "COPY entry.sh /usr/bin/" >> $dockerfilePath/$suite/Dockerfile
+				;;
+				'jessie')
+					# For jessie images, add systemd mount service
+					cp sys-kernel-debug.mount $dockerfilePath/$suite/
+					echo "COPY sys-kernel-debug.mount /etc/systemd/system/" >> $dockerfilePath/$suite/Dockerfile
+					echo "RUN systemctl enable /etc/systemd/system/sys-kernel-debug.mount" >> $dockerfilePath/$suite/Dockerfile
+				;;
+				esac
+			fi
 		fi
-
 	done
 done
 
