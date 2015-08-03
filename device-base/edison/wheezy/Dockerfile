@@ -28,3 +28,4 @@ RUN git clone https://github.com/intel-iot-devkit/mraa.git \
 # Update Shared Library Cache
 RUN echo "/usr/local/lib/i386-linux-gnu/" >> /etc/ld.so.conf \
 	&& ldconfig
+COPY entry.sh /usr/bin/
