@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-repos='armv7hf rpi i386'
+repos='armv7hf rpi i386 amd64'
 suites='jessie wheezy'
 
 chmod +x entry.sh entry-nosystemd.sh
@@ -15,6 +15,9 @@ for repo in $repos; do
 	;;
 	'i386')
 		baseImage='i386-debian'
+	;;
+	'amd64')
+		baseImage='amd64-debian'
 	;;
 	esac
 	for suite in $suites; do
