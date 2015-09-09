@@ -9,8 +9,14 @@ if [ "$INITSYSTEM" = "on" ]; then
 	echo -e "${GREEN}Systemd init system enabled."
 	env > /etc/docker.env
 
-	echo -e "#!/bin/bash\n exec $@" > /etc/resinApp.cmd
-	chmod +x /etc/resinApp.cmd
+	echo -e "#!/bin/bash\n exec $@" > /etc/resinApp.sh
+	chmod +x /etc/resinApp.sh
+
+	mkdir -p /etc/systemd/system/launch.service.d
+	cat <<-EOF > /etc/systemd/system/launch.service.d/override.conf
+		[Service]
+		WorkingDirectory=$(pwd)
+	EOF
 
 	mount -t devtmpfs none /dev
 

@@ -3,7 +3,7 @@ Description=Resin.io User Application
 
 [Service]
 EnvironmentFile=/etc/docker.env
-ExecStart=/etc/resinApp.cmd
+ExecStart=/etc/resinApp.sh
 StandardOutput=tty
 StandardError=tty
 TTYPath=/dev/pts/0
