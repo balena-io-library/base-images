@@ -2,7 +2,8 @@
 set -e
 
 devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7'
-nodeVersions='0.9.12 0.10.38 0.11.16 0.12.4'
+nodeVersions=' 0.10.22 0.9.12 0.10.38 0.11.16 0.12.4'
+defaultVersion='0.10.22' 
 resinUrl="http://resin-packages.s3.amazonaws.com/node/v\$NODE_VERSION/node-v\$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz"
 nodejsUrl="http://nodejs.org/dist/v\$NODE_VERSION/node-v\$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz"
 
@@ -38,8 +39,11 @@ for device in $devices; do
 	;;
 	esac
 	for nodeVersion in $nodeVersions; do
-		echo $nodeVersion
-		baseVersion=$(expr match "$nodeVersion" '\([0-9]*\.[0-9]*\)')
+		if [ $nodeVersion == $defaultVersion ]; then
+			baseVersion='default'
+		else
+			baseVersion=$(expr match "$nodeVersion" '\([0-9]*\.[0-9]*\)')
+		fi
 		dockerfilePath=$device/$baseVersion
 		mkdir -p $dockerfilePath
 		sed -e s~#{FROM}~resin/$device-buildpack-deps:jessie~g \
