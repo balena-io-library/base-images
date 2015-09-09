@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-devices='raspberrypi raspberrypi2 beaglebone edison'
+devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7'
 suites='jessie wheezy'
 
 for device in $devices; do

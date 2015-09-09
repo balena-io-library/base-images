@@ -25,8 +25,9 @@ If you're having any problem, please [raise an issue][issue-tracker] on GitHub.
 ## Related Resources
 
 * [Armv6 base image][rpi-raspbian] (Ex: raspberry pi).
-* [Armv7 base image][armv7-debian] (Ex: raspberry pi 2, beaglebone black).
+* [Armv7 base image][armv7-debian] (Ex: raspberry pi 2, beaglebone black, via-vab820-quad, zynq-xz702).
 * [i386 base image][i386-debian] (Ex: intel edison).
+* [amd64 base image][amd64-debian] (Ex: intel nuc)
 
 [resin-image-trees]:http://docs.resin.io/#/pages/configuration/resin-image-trees.md
 [resin-buildpack-deps-link]:http://docs.resin.io/#/pages/configuration/resin-base-images.md#buildpack-deps
@@ -36,3 +37,4 @@ If you're having any problem, please [raise an issue][issue-tracker] on GitHub.
 [i386-debian]:https://github.com/resin-io-library/resin-i386-debian
 [armv7-debian]:https://github.com/resin-io-library/resin-armhfv7-debian
 [rpi-raspbian]:https://github.com/resin-io-library/resin-rpi-raspbian
+[amd64-debian]:https://github.com/resin-io-library/resin-amd64-debian
