@@ -6,6 +6,8 @@ aliases=(
 	[0.12.4]='0 latest'
 )
 
+defaultVersion='0.10.22'
+
 cd "$(dirname "$(readlink -f "$BASH_SOURCE")")"
 
 repo=${PWD##*/}
@@ -29,7 +31,11 @@ for device in "${devices[@]}"; do
 	for version in "${versions[@]}"; do
 		commit="$(git log -1 --format='format:%H' -- "$device/$version")"
 		fullVersion="$(grep -m1 'ENV NODE_VERSION ' "$device/$version/Dockerfile" | cut -d' ' -f3)"
-		versionAliases=( $fullVersion $version ${aliases[$fullVersion]} )
+		if [ $version == 'default' ]; then
+			versionAliases=( $fullVersion )
+		else
+			versionAliases=( $fullVersion $version ${aliases[$fullVersion]} )
+		fi
 
 		echo
 		for va in "${versionAliases[@]}"; do
