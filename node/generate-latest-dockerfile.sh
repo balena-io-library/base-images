@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7'
+devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3'
 nodeVersions=' 0.10.22 0.9.12 0.10.38 0.11.16 0.12.4'
 defaultVersion='0.10.22' 
 resinUrl="http://resin-packages.s3.amazonaws.com/node/v\$NODE_VERSION/node-v\$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz"
@@ -34,6 +34,14 @@ for device in $devices; do
 		binary_arch='armv7hf'
 	;;
 	'zc702-zynq7')
+		binary_url=$resinUrl
+		binary_arch='armv7hf'
+	;;
+	'odroid-c1')
+		binary_url=$resinUrl
+		binary_arch='armv7hf'
+	;;
+	'odroid-ux3')
 		binary_url=$resinUrl
 		binary_arch='armv7hf'
 	;;
