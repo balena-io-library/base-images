@@ -10,7 +10,7 @@ RUN curl -SLO "#{BINARY_URL}" \
 	&& npm install -g npm@"$NPM_VERSION" --unsafe-perm \
 	&& npm install mraa \
 	&& npm cache clear \
-	&& npm config set unsafe-perm true -g \
+	&& npm config set unsafe-perm true -g --unsafe-perm \
 	&& rm -rf /tmp/*
 
 CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command could be found in Dockerfile Guide section in our Docs. Here's the link: http://docs.resin.io/#/pages/using/dockerfile.md"]
