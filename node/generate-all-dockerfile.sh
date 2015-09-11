@@ -14,6 +14,8 @@ nodeVersions+=$(seq -f "0.11.%g" -s ' ' 0 16)
 nodeVersions+=' '
 #0.12.x
 nodeVersions+=$(seq -f "0.12.%g" -s ' ' 0 4)
+#4.x.x
+nodeVersions+=' 4.0.0'
 
 for device in $devices; do
 	case "$device" in
