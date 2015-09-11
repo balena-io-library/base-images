@@ -2,7 +2,7 @@
 FROM resin/cubox-i-debian:jessie
 
 ENV NODE_VERSION 0.9.12
-ENV NPM_VERSION 2.10.1
+ENV NPM_VERSION 2.14.2
 
 RUN buildDeps='curl' \
 	&& set -x \
@@ -14,6 +14,7 @@ RUN buildDeps='curl' \
 	&& apt-get purge -y --auto-remove $buildDeps \
 	&& npm install -g npm@"$NPM_VERSION" --unsafe-perm \
 	&& npm cache clear \
+	&& npm config set unsafe-perm true -g \
 	&& rm -rf /tmp/*
 
 CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command could be found in Dockerfile Guide section in our Docs. Here's the link: http://docs.resin.io/#/pages/using/dockerfile.md"]
