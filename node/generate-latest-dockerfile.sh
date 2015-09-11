@@ -2,7 +2,7 @@
 set -e
 
 devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i'
-nodeVersions=' 0.10.22 0.9.12 0.10.38 0.11.16 0.12.4'
+nodeVersions=' 0.10.22 0.9.12 0.10.40 0.11.16 0.12.7 4.0.0'
 defaultVersion='0.10.22' 
 resinUrl="http://resin-packages.s3.amazonaws.com/node/v\$NODE_VERSION/node-v\$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz"
 nodejsUrl="http://nodejs.org/dist/v\$NODE_VERSION/node-v\$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz"

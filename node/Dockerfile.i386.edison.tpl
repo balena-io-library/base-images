@@ -2,7 +2,7 @@
 FROM #{FROM}
 
 ENV NODE_VERSION #{NODE_VERSION}
-ENV NPM_VERSION 2.10.1
+ENV NPM_VERSION 2.14.2
 
 RUN curl -SLO "#{BINARY_URL}" \
 	&& tar -xzf "node-v$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz" -C /usr/local --strip-components=1 \
@@ -10,6 +10,7 @@ RUN curl -SLO "#{BINARY_URL}" \
 	&& npm install -g npm@"$NPM_VERSION" --unsafe-perm \
 	&& npm install mraa \
 	&& npm cache clear \
+	&& npm config set unsafe-perm true -g \
 	&& rm -rf /tmp/*
 
 CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command could be found in Dockerfile Guide section in our Docs. Here's the link: http://docs.resin.io/#/pages/using/dockerfile.md"]
