@@ -15,7 +15,7 @@ bb_board_wheezy_key_cmd='apt-key adv --keyserver keyserver.ubuntu.com --recv-key
 
 bb_rcn_ee_key_cmd='wget http://repos.rcn-ee.net/debian/pool/main/r/rcn-ee-archive-keyring/#{KEY_NAME} \&\& dpkg -i #{KEY_NAME} \&\& rm -f #{KEY_NAME}'
 
-devices='raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i'
+devices='raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900'
 suites='jessie wheezy'
 
 for device in $devices; do
@@ -62,6 +62,10 @@ for device in $devices; do
 		baseImage='armv7hf-systemd'
 	;;
 	'cubox-i')
+		template='Dockerfile.tpl'
+		baseImage='armv7hf-systemd'
+	;;
+	'ts4900')
 		template='Dockerfile.tpl'
 		baseImage='armv7hf-systemd'
 	;;
