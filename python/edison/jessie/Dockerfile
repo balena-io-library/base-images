@@ -5,6 +5,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		python-dev \
 		python-dbus \
 		python-pip \
+		python-virtualenv \
+		python-setuptools \
 	&& rm -rf /var/lib/apt/lists/*
 
 RUN sed -i -e '2s@$@export PYTHONPATH="$(dirname $(find /usr/local -name mraa.py))"@' usr/bin/entry.sh
