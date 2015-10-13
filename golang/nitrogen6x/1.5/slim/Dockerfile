@@ -6,10 +6,8 @@ RUN buildDeps='curl gcc g++ git' \
 	&& set -x \
 	&& apt-get update && apt-get install -y $buildDeps \
 	&& rm -rf /var/lib/apt/lists/* \
-	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go-v$GO_VERSION-linux-armv7hf.tar.gz" \
 	&& mkdir -p /usr/local/go \
-	&& tar -xzf "go-v$GO_VERSION-linux-armv7hf.tar.gz" -C /usr/local/go --strip-components=1 \
-	&& rm "go-v$GO_VERSION-linux-armv7hf.tar.gz"
+	&& curl -SL "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go-v$GO_VERSION-linux-armv7hf.tar.gz" | tar xz -C /usr/local/go --strip-components=1
 
 ENV GOROOT /usr/local/go
 ENV GOPATH /go

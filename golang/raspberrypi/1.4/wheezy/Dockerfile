@@ -2,10 +2,8 @@ FROM resin/raspberrypi-buildpack-deps:wheezy
 
 ENV GO_VERSION 1.4.3
 
-RUN curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go-v$GO_VERSION-linux-armv6hf.tar.gz" \
-	&& mkdir -p /usr/local/go \
-	&& tar -xzf "go-v$GO_VERSION-linux-armv6hf.tar.gz" -C /usr/local/go --strip-components=1 \
-	&& rm "go-v$GO_VERSION-linux-armv6hf.tar.gz"
+RUN mkdir -p /usr/local/go \
+	&& curl -SL "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go-v$GO_VERSION-linux-armv6hf.tar.gz" | tar xz -C /usr/local/go --strip-components=1
 
 ENV GOROOT /usr/local/go
 ENV GOPATH /go
