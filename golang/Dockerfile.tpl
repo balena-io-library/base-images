@@ -2,10 +2,8 @@ FROM #{FROM}
 
 ENV GO_VERSION #{GO_VERSION}
 
-RUN curl -SLO "#{BINARY_URL}" \
-	&& mkdir -p /usr/local/go \
-	&& tar -xzf "go-v$GO_VERSION-linux-#{TARGET_ARCH}.tar.gz" -C /usr/local/go --strip-components=1 \
-	&& rm "go-v$GO_VERSION-linux-#{TARGET_ARCH}.tar.gz"
+RUN mkdir -p /usr/local/go \
+	&& curl -SL "#{BINARY_URL}" | tar xz -C /usr/local/go --strip-components=1
 
 ENV GOROOT /usr/local/go
 ENV GOPATH /go

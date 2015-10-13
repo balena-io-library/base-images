@@ -6,10 +6,8 @@ RUN buildDeps='curl gcc g++ git' \
 	&& set -x \
 	&& apt-get update && apt-get install -y $buildDeps \
 	&& rm -rf /var/lib/apt/lists/* \
-	&& curl -SLO "#{BINARY_URL}" \
 	&& mkdir -p /usr/local/go \
-	&& tar -xzf "go-v$GO_VERSION-linux-#{TARGET_ARCH}.tar.gz" -C /usr/local/go --strip-components=1 \
-	&& rm "go-v$GO_VERSION-linux-#{TARGET_ARCH}.tar.gz"
+	&& curl -SL "#{BINARY_URL}" | tar xz -C /usr/local/go --strip-components=1
 
 ENV GOROOT /usr/local/go
 ENV GOPATH /go
