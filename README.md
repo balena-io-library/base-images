@@ -30,8 +30,8 @@ If you're having any problem, please [raise an issue][issue-tracker] on GitHub.
 * [amd64 base image][amd64-debian] (Ex: intel nuc)
 
 [resin-image-trees]:http://docs.resin.io/#/pages/configuration/resin-image-trees.md
-[resin-buildpack-deps-link]:http://docs.resin.io/#/pages/configuration/resin-base-images.md#buildpack-deps
-[resin-node-link]:http://docs.resin.io/#/pages/configuration/resin-base-images.md#node
+[resin-buildpack-deps-link]:http://docs.resin.io/#/pages/runtime/resin-base-images.md#buildpack-deps
+[resin-node-link]:http://docs.resin.io/#/pages/runtime/resin-base-images.md#node
 [source-code]:https://github.com/resin-io-library/base-images
 [issue-tracker]:https://github.com/resin-io-library/base-images/issues
 [i386-debian]:https://github.com/resin-io-library/resin-i386-debian
