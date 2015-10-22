@@ -11,7 +11,25 @@ RUN #{GPG_KEY}
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
 ENV PYTHON_PIP_VERSION 7.1.2
 
-RUN mkdir -p /usr/src/python \
+RUN set -x \
+	&& buildDeps=' \
+		ca-certificates \
+		libsqlite3-0 \
+		libssl1.0.0 \
+		curl \
+		gcc \
+		libbz2-dev \
+		libc6-dev \
+		libncurses-dev \
+		libreadline-dev \
+		libsqlite3-dev \
+		libssl-dev \
+		make \
+		xz-utils \
+		zlib1g-dev \
+	' \
+	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends && rm -rf /var/lib/apt/lists/* \
+	&& mkdir -p /usr/src/python \
 	&& curl -SL "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz" -o python.tar.xz \
 	&& curl -SL "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz.asc" -o python.tar.xz.asc \
 	&& gpg --verify python.tar.xz.asc \
@@ -49,6 +67,9 @@ RUN mkdir -p temp \
 	&& make install \
 	&& cd / \
 	&& rm -rf temp
+
+# tidy up buildDeps packages
+RUN apt-get purge -y --auto-remove $buildDeps
 
 #{PYTHON_EDISON_MRAA}
 
