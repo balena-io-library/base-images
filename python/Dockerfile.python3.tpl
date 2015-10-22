@@ -46,7 +46,7 @@ RUN set -x \
 	&& tar -xzC pip --strip-components=1 -f pip.tar.gz \
 	&& rm pip.tar.gz* \
 	&& cd /usr/src/python/pip \
-	&& python2 setup.py install \
+	&& python3 setup.py install \
 	&& cd .. \
 	&& rm -rf /usr/src/python/pip \
 	&& find /usr/local \
@@ -57,7 +57,7 @@ RUN set -x \
 	&& rm -rf /usr/src/python
 
 # install "virtualenv", since the vast majority of users of this image will want it
-RUN pip install --no-cache-dir virtualenv
+RUN pip3 install --no-cache-dir virtualenv
 
 ENV PYTHON_DBUS_VERSION 1.2.0
 
@@ -76,6 +76,15 @@ RUN set -x \
 	&& cd / \
 	&& rm -rf /usr/src/dbus-python
 
+# make some useful symlinks that are expected to exist
+RUN cd /usr/local/bin \
+	&& ln -s pip3 pip \
+	&& ln -s easy_install-#{PYTHON_BASE_VERSION} easy_install \
+	&& ln -s idle3 idle \
+	&& ln -s pydoc3 pydoc \
+	&& ln -s python3 python \
+	&& ln -s python-config3 python-config
+	
 CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command could be found in Dockerfile Guide section in our Docs. Here's the link: http://docs.resin.io/#/pages/using/dockerfile.md"]
 
 #{PYTHON_EDISON_MRAA}

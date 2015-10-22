@@ -7,8 +7,11 @@ RUN apt-get purge -y python.*
 # > At the moment, setting "LANG=C" on a Linux system *fundamentally breaks Python 3*, and that's not OK.
 ENV LANG C.UTF-8
 
-# install dbus-python dependencies 
+# install python and dbus-python dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
+		ca-certificates \
+		libsqlite3-0 \
+		libssl1.0.0 \
 		libdbus-1-dev \
 		libdbus-glib-1-dev \
 	&& rm -rf /var/lib/apt/lists/*
@@ -28,6 +31,20 @@ ENV PYTHON_VERSION #{PYTHON_VERSION}
 ENV PYTHON_PIP_VERSION 7.1.2
 
 RUN set -x \
+	&& buildDeps=' \
+		curl \
+		gcc \
+		libbz2-dev \
+		libc6-dev \
+		libncurses-dev \
+		libreadline-dev \
+		libsqlite3-dev \
+		libssl-dev \
+		make \
+		xz-utils \
+		zlib1g-dev \
+	' \
+	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends && rm -rf /var/lib/apt/lists/* \
 	&& mkdir -p /usr/src/python \
 	&& curl -SL "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz" -o python.tar.xz \
 	&& curl -SL "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz.asc" -o python.tar.xz.asc \
@@ -54,6 +71,7 @@ RUN set -x \
 		-o \( -type f -a -name '*.pyc' -o -name '*.pyo' \) \
 		-exec rm -rf '{}' + \
 	&& cd / \
+	&& apt-get purge -y --auto-remove $buildDeps \
 	&& rm -rf /usr/src/python
 
 # install "virtualenv", since the vast majority of users of this image will want it

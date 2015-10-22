@@ -3,7 +3,7 @@ set -e
 
 declare -A aliases
 aliases=(
-	[jessie]='latest'
+	[2.7.10]='latest'
 )
 
 cd "$(dirname "$(readlink -f "$BASH_SOURCE")")"
@@ -17,16 +17,30 @@ url='git://github.com/resin-io-library/base-images'
 for device in "${devices[@]}"; do
 
 	cd $device
-	suites=( */ )
-	suites=( "${suites[@]%/}" )
+	versions=( */ )
+	versions=( "${versions[@]%/}" )
 	cd ..
-	for suite in "${suites[@]}"; do
+	for version in "${versions[@]}"; do
+		commit="$(git log -1 --format='format:%H' -- "$device/$version")"
+		fullVersion="$(grep -m1 'ENV PYTHON_VERSION ' "$device/$version/Dockerfile" | cut -d' ' -f3)"
+		versionAliases=( $fullVersion $version ${aliases[$fullVersion]} )
 
-		suiteAliases=( $suite ${aliases[$suite]} )
-		commit="$(git log -1 --format='format:%H' -- "$device/$suite")"
 		echo
-		for va in "${suiteAliases[@]}"; do
-			echo "$va: ${url}@${commit} $repo/$device/$suite"
+		for va in "${versionAliases[@]}"; do
+			echo "$va: ${url}@${commit} $repo/$device/$version"
+		done
+	
+		for variant in onbuild slim wheezy; do
+			commit="$(git log -1 --format='format:%H' -- "$device/$version/$variant")"
+			echo
+			for va in "${versionAliases[@]}"; do
+				if [ "$va" = 'latest' ]; then
+					va="$variant"
+				else
+					va="$va-$variant"
+				fi
+				echo "$va: ${url}@${commit} $repo/$device/$version/$variant"
+			done
 		done
 	done
 done
