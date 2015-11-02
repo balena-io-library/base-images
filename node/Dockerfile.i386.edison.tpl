@@ -2,7 +2,7 @@
 FROM #{FROM}
 
 ENV NODE_VERSION #{NODE_VERSION}
-ENV NPM_VERSION 2.14.2
+ENV NPM_VERSION #{NPM_VERSION}
 
 RUN curl -SLO "#{BINARY_URL}" \
 	&& tar -xzf "node-v$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz" -C /usr/local --strip-components=1 \
