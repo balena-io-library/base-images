@@ -2,7 +2,7 @@
 FROM resin/raspberrypi2-debian:jessie
 
 ENV NODE_VERSION 0.11.16
-ENV NPM_VERSION 2.14.2
+ENV NPM_VERSION 3.3.11
 
 RUN buildDeps='curl' \
 	&& set -x \

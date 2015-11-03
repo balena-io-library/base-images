@@ -2,7 +2,7 @@
 FROM resin/beaglebone-buildpack-deps:jessie
 
 ENV NODE_VERSION 0.10.22
-ENV NPM_VERSION 2.14.2
+ENV NPM_VERSION 3.3.11
 
 RUN curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-armv7hf.tar.gz" \
 	&& tar -xzf "node-v$NODE_VERSION-linux-armv7hf.tar.gz" -C /usr/local --strip-components=1 \
