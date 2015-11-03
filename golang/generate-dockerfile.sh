@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900'
+devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6'
 goVersions='1.4.3 1.5.1'
 resinUrl="http://resin-packages.s3.amazonaws.com/golang/v\$GO_VERSION/go-v\$GO_VERSION-linux-#{TARGET_ARCH}.tar.gz"
 golangUrl="https://storage.googleapis.com/golang/go\$GO_VERSION.linux-#{TARGET_ARCH}.tar.gz"
@@ -57,6 +57,10 @@ for device in $devices; do
 		binary_arch='armv7hf'
 	;;
 	'ts4900')
+		binary_url=$resinUrl
+		binary_arch='armv7hf'
+	;;
+	'colibri-imx6')
 		binary_url=$resinUrl
 		binary_arch='armv7hf'
 	;;
