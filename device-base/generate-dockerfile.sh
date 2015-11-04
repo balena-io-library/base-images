@@ -8,8 +8,8 @@ bb_sourceslist_wheezy_cmd='echo "deb [arch=armhf] http://repos.rcn-ee.net/debian
 bb_sourceslist_jessie_cmd='echo "deb [arch=armhf] http://repos.rcn-ee.net/debian/ #{SUITE} main" >> /etc/apt/sources.list'
 
 # beaglebone rcn-ee repo
-bb_rcn_ee_wheezy_key='rcn-ee-archive-keyring_2015.07.05~bpo70+20150705+1_all.deb'
-bb_rcn_ee_jessie_key='rcn-ee-archive-keyring_2015.07.05~bpo80+20150705+1_all.deb'
+bb_rcn_ee_wheezy_key='rcn-ee-archive-keyring_2015.10.22~bpo70+20151022+1_all.deb'
+bb_rcn_ee_jessie_key='rcn-ee-archive-keyring_2015.10.22~bpo80+20151022+1_all.deb'
 
 bb_board_wheezy_key_cmd='apt-key adv --keyserver keyserver.ubuntu.com --recv-key B2710B8359890110'
 
