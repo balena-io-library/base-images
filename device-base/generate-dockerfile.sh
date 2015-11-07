@@ -1,19 +1,13 @@
 #!/bin/bash
 set -e
 
-# for beaglebone wheezy 
-bb_sourceslist_wheezy_cmd='echo "deb [arch=armhf] http://repos.rcn-ee.net/debian/ #{SUITE} main" >> /etc/apt/sources.list \&\& echo "deb http://debian.beagleboard.org/packages  #{SUITE}-bbb main" >> /etc/apt/sources.list'
+# for beaglebone
+bb_sourceslist_cmd='echo "deb [arch=armhf] http://repos.rcn-ee.net/debian/ #{SUITE} main" >> /etc/apt/sources.list'
+bb_key_cmd='apt-key adv --keyserver keyserver.ubuntu.com --recv-key D284E608A4C46402'
 
-# for beaglebone jessie
-bb_sourceslist_jessie_cmd='echo "deb [arch=armhf] http://repos.rcn-ee.net/debian/ #{SUITE} main" >> /etc/apt/sources.list'
-
-# beaglebone rcn-ee repo
-bb_rcn_ee_wheezy_key='rcn-ee-archive-keyring_2015.10.22~bpo70+20151022+1_all.deb'
-bb_rcn_ee_jessie_key='rcn-ee-archive-keyring_2015.10.22~bpo80+20151022+1_all.deb'
-
-bb_board_wheezy_key_cmd='apt-key adv --keyserver keyserver.ubuntu.com --recv-key B2710B8359890110'
-
-bb_rcn_ee_key_cmd='wget http://repos.rcn-ee.net/debian/pool/main/r/rcn-ee-archive-keyring/#{KEY_NAME} \&\& dpkg -i #{KEY_NAME} \&\& rm -f #{KEY_NAME}'
+# for beaglebone wheezy
+bb_sourceslist_wheezy_cmd='echo "deb http://debian.beagleboard.org/packages wheezy-bbb main" >> /etc/apt/sources.list'
+bb_key_wheezy_cmd='apt-key adv --keyserver keyserver.ubuntu.com --recv-key B2710B8359890110'
 
 devices='raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6'
 suites='jessie wheezy'
@@ -82,14 +76,12 @@ for device in $devices; do
 		if [ $device == 'beaglebone' ]; then
 			case "$suite" in
 			'wheezy')
-				sourcelist="$bb_sourceslist_wheezy_cmd"
-				key="$bb_board_wheezy_key_cmd \&\& $bb_rcn_ee_key_cmd"
-				key=$(echo $key | sed "s@#{KEY_NAME}@$bb_rcn_ee_wheezy_key@g")
+				sourcelist="$bb_sourceslist_cmd \&\& $bb_sourceslist_wheezy_cmd"
+				key="$bb_key_cmd \&\& $bb_key_wheezy_cmd"
 			;;
 			'jessie')
-				sourcelist="$bb_sourceslist_jessie_cmd"
-				key="$bb_rcn_ee_key_cmd"
-				key=$(echo $key | sed "s@#{KEY_NAME}@$bb_rcn_ee_jessie_key@g")
+				sourcelist="$bb_sourceslist_cmd"
+				key="$bb_key_cmd"
 			;;
 			esac
 
