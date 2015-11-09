@@ -28,5 +28,3 @@ RUN git clone https://github.com/intel-iot-devkit/mraa.git \
 # Update Shared Library Cache
 RUN echo "/usr/local/lib/i386-linux-gnu/" >> /etc/ld.so.conf \
 	&& ldconfig
-COPY sys-kernel-debug.mount /etc/systemd/system/
-RUN systemctl enable /etc/systemd/system/sys-kernel-debug.mount
