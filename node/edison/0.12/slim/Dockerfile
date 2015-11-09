@@ -2,7 +2,7 @@
 FROM resin/edison-debian:jessie
 
 ENV NODE_VERSION 0.12.7
-ENV NPM_VERSION 2.14.2
+ENV NPM_VERSION 3.3.11
 
 RUN apt-get update && apt-get install -y curl --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/* \

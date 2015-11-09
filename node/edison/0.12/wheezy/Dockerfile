@@ -2,7 +2,7 @@
 FROM resin/edison-buildpack-deps:wheezy
 
 ENV NODE_VERSION 0.12.7
-ENV NPM_VERSION 2.14.2
+ENV NPM_VERSION 3.3.11
 
 RUN curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x86.tar.gz" \
 	&& tar -xzf "node-v$NODE_VERSION-linux-x86.tar.gz" -C /usr/local --strip-components=1 \
