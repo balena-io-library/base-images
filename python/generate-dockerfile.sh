@@ -3,7 +3,7 @@ set -e
 
 devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6'
 pythonVersions='2.7.10 3.2.6 3.3.6 3.4.3 3.5.0'
-edisonScript="RUN sed -i -e '2s@\$@export PYTHONPATH=\"\$(dirname \$(find /usr/local -name mraa.py))\"@' usr/bin/entry.sh"
+edisonScript="RUN sed -i -e '2s@\$@export PYTHONPATH=\"/usr/local/lib/python$baseVersion/site-packages\"@' usr/bin/entry.sh"
 
 for device in $devices; do
 	for pythonVersion in $pythonVersions; do
