@@ -1,6 +1,14 @@
 #!/bin/bash
 set -e
 
+# append mraa build script to the bottom of Dockerfile.
+append_setup_script() {
+	cp setup.sh $1
+	echo "COPY setup.sh /setup.sh" >> $1/Dockerfile
+	echo "RUN bash /setup.sh && rm /setup.sh" >> $1/Dockerfile
+	echo "RUN sed -i -e '2s@\$@export PYTHONPATH=\"/usr/local/lib/python$baseVersion/site-packages\"@' usr/bin/entry.sh" >> $1/Dockerfile
+}
+
 devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6'
 pythonVersions='2.7.10 3.2.6 3.3.6 3.4.3 3.5.0'
 edisonScript="RUN sed -i -e '2s@\$@export PYTHONPATH=\"/usr/local/lib/python$baseVersion/site-packages\"@' usr/bin/entry.sh"
@@ -89,6 +97,13 @@ for device in $devices; do
 					-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
 					-e s~#{GPG_KEY}~"$gpgKey"~g \
 					-e s~#{PYTHON_EDISON_MRAA}~"$edisonScript"~g $slimTemplate > $dockerfilePath/slim/Dockerfile
+
+				# Only append setup script to Python3 images
+				if [ $pythonVersion != "2.7.10" ]; then
+					append_setup_script $dockerfilePath/
+					append_setup_script $dockerfilePath/wheezy/
+					append_setup_script $dockerfilePath/slim/
+				fi
 			fi
 	done
 done
