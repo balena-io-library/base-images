@@ -7,12 +7,11 @@ RUN apt-get purge -y python.*
 # > At the moment, setting "LANG=C" on a Linux system *fundamentally breaks Python 3*, and that's not OK.
 ENV LANG C.UTF-8
 
+# install python dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		ca-certificates \
 		libsqlite3-0 \
 		libssl1.0.0 \
-		libdbus-1-dev \
-		libdbus-glib-1-dev \
 	&& rm -rf /var/lib/apt/lists/*
 
 # import gpg keys
@@ -28,6 +27,9 @@ ENV PYTHON_VERSION 3.5.0
 
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
 ENV PYTHON_PIP_VERSION 7.1.2
+
+ENV SETUPTOOLS_SHA256 4846755f18c0528d87583342d5e1221052858ce9922c5c38acbadd5015bd683d
+ENV SETUPTOOLS_VERSION 18.5
 
 RUN set -x \
 	&& buildDeps=' \
@@ -55,16 +57,22 @@ RUN set -x \
 	&& make -j$(nproc) \
 	&& make install \
 	&& ldconfig \
-	&& mkdir -p /usr/src/python/pip
+	&& mkdir -p /usr/src/python/setuptools \
+	&& curl -SLO https://pypi.python.org/packages/source/s/setuptools/setuptools-$SETUPTOOLS_VERSION.tar.gz \
+	&& echo "$SETUPTOOLS_SHA256 setuptools-$SETUPTOOLS_VERSION.tar.gz" > setuptools-$SETUPTOOLS_VERSION.tar.gz.sha256sum \
+	&& sha256sum -c setuptools-$SETUPTOOLS_VERSION.tar.gz.sha256sum \
+	&& tar -xzC /usr/src/python/setuptools --strip-components=1 -f setuptools-$SETUPTOOLS_VERSION.tar.gz \
+	&& cd /usr/src/python/setuptools \
+	&& python3 ez_setup.py \
+	&& mkdir -p /usr/src/python/pip \
 	&& curl -SL "https://pypi.python.org/packages/source/p/pip/pip-$PYTHON_PIP_VERSION.tar.gz" -o pip.tar.gz \
 	&& curl -SL "https://pypi.python.org/packages/source/p/pip/pip-$PYTHON_PIP_VERSION.tar.gz.asc" -o pip.tar.gz.asc \
 	&& gpg --verify pip.tar.gz.asc \
-	&& tar -xzC pip --strip-components=1 -f pip.tar.gz \
+	&& tar -xzC /usr/src/python/pip --strip-components=1 -f pip.tar.gz \
 	&& rm pip.tar.gz* \
 	&& cd /usr/src/python/pip \
 	&& python3 setup.py install \
 	&& cd .. \
-	&& rm -rf /usr/src/python/pip \
 	&& find /usr/local \
 		\( -type d -a -name test -o -name tests \) \
 		-o \( -type f -a -name '*.pyc' -o -name '*.pyo' \) \
@@ -76,10 +84,21 @@ RUN set -x \
 # install "virtualenv", since the vast majority of users of this image will want it
 RUN pip3 install --no-cache-dir virtualenv
 
+# install dbus-python dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+		libdbus-1-dev \
+		libdbus-glib-1-dev \
+	&& rm -rf /var/lib/apt/lists/*
+
 ENV PYTHON_DBUS_VERSION 1.2.0
 
 # install dbus-python
 RUN set -x \
+	&& buildDeps=' \
+		curl \
+		build-essential \
+	' \
+	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends && rm -rf /var/lib/apt/lists/* \
 	&& mkdir -p /usr/src/dbus-python \
 	&& curl -SL "http://dbus.freedesktop.org/releases/dbus-python/dbus-python-$PYTHON_DBUS_VERSION.tar.gz" -o dbus-python.tar.gz \
 	&& curl -SL "http://dbus.freedesktop.org/releases/dbus-python/dbus-python-$PYTHON_DBUS_VERSION.tar.gz.asc" -o dbus-python.tar.gz.asc \
@@ -91,16 +110,17 @@ RUN set -x \
 	&& make \
 	&& make install \
 	&& cd / \
+	&& apt-get purge -y --auto-remove $buildDeps \
 	&& rm -rf /usr/src/dbus-python
 
 # make some useful symlinks that are expected to exist
 RUN cd /usr/local/bin \
-	&& ln -s pip3 pip \
-	&& ln -s easy_install-3.5 easy_install \
-	&& ln -s idle3 idle \
-	&& ln -s pydoc3 pydoc \
-	&& ln -s python3 python \
-	&& ln -s python-config3 python-config
+	&& ln -sf pip3 pip \
+	&& ln -sf easy_install-3.5 easy_install \
+	&& ln -sf idle3 idle \
+	&& ln -sf pydoc3 pydoc \
+	&& ln -sf python3 python \
+	&& ln -sf python-config3 python-config
 
 CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command could be found in Dockerfile Guide section in our Docs. Here's the link: http://docs.resin.io/#/pages/using/dockerfile.md"]
 
