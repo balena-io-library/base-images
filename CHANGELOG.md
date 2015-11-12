@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2015-11-12
+
+### Changed
+
+- Use /dev/console as the TTY device path. Fixes bug with user's Dockerfile CMD
+  directive being ignored when using systemd inside their container.
+
 ## 2015-10-13
 
 ### Changed
