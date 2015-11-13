@@ -95,5 +95,6 @@ RUN cd /usr/local/bin \
 	&& ln -sf python-config3 python-config
 	
 CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command could be found in Dockerfile Guide section in our Docs. Here's the link: http://docs.resin.io/#/pages/using/dockerfile.md"]
-
-RUN sed -i -e '2s@$@export PYTHONPATH="/usr/local/lib/python/site-packages"@' usr/bin/entry.sh
+COPY setup.sh /setup.sh
+RUN bash /setup.sh && rm /setup.sh
+RUN sed -i -e '2s@$@export PYTHONPATH="/usr/local/lib/python3.5/site-packages"@' usr/bin/entry.sh
