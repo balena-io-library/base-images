@@ -3,12 +3,60 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2015-11-13
+
+### Changed
+
+- Fix wrong Python version in Python2 template file.
+
+
 ## 2015-11-12
+
+### Added
+
+- Add images for new board: Apalis iMX6q.
 
 ### Changed
 
 - Use /dev/console as the TTY device path. Fixes bug with user's Dockerfile CMD
   directive being ignored when using systemd inside their container.
+- Fix issue with dependencies in Python images: installing setuptools before installing pip.
+
+
+## 2015-11-11
+
+### Added
+
+- Add Python 3.x images (3.2, 3.3, 3.4, 3.5).
+
+### Changed
+
+- Remake Python images: building Python from source.
+
+
+## 2015-11-10
+
+### Added
+
+- Add Node.js v5.0.0 images.
+
+### Changed
+
+- Fix issues with shadowed mount points on systemd images: remounting /dev/shm, /dev/mqueme, /dev/pts, /dev/console after mounting /dev with devtmpfs.
+- Change Beaglebone repo gpg keys to the correct value.
+- Pump Node.js v4.0.0 to v4.2.1.
+
+
+## 2015-11-03
+
+### Added
+
+- Add images for new board: Colibri iMX6dl
+
+### Changed
+
+- Change hostname from <device-type> to <device-type>-<device uuid> (6 digit uuid).
+
 
 ## 2015-10-13
 
