@@ -3,15 +3,29 @@ set -e
 
 # append mraa build script to the bottom of Dockerfile.
 append_setup_script() {
-	cp setup.sh $1
-	echo "COPY setup.sh /setup.sh" >> $1/Dockerfile
-	echo "RUN bash /setup.sh && rm /setup.sh" >> $1/Dockerfile
-	echo "RUN sed -i -e '2s@\$@export PYTHONPATH=\"/usr/local/lib/python$baseVersion/site-packages\"@' usr/bin/entry.sh" >> $1/Dockerfile
+	if [ $1 != "2.7.10" ]; then
+		cp setup.sh $2
+		echo "COPY setup.sh /setup.sh" >> $2/Dockerfile
+		echo "RUN bash /setup.sh && rm /setup.sh" >> $2/Dockerfile
+	fi
 }
+
+# set PYTHONPATH to point to dist-packages
+set_pythonpath() {
+	if [ $1 != "2.7.10" ]; then
+		echo "RUN sed -i -e '2s@\$@export PYTHONPATH=\"/usr/lib/python3/dist-packages\"@' usr/bin/entry.sh" >> $2/Dockerfile
+		echo "RUN sed -i -e '2s@\$@export PYTHONPATH=\"/usr/lib/python3/dist-packages\"@' usr/bin/entry.sh" >> $2/wheezy/Dockerfile
+		echo "RUN sed -i -e '2s@\$@export PYTHONPATH=\"/usr/lib/python3/dist-packages\"@' usr/bin/entry.sh" >> $2/slim/Dockerfile
+	else
+		echo "RUN sed -i -e '2s@\$@export PYTHONPATH=\"/usr/lib/python2.7/dist-packages\"@' usr/bin/entry.sh" >> $2/Dockerfile
+		echo "RUN sed -i -e '2s@\$@export PYTHONPATH=\"/usr/lib/python2.7/dist-packages\"@' usr/bin/entry.sh" >> $2/wheezy/Dockerfile
+		echo "RUN sed -i -e '2s@\$@export PYTHONPATH=\"/usr/lib/python2.7/dist-packages\"@' usr/bin/entry.sh" >> $2/slim/Dockerfile
+	fi
+}
+
 
 devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6'
 pythonVersions='2.7.10 3.2.6 3.3.6 3.4.3 3.5.0'
-edisonScript="RUN sed -i -e '2s@\$@export PYTHONPATH=\"/usr/local/lib/python$baseVersion/site-packages\"@' usr/bin/entry.sh"
 
 for device in $devices; do
 	for pythonVersion in $pythonVersions; do
@@ -49,61 +63,54 @@ for device in $devices; do
 		sed -e s~#{FROM}~"resin/$device-buildpack-deps:jessie"~g \
 			-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
 			-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
-			-e s~#{GPG_KEY}~"$gpgKey"~g \
-			-e s~#{PYTHON_EDISON_MRAA}~''~g $template > $dockerfilePath/Dockerfile
+			-e s~#{GPG_KEY}~"$gpgKey"~g $template > $dockerfilePath/Dockerfile
 
-			mkdir -p $dockerfilePath/wheezy
+		mkdir -p $dockerfilePath/wheezy
+		sed -e s~#{FROM}~"resin/$device-buildpack-deps:wheezy"~g \
+			-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
+			-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
+			-e s~#{GPG_KEY}~"$gpgKey"~g $template > $dockerfilePath/wheezy/Dockerfile
+
+		mkdir -p $dockerfilePath/onbuild
+		sed -e s~#{FROM}~"resin/$device-python:$pythonVersion"~g Dockerfile.onbuild.tpl > $dockerfilePath/onbuild/Dockerfile
+		mkdir -p $dockerfilePath/slim
+
+		# Only for RPI1 device
+		if [ $device == "raspberrypi" ]; then
+			sed -e s~#{FROM}~"resin/$device-systemd:jessie"~g \
+				-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
+				-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
+				-e s~#{GPG_KEY}~"$gpgKey"~g $slimTemplate > $dockerfilePath/slim/Dockerfile
+		else
+			sed -e s~#{FROM}~"resin/$device-debian:jessie"~g \
+				-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
+				-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
+				-e s~#{GPG_KEY}~"$gpgKey"~g $slimTemplate > $dockerfilePath/slim/Dockerfile
+		fi
+
+		# Only for intel edison
+		if [ $device == "edison" ]; then
+			sed -e s~#{FROM}~"resin/$device-buildpack-deps:jessie"~g \
+				-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
+				-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
+				-e s~#{GPG_KEY}~"$gpgKey"~g $template > $dockerfilePath/Dockerfile
+
 			sed -e s~#{FROM}~"resin/$device-buildpack-deps:wheezy"~g \
 				-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
 				-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
-				-e s~#{GPG_KEY}~"$gpgKey"~g \
-				-e s~#{PYTHON_EDISON_MRAA}~''~g $template > $dockerfilePath/wheezy/Dockerfile
+				-e s~#{GPG_KEY}~"$gpgKey"~g $template > $dockerfilePath/wheezy/Dockerfile
 
-			mkdir -p $dockerfilePath/onbuild
-			sed -e s~#{FROM}~"resin/$device-python:$pythonVersion"~g Dockerfile.onbuild.tpl > $dockerfilePath/onbuild/Dockerfile
-			mkdir -p $dockerfilePath/slim
+			sed -e s~#{FROM}~"resin/$device-debian:jessie"~g \
+				-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
+				-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
+				-e s~#{GPG_KEY}~"$gpgKey"~g $slimTemplate > $dockerfilePath/slim/Dockerfile
 
-			# Only for RPI1 device
-			if [ $device == "raspberrypi" ]; then
-				sed -e s~#{FROM}~"resin/$device-systemd:jessie"~g \
-					-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
-					-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
-					-e s~#{GPG_KEY}~"$gpgKey"~g \
-					-e s~#{PYTHON_EDISON_MRAA}~''~g $slimTemplate > $dockerfilePath/slim/Dockerfile
-			else
-				sed -e s~#{FROM}~"resin/$device-debian:jessie"~g \
-					-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
-					-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
-					-e s~#{GPG_KEY}~"$gpgKey"~g \
-					-e s~#{PYTHON_EDISON_MRAA}~''~g $slimTemplate > $dockerfilePath/slim/Dockerfile
-			fi
+			# Only append setup script to Python3 images
+			append_setup_script $pythonVersion $dockerfilePath/
+			append_setup_script $pythonVersion $dockerfilePath/wheezy/
+			append_setup_script $pythonVersion $dockerfilePath/slim/
+		fi
 
-			# Only for intel edison
-			if [ $device == "edison" ]; then
-				sed -e s~#{FROM}~"resin/$device-buildpack-deps:jessie"~g \
-					-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
-					-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
-					-e s~#{GPG_KEY}~"$gpgKey"~g \
-					-e s~#{PYTHON_EDISON_MRAA}~"$edisonScript"~g $template > $dockerfilePath/Dockerfile
-
-				sed -e s~#{FROM}~"resin/$device-buildpack-deps:wheezy"~g \
-					-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
-					-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
-					-e s~#{GPG_KEY}~"$gpgKey"~g \
-					-e s~#{PYTHON_EDISON_MRAA}~"$edisonScript"~g $template > $dockerfilePath/wheezy/Dockerfile
-
-				sed -e s~#{FROM}~"resin/$device-debian:jessie"~g \
-					-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
-					-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
-					-e s~#{GPG_KEY}~"$gpgKey"~g \
-					-e s~#{PYTHON_EDISON_MRAA}~"$edisonScript"~g $slimTemplate > $dockerfilePath/slim/Dockerfile
-
-				# Only append setup script to Python3 images
-				if [ $pythonVersion != "2.7.10" ]; then
-					append_setup_script $dockerfilePath/
-					append_setup_script $dockerfilePath/wheezy/
-					append_setup_script $dockerfilePath/slim/
-				fi
-			fi
+		set_pythonpath $pythonVersion $dockerfilePath/	
 	done
 done
