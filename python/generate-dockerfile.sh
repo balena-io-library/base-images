@@ -3,13 +3,18 @@ set -e
 
 PYTHON2_PATH="/usr/lib/python2.7/dist-packages"
 PYTHON3_PATH="/usr/lib/python3/dist-packages"
+PYTHON2_ARGS="-DBUILDSWIGNODE=OFF"
+PYTHON3_ARGS="-DBUILDSWIGNODE=OFF -DBUILDPYTHON3=ON -DPYTHON_INCLUDE_DIR=/usr/local/include/python3.5m/ -DPYTHON_LIBRARY=/usr/local/lib/libpython3.so"
 
 # append mraa build script to the bottom of Dockerfile.
 append_setup_script() {
+	cp setup.sh $2
+	echo "COPY setup.sh /setup.sh" >> $2/Dockerfile
+	echo "RUN bash /setup.sh && rm /setup.sh" >> $2/Dockerfile
 	if [ $1 != "2.7" ]; then
-		cp setup.sh $2
-		echo "COPY setup.sh /setup.sh" >> $2/Dockerfile
-		echo "RUN bash /setup.sh && rm /setup.sh" >> $2/Dockerfile
+		sed -i -e s~#{ARGS}~"$PYTHON3_ARGS"~g $2/setup.sh
+	else
+		sed -i -e s~#{ARGS}~"$PYTHON2_ARGS"~g $2/setup.sh
 	fi
 }
 

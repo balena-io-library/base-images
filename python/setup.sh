@@ -16,7 +16,7 @@ set -x \
 && cd mraa \
 && git checkout $MRAA_COMMIT \
 && mkdir build && cd build \
-&& cmake .. -DBUILDSWIGNODE=OFF -DBUILDPYTHON3=ON -DPYTHON_INCLUDE_DIR=/usr/local/include/python3.5m/ -DPYTHON_LIBRARY=/usr/local/lib/libpython3.so \
+&& cmake .. #{ARGS} \
 && make -j $(nproc) \
 && make install \
 && apt-get purge -y --auto-remove $buildDeps \
