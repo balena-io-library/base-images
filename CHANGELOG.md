@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2015-11-18
+
+### Changed
+
+- Mount devtmpfs _over_ `/dev/pts` to avoid `/dev/ptmx` misbehaving and . See commit
+  message for more gory details.
+
 ## 2015-11-13
 
 ### Changed
