@@ -30,7 +30,7 @@ RUN set -x \
 	&& cd mraa \
 	&& git checkout $MRAA_COMMIT \
 	&& mkdir build && cd build \
-	&& cmake .. -DBUILDSWIGNODE=OFF \
+	&& cmake .. -DBUILDSWIGNODE=OFF -DBUILDSWIGPYTHON=OFF \
 	&& make -j $(nproc) \
 	&& make install \
 	&& apt-get purge -y --auto-remove $buildDeps \
