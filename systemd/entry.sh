@@ -18,6 +18,11 @@ mount --move /dev/console /tmp/console
 umount /dev || true
 mount --move /tmp /dev
 
+# Since the devpts is mounted with -o newinstance by Docker, we need to make
+# /dev/ptmx point to its ptmx.
+# ref: https://www.kernel.org/doc/Documentation/filesystems/devpts.txt
+ln -sf /dev/pts/ptmx /dev/ptmx
+
 if [ "$INITSYSTEM" = "on" ]; then
 	GREEN='\033[0;32m'
 	echo -e "${GREEN}Systemd init system enabled."
