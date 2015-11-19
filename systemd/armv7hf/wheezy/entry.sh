@@ -17,6 +17,12 @@ touch /tmp/console
 mount --move /dev/console /tmp/console
 umount /dev || true
 mount --move /tmp /dev
+
+# Since the devpts is mounted with -o newinstance by Docker, we need to make
+# /dev/ptmx point to its ptmx.
+# ref: https://www.kernel.org/doc/Documentation/filesystems/devpts.txt
+ln -sf /dev/pts/ptmx /dev/ptmx
+
 mount -t debugfs nodev /sys/kernel/debug
 udevd & 
 udevadm trigger &> /dev/null
