@@ -23,6 +23,10 @@ mount --move /tmp /dev
 # ref: https://www.kernel.org/doc/Documentation/filesystems/devpts.txt
 ln -sf /dev/pts/ptmx /dev/ptmx
 
+if [ "$SSH_MODE" = "on" ] ; then
+        ./usr/lib/resin/setup-ssh.sh
+fi
+
 mount -t debugfs nodev /sys/kernel/debug
 udevd & 
 udevadm trigger &> /dev/null
