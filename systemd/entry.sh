@@ -28,7 +28,8 @@ if [ "$INITSYSTEM" = "on" ]; then
 	echo -e "${GREEN}Systemd init system enabled."
 	env > /etc/docker.env
 
-	echo -e "#!/bin/bash\n exec $@" > /etc/resinApp.sh
+	printf '#!/bin/bash\n exec ' > /etc/resinApp.sh
+	printf '%q ' "$@" >> /etc/resinApp.sh
 	chmod +x /etc/resinApp.sh
 
 	mkdir -p /etc/systemd/system/launch.service.d
