@@ -37,7 +37,7 @@ if [ "$INITSYSTEM" = "on" ]; then
 		WorkingDirectory=$(pwd)
 	EOF
 
-	exec /sbin/init quiet
+	exec /sbin/init quiet systemd.show_status=0
 else
 	udevd & 
 	udevadm trigger &> /dev/null
