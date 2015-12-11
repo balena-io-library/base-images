@@ -1,5 +1,23 @@
 #!/bin/bash
 
+# remove all shells (ex: sh -c , bash -c, /bin/bash -c, /bin/sh -c), keep the command and arguments only
+parse_args() {
+    shells="/bin/bash /bin/sh /usr/bin/zsh"
+    args=( "$@" )
+
+    while true; do
+            [[ $shells =~ ${args[0]} ]] \
+            && {
+                    if [ ${args[1]} = "-c" ]; then
+                            args=( "${args[@]:2}" )
+                    fi
+                    break
+            } ||    break
+    done
+    echo "${args[@]}"
+}
+
+
 HOSTNAME=$(cat /etc/hostname)-${RESIN_DEVICE_UUID:0:6}
 echo $HOSTNAME > /etc/hostname
 echo "127.0.1.1 $HOSTNAME" >> /etc/hosts
@@ -28,7 +46,9 @@ if [ "$INITSYSTEM" = "on" ]; then
 	echo -e "${GREEN}Systemd init system enabled."
 	env > /etc/docker.env
 
-	echo -e "#!/bin/bash\n exec $@" > /etc/resinApp.sh
+	args=($(parse_args $@))
+	CMD=$(which "${args[0]}")
+	echo -e "#!/bin/bash\n$CMD "$(printf '%q ' ${args[@]:1}) > /etc/resinApp.sh
 	chmod +x /etc/resinApp.sh
 
 	mkdir -p /etc/systemd/system/launch.service.d
