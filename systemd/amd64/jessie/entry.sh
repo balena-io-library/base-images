@@ -23,6 +23,10 @@ mount --move /tmp /dev
 # ref: https://www.kernel.org/doc/Documentation/filesystems/devpts.txt
 ln -sf /dev/pts/ptmx /dev/ptmx
 
+if [ "$SSH_MODE" = "on" ] ; then
+        ./usr/lib/resin/setup-ssh.sh
+fi
+
 if [ "$INITSYSTEM" = "on" ]; then
 	GREEN='\033[0;32m'
 	echo -e "${GREEN}Systemd init system enabled."
