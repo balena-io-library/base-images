@@ -18,7 +18,6 @@ for repo in $repos; do
 	;;
 	'amd64')
 		baseImage='amd64-debian'
-	;;
 	esac
 	for suite in $suites; do
 		dockerfilePath=$repo/$suite
@@ -33,7 +32,7 @@ for repo in $repos; do
 			sed -e s~#{FROM}~resin/$baseImage:$suite~g Dockerfile.tpl > $dockerfilePath/Dockerfile
 			cp entry.sh launch.service $dockerfilePath/
 		fi
-		cp setup-ssh.sh $dockerfilePath/
+		cp setup-ssh.sh setup-resin-sync.sh $dockerfilePath/
 	done
 
 	# Only for armv7hf
@@ -42,7 +41,7 @@ for repo in $repos; do
 		dockerfilePath=$repo/$suite
 		mkdir -p $dockerfilePath
 		sed -e s~#{FROM}~resin/$baseImage:$suite~g Dockerfile.tpl > $dockerfilePath/Dockerfile
-		cp entry.sh launch.service setup-ssh.sh $dockerfilePath/
+		cp entry.sh launch.service setup-ssh.sh setup-resin-sync.sh $dockerfilePath/
 	fi
 
 done
