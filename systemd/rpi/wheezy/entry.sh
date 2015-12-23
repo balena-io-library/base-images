@@ -28,5 +28,11 @@ udevd &
 udevadm trigger &> /dev/null
 	
 CMD=$(which $1)
-shift
-exec "$CMD" "$@"
+# echo error message, when executable file doesn't exist.
+if [  $? == '0' ]; then
+	shift
+	exec "$CMD" "$@"
+else
+	echo "Command not found: $1"
+	exit 1
+fi
