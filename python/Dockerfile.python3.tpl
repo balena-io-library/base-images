@@ -11,7 +11,8 @@ ENV LANG C.UTF-8
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		libdbus-1-dev \
 		libdbus-glib-1-dev \
-	&& rm -rf /var/lib/apt/lists/*
+	&& rm -rf /var/lib/apt/lists/* \
+	&& apt-get -y autoremove
 
 # import gpg keys
 RUN #{GPG_KEY}
@@ -93,5 +94,5 @@ RUN cd /usr/local/bin \
 	&& ln -sf pydoc3 pydoc \
 	&& ln -sf python3 python \
 	&& ln -sf python-config3 python-config
-	
+
 CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command could be found in Dockerfile Guide section in our Docs. Here's the link: http://docs.resin.io/#/pages/using/dockerfile.md"]
