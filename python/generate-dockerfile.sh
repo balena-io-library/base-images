@@ -33,7 +33,7 @@ set_pythonpath() {
 
 
 devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6'
-pythonVersions='2.7.10 3.2.6 3.3.6 3.4.3 3.5.0'
+pythonVersions='2.7.11 3.2.6 3.3.6 3.4.4 3.5.1'
 
 for device in $devices; do
 	for pythonVersion in $pythonVersions; do
@@ -47,7 +47,7 @@ for device in $devices; do
 		fi
 
 		case "$pythonVersion" in
-		'2.7.10')
+		'2.7.11')
 			gpgKey='gpg --keyserver ha.pool.sks-keyservers.net --recv-keys C01E1CAD5EA2C4F0B8E3571504C367C218ADD4FF'
 		;;
 		'3.2.6')
@@ -56,10 +56,10 @@ for device in $devices; do
 		'3.3.6')
 			gpgKey='gpg --keyserver ha.pool.sks-keyservers.net --recv-keys 26DEA9D4613391EF3E25C9FF0A5B101836580288'
 		;;
-		'3.4.3')
+		'3.4.4')
 			gpgKey='gpg --keyserver ha.pool.sks-keyservers.net --recv-keys 97FC712E4C024BBEA48A61ED3A5CA953F73C700D'
 		;;
-		'3.5.0')
+		'3.5.1')
 			gpgKey='gpg --keyserver ha.pool.sks-keyservers.net --recv-keys 97FC712E4C024BBEA48A61ED3A5CA953F73C700D'
 		;;
 		esac
