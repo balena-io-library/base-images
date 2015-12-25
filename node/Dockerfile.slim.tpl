@@ -3,7 +3,7 @@ FROM #{FROM}
 
 ENV NODE_VERSION #{NODE_VERSION}
 
-RUN buildDeps='curl' \
+RUN buildDeps='curl ca-certificates' \
 	&& set -x \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/* \
