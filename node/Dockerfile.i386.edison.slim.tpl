@@ -2,7 +2,6 @@
 FROM #{FROM}
 
 ENV NODE_VERSION #{NODE_VERSION}
-ENV NPM_VERSION #{NPM_VERSION}
 
 RUN apt-get update && apt-get install -y curl --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/* \
@@ -10,7 +9,6 @@ RUN apt-get update && apt-get install -y curl --no-install-recommends \
 	&& tar -xzf "node-v$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz" \
 	&& apt-get purge -y --auto-remove curl \
-	&& npm install -g npm@"$NPM_VERSION" --unsafe-perm \
 	&& npm install mraa \
 	&& npm cache clear \
 	&& npm config set unsafe-perm true -g --unsafe-perm \
