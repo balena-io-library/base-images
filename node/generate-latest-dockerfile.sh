@@ -147,7 +147,6 @@ for device in $devices; do
 				-e s~#{NODE_VERSION}~$nodeVersion~g \
 				-e s~#{TARGET_ARCH}~$binary_arch~g \
 				-e s~#{NPM_VERSION}~$npmVersion~g Dockerfile.i386.edison.slim.tpl > $dockerfilePath/slim/Dockerfile
-
 		fi
 	done
 done

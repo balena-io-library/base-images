@@ -5,7 +5,6 @@ set -e
 function version_cmp() { test "$(echo "$@" | tr " " "\n" | sort -V | tail -n 1)" == "$1"; }
 
 devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6'
-nodeVersions='0.9.12 '
 resinUrl="http://resin-packages.s3.amazonaws.com/node/v\$NODE_VERSION/node-v\$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz"
 nodejsUrl="http://nodejs.org/dist/v\$NODE_VERSION/node-v\$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz"
 # latest npm version
@@ -13,9 +12,6 @@ npmVersion='3.3.11'
 
 #0.10.x
 nodeVersions+=$(seq -f "0.10.%g" -s ' ' 0 41)
-nodeVersions+=' '
-#0.11.x
-nodeVersions+=$(seq -f "0.11.%g" -s ' ' 0 16)
 nodeVersions+=' '
 #0.12.x
 nodeVersions+=$(seq -f "0.12.%g" -s ' ' 0 9)
@@ -102,7 +98,7 @@ for device in $devices; do
 				fi
 			fi
 		fi
-		
+
 		dockerfilePath=$device/$baseVersion/$nodeVersion
 		mkdir -p $dockerfilePath
 		sed -e s~#{FROM}~resin/$device-buildpack-deps:jessie~g \
@@ -156,7 +152,6 @@ for device in $devices; do
 				-e s~#{NODE_VERSION}~$nodeVersion~g \
 				-e s~#{TARGET_ARCH}~$binary_arch~g \
 				-e s~#{NPM_VERSION}~$npmVersion~g Dockerfile.i386.edison.slim.tpl > $dockerfilePath/slim/Dockerfile
-
 		fi
 	done
 done
