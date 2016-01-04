@@ -1,6 +1,6 @@
 FROM resin/ts4900-debian:jessie
 
-ENV GO_VERSION 1.5.1
+ENV GO_VERSION 1.5.2
 
 RUN buildDeps='curl gcc g++ git' \
 	&& set -x \
