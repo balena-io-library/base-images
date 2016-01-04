@@ -12,7 +12,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		ca-certificates \
 		libsqlite3-0 \
 		libssl1.0.0 \
-	&& rm -rf /var/lib/apt/lists/*
+	&& rm -rf /var/lib/apt/lists/* \
+	&& apt-get -y autoremove
 
 # import gpg keys
 RUN #{GPG_KEY}

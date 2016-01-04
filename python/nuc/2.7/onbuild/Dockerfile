@@ -1,4 +1,4 @@
-FROM resin/nuc-python:2.7.10
+FROM resin/nuc-python:2.7.11
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app

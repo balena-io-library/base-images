@@ -11,7 +11,8 @@ ENV LANG C.UTF-8
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		libdbus-1-dev \
 		libdbus-glib-1-dev \
-	&& rm -rf /var/lib/apt/lists/*
+	&& rm -rf /var/lib/apt/lists/* \
+	&& apt-get -y autoremove
 
 # import gpg keys
 RUN gpg --keyserver ha.pool.sks-keyservers.net --recv-keys 97FC712E4C024BBEA48A61ED3A5CA953F73C700D
@@ -22,7 +23,7 @@ RUN gpg --keyserver keyring.debian.org --recv-keys 4DE8FF2A63C7CC90
 # key 3372DCFA: public key "Donald Stufft (dstufft) <donald@stufft.io>" imported
 RUN gpg --keyserver pgp.mit.edu  --recv-key 6E3CBCE93372DCFA
 
-ENV PYTHON_VERSION 3.5.0
+ENV PYTHON_VERSION 3.5.1
 
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
 ENV PYTHON_PIP_VERSION 7.1.2
@@ -93,6 +94,6 @@ RUN cd /usr/local/bin \
 	&& ln -sf pydoc3 pydoc \
 	&& ln -sf python3 python \
 	&& ln -sf python-config3 python-config
-	
+
 CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command could be found in Dockerfile Guide section in our Docs. Here's the link: http://docs.resin.io/#/pages/using/dockerfile.md"]
 ENV PYTHONPATH /usr/lib/python3/dist-packages

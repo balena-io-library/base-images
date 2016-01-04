@@ -1,13 +1,14 @@
 #!/bin/bash
 set -e
 
+# comparing version: http://stackoverflow.com/questions/16989598/bash-comparing-version-numbers
+function version_cmp() { test "$(echo "$@" | tr " " "\n" | sort -V | tail -n 1)" == "$1"; }
+
 devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6'
-nodeVersions=' 0.10.22 0.9.12 0.10.40 0.11.16 0.12.7 4.2.1 5.0.0'
+nodeVersions='0.10.22 0.10.41 0.12.9 4.2.4 5.3.0'
 defaultVersion='0.10.22' 
 resinUrl="http://resin-packages.s3.amazonaws.com/node/v\$NODE_VERSION/node-v\$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz"
 nodejsUrl="http://nodejs.org/dist/v\$NODE_VERSION/node-v\$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz"
-# latest npm version
-npmVersion='3.3.11'
 
 for device in $devices; do
 	case "$device" in
@@ -78,20 +79,31 @@ for device in $devices; do
 		else
 			baseVersion=$(expr match "$nodeVersion" '\([0-9]*\.[0-9]*\)')
 		fi
+
+		# For armv7hf and armv6hf, if node version is less than 4.x.x (0.10.x 0.12.x) then that image will use binaries from resin, otherwise it will use binaries from official distribution.
+		if [ $binary_arch == "armv7hf" ] || [ $binary_arch == "armv6hf" ]; then
+			if version_cmp "$nodeVersion" "4"; then
+				binary_url=$nodejsUrl
+				if [ $binary_arch == "armv6hf" ]; then
+					binary_arch='armv6l'
+				else
+					binary_arch='armv7l'
+				fi
+			fi
+		fi
+
 		dockerfilePath=$device/$baseVersion
 		mkdir -p $dockerfilePath
 		sed -e s~#{FROM}~resin/$device-buildpack-deps:jessie~g \
 			-e s~#{BINARY_URL}~$binary_url~g \
 			-e s~#{NODE_VERSION}~$nodeVersion~g \
-			-e s~#{TARGET_ARCH}~$binary_arch~g \
-			-e s~#{NPM_VERSION}~$npmVersion~g Dockerfile.tpl > $dockerfilePath/Dockerfile
+			-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.tpl > $dockerfilePath/Dockerfile
 
 		mkdir -p $dockerfilePath/wheezy
 		sed -e s~#{FROM}~resin/$device-buildpack-deps:wheezy~g \
 			-e s~#{BINARY_URL}~$binary_url~g \
 			-e s~#{NODE_VERSION}~$nodeVersion~g \
-			-e s~#{TARGET_ARCH}~$binary_arch~g \
-			-e s~#{NPM_VERSION}~$npmVersion~g Dockerfile.tpl > $dockerfilePath/wheezy/Dockerfile
+			-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.tpl > $dockerfilePath/wheezy/Dockerfile
 
 		mkdir -p $dockerfilePath/onbuild
 		sed -e s~#{FROM}~resin/$device-node:$nodeVersion~g Dockerfile.onbuild.tpl > $dockerfilePath/onbuild/Dockerfile
@@ -102,14 +114,12 @@ for device in $devices; do
 			sed -e s~#{FROM}~resin/$device-systemd:jessie~g \
 				-e s~#{BINARY_URL}~$binary_url~g \
 				-e s~#{NODE_VERSION}~$nodeVersion~g \
-				-e s~#{TARGET_ARCH}~$binary_arch~g \
-				-e s~#{NPM_VERSION}~$npmVersion~g Dockerfile.slim.tpl > $dockerfilePath/slim/Dockerfile
+				-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.slim.tpl > $dockerfilePath/slim/Dockerfile
 		else
 			sed -e s~#{FROM}~resin/$device-debian:jessie~g \
 				-e s~#{BINARY_URL}~$binary_url~g \
 				-e s~#{NODE_VERSION}~$nodeVersion~g \
-				-e s~#{TARGET_ARCH}~$binary_arch~g \
-				-e s~#{NPM_VERSION}~$npmVersion~g Dockerfile.slim.tpl > $dockerfilePath/slim/Dockerfile
+				-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.slim.tpl > $dockerfilePath/slim/Dockerfile
 		fi
 
 		# Only for intel edison
@@ -117,21 +127,17 @@ for device in $devices; do
 			sed -e s~#{FROM}~resin/$device-buildpack-deps:jessie~g \
 				-e s~#{BINARY_URL}~$binary_url~g \
 				-e s~#{NODE_VERSION}~$nodeVersion~g \
-				-e s~#{TARGET_ARCH}~$binary_arch~g \
-				-e s~#{NPM_VERSION}~$npmVersion~g Dockerfile.i386.edison.tpl > $dockerfilePath/Dockerfile
+				-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.i386.edison.tpl > $dockerfilePath/Dockerfile
 
 			sed -e s~#{FROM}~resin/$device-buildpack-deps:wheezy~g \
 				-e s~#{BINARY_URL}~$binary_url~g \
 				-e s~#{NODE_VERSION}~$nodeVersion~g \
-				-e s~#{TARGET_ARCH}~$binary_arch~g \
-				-e s~#{NPM_VERSION}~$npmVersion~g Dockerfile.i386.edison.tpl > $dockerfilePath/wheezy/Dockerfile
+				-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.i386.edison.tpl > $dockerfilePath/wheezy/Dockerfile
 
 			sed -e s~#{FROM}~resin/$device-debian:jessie~g \
 				-e s~#{BINARY_URL}~$binary_url~g \
 				-e s~#{NODE_VERSION}~$nodeVersion~g \
-				-e s~#{TARGET_ARCH}~$binary_arch~g \
-				-e s~#{NPM_VERSION}~$npmVersion~g Dockerfile.i386.edison.slim.tpl > $dockerfilePath/slim/Dockerfile
-
+				-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.i386.edison.slim.tpl > $dockerfilePath/slim/Dockerfile
 		fi
 	done
 done

@@ -1,4 +1,4 @@
-FROM resin/vab820-quad-python:2.7.10
+FROM resin/vab820-quad-python:2.7.11
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
