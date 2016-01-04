@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+# comparing version: http://stackoverflow.com/questions/16989598/bash-comparing-version-numbers
+function version_cmp() { test "$(echo "$@" | tr " " "\n" | sort -V | tail -n 1)" == "$1"; }
+
 devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6'
 nodeVersions='0.10.22 0.10.41 0.12.9 4.2.4 5.3.0'
 defaultVersion='0.10.22' 
@@ -78,6 +81,19 @@ for device in $devices; do
 		else
 			baseVersion=$(expr match "$nodeVersion" '\([0-9]*\.[0-9]*\)')
 		fi
+
+		# For armv7hf and armv6hf, if node version is less than 4.x.x (0.10.x 0.12.x) then that image will use binaries from resin, otherwise it will use binaries from official distribution.
+		if [ $binary_arch == "armv7hf" ] || [ $binary_arch == "armv6hf" ]; then
+			if version_cmp "$nodeVersion" "4"; then
+				binary_url=$nodejsUrl
+				if [ $binary_arch == "armv6hf" ]; then
+					binary_arch='armv6l'
+				else
+					binary_arch='armv7l'
+				fi
+			fi
+		fi
+
 		dockerfilePath=$device/$baseVersion
 		mkdir -p $dockerfilePath
 		sed -e s~#{FROM}~resin/$device-buildpack-deps:jessie~g \

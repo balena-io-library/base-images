@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+# comparing version: http://stackoverflow.com/questions/16989598/bash-comparing-version-numbers
+function version_cmp() { test "$(echo "$@" | tr " " "\n" | sort -V | tail -n 1)" == "$1"; }
+
 devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6'
 nodeVersions='0.9.12 '
 resinUrl="http://resin-packages.s3.amazonaws.com/node/v\$NODE_VERSION/node-v\$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz"
@@ -87,6 +90,19 @@ for device in $devices; do
 	for nodeVersion in $nodeVersions; do
 		echo $nodeVersion
 		baseVersion=$(expr match "$nodeVersion" '\([0-9]*\.[0-9]*\)')
+
+		# For armv7hf and armv6hf, if node version is less than 4.x.x (0.10.x 0.12.x) then that image will use binaries from resin, otherwise it will use binaries from official distribution.
+		if [ $binary_arch == "armv7hf" ] || [ $binary_arch == "armv6hf" ]; then
+			if version_cmp "$nodeVersion" "4"; then
+				binary_url=$nodejsUrl
+				if [ $binary_arch == "armv6hf" ]; then
+					binary_arch='armv6l'
+				else
+					binary_arch='armv7l'
+				fi
+			fi
+		fi
+		
 		dockerfilePath=$device/$baseVersion/$nodeVersion
 		mkdir -p $dockerfilePath
 		sed -e s~#{FROM}~resin/$device-buildpack-deps:jessie~g \
