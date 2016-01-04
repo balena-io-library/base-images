@@ -1,6 +1,6 @@
 FROM resin/nuc-buildpack-deps:wheezy
 
-ENV GO_VERSION 1.5.1
+ENV GO_VERSION 1.5.2
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SL "https://storage.googleapis.com/golang/go$GO_VERSION.linux-amd64.tar.gz" | tar xz -C /usr/local/go --strip-components=1
