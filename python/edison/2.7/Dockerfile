@@ -11,7 +11,8 @@ ENV LANG C.UTF-8
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		libdbus-1-dev \
 		libdbus-glib-1-dev \
-	&& rm -rf /var/lib/apt/lists/*
+	&& rm -rf /var/lib/apt/lists/* \
+	&& apt-get -y autoremove
 
 # import gpg keys
 RUN gpg --keyserver ha.pool.sks-keyservers.net --recv-keys C01E1CAD5EA2C4F0B8E3571504C367C218ADD4FF
@@ -22,7 +23,7 @@ RUN gpg --keyserver keyring.debian.org --recv-keys 4DE8FF2A63C7CC90
 # key 3372DCFA: public key "Donald Stufft (dstufft) <donald@stufft.io>" imported
 RUN gpg --keyserver pgp.mit.edu  --recv-key 6E3CBCE93372DCFA
 
-ENV PYTHON_VERSION 2.7.10
+ENV PYTHON_VERSION 2.7.11
 
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
 ENV PYTHON_PIP_VERSION 7.1.2
@@ -48,7 +49,7 @@ RUN set -x \
 	&& sha256sum -c setuptools-$SETUPTOOLS_VERSION.tar.gz.sha256sum \
 	&& tar -xzC /usr/src/python/setuptools --strip-components=1 -f setuptools-$SETUPTOOLS_VERSION.tar.gz \
 	&& cd /usr/src/python/setuptools \
-	&& python2 ez_setup.py \
+	&& python3 ez_setup.py \
 	&& mkdir -p /usr/src/python/pip \
 	&& curl -SL "https://pypi.python.org/packages/source/p/pip/pip-$PYTHON_PIP_VERSION.tar.gz" -o pip.tar.gz \
 	&& curl -SL "https://pypi.python.org/packages/source/p/pip/pip-$PYTHON_PIP_VERSION.tar.gz.asc" -o pip.tar.gz.asc \
@@ -56,7 +57,7 @@ RUN set -x \
 	&& tar -xzC /usr/src/python/pip --strip-components=1 -f pip.tar.gz \
 	&& rm pip.tar.gz* \
 	&& cd /usr/src/python/pip \
-	&& python2 setup.py install \
+	&& python3 setup.py install \
 	&& cd .. \
 	&& find /usr/local \
 		\( -type d -a -name test -o -name tests \) \
@@ -66,7 +67,7 @@ RUN set -x \
 	&& rm -rf /usr/src/python
 
 # install "virtualenv", since the vast majority of users of this image will want it
-RUN pip install --no-cache-dir virtualenv
+RUN pip3 install --no-cache-dir virtualenv
 
 ENV PYTHON_DBUS_VERSION 1.2.0
 
@@ -84,6 +85,15 @@ RUN set -x \
 	&& make install \
 	&& cd / \
 	&& rm -rf /usr/src/dbus-python
+
+# make some useful symlinks that are expected to exist
+RUN cd /usr/local/bin \
+	&& ln -sf pip3 pip \
+	&& ln -sf easy_install-2.7 easy_install \
+	&& ln -sf idle3 idle \
+	&& ln -sf pydoc3 pydoc \
+	&& ln -sf python3 python \
+	&& ln -sf python-config3 python-config
 
 CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command could be found in Dockerfile Guide section in our Docs. Here's the link: http://docs.resin.io/#/pages/using/dockerfile.md"]
 COPY setup.sh /setup.sh

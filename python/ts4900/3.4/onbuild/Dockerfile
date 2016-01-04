@@ -1,4 +1,4 @@
-FROM resin/ts4900-python:3.4.3
+FROM resin/ts4900-python:3.4.4
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
