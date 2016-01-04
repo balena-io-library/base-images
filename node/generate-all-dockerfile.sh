@@ -9,17 +9,17 @@ nodejsUrl="http://nodejs.org/dist/v\$NODE_VERSION/node-v\$NODE_VERSION-linux-#{T
 npmVersion='3.3.11'
 
 #0.10.x
-nodeVersions+=$(seq -f "0.10.%g" -s ' ' 0 38)
+nodeVersions+=$(seq -f "0.10.%g" -s ' ' 0 41)
 nodeVersions+=' '
 #0.11.x
 nodeVersions+=$(seq -f "0.11.%g" -s ' ' 0 16)
 nodeVersions+=' '
 #0.12.x
-nodeVersions+=$(seq -f "0.12.%g" -s ' ' 0 4)
+nodeVersions+=$(seq -f "0.12.%g" -s ' ' 0 9)
 #4.x.x
-nodeVersions+=' 4.0.0 4.1.0 4.1.1 4.1.2 4.2.0 4.2.1'
+nodeVersions+=' 4.0.0 4.1.0 4.1.1 4.1.2 4.2.0 4.2.1 4.2.2 4.2.3 4.2.4'
 #5.x.x
-nodeVersions+=' 5.0.0'
+nodeVersions+=' 5.0.0 5.2.0 5.3.0'
 
 for device in $devices; do
 	case "$device" in
