@@ -1,5 +1,7 @@
 FROM resin/armv7hf-systemd:jessie
 
+LABEL io.resin.device-type="odroid-ux3"
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		less \
 		module-init-tools \

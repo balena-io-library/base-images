@@ -1,5 +1,7 @@
 FROM resin/armv7hf-systemd:jessie
 
+LABEL io.resin.device-type="raspberrypi2"
+
 RUN echo "deb http://archive.raspbian.org/raspbian jessie main contrib non-free rpi firmware" >>  /etc/apt/sources.list
 RUN apt-key adv --keyserver pgp.mit.edu  --recv-key 0x9165938D90FDDD2E
 
