@@ -92,10 +92,12 @@ for device in $devices; do
 		sed -e "s@#{FROM}@resin/$baseImage:$suite@g" \
 			-e "s@#{SOURCES_LIST}@$sourcelist@g" \
 			-e "s@#{SUITE}@$suite@g" \
-			-e "s@#{KEYS}@$key@g" $template > $dockerfilePath/$suite/Dockerfile
+			-e "s@#{KEYS}@$key@g" \
+			-e "s@#{DEV_TYPE}@$device@g" $template > $dockerfilePath/$suite/Dockerfile
 		else
 			sed -e s~#{FROM}~resin/$baseImage:$suite~g \
-				-e s~#{SUITE}~$suite~g $template > $dockerfilePath/$suite/Dockerfile
+				-e s~#{SUITE}~$suite~g \
+				-e s@#{DEV_TYPE}@$device@ $template > $dockerfilePath/$suite/Dockerfile
 		fi
 	done
 done

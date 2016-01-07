@@ -1,5 +1,7 @@
 FROM resin/armv7hf-systemd:wheezy
 
+LABEL io.resin.device-type="cubox-i"
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		less \
 		module-init-tools \
