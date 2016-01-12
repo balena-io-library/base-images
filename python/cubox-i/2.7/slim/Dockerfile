@@ -64,7 +64,7 @@ RUN set -x \
 	&& sha256sum -c setuptools-$SETUPTOOLS_VERSION.tar.gz.sha256sum \
 	&& tar -xzC /usr/src/python/setuptools --strip-components=1 -f setuptools-$SETUPTOOLS_VERSION.tar.gz \
 	&& cd /usr/src/python/setuptools \
-	&& python3 ez_setup.py \
+	&& python2 ez_setup.py \
 	&& mkdir -p /usr/src/python/pip \
 	&& curl -SL "https://pypi.python.org/packages/source/p/pip/pip-$PYTHON_PIP_VERSION.tar.gz" -o pip.tar.gz \
 	&& curl -SL "https://pypi.python.org/packages/source/p/pip/pip-$PYTHON_PIP_VERSION.tar.gz.asc" -o pip.tar.gz.asc \
@@ -72,7 +72,7 @@ RUN set -x \
 	&& tar -xzC /usr/src/python/pip --strip-components=1 -f pip.tar.gz \
 	&& rm pip.tar.gz* \
 	&& cd /usr/src/python/pip \
-	&& python3 setup.py install \
+	&& python2 setup.py install \
 	&& cd .. \
 	&& find /usr/local \
 		\( -type d -a -name test -o -name tests \) \
@@ -83,7 +83,7 @@ RUN set -x \
 	&& rm -rf /usr/src/python
 
 # install "virtualenv", since the vast majority of users of this image will want it
-RUN pip3 install --no-cache-dir virtualenv
+RUN pip install --no-cache-dir virtualenv
 
 # install dbus-python dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -113,15 +113,6 @@ RUN set -x \
 	&& cd / \
 	&& apt-get purge -y --auto-remove $buildDeps \
 	&& rm -rf /usr/src/dbus-python
-
-# make some useful symlinks that are expected to exist
-RUN cd /usr/local/bin \
-	&& ln -sf pip3 pip \
-	&& ln -sf easy_install-2.7 easy_install \
-	&& ln -sf idle3 idle \
-	&& ln -sf pydoc3 pydoc \
-	&& ln -sf python3 python \
-	&& ln -sf python-config3 python-config
 
 CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command could be found in Dockerfile Guide section in our Docs. Here's the link: http://docs.resin.io/#/pages/using/dockerfile.md"]
 ENV PYTHONPATH /usr/lib/python2.7/dist-packages
