@@ -2,7 +2,7 @@ FROM resin/raspberrypi-systemd:jessie
 
 ENV GO_VERSION 1.5.2
 
-RUN buildDeps='curl gcc g++ git' \
+RUN buildDeps='curl gcc g++ git ca-certificates' \
 	&& set -x \
 	&& apt-get update && apt-get install -y $buildDeps \
 	&& rm -rf /var/lib/apt/lists/* \
