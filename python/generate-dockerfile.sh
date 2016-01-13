@@ -38,7 +38,7 @@ pythonVersions='2.7.11 3.2.6 3.3.6 3.4.4 3.5.1'
 for device in $devices; do
 	for pythonVersion in $pythonVersions; do
 
-		if [ $pythonVersion != "2.7.10" ]; then
+		if [ $pythonVersion != "2.7.11" ]; then
 			template='Dockerfile.python3.tpl'
 			slimTemplate='Dockerfile.python3.slim.tpl'
 		else
