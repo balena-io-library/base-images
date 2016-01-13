@@ -6,7 +6,7 @@ function version_cmp() { test "$(echo "$@" | tr " " "\n" | sort -V | tail -n 1)"
 
 devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6'
 nodeVersions='0.10.22 0.10.41 0.12.9 4.2.4 5.3.0'
-defaultVersion='0.10.22' 
+defaultVersion='0.10.22'
 resinUrl="http://resin-packages.s3.amazonaws.com/node/v\$NODE_VERSION/node-v\$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz"
 nodejsUrl="http://nodejs.org/dist/v\$NODE_VERSION/node-v\$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz"
 
@@ -92,6 +92,13 @@ for device in $devices; do
 			fi
 		fi
 
+		# Fix 0.12.x node version on wheezy images to 0.12.7
+		if [ $baseVersion == "0.12" ]; then
+			wheezy_node_version='0.12.7'
+		else
+			wheezy_node_version=$nodeVersion
+		fi
+
 		dockerfilePath=$device/$baseVersion
 		mkdir -p $dockerfilePath
 		sed -e s~#{FROM}~resin/$device-buildpack-deps:jessie~g \
@@ -102,7 +109,7 @@ for device in $devices; do
 		mkdir -p $dockerfilePath/wheezy
 		sed -e s~#{FROM}~resin/$device-buildpack-deps:wheezy~g \
 			-e s~#{BINARY_URL}~$binary_url~g \
-			-e s~#{NODE_VERSION}~$nodeVersion~g \
+			-e s~#{NODE_VERSION}~$wheezy_node_version~g \
 			-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.tpl > $dockerfilePath/wheezy/Dockerfile
 
 		mkdir -p $dockerfilePath/onbuild
@@ -131,7 +138,7 @@ for device in $devices; do
 
 			sed -e s~#{FROM}~resin/$device-buildpack-deps:wheezy~g \
 				-e s~#{BINARY_URL}~$binary_url~g \
-				-e s~#{NODE_VERSION}~$nodeVersion~g \
+				-e s~#{NODE_VERSION}~$wheezy_node_version~g \
 				-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.i386.edison.tpl > $dockerfilePath/wheezy/Dockerfile
 
 			sed -e s~#{FROM}~resin/$device-debian:jessie~g \

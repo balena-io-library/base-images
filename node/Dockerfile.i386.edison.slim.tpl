@@ -3,7 +3,7 @@ FROM #{FROM}
 
 ENV NODE_VERSION #{NODE_VERSION}
 
-RUN apt-get update && apt-get install -y curl ca-certificates --no-install-recommends \
+RUN apt-get update && apt-get install -y curl ca-certificates python --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& curl -SLO "#{BINARY_URL}" \
 	&& tar -xzf "node-v$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz" -C /usr/local --strip-components=1 \
