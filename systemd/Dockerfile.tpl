@@ -16,7 +16,9 @@ RUN systemctl mask \
     systemd-remount-fs.service \
 
     getty.target \
-    graphical.target  
+    graphical.target
+
+ENV RESIN_DEVTMPFS 1
 
 COPY entry.sh /usr/bin/entry.sh    
 COPY launch.service /etc/systemd/system/launch.service
