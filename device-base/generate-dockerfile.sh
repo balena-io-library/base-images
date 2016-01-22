@@ -9,7 +9,7 @@ bb_key_cmd='apt-key adv --keyserver keyserver.ubuntu.com --recv-key D284E608A4C4
 bb_sourceslist_wheezy_cmd='echo "deb http://debian.beagleboard.org/packages wheezy-bbb main" >> /etc/apt/sources.list'
 bb_key_wheezy_cmd='apt-key adv --keyserver keyserver.ubuntu.com --recv-key B2710B8359890110'
 
-devices='raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6'
+devices='raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700'
 suites='jessie wheezy'
 
 for device in $devices; do
@@ -70,6 +70,10 @@ for device in $devices; do
 	'apalis-imx6')
 		template='Dockerfile.tpl'
 		baseImage='armv7hf-systemd'
+	;;
+	'ts7700')
+		template='Dockerfile.tpl'
+		baseImage='armel-systemd'
 	;;
 	esac
 
