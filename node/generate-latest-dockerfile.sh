@@ -4,7 +4,7 @@ set -e
 # comparing version: http://stackoverflow.com/questions/16989598/bash-comparing-version-numbers
 function version_cmp() { test "$(echo "$@" | tr " " "\n" | sort -V | tail -n 1)" == "$1"; }
 
-devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6'
+devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700'
 nodeVersions='0.10.22 0.10.41 0.12.9 4.2.4 5.3.0'
 defaultVersion='0.10.22'
 resinUrl="http://resin-packages.s3.amazonaws.com/node/v\$NODE_VERSION/node-v\$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz"
@@ -71,6 +71,10 @@ for device in $devices; do
 	'apalis-imx6')
 		binary_url=$resinUrl
 		binary_arch='armv7hf'
+	;;
+	'ts7700')
+		binary_url=$resinUrl
+		binary_arch='armel'
 	;;
 	esac
 	for nodeVersion in $nodeVersions; do
