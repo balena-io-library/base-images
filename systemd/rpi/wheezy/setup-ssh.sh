@@ -16,19 +16,24 @@ else
 	echo "root:$SSH_PASSWORD" | chpasswd
 fi
 
-# Automatically download ssh keys if RESIN_API_KEY or AUTH_TOKEN environment variable is defined.
-if [ ! -z "$AUTH_TOKEN" ] || [ ! -z "$RESIN_API_KEY" ]; then
-	if [ -z "$RESIN_API_KEY" ]; then
-		# Use Auth Token to download SSH keys from Resin API
-		curl -s -H "Authorization: Bearer $AUTH_TOKEN" 'https://api.resin.io/ewa/user__has__public_key?$select=id,title,public_key' | extract_json_value 'public_key' > /data/ssh_keys
-	else
-		# Use Resin API Key to download SSH keys from Resin API
-		curl -s "https://api.resin.io/ewa/user__has__public_key?apikey=$RESIN_API_KEY&\$select=id,title,public_key" | extract_json_value 'public_key' > /data/ssh_keys
+# Only download SSH keys if not exists.
+if [ -f /data/ssh_keys ]; then
+	echo "SSH key already exists."
+else
+	# Automatically download ssh keys if RESIN_API_KEY or AUTH_TOKEN environment variable is defined.
+	if [ ! -z "$AUTH_TOKEN" ] || [ ! -z "$RESIN_API_KEY" ]; then
+		if [ -z "$RESIN_API_KEY" ]; then
+			# Use Auth Token to download SSH keys from Resin API
+			curl -s -H "Authorization: Bearer $AUTH_TOKEN" 'https://api.resin.io/ewa/user__has__public_key?$select=id,title,public_key' | extract_json_value 'public_key' > /data/ssh_keys
+		else
+			# Use Resin API Key to download SSH keys from Resin API
+			curl -s "https://api.resin.io/ewa/user__has__public_key?apikey=$RESIN_API_KEY&\$select=id,title,public_key" | extract_json_value 'public_key' > /data/ssh_keys
+		fi
 	fi
-
-	cp -rf /data/ssh_keys /root/.ssh/authorized_keys
-	chmod 600  /root/.ssh/authorized_keys
 fi
+
+cp -rf /data/ssh_keys /root/.ssh/authorized_keys
+chmod 600  /root/.ssh/authorized_keys
 
 # Default ssh port will be 22 if SSH_PORT enviroment variable is not defined.
 if [ -z "$SSH_PORT" ]; then

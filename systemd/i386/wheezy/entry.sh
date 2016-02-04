@@ -23,8 +23,14 @@ mount --move /tmp /dev
 # ref: https://www.kernel.org/doc/Documentation/filesystems/devpts.txt
 ln -sf /dev/pts/ptmx /dev/ptmx
 
-if [ "$SSH_MODE" = "on" ] ; then
-        ./usr/lib/resin/setup-ssh.sh
+if [ "$SSH_MODE" = "on" ] || [ "$SYNC_MODE" = "on" ]; then
+	if [ "$SYNC_MODE" = "on" ]; then
+		export SSH_PORT=80
+		bash /usr/lib/resin/setup-ssh.sh
+    	bash /usr/lib/resin/setup-resin-sync.sh
+    else
+    	bash /usr/lib/resin/setup-ssh.sh
+    fi
 fi
 
 mount -t debugfs nodev /sys/kernel/debug
