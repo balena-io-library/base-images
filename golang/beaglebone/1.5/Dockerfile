@@ -1,6 +1,6 @@
 FROM resin/beaglebone-buildpack-deps:jessie
 
-ENV GO_VERSION 1.5.1
+ENV GO_VERSION 1.5.2
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SL "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go-v$GO_VERSION-linux-armv7hf.tar.gz" | tar xz -C /usr/local/go --strip-components=1

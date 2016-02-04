@@ -3,11 +3,88 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2016-01-25
+
+### Added
+
+- Add armel-systemd base images.
+- Add base images for new board TS7700.
+
+
+## 2016-01-22
+
+### Changed
+
+- Update QEMU version to v2.5.0-resin-rc1.
+
+
+## 2016-01-13
+
+### Changed
+
+- Fix bug in Python Dockerfile generating script.
+- Fix missing packages in Edison Node slim images.
+- Drop support for v0.12.x Node on wheezy images, the last supported version is v0.12.7.
+
+
+## 2016-01-08
+
+### Changed
+
+- Fix improper CMD instruction parsing.
+
+
+## 2016-01-07
+
+### Added
+
+- Add image metadata: io.resin.architecture, io.resin.qemu.version and io.resin.device-type.
+
+### Changed
+
+- Bump QEMU version to 2.5.0. This update fixes problem between Go and QEMU, we are able to run Go builds on x86 builders since Go v1.5.2 and QEMU 2.5.0.
+
+
+## 2016-01-04
+
+## Changed
+
+- Bump Node.js images to v0.10.41, v0.12.9, v4.2.4, v5.3.0 (latest).
+- Bump Python images to v2.7.11 (latest), v3.4.4, v3.5.1.
+- Bump Golang images to v1.5.2. 
+- Reduce Python images size by tidying up unnecessary packages.
+- Remove specific npm version in node images.
+- Fix missing pacakges for node slim images.
+- Reduce image size by preventing docs/locales from being installed by apt.
+
+## 2015-12-23
+
+## Changed
+
+- Fix bad error message when the CMD points to a file which does not exist.
+
+
+## 2015-12-11
+
+### Changed
+
+- Fix issue with systemd booting logs.
+
+
+## 2015-11-20
+
+### Changed
+
+- Fix issue with format of sha256sum file on wheezy images because old version of sha256sum requires exactly two whitespaces in the input.
+- Fix issue of missing packages when using Python compiled from source and reorganize libmraa installation on edison base images.
+
+
 ## 2015-11-19
 
 - Symlink /dev/pts/ptmx to /dev/ptmx as /dev/pts is mounted -o newinstance. See
   https://www.kernel.org/doc/Documentation/filesystems/devpts.txt for more
   details.
+
 
 ## 2015-11-13
 
@@ -50,7 +127,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 - Fix issues with shadowed mount points on systemd images: remounting /dev/shm, /dev/mqueme, /dev/pts, /dev/console after mounting /dev with devtmpfs.
 - Change Beaglebone repo gpg keys to the correct value.
-- Pump Node.js v4.0.0 to v4.2.1.
+- Bump Node.js v4.0.0 to v4.2.1.
 
 
 ## 2015-11-03

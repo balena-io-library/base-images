@@ -9,7 +9,7 @@ bb_key_cmd='apt-key adv --keyserver keyserver.ubuntu.com --recv-key D284E608A4C4
 bb_sourceslist_wheezy_cmd='echo "deb http://debian.beagleboard.org/packages wheezy-bbb main" >> /etc/apt/sources.list'
 bb_key_wheezy_cmd='apt-key adv --keyserver keyserver.ubuntu.com --recv-key B2710B8359890110'
 
-devices='raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6'
+devices='raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700'
 suites='jessie wheezy'
 
 for device in $devices; do
@@ -71,6 +71,10 @@ for device in $devices; do
 		template='Dockerfile.tpl'
 		baseImage='armv7hf-systemd'
 	;;
+	'ts7700')
+		template='Dockerfile.tpl'
+		baseImage='armel-systemd'
+	;;
 	esac
 
 	for suite in $suites; do
@@ -92,10 +96,12 @@ for device in $devices; do
 		sed -e "s@#{FROM}@resin/$baseImage:$suite@g" \
 			-e "s@#{SOURCES_LIST}@$sourcelist@g" \
 			-e "s@#{SUITE}@$suite@g" \
-			-e "s@#{KEYS}@$key@g" $template > $dockerfilePath/$suite/Dockerfile
+			-e "s@#{KEYS}@$key@g" \
+			-e "s@#{DEV_TYPE}@$device@g" $template > $dockerfilePath/$suite/Dockerfile
 		else
 			sed -e s~#{FROM}~resin/$baseImage:$suite~g \
-				-e s~#{SUITE}~$suite~g $template > $dockerfilePath/$suite/Dockerfile
+				-e s~#{SUITE}~$suite~g \
+				-e s@#{DEV_TYPE}@$device@ $template > $dockerfilePath/$suite/Dockerfile
 		fi
 	done
 done

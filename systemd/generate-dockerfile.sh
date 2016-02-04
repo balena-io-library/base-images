@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-repos='armv7hf rpi i386 amd64'
+repos='armv7hf rpi i386 amd64 armel'
 suites='jessie wheezy'
 
 chmod +x entry.sh entry-nosystemd.sh
@@ -18,6 +18,10 @@ for repo in $repos; do
 	;;
 	'amd64')
 		baseImage='amd64-debian'
+	;;
+	'armel')
+		baseImage='armel-debian'
+	;;
 	esac
 	for suite in $suites; do
 		dockerfilePath=$repo/$suite

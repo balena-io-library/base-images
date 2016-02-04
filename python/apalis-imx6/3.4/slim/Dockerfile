@@ -12,7 +12,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		ca-certificates \
 		libsqlite3-0 \
 		libssl1.0.0 \
-	&& rm -rf /var/lib/apt/lists/*
+	&& rm -rf /var/lib/apt/lists/* \
+	&& apt-get -y autoremove
 
 # import gpg keys
 RUN gpg --keyserver ha.pool.sks-keyservers.net --recv-keys 97FC712E4C024BBEA48A61ED3A5CA953F73C700D
@@ -23,7 +24,7 @@ RUN gpg --keyserver keyring.debian.org --recv-keys 4DE8FF2A63C7CC90
 # key 3372DCFA: public key "Donald Stufft (dstufft) <donald@stufft.io>" imported
 RUN gpg --keyserver pgp.mit.edu  --recv-key 6E3CBCE93372DCFA
 
-ENV PYTHON_VERSION 3.4.3
+ENV PYTHON_VERSION 3.4.4
 
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
 ENV PYTHON_PIP_VERSION 7.1.2

@@ -1,5 +1,7 @@
 FROM resin/armv7hf-systemd:jessie
 
+LABEL io.resin.device-type="vab820-quad"
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		less \
 		module-init-tools \

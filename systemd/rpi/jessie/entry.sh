@@ -38,7 +38,8 @@ if [ "$INITSYSTEM" = "on" ]; then
 	echo -e "${GREEN}Systemd init system enabled."
 	env > /etc/docker.env
 
-	echo -e "#!/bin/bash\n exec $@" > /etc/resinApp.sh
+	printf '#!/bin/bash\n exec ' > /etc/resinApp.sh
+	printf '%q ' "$@" >> /etc/resinApp.sh
 	chmod +x /etc/resinApp.sh
 
 	mkdir -p /etc/systemd/system/launch.service.d
@@ -47,12 +48,18 @@ if [ "$INITSYSTEM" = "on" ]; then
 		WorkingDirectory=$(pwd)
 	EOF
 
-	exec /sbin/init quiet
+	exec /sbin/init quiet systemd.show_status=0
 else
 	udevd & 
 	udevadm trigger &> /dev/null
 	
 	CMD=$(which $1)
-	shift
-	exec "$CMD" "$@"
+	# echo error message, when executable file doesn't exist.
+	if [  $? == '0' ]; then
+		shift
+		exec "$CMD" "$@"
+	else
+		echo "Command not found: $1"
+		exit 1
+	fi
 fi

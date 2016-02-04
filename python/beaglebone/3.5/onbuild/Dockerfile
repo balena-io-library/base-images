@@ -1,4 +1,4 @@
-FROM resin/beaglebone-python:3.5.0
+FROM resin/beaglebone-python:3.5.1
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app

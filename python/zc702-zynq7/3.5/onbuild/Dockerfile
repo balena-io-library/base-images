@@ -1,4 +1,4 @@
-FROM resin/zc702-zynq7-python:3.5.0
+FROM resin/zc702-zynq7-python:3.5.1
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app

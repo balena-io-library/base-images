@@ -1,4 +1,4 @@
-FROM resin/cubox-i-python:3.4.3
+FROM resin/cubox-i-python:3.4.4
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app

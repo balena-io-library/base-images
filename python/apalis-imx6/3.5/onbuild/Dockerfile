@@ -1,4 +1,4 @@
-FROM resin/apalis-imx6-python:3.5.0
+FROM resin/apalis-imx6-python:3.5.1
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
