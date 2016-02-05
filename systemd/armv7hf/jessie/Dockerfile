@@ -23,4 +23,6 @@ COPY launch.service /etc/systemd/system/launch.service
 
 RUN systemctl enable /etc/systemd/system/launch.service
 
+STOPSIGNAL SIGTERM
+
 ENTRYPOINT ["/usr/bin/entry.sh"]
