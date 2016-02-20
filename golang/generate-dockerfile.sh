@@ -3,7 +3,7 @@ set -e
 
 devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700'
 goVersions='1.4.3 1.5.2'
-resinUrl="http://resin-packages.s3.amazonaws.com/golang/v\$GO_VERSION/go-v\$GO_VERSION-linux-#{TARGET_ARCH}.tar.gz"
+resinUrl="http://resin-packages.s3.amazonaws.com/golang/v\$GO_VERSION/go\$GO_VERSION.linux-#{TARGET_ARCH}.tar.gz"
 golangUrl="https://storage.googleapis.com/golang/go\$GO_VERSION.linux-#{TARGET_ARCH}.tar.gz"
 
 for device in $devices; do
@@ -76,11 +76,15 @@ for device in $devices; do
 	for goVersion in $goVersions; do
 		baseVersion=$(expr match "$goVersion" '\([0-9]*\.[0-9]*\)')
 
+		# Extract checksum
+		checksum=$(grep " go$goVersion.linux-$binary_arch.tar.gz" SHASUMS256.txt)
+
 		dockerfilePath=$device/$baseVersion
 		mkdir -p $dockerfilePath
 		sed -e s~#{FROM}~resin/$device-buildpack-deps:jessie~g \
 			-e s~#{BINARY_URL}~$binary_url~g \
 			-e s~#{GO_VERSION}~$goVersion~g \
+			-e s~#{CHECKSUM}~"$checksum"~g \
 			-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.tpl > $dockerfilePath/Dockerfile
 		cp go-wrapper $dockerfilePath/
 
@@ -88,6 +92,7 @@ for device in $devices; do
 		sed -e s~#{FROM}~resin/$device-buildpack-deps:wheezy~g \
 			-e s~#{BINARY_URL}~$binary_url~g \
 			-e s~#{GO_VERSION}~$goVersion~g \
+			-e s~#{CHECKSUM}~"$checksum"~g \
 			-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.tpl > $dockerfilePath/wheezy/Dockerfile
 		cp go-wrapper $dockerfilePath/wheezy/
 
@@ -101,11 +106,13 @@ for device in $devices; do
 			sed -e s~#{FROM}~resin/$device-systemd:jessie~g \
 				-e s~#{BINARY_URL}~$binary_url~g \
 				-e s~#{GO_VERSION}~$goVersion~g \
+				-e s~#{CHECKSUM}~"$checksum"~g \
 				-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.slim.tpl > $dockerfilePath/slim/Dockerfile
 		else
 			sed -e s~#{FROM}~resin/$device-debian:jessie~g \
 				-e s~#{BINARY_URL}~$binary_url~g \
 				-e s~#{GO_VERSION}~$goVersion~g \
+				-e s~#{CHECKSUM}~"$checksum"~g \
 				-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.slim.tpl > $dockerfilePath/slim/Dockerfile
 		fi
 		cp go-wrapper $dockerfilePath/slim/
