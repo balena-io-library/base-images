@@ -85,5 +85,9 @@ for device in "${devices[@]}"; do
 		if [ $distro == 'debian' ]; then
 			generate_library "$device" "$distro" "wheezy slim"
 		fi
+		# Alpine
+		if [ $distro == 'alpine' ]; then
+			generate_library "$device" "$distro" "edge slim"
+		fi
 	done
 done
