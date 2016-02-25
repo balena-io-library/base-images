@@ -18,6 +18,8 @@ for device in $devices; do
 	'raspberrypi2')
 		template='Dockerfile.armv7hf.rpi.tpl'
 		baseImage='armv7hf-systemd'
+		alpine_template='Dockerfile.alpine.tpl'
+		alpine_baseImage='armhf-alpine'
 	;;
 	'raspberrypi3')
 		template='Dockerfile.armv7hf.rpi.tpl'
@@ -26,54 +28,82 @@ for device in $devices; do
 	'beaglebone')
 		template='Dockerfile.armv7hf.bbb.tpl'
 		baseImage='armv7hf-systemd'
+		alpine_template='Dockerfile.alpine.tpl'
+		alpine_baseImage='armhf-alpine'
 	;;
 	'edison')
 		template='Dockerfile.i386.edison.tpl'
 		baseImage='i386-systemd'
+		# TODO: Can't compile mraa on alpine linux atm, lack of necessary libraries.
+		#alpine_template='Dockerfile.alpine.i386.edison.tpl'
+		alpine_template='Dockerfile.alpine.tpl'
+		alpine_baseImage='i386-alpine'
 	;;
 	'nuc')
 		template='Dockerfile.tpl'
 		baseImage='amd64-systemd'
+		alpine_template='Dockerfile.alpine.tpl'
+		alpine_baseImage='amd64-alpine'
 	;;
 	'vab820-quad')
 		template='Dockerfile.tpl'
 		baseImage='armv7hf-systemd'
+		alpine_template='Dockerfile.alpine.tpl'
+		alpine_baseImage='armhf-alpine'
 	;;
 	'zc702-zynq7')
 		template='Dockerfile.tpl'
 		baseImage='armv7hf-systemd'
+		alpine_template='Dockerfile.alpine.tpl'
+		alpine_baseImage='armhf-alpine'
 	;;
 	'odroid-c1')
 		template='Dockerfile.tpl'
 		baseImage='armv7hf-systemd'
+		alpine_template='Dockerfile.alpine.tpl'
+		alpine_baseImage='armhf-alpine'
 	;;
 	'odroid-ux3')
 		template='Dockerfile.tpl'
 		baseImage='armv7hf-systemd'
+		alpine_template='Dockerfile.alpine.tpl'
+		alpine_baseImage='armhf-alpine'
 	;;
 	'parallella-hdmi-resin')
 		template='Dockerfile.tpl'
 		baseImage='armv7hf-systemd'
+		alpine_template='Dockerfile.alpine.tpl'
+		alpine_baseImage='armhf-alpine'
 	;;
 	'nitrogen6x')
 		template='Dockerfile.tpl'
 		baseImage='armv7hf-systemd'
+		alpine_template='Dockerfile.alpine.tpl'
+		alpine_baseImage='armhf-alpine'
 	;;
 	'cubox-i')
 		template='Dockerfile.tpl'
 		baseImage='armv7hf-systemd'
+		alpine_template='Dockerfile.alpine.tpl'
+		alpine_baseImage='armhf-alpine'
 	;;
 	'ts4900')
 		template='Dockerfile.tpl'
 		baseImage='armv7hf-systemd'
+		alpine_template='Dockerfile.alpine.tpl'
+		alpine_baseImage='armhf-alpine'
 	;;
 	'colibri-imx6')
 		template='Dockerfile.tpl'
 		baseImage='armv7hf-systemd'
+		alpine_template='Dockerfile.alpine.tpl'
+		alpine_baseImage='armhf-alpine'
 	;;
 	'apalis-imx6')
 		template='Dockerfile.tpl'
 		baseImage='armv7hf-systemd'
+		alpine_template='Dockerfile.alpine.tpl'
+		alpine_baseImage='armhf-alpine'
 	;;
 	'ts7700')
 		template='Dockerfile.tpl'
@@ -107,6 +137,17 @@ for device in $devices; do
 				-e s~#{SUITE}~$suite~g \
 				-e s@#{DEV_TYPE}@$device@ $template > $dockerfilePath/$suite/Dockerfile
 		fi
-	done
-done
 
+		# Generate dockerfiles for Alpine images.
+		if [ ! -z $alpine_template ]; then
+			mkdir -p $dockerfilePath/alpine
+			sed -e s~#{FROM}~resin/$alpine_baseImage:latest~g \
+				-e s@#{DEV_TYPE}@$device@ $alpine_template > $dockerfilePath/alpine/Dockerfile
+		fi
+	done
+
+	# For RPI1, only generate alpine image
+	mkdir -p raspberrypi/alpine
+	sed -e s~#{FROM}~resin/armhf-alpine:latest~g \
+		-e s@#{DEV_TYPE}@raspberrypi@ Dockerfile.alpine.tpl > raspberrypi/alpine/Dockerfile
+done
