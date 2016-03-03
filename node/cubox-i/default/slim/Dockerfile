@@ -3,7 +3,7 @@ FROM resin/cubox-i-debian:jessie
 
 ENV NODE_VERSION 0.10.22
 
-RUN buildDeps='curl ca-certificates' \
+RUN buildDeps='ca-certificates' \
 	&& set -x \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/* \

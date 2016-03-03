@@ -34,7 +34,6 @@ ENV SETUPTOOLS_VERSION 18.5
 
 RUN set -x \
 	&& buildDeps=' \
-		curl \
 		gcc \
 		libbz2-dev \
 		libc6-dev \
@@ -96,7 +95,6 @@ ENV PYTHON_DBUS_VERSION 1.2.0
 # install dbus-python
 RUN set -x \
 	&& buildDeps=' \
-		curl \
 		build-essential \
 	' \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends && rm -rf /var/lib/apt/lists/* \
