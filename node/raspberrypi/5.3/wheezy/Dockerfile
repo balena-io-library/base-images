@@ -4,6 +4,7 @@ FROM resin/raspberrypi-buildpack-deps:wheezy
 ENV NODE_VERSION 5.3.0
 
 RUN curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-armv6l.tar.gz" \
+	&& echo "266bedf9f8777c98abd0f28b41b0bb2b0b3d5be888bcfb899bf46fd986188172  node-v5.3.0-linux-armv6l.tar.gz" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-armv6l.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-armv6l.tar.gz" \
 	&& npm config set unsafe-perm true -g --unsafe-perm \

@@ -4,6 +4,7 @@ FROM resin/edison-buildpack-deps:jessie
 ENV NODE_VERSION 0.10.41
 
 RUN curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x86.tar.gz" \
+	&& echo "5ab658a14106c4625cadf6976dde223ef5b332d60b03413515764b783eb452ef  node-v0.10.41-linux-x86.tar.gz" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-x86.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-x86.tar.gz" \
 	&& npm install mraa \

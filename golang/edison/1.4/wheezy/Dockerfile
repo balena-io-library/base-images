@@ -3,7 +3,9 @@ FROM resin/edison-buildpack-deps:wheezy
 ENV GO_VERSION 1.4.3
 
 RUN mkdir -p /usr/local/go \
-	&& curl -SL "https://storage.googleapis.com/golang/go$GO_VERSION.linux-386.tar.gz" | tar xz -C /usr/local/go --strip-components=1
+	&& curl -SLO "https://storage.googleapis.com/golang/go$GO_VERSION.linux-386.tar.gz" \
+	&& echo "20c666025dd84dd7f2ec856aa5c0c104b6477c13b564113555b048a65e105306  go1.4.3.linux-386.tar.gz" | sha256sum -c - \
+	&& tar -xzf "go$GO_VERSION.linux-386.tar.gz" -C /usr/local/go --strip-components=1
 
 ENV GOROOT /usr/local/go
 ENV GOPATH /go

@@ -4,6 +4,7 @@ FROM resin/beaglebone-buildpack-deps:jessie
 ENV NODE_VERSION 0.10.41
 
 RUN curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-armv7hf.tar.gz" \
+	&& echo "0a378905c5fd4d5de8dc9aaaa42599e7375702cf15cc18f308eb26d86fede12c  node-v0.10.41-linux-armv7hf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-armv7hf.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-armv7hf.tar.gz" \
 	&& npm config set unsafe-perm true -g --unsafe-perm \

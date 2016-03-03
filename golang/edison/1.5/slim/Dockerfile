@@ -7,7 +7,9 @@ RUN buildDeps='curl gcc g++ git ca-certificates' \
 	&& apt-get update && apt-get install -y $buildDeps \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& mkdir -p /usr/local/go \
-	&& curl -SL "https://storage.googleapis.com/golang/go$GO_VERSION.linux-386.tar.gz" | tar xz -C /usr/local/go --strip-components=1
+	&& curl -SLO "https://storage.googleapis.com/golang/go$GO_VERSION.linux-386.tar.gz" \
+	&& echo "bdf4ab580eb199c73e99be9849d5454598c4ee386186bc174ae43e7245880929  go1.5.2.linux-386.tar.gz" | sha256sum -c - \
+	&& tar -xzf "go$GO_VERSION.linux-386.tar.gz" -C /usr/local/go --strip-components=1
 
 ENV GOROOT /usr/local/go
 ENV GOPATH /go

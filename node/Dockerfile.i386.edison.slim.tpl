@@ -6,6 +6,7 @@ ENV NODE_VERSION #{NODE_VERSION}
 RUN apt-get update && apt-get install -y curl ca-certificates python --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& curl -SLO "#{BINARY_URL}" \
+	&& echo "#{CHECKSUM}" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz" \
 	&& apt-get purge -y --auto-remove curl ca-certificates \

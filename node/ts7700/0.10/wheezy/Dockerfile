@@ -4,6 +4,7 @@ FROM resin/ts7700-buildpack-deps:wheezy
 ENV NODE_VERSION 0.10.41
 
 RUN curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-armel.tar.gz" \
+	&& echo "1f84528a4b03a537903e36af8b2795a9a534e34e480b26cac3a749fa6d1e8d55  node-v0.10.41-linux-armel.tar.gz" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-armel.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-armel.tar.gz" \
 	&& npm config set unsafe-perm true -g --unsafe-perm \

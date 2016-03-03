@@ -4,6 +4,7 @@ FROM resin/zc702-zynq7-buildpack-deps:jessie
 ENV NODE_VERSION 0.10.22
 
 RUN curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-armv7hf.tar.gz" \
+	&& echo "d72e7f3908738ed502ebd53552619c955bbd13cf4e7e0f88cfb0ea2c5a396005  node-v0.10.22-linux-armv7hf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-armv7hf.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-armv7hf.tar.gz" \
 	&& npm config set unsafe-perm true -g --unsafe-perm \

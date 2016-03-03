@@ -4,6 +4,7 @@ FROM resin/nuc-buildpack-deps:jessie
 ENV NODE_VERSION 0.10.41
 
 RUN curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.gz" \
+	&& echo "ebda18d4c6545ac42b3404d629504feea0b2b9e7c7fa68de2a5bcc9059a6dc6c  node-v0.10.41-linux-x64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-x64.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-x64.tar.gz" \
 	&& npm config set unsafe-perm true -g --unsafe-perm \

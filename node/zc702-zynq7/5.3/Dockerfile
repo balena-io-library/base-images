@@ -4,6 +4,7 @@ FROM resin/zc702-zynq7-buildpack-deps:jessie
 ENV NODE_VERSION 5.3.0
 
 RUN curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-armv7l.tar.gz" \
+	&& echo "67205437fd74f7e63219cbe5932f83b064884204eea4503faa6d93f5db2719e1  node-v5.3.0-linux-armv7l.tar.gz" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-armv7l.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-armv7l.tar.gz" \
 	&& npm config set unsafe-perm true -g --unsafe-perm \
