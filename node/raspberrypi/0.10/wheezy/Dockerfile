@@ -4,6 +4,7 @@ FROM resin/raspberrypi-buildpack-deps:wheezy
 ENV NODE_VERSION 0.10.41
 
 RUN curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-armv6hf.tar.gz" \
+	&& echo "c7a11aa2d65251ad665860d16f0a04bedddae8c18633c3f4e581bb995ef90fb9  node-v0.10.41-linux-armv6hf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-armv6hf.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-armv6hf.tar.gz" \
 	&& npm config set unsafe-perm true -g --unsafe-perm \

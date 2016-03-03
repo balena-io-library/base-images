@@ -6,6 +6,7 @@ ENV NODE_VERSION 0.12.9
 RUN apt-get update && apt-get install -y curl ca-certificates python --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x86.tar.gz" \
+	&& echo "07b25b4a886b1b04d427b2b6414c9e4a913f53bb9574c26f010b35984b70df10  node-v0.12.9-linux-x86.tar.gz" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-x86.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-x86.tar.gz" \
 	&& apt-get purge -y --auto-remove curl ca-certificates \

@@ -7,7 +7,9 @@ RUN buildDeps='curl gcc g++ git ca-certificates' \
 	&& apt-get update && apt-get install -y $buildDeps \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& mkdir -p /usr/local/go \
-	&& curl -SL "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go-v$GO_VERSION-linux-armv6hf.tar.gz" | tar xz -C /usr/local/go --strip-components=1
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-armv6hf.tar.gz" \
+	&& echo "f409abc9eef797f9ff7ed514929ec998099b136188759bd838e2b80f2ec35bae  go1.5.2.linux-armv6hf.tar.gz" | sha256sum -c - \
+	&& tar -xzf "go$GO_VERSION.linux-armv6hf.tar.gz" -C /usr/local/go --strip-components=1
 
 ENV GOROOT /usr/local/go
 ENV GOPATH /go

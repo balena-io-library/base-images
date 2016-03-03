@@ -3,7 +3,9 @@ FROM resin/colibri-imx6-buildpack-deps:wheezy
 ENV GO_VERSION 1.5.2
 
 RUN mkdir -p /usr/local/go \
-	&& curl -SL "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go-v$GO_VERSION-linux-armv7hf.tar.gz" | tar xz -C /usr/local/go --strip-components=1
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-armv7hf.tar.gz" \
+	&& echo "fa42e6c2b99ab5d593442fc1e4d0ddcba37de4639a391d187085550f9023bdf2  go1.5.2.linux-armv7hf.tar.gz" | sha256sum -c - \
+	&& tar -xzf "go$GO_VERSION.linux-armv7hf.tar.gz" -C /usr/local/go --strip-components=1
 
 ENV GOROOT /usr/local/go
 ENV GOPATH /go

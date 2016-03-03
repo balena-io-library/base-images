@@ -8,6 +8,7 @@ RUN buildDeps='curl ca-certificates' \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.gz" \
+	&& echo "dcae0c0faf9841ef38953075e67ca477ef9d2ea7c14ac2221de2429813f83a62  node-v4.2.4-linux-x64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-x64.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-x64.tar.gz" \
 	&& apt-get purge -y --auto-remove $buildDeps \

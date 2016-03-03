@@ -8,6 +8,7 @@ RUN buildDeps='curl ca-certificates' \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-armel.tar.gz" \
+	&& echo "97287e9fb0756b8305d5ca6f207679631e89219c91fe727337a94aa9a7e42533  node-v0.10.22-linux-armel.tar.gz" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-armel.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-armel.tar.gz" \
 	&& apt-get purge -y --auto-remove $buildDeps \

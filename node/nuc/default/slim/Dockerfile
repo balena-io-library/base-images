@@ -8,6 +8,7 @@ RUN buildDeps='curl ca-certificates' \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.gz" \
+	&& echo "ca5bebc56830260581849c1099f00d1958b549fc59acfc0d37b1f01690e7ed6d  node-v0.10.22-linux-x64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-x64.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-x64.tar.gz" \
 	&& apt-get purge -y --auto-remove $buildDeps \

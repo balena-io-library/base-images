@@ -8,6 +8,7 @@ RUN buildDeps='curl ca-certificates' \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-armv6hf.tar.gz" \
+	&& echo "35a4122ad80ccd264419db4c1adc473656ed67c6f5f296c7d9323f8f849e032a  node-v0.12.9-linux-armv6hf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-armv6hf.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-armv6hf.tar.gz" \
 	&& apt-get purge -y --auto-remove $buildDeps \

@@ -8,6 +8,7 @@ RUN buildDeps='curl ca-certificates' \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-armv7l.tar.gz" \
+	&& echo "67205437fd74f7e63219cbe5932f83b064884204eea4503faa6d93f5db2719e1  node-v5.3.0-linux-armv7l.tar.gz" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-armv7l.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-armv7l.tar.gz" \
 	&& apt-get purge -y --auto-remove $buildDeps \

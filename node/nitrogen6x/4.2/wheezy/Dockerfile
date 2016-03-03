@@ -4,6 +4,7 @@ FROM resin/nitrogen6x-buildpack-deps:wheezy
 ENV NODE_VERSION 4.2.4
 
 RUN curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-armv7l.tar.gz" \
+	&& echo "7d3645a032b56aefe1e1a023a6592b4900d4966312d034beac352bb833a74b60  node-v4.2.4-linux-armv7l.tar.gz" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-armv7l.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-armv7l.tar.gz" \
 	&& npm config set unsafe-perm true -g --unsafe-perm \
