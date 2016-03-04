@@ -3,13 +3,13 @@ FROM resin/edison-debian:jessie
 
 ENV NODE_VERSION 5.3.0
 
-RUN apt-get update && apt-get install -y curl ca-certificates python --no-install-recommends \
+RUN apt-get update && apt-get install -y ca-certificates python --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x86.tar.gz" \
 	&& echo "5e1b2e0aa5277e6dded7bc3cba452035a9695b696e974b02eadcba76070ca7eb  node-v5.3.0-linux-x86.tar.gz" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-x86.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-x86.tar.gz" \
-	&& apt-get purge -y --auto-remove curl ca-certificates \
+	&& apt-get purge -y --auto-remove ca-certificates \
 	&& npm install mraa \
 	&& npm cache clear \
 	&& npm config set unsafe-perm true -g --unsafe-perm \
