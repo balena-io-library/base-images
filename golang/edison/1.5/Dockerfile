@@ -1,10 +1,10 @@
 FROM resin/edison-buildpack-deps:jessie
 
-ENV GO_VERSION 1.5.2
+ENV GO_VERSION 1.5.3
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "https://storage.googleapis.com/golang/go$GO_VERSION.linux-386.tar.gz" \
-	&& echo "bdf4ab580eb199c73e99be9849d5454598c4ee386186bc174ae43e7245880929  go1.5.2.linux-386.tar.gz" | sha256sum -c - \
+	&& echo "c1ce206b7296db1b10ff7896044d9ca50e87efa5bc3477e8fd8c2fb149bfca8f  go1.5.3.linux-386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-386.tar.gz" -C /usr/local/go --strip-components=1
 
 ENV GOROOT /usr/local/go

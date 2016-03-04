@@ -1,10 +1,10 @@
 FROM resin/ts7700-buildpack-deps:jessie
 
-ENV GO_VERSION 1.5.2
+ENV GO_VERSION 1.5.3
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-armel.tar.gz" \
-	&& echo "6f1f3cc26542c1d55029be48fabf35ca5c055bce22d02d752c78d05bb23cda87  go1.5.2.linux-armel.tar.gz" | sha256sum -c - \
+	&& echo "ef63f22abfa6b0f1fd778b4962ecdd854df6793052bd64b892dcc4d1f001e7f0  go1.5.3.linux-armel.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-armel.tar.gz" -C /usr/local/go --strip-components=1
 
 ENV GOROOT /usr/local/go

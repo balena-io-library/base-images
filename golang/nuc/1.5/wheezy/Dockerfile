@@ -1,10 +1,10 @@
 FROM resin/nuc-buildpack-deps:wheezy
 
-ENV GO_VERSION 1.5.2
+ENV GO_VERSION 1.5.3
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "https://storage.googleapis.com/golang/go$GO_VERSION.linux-amd64.tar.gz" \
-	&& echo "b8041ec8a7c0da29dab0b110206794d016165d6d0806976d39b7a99d899aa015  go1.5.2.linux-amd64.tar.gz" | sha256sum -c - \
+	&& echo "43afe0c5017e502630b1aea4d44b8a7f059bf60d7f29dfd58db454d4e4e0ae53  go1.5.3.linux-amd64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-amd64.tar.gz" -C /usr/local/go --strip-components=1
 
 ENV GOROOT /usr/local/go

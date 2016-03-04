@@ -1,6 +1,6 @@
 FROM resin/raspberrypi-systemd:jessie
 
-ENV GO_VERSION 1.5.2
+ENV GO_VERSION 1.5.3
 
 RUN buildDeps='curl gcc g++ git ca-certificates' \
 	&& set -x \
@@ -8,7 +8,7 @@ RUN buildDeps='curl gcc g++ git ca-certificates' \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-armv6hf.tar.gz" \
-	&& echo "f409abc9eef797f9ff7ed514929ec998099b136188759bd838e2b80f2ec35bae  go1.5.2.linux-armv6hf.tar.gz" | sha256sum -c - \
+	&& echo "f402ea55dee5ac9c62ba189e4bbcdc72b9a39d28007c20d39d8fdfdfed9e2e7a  go1.5.3.linux-armv6hf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-armv6hf.tar.gz" -C /usr/local/go --strip-components=1
 
 ENV GOROOT /usr/local/go
