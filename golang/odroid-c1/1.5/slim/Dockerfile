@@ -1,6 +1,6 @@
 FROM resin/odroid-c1-debian:jessie
 
-ENV GO_VERSION 1.5.2
+ENV GO_VERSION 1.5.3
 
 RUN buildDeps='curl gcc g++ git ca-certificates' \
 	&& set -x \
@@ -8,7 +8,7 @@ RUN buildDeps='curl gcc g++ git ca-certificates' \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-armv7hf.tar.gz" \
-	&& echo "fa42e6c2b99ab5d593442fc1e4d0ddcba37de4639a391d187085550f9023bdf2  go1.5.2.linux-armv7hf.tar.gz" | sha256sum -c - \
+	&& echo "4561dae244fecf7b0d38463649a2fd163f2f280beca868c98d74e38a75d7d020  go1.5.3.linux-armv7hf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-armv7hf.tar.gz" -C /usr/local/go --strip-components=1
 
 ENV GOROOT /usr/local/go

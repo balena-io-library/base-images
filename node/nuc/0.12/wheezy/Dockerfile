@@ -4,7 +4,7 @@ FROM resin/nuc-buildpack-deps:wheezy
 ENV NODE_VERSION 0.12.7
 
 RUN curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.gz" \
-	&& echo "3416451924c9c996e1d7224f5e5507df84b90dc730d4760e3f4daac1bd4c44df  node-v0.12.9-linux-x64.tar.gz" | sha256sum -c - \
+	&& echo "d98b76b7721a60471801e07e1f90af4fd479e8e42a632d419ede0a7b3c603cc0  node-v0.12.11-linux-x64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-x64.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-x64.tar.gz" \
 	&& npm config set unsafe-perm true -g --unsafe-perm \

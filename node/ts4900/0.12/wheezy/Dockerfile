@@ -4,7 +4,7 @@ FROM resin/ts4900-buildpack-deps:wheezy
 ENV NODE_VERSION 0.12.7
 
 RUN curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-armv7hf.tar.gz" \
-	&& echo "9ba2999fbc8c00ed963cf0f97e2792e11ed72cae989fb5c87d496603a42e8b41  node-v0.12.9-linux-armv7hf.tar.gz" | sha256sum -c - \
+	&& echo "c87dba81f90a2ccc6a0d0d4409e4fef3659ccc146f449139435fd317caf9527c  node-v0.12.11-linux-armv7hf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-armv7hf.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-armv7hf.tar.gz" \
 	&& npm config set unsafe-perm true -g --unsafe-perm \
