@@ -33,7 +33,11 @@ for device in "${devices[@]}"; do
 		if [ $version == 'default' ]; then
 			versionAliases=( $fullVersion )
 		else
-			versionAliases=( $fullVersion $version ${aliases[$fullVersion]} )
+			if [ $version == $fullVersion ]; then
+				versionAliases=( $version ${aliases[$fullVersion]} )
+			else
+				versionAliases=( $fullVersion $version ${aliases[$fullVersion]} )
+			fi
 		fi
 
 		echo
