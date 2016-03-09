@@ -4,7 +4,7 @@ FROM resin/odroid-ux3-buildpack-deps:jessie
 ENV NODE_VERSION 0.10.43
 
 RUN curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-armv7hf.tar.gz" \
-	&& echo "1223fa6d3a6193a05f44b467303a6c07c672982e33cecbd43cfa3e11739e3a4d  node-v0.10.43-linux-armv7hf.tar.gz" | sha256sum -c - \
+	&& echo "216640224b7627bf8d549fbdd9d979e78e6df9efd89f178e722af9b202b2f28c  node-v0.10.43-linux-armv7hf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-armv7hf.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-armv7hf.tar.gz" \
 	&& npm config set unsafe-perm true -g --unsafe-perm \
