@@ -31,6 +31,7 @@ DD8F2338BAE7501E3DD5AC78C273792F7D83545D \
 B9AE9905FFD7803F25714661B63B535A4C206CA9 \
 C4F0DFFF4E8C1A8236409D08E73BC641CC11F4C8 \
 7937DFD2AB06298B2293C3187D33FF9D0246406D \
+114F43EE0176B71C7BC219DD50A3051F888C628D \
 ; do \
 	gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; \
 done
@@ -127,15 +128,7 @@ for device in $devices; do
 			fi
 		fi
 
-		# Fix 0.12.x node version on wheezy images to 0.12.7
-		if [ $baseVersion == "0.12" ]; then
-			wheezy_node_version='0.12.7'
-		else
-			wheezy_node_version=$nodeVersion
-		fi
-
 		# Extract checksum
-
 		if [ $binary_url == "$nodejsUrl" ]; then
 			extract_checksum 1 $nodeVersion
 		else
@@ -153,7 +146,7 @@ for device in $devices; do
 		mkdir -p $dockerfilePath/wheezy
 		sed -e s~#{FROM}~resin/$device-buildpack-deps:wheezy~g \
 			-e s~#{BINARY_URL}~$binary_url~g \
-			-e s~#{NODE_VERSION}~$wheezy_node_version~g \
+			-e s~#{NODE_VERSION}~$nodeVersion~g \
 			-e s~#{CHECKSUM}~"$checksum"~g \
 			-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.tpl > $dockerfilePath/wheezy/Dockerfile
 
@@ -186,7 +179,7 @@ for device in $devices; do
 
 			sed -e s~#{FROM}~resin/$device-buildpack-deps:wheezy~g \
 				-e s~#{BINARY_URL}~$binary_url~g \
-				-e s~#{NODE_VERSION}~$wheezy_node_version~g \
+				-e s~#{NODE_VERSION}~$nodeVersion~g \
 				-e s~#{CHECKSUM}~"$checksum"~g \
 				-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.i386.edison.tpl > $dockerfilePath/wheezy/Dockerfile
 
