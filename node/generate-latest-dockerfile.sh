@@ -36,7 +36,7 @@ C4F0DFFF4E8C1A8236409D08E73BC641CC11F4C8 \
 	gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; \
 done
 
-devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700'
+devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700 raspberrypi3'
 nodeVersions='0.10.22 0.10.43 0.12.11 4.3.2 5.7.1'
 defaultVersion='0.10.22'
 resinUrl="http://resin-packages.s3.amazonaws.com/node/v\$NODE_VERSION/node-v\$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz"
@@ -49,6 +49,10 @@ for device in $devices; do
 		binary_arch='armv6hf'
 	;;
 	'raspberrypi2')
+		binary_url=$resinUrl
+		binary_arch='armv7hf'
+	;;
+	'raspberrypi3')
 		binary_url=$resinUrl
 		binary_arch='armv7hf'
 	;;
