@@ -3,7 +3,7 @@ set -e
 
 declare -A aliases
 aliases=(
-	[5.3.0]='0 latest'
+	[5.7.1]='0 latest'
 )
 
 defaultVersion='0.10.22'
