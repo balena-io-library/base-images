@@ -3,7 +3,7 @@ FROM #{FROM}
 
 ENV NODE_VERSION #{NODE_VERSION}
 
-RUN apt-get update && apt-get install -y curl ca-certificates python --no-install-recommends \
+RUN apt-get update && apt-get install -y curl python --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& curl -SLO "#{BINARY_URL}" \
 	&& echo "#{CHECKSUM}" | sha256sum -c - \
