@@ -3,7 +3,7 @@ FROM resin/parallella-hdmi-resin-debian:jessie
 
 ENV NODE_VERSION 0.10.43
 
-RUN buildDeps='curl ca-certificates' \
+RUN buildDeps='curl' \
 	&& set -x \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/* \

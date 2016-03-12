@@ -3,7 +3,7 @@ FROM resin/edison-debian:jessie
 
 ENV NODE_VERSION 5.7.1
 
-RUN apt-get update && apt-get install -y curl ca-certificates python --no-install-recommends \
+RUN apt-get update && apt-get install -y curl python --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x86.tar.gz" \
 	&& echo "4382b7366f3448d42f09d63f7dfccf45bf67f8be94d2bfe7203bdc79d0ae64e8  node-v5.7.1-linux-x86.tar.gz" | sha256sum -c - \
