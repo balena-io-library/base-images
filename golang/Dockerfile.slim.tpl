@@ -2,7 +2,7 @@ FROM #{FROM}
 
 ENV GO_VERSION #{GO_VERSION}
 
-RUN buildDeps='curl gcc g++ git ca-certificates' \
+RUN buildDeps='curl gcc g++ git' \
 	&& set -x \
 	&& apt-get update && apt-get install -y $buildDeps \
 	&& rm -rf /var/lib/apt/lists/* \

@@ -3,7 +3,7 @@ FROM resin/edison-debian:jessie
 
 ENV NODE_VERSION 4.3.2
 
-RUN apt-get update && apt-get install -y curl ca-certificates python --no-install-recommends \
+RUN apt-get update && apt-get install -y curl python --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x86.tar.gz" \
 	&& echo "3c668a2128db3982987c596c028f9ec1d08c6abf63502e24826d40e552f80a8c  node-v4.3.2-linux-x86.tar.gz" | sha256sum -c - \

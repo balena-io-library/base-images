@@ -3,7 +3,7 @@ FROM resin/apalis-imx6-debian:jessie
 
 ENV NODE_VERSION 4.3.2
 
-RUN buildDeps='curl ca-certificates' \
+RUN buildDeps='curl' \
 	&& set -x \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/* \

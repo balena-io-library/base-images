@@ -2,7 +2,7 @@ FROM resin/zc702-zynq7-debian:jessie
 
 ENV GO_VERSION 1.6
 
-RUN buildDeps='curl gcc g++ git ca-certificates' \
+RUN buildDeps='curl gcc g++ git' \
 	&& set -x \
 	&& apt-get update && apt-get install -y $buildDeps \
 	&& rm -rf /var/lib/apt/lists/* \

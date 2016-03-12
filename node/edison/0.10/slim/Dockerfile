@@ -3,7 +3,7 @@ FROM resin/edison-debian:jessie
 
 ENV NODE_VERSION 0.10.43
 
-RUN apt-get update && apt-get install -y curl ca-certificates python --no-install-recommends \
+RUN apt-get update && apt-get install -y curl python --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x86.tar.gz" \
 	&& echo "142bdf1cb8793bd7c7da7974c73bd2d466933f8d5b496d9a28d3b1e343b62bd0  node-v0.10.43-linux-x86.tar.gz" | sha256sum -c - \

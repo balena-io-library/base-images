@@ -3,7 +3,7 @@ FROM resin/edison-debian:jessie
 
 ENV NODE_VERSION 0.12.11
 
-RUN apt-get update && apt-get install -y curl ca-certificates python --no-install-recommends \
+RUN apt-get update && apt-get install -y curl python --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x86.tar.gz" \
 	&& echo "ecf627bf67bfd231e549869c6e2963acd5551d15d5cf1116b0649d3d14ddde19  node-v0.12.11-linux-x86.tar.gz" | sha256sum -c - \

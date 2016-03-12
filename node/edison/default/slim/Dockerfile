@@ -3,7 +3,7 @@ FROM resin/edison-debian:jessie
 
 ENV NODE_VERSION 0.10.22
 
-RUN apt-get update && apt-get install -y curl ca-certificates python --no-install-recommends \
+RUN apt-get update && apt-get install -y curl python --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x86.tar.gz" \
 	&& echo "3823d08199b2c952cd85d1b89ba03d59f2782985ba8d25e040e4cfecdb679aff  node-v0.10.22-linux-x86.tar.gz" | sha256sum -c - \
