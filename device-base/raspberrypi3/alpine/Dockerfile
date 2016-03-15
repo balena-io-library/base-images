@@ -1,0 +1,11 @@
+FROM resin/armhf-alpine:latest
+
+LABEL io.resin.device-type="raspberrypi3"
+
+RUN apk add --no-cache \
+		less \
+		nano \
+		net-tools \
+		ifupdown \		
+		usbutils \
+		gnupg
