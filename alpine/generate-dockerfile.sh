@@ -3,8 +3,8 @@ set -e
 
 repos='armhf i386 amd64'
 suites='edge 3.2 3.3'
-QEMU_VERSION='2.5.0-resin-rc3'
-QEMU_SHA256='dc36002fd3e362710e1654c4dfdc84a064b710e10a2323e8e4c8e24cb3921818'
+QEMU_VERSION='2.5.0-resin-rc4'
+QEMU_SHA256='81e955d4a8d501b5d9adcd2c8fe4cc4f31e82f2b4598f9ad6a14296ca9959c02'
 
 # Download QEMU
 curl -SLO https://github.com/resin-io/qemu/releases/download/$QEMU_VERSION/qemu-$QEMU_VERSION.tar.gz \
