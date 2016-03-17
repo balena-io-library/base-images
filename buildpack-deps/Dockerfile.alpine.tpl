@@ -1,6 +1,6 @@
 FROM #{FROM}
 
-RUN apk add --no-cache \
+RUN apk add --update \
 		autoconf \
 		build-base \
 		imagemagick \
@@ -19,4 +19,5 @@ RUN apk add --no-cache \
 		libxml2-dev \
 		libxslt-dev \
 		yaml-dev \
-		zlib-dev
+		zlib-dev \
+	&& rm -rf /var/cache/apk/*

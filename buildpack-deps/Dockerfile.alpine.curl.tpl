@@ -1,6 +1,7 @@
 FROM #{FROM}
 
-RUN apk add --no-cache \
+RUN apk add --update \
 		ca-certificates \
 		curl \
-		wget
+		wget \
+	&& rm -rf /var/cache/apk/*
