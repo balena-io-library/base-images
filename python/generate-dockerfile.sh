@@ -63,34 +63,35 @@ for device in $devices; do
 
 		baseVersion=$(expr match "$pythonVersion" '\([0-9]*\.[0-9]*\)')
 
-		dockerfilePath=$device/$baseVersion
-		mkdir -p $dockerfilePath
+		# Debian
+		debian_dockerfilePath=$device/debian/$baseVersion
+		mkdir -p $debian_dockerfilePath
 		sed -e s~#{FROM}~"resin/$device-buildpack-deps:jessie"~g \
 			-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
 			-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
-			-e s~#{GPG_KEY}~"$gpgKey"~g $template > $dockerfilePath/Dockerfile
+			-e s~#{GPG_KEY}~"$gpgKey"~g $template > $debian_dockerfilePath/Dockerfile
 
-		mkdir -p $dockerfilePath/wheezy
+		mkdir -p $debian_dockerfilePath/wheezy
 		sed -e s~#{FROM}~"resin/$device-buildpack-deps:wheezy"~g \
 			-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
 			-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
-			-e s~#{GPG_KEY}~"$gpgKey"~g $template > $dockerfilePath/wheezy/Dockerfile
+			-e s~#{GPG_KEY}~"$gpgKey"~g $template > $debian_dockerfilePath/wheezy/Dockerfile
 
-		mkdir -p $dockerfilePath/onbuild
-		sed -e s~#{FROM}~"resin/$device-python:$pythonVersion"~g Dockerfile.onbuild.tpl > $dockerfilePath/onbuild/Dockerfile
-		mkdir -p $dockerfilePath/slim
+		mkdir -p $debian_dockerfilePath/onbuild
+		sed -e s~#{FROM}~"resin/$device-python:$pythonVersion"~g Dockerfile.onbuild.tpl > $debian_dockerfilePath/onbuild/Dockerfile
+		mkdir -p $debian_dockerfilePath/slim
 
 		# Only for RPI1 device
 		if [ $device == "raspberrypi" ]; then
 			sed -e s~#{FROM}~"resin/$device-systemd:jessie"~g \
 				-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
 				-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
-				-e s~#{GPG_KEY}~"$gpgKey"~g $slimTemplate > $dockerfilePath/slim/Dockerfile
+				-e s~#{GPG_KEY}~"$gpgKey"~g $slimTemplate > $debian_dockerfilePath/slim/Dockerfile
 		else
 			sed -e s~#{FROM}~"resin/$device-debian:jessie"~g \
 				-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
 				-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
-				-e s~#{GPG_KEY}~"$gpgKey"~g $slimTemplate > $dockerfilePath/slim/Dockerfile
+				-e s~#{GPG_KEY}~"$gpgKey"~g $slimTemplate > $debian_dockerfilePath/slim/Dockerfile
 		fi
 
 		# Only for intel edison
@@ -98,24 +99,24 @@ for device in $devices; do
 			sed -e s~#{FROM}~"resin/$device-buildpack-deps:jessie"~g \
 				-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
 				-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
-				-e s~#{GPG_KEY}~"$gpgKey"~g $template > $dockerfilePath/Dockerfile
+				-e s~#{GPG_KEY}~"$gpgKey"~g $template > $debian_dockerfilePath/Dockerfile
 
 			sed -e s~#{FROM}~"resin/$device-buildpack-deps:wheezy"~g \
 				-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
 				-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
-				-e s~#{GPG_KEY}~"$gpgKey"~g $template > $dockerfilePath/wheezy/Dockerfile
+				-e s~#{GPG_KEY}~"$gpgKey"~g $template > $debian_dockerfilePath/wheezy/Dockerfile
 
 			sed -e s~#{FROM}~"resin/$device-debian:jessie"~g \
 				-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
 				-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
-				-e s~#{GPG_KEY}~"$gpgKey"~g $slimTemplate > $dockerfilePath/slim/Dockerfile
+				-e s~#{GPG_KEY}~"$gpgKey"~g $slimTemplate > $debian_dockerfilePath/slim/Dockerfile
 
 			# Only append setup script to Python3 images
-			append_setup_script $baseVersion $dockerfilePath/
-			append_setup_script $baseVersion $dockerfilePath/wheezy/
-			append_setup_script $baseVersion $dockerfilePath/slim/
+			append_setup_script $baseVersion $debian_dockerfilePath/
+			append_setup_script $baseVersion $debian_dockerfilePath/wheezy/
+			append_setup_script $baseVersion $debian_dockerfilePath/slim/
 		fi
 
-		set_pythonpath $baseVersion $dockerfilePath/	
+		set_pythonpath $baseVersion $debian_dockerfilePath/	
 	done
 done
