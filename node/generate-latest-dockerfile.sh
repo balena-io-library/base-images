@@ -120,6 +120,7 @@ for device in $devices; do
 			baseVersion=$(expr match "$nodeVersion" '\([0-9]*\.[0-9]*\)')
 		fi
 
+		# Debian.
 		# For armv7hf and armv6hf, if node version is less than 4.x.x (0.10.x 0.12.x) then that image will use binaries from resin, otherwise it will use binaries from official distribution.
 		if [ $binary_arch == "armv7hf" ] || [ $binary_arch == "armv6hf" ]; then
 			if version_le "$nodeVersion" "3"; then
@@ -139,24 +140,24 @@ for device in $devices; do
 			extract_checksum 0 $nodeVersion
 		fi
 
-		dockerfilePath=$device/$baseVersion
-		mkdir -p $dockerfilePath
+		debian_dockerfilePath=$device/debian/$baseVersion
+		mkdir -p $debian_dockerfilePath
 		sed -e s~#{FROM}~resin/$device-buildpack-deps:jessie~g \
 			-e s~#{BINARY_URL}~$binary_url~g \
 			-e s~#{NODE_VERSION}~$nodeVersion~g \
 			-e s~#{CHECKSUM}~"$checksum"~g \
-			-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.tpl > $dockerfilePath/Dockerfile
+			-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.tpl > $debian_dockerfilePath/Dockerfile
 
-		mkdir -p $dockerfilePath/wheezy
+		mkdir -p $debian_dockerfilePath/wheezy
 		sed -e s~#{FROM}~resin/$device-buildpack-deps:wheezy~g \
 			-e s~#{BINARY_URL}~$binary_url~g \
 			-e s~#{NODE_VERSION}~$nodeVersion~g \
 			-e s~#{CHECKSUM}~"$checksum"~g \
-			-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.tpl > $dockerfilePath/wheezy/Dockerfile
+			-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.tpl > $debian_dockerfilePath/wheezy/Dockerfile
 
-		mkdir -p $dockerfilePath/onbuild
-		sed -e s~#{FROM}~resin/$device-node:$nodeVersion~g Dockerfile.onbuild.tpl > $dockerfilePath/onbuild/Dockerfile
-		mkdir -p $dockerfilePath/slim
+		mkdir -p $debian_dockerfilePath/onbuild
+		sed -e s~#{FROM}~resin/$device-node:$nodeVersion~g Dockerfile.onbuild.tpl > $debian_dockerfilePath/onbuild/Dockerfile
+		mkdir -p $debian_dockerfilePath/slim
 
 		# Only for RPI1 device
 		if [ $device == "raspberrypi" ]; then
@@ -164,13 +165,13 @@ for device in $devices; do
 				-e s~#{BINARY_URL}~$binary_url~g \
 				-e s~#{NODE_VERSION}~$nodeVersion~g \
 				-e s~#{CHECKSUM}~"$checksum"~g \
-				-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.slim.tpl > $dockerfilePath/slim/Dockerfile
+				-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.slim.tpl > $debian_dockerfilePath/slim/Dockerfile
 		else
 			sed -e s~#{FROM}~resin/$device-debian:jessie~g \
 				-e s~#{BINARY_URL}~$binary_url~g \
 				-e s~#{NODE_VERSION}~$nodeVersion~g \
 				-e s~#{CHECKSUM}~"$checksum"~g \
-				-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.slim.tpl > $dockerfilePath/slim/Dockerfile
+				-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.slim.tpl > $debian_dockerfilePath/slim/Dockerfile
 		fi
 
 		# Only for intel edison
@@ -179,19 +180,19 @@ for device in $devices; do
 				-e s~#{BINARY_URL}~$binary_url~g \
 				-e s~#{NODE_VERSION}~$nodeVersion~g \
 				-e s~#{CHECKSUM}~"$checksum"~g \
-				-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.i386.edison.tpl > $dockerfilePath/Dockerfile
+				-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.i386.edison.tpl > $debian_dockerfilePath/Dockerfile
 
 			sed -e s~#{FROM}~resin/$device-buildpack-deps:wheezy~g \
 				-e s~#{BINARY_URL}~$binary_url~g \
 				-e s~#{NODE_VERSION}~$nodeVersion~g \
 				-e s~#{CHECKSUM}~"$checksum"~g \
-				-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.i386.edison.tpl > $dockerfilePath/wheezy/Dockerfile
+				-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.i386.edison.tpl > $debian_dockerfilePath/wheezy/Dockerfile
 
 			sed -e s~#{FROM}~resin/$device-debian:jessie~g \
 				-e s~#{BINARY_URL}~$binary_url~g \
 				-e s~#{NODE_VERSION}~$nodeVersion~g \
 				-e s~#{CHECKSUM}~"$checksum"~g \
-				-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.i386.edison.slim.tpl > $dockerfilePath/slim/Dockerfile
+				-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.i386.edison.slim.tpl > $debian_dockerfilePath/slim/Dockerfile
 		fi
 	done
 done
