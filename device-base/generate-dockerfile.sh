@@ -116,10 +116,11 @@ for device in $devices; do
 	;;
 	esac
 
-	dockerfilePath="$device"
+	# Debian.
+	debian_dockerfilePath="$device/debian"
 	if [ $device != "raspberrypi" ]; then
 		for suite in $suites; do
-			mkdir -p $dockerfilePath/$suite
+			mkdir -p $debian_dockerfilePath/$suite
 
 			if [ $device == 'beaglebone' ]; then
 				case "$suite" in
@@ -137,20 +138,20 @@ for device in $devices; do
 				-e "s@#{SOURCES_LIST}@$sourcelist@g" \
 				-e "s@#{SUITE}@$suite@g" \
 				-e "s@#{KEYS}@$key@g" \
-				-e "s@#{DEV_TYPE}@$device@g" $template > $dockerfilePath/$suite/Dockerfile
+				-e "s@#{DEV_TYPE}@$device@g" $template > $debian_dockerfilePath/$suite/Dockerfile
 			else
 				sed -e s~#{FROM}~resin/$baseImage:$suite~g \
 					-e s~#{SUITE}~$suite~g \
-					-e s@#{DEV_TYPE}@$device@ $template > $dockerfilePath/$suite/Dockerfile
+					-e s@#{DEV_TYPE}@$device@ $template > $debian_dockerfilePath/$suite/Dockerfile
 			fi
 		done
 	fi
 
-	# Generate dockerfiles for Alpine images.
-	mkdir -p $dockerfilePath/alpine
+	# Alpine.
+	alpine_dockerfilePath="$device/alpine"
 	for suite in $alpine_suites; do
-		mkdir -p $dockerfilePath/alpine/$suite
+		mkdir -p $alpine_dockerfilePath/$suite
 		sed -e s~#{FROM}~resin/$alpine_baseImage:$suite~g \
-			-e s@#{DEV_TYPE}@$device@ $alpine_template > $dockerfilePath/alpine/$suite/Dockerfile
+			-e s@#{DEV_TYPE}@$device@ $alpine_template > $alpine_dockerfilePath/$suite/Dockerfile
 	done
 done
