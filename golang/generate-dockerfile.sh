@@ -83,27 +83,28 @@ for device in $devices; do
 		# Extract checksum
 		checksum=$(grep " go$goVersion.linux-$binary_arch.tar.gz" SHASUMS256.txt)
 
-		dockerfilePath=$device/$baseVersion
-		mkdir -p $dockerfilePath
+		# Debian.
+		debian_dockerfilePath=$device/debian/$baseVersion
+		mkdir -p $debian_dockerfilePath
 		sed -e s~#{FROM}~resin/$device-buildpack-deps:jessie~g \
 			-e s~#{BINARY_URL}~$binary_url~g \
 			-e s~#{GO_VERSION}~$goVersion~g \
 			-e s~#{CHECKSUM}~"$checksum"~g \
-			-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.tpl > $dockerfilePath/Dockerfile
-		cp go-wrapper $dockerfilePath/
+			-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.tpl > $debian_dockerfilePath/Dockerfile
+		cp go-wrapper $debian_dockerfilePath/
 
-		mkdir -p $dockerfilePath/wheezy
+		mkdir -p $debian_dockerfilePath/wheezy
 		sed -e s~#{FROM}~resin/$device-buildpack-deps:wheezy~g \
 			-e s~#{BINARY_URL}~$binary_url~g \
 			-e s~#{GO_VERSION}~$goVersion~g \
 			-e s~#{CHECKSUM}~"$checksum"~g \
-			-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.tpl > $dockerfilePath/wheezy/Dockerfile
-		cp go-wrapper $dockerfilePath/wheezy/
+			-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.tpl > $debian_dockerfilePath/wheezy/Dockerfile
+		cp go-wrapper $debian_dockerfilePath/wheezy/
 
 		# Golang doesn't work properly with qemu when cross compiling, so ARM build servers are required to build onbuild images properly.
-		#mkdir -p $dockerfilePath/onbuild
-		#sed -e s~#{FROM}~resin/$device-go:$goVersion~g Dockerfile.onbuild.tpl > $dockerfilePath/onbuild/Dockerfile
-		mkdir -p $dockerfilePath/slim
+		#mkdir -p $debian_dockerfilePath/onbuild
+		#sed -e s~#{FROM}~resin/$device-go:$goVersion~g Dockerfile.onbuild.tpl > $debian_dockerfilePath/onbuild/Dockerfile
+		mkdir -p $debian_dockerfilePath/slim
 
 		# Only for RPI1 device
 		if [ $device == "raspberrypi" ]; then
@@ -111,15 +112,15 @@ for device in $devices; do
 				-e s~#{BINARY_URL}~$binary_url~g \
 				-e s~#{GO_VERSION}~$goVersion~g \
 				-e s~#{CHECKSUM}~"$checksum"~g \
-				-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.slim.tpl > $dockerfilePath/slim/Dockerfile
+				-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.slim.tpl > $debian_dockerfilePath/slim/Dockerfile
 		else
 			sed -e s~#{FROM}~resin/$device-debian:jessie~g \
 				-e s~#{BINARY_URL}~$binary_url~g \
 				-e s~#{GO_VERSION}~$goVersion~g \
 				-e s~#{CHECKSUM}~"$checksum"~g \
-				-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.slim.tpl > $dockerfilePath/slim/Dockerfile
+				-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.slim.tpl > $debian_dockerfilePath/slim/Dockerfile
 		fi
-		cp go-wrapper $dockerfilePath/slim/
+		cp go-wrapper $debian_dockerfilePath/slim/
 
 	done
 done
