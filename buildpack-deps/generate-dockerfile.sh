@@ -9,20 +9,20 @@ for device in $devices; do
 
 	# Debian
 	for suite in $suites; do
-		dockerfilePath=$device/$suite
+		debian_dockerfilePath=$device/debian/$suite
 
-		mkdir -p $dockerfilePath
-		sed -e s~#{FROM}~"resin/$device-buildpack-deps:$suite-scm"~g Dockerfile.tpl > $dockerfilePath/Dockerfile
+		mkdir -p $debian_dockerfilePath
+		sed -e s~#{FROM}~"resin/$device-buildpack-deps:$suite-scm"~g Dockerfile.tpl > $debian_dockerfilePath/Dockerfile
 
-		mkdir -p $dockerfilePath/curl
-		sed -e s~#{FROM}~"resin/$device-debian:$suite"~g Dockerfile.curl.tpl > $dockerfilePath/curl/Dockerfile
+		mkdir -p $debian_dockerfilePath/curl
+		sed -e s~#{FROM}~"resin/$device-debian:$suite"~g Dockerfile.curl.tpl > $debian_dockerfilePath/curl/Dockerfile
 
-		mkdir -p $dockerfilePath/scm
-		sed -e s~#{FROM}~"resin/$device-buildpack-deps:$suite-curl"~g Dockerfile.scm.tpl > $dockerfilePath/scm/Dockerfile
+		mkdir -p $debian_dockerfilePath/scm
+		sed -e s~#{FROM}~"resin/$device-buildpack-deps:$suite-curl"~g Dockerfile.scm.tpl > $debian_dockerfilePath/scm/Dockerfile
 
 		# Only for rpi
 		if [ $device == 'raspberrypi' ]; then
-			sed -e s~#{FROM}~"resin/raspberrypi-systemd:$suite"~g Dockerfile.curl.tpl > $dockerfilePath/curl/Dockerfile
+			sed -e s~#{FROM}~"resin/raspberrypi-systemd:$suite"~g Dockerfile.curl.tpl > $debian_dockerfilePath/curl/Dockerfile
 		fi
 	done
 
