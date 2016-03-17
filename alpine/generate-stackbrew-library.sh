@@ -16,9 +16,10 @@ if [ ${#repos[@]} -eq 0 ]; then
 fi
 repos=( "${repos[@]%/}" )
 
-echo '# maintainer: Trong Nghia Nguyen - resin.io <james@resin.io>'
-
 for repo in "${repos[@]}"; do
+
+	# Library file name
+	lib_name="$repo-alpine"
 
 	cd $repo
 	versions=( "$@" )
@@ -27,13 +28,15 @@ for repo in "${repos[@]}"; do
 	fi
 	versions=( "${versions[@]%/}" )
 	cd ..
+
+	echo '# maintainer: Trong Nghia Nguyen - resin.io <james@resin.io>' > $lib_name
 	url='git://github.com/resin-io-library/base-images'
 	for version in "${versions[@]}"; do
 		versionAliases=( $version ${aliases[$version]} )
 		commit="$(git log -1 --format='format:%H' -- "$repo/$version")"
-		echo
+		echo >> $lib_name
 		for va in "${versionAliases[@]}"; do
-			echo "$va: ${url}@${commit} $root/$repo/$version"
+			echo "$va: ${url}@${commit} $root/$repo/$version" >> $lib_name
 		done
 	done
 done
