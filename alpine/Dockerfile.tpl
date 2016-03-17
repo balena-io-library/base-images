@@ -4,7 +4,8 @@ FROM #{FROM}
 
 #{QEMU}
 
-RUN apk add --no-cache bash udev dbus tar ca-certificates
+RUN apk add --update bash udev dbus tar ca-certificates \
+	&& rm -rf /var/cache/apk/*
 
 COPY entry.sh /usr/bin/entry.sh
                   
