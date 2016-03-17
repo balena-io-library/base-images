@@ -4,6 +4,7 @@ set -e
 declare -A aliases
 aliases=(
 	[jessie]='latest'
+	[3.3]='latest'
 )
 
 cd "$(dirname "$(readlink -f "$BASH_SOURCE")")"
@@ -24,13 +25,29 @@ for device in "${devices[@]}"; do
 	suites=( "${suites[@]%/}" )
 	cd ..
 	for suite in "${suites[@]}"; do
-		suiteAliases=( $suite ${aliases[$suite]} )
+		if [ $suite == 'alpine' ]; then
+			cd $device/$suite
+			alpine_suites=( */ )
+			alpine_suites=( "${alpine_suites[@]%/}" )
+			cd -
+			for alpine_suite in "${alpine_suites[@]}"; do
+				alpine_suiteAliases=( $alpine_suite ${aliases[$alpine_suite]} )
 
-		commit="$(git log -1 --format='format:%H' -- "$device/$suite")"
-		echo
-		for va in "${suiteAliases[@]}"; do
-			echo "$va: ${url}@${commit} $repo/$device/$suite"
-		done
+				commit="$(git log -1 --format='format:%H' -- "$device/$suite/$alpine_suite")"
+				echo
+				for va in "${alpine_suiteAliases[@]}"; do
+					echo "$va: ${url}@${commit} $repo/$device/$suite/$alpine_suite"
+				done
+			done
+		else
+			suiteAliases=( $suite ${aliases[$suite]} )
+
+			commit="$(git log -1 --format='format:%H' -- "$device/$suite")"
+			echo
+			for va in "${suiteAliases[@]}"; do
+				echo "$va: ${url}@${commit} $repo/$device/$suite"
+			done
+		fi
 	done
 done
 
