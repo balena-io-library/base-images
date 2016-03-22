@@ -6,7 +6,7 @@ set -o pipefail
 # $1 : device type
 # $2 : distribution
 function generate_library(){
-	lib_name="$1-$2"
+	lib_name="$1-$2-buildpack-deps"
 	path="$1/$2"
 
 	cd $path
