@@ -9,12 +9,17 @@ bb_key_cmd='apt-key adv --keyserver keyserver.ubuntu.com --recv-key D284E608A4C4
 bb_sourceslist_wheezy_cmd='echo "deb http://debian.beagleboard.org/packages wheezy-bbb main" >> /etc/apt/sources.list'
 bb_key_wheezy_cmd='apt-key adv --keyserver keyserver.ubuntu.com --recv-key B2710B8359890110'
 
-devices='raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700 raspberrypi3'
+devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700 raspberrypi3'
 suites='jessie wheezy'
+alpine_suites='edge 3.2 3.3'
 
 for device in $devices; do
 
 	case "$device" in
+	'raspberrypi')
+		alpine_template='Dockerfile.alpine.tpl'
+		alpine_baseImage='armhf-alpine'
+	;;
 	'raspberrypi2')
 		template='Dockerfile.armv7hf.rpi.tpl'
 		baseImage='armv7hf-systemd'
@@ -111,43 +116,42 @@ for device in $devices; do
 	;;
 	esac
 
-	for suite in $suites; do
-		dockerfilePath="$device"
-		mkdir -p $dockerfilePath/$suite
+	# Debian.
+	debian_dockerfilePath="$device/debian"
+	if [ $device != "raspberrypi" ]; then
+		for suite in $suites; do
+			mkdir -p $debian_dockerfilePath/$suite
 
-		if [ $device == 'beaglebone' ]; then
-			case "$suite" in
-			'wheezy')
-				sourcelist="$bb_sourceslist_cmd \&\& $bb_sourceslist_wheezy_cmd"
-				key="$bb_key_cmd \&\& $bb_key_wheezy_cmd"
-			;;
-			'jessie')
-				sourcelist="$bb_sourceslist_cmd"
-				key="$bb_key_cmd"
-			;;
-			esac
+			if [ $device == 'beaglebone' ]; then
+				case "$suite" in
+				'wheezy')
+					sourcelist="$bb_sourceslist_cmd \&\& $bb_sourceslist_wheezy_cmd"
+					key="$bb_key_cmd \&\& $bb_key_wheezy_cmd"
+				;;
+				'jessie')
+					sourcelist="$bb_sourceslist_cmd"
+					key="$bb_key_cmd"
+				;;
+				esac
 
-		sed -e "s@#{FROM}@resin/$baseImage:$suite@g" \
-			-e "s@#{SOURCES_LIST}@$sourcelist@g" \
-			-e "s@#{SUITE}@$suite@g" \
-			-e "s@#{KEYS}@$key@g" \
-			-e "s@#{DEV_TYPE}@$device@g" $template > $dockerfilePath/$suite/Dockerfile
-		else
-			sed -e s~#{FROM}~resin/$baseImage:$suite~g \
-				-e s~#{SUITE}~$suite~g \
-				-e s@#{DEV_TYPE}@$device@ $template > $dockerfilePath/$suite/Dockerfile
-		fi
+			sed -e "s@#{FROM}@resin/$baseImage:$suite@g" \
+				-e "s@#{SOURCES_LIST}@$sourcelist@g" \
+				-e "s@#{SUITE}@$suite@g" \
+				-e "s@#{KEYS}@$key@g" \
+				-e "s@#{DEV_TYPE}@$device@g" $template > $debian_dockerfilePath/$suite/Dockerfile
+			else
+				sed -e s~#{FROM}~resin/$baseImage:$suite~g \
+					-e s~#{SUITE}~$suite~g \
+					-e s@#{DEV_TYPE}@$device@ $template > $debian_dockerfilePath/$suite/Dockerfile
+			fi
+		done
+	fi
 
-		# Generate dockerfiles for Alpine images.
-		if [ ! -z $alpine_template ]; then
-			mkdir -p $dockerfilePath/alpine
-			sed -e s~#{FROM}~resin/$alpine_baseImage:latest~g \
-				-e s@#{DEV_TYPE}@$device@ $alpine_template > $dockerfilePath/alpine/Dockerfile
-		fi
+	# Alpine.
+	alpine_dockerfilePath="$device/alpine"
+	for suite in $alpine_suites; do
+		mkdir -p $alpine_dockerfilePath/$suite
+		sed -e s~#{FROM}~resin/$alpine_baseImage:$suite~g \
+			-e s@#{DEV_TYPE}@$device@ $alpine_template > $alpine_dockerfilePath/$suite/Dockerfile
 	done
-
-	# For RPI1, only generate alpine image
-	mkdir -p raspberrypi/alpine
-	sed -e s~#{FROM}~resin/armhf-alpine:latest~g \
-		-e s@#{DEV_TYPE}@raspberrypi@ Dockerfile.alpine.tpl > raspberrypi/alpine/Dockerfile
 done

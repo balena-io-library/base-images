@@ -1,8 +1,9 @@
 FROM #{FROM}
 
-RUN apk add --no-cache \
+RUN apk add --update \
 		bzr \
 		git \
 		mercurial \
 		openssh-client \
-		subversion
+		subversion \
+	&& rm -rf /var/cache/apk/*
