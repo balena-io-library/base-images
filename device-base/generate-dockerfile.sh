@@ -148,6 +148,12 @@ for device in $devices; do
 	fi
 
 	# Alpine.
+
+	# armel device not supported yet.
+	if [ $device == "ts7700" ]; then
+		continue
+	fi
+
 	alpine_dockerfilePath="$device/alpine"
 	for suite in $alpine_suites; do
 		mkdir -p $alpine_dockerfilePath/$suite
