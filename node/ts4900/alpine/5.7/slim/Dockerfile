@@ -10,6 +10,7 @@ RUN buildDeps='curl' \
 	&& set -x \
 	&& apk add --no-cache $buildDeps \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-alpine-armhf.tar.gz" \
+	&& echo "a602b8f8ba93418c3493b67fe36e1a763b70ce693d9f52fa1f12a0bd24ea87b1  node-v5.7.1-linux-alpine-armhf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-alpine-alpine-armhf.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-alpine-alpine-armhf.tar.gz" \
 	&& apk del $buildDeps \

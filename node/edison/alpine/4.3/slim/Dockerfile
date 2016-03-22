@@ -10,6 +10,7 @@ RUN buildDeps='curl' \
 	&& set -x \
 	&& apk add --no-cache $buildDeps \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-alpine-i386.tar.gz" \
+	&& echo "d49fa622c07a9b3c4815beb53e584592926f222dc42e7ec215909c072c62c54e  node-v4.3.2-linux-alpine-i386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-alpine-alpine-i386.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-alpine-alpine-i386.tar.gz" \
 	&& apk del $buildDeps \
