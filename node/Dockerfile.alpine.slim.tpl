@@ -10,6 +10,7 @@ RUN buildDeps='curl' \
 	&& set -x \
 	&& apk add --no-cache $buildDeps \
 	&& curl -SLO "#{BINARY_URL}" \
+	&& echo "#{CHECKSUM}" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-alpine-#{TARGET_ARCH}.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-alpine-#{TARGET_ARCH}.tar.gz" \
 	&& apk del $buildDeps \
