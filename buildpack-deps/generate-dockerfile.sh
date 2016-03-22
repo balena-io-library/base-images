@@ -27,6 +27,12 @@ for device in $devices; do
 	done
 
 	# Alpine
+
+	# armel device not supported yet.
+	if [ $device == "ts7700" ]; then
+		continue
+	fi
+
 	for alpine_suite in $alpine_suites; do
 		dockerfilePath=$device/alpine/$alpine_suite
 

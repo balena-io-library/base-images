@@ -127,6 +127,12 @@ for device in $devices; do
 
 		# Alpine
 		# TODO: install mraa on Edison
+
+		# armel device not supported yet.
+		if [ $device == "ts7700" ]; then
+			continue
+		fi
+
 		if [ $pythonVersion != "2.7.11" ]; then
 			template='Dockerfile.alpine.python3.tpl'
 			slimTemplate='Dockerfile.alpine.python3.slim.tpl'

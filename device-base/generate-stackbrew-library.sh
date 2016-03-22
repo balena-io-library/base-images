@@ -47,10 +47,6 @@ for device in "${devices[@]}"; do
 	distros=( "${distros[@]%/}" )
 	cd ..
 	for distro in "${distros[@]}"; do
-		# We don't have raspberrypi-debian base image.
-		if [ $device == 'raspberrypi' ] && [ $distro == 'debian' ]; then
-			continue
-		fi
 		generate_library "$device" "$distro"
 	done
 done

@@ -6,7 +6,11 @@ set -o pipefail
 # $1 : device type
 # $2 : distribution
 function generate_library(){
-	lib_name="$1-$2-buildpack-deps"
+	if [ $2 == 'debian' ]; then
+		lib_name="$1-buildpack-deps"
+	else
+		lib_name="$1-$2-buildpack-deps"
+	fi
 	path="$1/$2"
 
 	cd $path
