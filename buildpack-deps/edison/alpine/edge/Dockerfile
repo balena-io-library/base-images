@@ -5,7 +5,7 @@ RUN apk add --update \
 		build-base \
 		imagemagick \
 		libbz2 \
-		libcurl \
+		#libcurl \
 		libevent-dev \
 		libffi-dev \
 		glib-dev \
