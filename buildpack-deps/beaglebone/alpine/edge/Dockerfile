@@ -20,4 +20,5 @@ RUN apk add --update \
 		libxslt-dev \
 		yaml-dev \
 		zlib-dev \
+		xz \
 	&& rm -rf /var/cache/apk/*
