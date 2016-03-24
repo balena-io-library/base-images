@@ -4,12 +4,12 @@ FROM resin/edison-alpine-buildpack-deps:edge
 ENV NODE_VERSION 5.7.1
 
 # Install dependencies
-apk add --no-cache libgcc libstdc++ libuv
+RUN apk add --no-cache libgcc libstdc++ libuv
 
 RUN curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-alpine-i386.tar.gz" \
 	&& echo "e72a3cc39ef3550746f2625f00a8e4639971802331dfea322a9f967aeb94519d  node-v5.7.1-linux-alpine-i386.tar.gz" | sha256sum -c - \
-	&& tar -xzf "node-v$NODE_VERSION-linux-alpine-alpine-i386.tar.gz" -C /usr/local --strip-components=1 \
-	&& rm "node-v$NODE_VERSION-linux-alpine-alpine-i386.tar.gz" \
+	&& tar -xzf "node-v$NODE_VERSION-linux-alpine-i386.tar.gz" -C /usr/local --strip-components=1 \
+	&& rm "node-v$NODE_VERSION-linux-alpine-i386.tar.gz" \
 	&& npm config set unsafe-perm true -g --unsafe-perm \
 	&& rm -rf /tmp/*
 

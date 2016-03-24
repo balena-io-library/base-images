@@ -4,15 +4,15 @@ FROM resin/nuc-alpine:latest
 ENV NODE_VERSION 5.7.1
 
 # Install dependencies
-apk add --no-cache libgcc libstdc++ libuv
+RUN apk add --no-cache libgcc libstdc++ libuv
 
 RUN buildDeps='curl' \
 	&& set -x \
 	&& apk add --no-cache $buildDeps \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-alpine-amd64.tar.gz" \
 	&& echo "afc5a99c027d7d32bebad48b0b8bf602a7e0e4a19f8ed076babdd22bffe2d7ba  node-v5.7.1-linux-alpine-amd64.tar.gz" | sha256sum -c - \
-	&& tar -xzf "node-v$NODE_VERSION-linux-alpine-alpine-amd64.tar.gz" -C /usr/local --strip-components=1 \
-	&& rm "node-v$NODE_VERSION-linux-alpine-alpine-amd64.tar.gz" \
+	&& tar -xzf "node-v$NODE_VERSION-linux-alpine-amd64.tar.gz" -C /usr/local --strip-components=1 \
+	&& rm "node-v$NODE_VERSION-linux-alpine-amd64.tar.gz" \
 	&& apk del $buildDeps \
 	&& npm config set unsafe-perm true -g --unsafe-perm \
 	&& rm -rf /tmp/*

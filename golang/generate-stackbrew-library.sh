@@ -43,7 +43,7 @@ function generate_library(){
 			echo "$va: ${url}@${commit} $repo/$path/$version" >> $lib_name
 		done
 	
-		for variant in slim wheezy; do
+		for variant in $3; do
 			commit="$(git log -1 --format='format:%H' -- "$path/$version/$variant")"
 			echo >> $lib_name
 			for va in "${versionAliases[@]}"; do
