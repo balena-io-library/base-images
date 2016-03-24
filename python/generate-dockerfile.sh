@@ -12,7 +12,7 @@ PYTHON3_ARGS="-DBUILDSWIGNODE=OFF -DBUILDPYTHON3=ON -DPYTHON_INCLUDE_DIR=/usr/lo
 # $3: distro
 # $4: variants
 append_setup_script() {
-	# Can build mraa on alpine linux, lack of necessary libraries.
+	# Can't build mraa on alpine linux, lack of necessary libraries.
 	if [ $3 == 'debian' ]; then
 		script_file='setup.sh'
 	fi
@@ -57,8 +57,82 @@ set_pythonpath() {
 
 devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700 raspberrypi3'
 pythonVersions='2.7.11 3.3.6 3.4.4 3.5.1'
+binary_url="http://resin-packages.s3.amazonaws.com/python/v\$PYTHON_VERSION/Python-\$PYTHON_VERSION.linux-#{TARGET_ARCH}.tar.gz"
 
 for device in $devices; do
+	case "$device" in
+	'raspberrypi')
+		binary_arch='armv6hf'
+		alpine_binary_arch='alpine-armhf'
+	;;
+	'raspberrypi2')
+		binary_arch='armv7hf'
+		alpine_binary_arch='alpine-armhf'
+	;;
+	'raspberrypi3')
+		binary_arch='armv7hf'
+		alpine_binary_arch='alpine-armhf'
+	;;
+	'beaglebone')
+		binary_arch='armv7hf'
+		alpine_binary_arch='alpine-armhf'
+	;;
+	'edison')
+		binary_arch='i386'
+		alpine_binary_arch='alpine-i386'
+	;;
+	'nuc')
+		binary_arch='amd64'
+		alpine_binary_arch='alpine-amd64'
+	;;
+	'vab820-quad')
+		binary_arch='armv7hf'
+		alpine_binary_arch='alpine-armhf'
+	;;
+	'zc702-zynq7')
+		binary_arch='armv7hf'
+		alpine_binary_arch='alpine-armhf'
+	;;
+	'odroid-c1')
+		binary_arch='armv7hf'
+		alpine_binary_arch='alpine-armhf'
+	;;
+	'odroid-ux3')
+		binary_arch='armv7hf'
+		alpine_binary_arch='alpine-armhf'
+	;;
+	'parallella-hdmi-resin')
+		binary_arch='armv7hf'
+		alpine_binary_arch='alpine-armhf'
+	;;
+	'nitrogen6x')
+		binary_arch='armv7hf'
+		alpine_binary_arch='alpine-armhf'
+	;;
+	'cubox-i')
+		binary_arch='armv7hf'
+		alpine_binary_arch='alpine-armhf'
+	;;
+	'ts4900')
+		binary_arch='armv7hf'
+		alpine_binary_arch='alpine-armhf'
+	;;
+	'colibri-imx6')
+		binary_arch='armv7hf'
+		alpine_binary_arch='alpine-armhf'
+	;;
+	'apalis-imx6')
+		binary_arch='armv7hf'
+		alpine_binary_arch='alpine-armhf'
+	;;
+	'ts7700')
+		binary_url=$resinUrl
+		binary_arch='armel'
+		# Not supported yet
+		#alpine_binary_url=$resinUrl
+		#alpine_binary_arch='alpine-armhf'
+	;;
+	esac
 	for pythonVersion in $pythonVersions; do
 
 		if [ $pythonVersion != "2.7.11" ]; then
@@ -68,37 +142,29 @@ for device in $devices; do
 			template='Dockerfile.tpl'
 			slimTemplate='Dockerfile.slim.tpl'
 		fi
-
-		case "$pythonVersion" in
-		'2.7.11')
-			gpgKey='gpg --keyserver ha.pool.sks-keyservers.net --recv-keys C01E1CAD5EA2C4F0B8E3571504C367C218ADD4FF'
-		;;
-		'3.3.6')
-			gpgKey='gpg --keyserver ha.pool.sks-keyservers.net --recv-keys 26DEA9D4613391EF3E25C9FF0A5B101836580288'
-		;;
-		'3.4.4')
-			gpgKey='gpg --keyserver ha.pool.sks-keyservers.net --recv-keys 97FC712E4C024BBEA48A61ED3A5CA953F73C700D'
-		;;
-		'3.5.1')
-			gpgKey='gpg --keyserver ha.pool.sks-keyservers.net --recv-keys 97FC712E4C024BBEA48A61ED3A5CA953F73C700D'
-		;;
-		esac
-
 		baseVersion=$(expr match "$pythonVersion" '\([0-9]*\.[0-9]*\)')
 
 		# Debian
+
+		# Extract checksum
+		checksum=$(grep " Python-$pythonVersion.linux-$binary_arch.tar.gz" SHASUMS256.txt)
+
 		debian_dockerfilePath=$device/debian/$baseVersion
 		mkdir -p $debian_dockerfilePath
 		sed -e s~#{FROM}~"resin/$device-buildpack-deps:jessie"~g \
-			-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
-			-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
-			-e s~#{GPG_KEY}~"$gpgKey"~g $template > $debian_dockerfilePath/Dockerfile
+				-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
+				-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
+				-e s~#{BINARY_URL}~"$binary_url"~g \
+				-e s~#{CHECKSUM}~"$checksum"~g \
+				-e s~#{TARGET_ARCH}~"$binary_arch"~g $template > $debian_dockerfilePath/Dockerfile
 
 		mkdir -p $debian_dockerfilePath/wheezy
 		sed -e s~#{FROM}~"resin/$device-buildpack-deps:wheezy"~g \
-			-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
-			-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
-			-e s~#{GPG_KEY}~"$gpgKey"~g $template > $debian_dockerfilePath/wheezy/Dockerfile
+				-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
+				-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
+				-e s~#{BINARY_URL}~"$binary_url"~g \
+				-e s~#{CHECKSUM}~"$checksum"~g \
+				-e s~#{TARGET_ARCH}~"$binary_arch"~g $template > $debian_dockerfilePath/wheezy/Dockerfile
 
 		mkdir -p $debian_dockerfilePath/onbuild
 		sed -e s~#{FROM}~"resin/$device-python:$pythonVersion"~g Dockerfile.onbuild.tpl > $debian_dockerfilePath/onbuild/Dockerfile
@@ -109,12 +175,16 @@ for device in $devices; do
 			sed -e s~#{FROM}~"resin/$device-systemd:jessie"~g \
 				-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
 				-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
-				-e s~#{GPG_KEY}~"$gpgKey"~g $slimTemplate > $debian_dockerfilePath/slim/Dockerfile
+				-e s~#{BINARY_URL}~"$binary_url"~g \
+				-e s~#{CHECKSUM}~"$checksum"~g \
+				-e s~#{TARGET_ARCH}~"$binary_arch"~g $slimTemplate > $debian_dockerfilePath/slim/Dockerfile
 		else
 			sed -e s~#{FROM}~"resin/$device-debian:jessie"~g \
 				-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
 				-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
-				-e s~#{GPG_KEY}~"$gpgKey"~g $slimTemplate > $debian_dockerfilePath/slim/Dockerfile
+				-e s~#{BINARY_URL}~"$binary_url"~g \
+				-e s~#{CHECKSUM}~"$checksum"~g \
+				-e s~#{TARGET_ARCH}~"$binary_arch"~g $slimTemplate > $debian_dockerfilePath/slim/Dockerfile
 		fi
 
 		# Only for intel edison
@@ -141,27 +211,36 @@ for device in $devices; do
 			slimTemplate='Dockerfile.alpine.slim.tpl'
 		fi
 
+		# Extract checksum
+		checksum=$(grep " Python-$pythonVersion.linux-$alpine_binary_arch.tar.gz" SHASUMS256.txt)
+
 		alpine_dockerfilePath=$device/alpine/$baseVersion
 		mkdir -p $alpine_dockerfilePath
 		sed -e s~#{FROM}~"resin/$device-alpine-buildpack-deps:latest"~g \
-			-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
-			-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
-			-e s~#{GPG_KEY}~"$gpgKey"~g $template > $alpine_dockerfilePath/Dockerfile
+				-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
+				-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
+				-e s~#{BINARY_URL}~"$binary_url"~g \
+				-e s~#{CHECKSUM}~"$checksum"~g \
+				-e s~#{TARGET_ARCH}~"$alpine_binary_arch"~g $template > $alpine_dockerfilePath/Dockerfile
 
 		mkdir -p $alpine_dockerfilePath/onbuild
 		sed -e s~#{FROM}~"resin/$device-alpine-python:$pythonVersion"~g Dockerfile.onbuild.tpl > $alpine_dockerfilePath/onbuild/Dockerfile
 
 		mkdir -p $alpine_dockerfilePath/slim
 		sed -e s~#{FROM}~"resin/$device-alpine:latest"~g \
-			-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
-			-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
-			-e s~#{GPG_KEY}~"$gpgKey"~g $slimTemplate > $alpine_dockerfilePath/slim/Dockerfile
+				-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
+				-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
+				-e s~#{BINARY_URL}~"$binary_url"~g \
+				-e s~#{CHECKSUM}~"$checksum"~g \
+				-e s~#{TARGET_ARCH}~"$alpine_binary_arch"~g $slimTemplate > $alpine_dockerfilePath/slim/Dockerfile
 
 		mkdir -p $alpine_dockerfilePath/edge
 		sed -e s~#{FROM}~"resin/$device-alpine-buildpack-deps:edge"~g \
-			-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
-			-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
-			-e s~#{GPG_KEY}~"$gpgKey"~g $template > $alpine_dockerfilePath/edge/Dockerfile
+				-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
+				-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
+				-e s~#{BINARY_URL}~"$binary_url"~g \
+				-e s~#{CHECKSUM}~"$checksum"~g \
+				-e s~#{TARGET_ARCH}~"$alpine_binary_arch"~g $template > $alpine_dockerfilePath/edge/Dockerfile
 
 		set_pythonpath "$baseVersion" "$alpine_dockerfilePath" "base edge slim"
 	done

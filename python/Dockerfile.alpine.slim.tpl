@@ -12,9 +12,6 @@ RUN apk add --no-cache \
 		sqlite-libs \
 		libssl1.0
 
-# import gpg keys
-RUN #{GPG_KEY}
-
 # key 63C7CC90: public key "Simon McVittie <smcv@pseudorandom.co.uk>" imported
 RUN gpg --keyserver keyring.debian.org --recv-keys 4DE8FF2A63C7CC90
 
@@ -32,28 +29,11 @@ ENV SETUPTOOLS_VERSION 20.2.2
 RUN set -x \
 	&& buildDeps=' \
 		curl \
-		gcc \
-		libbz2 \
-		musl-dev \
-		ncurses5-libs \
-		readline-dev \
-		sqlite-dev \
-		openssl-dev \
-		make \
-		xz \
-		zlib-dev \
 	' \
 	&& apk add --no-cache --virtual .build-deps $buildDeps \
-	&& mkdir -p /usr/src/python \
-	&& curl -SL "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz" -o python.tar.xz \
-	&& curl -SL "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz.asc" -o python.tar.xz.asc \
-	&& gpg --verify python.tar.xz.asc \
-	&& tar -xJC /usr/src/python --strip-components=1 -f python.tar.xz \
-	&& rm python.tar.xz* \
-	&& cd /usr/src/python \
-	&& ./configure --enable-shared --enable-unicode=ucs4 \
-	&& make -j$(nproc) \
-	&& make install \
+	&& curl -SLO "#{BINARY_URL}" \
+	&& echo "#{CHECKSUM}" | sha256sum -c - \
+	&& tar -xzf "Python-$PYTHON_VERSION.linux-#{TARGET_ARCH}.tar.gz" --strip-components=1 \
 	&& mkdir -p /usr/src/python/setuptools \
 	&& curl -SLO https://pypi.python.org/packages/source/s/setuptools/setuptools-$SETUPTOOLS_VERSION.tar.gz \
 	&& echo "$SETUPTOOLS_SHA256  setuptools-$SETUPTOOLS_VERSION.tar.gz" > setuptools-$SETUPTOOLS_VERSION.tar.gz.sha256sum \
