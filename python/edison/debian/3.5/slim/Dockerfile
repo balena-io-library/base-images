@@ -14,9 +14,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& apt-get -y autoremove
 
-# import gpg keys
-RUN gpg --keyserver ha.pool.sks-keyservers.net --recv-keys 97FC712E4C024BBEA48A61ED3A5CA953F73C700D
-
 # key 63C7CC90: public key "Simon McVittie <smcv@pseudorandom.co.uk>" imported
 RUN gpg --keyserver keyring.debian.org --recv-keys 4DE8FF2A63C7CC90
 
@@ -26,7 +23,7 @@ RUN gpg --keyserver pgp.mit.edu  --recv-key 6E3CBCE93372DCFA
 ENV PYTHON_VERSION 3.5.1
 
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
-ENV PYTHON_PIP_VERSION 8.0.3
+ENV PYTHON_PIP_VERSION 8.1.1
 
 ENV SETUPTOOLS_SHA256 24fcfc15364a9fe09a220f37d2dcedc849795e3de3e4b393ee988e66a9cbd85a
 ENV SETUPTOOLS_VERSION 20.2.2
@@ -34,28 +31,11 @@ ENV SETUPTOOLS_VERSION 20.2.2
 RUN set -x \
 	&& buildDeps=' \
 		curl \
-		gcc \
-		libbz2-dev \
-		libc6-dev \
-		libncurses-dev \
-		libreadline-dev \
-		libsqlite3-dev \
-		libssl-dev \
-		make \
-		xz-utils \
-		zlib1g-dev \
 	' \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends && rm -rf /var/lib/apt/lists/* \
-	&& mkdir -p /usr/src/python \
-	&& curl -SL "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz" -o python.tar.xz \
-	&& curl -SL "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz.asc" -o python.tar.xz.asc \
-	&& gpg --verify python.tar.xz.asc \
-	&& tar -xJC /usr/src/python --strip-components=1 -f python.tar.xz \
-	&& rm python.tar.xz* \
-	&& cd /usr/src/python \
-	&& ./configure --enable-shared --enable-unicode=ucs4 \
-	&& make -j$(nproc) \
-	&& make install \
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-i386.tar.gz" \
+	&& echo "e8eb37ea0cd88021741d97b04d00fed9c654eea7fa48a1ce335b43247d5367ff  Python-3.5.1.linux-i386.tar.gz" | sha256sum -c - \
+	&& tar -xzf "Python-$PYTHON_VERSION.linux-i386.tar.gz" --strip-components=1 \
 	&& ldconfig \
 	&& mkdir -p /usr/src/python/setuptools \
 	&& curl -SLO https://pypi.python.org/packages/source/s/setuptools/setuptools-$SETUPTOOLS_VERSION.tar.gz \

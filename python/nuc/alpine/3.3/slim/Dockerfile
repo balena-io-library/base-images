@@ -12,9 +12,6 @@ RUN apk add --no-cache \
 		sqlite-libs \
 		libssl1.0
 
-# import gpg keys
-RUN gpg --keyserver ha.pool.sks-keyservers.net --recv-keys 26DEA9D4613391EF3E25C9FF0A5B101836580288
-
 # key 63C7CC90: public key "Simon McVittie <smcv@pseudorandom.co.uk>" imported
 RUN gpg --keyserver keyring.debian.org --recv-keys 4DE8FF2A63C7CC90
 
@@ -24,36 +21,23 @@ RUN gpg --keyserver pgp.mit.edu  --recv-key 6E3CBCE93372DCFA
 ENV PYTHON_VERSION 3.3.6
 
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
-ENV PYTHON_PIP_VERSION 8.0.3
+ENV PYTHON_PIP_VERSION 8.1.1
 
 ENV SETUPTOOLS_SHA256 24fcfc15364a9fe09a220f37d2dcedc849795e3de3e4b393ee988e66a9cbd85a
 ENV SETUPTOOLS_VERSION 20.2.2
 
+# point Python at a system-provided certificate database. Otherwise, we might hit CERTIFICATE_VERIFY_FAILED.
+# https://www.python.org/dev/peps/pep-0476/#trust-database
+ENV SSL_CERT_FILE /etc/ssl/certs/ca-certificates.crt
+
 RUN set -x \
 	&& buildDeps=' \
 		curl \
-		gcc \
-		libbz2 \
-		musl-dev \
-		ncurses5-libs \
-		readline-dev \
-		sqlite-dev \
-		openssl-dev \
-		make \
-		xz \
-		zlib-dev \
 	' \
 	&& apk add --no-cache --virtual .build-deps $buildDeps \
-	&& mkdir -p /usr/src/python \
-	&& curl -SL "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz" -o python.tar.xz \
-	&& curl -SL "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz.asc" -o python.tar.xz.asc \
-	&& gpg --verify python.tar.xz.asc \
-	&& tar -xJC /usr/src/python --strip-components=1 -f python.tar.xz \
-	&& rm python.tar.xz* \
-	&& cd /usr/src/python \
-	&& ./configure --enable-shared --enable-unicode=ucs4 \
-	&& make -j$(nproc) \
-	&& make install \
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-alpine-amd64.tar.gz" \
+	&& echo "65f3421205e7d0e1292a08fb3f8fe4224df6fee8026ed111c6fda6a1d1efb5f4  Python-3.3.6.linux-alpine-amd64.tar.gz" | sha256sum -c - \
+	&& tar -xzf "Python-$PYTHON_VERSION.linux-alpine-amd64.tar.gz" --strip-components=1 \
 	&& mkdir -p /usr/src/python/setuptools \
 	&& curl -SLO https://pypi.python.org/packages/source/s/setuptools/setuptools-$SETUPTOOLS_VERSION.tar.gz \
 	&& echo "$SETUPTOOLS_SHA256  setuptools-$SETUPTOOLS_VERSION.tar.gz" > setuptools-$SETUPTOOLS_VERSION.tar.gz.sha256sum \
