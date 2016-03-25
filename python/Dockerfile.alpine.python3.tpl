@@ -21,7 +21,7 @@ RUN gpg --keyserver pgp.mit.edu  --recv-key 6E3CBCE93372DCFA
 ENV PYTHON_VERSION #{PYTHON_VERSION}
 
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
-ENV PYTHON_PIP_VERSION 8.0.3
+ENV PYTHON_PIP_VERSION 8.1.1
 
 ENV SETUPTOOLS_SHA256 24fcfc15364a9fe09a220f37d2dcedc849795e3de3e4b393ee988e66a9cbd85a
 ENV SETUPTOOLS_VERSION 20.2.2
