@@ -26,6 +26,10 @@ ENV PYTHON_PIP_VERSION 8.1.1
 ENV SETUPTOOLS_SHA256 24fcfc15364a9fe09a220f37d2dcedc849795e3de3e4b393ee988e66a9cbd85a
 ENV SETUPTOOLS_VERSION 20.2.2
 
+# point Python at a system-provided certificate database. Otherwise, we might hit CERTIFICATE_VERIFY_FAILED.
+# https://www.python.org/dev/peps/pep-0476/#trust-database
+ENV SSL_CERT_FILE /etc/ssl/certs/ca-certificates.crt
+
 RUN set -x \
 	&& buildDeps=' \
 		curl \
