@@ -29,7 +29,7 @@ ENV SETUPTOOLS_SHA256 24fcfc15364a9fe09a220f37d2dcedc849795e3de3e4b393ee988e66a9
 ENV SETUPTOOLS_VERSION 20.2.2
 
 RUN set -x \
-	&& curl -SLO "" \
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-armv7hf.tar.gz" \
 	&& echo "1a59d0762c23eda12a07b7a0549b7ee0aaf36ae943ee0efb274ffdbabab80fb5  Python-3.3.6.linux-armv7hf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-armv7hf.tar.gz" --strip-components=1 \
 	&& ldconfig \

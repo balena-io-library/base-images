@@ -29,7 +29,7 @@ ENV SETUPTOOLS_SHA256 24fcfc15364a9fe09a220f37d2dcedc849795e3de3e4b393ee988e66a9
 ENV SETUPTOOLS_VERSION 20.2.2
 
 RUN set -x \
-	&& curl -SLO "" \
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-armel.tar.gz" \
 	&& echo "1cad3b9af24523d540c63e63c0228e896375f1237cc1221284229d6c765687b3  Python-2.7.11.linux-armel.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-armel.tar.gz" --strip-components=1 \
 	&& ldconfig \
