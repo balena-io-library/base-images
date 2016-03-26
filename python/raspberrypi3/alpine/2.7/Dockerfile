@@ -31,7 +31,7 @@ ENV SETUPTOOLS_VERSION 20.2.2
 ENV SSL_CERT_FILE /etc/ssl/certs/ca-certificates.crt
 
 RUN set -x \
-	&& curl -SLO "" \
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-alpine-armhf.tar.gz" \
 	&& echo "1fc7c2d43b86e2b60e9034f2ef45e0fb49577daedd04b41c14af3725c5c5f65e  Python-2.7.11.linux-alpine-armhf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-alpine-armhf.tar.gz" --strip-components=1 \
 	&& mkdir -p /usr/src/python/setuptools \

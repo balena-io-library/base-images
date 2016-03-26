@@ -126,7 +126,6 @@ for device in $devices; do
 		alpine_binary_arch='alpine-armhf'
 	;;
 	'ts7700')
-		binary_url=$resinUrl
 		binary_arch='armel'
 		# Not supported yet
 		#alpine_binary_url=$resinUrl
