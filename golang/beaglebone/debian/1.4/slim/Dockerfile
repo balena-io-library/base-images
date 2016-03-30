@@ -1,4 +1,4 @@
-FROM resin/resin/beaglebone-debian:jessie
+FROM resin/beaglebone-debian:jessie
 
 ENV GO_VERSION 1.4.3
 

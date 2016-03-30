@@ -1,4 +1,4 @@
-FROM resin/resin/nuc-debian:jessie
+FROM resin/nuc-debian:jessie
 
 ENV GO_VERSION 1.4.3
 

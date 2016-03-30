@@ -1,4 +1,4 @@
-FROM resin/resin/odroid-c1-debian:jessie
+FROM resin/odroid-c1-debian:jessie
 
 ENV GO_VERSION 1.6
 

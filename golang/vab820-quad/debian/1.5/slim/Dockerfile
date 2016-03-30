@@ -1,4 +1,4 @@
-FROM resin/resin/vab820-quad-debian:jessie
+FROM resin/vab820-quad-debian:jessie
 
 ENV GO_VERSION 1.5.3
 

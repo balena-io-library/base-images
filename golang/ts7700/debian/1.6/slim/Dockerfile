@@ -1,4 +1,4 @@
-FROM resin/resin/ts7700-debian:jessie
+FROM resin/ts7700-debian:jessie
 
 ENV GO_VERSION 1.6
 

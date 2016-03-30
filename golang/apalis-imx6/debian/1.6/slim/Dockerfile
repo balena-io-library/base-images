@@ -1,4 +1,4 @@
-FROM resin/resin/apalis-imx6-debian:jessie
+FROM resin/apalis-imx6-debian:jessie
 
 ENV GO_VERSION 1.6
 

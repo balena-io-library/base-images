@@ -1,4 +1,4 @@
-FROM resin/resin/parallella-hdmi-resin-debian:jessie
+FROM resin/parallella-hdmi-resin-debian:jessie
 
 ENV GO_VERSION 1.5.3
 

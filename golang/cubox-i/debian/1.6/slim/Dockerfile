@@ -1,4 +1,4 @@
-FROM resin/resin/cubox-i-debian:jessie
+FROM resin/cubox-i-debian:jessie
 
 ENV GO_VERSION 1.6
 
