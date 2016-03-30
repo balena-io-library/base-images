@@ -148,7 +148,7 @@ for device in $devices; do
 		fi
 
 		mkdir -p $debian_dockerfilePath/slim
-		sed -e s~#{FROM}~resin/$base_image~g \
+		sed -e s~#{FROM}~$base_image~g \
 				-e s~#{BINARY_URL}~$binary_url~g \
 				-e s~#{GO_VERSION}~$goVersion~g \
 				-e s~#{CHECKSUM}~"$checksum"~g \
