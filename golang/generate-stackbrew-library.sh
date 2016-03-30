@@ -60,7 +60,7 @@ function generate_library(){
 
 declare -A aliases
 aliases=(
-	[1.4.3]='0 latest'
+	[1.6]='0 latest'
 )
 
 cd "$(dirname "$(readlink -f "$BASH_SOURCE")")"
