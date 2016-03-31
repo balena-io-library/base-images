@@ -30,7 +30,7 @@ ENV SETUPTOOLS_VERSION 20.2.2
 
 RUN set -x \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-armel.tar.gz" \
-	&& echo "369780eaf6d0e2f0f145d99fe7e6e911875b52c03feb87b183c91c982ae5823f  Python-3.3.6.linux-armel.tar.gz" | sha256sum -c - \
+	&& echo "fe851731e6b731864ae112b44499091a52f1e504badb79c98578b74a7ee9dc90  Python-3.3.6.linux-armel.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-armel.tar.gz" --strip-components=1 \
 	&& ldconfig \
 	&& mkdir -p /usr/src/python/setuptools \

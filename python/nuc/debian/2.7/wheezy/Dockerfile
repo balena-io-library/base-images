@@ -30,7 +30,7 @@ ENV SETUPTOOLS_VERSION 20.2.2
 
 RUN set -x \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-amd64.tar.gz" \
-	&& echo "b9eb6d52b7ed4a7cba70d5f1b6d2f0f7eca8084b4d70fab6f425862d080ab438  Python-2.7.11.linux-amd64.tar.gz" | sha256sum -c - \
+	&& echo "33f3ccc00ab276d303fc0e75de01be880aa4546bc9914573a59c03ab8872173b  Python-2.7.11.linux-amd64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-amd64.tar.gz" --strip-components=1 \
 	&& ldconfig \
 	&& mkdir -p /usr/src/python/setuptools \

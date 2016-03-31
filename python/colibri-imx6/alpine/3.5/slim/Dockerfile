@@ -36,7 +36,7 @@ RUN set -x \
 	' \
 	&& apk add --no-cache --virtual .build-deps $buildDeps \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-alpine-armhf.tar.gz" \
-	&& echo "3a82797ef9322be6c4bff4f71bdc8404cbffd4219af5e481073a33e54d1bf9a0  Python-3.5.1.linux-alpine-armhf.tar.gz" | sha256sum -c - \
+	&& echo "fec378309722da85c69ba5ad3f805c69e8ead534c7d7e50f4d77bb7697f32404  Python-3.5.1.linux-alpine-armhf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-alpine-armhf.tar.gz" --strip-components=1 \
 	&& mkdir -p /usr/src/python/setuptools \
 	&& curl -SLO https://pypi.python.org/packages/source/s/setuptools/setuptools-$SETUPTOOLS_VERSION.tar.gz \

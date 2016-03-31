@@ -30,7 +30,7 @@ ENV SETUPTOOLS_VERSION 20.2.2
 
 RUN set -x \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-armv6hf.tar.gz" \
-	&& echo "acf644a18410dfefb301f43ff35dbcd99469b7841a62ee5f65d5a34d52c12f2b  Python-3.5.1.linux-armv6hf.tar.gz" | sha256sum -c - \
+	&& echo "7cdf6435f36232eff5d288fe131824b155d7a3c655d04a2e52cacf060882e4ed  Python-3.5.1.linux-armv6hf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-armv6hf.tar.gz" --strip-components=1 \
 	&& ldconfig \
 	&& mkdir -p /usr/src/python/setuptools \

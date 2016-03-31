@@ -34,7 +34,7 @@ RUN set -x \
 	' \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends && rm -rf /var/lib/apt/lists/* \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-armv6hf.tar.gz" \
-	&& echo "f58c9c878429020ad689f6bdff9467057a7a18b5c144049b75525059c8b1fa36  Python-3.4.4.linux-armv6hf.tar.gz" | sha256sum -c - \
+	&& echo "66d07fac4b54cfd0622e31e0cdb392bbc47e4f7eed26c40c42fbac1adbf9d3ad  Python-3.4.4.linux-armv6hf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-armv6hf.tar.gz" --strip-components=1 \
 	&& ldconfig \
 	&& mkdir -p /usr/src/python/setuptools \

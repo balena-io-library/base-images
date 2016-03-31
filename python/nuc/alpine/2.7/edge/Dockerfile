@@ -32,7 +32,7 @@ ENV SSL_CERT_FILE /etc/ssl/certs/ca-certificates.crt
 
 RUN set -x \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-alpine-amd64.tar.gz" \
-	&& echo "ce6c3952659607edc8059a87100f2e8179f26d31447d0f86f7cb4835d4cdc655  Python-2.7.11.linux-alpine-amd64.tar.gz" | sha256sum -c - \
+	&& echo "90236afc3aae3850c02987fbce604e985aaa0e0db2d36157eed1559371c52e4b  Python-2.7.11.linux-alpine-amd64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-alpine-amd64.tar.gz" --strip-components=1 \
 	&& mkdir -p /usr/src/python/setuptools \
 	&& curl -SLO https://pypi.python.org/packages/source/s/setuptools/setuptools-$SETUPTOOLS_VERSION.tar.gz \

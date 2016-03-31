@@ -34,7 +34,7 @@ RUN set -x \
 	' \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends && rm -rf /var/lib/apt/lists/* \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-i386.tar.gz" \
-	&& echo "e8eb37ea0cd88021741d97b04d00fed9c654eea7fa48a1ce335b43247d5367ff  Python-3.5.1.linux-i386.tar.gz" | sha256sum -c - \
+	&& echo "edccc8df19916e0fa0d19edd8ef88f29fc21b75e9fe2a220e0d1915bf017dbc8  Python-3.5.1.linux-i386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-i386.tar.gz" --strip-components=1 \
 	&& ldconfig \
 	&& mkdir -p /usr/src/python/setuptools \
