@@ -1,6 +1,6 @@
 FROM resin/rpi-raspbian:wheezy
 
-ONBUILD echo $'WARNING: Systemd is not available on this base image! \nSystemd was included in Debian wheezy as a technology preview. Therefore, we do not install systemd on wheezy images and INITSYSTEM will not work.'
+ONBUILD RUN echo $'WARNING: Systemd is not available on this base image! \nSystemd was included in Debian wheezy as a technology preview. Therefore, we do not install systemd on wheezy images and INITSYSTEM will not work.'
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		ca-certificates \
