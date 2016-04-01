@@ -30,7 +30,7 @@ ENV SETUPTOOLS_VERSION 20.2.2
 
 RUN set -x \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-i386.tar.gz" \
-	&& echo "d6c2b1d48373427bac4c2cdf3e3614a97d99ab25a315b5aba311ce41ea5cedaf  Python-3.3.6.linux-i386.tar.gz" | sha256sum -c - \
+	&& echo "26134913cf8254b6f92b0c68b39bf9202d05eda63383ab6aaf531b7d173b786a  Python-3.3.6.linux-i386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-i386.tar.gz" --strip-components=1 \
 	&& ldconfig \
 	&& mkdir -p /usr/src/python/setuptools \
