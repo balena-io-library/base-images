@@ -1,6 +1,6 @@
 FROM armhf/alpine:3.2
 
-LABEL io.resin.architecture="armhf" io.resin.qemu.version="2.5.0-resin-rc4"
+LABEL io.resin.architecture="armhf" io.resin.qemu.version="2.5.0-resin-rc3"
 
 COPY qemu-arm-static /usr/bin/qemu-arm-static
 
