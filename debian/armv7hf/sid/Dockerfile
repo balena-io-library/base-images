@@ -1,6 +1,6 @@
 FROM armhf/debian:sid
 
-LABEL io.resin.architecture="armv7hf" io.resin.qemu.version="2.5.0-resin-rc4"
+LABEL io.resin.architecture="armv7hf" io.resin.qemu.version="2.5.0-resin-rc3"
 
 ENV LC_ALL C.UTF-8
 ENV DEBIAN_FRONTEND noninteractive
