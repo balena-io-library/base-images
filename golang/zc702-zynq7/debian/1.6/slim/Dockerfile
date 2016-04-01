@@ -1,4 +1,4 @@
-FROM resin/resin/zc702-zynq7-debian:jessie
+FROM resin/zc702-zynq7-debian:jessie
 
 ENV GO_VERSION 1.6
 

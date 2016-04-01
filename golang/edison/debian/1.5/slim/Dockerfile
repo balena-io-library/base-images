@@ -1,4 +1,4 @@
-FROM resin/resin/edison-debian:jessie
+FROM resin/edison-debian:jessie
 
 ENV GO_VERSION 1.5.3
 

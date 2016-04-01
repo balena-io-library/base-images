@@ -1,4 +1,4 @@
-FROM resin/resin/raspberrypi3-debian:jessie
+FROM resin/raspberrypi3-debian:jessie
 
 ENV GO_VERSION 1.4.3
 

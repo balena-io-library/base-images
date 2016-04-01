@@ -1,4 +1,4 @@
-FROM resin/resin/nitrogen6x-debian:jessie
+FROM resin/nitrogen6x-debian:jessie
 
 ENV GO_VERSION 1.6
 

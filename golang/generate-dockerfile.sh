@@ -137,9 +137,8 @@ for device in $devices; do
 			-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.tpl > $debian_dockerfilePath/wheezy/Dockerfile
 		cp go-wrapper $debian_dockerfilePath/wheezy/
 
-		# Golang doesn't work properly with qemu when cross compiling, so ARM build servers are required to build onbuild images properly.
-		#mkdir -p $debian_dockerfilePath/onbuild
-		#sed -e s~#{FROM}~resin/$device-go:$goVersion~g Dockerfile.onbuild.tpl > $debian_dockerfilePath/onbuild/Dockerfile
+		mkdir -p $debian_dockerfilePath/onbuild
+		sed -e s~#{FROM}~resin/$device-golang:$goVersion~g Dockerfile.onbuild.tpl > $debian_dockerfilePath/onbuild/Dockerfile
 		
 		# Only for RPI1 device
 		if [ $device == "raspberrypi" ]; then
@@ -149,7 +148,7 @@ for device in $devices; do
 		fi
 
 		mkdir -p $debian_dockerfilePath/slim
-		sed -e s~#{FROM}~resin/$base_image~g \
+		sed -e s~#{FROM}~$base_image~g \
 				-e s~#{BINARY_URL}~$binary_url~g \
 				-e s~#{GO_VERSION}~$goVersion~g \
 				-e s~#{CHECKSUM}~"$checksum"~g \
@@ -183,6 +182,9 @@ for device in $devices; do
 			-e s~#{CHECKSUM}~"$checksum"~g \
 			-e s~#{TARGET_ARCH}~"$alpine_binary_arch"~g Dockerfile.alpine.slim.tpl > $alpine_dockerfilePath/slim/Dockerfile
 		cp go-wrapper $alpine_dockerfilePath/slim/
+
+		mkdir -p $alpine_dockerfilePath/onbuild
+		sed -e s~#{FROM}~resin/$device-alpine-golang:$goVersion~g Dockerfile.onbuild.tpl > $alpine_dockerfilePath/onbuild/Dockerfile
 
 		mkdir -p $alpine_dockerfilePath/edge
 		sed -e s~#{FROM}~"resin/$device-alpine-buildpack-deps:edge"~g \
