@@ -7,7 +7,7 @@ RUN curl -SLO "#{BINARY_URL}" \
 	&& echo "#{CHECKSUM}" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz" \
-	&& npm install mraa \
+	&& npm install mraa@$MRAA_VERSION \
 	&& npm cache clear \
 	&& npm config set unsafe-perm true -g --unsafe-perm \
 	&& rm -rf /tmp/*

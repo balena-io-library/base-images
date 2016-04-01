@@ -13,14 +13,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		usbutils \		
 	&& rm -rf /var/lib/apt/lists/*
 
-# MRAA v0.8.1 commit 
-ENV MRAA_COMMIT 049ba5fa9f2d18ac0ec6729c46916b34998d3c5f
+# MRAA
+ENV MRAA_COMMIT a9429204e38416e04edbc1a6b5fe6ba49379493d
+ENV MRAA_VERSION 0.10.1
 
 # Install mraa
 RUN set -x \
 	&& buildDeps=' \
 		build-essential \
-		ca-certificates \
 		cmake \
 		git-core \
 		libpcre3-dev \

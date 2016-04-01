@@ -5,7 +5,6 @@ set -x \
 && buildDeps='
 	curl 
 	build-essential 
-	ca-certificates 
 	cmake 
 	git-core 
 	libpcre3-dev 
