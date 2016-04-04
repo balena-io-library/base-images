@@ -37,7 +37,7 @@ C4F0DFFF4E8C1A8236409D08E73BC641CC11F4C8 \
 done
 
 devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700 raspberrypi3'
-nodeVersions='0.10.22 0.10.43 0.12.12 4.4.1 5.9.0'
+nodeVersions='0.10.22 0.10.44 0.12.13 4.4.2 5.10.0'
 defaultVersion='0.10.22'
 resinUrl="http://resin-packages.s3.amazonaws.com/node/v\$NODE_VERSION/node-v\$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz"
 nodejsUrl="http://nodejs.org/dist/v\$NODE_VERSION/node-v\$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz"
