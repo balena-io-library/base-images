@@ -17,18 +17,20 @@ for device in $devices; do
 
 	case "$device" in
 	'raspberrypi')
-		alpine_template='Dockerfile.alpine.tpl'
+		alpine_template='Dockerfile.alpine.rpi.tpl'
 		alpine_baseImage='armhf-alpine'
 	;;
 	'raspberrypi2')
 		template='Dockerfile.armv7hf.rpi.tpl'
 		baseImage='armv7hf-systemd'
-		alpine_template='Dockerfile.alpine.tpl'
+		alpine_template='Dockerfile.alpine.rpi.tpl'
 		alpine_baseImage='armhf-alpine'
 	;;
 	'raspberrypi3')
 		template='Dockerfile.armv7hf.rpi.tpl'
 		baseImage='armv7hf-systemd'
+		alpine_template='Dockerfile.alpine.rpi.tpl'
+		alpine_baseImage='armhf-alpine'
 	;;
 	'beaglebone')
 		template='Dockerfile.armv7hf.bbb.tpl'
