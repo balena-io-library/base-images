@@ -2,8 +2,12 @@ FROM resin/raspberrypi-buildpack-deps:jessie-scm
 
 RUN apt-get update && apt-get install -y \
 		autoconf \
-		build-essential \
+		build-essential \		
+		i2c-tools \
 		imagemagick \
+		iputils-ping \	
+		ifupdown \	
+		less \
 		libbz2-dev \
 		libcurl4-openssl-dev \
 		libevent-dev \
@@ -15,11 +19,16 @@ RUN apt-get update && apt-get install -y \
 		libmysqlclient-dev \
 		libncurses-dev \
 		libpq-dev \
+		libraspberrypi-bin \
 		libreadline-dev \
 		libsqlite3-dev \
 		libssl-dev \
 		libxml2-dev \
 		libxslt-dev \
 		libyaml-dev \
+		module-init-tools \
+		nano \
+		net-tools \
 		zlib1g-dev \
+		usbutils \		
 	&& rm -rf /var/lib/apt/lists/*
