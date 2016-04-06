@@ -36,12 +36,14 @@ RUN set -x \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-armv6hf.tar.gz" \
 	&& echo "4f722232e359bfddc5d9f8a310e63b725562ccf6dd2e58d848e917f01aea2913  Python-2.7.11.linux-armv6hf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-armv6hf.tar.gz" --strip-components=1 \
+	&& rm -rf "Python-$PYTHON_VERSION.linux-armv6hf.tar.gz" \
 	&& ldconfig \
 	&& mkdir -p /usr/src/python/setuptools \
 	&& curl -SLO https://pypi.python.org/packages/source/s/setuptools/setuptools-$SETUPTOOLS_VERSION.tar.gz \
 	&& echo "$SETUPTOOLS_SHA256  setuptools-$SETUPTOOLS_VERSION.tar.gz" > setuptools-$SETUPTOOLS_VERSION.tar.gz.sha256sum \
 	&& sha256sum -c setuptools-$SETUPTOOLS_VERSION.tar.gz.sha256sum \
 	&& tar -xzC /usr/src/python/setuptools --strip-components=1 -f setuptools-$SETUPTOOLS_VERSION.tar.gz \
+	&& rm -rf setuptools-$SETUPTOOLS_VERSION.tar.gz* \
 	&& cd /usr/src/python/setuptools \
 	&& python2 ez_setup.py \
 	&& mkdir -p /usr/src/python/pip \

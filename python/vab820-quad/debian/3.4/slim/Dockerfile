@@ -36,12 +36,14 @@ RUN set -x \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-armv7hf.tar.gz" \
 	&& echo "e4e3b7bb8844c530aa1a4c6725c540bf955e93a9b6124c34ae0fa5f8c06375ff  Python-3.4.4.linux-armv7hf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-armv7hf.tar.gz" --strip-components=1 \
+	&& rm -rf "Python-$PYTHON_VERSION.linux-armv7hf.tar.gz" \
 	&& ldconfig \
 	&& mkdir -p /usr/src/python/setuptools \
 	&& curl -SLO https://pypi.python.org/packages/source/s/setuptools/setuptools-$SETUPTOOLS_VERSION.tar.gz \
 	&& echo "$SETUPTOOLS_SHA256  setuptools-$SETUPTOOLS_VERSION.tar.gz" > setuptools-$SETUPTOOLS_VERSION.tar.gz.sha256sum \
 	&& sha256sum -c setuptools-$SETUPTOOLS_VERSION.tar.gz.sha256sum \
 	&& tar -xzC /usr/src/python/setuptools --strip-components=1 -f setuptools-$SETUPTOOLS_VERSION.tar.gz \
+	&& rm -rf setuptools-$SETUPTOOLS_VERSION.tar.gz* \
 	&& cd /usr/src/python/setuptools \
 	&& python3 ez_setup.py \
 	&& mkdir -p /usr/src/python/pip \

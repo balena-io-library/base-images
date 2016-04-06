@@ -34,11 +34,13 @@ RUN set -x \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-alpine-armhf.tar.gz" \
 	&& echo "e447748b5802d5e5ba4b826218a15aa0058b523875546b1037fd5a54d5f550ae  Python-2.7.11.linux-alpine-armhf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-alpine-armhf.tar.gz" --strip-components=1 \
+	&& rm -rf "Python-$PYTHON_VERSION.linux-alpine-armhf.tar.gz" \
 	&& mkdir -p /usr/src/python/setuptools \
 	&& curl -SLO https://pypi.python.org/packages/source/s/setuptools/setuptools-$SETUPTOOLS_VERSION.tar.gz \
 	&& echo "$SETUPTOOLS_SHA256  setuptools-$SETUPTOOLS_VERSION.tar.gz" > setuptools-$SETUPTOOLS_VERSION.tar.gz.sha256sum \
 	&& sha256sum -c setuptools-$SETUPTOOLS_VERSION.tar.gz.sha256sum \
 	&& tar -xzC /usr/src/python/setuptools --strip-components=1 -f setuptools-$SETUPTOOLS_VERSION.tar.gz \
+	&& rm -rf setuptools-$SETUPTOOLS_VERSION.tar.gz* \
 	&& cd /usr/src/python/setuptools \
 	&& python2 ez_setup.py \
 	&& mkdir -p /usr/src/python/pip \
