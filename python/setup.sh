@@ -1,12 +1,15 @@
 #!/bin/bash
-set -e
 
-set -x \
+# if build-essential is not installed then it's a slim image
+dpkg -s build-essential
+if [ $? == 1 ]; then
+	deps='curl build-essential git'
+	apt-get update && apt-get install -y $deps --no-install-recommends && rm -rf /var/lib/apt/lists/*
+fi
+
+set -ex \
 && buildDeps='
-	curl 
-	build-essential 
 	cmake 
-	git-core 
 	libpcre3-dev 
 	swig 
 	' \
@@ -24,3 +27,8 @@ set -x \
 
 echo "/usr/local/lib/i386-linux-gnu/" >> /etc/ld.so.conf \
 && ldconfig
+
+# clean up if it's a slim image
+if [ ! -z "$deps" ]; then
+	apt-get purge -y --auto-remove $deps
+fi
