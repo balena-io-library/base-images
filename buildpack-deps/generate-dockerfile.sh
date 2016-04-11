@@ -23,6 +23,7 @@ for device in $devices; do
 		# Only for rpi
 		if [ $device == 'raspberrypi' ]; then
 			sed -e s~#{FROM}~"resin/raspberrypi-systemd:$suite"~g Dockerfile.curl.tpl > $debian_dockerfilePath/curl/Dockerfile
+			sed -e s~#{FROM}~"resin/$device-buildpack-deps:$suite-scm"~g Dockerfile.rpi.tpl > $debian_dockerfilePath/Dockerfile
 		fi
 	done
 

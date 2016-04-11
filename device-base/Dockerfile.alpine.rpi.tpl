@@ -1,6 +1,6 @@
-FROM resin/armhf-alpine:edge
+FROM #{FROM}
 
-LABEL io.resin.device-type="raspberrypi3"
+LABEL io.resin.device-type="#{DEV_TYPE}"
 
 RUN apk add --update \
 		less \
