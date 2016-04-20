@@ -61,7 +61,7 @@ RUN set -x \
 		-exec rm -rf '{}' + \
 	&& cd / \
 	&& apt-get purge -y --auto-remove $buildDeps \
-	&& rm -rf /usr/src/python
+	&& rm -rf /usr/src/python ~/.cache
 
 # install "virtualenv", since the vast majority of users of this image will want it
 RUN pip3 install --no-cache-dir virtualenv
