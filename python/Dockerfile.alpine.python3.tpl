@@ -86,6 +86,6 @@ RUN cd /usr/local/bin \
 	&& ln -sf idle3 idle \
 	&& ln -sf pydoc3 pydoc \
 	&& ln -sf python3 python \
-	&& ln -sf python-config3 python-config
+	&& ln -sf python3-config python-config
 
 CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command could be found in Dockerfile Guide section in our Docs. Here's the link: http://docs.resin.io/#/pages/using/dockerfile.md"]
