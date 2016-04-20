@@ -62,7 +62,7 @@ RUN set -x \
 		-exec rm -rf '{}' + \
 	&& cd / \
 	&& apk del .build-deps \
-	&& rm -rf /usr/src/python
+	&& rm -rf /usr/src/python ~/.cache
 
 # install "virtualenv", since the vast majority of users of this image will want it
 RUN pip install --no-cache-dir virtualenv
