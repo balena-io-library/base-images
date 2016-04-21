@@ -56,7 +56,7 @@ RUN set -x \
 		-o \( -type f -a -name '*.pyc' -o -name '*.pyo' \) \
 		-exec rm -rf '{}' + \
 	&& cd / \
-	&& rm -rf /usr/src/python
+	&& rm -rf /usr/src/python ~/.cache
 
 # install "virtualenv", since the vast majority of users of this image will want it
 RUN pip3 install --no-cache-dir virtualenv
@@ -85,7 +85,7 @@ RUN cd /usr/local/bin \
 	&& ln -sf idle3 idle \
 	&& ln -sf pydoc3 pydoc \
 	&& ln -sf python3 python \
-	&& ln -sf python-config3 python-config
+	&& ln -sf python3-config python-config
 
 CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command could be found in Dockerfile Guide section in our Docs. Here's the link: http://docs.resin.io/#/pages/using/dockerfile.md"]
 ENV PYTHONPATH /usr/lib/python3/dist-packages
