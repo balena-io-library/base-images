@@ -55,7 +55,7 @@ set_pythonpath() {
 	done
 }
 
-devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700 raspberrypi3'
+devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700 raspberrypi3 artik5'
 pythonVersions='2.7.11 3.3.6 3.4.4 3.5.1'
 binary_url="http://resin-packages.s3.amazonaws.com/python/v\$PYTHON_VERSION/Python-\$PYTHON_VERSION.linux-#{TARGET_ARCH}.tar.gz"
 
@@ -130,6 +130,10 @@ for device in $devices; do
 		# Not supported yet
 		#alpine_binary_url=$resinUrl
 		#alpine_binary_arch='alpine-armhf'
+	;;
+	'artik5')
+		binary_arch='armv7hf'
+		alpine_binary_arch='alpine-armhf'
 	;;
 	esac
 	for pythonVersion in $pythonVersions; do
