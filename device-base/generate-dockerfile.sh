@@ -9,7 +9,7 @@ bb_key_cmd='apt-key adv --keyserver keyserver.ubuntu.com --recv-key D284E608A4C4
 bb_sourceslist_wheezy_cmd='echo "deb http://debian.beagleboard.org/packages wheezy-bbb main" >> /etc/apt/sources.list'
 bb_key_wheezy_cmd='apt-key adv --keyserver keyserver.ubuntu.com --recv-key B2710B8359890110'
 
-devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700 raspberrypi3'
+devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700 raspberrypi3 artik5 artik10'
 suites='jessie wheezy'
 alpine_suites='edge 3.2 3.3'
 
@@ -115,6 +115,18 @@ for device in $devices; do
 	'ts7700')
 		template='Dockerfile.tpl'
 		baseImage='armel-systemd'
+	;;
+	'artik5')
+		template='Dockerfile.tpl'
+		baseImage='armv7hf-systemd'
+		alpine_template='Dockerfile.alpine.tpl'
+		alpine_baseImage='armhf-alpine'
+	;;
+	'artik10')
+		template='Dockerfile.tpl'
+		baseImage='armv7hf-systemd'
+		alpine_template='Dockerfile.alpine.tpl'
+		alpine_baseImage='armhf-alpine'
 	;;
 	esac
 

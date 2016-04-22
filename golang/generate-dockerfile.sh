@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700 raspberrypi3'
+devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700 raspberrypi3 artik5 artik10'
 goVersions='1.4.3 1.5.3 1.6'
 resinUrl="http://resin-packages.s3.amazonaws.com/golang/v\$GO_VERSION/go\$GO_VERSION.linux-#{TARGET_ARCH}.tar.gz"
 golangUrl="https://storage.googleapis.com/golang/go\$GO_VERSION.linux-#{TARGET_ARCH}.tar.gz"
@@ -110,6 +110,18 @@ for device in $devices; do
 		# Not supported yet
 		#alpine_binary_url=$resinUrl
 		#alpine_binary_arch='alpine-armhf'
+	;;
+	'artik5')
+		binary_url=$resinUrl
+		binary_arch='armv7hf'
+		alpine_binary_url=$resinUrl
+		alpine_binary_arch='alpine-armhf'
+	;;
+	'artik10')
+		binary_url=$resinUrl
+		binary_arch='armv7hf'
+		alpine_binary_url=$resinUrl
+		alpine_binary_arch='alpine-armhf'
 	;;
 	esac
 	for goVersion in $goVersions; do
