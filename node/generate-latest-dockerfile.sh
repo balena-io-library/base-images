@@ -2,7 +2,7 @@
 set -e
 
 # comparing version: http://stackoverflow.com/questions/16989598/bash-comparing-version-numbers
-function version_le() { test "$(echo "$@" | tr " " "\n" | sort -V | tail -n 1)" == "$1"; }
+function version_ge() { test "$(echo "$@" | tr " " "\n" | sort -V | tail -n 1)" == "$1"; }
 
 # extract checksum for node binary
 function extract_checksum()
@@ -129,9 +129,9 @@ for device in $devices; do
 		fi
 
 		# Debian.
-		# For armv7hf and armv6hf, if node version is less than 4.x.x (0.10.x 0.12.x) then that image will use binaries from resin, otherwise it will use binaries from official distribution.
+		# For armv7hf and armv6hf, if node version is greater or equal than 4.x.x then that image will use binaries from official distribution, otherwise it will use binaries from resin.
 		if [ $binary_arch == "armv7hf" ] || [ $binary_arch == "armv6hf" ]; then
-			if version_le "$nodeVersion" "3"; then
+			if version_ge "$nodeVersion" "4"; then
 				binary_url=$nodejsUrl
 				if [ $binary_arch == "armv6hf" ]; then
 					binary_arch='armv6l'
