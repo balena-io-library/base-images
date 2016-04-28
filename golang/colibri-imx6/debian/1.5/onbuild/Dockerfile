@@ -1,4 +1,4 @@
-FROM resin/colibri-imx6-golang:1.5.3
+FROM resin/colibri-imx6-golang:1.5.4
 
 RUN mkdir -p /go/src/app
 WORKDIR /go/src/app

@@ -1,10 +1,10 @@
 FROM resin/colibri-imx6-alpine-buildpack-deps:latest
 
-ENV GO_VERSION 1.6
+ENV GO_VERSION 1.6.2
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-armhf.tar.gz" \
-	&& echo "8404bc397470b6dbb024b932c3b0412cd7209c100eb16e151b8774860f61dae5  go1.6.linux-alpine-armhf.tar.gz" | sha256sum -c - \
+	&& echo "06b4a0edf0de945a2f086c2f00b0f4df1b37ef358b5476fb59f3ac5ed777246a  go1.6.2.linux-alpine-armhf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-alpine-armhf.tar.gz" -C /usr/local/go --strip-components=1
 
 ENV GOROOT /usr/local/go

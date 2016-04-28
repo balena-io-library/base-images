@@ -1,6 +1,6 @@
 FROM resin/nuc-debian:jessie
 
-ENV GO_VERSION 1.5.3
+ENV GO_VERSION 1.5.4
 
 RUN buildDeps='curl gcc g++ git' \
 	&& set -x \
@@ -8,7 +8,7 @@ RUN buildDeps='curl gcc g++ git' \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "https://storage.googleapis.com/golang/go$GO_VERSION.linux-amd64.tar.gz" \
-	&& echo "43afe0c5017e502630b1aea4d44b8a7f059bf60d7f29dfd58db454d4e4e0ae53  go1.5.3.linux-amd64.tar.gz" | sha256sum -c - \
+	&& echo "a3358721210787dc1e06f5ea1460ae0564f22a0fbd91be9dcd947fb1d19b9560  go1.5.4.linux-amd64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-amd64.tar.gz" -C /usr/local/go --strip-components=1
 
 ENV GOROOT /usr/local/go

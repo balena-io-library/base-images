@@ -1,4 +1,4 @@
-FROM resin/nuc-alpine-golang:1.6
+FROM resin/nuc-alpine-golang:1.6.2
 
 RUN mkdir -p /go/src/app
 WORKDIR /go/src/app
