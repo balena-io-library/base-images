@@ -1,10 +1,10 @@
 FROM resin/edison-alpine-buildpack-deps:edge
 
-ENV GO_VERSION 1.5.3
+ENV GO_VERSION 1.5.4
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-i386.tar.gz" \
-	&& echo "bdaf8282231921ff648ed248fa03a975e454aedf5745ce0e21d9ff1efb6ea8c6  go1.5.3.linux-alpine-i386.tar.gz" | sha256sum -c - \
+	&& echo "76c75c7b1d532e1484422fc5d6b000b38232e340cb6a7944268ef8376a154770  go1.5.4.linux-alpine-i386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-alpine-i386.tar.gz" -C /usr/local/go --strip-components=1
 
 ENV GOROOT /usr/local/go

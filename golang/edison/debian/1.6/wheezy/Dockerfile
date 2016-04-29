@@ -1,10 +1,10 @@
 FROM resin/edison-buildpack-deps:wheezy
 
-ENV GO_VERSION 1.6
+ENV GO_VERSION 1.6.2
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "https://storage.googleapis.com/golang/go$GO_VERSION.linux-386.tar.gz" \
-	&& echo "7a240a0f45e559d47ea07319d9faf838225eb9e18174f56a76ccaf9860dbb9b1  go1.6.linux-386.tar.gz" | sha256sum -c - \
+	&& echo "76ae80990f3b46fe1e0457cc0899979e49a2e927eb33af7ddb7611b400b7d6af  go1.6.2.linux-386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-386.tar.gz" -C /usr/local/go --strip-components=1
 
 ENV GOROOT /usr/local/go

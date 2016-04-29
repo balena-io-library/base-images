@@ -1,10 +1,10 @@
 FROM resin/parallella-hdmi-resin-alpine-buildpack-deps:edge
 
-ENV GO_VERSION 1.5.3
+ENV GO_VERSION 1.5.4
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-armhf.tar.gz" \
-	&& echo "be8c1b4d2de17ebd1845c2473fe6b0b96b2d96c85f2921f856e7b44346049b2c  go1.5.3.linux-alpine-armhf.tar.gz" | sha256sum -c - \
+	&& echo "d5ec25bdadd2407196cf55823e8b20d6ee961e4e12f3d0e5d29ec8ed924fbe0d  go1.5.4.linux-alpine-armhf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-alpine-armhf.tar.gz" -C /usr/local/go --strip-components=1
 
 ENV GOROOT /usr/local/go

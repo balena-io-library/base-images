@@ -1,10 +1,10 @@
 FROM resin/parallella-hdmi-resin-buildpack-deps:jessie
 
-ENV GO_VERSION 1.6
+ENV GO_VERSION 1.6.2
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-armv7hf.tar.gz" \
-	&& echo "aa2313c75f71eecce98a95e8552f13a5cc6109168b00ef352321594dd12627e1  go1.6.linux-armv7hf.tar.gz" | sha256sum -c - \
+	&& echo "670a455a6d7020af12274c2ec8e7ca23e60a3b50406b5fb27a01f91ff007fb4b  go1.6.2.linux-armv7hf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-armv7hf.tar.gz" -C /usr/local/go --strip-components=1
 
 ENV GOROOT /usr/local/go
