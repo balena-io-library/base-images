@@ -2,8 +2,10 @@
 set -e
 
 devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi'
+armv7hf_devices=' raspberrypi2 beaglebone vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 raspberrypi3 artik5 artik10 beaglebone-green-wifi '
 suites='jessie wheezy'
 alpine_suites='3.3 3.4 edge'
+fedora_suites='23 24'
 
 for device in $devices; do
 
@@ -46,4 +48,23 @@ for device in $devices; do
 		mkdir -p $dockerfilePath/scm
 		sed -e s~#{FROM}~"resin/$device-alpine-buildpack-deps:$alpine_suite-curl"~g Dockerfile.alpine.scm.tpl > $dockerfilePath/scm/Dockerfile
 	done
+
+	# Fedora
+	# Only support Armv7hf devices. Other devices will be supported later.
+
+	if [[ $armv7hf_devices == *" $device "* ]]; then
+		for fedora_suite in $fedora_suites; do
+			dockerfilePath=$device/fedora/$fedora_suite
+
+			mkdir -p $dockerfilePath
+			sed -e s~#{FROM}~"resin/$device-fedora-buildpack-deps:$fedora_suite-scm"~g Dockerfile.fedora.tpl > $dockerfilePath/Dockerfile
+
+			mkdir -p $dockerfilePath/curl
+			sed -e s~#{FROM}~"resin/$device-fedora:$fedora_suite"~g Dockerfile.fedora.curl.tpl > $dockerfilePath/curl/Dockerfile
+
+			mkdir -p $dockerfilePath/scm
+			sed -e s~#{FROM}~"resin/$device-fedora-buildpack-deps:$fedora_suite-curl"~g Dockerfile.fedora.scm.tpl > $dockerfilePath/scm/Dockerfile
+		done
+	fi
+
 done

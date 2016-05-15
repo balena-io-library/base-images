@@ -46,6 +46,7 @@ declare -A aliases
 aliases=(
 	[jessie]='latest'
 	[3.4]='latest'
+	[24]='latest'
 )
 
 cd "$(dirname "$(readlink -f "$BASH_SOURCE[0]")")"
