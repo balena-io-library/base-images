@@ -24,15 +24,31 @@ mount --move /tmp /dev
 ln -sf /dev/pts/ptmx /dev/ptmx
 
 mount -t debugfs nodev /sys/kernel/debug
-udevd & 
-udevadm trigger &> /dev/null
-	
-CMD=$(which $1)
-# echo error message, when executable file doesn't exist.
-if [  $? == '0' ]; then
-	shift
-	exec "$CMD" "$@"
+
+if [ "$INITSYSTEM" = "on" ]; then
+	GREEN='\033[0;32m'
+	echo -e "${GREEN}OpenRC init system enabled."
+	env >> /etc/docker.env
+	printf '#!/bin/bash\n exec ' > /etc/resinApp.sh
+	printf '%q ' "$@" >> /etc/resinApp.sh
+	chmod +x /etc/resinApp.sh
+
+	sed -i -e s~#{DIR}~"$(pwd)"~g \
+		-e s~#{ENV}~"$(env | sed '/PATH=/d'  | tr '\n' ' ' | xargs printf '--env %s ')"~g /etc/init.d/resin
+
+	exec /sbin/init quiet
 else
-	echo "Command not found: $1"
-	exit 1
+	udevd & 
+	udevadm trigger &> /dev/null
+	
+	CMD=$(which $1)
+	# echo error message, when executable file doesn't exist.
+	if [  $? == '0' ]; then
+		shift
+		exec "$CMD" "$@"
+	else
+		echo "Command not found: $1"
+		exit 1
+	fi
 fi
+

@@ -12,7 +12,7 @@ curl -SLO https://github.com/resin-io/qemu/releases/download/$QEMU_VERSION/qemu-
 	&& sha256sum -c qemu-$QEMU_VERSION.tar.gz.sha256sum \
 	&& tar -xz --strip-components=1 -f qemu-$QEMU_VERSION.tar.gz
 
-chmod +x entry.sh qemu-arm-static
+chmod +x entry.sh qemu-arm-static resin
 for repo in $repos; do
 	case "$repo" in
 	'armhf')
@@ -38,7 +38,7 @@ for repo in $repos; do
 		sed -e s~#{FROM}~"$baseImage:$suite"~g \
 			-e s~#{LABEL}~"$label"~g \
 			-e s~#{QEMU}~"$qemu"~g Dockerfile.tpl > $dockerfilePath/Dockerfile
-		cp entry.sh $dockerfilePath/
+		cp entry.sh resin rc.conf $dockerfilePath/
 
 		if [ $repo == "armhf" ]; then
 			cp qemu-arm-static $dockerfilePath/
