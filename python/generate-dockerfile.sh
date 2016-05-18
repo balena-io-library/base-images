@@ -4,6 +4,7 @@ set -e
 PYTHON2_PATH="/usr/lib/python2.7/dist-packages:/usr/lib/python2.7/site-packages"
 PYTHON3_PATH_debian="/usr/lib/python3/dist-packages"
 PYTHON3_PATH_alpine="/usr/lib/python3.5/site-packages"
+PYTHON3_PATH_fedora="/usr/lib/python3.5/site-packages"
 PYTHON2_ARGS="-DBUILDSWIGNODE=OFF"
 PYTHON3_ARGS="-DBUILDSWIGNODE=OFF -DBUILDPYTHON3=ON -DPYTHON_INCLUDE_DIR=/usr/local/include/python3.5m/ -DPYTHON_LIBRARY=/usr/local/lib/libpython3.so"
 
@@ -59,6 +60,7 @@ set_pythonpath() {
 }
 
 devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi'
+armv7hf_devices=' raspberrypi2 beaglebone vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 raspberrypi3 artik5 artik10 beaglebone-green-wifi '
 pythonVersions='2.7.12 3.3.6 3.4.4 3.5.2'
 binary_url="http://resin-packages.s3.amazonaws.com/python/v\$PYTHON_VERSION/Python-\$PYTHON_VERSION.linux-#{TARGET_ARCH}.tar.gz"
 
@@ -71,18 +73,22 @@ for device in $devices; do
 	'raspberrypi2')
 		binary_arch='armv7hf'
 		alpine_binary_arch='alpine-armhf'
+		fedora_binary_arch='fedora-armhf'
 	;;
 	'raspberrypi3')
 		binary_arch='armv7hf'
 		alpine_binary_arch='alpine-armhf'
+		fedora_binary_arch='fedora-armhf'
 	;;
 	'beaglebone')
 		binary_arch='armv7hf'
 		alpine_binary_arch='alpine-armhf'
+		fedora_binary_arch='fedora-armhf'
 	;;
 	'beaglebone-green-wifi')
 		binary_arch='armv7hf'
 		alpine_binary_arch='alpine-armhf'
+		fedora_binary_arch='fedora-armhf'
 	;;
 	'edison')
 		binary_arch='i386'
@@ -95,42 +101,52 @@ for device in $devices; do
 	'vab820-quad')
 		binary_arch='armv7hf'
 		alpine_binary_arch='alpine-armhf'
+		fedora_binary_arch='fedora-armhf'
 	;;
 	'zc702-zynq7')
 		binary_arch='armv7hf'
 		alpine_binary_arch='alpine-armhf'
+		fedora_binary_arch='fedora-armhf'
 	;;
 	'odroid-c1')
 		binary_arch='armv7hf'
 		alpine_binary_arch='alpine-armhf'
+		fedora_binary_arch='fedora-armhf'
 	;;
 	'odroid-ux3')
 		binary_arch='armv7hf'
 		alpine_binary_arch='alpine-armhf'
+		fedora_binary_arch='fedora-armhf'
 	;;
 	'parallella-hdmi-resin')
 		binary_arch='armv7hf'
 		alpine_binary_arch='alpine-armhf'
+		fedora_binary_arch='fedora-armhf'
 	;;
 	'nitrogen6x')
 		binary_arch='armv7hf'
 		alpine_binary_arch='alpine-armhf'
+		fedora_binary_arch='fedora-armhf'
 	;;
 	'cubox-i')
 		binary_arch='armv7hf'
 		alpine_binary_arch='alpine-armhf'
+		fedora_binary_arch='fedora-armhf'
 	;;
 	'ts4900')
 		binary_arch='armv7hf'
 		alpine_binary_arch='alpine-armhf'
+		fedora_binary_arch='fedora-armhf'
 	;;
 	'colibri-imx6')
 		binary_arch='armv7hf'
 		alpine_binary_arch='alpine-armhf'
+		fedora_binary_arch='fedora-armhf'
 	;;
 	'apalis-imx6')
 		binary_arch='armv7hf'
 		alpine_binary_arch='alpine-armhf'
+		fedora_binary_arch='fedora-armhf'
 	;;
 	'ts7700')
 		binary_arch='armel'
@@ -141,10 +157,12 @@ for device in $devices; do
 	'artik5')
 		binary_arch='armv7hf'
 		alpine_binary_arch='alpine-armhf'
+		fedora_binary_arch='fedora-armhf'
 	;;
 	'artik10')
 		binary_arch='armv7hf'
 		alpine_binary_arch='alpine-armhf'
+		fedora_binary_arch='fedora-armhf'
 	;;
 	esac
 	for pythonVersion in $pythonVersions; do
@@ -258,4 +276,27 @@ for device in $devices; do
 
 		set_pythonpath "$baseVersion" "$alpine_dockerfilePath" "base edge slim" "alpine"
 	done
+	# Fedora
+	if [[ $armv7hf_devices == *" $device "* ]]; then
+		fedora_python_versions='2 3'
+		for version in $fedora_python_versions; do
+			if [ $version == "2" ]; then
+				template='Dockerfile.fedora.tpl'
+			else
+				template='Dockerfile.fedora.python3.tpl'
+			fi
+			fedora_dockerfilePath=$device/fedora/$version
+			mkdir -p $fedora_dockerfilePath
+			sed -e s~#{FROM}~"resin/$device-fedora-buildpack-deps:latest"~g $template > $fedora_dockerfilePath/Dockerfile
+
+			mkdir -p $fedora_dockerfilePath/23
+			sed -e s~#{FROM}~"resin/$device-fedora-buildpack-deps:23"~g $template > $fedora_dockerfilePath/23/Dockerfile
+
+			mkdir -p $fedora_dockerfilePath/onbuild
+			sed -e s~#{FROM}~"resin/$device-fedora-python:$pythonVersion"~g Dockerfile.onbuild.tpl > $fedora_dockerfilePath/onbuild/Dockerfile
+
+			mkdir -p $fedora_dockerfilePath/slim
+			sed -e s~#{FROM}~"resin/$device-fedora:latest"~g $template > $fedora_dockerfilePath/slim/Dockerfile
+		done
+	fi
 done
