@@ -23,10 +23,11 @@ RUN gpg --keyserver pgp.mit.edu  --recv-key 6E3CBCE93372DCFA
 ENV PYTHON_VERSION 2.7.11
 
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
-ENV PYTHON_PIP_VERSION 8.1.1
+ENV PYTHON_PIP_VERSION 8.1.2
+ENV PYTHON_PIP_SHA256 8dae1fb72e29c2b6ff6ed267861179216bf98d3bda6d30e527dbed0db5ac7e1d
 
-ENV SETUPTOOLS_SHA256 24fcfc15364a9fe09a220f37d2dcedc849795e3de3e4b393ee988e66a9cbd85a
-ENV SETUPTOOLS_VERSION 20.2.2
+ENV SETUPTOOLS_SHA256 3f24380f0b18f869b7ad92d9e16d1d58093a9bac13bbd0b0e1fc5a82b460311f
+ENV SETUPTOOLS_VERSION 21.0.0
 
 RUN set -x \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-armel.tar.gz" \
@@ -35,17 +36,17 @@ RUN set -x \
 	&& rm -rf "Python-$PYTHON_VERSION.linux-armel.tar.gz" \
 	&& ldconfig \
 	&& mkdir -p /usr/src/python/setuptools \
-	&& curl -SLO https://pypi.python.org/packages/source/s/setuptools/setuptools-$SETUPTOOLS_VERSION.tar.gz \
-	&& echo "$SETUPTOOLS_SHA256  setuptools-$SETUPTOOLS_VERSION.tar.gz" > setuptools-$SETUPTOOLS_VERSION.tar.gz.sha256sum \
+	&& curl -SLO https://github.com/pypa/setuptools/archive/v$SETUPTOOLS_VERSION.tar.gz \
+	&& echo "$SETUPTOOLS_SHA256  v$SETUPTOOLS_VERSION.tar.gz" > setuptools-$SETUPTOOLS_VERSION.tar.gz.sha256sum \
 	&& sha256sum -c setuptools-$SETUPTOOLS_VERSION.tar.gz.sha256sum \
-	&& tar -xzC /usr/src/python/setuptools --strip-components=1 -f setuptools-$SETUPTOOLS_VERSION.tar.gz \
-	&& rm -rf setuptools-$SETUPTOOLS_VERSION.tar.gz* \
+	&& tar -xzC /usr/src/python/setuptools --strip-components=1 -f v$SETUPTOOLS_VERSION.tar.gz \
+	&& rm -rf v$SETUPTOOLS_VERSION.tar.gz* \
 	&& cd /usr/src/python/setuptools \
-	&& python2 ez_setup.py \
+	&& python3 setup.py install \
 	&& mkdir -p /usr/src/python/pip \
-	&& curl -SL "https://pypi.python.org/packages/source/p/pip/pip-$PYTHON_PIP_VERSION.tar.gz" -o pip.tar.gz \
-	&& curl -SL "https://pypi.python.org/packages/source/p/pip/pip-$PYTHON_PIP_VERSION.tar.gz.asc" -o pip.tar.gz.asc \
-	&& gpg --verify pip.tar.gz.asc \
+	&& curl -SL "https://github.com/pypa/pip/archive/$PYTHON_PIP_VERSION.tar.gz" -o pip.tar.gz \
+	&& echo "$PYTHON_PIP_SHA256  pip.tar.gz" > pip.tar.gz.sha256sum \
+	&& sha256sum -c pip.tar.gz.sha256sum \
 	&& tar -xzC /usr/src/python/pip --strip-components=1 -f pip.tar.gz \
 	&& rm pip.tar.gz* \
 	&& cd /usr/src/python/pip \
