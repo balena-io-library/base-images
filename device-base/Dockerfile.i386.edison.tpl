@@ -14,8 +14,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/*
 
 # MRAA
-ENV MRAA_COMMIT a9429204e38416e04edbc1a6b5fe6ba49379493d
-ENV MRAA_VERSION 0.10.1
+ENV MRAA_COMMIT 887acf54e1f674ad2acb506c6e6b982d6074c73e
+ENV MRAA_VERSION 1.0.0
 
 # Install mraa
 RUN set -x \
