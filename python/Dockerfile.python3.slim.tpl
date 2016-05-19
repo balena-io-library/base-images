@@ -23,7 +23,8 @@ RUN gpg --keyserver pgp.mit.edu  --recv-key 6E3CBCE93372DCFA
 ENV PYTHON_VERSION #{PYTHON_VERSION}
 
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
-ENV PYTHON_PIP_VERSION 8.1.1
+ENV PYTHON_PIP_VERSION 8.1.2
+ENV PYTHON_PIP_SHA256 8dae1fb72e29c2b6ff6ed267861179216bf98d3bda6d30e527dbed0db5ac7e1d
 
 ENV SETUPTOOLS_SHA256 24fcfc15364a9fe09a220f37d2dcedc849795e3de3e4b393ee988e66a9cbd85a
 ENV SETUPTOOLS_VERSION 20.2.2
@@ -47,9 +48,9 @@ RUN set -x \
 	&& cd /usr/src/python/setuptools \
 	&& python3 ez_setup.py \
 	&& mkdir -p /usr/src/python/pip \
-	&& curl -SL "https://pypi.python.org/packages/source/p/pip/pip-$PYTHON_PIP_VERSION.tar.gz" -o pip.tar.gz \
-	&& curl -SL "https://pypi.python.org/packages/source/p/pip/pip-$PYTHON_PIP_VERSION.tar.gz.asc" -o pip.tar.gz.asc \
-	&& gpg --verify pip.tar.gz.asc \
+	&& curl -SL "https://github.com/pypa/pip/archive/$PYTHON_PIP_VERSION.tar.gz" -o pip.tar.gz \
+	&& echo "$PYTHON_PIP_SHA256  pip.tar.gz" > pip.tar.gz.sha256sum \
+	&& sha256sum -c pip.tar.gz.sha256sum \
 	&& tar -xzC /usr/src/python/pip --strip-components=1 -f pip.tar.gz \
 	&& rm pip.tar.gz* \
 	&& cd /usr/src/python/pip \
