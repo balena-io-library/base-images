@@ -9,7 +9,8 @@ RUN buildDeps='curl gcc g++ git' \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "https://storage.googleapis.com/golang/go$GO_VERSION.linux-386.tar.gz" \
 	&& echo "76ae80990f3b46fe1e0457cc0899979e49a2e927eb33af7ddb7611b400b7d6af  go1.6.2.linux-386.tar.gz" | sha256sum -c - \
-	&& tar -xzf "go$GO_VERSION.linux-386.tar.gz" -C /usr/local/go --strip-components=1
+	&& tar -xzf "go$GO_VERSION.linux-386.tar.gz" -C /usr/local/go --strip-components=1 \
+	&& rm -f go$GO_VERSION.linux-386.tar.gz
 
 ENV GOROOT /usr/local/go
 ENV GOPATH /go
