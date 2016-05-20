@@ -5,7 +5,8 @@ ENV GO_VERSION 1.5.4
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "https://storage.googleapis.com/golang/go$GO_VERSION.linux-amd64.tar.gz" \
 	&& echo "a3358721210787dc1e06f5ea1460ae0564f22a0fbd91be9dcd947fb1d19b9560  go1.5.4.linux-amd64.tar.gz" | sha256sum -c - \
-	&& tar -xzf "go$GO_VERSION.linux-amd64.tar.gz" -C /usr/local/go --strip-components=1
+	&& tar -xzf "go$GO_VERSION.linux-amd64.tar.gz" -C /usr/local/go --strip-components=1 \
+	&& rm -f go$GO_VERSION.linux-amd64.tar.gz
 
 ENV GOROOT /usr/local/go
 ENV GOPATH /go

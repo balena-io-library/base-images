@@ -11,6 +11,7 @@ RUN buildDeps='curl' \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-i386.tar.gz" \
 	&& echo "91e5c8ee3248d869977ce20342c265b3a62806188d5078f0e3a0a24c9094c0ea  go1.4.3.linux-alpine-i386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-alpine-i386.tar.gz" -C /usr/local/go --strip-components=1 \
+	&& rm -f go$GO_VERSION.linux-alpine-i386.tar.gz \
 	&& apk del $buildDeps
 
 ENV GOROOT /usr/local/go

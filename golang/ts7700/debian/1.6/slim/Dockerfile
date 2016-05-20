@@ -9,7 +9,8 @@ RUN buildDeps='curl gcc g++ git' \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-armel.tar.gz" \
 	&& echo "a1d75be73d02273d182a67b0c457061ee7c1c2566a74266018035be0b7d6a5e7  go1.6.2.linux-armel.tar.gz" | sha256sum -c - \
-	&& tar -xzf "go$GO_VERSION.linux-armel.tar.gz" -C /usr/local/go --strip-components=1
+	&& tar -xzf "go$GO_VERSION.linux-armel.tar.gz" -C /usr/local/go --strip-components=1 \
+	&& rm -f go$GO_VERSION.linux-armel.tar.gz
 
 ENV GOROOT /usr/local/go
 ENV GOPATH /go

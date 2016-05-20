@@ -9,7 +9,8 @@ RUN buildDeps='curl gcc g++ git' \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-armv7hf.tar.gz" \
 	&& echo "59c7e40992347bc3511765bcaa607ad5825a0d958ab9d211e2856ed755ca5a09  go1.4.3.linux-armv7hf.tar.gz" | sha256sum -c - \
-	&& tar -xzf "go$GO_VERSION.linux-armv7hf.tar.gz" -C /usr/local/go --strip-components=1
+	&& tar -xzf "go$GO_VERSION.linux-armv7hf.tar.gz" -C /usr/local/go --strip-components=1 \
+	&& rm -f go$GO_VERSION.linux-armv7hf.tar.gz
 
 ENV GOROOT /usr/local/go
 ENV GOPATH /go

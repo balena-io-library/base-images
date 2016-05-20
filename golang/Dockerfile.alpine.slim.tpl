@@ -11,6 +11,7 @@ RUN buildDeps='curl' \
 	&& curl -SLO "#{BINARY_URL}" \
 	&& echo "#{CHECKSUM}" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-#{TARGET_ARCH}.tar.gz" -C /usr/local/go --strip-components=1 \
+	&& rm -f go$GO_VERSION.linux-#{TARGET_ARCH}.tar.gz \
 	&& apk del $buildDeps
 
 ENV GOROOT /usr/local/go

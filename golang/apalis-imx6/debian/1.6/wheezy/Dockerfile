@@ -5,7 +5,8 @@ ENV GO_VERSION 1.6.2
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-armv7hf.tar.gz" \
 	&& echo "670a455a6d7020af12274c2ec8e7ca23e60a3b50406b5fb27a01f91ff007fb4b  go1.6.2.linux-armv7hf.tar.gz" | sha256sum -c - \
-	&& tar -xzf "go$GO_VERSION.linux-armv7hf.tar.gz" -C /usr/local/go --strip-components=1
+	&& tar -xzf "go$GO_VERSION.linux-armv7hf.tar.gz" -C /usr/local/go --strip-components=1 \
+	&& rm -f go$GO_VERSION.linux-armv7hf.tar.gz
 
 ENV GOROOT /usr/local/go
 ENV GOPATH /go

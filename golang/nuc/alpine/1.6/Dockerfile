@@ -5,7 +5,8 @@ ENV GO_VERSION 1.6.2
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-amd64.tar.gz" \
 	&& echo "eb5e36688f4ab985f3c3fb801a3687c90d45197ee6e55133b1a565a180e7df65  go1.6.2.linux-alpine-amd64.tar.gz" | sha256sum -c - \
-	&& tar -xzf "go$GO_VERSION.linux-alpine-amd64.tar.gz" -C /usr/local/go --strip-components=1
+	&& tar -xzf "go$GO_VERSION.linux-alpine-amd64.tar.gz" -C /usr/local/go --strip-components=1 \
+	&& rm -f go$GO_VERSION.linux-alpine-amd64.tar.gz
 
 ENV GOROOT /usr/local/go
 ENV GOPATH /go

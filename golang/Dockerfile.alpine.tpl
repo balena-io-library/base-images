@@ -5,7 +5,8 @@ ENV GO_VERSION #{GO_VERSION}
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "#{BINARY_URL}" \
 	&& echo "#{CHECKSUM}" | sha256sum -c - \
-	&& tar -xzf "go$GO_VERSION.linux-#{TARGET_ARCH}.tar.gz" -C /usr/local/go --strip-components=1
+	&& tar -xzf "go$GO_VERSION.linux-#{TARGET_ARCH}.tar.gz" -C /usr/local/go --strip-components=1 \
+	&& rm -f go$GO_VERSION.linux-#{TARGET_ARCH}.tar.gz
 
 ENV GOROOT /usr/local/go
 ENV GOPATH /go
