@@ -35,7 +35,7 @@ for arch in $archs; do
 	;;
 	'armel')
 		baseImage='armel/debian'
-		label='io.resin.architecture="armel" io.resin.qemu.version="'$QEMU_VERSION'"'
+		label='io.resin.architecture="armv5e" io.resin.qemu.version="'$QEMU_VERSION'"'
 		suites='jessie wheezy'
 		qemu='COPY qemu-arm-static /usr/bin/'
 	;;
