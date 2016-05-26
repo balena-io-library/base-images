@@ -43,7 +43,7 @@ RUN set -x \
 	&& tar -xzC /usr/src/python/setuptools --strip-components=1 -f v$SETUPTOOLS_VERSION.tar.gz \
 	&& rm -rf v$SETUPTOOLS_VERSION.tar.gz* \
 	&& cd /usr/src/python/setuptools \
-	&& python3 setup.py install \
+	&& python2 setup.py install \
 	&& mkdir -p /usr/src/python/pip \
 	&& curl -SL "https://github.com/pypa/pip/archive/$PYTHON_PIP_VERSION.tar.gz" -o pip.tar.gz \
 	&& echo "$PYTHON_PIP_SHA256  pip.tar.gz" > pip.tar.gz.sha256sum \
