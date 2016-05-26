@@ -26,8 +26,8 @@ ENV PYTHON_VERSION 2.7.11
 ENV PYTHON_PIP_VERSION 8.1.2
 ENV PYTHON_PIP_SHA256 8dae1fb72e29c2b6ff6ed267861179216bf98d3bda6d30e527dbed0db5ac7e1d
 
-ENV SETUPTOOLS_SHA256 3f24380f0b18f869b7ad92d9e16d1d58093a9bac13bbd0b0e1fc5a82b460311f
-ENV SETUPTOOLS_VERSION 21.0.0
+ENV SETUPTOOLS_SHA256 2b564fadffa988cd18ddd893e2a6d284f75306acb80ea7b6c3c3b6830238d50a
+ENV SETUPTOOLS_VERSION 21.2.1
 
 RUN set -x \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-armel.tar.gz" \
@@ -42,7 +42,8 @@ RUN set -x \
 	&& tar -xzC /usr/src/python/setuptools --strip-components=1 -f v$SETUPTOOLS_VERSION.tar.gz \
 	&& rm -rf v$SETUPTOOLS_VERSION.tar.gz* \
 	&& cd /usr/src/python/setuptools \
-	&& python2 setup.py install \
+	&& python2 bootstrap.py \
+	&& python2 easy_install.py . \
 	&& mkdir -p /usr/src/python/pip \
 	&& curl -SL "https://github.com/pypa/pip/archive/$PYTHON_PIP_VERSION.tar.gz" -o pip.tar.gz \
 	&& echo "$PYTHON_PIP_SHA256  pip.tar.gz" > pip.tar.gz.sha256sum \
