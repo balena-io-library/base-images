@@ -58,7 +58,7 @@ function generate_library(){
 
 declare -A aliases
 aliases=(
-	[6.2.0]='6 latest'
+	[6.2.1]='6 latest'
 )
 
 defaultVersion='0.10.22'
