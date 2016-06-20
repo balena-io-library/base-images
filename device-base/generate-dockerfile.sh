@@ -11,7 +11,7 @@ bb_key_wheezy_cmd='apt-key adv --keyserver keyserver.ubuntu.com --recv-key B2710
 
 devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700 raspberrypi3 artik5 artik10'
 suites='jessie wheezy'
-alpine_suites='edge 3.2 3.3'
+alpine_suites='edge 3.2 3.3 3.4'
 
 for device in $devices; do
 
