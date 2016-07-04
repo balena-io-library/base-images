@@ -14,11 +14,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/*
 
 # MRAA
-ENV MRAA_COMMIT 887acf54e1f674ad2acb506c6e6b982d6074c73e
-ENV MRAA_VERSION 1.0.0
+ENV MRAA_COMMIT d336e9f8d69a85b6ed1aeb5b324910234031d4a8
+ENV MRAA_VERSION 1.1.1
 # UPM
-ENV UPM_COMMIT 29bfa7ef79ec7e944e8803b39fe1fb71ab7c0825
-ENV UPM_VERSION 0.7.0
+ENV UPM_COMMIT 1849e22154177096f1725e9cc96ec62ac2ef3635
+ENV UPM_VERSION 0.7.2
 
 # Install mraa
 RUN set -x \
