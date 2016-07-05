@@ -22,31 +22,31 @@ for device in $devices; do
 	;;
 	'raspberrypi2')
 		template='Dockerfile.armv7hf.rpi.tpl'
-		baseImage='armv7hf-systemd'
+		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.rpi.tpl'
 		alpine_baseImage='armhf-alpine'
 	;;
 	'raspberrypi3')
 		template='Dockerfile.armv7hf.rpi.tpl'
-		baseImage='armv7hf-systemd'
+		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.rpi.tpl'
 		alpine_baseImage='armhf-alpine'
 	;;
 	'beaglebone')
 		template='Dockerfile.armv7hf.bbb.tpl'
-		baseImage='armv7hf-systemd'
+		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
 	;;
 	'beaglebone-green-wifi')
 		template='Dockerfile.armv7hf.bbb.tpl'
-		baseImage='armv7hf-systemd'
+		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
 	;;
 	'edison')
 		template='Dockerfile.i386.edison.tpl'
-		baseImage='i386-systemd'
+		baseImage='i386-debian'
 		# TODO: Can't compile mraa on alpine linux atm, lack of necessary libraries.
 		#alpine_template='Dockerfile.alpine.i386.edison.tpl'
 		alpine_template='Dockerfile.alpine.tpl'
@@ -54,83 +54,83 @@ for device in $devices; do
 	;;
 	'nuc')
 		template='Dockerfile.tpl'
-		baseImage='amd64-systemd'
+		baseImage='amd64-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='amd64-alpine'
 	;;
 	'vab820-quad')
 		template='Dockerfile.tpl'
-		baseImage='armv7hf-systemd'
+		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
 	;;
 	'zc702-zynq7')
 		template='Dockerfile.tpl'
-		baseImage='armv7hf-systemd'
+		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
 	;;
 	'odroid-c1')
 		template='Dockerfile.tpl'
-		baseImage='armv7hf-systemd'
+		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
 	;;
 	'odroid-ux3')
 		template='Dockerfile.tpl'
-		baseImage='armv7hf-systemd'
+		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
 	;;
 	'parallella-hdmi-resin')
 		template='Dockerfile.tpl'
-		baseImage='armv7hf-systemd'
+		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
 	;;
 	'nitrogen6x')
 		template='Dockerfile.tpl'
-		baseImage='armv7hf-systemd'
+		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
 	;;
 	'cubox-i')
 		template='Dockerfile.tpl'
-		baseImage='armv7hf-systemd'
+		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
 	;;
 	'ts4900')
 		template='Dockerfile.tpl'
-		baseImage='armv7hf-systemd'
+		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
 	;;
 	'colibri-imx6')
 		template='Dockerfile.tpl'
-		baseImage='armv7hf-systemd'
+		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
 	;;
 	'apalis-imx6')
 		template='Dockerfile.tpl'
-		baseImage='armv7hf-systemd'
+		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
 	;;
 	'ts7700')
 		template='Dockerfile.tpl'
-		baseImage='armel-systemd'
+		baseImage='armel-debian'
 	;;
 	'artik5')
 		template='Dockerfile.tpl'
-		baseImage='armv7hf-systemd'
+		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
 	;;
 	'artik10')
 		template='Dockerfile.tpl'
-		baseImage='armv7hf-systemd'
+		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
 	;;
