@@ -53,6 +53,15 @@ for arch in $archs; do
 		if [ $arch != 'i386' ] && [ $arch != 'amd64' ]; then
 			cp qemu-arm-static $dockerfilePath/
 		fi
+
+		# Systemd
+		if [ $suite == 'wheezy' ]; then
+			cat Dockerfile.no-systemd.partial >> $dockerfilePath/Dockerfile
+			cp entry-nosystemd.sh $dockerfilePath/entry.sh
+		else
+			cat Dockerfile.systemd.partial >> $dockerfilePath/Dockerfile
+			cp entry.sh launch.service $dockerfilePath/
+		fi
 	done
 done
 rm -rf qemu*
