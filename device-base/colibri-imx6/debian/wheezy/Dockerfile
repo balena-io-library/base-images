@@ -1,4 +1,4 @@
-FROM resin/armv7hf-systemd:wheezy
+FROM resin/armv7hf-debian:wheezy
 
 LABEL io.resin.device-type="colibri-imx6"
 

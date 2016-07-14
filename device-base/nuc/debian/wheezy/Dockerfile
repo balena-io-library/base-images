@@ -1,4 +1,4 @@
-FROM resin/amd64-systemd:wheezy
+FROM resin/amd64-debian:wheezy
 
 LABEL io.resin.device-type="nuc"
 

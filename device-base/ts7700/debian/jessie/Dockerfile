@@ -1,4 +1,4 @@
-FROM resin/armel-systemd:jessie
+FROM resin/armel-debian:jessie
 
 LABEL io.resin.device-type="ts7700"
 

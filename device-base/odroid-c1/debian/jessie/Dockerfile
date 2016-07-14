@@ -1,4 +1,4 @@
-FROM resin/armv7hf-systemd:jessie
+FROM resin/armv7hf-debian:jessie
 
 LABEL io.resin.device-type="odroid-c1"
 

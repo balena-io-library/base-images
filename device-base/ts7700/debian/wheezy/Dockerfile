@@ -1,4 +1,4 @@
-FROM resin/armel-systemd:wheezy
+FROM resin/armel-debian:wheezy
 
 LABEL io.resin.device-type="ts7700"
 
