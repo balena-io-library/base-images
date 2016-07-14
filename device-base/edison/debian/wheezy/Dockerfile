@@ -1,4 +1,4 @@
-FROM resin/i386-systemd:wheezy
+FROM resin/i386-debian:wheezy
 
 LABEL io.resin.device-type="edison"
 

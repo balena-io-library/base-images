@@ -1,4 +1,4 @@
-FROM resin/amd64-systemd:jessie
+FROM resin/amd64-debian:jessie
 
 LABEL io.resin.device-type="nuc"
 
