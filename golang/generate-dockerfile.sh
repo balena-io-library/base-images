@@ -160,7 +160,7 @@ for device in $devices; do
 		
 		# Only for RPI1 device
 		if [ $device == "raspberrypi" ]; then
-			base_image="resin/$device-systemd:jessie"
+			base_image="resin/rpi-raspbian:jessie"
 		else
 			base_image="resin/$device-debian:jessie"
 		fi

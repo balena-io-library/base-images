@@ -1,4 +1,4 @@
-FROM resin/raspberrypi-systemd:jessie
+FROM resin/rpi-raspbian:jessie
 
 # remove several traces of debian python
 RUN apt-get purge -y python.*

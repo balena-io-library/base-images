@@ -173,7 +173,7 @@ for device in $devices; do
 
 		# Only for RPI1 device
 		if [ $device == "raspberrypi" ]; then
-			sed -e s~#{FROM}~resin/$device-systemd:jessie~g \
+			sed -e s~#{FROM}~resin/rpi-raspbian:jessie~g \
 				-e s~#{BINARY_URL}~$binary_url~g \
 				-e s~#{NODE_VERSION}~$nodeVersion~g \
 				-e s~#{CHECKSUM}~"$checksum"~g \

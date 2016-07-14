@@ -1,4 +1,4 @@
-FROM resin/raspberrypi-systemd:jessie
+FROM resin/rpi-raspbian:jessie
 
 ENV GO_VERSION 1.5.4
 
