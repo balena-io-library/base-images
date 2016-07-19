@@ -7,7 +7,7 @@ This repository contains Dockerfiles of the Resin systemd base images. The image
 
 ![Directory Structure Diagram](/img/dir_order.jpg)
 
-* Systemd: The images with full systemd init system installed.
+* Architecture-base: The bare bones OS image for each architecture type.
 * Device-base: The bare bones OS image for each device type.
 * Buildpack-deps: The buildpack-deps image for each device type. Details about buildpack-deps can be found [here][resin-buildpack-deps-link]
 * Node: The Node.js buildpack image for Node.js apps for each device type. Details about the Node.js image can be found [here][resin-node-link]

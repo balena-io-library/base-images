@@ -3,6 +3,248 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2016-07-14
+
+### Changed
+
+- Integrate systemd in the barebone Debian and Raspbian base images.
+- Remove systemd base images.
+
+
+## 2016-07-08
+
+### Changed
+
+- Add missing sources.list entry for raspberrypi family base images.
+- Update node to v6.3.0.
+
+
+## 2016-07-04
+
+### Changed
+
+- Update MRAA to v1.1.1 and UPM to v0.7.2.
+- Update node to v0.10.46 v0.12.15 v4.4.7 and v5.12.0.
+
+
+## 2016-07-01
+
+### Added
+
+- Add support for new board: beaglebone-green-wifi.
+
+### Changed
+
+- Fix hostname too long issue.
+- Fix duplicate entry for v0.10 and v0.12 in node library file.
+
+
+## 2016-06-20
+
+### Added
+
+- Add support for Alpine Linux v3.4.
+
+### Changed
+
+- Update node to v6.2.2.
+- Move Resin apt repository entry to `/etc/apt/sources.list.d/`.
+
+
+## 2016-06-08
+
+### Added
+
+- Add UPM v0.7.0 to Edison base images.
+
+### Changed
+
+- Apply EGL fix in raspberrypi family base images.
+- Update node to v6.2.1 and v4.4.5.
+- Add 0, 4 and 5 as aliases in node base images.
+
+
+## 2016-05-27
+
+### Changed
+
+- Update setuptools to v21.2.1.
+- Fix wrong Python version in template files.
+- Update MRAA to v1.0.0.
+
+
+## 2016-05-21
+
+### Changed
+
+- Update node to v0.10.45, v0.12.14, v4.4.4, v5.11.1, v6.2.0.
+- Update architecture on armel base images to `armv5e`.
+- Update setuptools to v21.0.0.
+- Update pip to v8.1.2 in Python base images.
+- Clean up Golang binary after unpacking.
+
+
+## 2016-05-16
+
+### Added
+
+- Implement INITSYSTEM (OpenRC) for Alpine Linux base images.
+
+
+## 2016-04-28
+
+### Changed
+
+- Update Node v5.11.0 and v6.0.0.
+- Update Golang to v1.5.4 and v1.6.2(latest).
+- Fix name of version comparing function.
+
+
+## 2016-04-22
+
+### Added
+
+- Add support for new boards: Samsung Artik 5 and Samsung Artik 10.
+
+
+## 2016-04-20
+
+### Changed
+
+- Clean up ~./cache in Python base images.
+- Fix Python-config symlink in Python base images.
+- Add node v5.10.1 and v4.4.3.
+
+
+## 2016-04-06
+
+### Changed
+
+- Clean up redundancies after building Python base images.
+- Do not remove preinstalled dependency packages after building mraa on Edison base images.
+- Fix missing RPI specific packages in Raspberry PI family base images.
+
+
+## 2016-04-04
+
+### Changed
+
+- Rever QEMU to v2.5.0-resin-rc3.
+- Update node to v0.10.44, v0.12.13, v4.4.2 and v5.10.0.
+
+
+## 2016-03-31
+
+### Added
+
+- Add Golang onbuild base images
+- Add ONBUILD warning message about systemd on wheezy base images.
+- Add checksums verification for Python and Node base images.
+
+### Changed
+
+- Update MRAA to v0.10.1.
+- Fix issue with Golang dockerfile generation script.
+- Set Go v1.6 as latest.
+- Update node to v0.12.12, v4.4.1 and v5.9.0.
+
+
+## 2016-03-26
+
+### Changed
+
+- Fix empty binary url on Dockerfiles for ts7700 and raspberrypi3.
+- Fix issue with certificate in Alpine Python base images.
+- Update pip to v8.1.1.
+- Install Python from in-house package in all Python base images.
+
+
+## 2016-03-24
+
+### Changed
+
+- Base architecture-base images on official Docker images.
+- Temporarily remove libcurl package from Alpine buildpack-deps base images.
+- Add xz package to Alpine buildpack-deps base images.
+- Fix issues with docker template files for Alpine node base images and library generating script.
+
+## 2016-03-22
+
+### Changed
+
+- Remake directory structure to support multi distros.
+
+
+## 2016-03-16
+
+### Added
+
+- Add Alpine Linux base images.
+
+### Changed
+
+- Update QEMU to v2.5.0-resin-rc4.
+- Update Golang images to v1.5.3 and v1.6.
+
+
+## 2016-03-12
+
+### Changed
+
+- Install ca-certificates in all resin base images except minimum bases.
+
+
+## 2016-03-11
+
+### Added
+
+- Add support for new board: Raspberry PI 3.
+
+### Changed
+
+- Update Node versions to v5.7.1 and v4.3.2.
+- Remove Node versions v4.2.x and v5.3.x.
+- Drop support for Python 3.2 base images.
+
+
+## 2016-03-09
+
+### Changed
+
+- Update Node versions on wheezy base images to v0.12.11.
+- Drop support for Python 3.2 base images.
+
+
+## 2016-03-05
+
+### Changed
+
+- Update Node versions to v0.10.43 v0.12.11 v4.3.2 v5.7.1.
+- Fix duplicated tags when generating library file for Golang base images.
+
+
+## 2016-03-04
+
+### Changed
+
+- Update Golang images to v1.5.3 (latest).
+- Update pip version to v8.0.3.
+
+
+## 2016-03-03
+
+### Added
+
+- Add checksums verification for downloads
+
+
+## 2016-03-02
+
+### Changed
+
+- Update Golang images to v1.4.3.
+
+
 ## 2016-01-25
 
 ### Added
