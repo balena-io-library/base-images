@@ -18,7 +18,7 @@ for arch in $archs; do
 	'armv7hf')
 		baseImage='armhf/debian'
 		label='io.resin.architecture="armv7hf" io.resin.qemu.version="'$QEMU_VERSION'"'
-		suites='jessie wheezy sid'
+		suites='jessie wheezy'
 		qemu='COPY qemu-arm-static /usr/bin/'
 	;;
 	'i386')
