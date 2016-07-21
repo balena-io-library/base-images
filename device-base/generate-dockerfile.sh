@@ -17,6 +17,8 @@ for device in $devices; do
 
 	case "$device" in
 	'raspberrypi')
+		template='Dockerfile.armel.rpi.tpl'
+		baseImage='armel-debian'
 		alpine_template='Dockerfile.alpine.rpi.tpl'
 		alpine_baseImage='armhf-alpine'
 	;;
@@ -138,39 +140,37 @@ for device in $devices; do
 
 	# Debian.
 	debian_dockerfilePath="$device/debian"
-	if [ $device != "raspberrypi" ]; then
-		for suite in $suites; do
-			mkdir -p $debian_dockerfilePath/$suite
+	for suite in $suites; do
+		mkdir -p $debian_dockerfilePath/$suite
 
-			if [ $device == 'beaglebone' ] || [ $device == 'beaglebone-green-wifi' ]; then
-				case "$suite" in
-				'wheezy')
-					sourcelist="$bb_sourceslist_cmd \&\& $bb_sourceslist_wheezy_cmd"
-					key="$bb_key_cmd \&\& $bb_key_wheezy_cmd"
-				;;
-				'jessie')
-					sourcelist="$bb_sourceslist_cmd"
-					key="$bb_key_cmd"
-				;;
-				esac
+		if [ $device == 'beaglebone' ] || [ $device == 'beaglebone-green-wifi' ]; then
+			case "$suite" in
+			'wheezy')
+				sourcelist="$bb_sourceslist_cmd \&\& $bb_sourceslist_wheezy_cmd"
+				key="$bb_key_cmd \&\& $bb_key_wheezy_cmd"
+			;;
+			'jessie')
+				sourcelist="$bb_sourceslist_cmd"
+				key="$bb_key_cmd"
+			;;
+			esac
 
 			sed -e "s@#{FROM}@resin/$baseImage:$suite@g" \
 				-e "s@#{SOURCES_LIST}@$sourcelist@g" \
 				-e "s@#{SUITE}@$suite@g" \
 				-e "s@#{KEYS}@$key@g" \
 				-e "s@#{DEV_TYPE}@$device@g" $template > $debian_dockerfilePath/$suite/Dockerfile
-			else
-				sed -e s~#{FROM}~resin/$baseImage:$suite~g \
-					-e s~#{SUITE}~$suite~g \
-					-e s@#{DEV_TYPE}@$device@ $template > $debian_dockerfilePath/$suite/Dockerfile
-			fi
+		else
+			sed -e s~#{FROM}~resin/$baseImage:$suite~g \
+				-e s~#{SUITE}~$suite~g \
+				-e s@#{DEV_TYPE}@$device@ $template > $debian_dockerfilePath/$suite/Dockerfile
+		fi
 
-			# EGL fix
-			if [[ $device == raspberrypi* ]]; then
-				cp resin-pinning $debian_dockerfilePath/$suite/
-			fi
-		done
-	fi
+		# EGL fix
+		if [[ $device == raspberrypi* ]]; then
+			cp resin-pinning $debian_dockerfilePath/$suite/
+		fi
+	done
 
 	# Alpine.
 
