@@ -1,8 +1,9 @@
 #!/bin/bash
 set -e
 
-PYTHON2_PATH="/usr/lib/python2.7/dist-packages"
-PYTHON3_PATH="/usr/lib/python3/dist-packages"
+PYTHON2_PATH="/usr/lib/python2.7/dist-packages:/usr/lib/python2.7/site-packages"
+PYTHON3_PATH_debian="/usr/lib/python3/dist-packages"
+PYTHON3_PATH_alpine="/usr/lib/python3.5/site-packages"
 PYTHON2_ARGS="-DBUILDSWIGNODE=OFF"
 PYTHON3_ARGS="-DBUILDSWIGNODE=OFF -DBUILDPYTHON3=ON -DPYTHON_INCLUDE_DIR=/usr/local/include/python3.5m/ -DPYTHON_LIBRARY=/usr/local/lib/libpython3.so"
 
@@ -38,6 +39,7 @@ append_setup_script() {
 # $1: base version
 # $2: path
 # $3: variants
+# $4: distro
 set_pythonpath() {
 	for va in $3; do
 
@@ -48,9 +50,10 @@ set_pythonpath() {
 		fi
 
 		if [ $1 != "2.7" ]; then
-			echo "ENV PYTHONPATH $PYTHON3_PATH" >> $tmp_path/Dockerfile
+			PPATH="PYTHON3_PATH_$4"
+			echo "ENV PYTHONPATH ${!PPATH}:\$PYTHONPATH" >> $tmp_path/Dockerfile
 		else
-			echo "ENV PYTHONPATH $PYTHON2_PATH" >> $tmp_path/Dockerfile
+			echo "ENV PYTHONPATH $PYTHON2_PATH:\$PYTHONPATH" >> $tmp_path/Dockerfile
 		fi
 	done
 }
@@ -204,7 +207,7 @@ for device in $devices; do
 
 		fi
 
-		set_pythonpath "$baseVersion" "$debian_dockerfilePath" "base wheezy slim"
+		set_pythonpath "$baseVersion" "$debian_dockerfilePath" "base wheezy slim" "debian"
 
 		# Alpine
 		# TODO: install mraa on Edison
@@ -253,6 +256,6 @@ for device in $devices; do
 				-e s~#{CHECKSUM}~"$checksum"~g \
 				-e s~#{TARGET_ARCH}~"$alpine_binary_arch"~g $template > $alpine_dockerfilePath/edge/Dockerfile
 
-		set_pythonpath "$baseVersion" "$alpine_dockerfilePath" "base edge slim"
+		set_pythonpath "$baseVersion" "$alpine_dockerfilePath" "base edge slim" "alpine"
 	done
 done
