@@ -2,7 +2,7 @@
 
 function update_hostname()
 {
-	HOSTNAME="$HOSTNAME-${RESIN_DEVICE_UUID:0:6}"
+	HOSTNAME="$HOSTNAME-${RESIN_DEVICE_UUID:0:7}"
 	echo $HOSTNAME > /etc/hostname
 	echo "127.0.1.1 $HOSTNAME" >> /etc/hosts
 	hostname "$HOSTNAME"
@@ -30,7 +30,7 @@ function mount_dev()
 	mount -t debugfs nodev /sys/kernel/debug
 }
 
-function init_systemd()
+function init_openrc()
 {
 	GREEN='\033[0;32m'
 	echo -e "${GREEN}OpenRC init system enabled."
@@ -40,12 +40,12 @@ function init_systemd()
 	chmod +x /etc/resinApp.sh
 
 	sed -i -e s~#{DIR}~"$(pwd)"~g \
-		-e s~#{ENV}~"$(env | sed '/PATH=/d'  | tr '\n' ' ' | xargs printf '--env %s ')"~g /etc/init.d/resin
+		-e s~#{ENV}~"$(env | tr '\n' ' ' | xargs printf '--env "%s" ')"~g /etc/init.d/resin
 
 	exec /sbin/init quiet
 }
 
-function init_non_systemd()
+function init_non_openrc()
 {
 	udevd & 
 	udevadm trigger &> /dev/null
@@ -68,7 +68,7 @@ if [ ! -z "$RESIN_SUPERVISOR_API_KEY" ] && [ ! -z "$RESIN_DEVICE_UUID" ]; then
 fi 
 
 if [ "$INITSYSTEM" = "on" ]; then
-	init_systemd "$@"
+	init_openrc "$@"
 else
-	init_non_systemd "$@"
+	init_non_openrc "$@"
 fi
