@@ -52,7 +52,7 @@ function init_non_systemd()
 	
 	CMD=$(which "$1")
 	# echo error message, when executable file doesn't exist.
-	if [  $? == '0' ]; then
+	if [ $? == '0' ]; then
 		shift
 		exec "$CMD" "$@"
 	else
@@ -68,7 +68,7 @@ if [ ! -z "$RESIN_SUPERVISOR_API_KEY" ] && [ ! -z "$RESIN_DEVICE_UUID" ]; then
 fi 
 
 if [ "$INITSYSTEM" = "on" ]; then
-	init_systemd $@
+	init_systemd "$@"
 else
-	init_non_systemd $@
+	init_non_systemd "$@"
 fi
