@@ -36,7 +36,7 @@ function init_non_systemd()
 	udevd & 
 	udevadm trigger &> /dev/null
 	
-	CMD=$(which $1)
+	CMD=$(which "$1")
 	# echo error message, when executable file doesn't exist.
 	if [  $? == '0' ]; then
 		shift
