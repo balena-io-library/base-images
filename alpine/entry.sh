@@ -2,10 +2,10 @@
 
 function update_hostname()
 {
-	HOSTNAME=$HOSTNAME-${RESIN_DEVICE_UUID:0:6}
+	HOSTNAME="$HOSTNAME-${RESIN_DEVICE_UUID:0:6}"
 	echo $HOSTNAME > /etc/hostname
 	echo "127.0.1.1 $HOSTNAME" >> /etc/hosts
-	hostname $HOSTNAME
+	hostname "$HOSTNAME"
 }
 
 function mount_dev()
