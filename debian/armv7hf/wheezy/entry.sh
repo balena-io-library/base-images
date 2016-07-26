@@ -2,10 +2,10 @@
 
 function update_hostname()
 {
-	HOSTNAME=$HOSTNAME-${RESIN_DEVICE_UUID:0:6}
+	HOSTNAME="$HOSTNAME-${RESIN_DEVICE_UUID:0:6}"
 	echo $HOSTNAME > /etc/hostname
 	echo "127.0.1.1 $HOSTNAME" >> /etc/hosts
-	hostname $HOSTNAME
+	hostname "$HOSTNAME"
 }
 
 function mount_dev()
@@ -36,9 +36,9 @@ function init_non_systemd()
 	udevd & 
 	udevadm trigger &> /dev/null
 	
-	CMD=$(which $1)
+	CMD=$(which "$1")
 	# echo error message, when executable file doesn't exist.
-	if [  $? == '0' ]; then
+	if [ $? == '0' ]; then
 		shift
 		exec "$CMD" "$@"
 	else
@@ -53,4 +53,4 @@ if [ ! -z "$RESIN_SUPERVISOR_API_KEY" ] && [ ! -z "$RESIN_DEVICE_UUID" ]; then
 	mount_dev
 fi 
 
-init_non_systemd $@
+init_non_systemd "$@"
