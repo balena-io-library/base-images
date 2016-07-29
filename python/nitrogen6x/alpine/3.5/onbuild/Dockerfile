@@ -1,4 +1,4 @@
-FROM resin/nitrogen6x-alpine-python:3.5.1
+FROM resin/nitrogen6x-alpine-python:3.5.2
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app

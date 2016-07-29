@@ -15,19 +15,19 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	&& apt-get -y autoremove
 
 # key 63C7CC90: public key "Simon McVittie <smcv@pseudorandom.co.uk>" imported
-RUN gpg --keyserver keyring.debian.org --recv-keys 4DE8FF2A63C7CC90
-
 # key 3372DCFA: public key "Donald Stufft (dstufft) <donald@stufft.io>" imported
-RUN gpg --keyserver pgp.mit.edu  --recv-key 6E3CBCE93372DCFA
+RUN gpg --keyserver keyring.debian.org --recv-keys 4DE8FF2A63C7CC90 \
+	&& gpg --keyserver pgp.mit.edu  --recv-key 6E3CBCE93372DCFA \
+	&& gpg --keyserver pgp.mit.edu --recv-keys 0x52a43a1e4b77b059
 
-ENV PYTHON_VERSION 2.7.11
+ENV PYTHON_VERSION 2.7.12
 
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
 ENV PYTHON_PIP_VERSION 8.1.2
 ENV PYTHON_PIP_SHA256 8dae1fb72e29c2b6ff6ed267861179216bf98d3bda6d30e527dbed0db5ac7e1d
 
-ENV SETUPTOOLS_SHA256 2b564fadffa988cd18ddd893e2a6d284f75306acb80ea7b6c3c3b6830238d50a
-ENV SETUPTOOLS_VERSION 21.2.1
+ENV SETUPTOOLS_SHA256 76898498d835be860d82d3c37b1c8393aa0c4100ca35f68ecb895688e7aed6c8
+ENV SETUPTOOLS_VERSION 25.1.1
 
 RUN set -x \
 	&& buildDeps=' \
@@ -35,7 +35,7 @@ RUN set -x \
 	' \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends && rm -rf /var/lib/apt/lists/* \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-armv6hf.tar.gz" \
-	&& echo "4f722232e359bfddc5d9f8a310e63b725562ccf6dd2e58d848e917f01aea2913  Python-2.7.11.linux-armv6hf.tar.gz" | sha256sum -c - \
+	&& echo "f02d33d51a37e6319718a6ebef5f182bbff26007717f93fefb5538fb8e75a923  Python-2.7.12.linux-armv6hf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-armv6hf.tar.gz" --strip-components=1 \
 	&& rm -rf "Python-$PYTHON_VERSION.linux-armv6hf.tar.gz" \
 	&& ldconfig \
@@ -74,7 +74,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		libdbus-glib-1-dev \
 	&& rm -rf /var/lib/apt/lists/*
 
-ENV PYTHON_DBUS_VERSION 1.2.0
+ENV PYTHON_DBUS_VERSION 1.2.4
 
 # install dbus-python
 RUN set -x \
@@ -91,8 +91,8 @@ RUN set -x \
 	&& rm dbus-python.tar.gz* \
 	&& cd /usr/src/dbus-python \
 	&& PYTHON=python2.7 ./configure \
-	&& make \
-	&& make install \
+	&& make -j$(nproc) \
+	&& make install -j$(nproc) \
 	&& cd / \
 	&& apt-get purge -y --auto-remove $buildDeps \
 	&& rm -rf /usr/src/dbus-python
