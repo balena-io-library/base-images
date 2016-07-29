@@ -1,4 +1,4 @@
-FROM resin/beaglebone-green-wifi-alpine-golang:1.6.2
+FROM resin/beaglebone-green-wifi-alpine-golang:1.6.3
 
 RUN mkdir -p /go/src/app
 WORKDIR /go/src/app

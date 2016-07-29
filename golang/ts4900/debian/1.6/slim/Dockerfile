@@ -1,6 +1,6 @@
 FROM resin/ts4900-debian:jessie
 
-ENV GO_VERSION 1.6.2
+ENV GO_VERSION 1.6.3
 
 RUN buildDeps='curl gcc g++ git' \
 	&& set -x \
@@ -8,7 +8,7 @@ RUN buildDeps='curl gcc g++ git' \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-armv7hf.tar.gz" \
-	&& echo "670a455a6d7020af12274c2ec8e7ca23e60a3b50406b5fb27a01f91ff007fb4b  go1.6.2.linux-armv7hf.tar.gz" | sha256sum -c - \
+	&& echo "9246d7fd2ae27cade74a46c904590149f84ff7ae217936c189442c1536c50bc0  go1.6.3.linux-armv7hf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-armv7hf.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-armv7hf.tar.gz
 

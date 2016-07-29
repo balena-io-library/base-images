@@ -1,6 +1,6 @@
 FROM resin/beaglebone-green-wifi-alpine:latest
 
-ENV GO_VERSION 1.6.2
+ENV GO_VERSION 1.6.3
 
 RUN apk add --no-cache git gcc
 
@@ -9,7 +9,7 @@ RUN buildDeps='curl' \
 	&& apk add --no-cache $buildDeps \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-armhf.tar.gz" \
-	&& echo "06b4a0edf0de945a2f086c2f00b0f4df1b37ef358b5476fb59f3ac5ed777246a  go1.6.2.linux-alpine-armhf.tar.gz" | sha256sum -c - \
+	&& echo "d961651ba0e6df5428bd9417f67431983d40fba0b345036467986d61ea9b4201  go1.6.3.linux-alpine-armhf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-alpine-armhf.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-alpine-armhf.tar.gz \
 	&& apk del $buildDeps
