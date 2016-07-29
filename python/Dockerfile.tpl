@@ -15,10 +15,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	&& apt-get -y autoremove
 
 # key 63C7CC90: public key "Simon McVittie <smcv@pseudorandom.co.uk>" imported
-RUN gpg --keyserver keyring.debian.org --recv-keys 4DE8FF2A63C7CC90
-
 # key 3372DCFA: public key "Donald Stufft (dstufft) <donald@stufft.io>" imported
-RUN gpg --keyserver pgp.mit.edu  --recv-key 6E3CBCE93372DCFA
+RUN gpg --keyserver keyring.debian.org --recv-keys 4DE8FF2A63C7CC90 \
+	&& gpg --keyserver pgp.mit.edu  --recv-key 6E3CBCE93372DCFA \
+	&& gpg --keyserver pgp.mit.edu --recv-keys 0x52a43a1e4b77b059
 
 ENV PYTHON_VERSION #{PYTHON_VERSION}
 
@@ -63,7 +63,7 @@ RUN set -x \
 # install "virtualenv", since the vast majority of users of this image will want it
 RUN pip install --no-cache-dir virtualenv
 
-ENV PYTHON_DBUS_VERSION 1.2.0
+ENV PYTHON_DBUS_VERSION 1.2.4
 
 # install dbus-python
 RUN set -x \
@@ -75,8 +75,8 @@ RUN set -x \
 	&& rm dbus-python.tar.gz* \
 	&& cd /usr/src/dbus-python \
 	&& PYTHON=python#{PYTHON_BASE_VERSION} ./configure \
-	&& make \
-	&& make install \
+	&& make -j$(nproc) \
+	&& make install -j$(nproc) \
 	&& cd / \
 	&& rm -rf /usr/src/dbus-python
 

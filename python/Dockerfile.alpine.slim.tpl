@@ -13,10 +13,10 @@ RUN apk add --no-cache \
 		libssl1.0
 
 # key 63C7CC90: public key "Simon McVittie <smcv@pseudorandom.co.uk>" imported
-RUN gpg --keyserver keyring.debian.org --recv-keys 4DE8FF2A63C7CC90
-
 # key 3372DCFA: public key "Donald Stufft (dstufft) <donald@stufft.io>" imported
-RUN gpg --keyserver pgp.mit.edu  --recv-key 6E3CBCE93372DCFA
+RUN gpg --keyserver keyring.debian.org --recv-keys 4DE8FF2A63C7CC90 \
+	&& gpg --keyserver pgp.mit.edu  --recv-key 6E3CBCE93372DCFA \
+	&& gpg --keyserver pgp.mit.edu --recv-keys 0x52a43a1e4b77b059
 
 ENV PYTHON_VERSION #{PYTHON_VERSION}
 
@@ -74,7 +74,7 @@ RUN apk add --no-cache \
 		dbus-dev \
 		dbus-glib-dev
 
-ENV PYTHON_DBUS_VERSION 1.2.0
+ENV PYTHON_DBUS_VERSION 1.2.4
 
 # install dbus-python
 RUN set -x \
@@ -91,8 +91,8 @@ RUN set -x \
 	&& rm dbus-python.tar.gz* \
 	&& cd /usr/src/dbus-python \
 	&& PYTHON=python#{PYTHON_BASE_VERSION} ./configure \
-	&& make \
-	&& make install \
+	&& make -j$(nproc) \
+	&& make install -j$(nproc) \
 	&& cd / \
 	&& apk del .build-deps \
 	&& rm -rf /usr/src/dbus-python
