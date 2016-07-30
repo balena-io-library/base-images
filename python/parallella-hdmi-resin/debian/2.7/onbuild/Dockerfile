@@ -1,4 +1,4 @@
-FROM resin/parallella-hdmi-resin-python:2.7.11
+FROM resin/parallella-hdmi-resin-python:2.7.12
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app

@@ -1,4 +1,4 @@
-FROM resin/vab820-quad-alpine-python:3.5.1
+FROM resin/vab820-quad-alpine-python:3.5.2
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app

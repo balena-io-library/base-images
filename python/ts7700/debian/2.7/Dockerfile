@@ -15,23 +15,23 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	&& apt-get -y autoremove
 
 # key 63C7CC90: public key "Simon McVittie <smcv@pseudorandom.co.uk>" imported
-RUN gpg --keyserver keyring.debian.org --recv-keys 4DE8FF2A63C7CC90
-
 # key 3372DCFA: public key "Donald Stufft (dstufft) <donald@stufft.io>" imported
-RUN gpg --keyserver pgp.mit.edu  --recv-key 6E3CBCE93372DCFA
+RUN gpg --keyserver keyring.debian.org --recv-keys 4DE8FF2A63C7CC90 \
+	&& gpg --keyserver pgp.mit.edu  --recv-key 6E3CBCE93372DCFA \
+	&& gpg --keyserver pgp.mit.edu --recv-keys 0x52a43a1e4b77b059
 
-ENV PYTHON_VERSION 2.7.11
+ENV PYTHON_VERSION 2.7.12
 
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
 ENV PYTHON_PIP_VERSION 8.1.2
 ENV PYTHON_PIP_SHA256 8dae1fb72e29c2b6ff6ed267861179216bf98d3bda6d30e527dbed0db5ac7e1d
 
-ENV SETUPTOOLS_SHA256 2b564fadffa988cd18ddd893e2a6d284f75306acb80ea7b6c3c3b6830238d50a
-ENV SETUPTOOLS_VERSION 21.2.1
+ENV SETUPTOOLS_SHA256 76898498d835be860d82d3c37b1c8393aa0c4100ca35f68ecb895688e7aed6c8
+ENV SETUPTOOLS_VERSION 25.1.1
 
 RUN set -x \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-armel.tar.gz" \
-	&& echo "82219d084e8b7bf72553c1bcc713f0aec0c9288bd2a9a8465f0c10fbdccae0a6  Python-2.7.11.linux-armel.tar.gz" | sha256sum -c - \
+	&& echo "9e0f6a9ae104df873d063d28ccb2941e38ce964cb30a73ca702d258e8e03b81f  Python-2.7.12.linux-armel.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-armel.tar.gz" --strip-components=1 \
 	&& rm -rf "Python-$PYTHON_VERSION.linux-armel.tar.gz" \
 	&& ldconfig \
@@ -63,7 +63,7 @@ RUN set -x \
 # install "virtualenv", since the vast majority of users of this image will want it
 RUN pip install --no-cache-dir virtualenv
 
-ENV PYTHON_DBUS_VERSION 1.2.0
+ENV PYTHON_DBUS_VERSION 1.2.4
 
 # install dbus-python
 RUN set -x \
@@ -75,8 +75,8 @@ RUN set -x \
 	&& rm dbus-python.tar.gz* \
 	&& cd /usr/src/dbus-python \
 	&& PYTHON=python2.7 ./configure \
-	&& make \
-	&& make install \
+	&& make -j$(nproc) \
+	&& make install -j$(nproc) \
 	&& cd / \
 	&& rm -rf /usr/src/dbus-python
 
