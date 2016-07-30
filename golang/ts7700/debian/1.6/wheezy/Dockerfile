@@ -1,10 +1,10 @@
 FROM resin/ts7700-buildpack-deps:wheezy
 
-ENV GO_VERSION 1.6.2
+ENV GO_VERSION 1.6.3
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-armel.tar.gz" \
-	&& echo "a1d75be73d02273d182a67b0c457061ee7c1c2566a74266018035be0b7d6a5e7  go1.6.2.linux-armel.tar.gz" | sha256sum -c - \
+	&& echo "e804cd64992c5d20a96662ab121507cfe740395be06c82ca1df79afb4e6ae8fc  go1.6.3.linux-armel.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-armel.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-armel.tar.gz
 

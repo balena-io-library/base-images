@@ -1,4 +1,4 @@
-FROM resin/odroid-ux3-golang:1.6.2
+FROM resin/odroid-ux3-golang:1.6.3
 
 RUN mkdir -p /go/src/app
 WORKDIR /go/src/app

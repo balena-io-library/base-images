@@ -1,4 +1,4 @@
-FROM resin/zc702-zynq7-alpine-golang:1.6.2
+FROM resin/zc702-zynq7-alpine-golang:1.6.3
 
 RUN mkdir -p /go/src/app
 WORKDIR /go/src/app
