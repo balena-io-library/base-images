@@ -10,8 +10,10 @@ bb_sourceslist_wheezy_cmd='echo "deb http://debian.beagleboard.org/packages whee
 bb_key_wheezy_cmd='apt-key adv --keyserver keyserver.ubuntu.com --recv-key B2710B8359890110'
 
 devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi'
+armv7hf_devices=' raspberrypi2 beaglebone vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 raspberrypi3 artik5 artik10 beaglebone-green-wifi '
 suites='jessie wheezy'
 alpine_suites='edge 3.2 3.3 3.4'
+fedora_suites='23 24'
 
 for device in $devices; do
 
@@ -25,24 +27,32 @@ for device in $devices; do
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.rpi.tpl'
 		alpine_baseImage='armhf-alpine'
+		fedora_template='Dockerfile.fedora.tpl'
+		fedora_baseImage='armv7hf-fedora'
 	;;
 	'raspberrypi3')
 		template='Dockerfile.armv7hf.rpi.tpl'
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.rpi.tpl'
 		alpine_baseImage='armhf-alpine'
+		fedora_template='Dockerfile.fedora.tpl'
+		fedora_baseImage='armv7hf-fedora'
 	;;
 	'beaglebone')
 		template='Dockerfile.armv7hf.bbb.tpl'
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
+		fedora_template='Dockerfile.fedora.tpl'
+		fedora_baseImage='armv7hf-fedora'
 	;;
 	'beaglebone-green-wifi')
 		template='Dockerfile.armv7hf.bbb.tpl'
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
+		fedora_template='Dockerfile.fedora.tpl'
+		fedora_baseImage='armv7hf-fedora'
 	;;
 	'edison')
 		template='Dockerfile.i386.edison.tpl'
@@ -63,60 +73,80 @@ for device in $devices; do
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
+		fedora_template='Dockerfile.fedora.tpl'
+		fedora_baseImage='armv7hf-fedora'
 	;;
 	'zc702-zynq7')
 		template='Dockerfile.tpl'
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
+		fedora_template='Dockerfile.fedora.tpl'
+		fedora_baseImage='armv7hf-fedora'
 	;;
 	'odroid-c1')
 		template='Dockerfile.tpl'
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
+		fedora_template='Dockerfile.fedora.tpl'
+		fedora_baseImage='armv7hf-fedora'
 	;;
 	'odroid-ux3')
 		template='Dockerfile.tpl'
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
+		fedora_template='Dockerfile.fedora.tpl'
+		fedora_baseImage='armv7hf-fedora'
 	;;
 	'parallella-hdmi-resin')
 		template='Dockerfile.tpl'
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
+		fedora_template='Dockerfile.fedora.tpl'
+		fedora_baseImage='armv7hf-fedora'
 	;;
 	'nitrogen6x')
 		template='Dockerfile.tpl'
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
+		fedora_template='Dockerfile.fedora.tpl'
+		fedora_baseImage='armv7hf-fedora'
 	;;
 	'cubox-i')
 		template='Dockerfile.tpl'
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
+		fedora_template='Dockerfile.fedora.tpl'
+		fedora_baseImage='armv7hf-fedora'
 	;;
 	'ts4900')
 		template='Dockerfile.tpl'
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
+		fedora_template='Dockerfile.fedora.tpl'
+		fedora_baseImage='armv7hf-fedora'
 	;;
 	'colibri-imx6')
 		template='Dockerfile.tpl'
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
+		fedora_template='Dockerfile.fedora.tpl'
+		fedora_baseImage='armv7hf-fedora'
 	;;
 	'apalis-imx6')
 		template='Dockerfile.tpl'
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
+		fedora_template='Dockerfile.fedora.tpl'
+		fedora_baseImage='armv7hf-fedora'
 	;;
 	'ts7700')
 		template='Dockerfile.tpl'
@@ -127,12 +157,16 @@ for device in $devices; do
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
+		fedora_template='Dockerfile.fedora.tpl'
+		fedora_baseImage='armv7hf-fedora'
 	;;
 	'artik10')
 		template='Dockerfile.tpl'
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
+		fedora_template='Dockerfile.fedora.tpl'
+		fedora_baseImage='armv7hf-fedora'
 	;;
 	esac
 
@@ -185,4 +219,16 @@ for device in $devices; do
 		sed -e s~#{FROM}~resin/$alpine_baseImage:$suite~g \
 			-e s@#{DEV_TYPE}@$device@ $alpine_template > $alpine_dockerfilePath/$suite/Dockerfile
 	done
+
+	# Fedora
+	# Only support armv7hf devices. Other devices will be supported later.
+
+	fedora_dockerfilePath="$device/fedora"
+	if [[ $armv7hf_devices == *" $device "* ]]; then
+		for suite in $fedora_suites; do
+			mkdir -p $fedora_dockerfilePath/$suite
+			sed -e s~#{FROM}~resin/$fedora_baseImage:$suite~g \
+				-e s@#{DEV_TYPE}@$device@ $fedora_template > $fedora_dockerfilePath/$suite/Dockerfile
+		done
+	fi
 done

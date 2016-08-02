@@ -37,6 +37,7 @@ C4F0DFFF4E8C1A8236409D08E73BC641CC11F4C8 \
 done
 
 devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi'
+armv7hf_devices=' raspberrypi2 beaglebone vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 raspberrypi3 artik5 artik10 beaglebone-green-wifi '
 nodeVersions='0.10.22 0.10.46 0.12.15 4.4.7 5.12.0 6.3.1'
 defaultVersion='0.10.22'
 resinUrl="http://resin-packages.s3.amazonaws.com/node/v\$NODE_VERSION/node-v\$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz"
@@ -207,6 +208,35 @@ for device in $devices; do
 				-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.i386.edison.slim.tpl > $debian_dockerfilePath/slim/Dockerfile
 		fi
 
+		# Fedora
+		if [[ $armv7hf_devices == *" $device "* ]]; then
+			fedora_dockerfilePath=$device/fedora/$baseVersion
+
+			mkdir -p $fedora_dockerfilePath
+			sed -e s~#{FROM}~resin/$device-fedora-buildpack-deps:latest~g \
+				-e s~#{BINARY_URL}~$binary_url~g \
+				-e s~#{NODE_VERSION}~$nodeVersion~g \
+				-e s~#{CHECKSUM}~"$checksum"~g \
+				-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.tpl > $fedora_dockerfilePath/Dockerfile
+
+			mkdir -p $fedora_dockerfilePath/23
+			sed -e s~#{FROM}~resin/$device-fedora-buildpack-deps:23~g \
+				-e s~#{BINARY_URL}~$binary_url~g \
+				-e s~#{NODE_VERSION}~$nodeVersion~g \
+				-e s~#{CHECKSUM}~"$checksum"~g \
+				-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.tpl > $fedora_dockerfilePath/23/Dockerfile
+
+			mkdir -p $fedora_dockerfilePath/onbuild
+			sed -e s~#{FROM}~resin/$device-fedora-node:$nodeVersion~g Dockerfile.onbuild.tpl > $fedora_dockerfilePath/onbuild/Dockerfile
+
+			mkdir -p $fedora_dockerfilePath/slim
+			sed -e s~#{FROM}~resin/$device-fedora:latest~g \
+				-e s~#{BINARY_URL}~$binary_url~g \
+				-e s~#{NODE_VERSION}~$nodeVersion~g \
+				-e s~#{CHECKSUM}~"$checksum"~g \
+				-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.tpl > $fedora_dockerfilePath/slim/Dockerfile
+		fi
+
 		# Alpine
 		case "$binary_arch" in
 		'x64')
@@ -260,4 +290,3 @@ for device in $devices; do
 			-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.alpine.tpl > $alpine_dockerfilePath/edge/Dockerfile
 	done
 done
-

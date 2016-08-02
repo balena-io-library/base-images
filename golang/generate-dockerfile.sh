@@ -2,6 +2,7 @@
 set -e
 
 devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi'
+armv7hf_devices=' raspberrypi2 beaglebone vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 raspberrypi3 artik5 artik10 beaglebone-green-wifi '
 goVersions='1.4.3 1.5.4 1.6.3'
 resinUrl="http://resin-packages.s3.amazonaws.com/golang/v\$GO_VERSION/go\$GO_VERSION.linux-#{TARGET_ARCH}.tar.gz"
 golangUrl="https://storage.googleapis.com/golang/go\$GO_VERSION.linux-#{TARGET_ARCH}.tar.gz"
@@ -19,24 +20,32 @@ for device in $devices; do
 		binary_arch='armv7hf'
 		alpine_binary_url=$resinUrl
 		alpine_binary_arch='alpine-armhf'
+		fedora_binary_url=$resinUrl
+		fedora_binary_arch='armv7hf'
 	;;
 	'raspberrypi3')
 		binary_url=$resinUrl
 		binary_arch='armv7hf'
 		alpine_binary_url=$resinUrl
 		alpine_binary_arch='alpine-armhf'
+		fedora_binary_url=$resinUrl
+		fedora_binary_arch='armv7hf'
 	;;
 	'beaglebone')
 		binary_url=$resinUrl
 		binary_arch='armv7hf'
 		alpine_binary_url=$resinUrl
 		alpine_binary_arch='alpine-armhf'
+		fedora_binary_url=$resinUrl
+		fedora_binary_arch='armv7hf'
 	;;
 	'beaglebone-green-wifi')
 		binary_url=$resinUrl
 		binary_arch='armv7hf'
 		alpine_binary_url=$resinUrl
 		alpine_binary_arch='alpine-armhf'
+		fedora_binary_url=$resinUrl
+		fedora_binary_arch='armv7hf'
 	;;
 	'edison')
 		binary_url=$golangUrl
@@ -55,60 +64,80 @@ for device in $devices; do
 		binary_arch='armv7hf'
 		alpine_binary_url=$resinUrl
 		alpine_binary_arch='alpine-armhf'
+		fedora_binary_url=$resinUrl
+		fedora_binary_arch='armv7hf'
 	;;
 	'zc702-zynq7')
 		binary_url=$resinUrl
 		binary_arch='armv7hf'
 		alpine_binary_url=$resinUrl
 		alpine_binary_arch='alpine-armhf'
+		fedora_binary_url=$resinUrl
+		fedora_binary_arch='armv7hf'
 	;;
 	'odroid-c1')
 		binary_url=$resinUrl
 		binary_arch='armv7hf'
 		alpine_binary_url=$resinUrl
 		alpine_binary_arch='alpine-armhf'
+		fedora_binary_url=$resinUrl
+		fedora_binary_arch='armv7hf'
 	;;
 	'odroid-ux3')
 		binary_url=$resinUrl
 		binary_arch='armv7hf'
 		alpine_binary_url=$resinUrl
 		alpine_binary_arch='alpine-armhf'
+		fedora_binary_url=$resinUrl
+		fedora_binary_arch='armv7hf'
 	;;
 	'parallella-hdmi-resin')
 		binary_url=$resinUrl
 		binary_arch='armv7hf'
 		alpine_binary_url=$resinUrl
 		alpine_binary_arch='alpine-armhf'
+		fedora_binary_url=$resinUrl
+		fedora_binary_arch='armv7hf'
 	;;
 	'nitrogen6x')
 		binary_url=$resinUrl
 		binary_arch='armv7hf'
 		alpine_binary_url=$resinUrl
 		alpine_binary_arch='alpine-armhf'
+		fedora_binary_url=$resinUrl
+		fedora_binary_arch='armv7hf'
 	;;
 	'cubox-i')
 		binary_url=$resinUrl
 		binary_arch='armv7hf'
 		alpine_binary_url=$resinUrl
 		alpine_binary_arch='alpine-armhf'
+		fedora_binary_url=$resinUrl
+		fedora_binary_arch='armv7hf'
 	;;
 	'ts4900')
 		binary_url=$resinUrl
 		binary_arch='armv7hf'
 		alpine_binary_url=$resinUrl
 		alpine_binary_arch='alpine-armhf'
+		fedora_binary_url=$resinUrl
+		fedora_binary_arch='armv7hf'
 	;;
 	'colibri-imx6')
 		binary_url=$resinUrl
 		binary_arch='armv7hf'
 		alpine_binary_url=$resinUrl
 		alpine_binary_arch='alpine-armhf'
+		fedora_binary_url=$resinUrl
+		fedora_binary_arch='armv7hf'
 	;;
 	'apalis-imx6')
 		binary_url=$resinUrl
 		binary_arch='armv7hf'
 		alpine_binary_url=$resinUrl
 		alpine_binary_arch='alpine-armhf'
+		fedora_binary_url=$resinUrl
+		fedora_binary_arch='armv7hf'
 	;;
 	'ts7700')
 		binary_url=$resinUrl
@@ -122,12 +151,16 @@ for device in $devices; do
 		binary_arch='armv7hf'
 		alpine_binary_url=$resinUrl
 		alpine_binary_arch='alpine-armhf'
+		fedora_binary_url=$resinUrl
+		fedora_binary_arch='armv7hf'
 	;;
 	'artik10')
 		binary_url=$resinUrl
 		binary_arch='armv7hf'
 		alpine_binary_url=$resinUrl
 		alpine_binary_arch='alpine-armhf'
+		fedora_binary_url=$resinUrl
+		fedora_binary_arch='armv7hf'
 	;;
 	esac
 	for goVersion in $goVersions; do
@@ -172,6 +205,38 @@ for device in $devices; do
 				-e s~#{CHECKSUM}~"$checksum"~g \
 				-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.slim.tpl > $debian_dockerfilePath/slim/Dockerfile
 		cp go-wrapper $debian_dockerfilePath/slim/
+
+		# Fedora
+
+		if [[ $armv7hf_devices == *" $device "* ]]; then
+			fedora_dockerfilePath=$device/fedora/$baseVersion
+			mkdir -p $fedora_dockerfilePath
+			sed -e s~#{FROM}~resin/$device-fedora-buildpack-deps:latest~g \
+				-e s~#{BINARY_URL}~$fedora_binary_url~g \
+				-e s~#{GO_VERSION}~$goVersion~g \
+				-e s~#{CHECKSUM}~"$checksum"~g \
+				-e s~#{TARGET_ARCH}~$fedora_binary_arch~g Dockerfile.tpl > $fedora_dockerfilePath/Dockerfile
+			cp go-wrapper $fedora_dockerfilePath/
+
+			mkdir -p $fedora_dockerfilePath/23
+			sed -e s~#{FROM}~resin/$device-fedora-buildpack-deps:23~g \
+				-e s~#{BINARY_URL}~$fedora_binary_url~g \
+				-e s~#{GO_VERSION}~$goVersion~g \
+				-e s~#{CHECKSUM}~"$checksum"~g \
+				-e s~#{TARGET_ARCH}~$fedora_binary_arch~g Dockerfile.tpl > $fedora_dockerfilePath/23/Dockerfile
+			cp go-wrapper $fedora_dockerfilePath/23/
+
+			mkdir -p $fedora_dockerfilePath/onbuild
+			sed -e s~#{FROM}~resin/$device-fedora-golang:$goVersion~g Dockerfile.onbuild.tpl > $fedora_dockerfilePath/onbuild/Dockerfile
+
+			mkdir -p $fedora_dockerfilePath/slim
+			sed -e s~#{FROM}~resin/$device-fedora:latest~g \
+					-e s~#{BINARY_URL}~$fedora_binary_url~g \
+					-e s~#{GO_VERSION}~$goVersion~g \
+					-e s~#{CHECKSUM}~"$checksum"~g \
+					-e s~#{TARGET_ARCH}~$fedora_binary_arch~g Dockerfile.fedora.slim.tpl > $fedora_dockerfilePath/slim/Dockerfile
+			cp go-wrapper $fedora_dockerfilePath/slim/
+		fi
 
 		# Alpine.
 

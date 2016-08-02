@@ -23,8 +23,13 @@ function generate_library(){
 
 	for version in "${versions[@]}"; do
 		commit="$(git log -1 --format='format:%H' -- "$path/$version")"
-		fullVersion="$(grep -m1 'ENV PYTHON_VERSION ' "$path/$version/Dockerfile" | cut -d' ' -f3)"
-		versionAliases=( $fullVersion $version ${aliases[$fullVersion]} )
+		if [ $2 == 'fedora' ]; then
+			versionAliases=( $version ${aliases[$version]} )
+		else
+			fullVersion="$(grep -m1 'ENV PYTHON_VERSION ' "$path/$version/Dockerfile" | cut -d' ' -f3)"
+			versionAliases=( $fullVersion $version ${aliases[$fullVersion]} )
+		fi
+
 		echo >> $lib_name
 		for va in "${versionAliases[@]}"; do
 			echo "$va: ${url}@${commit} $repo/$path/$version" >> $lib_name
@@ -48,6 +53,7 @@ function generate_library(){
 declare -A aliases
 aliases=(
 	[2.7.12]='latest'
+	[2]='latest'
 )
 
 cd "$(dirname "$(readlink -f "$BASH_SOURCE")")"
@@ -70,6 +76,10 @@ for device in "${devices[@]}"; do
 		# Alpine
 		if [ $distro == 'alpine' ]; then
 			generate_library "$device" "$distro" "onbuild edge slim"
+		fi
+		# Fedora
+		if [ $distro == 'fedora' ]; then
+			generate_library "$device" "$distro" "onbuild 23 slim"
 		fi
 	done
 done
