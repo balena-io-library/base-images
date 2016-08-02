@@ -1,4 +1,4 @@
-FROM resin/raspberrypi-systemd:wheezy
+FROM resin/rpi-raspbian:wheezy
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		ca-certificates \
