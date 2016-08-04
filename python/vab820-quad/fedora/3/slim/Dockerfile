@@ -13,4 +13,4 @@ RUN dnf install -y \
 RUN pip install -U --no-cache-dir --ignore-installed pip setuptools \
 	&& pip install --no-cache-dir virtualenv
 
-CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command could be found in Dockerfile Guide section in our Docs. Here's the link: http://docs.resin.io/#/pages/using/dockerfile.md"]
+CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command could be found in Dockerfile Guide section in our Docs. Here's the link: http://docs.resin.io/deployment/dockerfile"]
