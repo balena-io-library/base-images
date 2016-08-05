@@ -59,7 +59,7 @@ set_pythonpath() {
 	done
 }
 
-devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi'
+devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86'
 armv7hf_devices=' raspberrypi2 beaglebone vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 raspberrypi3 artik5 artik10 beaglebone-green-wifi '
 pythonVersions='2.7.12 3.3.6 3.4.4 3.5.2'
 binary_url="http://resin-packages.s3.amazonaws.com/python/v\$PYTHON_VERSION/Python-\$PYTHON_VERSION.linux-#{TARGET_ARCH}.tar.gz"
@@ -91,6 +91,10 @@ for device in $devices; do
 		fedora_binary_arch='fedora-armhf'
 	;;
 	'edison')
+		binary_arch='i386'
+		alpine_binary_arch='alpine-i386'
+	;;
+	'qemux86')
 		binary_arch='i386'
 		alpine_binary_arch='alpine-i386'
 	;;
@@ -222,7 +226,6 @@ for device in $devices; do
 		# Only for intel edison
 		if [ $device == "edison" ]; then
 			append_setup_script "$baseVersion" "$debian_dockerfilePath" "debian" "base wheezy slim"
-
 		fi
 
 		set_pythonpath "$baseVersion" "$debian_dockerfilePath" "base wheezy slim" "debian"
