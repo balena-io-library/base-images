@@ -1,0 +1,38 @@
+{
+  "name": "resin-docker-generator",
+  "version": "0.1.0",
+  "description": "Dynamic Dockerfile generation with metalsmith-dynamic and smart imports.",
+  "main": "index.js",
+  "scripts": {
+    "build": "./build.sh",
+    "dev": "watch 'npm run build' src partials dicts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/resin-io-library/base-images.git"
+  },
+  "author": "Trong Nghia Nguyen <james@resin.io>",
+  "contributors": [
+    "Eugene Mirotin <eugene@resin.io>"
+  ],
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/resin-io-library/base-images/issues"
+  },
+  "homepage": "https://github.com/resin-io-library/base-images",
+  "dependencies": {
+    "@resin.io/doxx-handlebars-helper": "^0.1.1",
+    "@resin.io/doxx-utils": "^0.1.2",
+    "coffee-script": "^1.10.0",
+    "consolidate": "^0.14.0",
+    "lodash": "^4.12.0",
+    "metalsmith": "^2.1.0",
+    "metalsmith-dynamic": "^0.4.0",
+    "metalsmith-in-place": "^1.4.3",
+    "semver": "^5.1.0",
+    "fs-extra": "^0.30.0"
+  },
+  "devDependencies": {
+    "watch": "^0.19.1"
+  }
+}
