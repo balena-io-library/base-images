@@ -1,4 +1,4 @@
-FROM resin/raspberrypi3-fedora-python:3.5.2
+FROM resin/raspberrypi3-fedora-python:3
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app

@@ -1,4 +1,4 @@
-FROM resin/vab820-quad-fedora-python:3.5.2
+FROM resin/vab820-quad-fedora-python:3
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app

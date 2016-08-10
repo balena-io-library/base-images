@@ -1,4 +1,4 @@
-FROM resin/apalis-imx6-fedora-python:3.5.2
+FROM resin/apalis-imx6-fedora-python:2
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app

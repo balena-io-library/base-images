@@ -1,4 +1,4 @@
-FROM resin/beaglebone-fedora-python:3.5.2
+FROM resin/beaglebone-fedora-python:2
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
