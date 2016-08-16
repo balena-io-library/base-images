@@ -1,6 +1,6 @@
 FROM armel/debian:wheezy
 
-LABEL io.resin.architecture="armv5e" io.resin.qemu.version="2.5.0-resin-rc3"
+LABEL io.resin.architecture="armv5e" io.resin.qemu.version="2.5.0-resin-rc3-arm"
 
 ENV LC_ALL C.UTF-8
 ENV DEBIAN_FRONTEND noninteractive

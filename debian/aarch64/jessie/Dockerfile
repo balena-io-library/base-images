@@ -1,11 +1,11 @@
-FROM armel/debian:jessie
+FROM aarch64/debian:jessie
 
-LABEL io.resin.architecture="armv5e" io.resin.qemu.version="2.5.0-resin-rc3-arm"
+LABEL io.resin.architecture="aarch64" io.resin.qemu.version="2.5.0-resin-rc3-aarch64"
 
 ENV LC_ALL C.UTF-8
 ENV DEBIAN_FRONTEND noninteractive
 
-COPY qemu-arm-static /usr/bin/
+COPY qemu-aarch64-static /usr/bin/
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		sudo \
