@@ -27,7 +27,6 @@ for device in $devices; do
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.rpi.tpl'
 		alpine_baseImage='armhf-alpine'
-		fedora_template='Dockerfile.fedora.tpl'
 		fedora_baseImage='armv7hf-fedora'
 	;;
 	'raspberrypi3')
@@ -35,7 +34,6 @@ for device in $devices; do
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.rpi.tpl'
 		alpine_baseImage='armhf-alpine'
-		fedora_template='Dockerfile.fedora.tpl'
 		fedora_baseImage='armv7hf-fedora'
 	;;
 	'beaglebone')
@@ -43,7 +41,6 @@ for device in $devices; do
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
-		fedora_template='Dockerfile.fedora.tpl'
 		fedora_baseImage='armv7hf-fedora'
 	;;
 	'beaglebone-green-wifi')
@@ -51,7 +48,6 @@ for device in $devices; do
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
-		fedora_template='Dockerfile.fedora.tpl'
 		fedora_baseImage='armv7hf-fedora'
 	;;
 	'beaglebone-green')
@@ -107,7 +103,6 @@ for device in $devices; do
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
-		fedora_template='Dockerfile.fedora.tpl'
 		fedora_baseImage='armv7hf-fedora'
 	;;
 	'zc702-zynq7')
@@ -115,7 +110,6 @@ for device in $devices; do
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
-		fedora_template='Dockerfile.fedora.tpl'
 		fedora_baseImage='armv7hf-fedora'
 	;;
 	'odroid-c1')
@@ -123,7 +117,6 @@ for device in $devices; do
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
-		fedora_template='Dockerfile.fedora.tpl'
 		fedora_baseImage='armv7hf-fedora'
 	;;
 	'odroid-ux3')
@@ -131,7 +124,6 @@ for device in $devices; do
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
-		fedora_template='Dockerfile.fedora.tpl'
 		fedora_baseImage='armv7hf-fedora'
 	;;
 	'parallella-hdmi-resin')
@@ -139,7 +131,6 @@ for device in $devices; do
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
-		fedora_template='Dockerfile.fedora.tpl'
 		fedora_baseImage='armv7hf-fedora'
 	;;
 	'nitrogen6x')
@@ -147,7 +138,6 @@ for device in $devices; do
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
-		fedora_template='Dockerfile.fedora.tpl'
 		fedora_baseImage='armv7hf-fedora'
 	;;
 	'cubox-i')
@@ -155,7 +145,6 @@ for device in $devices; do
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
-		fedora_template='Dockerfile.fedora.tpl'
 		fedora_baseImage='armv7hf-fedora'
 	;;
 	'ts4900')
@@ -163,7 +152,6 @@ for device in $devices; do
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
-		fedora_template='Dockerfile.fedora.tpl'
 		fedora_baseImage='armv7hf-fedora'
 	;;
 	'colibri-imx6')
@@ -171,7 +159,6 @@ for device in $devices; do
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
-		fedora_template='Dockerfile.fedora.tpl'
 		fedora_baseImage='armv7hf-fedora'
 	;;
 	'apalis-imx6')
@@ -179,7 +166,6 @@ for device in $devices; do
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
-		fedora_template='Dockerfile.fedora.tpl'
 		fedora_baseImage='armv7hf-fedora'
 	;;
 	'ts7700')
@@ -191,7 +177,6 @@ for device in $devices; do
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
-		fedora_template='Dockerfile.fedora.tpl'
 		fedora_baseImage='armv7hf-fedora'
 	;;
 	'artik10')
@@ -199,7 +184,6 @@ for device in $devices; do
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
-		fedora_template='Dockerfile.fedora.tpl'
 		fedora_baseImage='armv7hf-fedora'
 	;;
 	'artik710')
@@ -266,11 +250,22 @@ for device in $devices; do
 	# Only support armv7hf devices. Other devices will be supported later.
 
 	fedora_dockerfilePath="$device/fedora"
-	if [[ $fedora_devices == *" $device "* ]]; then
+	if [[ $armv7hf_devices == *" $device "* ]]; then
 		for suite in $fedora_suites; do
 			mkdir -p $fedora_dockerfilePath/$suite
-			sed -e s~#{FROM}~resin/$fedora_baseImage:$suite~g \
-				-e s@#{DEV_TYPE}@$device@ $fedora_template > $fedora_dockerfilePath/$suite/Dockerfile
+			if [[ $device == "artik"* ]] && [ $suite == "24" ]; then
+				# no Artik SDK for fedora 23
+				fedora_template='Dockerfile.artik.fedora.tpl'
+				cp artik.repo "$fedora_dockerfilePath/$suite/"
+				cp RPM-GPG-KEY-artik-armhfp "$fedora_dockerfilePath/$suite/RPM-GPG-KEY-artik-$suite-armhfp"
+				sed -e s~#{FROM}~resin/$fedora_baseImage:$suite~g \
+					-e s@#{DEV_TYPE}@$device@ \
+					-e s@#{SUITE}@$suite@ $fedora_template > $fedora_dockerfilePath/$suite/Dockerfile
+			else
+				fedora_template='Dockerfile.fedora.tpl'
+				sed -e s~#{FROM}~resin/$fedora_baseImage:$suite~g \
+					-e s@#{DEV_TYPE}@$device@ $fedora_template > $fedora_dockerfilePath/$suite/Dockerfile
+			fi
 		done
 	fi
 done
