@@ -4,7 +4,14 @@ LABEL io.resin.architecture="i386"
 
 
 
-RUN apk add --update bash udev dbus tar ca-certificates openrc \
+RUN apk add --update \
+	bash \
+	ca-certificates \
+	dbus \
+	findutils \
+	openrc \
+	tar \
+	udev \
 	&& rm -rf /var/cache/apk/*
 
 # Config OpenRC

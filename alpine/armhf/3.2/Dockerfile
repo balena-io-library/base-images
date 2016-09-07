@@ -4,7 +4,14 @@ LABEL io.resin.architecture="armhf" io.resin.qemu.version="2.5.0-resin-rc3"
 
 COPY qemu-arm-static /usr/bin/qemu-arm-static
 
-RUN apk add --update bash udev dbus tar ca-certificates openrc \
+RUN apk add --update \
+	bash \
+	ca-certificates \
+	dbus \
+	findutils \
+	openrc \
+	tar \
+	udev \
 	&& rm -rf /var/cache/apk/*
 
 # Config OpenRC
