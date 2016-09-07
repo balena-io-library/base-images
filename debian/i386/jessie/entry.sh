@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Send SIGTERM to child processes of PID 1.
+function signal_handler()
+{
+	kill $pid
+}
+
 function update_hostname()
 {
 	HOSTNAME="$HOSTNAME-${RESIN_DEVICE_UUID:0:7}"
@@ -51,6 +57,9 @@ function init_systemd()
 
 function init_non_systemd()
 {
+	# trap the stop signal then send SIGTERM to user processes
+	trap signal_handler SIGRTMIN+3 SIGTERM
+
 	udevd & 
 	udevadm trigger &> /dev/null
 	
@@ -58,7 +67,9 @@ function init_non_systemd()
 	# echo error message, when executable file doesn't exist.
 	if [ $? == '0' ]; then
 		shift
-		exec "$CMD" "$@"
+		"$CMD" "$@" &
+		pid=$!
+		wait $pid
 	else
 		echo "Command not found: $1"
 		exit 1
