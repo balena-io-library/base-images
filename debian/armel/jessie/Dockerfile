@@ -37,5 +37,6 @@ COPY launch.service /etc/systemd/system/launch.service
 
 RUN systemctl enable /etc/systemd/system/launch.service
 
+STOPSIGNAL 37
 VOLUME ["/sys/fs/cgroup"]
 ENTRYPOINT ["/usr/bin/entry.sh"]
