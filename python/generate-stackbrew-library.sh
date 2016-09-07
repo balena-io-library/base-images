@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+
 set -o pipefail
 
 # Generate library file.
@@ -26,26 +26,30 @@ function generate_library(){
 		if [ $2 == 'fedora' ]; then
 			versionAliases=( $version ${aliases[$version]} )
 		else
-			fullVersion="$(grep -m1 'ENV PYTHON_VERSION ' "$path/$version/Dockerfile" | cut -d' ' -f3)"
+			fullVersion="$(find "$path/$version" -name 'Dockerfile' -exec bash -c 'grep -m1 "ENV PYTHON_VERSION " "$0" | cut -d" " -f3; kill "$PPID"' {} \;)"
 			versionAliases=( $fullVersion $version ${aliases[$fullVersion]} )
 		fi
 
-		echo >> $lib_name
-		for va in "${versionAliases[@]}"; do
-			echo "$va: ${url}@${commit} $repo/$path/$version" >> $lib_name
-		done
-	
-		for variant in $3; do
-			commit="$(git log -1 --format='format:%H' -- "$path/$version/$variant")"
+		if [ -f "$path/$version/Dockerfile" ]; then
 			echo >> $lib_name
 			for va in "${versionAliases[@]}"; do
-				if [ "$va" = 'latest' ]; then
-					va="$variant"
-				else
-					va="$va-$variant"
-				fi
-				echo "$va: ${url}@${commit} $repo/$path/$version/$variant" >> $lib_name
+				echo "$va: ${url}@${commit} $repo/$path/$version" >> $lib_name
 			done
+		fi
+	
+		for variant in $3; do
+			if [ -d "$path/$version/$variant" ]; then
+				commit="$(git log -1 --format='format:%H' -- "$path/$version/$variant")"
+				echo >> $lib_name
+				for va in "${versionAliases[@]}"; do
+					if [ "$va" = 'latest' ]; then
+						va="$variant"
+					else
+						va="$va-$variant"
+					fi
+					echo "$va: ${url}@${commit} $repo/$path/$version/$variant" >> $lib_name
+				done
+			fi
 		done
 	done
 }
