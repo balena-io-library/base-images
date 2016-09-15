@@ -6,6 +6,7 @@ ENV LC_ALL C.UTF-8
 ENV DEBIAN_FRONTEND noninteractive
 
 #{QEMU}
+#{QEMU_CPU}
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		sudo \
