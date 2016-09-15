@@ -24,30 +24,35 @@ for arch in $archs; do
 		label='io.resin.architecture="armv7hf" io.resin.qemu.version="'$QEMU_VERSION'"'
 		suites='jessie wheezy sid'
 		qemu='COPY qemu-arm-static /usr/bin/'
+		qemuCpu=''
 	;;
 	'i386')
 		baseImage='i386/debian'
 		label='io.resin.architecture="i386"'
 		suites='jessie wheezy'
 		qemu=''
+		qemuCpu=''
 	;;
 	'amd64')
 		baseImage='debian'
 		label='io.resin.architecture="amd64"'
 		suites='jessie wheezy'
 		qemu=''
+		qemuCpu=''
 	;;
 	'armel')
 		baseImage='armel/debian'
 		label='io.resin.architecture="armv5e" io.resin.qemu.version="'$QEMU_VERSION'"'
 		suites='jessie wheezy'
 		qemu='COPY qemu-arm-static /usr/bin/'
+		qemuCpu='ENV QEMU_CPU arm1026'
 	;;
 	'aarch64')
 		baseImage='aarch64/debian'
 		label='io.resin.architecture="aarch64" io.resin.qemu.version="'$QEMU_AARCH64_VERSION'"'
 		suites='jessie'
 		qemu='COPY qemu-aarch64-static /usr/bin/'
+		qemuCpu=''
 	;;
 	esac
 	for suite in $suites; do
@@ -56,6 +61,7 @@ for arch in $archs; do
 		mkdir -p $dockerfilePath
 		sed -e s~#{FROM}~$baseImage:$suite~g \
 			-e s~#{LABEL}~"$label"~g \
+			-e s~#{QEMU_CPU}~"$qemuCpu"~g \
 			-e s~#{QEMU}~"$qemu"~g Dockerfile.tpl > $dockerfilePath/Dockerfile
 		cp 01_nodoc 01_buildconfig $dockerfilePath/
 

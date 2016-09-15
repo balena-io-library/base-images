@@ -6,6 +6,7 @@ ENV LC_ALL C.UTF-8
 ENV DEBIAN_FRONTEND noninteractive
 
 COPY qemu-arm-static /usr/bin/
+ENV QEMU_CPU arm1026
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		sudo \
