@@ -1,5 +1,10 @@
 #!/bin/bash
 
+function remove_buildtime_env_var()
+{
+	unset QEMU_CPU
+}
+
 # Send SIGTERM to child processes of PID 1.
 function signal_handler()
 {
@@ -75,6 +80,8 @@ function init_non_systemd()
 		exit 1
 	fi
 }
+
+remove_buildtime_env_var
 
 if [ ! -z "$RESIN_SUPERVISOR_API_KEY" ] && [ ! -z "$RESIN_DEVICE_UUID" ]; then
 	# run this on resin device only

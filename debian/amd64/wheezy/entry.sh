@@ -1,5 +1,10 @@
 #!/bin/bash
 
+function remove_buildtime_env_var()
+{
+	unset QEMU_CPU
+}
+
 function update_hostname()
 {
 	HOSTNAME="$HOSTNAME-${RESIN_DEVICE_UUID:0:7}"
@@ -47,6 +52,7 @@ function init_non_systemd()
 	fi
 }
 
+remove_buildtime_env_var
 if [ ! -z "$RESIN_SUPERVISOR_API_KEY" ] && [ ! -z "$RESIN_DEVICE_UUID" ]; then
 	# run this on resin device only
 	update_hostname
