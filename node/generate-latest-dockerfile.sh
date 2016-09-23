@@ -41,7 +41,7 @@ C4F0DFFF4E8C1A8236409D08E73BC641CC11F4C8 \
 done
 
 devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green'
-armv7hf_devices=' raspberrypi2 beaglebone vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green '
+fedora_devices=' raspberrypi2 beaglebone vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green nuc qemux86-64 '
 nodeVersions='0.10.22 0.10.46 0.12.15 4.5.0 5.12.0 6.6.0'
 defaultVersion='0.10.22'
 resinUrl="http://resin-packages.s3.amazonaws.com/node/v\$NODE_VERSION/node-v\$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz"
@@ -235,7 +235,7 @@ for device in $devices; do
 		fi
 
 		# Fedora
-		if [[ $armv7hf_devices == *" $device "* ]]; then
+		if [[ $fedora_devices == *" $device "* ]]; then
 			fedora_dockerfilePath=$device/fedora/$baseVersion
 
 			mkdir -p $fedora_dockerfilePath

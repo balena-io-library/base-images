@@ -22,7 +22,7 @@ declare -A debCache=()
 
 versions='7-jdk 7-jre 8-jdk 8-jre'
 devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green'
-armv7hf_devices=' raspberrypi2 beaglebone vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green '
+fedora_devices=' raspberrypi2 beaglebone vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green nuc qemux86-64 '
 alpineVersion='3.4'
 alpineDeviceArchs='x86_64 x86 armhf'
 variants='jre jdk'
@@ -221,7 +221,7 @@ for device in $devices; do
 	done
 done
 
-for fedoraDevice in $armv7hf_devices; do
+for fedoraDevice in $fedora_devices; do
 	for variant in $variants; do
 		if [ $variant == 'jre' ]; then
 			fedoraPackage='java-1.8.0-openjdk'

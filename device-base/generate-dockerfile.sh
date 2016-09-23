@@ -10,7 +10,7 @@ bb_sourceslist_wheezy_cmd='echo "deb http://debian.beagleboard.org/packages whee
 bb_key_wheezy_cmd='apt-key adv --keyserver keyserver.ubuntu.com --recv-key B2710B8359890110'
 
 devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green'
-armv7hf_devices=' raspberrypi2 beaglebone vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green '
+fedora_devices=' raspberrypi2 beaglebone vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green nuc qemux86-64 '
 suites='jessie wheezy'
 alpine_suites='edge 3.2 3.3 3.4'
 fedora_suites='23 24'
@@ -83,12 +83,16 @@ for device in $devices; do
 		baseImage='amd64-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='amd64-alpine'
+		fedora_template='Dockerfile.fedora.tpl'
+		fedora_baseImage='amd64-fedora'
 	;;
 	'qemux86-64')
 		template='Dockerfile.tpl'
 		baseImage='amd64-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='amd64-alpine'
+		fedora_template='Dockerfile.fedora.tpl'
+		fedora_baseImage='amd64-fedora'
 	;;
 	'vab820-quad')
 		template='Dockerfile.tpl'
@@ -246,7 +250,7 @@ for device in $devices; do
 	# Only support armv7hf devices. Other devices will be supported later.
 
 	fedora_dockerfilePath="$device/fedora"
-	if [[ $armv7hf_devices == *" $device "* ]]; then
+	if [[ $fedora_devices == *" $device "* ]]; then
 		for suite in $fedora_suites; do
 			mkdir -p $fedora_dockerfilePath/$suite
 			sed -e s~#{FROM}~resin/$fedora_baseImage:$suite~g \

@@ -60,7 +60,7 @@ set_pythonpath() {
 }
 
 devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green'
-armv7hf_devices=' raspberrypi2 beaglebone vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green '
+fedora_devices=' raspberrypi2 beaglebone vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green nuc qemux86-64 '
 pythonVersions='2.7.12 3.3.6 3.4.4 3.5.2'
 binary_url="http://resin-packages.s3.amazonaws.com/python/v\$PYTHON_VERSION/Python-\$PYTHON_VERSION.linux-#{TARGET_ARCH}.tar.gz"
 
@@ -106,10 +106,12 @@ for device in $devices; do
 	'nuc')
 		binary_arch='amd64'
 		alpine_binary_arch='alpine-amd64'
+		fedora_binary_arch='fedora-amd64'
 	;;
 	'qemux86-64')
 		binary_arch='amd64'
 		alpine_binary_arch='alpine-amd64'
+		fedora_binary_arch='fedora-amd64'
 	;;
 	'vab820-quad')
 		binary_arch='armv7hf'
@@ -289,7 +291,7 @@ for device in $devices; do
 		set_pythonpath "$baseVersion" "$alpine_dockerfilePath" "base edge slim" "alpine"
 	done
 	# Fedora
-	if [[ $armv7hf_devices == *" $device "* ]]; then
+	if [[ $fedora_devices == *" $device "* ]]; then
 		fedora_python_versions='2 3'
 		for version in $fedora_python_versions; do
 			if [ $version == "2" ]; then

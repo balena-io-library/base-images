@@ -2,7 +2,7 @@
 set -e
 
 devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green'
-armv7hf_devices=' raspberrypi2 beaglebone vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green '
+fedora_devices=' raspberrypi2 beaglebone vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green nuc qemux86-64 '
 goVersions='1.4.3 1.5.4 1.6.3 1.7'
 resinUrl="http://resin-packages.s3.amazonaws.com/golang/v\$GO_VERSION/go\$GO_VERSION.linux-#{TARGET_ARCH}.tar.gz"
 golangUrl="https://storage.googleapis.com/golang/go\$GO_VERSION.linux-#{TARGET_ARCH}.tar.gz"
@@ -72,12 +72,16 @@ for device in $devices; do
 		binary_arch='amd64'
 		alpine_binary_url=$resinUrl
 		alpine_binary_arch='alpine-amd64'
+		fedora_binary_url=$golangUrl
+		fedora_binary_arch='amd64'
 	;;
 	'qemux86-64')
 		binary_url=$golangUrl
 		binary_arch='amd64'
 		alpine_binary_url=$resinUrl
 		alpine_binary_arch='alpine-amd64'
+		fedora_binary_url=$golangUrl
+		fedora_binary_arch='amd64'
 	;;
 	'vab820-quad')
 		binary_url=$resinUrl
@@ -228,7 +232,7 @@ for device in $devices; do
 
 		# Fedora
 
-		if [[ $armv7hf_devices == *" $device "* ]]; then
+		if [[ $fedora_devices == *" $device "* ]]; then
 			fedora_dockerfilePath=$device/fedora/$baseVersion
 			mkdir -p $fedora_dockerfilePath
 			sed -e s~#{FROM}~resin/$device-fedora-buildpack-deps:latest~g \
