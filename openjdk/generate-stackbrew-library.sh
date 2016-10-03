@@ -54,7 +54,7 @@ function generate_library(){
 	cd -
 
 	url='git://github.com/resin-io-library/base-images'
-	echo '# maintainer: Trong Nghia Nguyen - resin.io <james@resin.io>' >> $lib_name
+	echo '# maintainer: Trong Nghia Nguyen - resin.io <james@resin.io>' > $lib_name
 
 	for version in "${versions[@]}"; do
 		commit="$(git log -1 --format='format:%H' -- "$path/$version")"
@@ -63,7 +63,11 @@ function generate_library(){
 		javaType="${javaVersion##*-}" # "jdk"
 		javaVersion="${javaVersion%-$javaType}" # "6"
 
-		fullVersion="$(grep -m1 'ENV JAVA_VERSION ' "$path/$version/Dockerfile" | cut -d' ' -f3 | tr '~' '-')"
+		if [ $2 == 'fedora' ]; then
+			fullVersion='1.8.0'
+		else
+			fullVersion="$(grep -m1 'ENV JAVA_VERSION ' "$path/$version/Dockerfile" | cut -d' ' -f3 | tr '~' '-')"
+		fi
 
 		versionAliases=( $(aliases "$javaVersion" "$javaType" "$fullVersion") )
 
