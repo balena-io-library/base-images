@@ -81,7 +81,6 @@ function init_non_systemd()
 		fi
 		"$CMD" "$@" &
 		pid=$!
-		wait $pid
 		fg &> /dev/null
 	else
 		echo "Command not found: $1"
