@@ -1,8 +1,10 @@
 #!/bin/bash
 
+set -m
+
 function start_udev()
 {
-	udevd & 
+	udevd &
 	udevadm trigger &> /dev/null
 }
 
