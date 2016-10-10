@@ -18,6 +18,10 @@ COPY 01_nodoc /etc/dpkg/dpkg.cfg.d/
 COPY 01_buildconfig /etc/apt/apt.conf.d/
 # Install Systemd
 
+RUN apt-get update && apt-get install -y --no-install-recommends \
+		systemd \
+	&& rm -rf /var/lib/apt/lists/*
+
 ENV container docker
 
 # We never want these to run in a container
