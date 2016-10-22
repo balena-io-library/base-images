@@ -9,7 +9,7 @@ bb_key_cmd='apt-key adv --keyserver keyserver.ubuntu.com --recv-key D284E608A4C4
 bb_sourceslist_wheezy_cmd='echo "deb http://debian.beagleboard.org/packages wheezy-bbb main" >> /etc/apt/sources.list'
 bb_key_wheezy_cmd='apt-key adv --keyserver keyserver.ubuntu.com --recv-key B2710B8359890110'
 
-devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green'
+devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green intel-quark'
 fedora_devices=' raspberrypi2 beaglebone vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green nuc qemux86-64 '
 suites='jessie wheezy'
 alpine_suites='edge 3.2 3.3 3.4'
@@ -71,6 +71,14 @@ for device in $devices; do
 		alpine_baseImage='i386-alpine'
 	;;
 	'qemux86')
+		template='Dockerfile.i386.edison.tpl'
+		baseImage='i386-debian'
+		# TODO: Can't compile mraa on alpine linux atm, lack of necessary libraries.
+		#alpine_template='Dockerfile.alpine.i386.edison.tpl'
+		alpine_template='Dockerfile.alpine.tpl'
+		alpine_baseImage='i386-alpine'
+	;;
+	'intel-quark')
 		template='Dockerfile.i386.edison.tpl'
 		baseImage='i386-debian'
 		# TODO: Can't compile mraa on alpine linux atm, lack of necessary libraries.
