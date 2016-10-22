@@ -4,7 +4,7 @@ ENV GO_VERSION 1.6.3
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-i386.tar.gz" \
-	&& echo "15a5553dbbd9f4685a523ad02af52c0695150cbb46d128f82804bcd4083b022c  go1.6.3.linux-alpine-i386.tar.gz" | sha256sum -c - \
+	&& echo "021dd1d957edb01f60cdff91e2a4228ff27fa6c1df8d982dc8bac199a72127ba  go1.6.3.linux-alpine-i386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-alpine-i386.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-alpine-i386.tar.gz
 
