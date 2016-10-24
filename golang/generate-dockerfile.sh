@@ -1,7 +1,9 @@
 #!/bin/bash
 set -e
 
-devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green'
+function version_le() { test "$(echo "$@" | tr " " "\n" | sort -V | tail -n 1)" != "$1"; }
+
+devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green intel-quark'
 fedora_devices=' raspberrypi2 beaglebone vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green nuc qemux86-64 '
 goVersions='1.4.3 1.5.4 1.6.3 1.7'
 resinUrl="http://resin-packages.s3.amazonaws.com/golang/v\$GO_VERSION/go\$GO_VERSION.linux-#{TARGET_ARCH}.tar.gz"
@@ -58,6 +60,12 @@ for device in $devices; do
 	'edison')
 		binary_url=$golangUrl
 		binary_arch='386'
+		alpine_binary_url=$resinUrl
+		alpine_binary_arch='alpine-i386'
+	;;
+	'intel-quark')
+		binary_url=$resinUrl
+		binary_arch='i386'
 		alpine_binary_url=$resinUrl
 		alpine_binary_arch='alpine-i386'
 	;;
@@ -189,6 +197,10 @@ for device in $devices; do
 	esac
 	for goVersion in $goVersions; do
 		baseVersion=$(expr match "$goVersion" '\([0-9]*\.[0-9]*\)')
+
+		if [ $device == "intel-quark" ] && ( version_le $goVersion "1.6" ); then
+			continue
+		fi
 
 		# Debian.
 
