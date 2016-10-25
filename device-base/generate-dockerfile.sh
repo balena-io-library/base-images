@@ -250,7 +250,7 @@ for device in $devices; do
 	# Only support armv7hf devices. Other devices will be supported later.
 
 	fedora_dockerfilePath="$device/fedora"
-	if [[ $armv7hf_devices == *" $device "* ]]; then
+	if [[ $fedora_devices == *" $device "* ]]; then
 		for suite in $fedora_suites; do
 			mkdir -p $fedora_dockerfilePath/$suite
 			if [[ $device == "artik"* ]] && [ $suite == "24" ]; then
