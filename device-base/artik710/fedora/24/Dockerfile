@@ -1,6 +1,6 @@
 FROM resin/armv7hf-fedora:24
 
-LABEL io.resin.device-type="artik10"
+LABEL io.resin.device-type="artik710"
 
 COPY artik.repo /etc/yum.repos.d/
 COPY RPM-GPG-KEY-artik-24-armhfp /etc/pki/rpm-gpg/
