@@ -158,15 +158,11 @@ for device in $devices; do
 		fi
 
 		# Debian.
-		# For armv7hf and armv6hf, if node version is greater or equal than 4.x.x then that image will use binaries from official distribution, otherwise it will use binaries from resin.
-		if [ $binaryArch == "armv7hf" ] || [ $binaryArch == "armv6hf" ]; then
+		# For armv6hf, if node version is greater or equal than 4.x.x then that image will use binaries from official distribution, otherwise it will use binaries from resin.
+		if [ $binaryArch == "armv6hf" ]; then
 			if version_ge "$nodeVersion" "4"; then
 				binaryUrl=$nodejsUrl
-				if [ $binaryArch == "armv6hf" ]; then
-					binaryArch='armv6l'
-				else
-					binaryArch='armv7l'
-				fi
+				binaryArch='armv6l'
 			fi
 		fi
 
