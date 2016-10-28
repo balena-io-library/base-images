@@ -75,16 +75,16 @@ for device in $devices; do
 			binaryArch='armv7hf'
 		;;
 		'edison')
-			binaryUrl=$nodejsUrl
-			binaryArch='x86'
+			binaryUrl=$resinUrl
+			binaryArch='i386'
 		;;
 		'qemux86')
-			binaryUrl=$nodejsUrl
-			binaryArch='x86'
+			binaryUrl=$resinUrl
+			binaryArch='i386'
 		;;
 		'intel-quark')
-			binaryUrl=$nodejsUrl
-			binaryArch='x86'
+			binaryUrl=$resinUrl
+			binaryArch='i386'
 		;;
 		'nuc')
 			binaryUrl=$nodejsUrl
@@ -277,7 +277,7 @@ for device in $devices; do
 			binaryArch='alpine-amd64'
 			binaryUrl=$resinUrl
 		;;
-		'x86')
+		'i386')
 			binaryArch='alpine-i386'
 			binaryUrl=$resinUrl
 		;;
