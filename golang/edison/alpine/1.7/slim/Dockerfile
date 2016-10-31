@@ -1,6 +1,6 @@
 FROM resin/edison-alpine:latest
 
-ENV GO_VERSION 1.7
+ENV GO_VERSION 1.7.3
 
 RUN apk add --no-cache git gcc
 
@@ -9,7 +9,7 @@ RUN buildDeps='curl' \
 	&& apk add --no-cache $buildDeps \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-i386.tar.gz" \
-	&& echo "978a720a797ca9beb60008f0515eea3efb84c288db704f358bd99bad046a35cc  go1.7.linux-alpine-i386.tar.gz" | sha256sum -c - \
+	&& echo "939c481d212d4be9e9d96d2202fd8fdddc74051614fe1a5b7d729e2bf4e57802  go1.7.3.linux-alpine-i386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-alpine-i386.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-alpine-i386.tar.gz \
 	&& apk del $buildDeps

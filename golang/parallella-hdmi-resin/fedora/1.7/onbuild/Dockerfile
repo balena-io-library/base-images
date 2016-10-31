@@ -1,4 +1,4 @@
-FROM resin/parallella-hdmi-resin-fedora-golang:1.7
+FROM resin/parallella-hdmi-resin-fedora-golang:1.7.3
 
 RUN mkdir -p /go/src/app
 WORKDIR /go/src/app

@@ -1,10 +1,10 @@
 FROM resin/artik5-fedora-buildpack-deps:latest
 
-ENV GO_VERSION 1.7
+ENV GO_VERSION 1.7.3
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-armv7hf.tar.gz" \
-	&& echo "28c69e2a769c87bc18e9a1b68252065630e8456d043471b6ed387caa6e8c08bc  go1.7.linux-armv7hf.tar.gz" | sha256sum -c - \
+	&& echo "0ce9e7dac31769de9156ac13dcee27b867c3041bc55dc5492412a588276582d8  go1.7.3.linux-armv7hf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-armv7hf.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-armv7hf.tar.gz
 
