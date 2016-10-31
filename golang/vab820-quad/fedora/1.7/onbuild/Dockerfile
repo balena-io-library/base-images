@@ -1,4 +1,4 @@
-FROM resin/vab820-quad-fedora-golang:1.7
+FROM resin/vab820-quad-fedora-golang:1.7.3
 
 RUN mkdir -p /go/src/app
 WORKDIR /go/src/app

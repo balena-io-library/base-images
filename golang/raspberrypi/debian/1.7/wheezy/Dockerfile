@@ -1,10 +1,10 @@
 FROM resin/raspberrypi-buildpack-deps:wheezy
 
-ENV GO_VERSION 1.7
+ENV GO_VERSION 1.7.3
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-armv6hf.tar.gz" \
-	&& echo "7cd8e7a011754ecdfd8f3840516b7f0fdb0f43a74f3e3a5133911f56f9481711  go1.7.linux-armv6hf.tar.gz" | sha256sum -c - \
+	&& echo "bd0e70cedf5ba53945004b48a63b36106759c091161e530038df8520535295c6  go1.7.3.linux-armv6hf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-armv6hf.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-armv6hf.tar.gz
 
