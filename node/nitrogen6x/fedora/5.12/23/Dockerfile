@@ -4,7 +4,7 @@ FROM resin/nitrogen6x-fedora-buildpack-deps:23
 ENV NODE_VERSION 5.12.0
 
 RUN curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-armv7hf.tar.gz" \
-	&& echo "bc5ff0f3f7b71d04705e0e8a669fe46fbe811688cb37854ccbe2457f84221ec2  node-v5.12.0-linux-armv7hf.tar.gz" | sha256sum -c - \
+	&& echo "" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-armv7hf.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-armv7hf.tar.gz" \
 	&& npm config set unsafe-perm true -g --unsafe-perm \

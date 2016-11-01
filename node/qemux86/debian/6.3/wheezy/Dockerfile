@@ -3,10 +3,10 @@ FROM resin/qemux86-buildpack-deps:wheezy
 
 ENV NODE_VERSION 6.3.1
 
-RUN curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x86.tar.gz" \
-	&& echo "23f07c6467f69c7e572e71a712bbc9c78be14ccad32f694edd52bc45b272a638  node-v6.3.1-linux-x86.tar.gz" | sha256sum -c - \
-	&& tar -xzf "node-v$NODE_VERSION-linux-x86.tar.gz" -C /usr/local --strip-components=1 \
-	&& rm "node-v$NODE_VERSION-linux-x86.tar.gz" \
+RUN curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-i386.tar.gz" \
+	&& echo "" | sha256sum -c - \
+	&& tar -xzf "node-v$NODE_VERSION-linux-i386.tar.gz" -C /usr/local --strip-components=1 \
+	&& rm "node-v$NODE_VERSION-linux-i386.tar.gz" \
 	&& npm install mraa@$MRAA_VERSION \
 	&& npm cache clear \
 	&& npm config set unsafe-perm true -g --unsafe-perm \

@@ -3,10 +3,10 @@ FROM resin/edison-buildpack-deps:jessie
 
 ENV NODE_VERSION 0.10.22
 
-RUN curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x86.tar.gz" \
-	&& echo "3823d08199b2c952cd85d1b89ba03d59f2782985ba8d25e040e4cfecdb679aff  node-v0.10.22-linux-x86.tar.gz" | sha256sum -c - \
-	&& tar -xzf "node-v$NODE_VERSION-linux-x86.tar.gz" -C /usr/local --strip-components=1 \
-	&& rm "node-v$NODE_VERSION-linux-x86.tar.gz" \
+RUN curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-i386.tar.gz" \
+	&& echo "2c1db8315ae6e2cf0e3bcfe7d32eb70b681d9f31debecaf728a3193f2cf31943  node-v0.10.22-linux-i386.tar.gz" | sha256sum -c - \
+	&& tar -xzf "node-v$NODE_VERSION-linux-i386.tar.gz" -C /usr/local --strip-components=1 \
+	&& rm "node-v$NODE_VERSION-linux-i386.tar.gz" \
 	&& npm install mraa@$MRAA_VERSION \
 	&& npm cache clear \
 	&& npm config set unsafe-perm true -g --unsafe-perm \
