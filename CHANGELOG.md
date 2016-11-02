@@ -3,6 +3,199 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2016-10-23
+
+### Added
+
+- Add support for new board: Artik710.
+
+### Changed
+
+- Install Artik SDK in Artik family base images.
+- Install zigbee in Artik family.
+
+
+## 2016-10-23
+
+### Added
+
+- Add support for new board: intel-quark.
+
+
+## 2016-10-20
+
+### Changed
+
+- Update Setuptools to v28.6.1.
+
+
+## 2016-10-17
+
+### Changed
+
+- Update Node to v6.8.1.
+
+
+## 2016-10-13
+
+### Changed
+
+- Fix issue with entry script, only redirect stdout into `/dev/null`.
+
+
+## 2016-10-09
+
+### Changed
+
+- Install systemd in debian sid base images.
+
+
+## 2016-10-07
+
+### Changed
+
+- Fix issue with entry script in systemd base images.
+
+
+## 2016-10-06
+
+### Changed
+
+- Update Node to v6.7.0, v0.10.47 and v4.6.0.
+
+
+## 2016-09-23
+
+### Added
+
+- Add support for Fedora amd64 base images.
+
+
+## 2016-09-20
+
+### Changed
+
+- Update Node to v6.6.0.
+
+
+## 2016-09-15
+
+### Changed
+
+- set QEMU_CPU so `uname` command will report correct information on emulation environment.
+
+
+## 2016-09-14
+
+### Added
+
+- Add support for Java base images.
+
+
+## 2016-09-07
+
+### Changed
+
+- Fix issue on base images with systemd. Gracefully stop user process when container stops.
+
+
+## 2016-08-30
+
+### Changed
+
+- Update Node to v6.5.0.
+- Set v6.3.1 as the latest version for debian wheezy node base images.
+
+
+## 2016-08-27
+
+### Changed
+
+- Install findutils in all base images.
+
+
+## 2016-08-25
+
+### Added
+
+- Add support for beaglebone green board.
+
+
+## 2016-08-18
+
+### Changed
+
+- Update Node to v6.4.0 and v4.5.0.
+- Update Golang to v1.7.
+
+
+## 2016-08-15
+
+### Added
+
+- Add support for aarch64 debian base image.
+
+
+## 2016-08-10
+
+### Changed
+
+- Fix pip version in Fedora Python 3 base images.
+
+
+## 2016-08-08
+
+### Changed
+
+- Fix issue with wrong python version in fedora onbuild python base images.
+
+
+## 2016-08-02
+
+### Added
+
+- Add support for qemux86-64 and qemux86 boards.
+- Add major varion tag for Python base images.
+
+
+## 2016-08-02
+
+### Added
+
+- Add Fedora base images for ARMv7 devices.
+
+
+## 2016-07-29
+
+### Changed
+
+- Update Node to v6.3.1.
+- Update Go to v1.6.3.
+- Update Python to v2.7.12 and v3.5.2.
+- Update setuptools to v25.1.1 and python-dbus to v1.2.4.
+
+
+
+## 2016-07-26
+
+### Changed
+
+- Fix `which` with commands that contained spaces.
+- Fix issues with the shell style CMD format, eg `CMD echo test`.
+- Quote `HOSTNAME` variable to handle sensitive character in UUID.
+- Fix issues with the shell style format.
+- Update to 7 digits UUID in hostname to match with other serives.
+- Pass PATH env var to openrc service to make sure the correct path to commands get selected.
+- Fix issue with wrong PYTHONPATH on Alpine Linux Python base images.
+
+
+## 2016-07-19
+
+### Changed
+
+- Refactor entry.sh for better use locally and on device.
+
+
 ## 2016-07-14
 
 ### Changed
