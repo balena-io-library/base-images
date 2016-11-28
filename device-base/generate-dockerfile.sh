@@ -257,7 +257,7 @@ for device in $devices; do
 				# no Artik SDK for fedora 23
 				fedora_template='Dockerfile.artik.fedora.tpl'
 				cp artik.repo "$fedora_dockerfilePath/$suite/"
-				cp RPM-GPG-KEY-artik-armhfp "$fedora_dockerfilePath/$suite/RPM-GPG-KEY-artik-$suite-armhfp"
+				cp RPM-GPG-KEY-artik "$fedora_dockerfilePath/$suite/RPM-GPG-KEY-artik"
 				sed -e s~#{FROM}~resin/$fedora_baseImage:$suite~g \
 					-e s@#{DEV_TYPE}@$device@ \
 					-e s@#{SUITE}@$suite@ $fedora_template > $fedora_dockerfilePath/$suite/Dockerfile
