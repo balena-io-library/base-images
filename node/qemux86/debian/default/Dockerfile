@@ -4,7 +4,7 @@ FROM resin/qemux86-buildpack-deps:jessie
 ENV NODE_VERSION 0.10.22
 
 RUN curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-i386.tar.gz" \
-	&& echo "2c1db8315ae6e2cf0e3bcfe7d32eb70b681d9f31debecaf728a3193f2cf31943  node-v0.10.22-linux-i386.tar.gz" | sha256sum -c - \
+	&& echo "19e29099a9548d6a7f46e0b6433fde862db5839172bb471fc444e9ccaaf16357  node-v0.10.22-linux-i386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-i386.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-i386.tar.gz" \
 	&& npm install mraa@$MRAA_VERSION \

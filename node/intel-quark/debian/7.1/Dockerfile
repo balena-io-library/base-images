@@ -4,7 +4,7 @@ FROM resin/intel-quark-buildpack-deps:jessie
 ENV NODE_VERSION 7.1.0
 
 RUN curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-i386.tar.gz" \
-	&& echo "80be7e3301f98c7a81c670c28ac7d51b8c6d9797a03cfa808a02678dd65d1d44  node-v7.1.0-linux-i386.tar.gz" | sha256sum -c - \
+	&& echo "afd35e2996fcec5adc80b5056954f8fb17c0b8e663ab04a0c91be04b2dfaac4d  node-v7.1.0-linux-i386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-i386.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-i386.tar.gz" \
 	&& npm config set unsafe-perm true -g --unsafe-perm \
