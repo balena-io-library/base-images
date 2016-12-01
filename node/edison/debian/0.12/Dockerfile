@@ -4,7 +4,7 @@ FROM resin/edison-buildpack-deps:jessie
 ENV NODE_VERSION 0.12.15
 
 RUN curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-i386.tar.gz" \
-	&& echo "83e8cbf12f3fe5bb24b576ff05bb599e6a72b034a6a19f51fc4032f7b79767d7  node-v0.12.15-linux-i386.tar.gz" | sha256sum -c - \
+	&& echo "62b43c74e683bed3e13e5949fd93e8e587a1d686e42167babb221f65ba625ebb  node-v0.12.15-linux-i386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-i386.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-i386.tar.gz" \
 	&& npm install mraa@$MRAA_VERSION \
