@@ -1,10 +1,10 @@
 FROM resin/nuc-alpine-buildpack-deps:latest
 
-ENV GO_VERSION 1.7.3
+ENV GO_VERSION 1.7.4
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-amd64.tar.gz" \
-	&& echo "29242c5de4a077db7e240c5ee796ab6c0bbd516ca93d849a30eef69891be0e13  go1.7.3.linux-alpine-amd64.tar.gz" | sha256sum -c - \
+	&& echo "90eb8596f9c840e25f33371c5a49146fc0f8497bef473246461d6d08e0667798  go1.7.4.linux-alpine-amd64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-alpine-amd64.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-alpine-amd64.tar.gz
 

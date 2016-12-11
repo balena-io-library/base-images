@@ -1,10 +1,10 @@
 FROM resin/intel-quark-buildpack-deps:jessie
 
-ENV GO_VERSION 1.7.3
+ENV GO_VERSION 1.7.4
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-i386.tar.gz" \
-	&& echo "4aa370f8574d1c660080a3da0992f0390ad272e935670c89a1542ff32c766cd4  go1.7.3.linux-i386.tar.gz" | sha256sum -c - \
+	&& echo "015c03c37e9bc6b0c76b3f3573c3224c6e09c977d9e02b7f7d87b5b14f4feb7d  go1.7.4.linux-i386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-i386.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-i386.tar.gz
 

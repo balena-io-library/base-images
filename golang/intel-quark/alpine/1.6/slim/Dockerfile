@@ -1,6 +1,6 @@
 FROM resin/intel-quark-alpine:latest
 
-ENV GO_VERSION 1.6.3
+ENV GO_VERSION 1.6.4
 
 RUN apk add --no-cache git gcc
 
@@ -9,7 +9,7 @@ RUN buildDeps='curl' \
 	&& apk add --no-cache $buildDeps \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-i386.tar.gz" \
-	&& echo "021dd1d957edb01f60cdff91e2a4228ff27fa6c1df8d982dc8bac199a72127ba  go1.6.3.linux-alpine-i386.tar.gz" | sha256sum -c - \
+	&& echo "ec8866f2679b7094ca88450dfe056ae5965973972a9d823412dd7032997bd3d3  go1.6.4.linux-alpine-i386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-alpine-i386.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-alpine-i386.tar.gz \
 	&& apk del $buildDeps

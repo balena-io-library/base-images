@@ -1,6 +1,6 @@
 FROM resin/raspberrypi3-fedora:latest
 
-ENV GO_VERSION 1.7.3
+ENV GO_VERSION 1.7.4
 ENV GOROOT /usr/local/go
 ENV GOPATH /go
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
@@ -11,7 +11,7 @@ RUN buildDeps='gcc gcc-c++ git' \
 	&& dnf clean all \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-armv7hf.tar.gz" \
-	&& echo "0ce9e7dac31769de9156ac13dcee27b867c3041bc55dc5492412a588276582d8  go1.7.3.linux-armv7hf.tar.gz" | sha256sum -c - \
+	&& echo "92a54af58e4508c4974541b81a2efd83f6a390f488d8a6caf52ed958c8858632  go1.7.4.linux-armv7hf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-armv7hf.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm go$GO_VERSION.linux-armv7hf.tar.gz \
 	&& mkdir -p "$GOPATH/src" "$GOPATH/bin" \

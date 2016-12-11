@@ -1,4 +1,4 @@
-FROM resin/qemux86-64-alpine-golang:1.7.3
+FROM resin/qemux86-64-alpine-golang:1.7.4
 
 RUN mkdir -p /go/src/app
 WORKDIR /go/src/app

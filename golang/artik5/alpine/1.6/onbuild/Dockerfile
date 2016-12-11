@@ -1,4 +1,4 @@
-FROM resin/artik5-alpine-golang:1.6.3
+FROM resin/artik5-alpine-golang:1.6.4
 
 RUN mkdir -p /go/src/app
 WORKDIR /go/src/app
