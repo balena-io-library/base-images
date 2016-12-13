@@ -1,6 +1,6 @@
 FROM resin/rpi-raspbian:jessie
 
-ENV GO_VERSION 1.6.3
+ENV GO_VERSION 1.6.4
 
 RUN buildDeps='curl gcc g++ git' \
 	&& set -x \
@@ -8,7 +8,7 @@ RUN buildDeps='curl gcc g++ git' \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-armv6hf.tar.gz" \
-	&& echo "bcbd8b1b453e6c0f874f904b9cbfe4dbd8e306eea7736c3d5986f65cb6b296e2  go1.6.3.linux-armv6hf.tar.gz" | sha256sum -c - \
+	&& echo "4452a3343c3b35a4250655100a3d9050391ab38e4fc72d8ce2cfc80cb8822cd2  go1.6.4.linux-armv6hf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-armv6hf.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-armv6hf.tar.gz
 

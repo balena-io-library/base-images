@@ -1,10 +1,10 @@
 FROM resin/qemux86-64-alpine-buildpack-deps:latest
 
-ENV GO_VERSION 1.6.3
+ENV GO_VERSION 1.6.4
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-amd64.tar.gz" \
-	&& echo "fcc4c30c935a5eb1d397bae73b0df271ca2c0d345318fc0484ccf877a0d871b2  go1.6.3.linux-alpine-amd64.tar.gz" | sha256sum -c - \
+	&& echo "323ead62917dea1765cbb0ad3de92c6f9a312db13467c0cad2cb5b942ddca3c4  go1.6.4.linux-alpine-amd64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-alpine-amd64.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-alpine-amd64.tar.gz
 

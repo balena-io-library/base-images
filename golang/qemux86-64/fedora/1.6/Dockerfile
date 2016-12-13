@@ -1,10 +1,10 @@
 FROM resin/qemux86-64-fedora-buildpack-deps:latest
 
-ENV GO_VERSION 1.6.3
+ENV GO_VERSION 1.6.4
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "https://storage.googleapis.com/golang/go$GO_VERSION.linux-amd64.tar.gz" \
-	&& echo "cdde5e08530c0579255d6153b08fdb3b8e47caabbe717bc7bcd7561275a87aeb  go1.6.3.linux-amd64.tar.gz" | sha256sum -c - \
+	&& echo "b58bf5cede40b21812dfa031258db18fc39746cc0972bc26dae0393acc377aaf  go1.6.4.linux-amd64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-amd64.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-amd64.tar.gz
 

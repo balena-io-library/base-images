@@ -1,10 +1,10 @@
 FROM resin/artik10-alpine-buildpack-deps:edge
 
-ENV GO_VERSION 1.6.3
+ENV GO_VERSION 1.6.4
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-armhf.tar.gz" \
-	&& echo "d961651ba0e6df5428bd9417f67431983d40fba0b345036467986d61ea9b4201  go1.6.3.linux-alpine-armhf.tar.gz" | sha256sum -c - \
+	&& echo "0771bc6209ab359df2dc73ceb0bd06e6d2751b016dd7165dfb3512b86620bfaf  go1.6.4.linux-alpine-armhf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-alpine-armhf.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-alpine-armhf.tar.gz
 

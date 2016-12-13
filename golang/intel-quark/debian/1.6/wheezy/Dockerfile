@@ -1,10 +1,10 @@
 FROM resin/intel-quark-buildpack-deps:wheezy
 
-ENV GO_VERSION 1.6.3
+ENV GO_VERSION 1.6.4
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-i386.tar.gz" \
-	&& echo "863229dcedc502d2c120855a049b01d2c00221515bd2466d913d08780352c0fa  go1.6.3.linux-i386.tar.gz" | sha256sum -c - \
+	&& echo "9f8dce3e8e4264db504d61bdd035ab44c5f8dfe51d0fecd621b90d6dfba19e5c  go1.6.4.linux-i386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-i386.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-i386.tar.gz
 

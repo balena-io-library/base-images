@@ -1,10 +1,10 @@
 FROM resin/qemux86-buildpack-deps:jessie
 
-ENV GO_VERSION 1.6.3
+ENV GO_VERSION 1.6.4
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "https://storage.googleapis.com/golang/go$GO_VERSION.linux-386.tar.gz" \
-	&& echo "4d0657f4760c81c1b208939ae58f6fc06f936ee51b8cdcf75e5136d0d0c6df94  go1.6.3.linux-386.tar.gz" | sha256sum -c - \
+	&& echo "d9a4524dd6192bfa180fe462a468aa92fbeb0cca4887d16a9496064ceef1e94b  go1.6.4.linux-386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-386.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-386.tar.gz
 

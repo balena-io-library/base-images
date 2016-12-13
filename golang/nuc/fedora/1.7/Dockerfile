@@ -1,10 +1,10 @@
 FROM resin/nuc-fedora-buildpack-deps:latest
 
-ENV GO_VERSION 1.7.3
+ENV GO_VERSION 1.7.4
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "https://storage.googleapis.com/golang/go$GO_VERSION.linux-amd64.tar.gz" \
-	&& echo "508028aac0654e993564b6e2014bf2d4a9751e3b286661b0b0040046cf18028e  go1.7.3.linux-amd64.tar.gz" | sha256sum -c - \
+	&& echo "47fda42e46b4c3ec93fa5d4d4cc6a748aa3f9411a2a2b7e08e3a6d80d753ec8b  go1.7.4.linux-amd64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-amd64.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-amd64.tar.gz
 
