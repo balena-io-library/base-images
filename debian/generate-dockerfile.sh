@@ -3,10 +3,10 @@ set -e
 set -o pipefail
 
 archs='armv7hf i386 amd64 armel aarch64'
-QEMU_VERSION='2.7.0-resin-rc1-arm'
-QEMU_SHA256='d36d9bf71d19191efe55b2ed238a7858c30608ddc50a1edb50acfc04466639c7'
-QEMU_AARCH64_VERSION='2.7.0-resin-rc1-aarch64'
-QEMU_AARCH64_SHA256='a631c80c087ed79483ad724e2e90dde4c8ff1b7a8bf06506c9f4f92287f39a21'
+QEMU_VERSION='2.7.0-resin-rc2-arm'
+QEMU_SHA256='2e65faa775b752b050516773338d61a29fe62c4c5fcd1186f972ffce3e205426'
+QEMU_AARCH64_VERSION='2.7.0-resin-rc2-aarch64'
+QEMU_AARCH64_SHA256='59d842848e2c263a357fd69e420b288775af164e824f13753c48420b611c8faa'
 
 # Download QEMU
 curl -SLO https://github.com/resin-io/qemu/releases/download/qemu-$QEMU_VERSION/qemu-$QEMU_VERSION.tar.gz \
