@@ -1,6 +1,6 @@
 FROM aarch64/debian:jessie
 
-LABEL io.resin.architecture="aarch64" io.resin.qemu.version="2.5.0-resin-rc3-aarch64"
+LABEL io.resin.architecture="aarch64" io.resin.qemu.version="2.7.0-resin-rc2-aarch64"
 
 ENV LC_ALL C.UTF-8
 ENV DEBIAN_FRONTEND noninteractive
