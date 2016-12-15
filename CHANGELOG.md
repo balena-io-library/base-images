@@ -3,7 +3,71 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## 2016-10-23
+## 2016-12-15
+
+### Changed
+
+- Update QEMU to v2.7.0-resin-rc2.
+
+
+## 2016-12-11
+
+### Changed
+
+- Update Go to v1.6.4 and v1.7.4.
+
+
+## 2016-12-08
+
+### Changed
+
+- Update Node to v7.2.1, v6.9.2 and v4.7.0.
+
+
+## 2016-12-01
+
+### Changed
+
+- Update Debian i386 Node binary with no-MMX patch.
+
+
+## 2016-11-30
+
+### Changed
+
+- Update QEMU to v2.7.0-resin-rc1.
+
+
+## 2016-11-26
+
+### Changed
+
+- Update OpenJDK base images.
+
+
+## 2016-11-22
+
+### Changed
+
+- Update Artik SDK repository configuration with new URL and GPG key.
+
+
+## 2016-11-15
+
+### Changed
+
+- Update Node to v4.6.2 and v7.1.0.
+
+
+## 2016-11-01
+
+### Changed
+
+- Update Node to v0.10.48, v4.6.1, v6.9.1 and v7.0.0.
+- Switch Node binary in i386 Node base images to in-house binary.
+
+
+## 2016-10-25
 
 ### Added
 
