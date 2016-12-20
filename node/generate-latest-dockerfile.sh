@@ -222,7 +222,7 @@ for device in $devices; do
 		fi
 
 		# Only for intel edison
-		if [ $device == "edison" ] || [ $device == "qemux86" ]; then
+		if [ $device == "edison" ]; then
 			sed -e s~#{FROM}~resin/$device-buildpack-deps:jessie~g \
 				-e s~#{BINARY_URL}~$binaryUrl~g \
 				-e s~#{NODE_VERSION}~$nodeVersion~g \

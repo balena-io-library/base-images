@@ -10,8 +10,8 @@ RUN apk add --update \
 		usbutils \
 	&& rm -rf /var/cache/apk/*
 
-# MRAA v0.8.1 commit 
-ENV MRAA_COMMIT 049ba5fa9f2d18ac0ec6729c46916b34998d3c5f
+# MRAA commit
+ENV MRAA_COMMIT #{MRAA_COMMIT}
 
 # Install mraa
 RUN set -x \
