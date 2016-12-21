@@ -9,6 +9,18 @@ bb_key_cmd='apt-key adv --keyserver keyserver.ubuntu.com --recv-key D284E608A4C4
 bb_sourceslist_wheezy_cmd='echo "deb http://debian.beagleboard.org/packages wheezy-bbb main" >> /etc/apt/sources.list'
 bb_key_wheezy_cmd='apt-key adv --keyserver keyserver.ubuntu.com --recv-key B2710B8359890110'
 
+# edison
+edison_mraa_version='1.5.1'
+edison_mraa_commit='6f9b470d8d25e2c8ba1586cd9d707b870ab30010'
+
+edison_upm_version='1.0.2'
+edison_upm_commit='cde747439f7ada792509dd2b56075d4744ac15e4'
+
+# UPM v1.0.1 and above couldn't be built on wheezy so we set v1.0.0 for debian wheezy
+edison_wheezy_upm_version='1.0.0'
+edison_wheezy_upm_commit='13e2e7aeb8769707b91b62f23d6669d3ee1a8651'
+
+
 devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green intel-quark artik710'
 fedora_devices=' raspberrypi2 beaglebone vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green nuc qemux86-64 artik710 '
 suites='jessie wheezy'
@@ -67,7 +79,7 @@ for device in $devices; do
 		alpine_baseImage='i386-alpine'
 	;;
 	'qemux86')
-		template='Dockerfile.i386.edison.tpl'
+		template='Dockerfile.tpl'
 		baseImage='i386-debian'
 		# TODO: Can't compile mraa on alpine linux atm, lack of necessary libraries.
 		#alpine_template='Dockerfile.alpine.i386.edison.tpl'
@@ -75,7 +87,7 @@ for device in $devices; do
 		alpine_baseImage='i386-alpine'
 	;;
 	'intel-quark')
-		template='Dockerfile.i386.edison.tpl'
+		template='Dockerfile.tpl'
 		baseImage='i386-debian'
 		# TODO: Can't compile mraa on alpine linux atm, lack of necessary libraries.
 		#alpine_template='Dockerfile.alpine.i386.edison.tpl'
@@ -214,15 +226,35 @@ for device in $devices; do
 				;;
 				esac
 
-			sed -e "s@#{FROM}@resin/$baseImage:$suite@g" \
-				-e "s@#{SOURCES_LIST}@$sourcelist@g" \
-				-e "s@#{SUITE}@$suite@g" \
-				-e "s@#{KEYS}@$key@g" \
-				-e "s@#{DEV_TYPE}@$device@g" $template > $debian_dockerfilePath/$suite/Dockerfile
+				sed -e "s@#{FROM}@resin/$baseImage:$suite@g" \
+					-e "s@#{SOURCES_LIST}@$sourcelist@g" \
+					-e "s@#{SUITE}@$suite@g" \
+					-e "s@#{KEYS}@$key@g" \
+					-e "s@#{DEV_TYPE}@$device@g" $template > $debian_dockerfilePath/$suite/Dockerfile
 			else
-				sed -e s~#{FROM}~resin/$baseImage:$suite~g \
-					-e s~#{SUITE}~$suite~g \
-					-e s@#{DEV_TYPE}@$device@ $template > $debian_dockerfilePath/$suite/Dockerfile
+				if [[ $device == "edison"* ]]; then
+					case "$suite" in
+					'wheezy')
+						upm_commit=$edison_wheezy_upm_commit
+						upm_version=$edison_wheezy_upm_version
+					;;
+					'jessie')
+						upm_commit=$edison_upm_commit
+						upm_version=$edison_upm_version
+					;;
+					esac
+					sed -e "s@#{FROM}@resin/$baseImage:$suite@g" \
+						-e "s@#{SUITE}@$suite@g" \
+						-e "s@#{MRAA_COMMIT}@$edison_mraa_commit@g" \
+						-e "s@#{MRAA_VERSION}@$edison_mraa_version@g" \
+						-e "s@#{UPM_COMMIT}@$upm_commit@g" \
+						-e "s@#{UPM_VERSION}@$upm_version@g" \
+						-e "s@#{DEV_TYPE}@$device@g" $template > $debian_dockerfilePath/$suite/Dockerfile
+				else
+					sed -e s~#{FROM}~resin/$baseImage:$suite~g \
+						-e s~#{SUITE}~$suite~g \
+						-e s@#{DEV_TYPE}@$device@ $template > $debian_dockerfilePath/$suite/Dockerfile
+				fi
 			fi
 
 			# EGL fix

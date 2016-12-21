@@ -7,8 +7,6 @@ RUN curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v
 	&& echo "566dac853617197601895295e3b679561c908186f9fb79a66668dcb29d689cf2  node-v5.12.0-linux-i386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-i386.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-i386.tar.gz" \
-	&& npm install mraa@$MRAA_VERSION \
-	&& npm cache clear \
 	&& npm config set unsafe-perm true -g --unsafe-perm \
 	&& rm -rf /tmp/*
 

@@ -14,11 +14,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/*
 
 # MRAA
-ENV MRAA_COMMIT d336e9f8d69a85b6ed1aeb5b324910234031d4a8
-ENV MRAA_VERSION 1.1.1
+ENV MRAA_COMMIT 6f9b470d8d25e2c8ba1586cd9d707b870ab30010
+ENV MRAA_VERSION 1.5.1
 # UPM
-ENV UPM_COMMIT 1849e22154177096f1725e9cc96ec62ac2ef3635
-ENV UPM_VERSION 0.7.2
+ENV UPM_COMMIT 13e2e7aeb8769707b91b62f23d6669d3ee1a8651
+ENV UPM_VERSION 1.0.0
 
 # Install mraa
 RUN set -x \
@@ -51,6 +51,7 @@ RUN set -x \
 	&& cd / \
 	&& git clone https://github.com/intel-iot-devkit/upm.git \
 	&& cd /upm \
+	&& git checkout $UPM_COMMIT \
 	&& mkdir build && cd build \
 	&& cmake .. -DBUILDSWIGNODE=OFF -DBUILDSWIGPYTHON=OFF -DCMAKE_INSTALL_PREFIX:PATH=/usr \
 	&& make -j $(nproc) \
