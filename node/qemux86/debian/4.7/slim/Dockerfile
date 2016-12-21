@@ -3,7 +3,7 @@ FROM resin/qemux86-debian:jessie
 
 ENV NODE_VERSION 4.7.0
 
-RUN buildDeps='curl build-essential python' \
+RUN buildDeps='curl' \
 	&& set -x \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/* \
@@ -11,10 +11,8 @@ RUN buildDeps='curl build-essential python' \
 	&& echo "ceffc1f5d301fbd9b0e46ccb05b93e32b7b4dff8a1be59f6f03e7eb17372a7c8  node-v4.7.0-linux-i386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-i386.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-i386.tar.gz" \
-	&& npm install mraa@$MRAA_VERSION \
-	&& npm cache clear \
-	&& npm config set unsafe-perm true -g --unsafe-perm \
 	&& apt-get purge -y --auto-remove $buildDeps \
+	&& npm config set unsafe-perm true -g --unsafe-perm \
 	&& rm -rf /tmp/*
 
 CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command could be found in Dockerfile Guide section in our Docs. Here's the link: http://docs.resin.io/deployment/dockerfile"]
