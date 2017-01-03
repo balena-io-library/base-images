@@ -1,0 +1,23 @@
+#!/sbin/openrc-run
+
+description="Resin.io User Application"
+pid_file=/var/run/resinapp.pid
+waiting_time=1000
+
+start() {
+	ebegin "Starting Resin.io User Application"
+	start-stop-daemon --start --exec /etc/resinApp.sh \
+	--chdir #{DIR} \
+	#{ENV} \
+	--make-pidfile --pidfile "$pid_file" --background \
+	--stdout /dev/console \
+	--stderr /dev/console \
+	--wait "$waiting_time"
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping Resin.io User Application"
+	start-stop-daemon --stop --exec /etc/resinApp.sh --pidfile $pid_file --wait "$waiting_time"
+	eend $?
+}
