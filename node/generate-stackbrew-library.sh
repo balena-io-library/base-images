@@ -61,11 +61,11 @@ function generate_library(){
 
 declare -A aliases
 aliases=(
-	[7.3.0]='7 latest'
-	[6.9.2]='6'
+	[7.4.0]='7 latest'
+	[6.9.3]='6'
 	[6.3.1]='6 latest'
 	[5.12.0]='5'
-	[4.7.0]='4'
+	[4.7.1]='4'
 	[0.12.18]='0'
 )
 
