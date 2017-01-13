@@ -169,8 +169,10 @@ for device in $devices; do
 
 		if [ "$debianAddSuite" ] && [ $device != "raspberrypi" ]; then
 			debianAddSuiteContent="RUN echo 'deb http://httpredir.debian.org/debian $debianAddSuite main' > /etc/apt/sources.list.d/$debianAddSuite.list"
+			debianPrioritizedSource="-t $debianAddSuite"
 		else
 			debianAddSuiteContent=""
+			debianPrioritizedSource=""
 		fi
 
 		if [ "$needCaHack" ]; then
@@ -191,6 +193,7 @@ for device in $devices; do
 			-e s@#{FULL_VERSION}@"$debianFullVersion"@g \
 			-e s@#{DEBIAN_VERSION}@"$debianVersion"@g \
 			-e s@#{DEBIAN_PACKAGE}@"$debianPackage"@g \
+			-e s@#{DEBIAN_PRIORITIZED_SOURCE}@"$debianPrioritizedSource"@g \
 			-e s@#{CA_HACK0}@"$caHackContent0"@g \
 			-e s@#{CA_HACK1}@"$caHackContent1"@g \
 			-e s@#{CA_HACK2}@"$caHackContent2"@g Dockerfile.tpl > "$debian_dockerfilePath/Dockerfile"

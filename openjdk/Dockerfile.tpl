@@ -36,7 +36,7 @@ ENV JAVA_DEBIAN_VERSION #{DEBIAN_VERSION}
 
 RUN set -x \
 	&& apt-get update \
-	&& apt-get install -y \
+	&& apt-get install -y #{DEBIAN_PRIORITIZED_SOURCE} \
 		#{DEBIAN_PACKAGE}="$JAVA_DEBIAN_VERSION" \
 	#{CA_HACK1}&& rm -rf /var/lib/apt/lists/* \
 	&& [ "$JAVA_HOME" = "$(docker-java-home)" ]
