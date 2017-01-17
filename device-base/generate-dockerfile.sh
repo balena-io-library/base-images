@@ -256,11 +256,6 @@ for device in $devices; do
 						-e s@#{DEV_TYPE}@$device@ $template > $debian_dockerfilePath/$suite/Dockerfile
 				fi
 			fi
-
-			# EGL fix
-			if [[ $device == raspberrypi* ]]; then
-				cp resin-pinning $debian_dockerfilePath/$suite/
-			fi
 		done
 	fi
 
