@@ -4,7 +4,7 @@ FROM resin/raspberrypi-buildpack-deps:jessie
 ENV NODE_VERSION 6.9.3
 
 RUN curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-armv6l.tar.gz" \
-	&& echo "5247665cac023be266cdff06abff0f784f0b5d737edff7dcabb12ceb115cdb36  node-v6.9.3-linux-armv6l.tar.gz" | sha256sum -c - \
+	&& echo "a9d165c32a0d9c55ef0dcc0e043951af4e1d2283ebdc18defcd1715d0d3cdb4a  node-v6.9.3-linux-armv6l.tar.gz" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-armv6l.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-armv6l.tar.gz" \
 	&& npm config set unsafe-perm true -g --unsafe-perm \
