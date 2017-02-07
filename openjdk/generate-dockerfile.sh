@@ -200,9 +200,6 @@ for device in $devices; do
 
 		# Alpine Linux
 		if [ $javaVersion != 9 ] && [ "$deviceArch" != 'armel' ]; then
-			if [ $deviceArch == 'armhf' ] && [ $javaVersion == '8' ]; then
-				continue
-			fi
 
 			alpinePackage="openjdk$javaVersion"
 			alpineJavaHome="/usr/lib/jvm/java-1.${javaVersion}-openjdk"
