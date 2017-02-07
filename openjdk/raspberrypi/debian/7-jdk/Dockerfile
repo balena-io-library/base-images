@@ -36,7 +36,7 @@ ENV JAVA_DEBIAN_VERSION 7u111-2.6.7-2~deb8u1+rpi1
 
 RUN set -x \
 	&& apt-get update \
-	&& apt-get install -y \
+	&& apt-get install -y  \
 		openjdk-7-jdk="$JAVA_DEBIAN_VERSION" \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& [ "$JAVA_HOME" = "$(docker-java-home)" ]
