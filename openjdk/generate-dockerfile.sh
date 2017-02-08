@@ -168,7 +168,7 @@ for device in $devices; do
 		debianFullVersion="${debianVersion%%-*}"
 
 		if [ "$debianAddSuite" ] && [ $device != "raspberrypi" ]; then
-			debianAddSuiteContent="RUN echo 'deb http://httpredir.debian.org/debian $debianAddSuite main' > /etc/apt/sources.list.d/$debianAddSuite.list"
+			debianAddSuiteContent="RUN echo 'deb http://deb.debian.org/debian $debianAddSuite main' > /etc/apt/sources.list.d/$debianAddSuite.list"
 			debianPrioritizedSource="-t $debianAddSuite"
 		else
 			debianAddSuiteContent=""
