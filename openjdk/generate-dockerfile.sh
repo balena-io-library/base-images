@@ -176,7 +176,11 @@ for device in $devices; do
 		fi
 
 		if [ "$needCaHack" ]; then
-			caHackContent0="ENV CA_CERTIFICATES_JAVA_VERSION 20140324"
+			if [ $device == "raspberrypi" ]; then
+				caHackContent0="ENV CA_CERTIFICATES_JAVA_VERSION 20140324"
+			else
+				caHackContent0="ENV CA_CERTIFICATES_JAVA_VERSION 20161107~bpo8+1"
+			fi
 			caHackContent1="ca-certificates-java=\$CA_CERTIFICATES_JAVA_VERSION "
 			caHackContent2="RUN /var/lib/dpkg/info/ca-certificates-java.postinst configure"
 		else
