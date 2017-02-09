@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		xz-utils \
 	&& rm -rf /var/lib/apt/lists/
 
-RUN echo 'deb http://httpredir.debian.org/debian jessie-backports main' > /etc/apt/sources.list.d/jessie-backports.list
+RUN echo 'deb http://deb.debian.org/debian jessie-backports main' > /etc/apt/sources.list.d/jessie-backports.list
 
 # Default to UTF-8 file.encoding
 ENV LANG C.UTF-8
@@ -29,10 +29,10 @@ RUN { \
 
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-armel
 
-ENV JAVA_VERSION 8u111
-ENV JAVA_DEBIAN_VERSION 8u111-b14-2~bpo8+1
+ENV JAVA_VERSION 8u121
+ENV JAVA_DEBIAN_VERSION 8u121-b13-1~bpo8+1
 
-ENV CA_CERTIFICATES_JAVA_VERSION 20140324
+ENV CA_CERTIFICATES_JAVA_VERSION 20161107~bpo8+1
 
 RUN set -x \
 	&& apt-get update \
