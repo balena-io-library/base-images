@@ -168,7 +168,7 @@ for device in $devices; do
 		debianFullVersion="${debianVersion%%-*}"
 
 		if [ "$debianAddSuite" ] && [ $device != "raspberrypi" ]; then
-			debianAddSuiteContent="RUN echo 'deb http://httpredir.debian.org/debian $debianAddSuite main' > /etc/apt/sources.list.d/$debianAddSuite.list"
+			debianAddSuiteContent="RUN echo 'deb http://deb.debian.org/debian $debianAddSuite main' > /etc/apt/sources.list.d/$debianAddSuite.list"
 			debianPrioritizedSource="-t $debianAddSuite"
 		else
 			debianAddSuiteContent=""
@@ -176,7 +176,11 @@ for device in $devices; do
 		fi
 
 		if [ "$needCaHack" ]; then
-			caHackContent0="ENV CA_CERTIFICATES_JAVA_VERSION 20140324"
+			if [ $device == "raspberrypi" ]; then
+				caHackContent0="ENV CA_CERTIFICATES_JAVA_VERSION 20140324"
+			else
+				caHackContent0="ENV CA_CERTIFICATES_JAVA_VERSION 20161107~bpo8+1"
+			fi
 			caHackContent1="ca-certificates-java=\$CA_CERTIFICATES_JAVA_VERSION "
 			caHackContent2="RUN /var/lib/dpkg/info/ca-certificates-java.postinst configure"
 		else
@@ -200,9 +204,6 @@ for device in $devices; do
 
 		# Alpine Linux
 		if [ $javaVersion != 9 ] && [ "$deviceArch" != 'armel' ]; then
-			if [ $deviceArch == 'armhf' ] && [ $javaVersion == '8' ]; then
-				continue
-			fi
 
 			alpinePackage="openjdk$javaVersion"
 			alpineJavaHome="/usr/lib/jvm/java-1.${javaVersion}-openjdk"
