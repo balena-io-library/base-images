@@ -3,6 +3,74 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2017-02-13
+
+### Changed
+
+- Update Node to v7.5.0, v6.9.5 and v4.7.3.
+- Fix issue with missing latest tag for OpenJDK images.
+
+
+## 2017-02-10
+
+### Changed
+
+- fix issue with SIGTERM is not properly handled if INITSYSTEM not enabled.
+
+
+## 2017-02-07
+
+### Changed
+
+- Fix unmet dependencies issue when installing package in OpenJDK base images.
+- Remove custom repository from Raspberry Pi base images.
+
+
+## 2017-01-24
+
+### Added
+
+- Add support for new board AM51X EVM.
+
+### Changed
+
+- Set 3.5 as the latest version for all Alpine Linux base images.
+- Update Python to v3.6.0.
+
+
+## 2017-01-11
+
+### Added
+
+- Add Aarch64 Alpine Linux base images.
+
+### Changed
+
+- Update Node to v4.7.1, v6.9.3 and v7.4.0.
+- Update Alpine Linux 3.5.
+
+
+## 2017-01-02
+
+### Changed
+
+- Update Node to v7.3.0 and v0.12.18.
+
+
+## 2016-12-20
+
+### Changed
+
+- Update MRAA to v1.5.1 and UPM to v1.0.2.
+
+
+## 2016-12-20
+
+### Changed
+
+- Update Pip to v9.0.1.
+
+
 ## 2016-12-15
 
 ### Changed
