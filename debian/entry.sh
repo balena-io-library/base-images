@@ -88,11 +88,9 @@ function init_non_systemd()
 			# run this on resin device only
 			start_udev
 		fi
-		"$CMD" "$@" &
+		tini -sg -- "$CMD" "$@" &
 		pid=$!
 		wait "$pid"
-		exit_code=$?
-		fg &> /dev/null || exit "$exit_code"
 	else
 		echo "Command not found: $1"
 		exit 1
