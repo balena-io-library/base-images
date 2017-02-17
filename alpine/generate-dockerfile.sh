@@ -59,7 +59,7 @@ for repo in $repos; do
 		sed -e s~#{FROM}~"$baseImage:$suite"~g \
 			-e s~#{LABEL}~"$label"~g \
 			-e s~#{QEMU}~"$qemu"~g Dockerfile.tpl > $dockerfilePath/Dockerfile
-		cp entry.sh resin rc.conf resin-xbuild $dockerfilePath/
+		cp resin-xbuild resin rc.conf entry.sh $dockerfilePath/
 
 		if [ $repo == "armhf" ]; then
 			cp qemu-arm-static $dockerfilePath/
