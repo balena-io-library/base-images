@@ -3,7 +3,7 @@ set -e
 
 function version_le() { test "$(echo "$@" | tr " " "\n" | sort -V | tail -n 1)" != "$1"; }
 
-devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green intel-quark artik710 am57xx-evm'
+devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green intel-quark artik710 am57xx-evm up-board'
 fedora_devices=' raspberrypi2 beaglebone vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green nuc qemux86-64 artik710 am57xx-evm '
 goVersions='1.4.3 1.5.4 1.6.4 1.7.4'
 resinUrl="http://resin-packages.s3.amazonaws.com/golang/v\$GO_VERSION/go\$GO_VERSION.linux-#{TARGET_ARCH}.tar.gz"
@@ -84,6 +84,14 @@ for device in $devices; do
 		fedora_binary_arch='amd64'
 	;;
 	'qemux86-64')
+		binary_url=$golangUrl
+		binary_arch='amd64'
+		alpine_binary_url=$resinUrl
+		alpine_binary_arch='alpine-amd64'
+		fedora_binary_url=$golangUrl
+		fedora_binary_arch='amd64'
+	;;
+	'up-board')
 		binary_url=$golangUrl
 		binary_arch='amd64'
 		alpine_binary_url=$resinUrl
