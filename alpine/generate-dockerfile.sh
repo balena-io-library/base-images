@@ -3,10 +3,10 @@ set -e
 
 repos='armhf i386 amd64 aarch64'
 suites='edge 3.2 3.3 3.4 3.5'
-QEMU_VERSION='2.7.0-resin-rc2-arm'
-QEMU_SHA256='2e65faa775b752b050516773338d61a29fe62c4c5fcd1186f972ffce3e205426'
-QEMU_AARCH64_VERSION='2.7.0-resin-rc2-aarch64'
-QEMU_AARCH64_SHA256='59d842848e2c263a357fd69e420b288775af164e824f13753c48420b611c8faa'
+QEMU_VERSION='2.7.0-resin-rc3-arm'
+QEMU_SHA256='474263efd49ac9fe10240d0362c66411e124b5b80483bec7707efb9490c8c974'
+QEMU_AARCH64_VERSION='2.7.0-resin-rc3-aarch64'
+QEMU_AARCH64_SHA256='4e64ace5fcb82f55b3593c0721f58b1d3c48b2cb8a373c8cae5cfde3a3a71e46'
 
 function version_le() { test "$(echo "$@" | tr " " "\n" | sort -V | tail -n 1)" != "$1"; }
 

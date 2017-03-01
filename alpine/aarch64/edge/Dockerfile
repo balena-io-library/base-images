@@ -1,6 +1,6 @@
 FROM aarch64/alpine:edge
 
-LABEL io.resin.architecture="aarch64" io.resin.qemu.version="2.7.0-resin-rc2-arm"
+LABEL io.resin.architecture="aarch64" io.resin.qemu.version="2.7.0-resin-rc3-arm"
 
 COPY qemu-aarch64-static /usr/bin/qemu-aarch64-static
 
