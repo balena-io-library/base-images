@@ -1,10 +1,10 @@
 FROM resin/qemux86-alpine-buildpack-deps:edge
 
-ENV GO_VERSION 1.7.4
+ENV GO_VERSION 1.7.5
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-i386.tar.gz" \
-	&& echo "fb956323adcc3c43f5275e944e30c0783951a9971566d8f43e6928c6088ccbd7  go1.7.4.linux-alpine-i386.tar.gz" | sha256sum -c - \
+	&& echo "5ff6b0c132090dc8ae58858de22eab771d416adfdfba4b5272876ce4ef93c613  go1.7.5.linux-alpine-i386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-alpine-i386.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-alpine-i386.tar.gz
 

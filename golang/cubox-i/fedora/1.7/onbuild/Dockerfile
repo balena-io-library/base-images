@@ -1,4 +1,4 @@
-FROM resin/cubox-i-fedora-golang:1.7.4
+FROM resin/cubox-i-fedora-golang:1.7.5
 
 RUN mkdir -p /go/src/app
 WORKDIR /go/src/app

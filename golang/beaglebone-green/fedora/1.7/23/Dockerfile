@@ -1,10 +1,10 @@
 FROM resin/beaglebone-green-fedora-buildpack-deps:23
 
-ENV GO_VERSION 1.7.4
+ENV GO_VERSION 1.7.5
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-armv7hf.tar.gz" \
-	&& echo "92a54af58e4508c4974541b81a2efd83f6a390f488d8a6caf52ed958c8858632  go1.7.4.linux-armv7hf.tar.gz" | sha256sum -c - \
+	&& echo "4dc6e9e851bd48b92b758ff2127ffc5ac7320b35e1dd1b7aa51e74191fbee259  go1.7.5.linux-armv7hf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-armv7hf.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-armv7hf.tar.gz
 

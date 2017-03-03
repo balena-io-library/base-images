@@ -1,10 +1,10 @@
 FROM resin/qemux86-buildpack-deps:jessie
 
-ENV GO_VERSION 1.7.4
+ENV GO_VERSION 1.7.5
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "https://storage.googleapis.com/golang/go$GO_VERSION.linux-386.tar.gz" \
-	&& echo "31d27752bada47de84e8884cabe6dc13140e459e3aad540c17abc0fcac370c54  go1.7.4.linux-386.tar.gz" | sha256sum -c - \
+	&& echo "432cb92ae656f6fe1fa96a981782ef5948438b6da6691423aae900918b1eb955  go1.7.5.linux-386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-386.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-386.tar.gz
 

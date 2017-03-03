@@ -1,4 +1,4 @@
-FROM resin/odroid-ux3-alpine-golang:1.7.4
+FROM resin/odroid-ux3-alpine-golang:1.7.5
 
 RUN mkdir -p /go/src/app
 WORKDIR /go/src/app
