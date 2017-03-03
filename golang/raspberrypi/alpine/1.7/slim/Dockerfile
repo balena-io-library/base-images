@@ -1,6 +1,6 @@
 FROM resin/raspberrypi-alpine:latest
 
-ENV GO_VERSION 1.7.4
+ENV GO_VERSION 1.7.5
 
 RUN apk add --no-cache git gcc
 
@@ -9,7 +9,7 @@ RUN buildDeps='curl' \
 	&& apk add --no-cache $buildDeps \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-armhf.tar.gz" \
-	&& echo "994971a8bfef7412c97b4f3323b2530d62bf532c39d4ecd930ec2a919a288ea7  go1.7.4.linux-alpine-armhf.tar.gz" | sha256sum -c - \
+	&& echo "445b61cd7fbb8246769bf394a9e930cc6fc90c14bd90dbf49d41127af23759d2  go1.7.5.linux-alpine-armhf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-alpine-armhf.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-alpine-armhf.tar.gz \
 	&& apk del $buildDeps

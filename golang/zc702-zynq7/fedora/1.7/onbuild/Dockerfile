@@ -1,4 +1,4 @@
-FROM resin/zc702-zynq7-fedora-golang:1.7.4
+FROM resin/zc702-zynq7-fedora-golang:1.7.5
 
 RUN mkdir -p /go/src/app
 WORKDIR /go/src/app

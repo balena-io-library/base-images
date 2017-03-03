@@ -1,4 +1,4 @@
-FROM resin/beaglebone-green-alpine-golang:1.7.4
+FROM resin/beaglebone-green-alpine-golang:1.7.5
 
 RUN mkdir -p /go/src/app
 WORKDIR /go/src/app
