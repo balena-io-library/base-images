@@ -1,22 +1,6 @@
 #!/bin/bash
 set -e
 
-# $1: path
-# $2: variants
-set_onbuild_warning() {
-	for va in $2; do
-		if [ $va == 'base' ]; then
-			tmp_path=$1
-		else
-			tmp_path="$1/$va"
-		fi
-		if [ -f "$tmp_path/Dockerfile" ]; then
-			echo "ONBUILD RUN echo 'This repository is deprecated. Please check https://docs.resin.io/runtime/resin-base-images/ for information about Resin docker images.' " >> $tmp_path/Dockerfile
-		fi
-	done
-	
-}
-
 # for beaglebone
 bb_sourceslist_cmd='echo "deb [arch=armhf] http://repos.rcn-ee.net/debian/ #{SUITE} main" >> /etc/apt/sources.list'
 bb_key_cmd='apt-key adv --keyserver keyserver.ubuntu.com --recv-key D284E608A4C46402'
@@ -25,20 +9,20 @@ bb_key_cmd='apt-key adv --keyserver keyserver.ubuntu.com --recv-key D284E608A4C4
 bb_sourceslist_wheezy_cmd='echo "deb http://debian.beagleboard.org/packages wheezy-bbb main" >> /etc/apt/sources.list'
 bb_key_wheezy_cmd='apt-key adv --keyserver keyserver.ubuntu.com --recv-key B2710B8359890110'
 
-# edison
-edison_mraa_version='1.5.1'
-edison_mraa_commit='6f9b470d8d25e2c8ba1586cd9d707b870ab30010'
+# intel-edison
+intel_edison_mraa_version='1.5.1'
+intel_edison_mraa_commit='6f9b470d8d25e2c8ba1586cd9d707b870ab30010'
 
-edison_upm_version='1.0.2'
-edison_upm_commit='cde747439f7ada792509dd2b56075d4744ac15e4'
+intel_edison_upm_version='1.0.2'
+intel_edison_upm_commit='cde747439f7ada792509dd2b56075d4744ac15e4'
 
 # UPM v1.0.1 and above couldn't be built on wheezy so we set v1.0.0 for debian wheezy
-edison_wheezy_upm_version='1.0.0'
-edison_wheezy_upm_commit='13e2e7aeb8769707b91b62f23d6669d3ee1a8651'
+intel_edison_wheezy_upm_version='1.0.0'
+intel_edison_wheezy_upm_commit='13e2e7aeb8769707b91b62f23d6669d3ee1a8651'
 
 
-devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green intel-quark artik710 am57xx-evm up-board'
-fedora_devices=' raspberrypi2 beaglebone vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green nuc qemux86-64 artik710 am57xx-evm '
+devices='raspberry-pi raspberry-pi2 beaglebone-black intel-edison intel-nuc via-vab820-quad zc702-zynq7 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q ts7700 raspberry-pi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green cybertan-ze250 artik710 am571x-evm upboard'
+fedora_devices=' raspberry-pi2 beaglebone-black via-vab820-quad zc702-zynq7 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q raspberry-pi3 artik5 artik10 beaglebone-green-wifi beaglebone-green intel-nuc qemux86-64 artik710 am571x-evm '
 suites='jessie wheezy'
 alpine_suites='edge 3.2 3.3 3.4 3.5'
 fedora_suites='23 24'
@@ -46,25 +30,25 @@ fedora_suites='23 24'
 for device in $devices; do
 
 	case "$device" in
-	'raspberrypi')
+	'raspberry-pi')
 		alpine_template='Dockerfile.alpine.rpi.tpl'
 		alpine_baseImage='armhf-alpine'
 	;;
-	'raspberrypi2')
+	'raspberry-pi2')
 		template='Dockerfile.armv7hf.rpi.tpl'
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.rpi.tpl'
 		alpine_baseImage='armhf-alpine'
 		fedora_baseImage='armv7hf-fedora'
 	;;
-	'raspberrypi3')
+	'raspberry-pi3')
 		template='Dockerfile.armv7hf.rpi.tpl'
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.rpi.tpl'
 		alpine_baseImage='armhf-alpine'
 		fedora_baseImage='armv7hf-fedora'
 	;;
-	'beaglebone')
+	'beaglebone-black')
 		template='Dockerfile.armv7hf.bbb.tpl'
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
@@ -86,11 +70,11 @@ for device in $devices; do
 		fedora_template='Dockerfile.fedora.tpl'
 		fedora_baseImage='armv7hf-fedora'
 	;;
-	'edison')
+	'intel-edison')
 		template='Dockerfile.i386.edison.tpl'
 		baseImage='i386-debian'
 		# TODO: Can't compile mraa on alpine linux atm, lack of necessary libraries.
-		#alpine_template='Dockerfile.alpine.i386.edison.tpl'
+		#alpine_template='Dockerfile.alpine.i386.intel-edison.tpl'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='i386-alpine'
 	;;
@@ -98,19 +82,19 @@ for device in $devices; do
 		template='Dockerfile.tpl'
 		baseImage='i386-debian'
 		# TODO: Can't compile mraa on alpine linux atm, lack of necessary libraries.
-		#alpine_template='Dockerfile.alpine.i386.edison.tpl'
+		#alpine_template='Dockerfile.alpine.i386.intel-edison.tpl'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='i386-alpine'
 	;;
-	'intel-quark')
+	'cybertan-ze250')
 		template='Dockerfile.tpl'
 		baseImage='i386-debian'
 		# TODO: Can't compile mraa on alpine linux atm, lack of necessary libraries.
-		#alpine_template='Dockerfile.alpine.i386.edison.tpl'
+		#alpine_template='Dockerfile.alpine.i386.intel-edison.tpl'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='i386-alpine'
 	;;
-	'nuc')
+	'intel-nuc')
 		template='Dockerfile.tpl'
 		baseImage='amd64-debian'
 		alpine_template='Dockerfile.alpine.tpl'
@@ -126,7 +110,7 @@ for device in $devices; do
 		fedora_template='Dockerfile.fedora.tpl'
 		fedora_baseImage='amd64-fedora'
 	;;
-	'up-board')
+	'upboard')
 		template='Dockerfile.tpl'
 		baseImage='amd64-debian'
 		alpine_template='Dockerfile.alpine.tpl'
@@ -134,7 +118,7 @@ for device in $devices; do
 		fedora_template='Dockerfile.fedora.tpl'
 		fedora_baseImage='amd64-fedora'
 	;;
-	'vab820-quad')
+	'via-vab820-quad')
 		template='Dockerfile.tpl'
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
@@ -155,14 +139,14 @@ for device in $devices; do
 		alpine_baseImage='armhf-alpine'
 		fedora_baseImage='armv7hf-fedora'
 	;;
-	'odroid-ux3')
+	'odroid-xu4')
 		template='Dockerfile.tpl'
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
 		fedora_baseImage='armv7hf-fedora'
 	;;
-	'parallella-hdmi-resin')
+	'parallella')
 		template='Dockerfile.tpl'
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
@@ -176,7 +160,7 @@ for device in $devices; do
 		alpine_baseImage='armhf-alpine'
 		fedora_baseImage='armv7hf-fedora'
 	;;
-	'cubox-i')
+	'hummingboard')
 		template='Dockerfile.tpl'
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
@@ -190,14 +174,14 @@ for device in $devices; do
 		alpine_baseImage='armhf-alpine'
 		fedora_baseImage='armv7hf-fedora'
 	;;
-	'colibri-imx6')
+	'colibri-imx6dl')
 		template='Dockerfile.tpl'
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='armhf-alpine'
 		fedora_baseImage='armv7hf-fedora'
 	;;
-	'am57xx-evm')
+	'am571x-evm')
 		template='Dockerfile.tpl'
 		baseImage='armv7hf-debian'
 		alpine_template='Dockerfile.alpine.tpl'
@@ -241,7 +225,7 @@ for device in $devices; do
 
 	# Debian.
 	debian_dockerfilePath="$device/debian"
-	if [ $device != "raspberrypi" ]; then
+	if [ $device != "raspberry-pi" ]; then
 		for suite in $suites; do
 			mkdir -p $debian_dockerfilePath/$suite
 
@@ -263,21 +247,21 @@ for device in $devices; do
 					-e "s@#{KEYS}@$key@g" \
 					-e "s@#{DEV_TYPE}@$device@g" $template > $debian_dockerfilePath/$suite/Dockerfile
 			else
-				if [[ $device == "edison"* ]]; then
+				if [[ $device == "intel-edison"* ]]; then
 					case "$suite" in
 					'wheezy')
-						upm_commit=$edison_wheezy_upm_commit
-						upm_version=$edison_wheezy_upm_version
+						upm_commit=$intel_edison_wheezy_upm_commit
+						upm_version=$intel_edison_wheezy_upm_version
 					;;
 					'jessie')
-						upm_commit=$edison_upm_commit
-						upm_version=$edison_upm_version
+						upm_commit=$intel_edison_upm_commit
+						upm_version=$intel_edison_upm_version
 					;;
 					esac
 					sed -e "s@#{FROM}@resin/$baseImage:$suite@g" \
 						-e "s@#{SUITE}@$suite@g" \
-						-e "s@#{MRAA_COMMIT}@$edison_mraa_commit@g" \
-						-e "s@#{MRAA_VERSION}@$edison_mraa_version@g" \
+						-e "s@#{MRAA_COMMIT}@$intel_edison_mraa_commit@g" \
+						-e "s@#{MRAA_VERSION}@$intel_edison_mraa_version@g" \
 						-e "s@#{UPM_COMMIT}@$upm_commit@g" \
 						-e "s@#{UPM_VERSION}@$upm_version@g" \
 						-e "s@#{DEV_TYPE}@$device@g" $template > $debian_dockerfilePath/$suite/Dockerfile
@@ -287,8 +271,6 @@ for device in $devices; do
 						-e s@#{DEV_TYPE}@$device@ $template > $debian_dockerfilePath/$suite/Dockerfile
 				fi
 			fi
-
-			set_onbuild_warning "$debian_dockerfilePath/$suite" "base"
 		done
 	fi
 
@@ -304,8 +286,6 @@ for device in $devices; do
 		mkdir -p $alpine_dockerfilePath/$suite
 		sed -e s~#{FROM}~resin/$alpine_baseImage:$suite~g \
 			-e s@#{DEV_TYPE}@$device@ $alpine_template > $alpine_dockerfilePath/$suite/Dockerfile
-
-		set_onbuild_warning "$alpine_dockerfilePath/$suite" "base"
 	done
 
 	# Fedora
@@ -328,7 +308,6 @@ for device in $devices; do
 				sed -e s~#{FROM}~resin/$fedora_baseImage:$suite~g \
 					-e s@#{DEV_TYPE}@$device@ $fedora_template > $fedora_dockerfilePath/$suite/Dockerfile
 			fi
-			set_onbuild_warning "$fedora_dockerfilePath/$suite" "base"
 		done
 	fi
 done

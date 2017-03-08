@@ -8,22 +8,6 @@ PYTHON3_PATH_fedora="/usr/lib/python3.5/site-packages"
 PYTHON2_ARGS="-DBUILDSWIGNODE=OFF"
 PYTHON3_ARGS="-DBUILDSWIGNODE=OFF -DBUILDPYTHON3=ON -DPYTHON_INCLUDE_DIR=/usr/local/include/python3.5m/ -DPYTHON_LIBRARY=/usr/local/lib/libpython3.so"
 
-# $1: path
-# $2: variants
-set_onbuild_warning() {
-	for va in $2; do
-		if [ $va == 'base' ]; then
-			tmp_path=$1
-		else
-			tmp_path="$1/$va"
-		fi
-		if [ -f "$tmp_path/Dockerfile" ]; then
-			echo "ONBUILD RUN echo 'This repository is deprecated. Please check https://docs.resin.io/runtime/resin-base-images/ for information about Resin docker images.' " >> $tmp_path/Dockerfile
-		fi
-	done
-	
-}
-
 # append mraa build script to the bottom of Dockerfile.
 # $1: base version
 # $2: path
@@ -75,28 +59,28 @@ set_pythonpath() {
 	done
 }
 
-devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green intel-quark artik710 am57xx-evm up-board'
-fedora_devices=' raspberrypi2 beaglebone vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green nuc qemux86-64 artik710 am57xx-evm '
+devices='raspberry-pi raspberry-pi2 beaglebone-black intel-edison intel-nuc via-via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q ts7700 raspberry-pi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green cybertan-ze250 artik710 am571x-evm upboard'
+fedora_devices=' raspberry-pi2 beaglebone-black via-via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q raspberry-pi3 artik5 artik10 beaglebone-green-wifi beaglebone-green intel-nuc qemux86-64 artik710 am571x-evm '
 pythonVersions='2.7.12 3.3.6 3.4.4 3.5.2 3.6.0'
 binary_url="http://resin-packages.s3.amazonaws.com/python/v\$PYTHON_VERSION/Python-\$PYTHON_VERSION.linux-#{TARGET_ARCH}.tar.gz"
 
 for device in $devices; do
 	case "$device" in
-	'raspberrypi')
+	'raspberry-pi')
 		binary_arch='armv6hf'
 		alpine_binary_arch='alpine-armhf'
 	;;
-	'raspberrypi2')
+	'raspberry-pi2')
 		binary_arch='armv7hf'
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_arch='fedora-armhf'
 	;;
-	'raspberrypi3')
+	'raspberry-pi3')
 		binary_arch='armv7hf'
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_arch='fedora-armhf'
 	;;
-	'beaglebone')
+	'beaglebone-black')
 		binary_arch='armv7hf'
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_arch='fedora-armhf'
@@ -111,7 +95,7 @@ for device in $devices; do
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_arch='fedora-armhf'
 	;;
-	'edison')
+	'intel-edison')
 		binary_arch='i386'
 		alpine_binary_arch='alpine-i386'
 	;;
@@ -119,11 +103,11 @@ for device in $devices; do
 		binary_arch='i386'
 		alpine_binary_arch='alpine-i386'
 	;;
-	'intel-quark')
+	'cybertan-ze250')
 		binary_arch='i386'
 		alpine_binary_arch='alpine-i386'
 	;;
-	'nuc')
+	'intel-nuc')
 		binary_arch='amd64'
 		alpine_binary_arch='alpine-amd64'
 		fedora_binary_arch='fedora-amd64'
@@ -133,17 +117,17 @@ for device in $devices; do
 		alpine_binary_arch='alpine-amd64'
 		fedora_binary_arch='fedora-amd64'
 	;;
-	'up-board')
+	'upboard')
 		binary_arch='amd64'
 		alpine_binary_arch='alpine-amd64'
 		fedora_binary_arch='fedora-amd64'
 	;;
-	'vab820-quad')
+	'via-via-vab820-quad')
 		binary_arch='armv7hf'
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_arch='fedora-armhf'
 	;;
-	'zc702-zynq7')
+	'zynq-xz702')
 		binary_arch='armv7hf'
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_arch='fedora-armhf'
@@ -153,12 +137,12 @@ for device in $devices; do
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_arch='fedora-armhf'
 	;;
-	'odroid-ux3')
+	'odroid-xu4')
 		binary_arch='armv7hf'
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_arch='fedora-armhf'
 	;;
-	'parallella-hdmi-resin')
+	'parallella')
 		binary_arch='armv7hf'
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_arch='fedora-armhf'
@@ -168,7 +152,7 @@ for device in $devices; do
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_arch='fedora-armhf'
 	;;
-	'cubox-i')
+	'hummingboard')
 		binary_arch='armv7hf'
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_arch='fedora-armhf'
@@ -178,17 +162,17 @@ for device in $devices; do
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_arch='fedora-armhf'
 	;;
-	'colibri-imx6')
+	'colibri-imx6dl')
 		binary_arch='armv7hf'
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_arch='fedora-armhf'
 	;;
-	'apalis-imx6')
+	'apalis-imx6q')
 		binary_arch='armv7hf'
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_arch='fedora-armhf'
 	;;
-	'am57xx-evm')
+	'am571x-evm')
 		binary_arch='armv7hf'
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_arch='fedora-armhf'
@@ -253,7 +237,7 @@ for device in $devices; do
 		mkdir -p $debian_dockerfilePath/slim
 
 		# Only for RPI1 device
-		if [ $device == "raspberrypi" ]; then
+		if [ $device == "raspberry-pi" ]; then
 			sed -e s~#{FROM}~"resin/rpi-raspbian:jessie"~g \
 				-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
 				-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
@@ -269,17 +253,15 @@ for device in $devices; do
 				-e s~#{TARGET_ARCH}~"$binary_arch"~g $slimTemplate > $debian_dockerfilePath/slim/Dockerfile
 		fi
 
-		# Only for intel edison
-		if [ $device == "edison" ]; then
+		# Only for intel intel-edison
+		if [ $device == "intel-edison" ]; then
 			append_setup_script "$baseVersion" "$debian_dockerfilePath" "debian" "base wheezy slim"
 		fi
 
 		set_pythonpath "$baseVersion" "$debian_dockerfilePath" "base wheezy slim" "debian"
 
-		set_onbuild_warning "$debian_dockerfilePath" "base wheezy slim onbuild"
-
 		# Alpine
-		# TODO: install mraa on Edison
+		# TODO: install mraa on intel-edison
 
 		# armel device not supported yet.
 		if [ $device == "ts7700" ]; then
@@ -326,7 +308,6 @@ for device in $devices; do
 				-e s~#{TARGET_ARCH}~"$alpine_binary_arch"~g $template > $alpine_dockerfilePath/edge/Dockerfile
 
 		set_pythonpath "$baseVersion" "$alpine_dockerfilePath" "base edge slim" "alpine"
-		set_onbuild_warning "$alpine_dockerfilePath" "base edge slim onbuild"
 	done
 	# Fedora
 	if [[ $fedora_devices == *" $device "* ]]; then
@@ -349,9 +330,6 @@ for device in $devices; do
 
 			mkdir -p $fedora_dockerfilePath/slim
 			sed -e s~#{FROM}~"resin/$device-fedora:latest"~g $template > $fedora_dockerfilePath/slim/Dockerfile
-
-			set_onbuild_warning "$fedora_dockerfilePath" "base 23 slim onbuild"
-
 		done
 	fi
 done

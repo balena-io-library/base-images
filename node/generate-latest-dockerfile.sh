@@ -1,22 +1,6 @@
 #!/bin/bash
 set -e
 
-# $1: path
-# $2: variants
-set_onbuild_warning() {
-	for va in $2; do
-		if [ $va == 'base' ]; then
-			tmp_path=$1
-		else
-			tmp_path="$1/$va"
-		fi
-		if [ -f "$tmp_path/Dockerfile" ]; then
-			echo "ONBUILD RUN echo 'This repository is deprecated. Please check https://docs.resin.io/runtime/resin-base-images/ for information about Resin docker images.' " >> $tmp_path/Dockerfile
-		fi
-	done
-	
-}
-
 # comparing version: http://stackoverflow.com/questions/16989598/bash-comparing-version-numbers
 function version_ge() { test "$(echo "$@" | tr " " "\n" | sort -V | tail -n 1)" == "$1"; }
 
@@ -56,8 +40,8 @@ C4F0DFFF4E8C1A8236409D08E73BC641CC11F4C8 \
 	gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; \
 done
 
-devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green intel-quark artik710 am57xx-evm up-board'
-fedora_devices=' raspberrypi2 beaglebone vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green nuc qemux86-64 artik710 am57xx-evm '
+devices='raspberry-pi raspberry-pi2 beaglebone-black intel-edison intel-nuc via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q ts7700 raspberry-pi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green cybertan-ze250 artik710 am571x-evm upboard'
+fedora_devices=' raspberry-pi2 beaglebone-black via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q raspberry-pi3 artik5 artik10 beaglebone-green-wifi beaglebone-green intel-nuc qemux86-64 artik710 am571x-evm '
 nodeVersions='0.10.22 0.10.48 0.12.18 4.8.0 5.12.0 6.10.0 7.6.0'
 defaultVersion='0.10.22'
 resinUrl="http://resin-packages.s3.amazonaws.com/node/v\$NODE_VERSION/node-v\$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz"
@@ -66,19 +50,19 @@ nodejsUrl="http://nodejs.org/dist/v\$NODE_VERSION/node-v\$NODE_VERSION-linux-#{T
 for device in $devices; do
 	for nodeVersion in $nodeVersions; do
 		case "$device" in
-		'raspberrypi')
+		'raspberry-pi')
 			binaryUrl=$resinUrl
 			binaryArch='armv6hf'
 		;;
-		'raspberrypi2')
+		'raspberry-pi2')
 			binaryUrl=$resinUrl
 			binaryArch='armv7hf'
 		;;
-		'raspberrypi3')
+		'raspberry-pi3')
 			binaryUrl=$resinUrl
 			binaryArch='armv7hf'
 		;;
-		'beaglebone')
+		'beaglebone-black')
 			binaryUrl=$resinUrl
 			binaryArch='armv7hf'
 		;;
@@ -90,7 +74,7 @@ for device in $devices; do
 			binaryUrl=$resinUrl
 			binaryArch='armv7hf'
 		;;
-		'edison')
+		'intel-edison')
 			binaryUrl=$resinUrl
 			binaryArch='i386'
 		;;
@@ -98,11 +82,11 @@ for device in $devices; do
 			binaryUrl=$resinUrl
 			binaryArch='i386'
 		;;
-		'intel-quark')
+		'cybertan-ze250')
 			binaryUrl=$resinUrl
 			binaryArch='i386'
 		;;
-		'nuc')
+		'intel-nuc')
 			binaryUrl=$nodejsUrl
 			binaryArch='x64'
 		;;
@@ -110,15 +94,15 @@ for device in $devices; do
 			binaryUrl=$nodejsUrl
 			binaryArch='x64'
 		;;
-		'up-board')
+		'upboard')
 			binaryUrl=$nodejsUrl
 			binaryArch='x64'
 		;;
-		'vab820-quad')
+		'via-vab820-quad')
 			binaryUrl=$resinUrl
 			binaryArch='armv7hf'
 		;;
-		'zc702-zynq7')
+		'zynq-xz702')
 			binaryUrl=$resinUrl
 			binaryArch='armv7hf'
 		;;
@@ -126,11 +110,11 @@ for device in $devices; do
 			binaryUrl=$resinUrl
 			binaryArch='armv7hf'
 		;;
-		'odroid-ux3')
+		'odroid-xu4')
 			binaryUrl=$resinUrl
 			binaryArch='armv7hf'
 		;;
-		'parallella-hdmi-resin')
+		'parallella')
 			binaryUrl=$resinUrl
 			binaryArch='armv7hf'
 		;;
@@ -138,7 +122,7 @@ for device in $devices; do
 			binaryUrl=$resinUrl
 			binaryArch='armv7hf'
 		;;
-		'cubox-i')
+		'hummingboard')
 			binaryUrl=$resinUrl
 			binaryArch='armv7hf'
 		;;
@@ -146,15 +130,15 @@ for device in $devices; do
 			binaryUrl=$resinUrl
 			binaryArch='armv7hf'
 		;;
-		'colibri-imx6')
+		'colibri-imx6dl')
 			binaryUrl=$resinUrl
 			binaryArch='armv7hf'
 		;;
-		'apalis-imx6')
+		'apalis-imx6q')
 			binaryUrl=$resinUrl
 			binaryArch='armv7hf'
 		;;
-		'am57xx-evm')
+		'am571x-evm')
 			binaryUrl=$resinUrl
 			binaryArch='armv7hf'
 		;;
@@ -226,14 +210,14 @@ for device in $devices; do
 			-e s~#{BINARY_URL}~$binaryUrl~g \
 			-e s~#{NODE_VERSION}~$wheezyNodeVersion~g \
 			-e s~#{CHECKSUM}~"$wheezyChecksum"~g \
-			-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.tpl > $device/debian/6.3/wheezy/Dockerfile
+			-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.tpl > $device/debian/$wheezyBaseVersion/wheezy/Dockerfile
 
 		mkdir -p $debian_dockerfilePath/onbuild
 		sed -e s~#{FROM}~resin/$device-node:$nodeVersion~g Dockerfile.onbuild.tpl > $debian_dockerfilePath/onbuild/Dockerfile
 		mkdir -p $debian_dockerfilePath/slim
 
 		# Only for RPI1 device
-		if [ $device == "raspberrypi" ]; then
+		if [ $device == "raspberry-pi" ]; then
 			sed -e s~#{FROM}~resin/rpi-raspbian:jessie~g \
 				-e s~#{BINARY_URL}~$binaryUrl~g \
 				-e s~#{NODE_VERSION}~$nodeVersion~g \
@@ -247,8 +231,8 @@ for device in $devices; do
 				-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.slim.tpl > $debian_dockerfilePath/slim/Dockerfile
 		fi
 
-		# Only for intel edison
-		if [ $device == "edison" ]; then
+		# Only for intel intel-edison
+		if [ $device == "intel-edison" ]; then
 			sed -e s~#{FROM}~resin/$device-buildpack-deps:jessie~g \
 				-e s~#{BINARY_URL}~$binaryUrl~g \
 				-e s~#{NODE_VERSION}~$nodeVersion~g \
@@ -259,7 +243,7 @@ for device in $devices; do
 				-e s~#{BINARY_URL}~$binaryUrl~g \
 				-e s~#{NODE_VERSION}~$wheezyNodeVersion~g \
 				-e s~#{CHECKSUM}~"$wheezyChecksum"~g \
-				-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.i386.edison.tpl > $device/debian/6.3/wheezy/Dockerfile
+				-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.i386.edison.tpl > $device/debian/$wheezyBaseVersion/wheezy/Dockerfile
 
 			sed -e s~#{FROM}~resin/$device-debian:jessie~g \
 				-e s~#{BINARY_URL}~$binaryUrl~g \
@@ -267,8 +251,6 @@ for device in $devices; do
 				-e s~#{CHECKSUM}~"$checksum"~g \
 				-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.i386.edison.slim.tpl > $debian_dockerfilePath/slim/Dockerfile
 		fi
-
-		set_onbuild_warning "$debian_dockerfilePath" "base onbuild slim wheezy"
 
 		# Fedora
 		if [[ $fedora_devices == *" $device "* ]]; then
@@ -297,8 +279,6 @@ for device in $devices; do
 				-e s~#{NODE_VERSION}~$nodeVersion~g \
 				-e s~#{CHECKSUM}~"$checksum"~g \
 				-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.tpl > $fedora_dockerfilePath/slim/Dockerfile
-
-			set_onbuild_warning "$fedora_dockerfilePath" "base onbuild slim 23"
 		fi
 
 		# Alpine
@@ -352,7 +332,5 @@ for device in $devices; do
 			-e s~#{NODE_VERSION}~$nodeVersion~g \
 			-e s~#{CHECKSUM}~"$checksum"~g \
 			-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.alpine.tpl > $alpine_dockerfilePath/edge/Dockerfile
-
-		set_onbuild_warning "$alpine_dockerfilePath" "base onbuild slim edge"
 	done
 done

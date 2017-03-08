@@ -1,39 +1,23 @@
 #!/bin/bash
 set -e
 
-# $1: path
-# $2: variants
-set_onbuild_warning() {
-	for va in $2; do
-		if [ $va == 'base' ]; then
-			tmp_path=$1
-		else
-			tmp_path="$1/$va"
-		fi
-		if [ -f "$tmp_path/Dockerfile" ]; then
-			echo "ONBUILD RUN echo 'This repository is deprecated. Please check https://docs.resin.io/runtime/resin-base-images/ for information about Resin docker images.' " >> $tmp_path/Dockerfile
-		fi
-	done
-	
-}
-
 function version_le() { test "$(echo "$@" | tr " " "\n" | sort -V | tail -n 1)" != "$1"; }
 
-devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green intel-quark artik710 am57xx-evm up-board'
-fedora_devices=' raspberrypi2 beaglebone vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green nuc qemux86-64 artik710 am57xx-evm '
+devices='raspberry-pi raspberry-pi2 beaglebone-black intel-edison intel-nuc via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q ts7700 raspberry-pi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green cybertan-ze250 artik710 am571x-evm upboard'
+fedora_devices=' raspberry-pi2 beaglebone-black via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q raspberry-pi3 artik5 artik10 beaglebone-green-wifi beaglebone-green intel-nuc qemux86-64 artik710 am571x-evm '
 goVersions='1.4.3 1.5.4 1.6.4 1.7.5 1.8'
 resinUrl="http://resin-packages.s3.amazonaws.com/golang/v\$GO_VERSION/go\$GO_VERSION.linux-#{TARGET_ARCH}.tar.gz"
 golangUrl="https://storage.googleapis.com/golang/go\$GO_VERSION.linux-#{TARGET_ARCH}.tar.gz"
 
 for device in $devices; do
 	case "$device" in
-	'raspberrypi')
+	'raspberry-pi')
 		binary_url=$resinUrl
 		binary_arch='armv6hf'
 		alpine_binary_url=$resinUrl
 		alpine_binary_arch='alpine-armhf'
 	;;
-	'raspberrypi2')
+	'raspberry-pi2')
 		binary_url=$resinUrl
 		binary_arch='armv7hf'
 		alpine_binary_url=$resinUrl
@@ -41,7 +25,7 @@ for device in $devices; do
 		fedora_binary_url=$resinUrl
 		fedora_binary_arch='armv7hf'
 	;;
-	'raspberrypi3')
+	'raspberry-pi3')
 		binary_url=$resinUrl
 		binary_arch='armv7hf'
 		alpine_binary_url=$resinUrl
@@ -49,7 +33,7 @@ for device in $devices; do
 		fedora_binary_url=$resinUrl
 		fedora_binary_arch='armv7hf'
 	;;
-	'beaglebone')
+	'beaglebone-black')
 		binary_url=$resinUrl
 		binary_arch='armv7hf'
 		alpine_binary_url=$resinUrl
@@ -73,13 +57,13 @@ for device in $devices; do
 		fedora_binary_url=$resinUrl
 		fedora_binary_arch='armv7hf'
 	;;
-	'edison')
+	'intel-edison')
 		binary_url=$golangUrl
 		binary_arch='386'
 		alpine_binary_url=$resinUrl
 		alpine_binary_arch='alpine-i386'
 	;;
-	'intel-quark')
+	'cybertan-ze250')
 		binary_url=$resinUrl
 		binary_arch='i386'
 		alpine_binary_url=$resinUrl
@@ -91,7 +75,7 @@ for device in $devices; do
 		alpine_binary_url=$resinUrl
 		alpine_binary_arch='alpine-i386'
 	;;
-	'nuc')
+	'intel-nuc')
 		binary_url=$golangUrl
 		binary_arch='amd64'
 		alpine_binary_url=$resinUrl
@@ -107,7 +91,7 @@ for device in $devices; do
 		fedora_binary_url=$golangUrl
 		fedora_binary_arch='amd64'
 	;;
-	'up-board')
+	'upboard')
 		binary_url=$golangUrl
 		binary_arch='amd64'
 		alpine_binary_url=$resinUrl
@@ -115,7 +99,7 @@ for device in $devices; do
 		fedora_binary_url=$golangUrl
 		fedora_binary_arch='amd64'
 	;;
-	'vab820-quad')
+	'via-vab820-quad')
 		binary_url=$resinUrl
 		binary_arch='armv7hf'
 		alpine_binary_url=$resinUrl
@@ -123,7 +107,7 @@ for device in $devices; do
 		fedora_binary_url=$resinUrl
 		fedora_binary_arch='armv7hf'
 	;;
-	'zc702-zynq7')
+	'zynq-xz702')
 		binary_url=$resinUrl
 		binary_arch='armv7hf'
 		alpine_binary_url=$resinUrl
@@ -139,7 +123,7 @@ for device in $devices; do
 		fedora_binary_url=$resinUrl
 		fedora_binary_arch='armv7hf'
 	;;
-	'odroid-ux3')
+	'odroid-xu4')
 		binary_url=$resinUrl
 		binary_arch='armv7hf'
 		alpine_binary_url=$resinUrl
@@ -147,7 +131,7 @@ for device in $devices; do
 		fedora_binary_url=$resinUrl
 		fedora_binary_arch='armv7hf'
 	;;
-	'parallella-hdmi-resin')
+	'parallella')
 		binary_url=$resinUrl
 		binary_arch='armv7hf'
 		alpine_binary_url=$resinUrl
@@ -163,7 +147,7 @@ for device in $devices; do
 		fedora_binary_url=$resinUrl
 		fedora_binary_arch='armv7hf'
 	;;
-	'cubox-i')
+	'hummingboard')
 		binary_url=$resinUrl
 		binary_arch='armv7hf'
 		alpine_binary_url=$resinUrl
@@ -179,7 +163,7 @@ for device in $devices; do
 		fedora_binary_url=$resinUrl
 		fedora_binary_arch='armv7hf'
 	;;
-	'colibri-imx6')
+	'colibri-imx6dl')
 		binary_url=$resinUrl
 		binary_arch='armv7hf'
 		alpine_binary_url=$resinUrl
@@ -187,7 +171,7 @@ for device in $devices; do
 		fedora_binary_url=$resinUrl
 		fedora_binary_arch='armv7hf'
 	;;
-	'apalis-imx6')
+	'apalis-imx6q')
 		binary_url=$resinUrl
 		binary_arch='armv7hf'
 		alpine_binary_url=$resinUrl
@@ -195,7 +179,7 @@ for device in $devices; do
 		fedora_binary_url=$resinUrl
 		fedora_binary_arch='armv7hf'
 	;;
-	'am57xx-evm')
+	'am571x-evm')
 		binary_url=$resinUrl
 		binary_arch='armv7hf'
 		alpine_binary_url=$resinUrl
@@ -238,7 +222,7 @@ for device in $devices; do
 	for goVersion in $goVersions; do
 		baseVersion=$(expr match "$goVersion" '\([0-9]*\.[0-9]*\)')
 
-		if [ $device == "intel-quark" ] && ( version_le $goVersion "1.6" ); then
+		if [ $device == "cybertan-ze250" ] && ( version_le $goVersion "1.6" ); then
 			continue
 		fi
 
@@ -268,7 +252,7 @@ for device in $devices; do
 		sed -e s~#{FROM}~resin/$device-golang:$goVersion~g Dockerfile.onbuild.tpl > $debian_dockerfilePath/onbuild/Dockerfile
 		
 		# Only for RPI1 device
-		if [ $device == "raspberrypi" ]; then
+		if [ $device == "raspberry-pi" ]; then
 			base_image="resin/rpi-raspbian:jessie"
 		else
 			base_image="resin/$device-debian:jessie"
@@ -281,8 +265,6 @@ for device in $devices; do
 				-e s~#{CHECKSUM}~"$checksum"~g \
 				-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.slim.tpl > $debian_dockerfilePath/slim/Dockerfile
 		cp go-wrapper $debian_dockerfilePath/slim/
-
-		set_onbuild_warning "$debian_dockerfilePath" "base onbuild slim wheezy"
 
 		# Fedora
 
@@ -315,7 +297,6 @@ for device in $devices; do
 					-e s~#{TARGET_ARCH}~$fedora_binary_arch~g Dockerfile.fedora.slim.tpl > $fedora_dockerfilePath/slim/Dockerfile
 			cp go-wrapper $fedora_dockerfilePath/slim/
 
-			set_onbuild_warning "$fedora_dockerfilePath" "base onbuild slim 23"
 		fi
 
 		# Alpine.
@@ -357,6 +338,5 @@ for device in $devices; do
 			-e s~#{TARGET_ARCH}~"$alpine_binary_arch"~g Dockerfile.alpine.tpl > $alpine_dockerfilePath/edge/Dockerfile
 		cp go-wrapper $alpine_dockerfilePath/edge/
 
-		set_onbuild_warning "$alpine_dockerfilePath" "base onbuild slim edge"
 	done
 done
