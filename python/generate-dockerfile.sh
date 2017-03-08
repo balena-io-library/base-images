@@ -8,6 +8,22 @@ PYTHON3_PATH_fedora="/usr/lib/python3.5/site-packages"
 PYTHON2_ARGS="-DBUILDSWIGNODE=OFF"
 PYTHON3_ARGS="-DBUILDSWIGNODE=OFF -DBUILDPYTHON3=ON -DPYTHON_INCLUDE_DIR=/usr/local/include/python3.5m/ -DPYTHON_LIBRARY=/usr/local/lib/libpython3.so"
 
+# $1: path
+# $2: variants
+set_onbuild_warning() {
+	for va in $2; do
+		if [ $va == 'base' ]; then
+			tmp_path=$1
+		else
+			tmp_path="$1/$va"
+		fi
+		if [ -f "$tmp_path/Dockerfile" ]; then
+			echo "ONBUILD RUN echo 'This repository is deprecated. Please check https://docs.resin.io/runtime/resin-base-images/ for information about Resin docker images.' " >> $tmp_path/Dockerfile
+		fi
+	done
+	
+}
+
 # append mraa build script to the bottom of Dockerfile.
 # $1: base version
 # $2: path
@@ -260,6 +276,8 @@ for device in $devices; do
 
 		set_pythonpath "$baseVersion" "$debian_dockerfilePath" "base wheezy slim" "debian"
 
+		set_onbuild_warning "$debian_dockerfilePath" "base wheezy slim onbuild"
+
 		# Alpine
 		# TODO: install mraa on Edison
 
@@ -308,6 +326,7 @@ for device in $devices; do
 				-e s~#{TARGET_ARCH}~"$alpine_binary_arch"~g $template > $alpine_dockerfilePath/edge/Dockerfile
 
 		set_pythonpath "$baseVersion" "$alpine_dockerfilePath" "base edge slim" "alpine"
+		set_onbuild_warning "$alpine_dockerfilePath" "base edge slim onbuild"
 	done
 	# Fedora
 	if [[ $fedora_devices == *" $device "* ]]; then
@@ -330,6 +349,9 @@ for device in $devices; do
 
 			mkdir -p $fedora_dockerfilePath/slim
 			sed -e s~#{FROM}~"resin/$device-fedora:latest"~g $template > $fedora_dockerfilePath/slim/Dockerfile
+
+			set_onbuild_warning "$fedora_dockerfilePath" "base 23 slim onbuild"
+
 		done
 	fi
 done

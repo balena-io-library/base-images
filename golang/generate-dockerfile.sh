@@ -1,6 +1,22 @@
 #!/bin/bash
 set -e
 
+# $1: path
+# $2: variants
+set_onbuild_warning() {
+	for va in $2; do
+		if [ $va == 'base' ]; then
+			tmp_path=$1
+		else
+			tmp_path="$1/$va"
+		fi
+		if [ -f "$tmp_path/Dockerfile" ]; then
+			echo "ONBUILD RUN echo 'This repository is deprecated. Please check https://docs.resin.io/runtime/resin-base-images/ for information about Resin docker images.' " >> $tmp_path/Dockerfile
+		fi
+	done
+	
+}
+
 function version_le() { test "$(echo "$@" | tr " " "\n" | sort -V | tail -n 1)" != "$1"; }
 
 devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green intel-quark artik710 am57xx-evm up-board'
@@ -266,6 +282,8 @@ for device in $devices; do
 				-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.slim.tpl > $debian_dockerfilePath/slim/Dockerfile
 		cp go-wrapper $debian_dockerfilePath/slim/
 
+		set_onbuild_warning "$debian_dockerfilePath" "base onbuild slim wheezy"
+
 		# Fedora
 
 		if [[ $fedora_devices == *" $device "* ]]; then
@@ -296,6 +314,8 @@ for device in $devices; do
 					-e s~#{CHECKSUM}~"$checksum"~g \
 					-e s~#{TARGET_ARCH}~$fedora_binary_arch~g Dockerfile.fedora.slim.tpl > $fedora_dockerfilePath/slim/Dockerfile
 			cp go-wrapper $fedora_dockerfilePath/slim/
+
+			set_onbuild_warning "$fedora_dockerfilePath" "base onbuild slim 23"
 		fi
 
 		# Alpine.
@@ -336,5 +356,7 @@ for device in $devices; do
 			-e s~#{CHECKSUM}~"$checksum"~g \
 			-e s~#{TARGET_ARCH}~"$alpine_binary_arch"~g Dockerfile.alpine.tpl > $alpine_dockerfilePath/edge/Dockerfile
 		cp go-wrapper $alpine_dockerfilePath/edge/
+
+		set_onbuild_warning "$alpine_dockerfilePath" "base onbuild slim edge"
 	done
 done

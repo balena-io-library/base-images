@@ -1,6 +1,22 @@
 #!/bin/bash
 set -e
 
+# $1: path
+# $2: variants
+set_onbuild_warning() {
+	for va in $2; do
+		if [ $va == 'base' ]; then
+			tmp_path=$1
+		else
+			tmp_path="$1/$va"
+		fi
+		if [ -f "$tmp_path/Dockerfile" ]; then
+			echo "ONBUILD RUN echo 'This repository is deprecated. Please check https://docs.resin.io/runtime/resin-base-images/ for information about Resin docker images.' " >> $tmp_path/Dockerfile
+		fi
+	done
+	
+}
+
 # comparing version: http://stackoverflow.com/questions/16989598/bash-comparing-version-numbers
 function version_ge() { test "$(echo "$@" | tr " " "\n" | sort -V | tail -n 1)" == "$1"; }
 
@@ -189,9 +205,11 @@ for device in $devices; do
 		if version_ge "$nodeVersion" "6"; then
 			wheezyNodeVersion='6.3.1'
 			extract_checksum 1 $wheezyNodeVersion "wheezyChecksum"
+			wheezyBaseVersion='6.3'
 		else
 			wheezyNodeVersion=$nodeVersion
 			wheezyChecksum=$checksum
+			wheezyBaseVersion=$(expr match "$wheezyNodeVersion" '\([0-9]*\.[0-9]*\)')
 		fi
 
 
@@ -203,7 +221,7 @@ for device in $devices; do
 			-e s~#{CHECKSUM}~"$checksum"~g \
 			-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.tpl > $debian_dockerfilePath/Dockerfile
 
-		mkdir -p $device/debian/6.3/wheezy
+		mkdir -p $device/debian/$wheezyBaseVersion/wheezy
 		sed -e s~#{FROM}~resin/$device-buildpack-deps:wheezy~g \
 			-e s~#{BINARY_URL}~$binaryUrl~g \
 			-e s~#{NODE_VERSION}~$wheezyNodeVersion~g \
@@ -250,6 +268,8 @@ for device in $devices; do
 				-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.i386.edison.slim.tpl > $debian_dockerfilePath/slim/Dockerfile
 		fi
 
+		set_onbuild_warning "$debian_dockerfilePath" "base onbuild slim wheezy"
+
 		# Fedora
 		if [[ $fedora_devices == *" $device "* ]]; then
 			fedora_dockerfilePath=$device/fedora/$baseVersion
@@ -277,6 +297,8 @@ for device in $devices; do
 				-e s~#{NODE_VERSION}~$nodeVersion~g \
 				-e s~#{CHECKSUM}~"$checksum"~g \
 				-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.tpl > $fedora_dockerfilePath/slim/Dockerfile
+
+			set_onbuild_warning "$fedora_dockerfilePath" "base onbuild slim 23"
 		fi
 
 		# Alpine
@@ -330,5 +352,7 @@ for device in $devices; do
 			-e s~#{NODE_VERSION}~$nodeVersion~g \
 			-e s~#{CHECKSUM}~"$checksum"~g \
 			-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.alpine.tpl > $alpine_dockerfilePath/edge/Dockerfile
+
+		set_onbuild_warning "$alpine_dockerfilePath" "base onbuild slim edge"
 	done
 done

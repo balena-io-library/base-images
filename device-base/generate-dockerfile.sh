@@ -1,6 +1,22 @@
 #!/bin/bash
 set -e
 
+# $1: path
+# $2: variants
+set_onbuild_warning() {
+	for va in $2; do
+		if [ $va == 'base' ]; then
+			tmp_path=$1
+		else
+			tmp_path="$1/$va"
+		fi
+		if [ -f "$tmp_path/Dockerfile" ]; then
+			echo "ONBUILD RUN echo 'This repository is deprecated. Please check https://docs.resin.io/runtime/resin-base-images/ for information about Resin docker images.' " >> $tmp_path/Dockerfile
+		fi
+	done
+	
+}
+
 # for beaglebone
 bb_sourceslist_cmd='echo "deb [arch=armhf] http://repos.rcn-ee.net/debian/ #{SUITE} main" >> /etc/apt/sources.list'
 bb_key_cmd='apt-key adv --keyserver keyserver.ubuntu.com --recv-key D284E608A4C46402'
@@ -271,6 +287,8 @@ for device in $devices; do
 						-e s@#{DEV_TYPE}@$device@ $template > $debian_dockerfilePath/$suite/Dockerfile
 				fi
 			fi
+
+			set_onbuild_warning "$debian_dockerfilePath/$suite" "base"
 		done
 	fi
 
@@ -286,6 +304,8 @@ for device in $devices; do
 		mkdir -p $alpine_dockerfilePath/$suite
 		sed -e s~#{FROM}~resin/$alpine_baseImage:$suite~g \
 			-e s@#{DEV_TYPE}@$device@ $alpine_template > $alpine_dockerfilePath/$suite/Dockerfile
+
+		set_onbuild_warning "$alpine_dockerfilePath/$suite" "base"
 	done
 
 	# Fedora
@@ -308,6 +328,7 @@ for device in $devices; do
 				sed -e s~#{FROM}~resin/$fedora_baseImage:$suite~g \
 					-e s@#{DEV_TYPE}@$device@ $fedora_template > $fedora_dockerfilePath/$suite/Dockerfile
 			fi
+			set_onbuild_warning "$fedora_dockerfilePath/$suite" "base"
 		done
 	fi
 done

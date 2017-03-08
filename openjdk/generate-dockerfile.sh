@@ -1,6 +1,22 @@
 #!/bin/bash
 set -e
 
+# $1: path
+# $2: variants
+set_onbuild_warning() {
+	for va in $2; do
+		if [ $va == 'base' ]; then
+			tmp_path=$1
+		else
+			tmp_path="$1/$va"
+		fi
+		if [ -f "$tmp_path/Dockerfile" ]; then
+			echo "ONBUILD RUN echo 'This repository is deprecated. Please check https://docs.resin.io/runtime/resin-base-images/ for information about Resin docker images.' " >> $tmp_path/Dockerfile
+		fi
+	done
+	
+}
+
 declare -A debianSuites=(
 	[6]='wheezy'
 	[7]='jessie'
@@ -205,6 +221,8 @@ for device in $devices; do
 			-e s@#{CA_HACK1}@"$caHackContent1"@g \
 			-e s@#{CA_HACK2}@"$caHackContent2"@g Dockerfile.tpl > "$debian_dockerfilePath/Dockerfile"
 
+		set_onbuild_warning "$debian_dockerfilePath" "base"
+
 		# Alpine Linux
 		if [ $javaVersion != 9 ] && [ "$deviceArch" != 'armel' ]; then
 
@@ -233,6 +251,8 @@ for device in $devices; do
 				-e s@#{ALPINE_FULL_VERSION}@"$alpineFullVersion"@g \
 				-e s@#{ALPINE_PACKAGE_VERSION}@"$alpinePackageVersion"@g \
 				-e s@#{ALPINE_PACKAGE}@"$alpinePackage"@g Dockerfile.alpine.tpl > $alpine_dockerfilePath/Dockerfile
+
+			set_onbuild_warning "$alpine_dockerfilePath" "base"
 		fi
 	done
 done
@@ -248,6 +268,8 @@ for fedoraDevice in $fedora_devices; do
 		mkdir -p $fedora_dockerfilePath
 		sed -e s~#{FROM}~resin/$fedoraDevice-fedora:24~g \
 			-e s~#{FEDORA_PACKAGE}~"$fedoraPackage"~g Dockerfile.fedora.tpl > "$fedora_dockerfilePath/Dockerfile"
+
+		set_onbuild_warning "$fedora_dockerfilePath" "base"
 	done
 done
 
