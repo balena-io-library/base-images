@@ -23,4 +23,3 @@ RUN apt-get update && apt-get install -y \
 		libyaml-dev \
 		zlib1g-dev \
 	&& rm -rf /var/lib/apt/lists/*
-ONBUILD RUN echo 'This repository is deprecated. Please check https://docs.resin.io/runtime/resin-base-images/ for information about Resin docker images.' 
