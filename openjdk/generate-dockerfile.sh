@@ -21,8 +21,8 @@ declare -A variants=(
 declare -A debCache=()
 
 versions='7-jdk 7-jre 8-jdk 8-jre'
-devices='raspberrypi raspberrypi2 beaglebone edison nuc vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green intel-quark artik710 am57xx-evm up-board'
-fedora_devices=' raspberrypi2 beaglebone vab820-quad zc702-zynq7 odroid-c1 odroid-ux3 parallella-hdmi-resin nitrogen6x cubox-i ts4900 colibri-imx6 apalis-imx6 raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green nuc qemux86-64 artik710 am57xx-evm '
+devices='raspberry-pi raspberry-pi2 beaglebone-black intel-edison intel-nuc via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q ts7700 raspberry-pi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green cybertan-ze250 artik710 am571x-evm upboard'
+fedora_devices=' raspberry-pi2 beaglebone-black via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q raspberry-pi3 artik5 artik10 beaglebone-green-wifi beaglebone-green intel-nuc qemux86-64 artik710 am571x-evm '
 alpineVersion='3.5'
 alpineDeviceArchs='x86_64 x86 armhf'
 variants='jre jdk'
@@ -46,16 +46,16 @@ done
 for device in $devices; do
 	for version in $versions; do
 		case "$device" in
-		'raspberrypi')
+		'raspberry-pi')
 			deviceArch='armhf'
 		;;
-		'raspberrypi2')
+		'raspberry-pi2')
 			deviceArch='armhf'
 		;;
-		'raspberrypi3')
+		'raspberry-pi3')
 			deviceArch='armhf'
 		;;
-		'beaglebone')
+		'beaglebone-black')
 			deviceArch='armhf'
 		;;
 		'beaglebone-green-wifi')
@@ -64,55 +64,55 @@ for device in $devices; do
 		'beaglebone-green')
 			deviceArch='armhf'
 		;;
-		'edison')
+		'intel-edison')
 			deviceArch='i386'
 		;;
 		'qemux86')
 			deviceArch='i386'
 		;;
-		'intel-quark')
+		'cybertan-ze250')
 			deviceArch='i386'
 		;;
-		'nuc')
+		'intel-nuc')
 			deviceArch='amd64'
 		;;
 		'qemux86-64')
 			deviceArch='amd64'
 		;;
-		'up-board')
+		'upboard')
 			deviceArch='amd64'
 		;;
-		'vab820-quad')
+		'via-vab820-quad')
 			deviceArch='armhf'
 		;;
-		'zc702-zynq7')
+		'zynq-xz702')
 			deviceArch='armhf'
 		;;
 		'odroid-c1')
 			deviceArch='armhf'
 		;;
-		'odroid-ux3')
+		'odroid-xu4')
 			deviceArch='armhf'
 		;;
-		'parallella-hdmi-resin')
+		'parallella')
 			deviceArch='armhf'
 		;;
 		'nitrogen6x')
 			deviceArch='armhf'
 		;;
-		'cubox-i')
+		'hummingboard')
 			deviceArch='armhf'
 		;;
 		'ts4900')
 			deviceArch='armhf'
 		;;
-		'colibri-imx6')
+		'colibri-imx6dl')
 			deviceArch='armhf'
 		;;
-		'apalis-imx6')
+		'apalis-imx6q')
 			deviceArch='armhf'
 		;;
-		'am57xx-evm')
+		'am571x-evm')
 			deviceArch='armhf'
 		;;
 		'ts7700')
@@ -151,7 +151,7 @@ for device in $devices; do
 			needCaHack=1
 		fi
 
-		if [ $device == "raspberrypi" ]; then
+		if [ $device == "raspberry-pi" ]; then
 			dist="resin/rpi-raspbian:$debianSuite"
 		else
 			dist="debian:${debianAddSuite:-$debianSuite}"
@@ -170,7 +170,7 @@ for device in $devices; do
 		fi
 		debianFullVersion="${debianVersion%%-*}"
 
-		if [ "$debianAddSuite" ] && [ $device != "raspberrypi" ]; then
+		if [ "$debianAddSuite" ] && [ $device != "raspberry-pi" ]; then
 			debianAddSuiteContent="RUN echo 'deb http://deb.debian.org/debian $debianAddSuite main' > /etc/apt/sources.list.d/$debianAddSuite.list"
 			debianPrioritizedSource="-t $debianAddSuite"
 		else
@@ -179,7 +179,7 @@ for device in $devices; do
 		fi
 
 		if [ "$needCaHack" ]; then
-			if [ $device == "raspberrypi" ]; then
+			if [ $device == "raspberry-pi" ]; then
 				caHackContent0="ENV CA_CERTIFICATES_JAVA_VERSION 20140324"
 			else
 				caHackContent0="ENV CA_CERTIFICATES_JAVA_VERSION 20161107~bpo8+1"

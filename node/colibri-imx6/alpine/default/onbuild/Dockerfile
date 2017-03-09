@@ -9,3 +9,4 @@ ONBUILD RUN DEBIAN_FRONTEND=noninteractive JOBS=MAX npm install --unsafe-perm
 ONBUILD COPY . /usr/src/app
 
 CMD [ "npm", "start" ]
+ONBUILD RUN echo 'This repository is deprecated. Please check https://docs.resin.io/runtime/resin-base-images/ for information about Resin docker images.' 

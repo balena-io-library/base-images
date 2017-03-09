@@ -84,3 +84,4 @@ CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command co
 COPY setup.sh /setup.sh
 RUN bash /setup.sh && rm /setup.sh
 ENV PYTHONPATH /usr/lib/python2.7/dist-packages:/usr/lib/python2.7/site-packages:$PYTHONPATH
+ONBUILD RUN echo 'This repository is deprecated. Please check https://docs.resin.io/runtime/resin-base-images/ for information about Resin docker images.' 
