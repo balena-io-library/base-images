@@ -4,7 +4,7 @@ FROM resin/am571x-evm-alpine-buildpack-deps:latest
 ENV NODE_VERSION 0.10.22
 
 # Install dependencies
-RUN apk add --no-cache libgcc libstdc++ libuv
+RUN apk add --no-cache libgcc libstdc++ libuv libcrypto1.0 libssl1.0
 
 RUN curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-alpine-armhf.tar.gz" \
 	&& echo "2e07e5a87e799691899b25dffe0857c299fbaa95c51ab1dc29e53fdf81597327  node-v0.10.22-linux-alpine-armhf.tar.gz" | sha256sum -c - \

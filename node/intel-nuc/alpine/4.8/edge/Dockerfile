@@ -4,7 +4,7 @@ FROM resin/intel-nuc-alpine-buildpack-deps:edge
 ENV NODE_VERSION 4.8.0
 
 # Install dependencies
-RUN apk add --no-cache libgcc libstdc++ libuv
+RUN apk add --no-cache libgcc libstdc++ libuv libcrypto1.0 libssl1.0
 
 RUN curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-alpine-amd64.tar.gz" \
 	&& echo "4c2277d4fe058613ba165d636508f904909fcfa6cc519baccf327d9373a77250  node-v4.8.0-linux-alpine-amd64.tar.gz" | sha256sum -c - \

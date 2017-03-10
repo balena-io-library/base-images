@@ -4,7 +4,7 @@ FROM resin/intel-edison-alpine-buildpack-deps:edge
 ENV NODE_VERSION 0.10.48
 
 # Install dependencies
-RUN apk add --no-cache libgcc libstdc++ libuv
+RUN apk add --no-cache libgcc libstdc++ libuv libcrypto1.0 libssl1.0
 
 RUN curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-alpine-i386.tar.gz" \
 	&& echo "b119c120eb887e2f02a7050029de819cf9bc566c999b171cec3f6ceb7572220d  node-v0.10.48-linux-alpine-i386.tar.gz" | sha256sum -c - \

@@ -4,7 +4,7 @@ FROM resin/intel-nuc-alpine-buildpack-deps:latest
 ENV NODE_VERSION 0.10.48
 
 # Install dependencies
-RUN apk add --no-cache libgcc libstdc++ libuv
+RUN apk add --no-cache libgcc libstdc++ libuv libcrypto1.0 libssl1.0
 
 RUN curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-alpine-amd64.tar.gz" \
 	&& echo "e4dbe1a37a741aaacde1e40ade4d52ad44b584df4cc354461f32e6251ecf12ac  node-v0.10.48-linux-alpine-amd64.tar.gz" | sha256sum -c - \
