@@ -4,7 +4,7 @@ FROM resin/beaglebone-green-alpine:latest
 ENV NODE_VERSION 5.12.0
 
 # Install dependencies
-RUN apk add --no-cache libgcc libstdc++ libuv
+RUN apk add --no-cache libgcc libstdc++ libuv libcrypto1.0 libssl1.0
 
 RUN buildDeps='curl' \
 	&& set -x \

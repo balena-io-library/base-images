@@ -4,7 +4,7 @@ FROM resin/cybertan-ze250-alpine-buildpack-deps:edge
 ENV NODE_VERSION 5.12.0
 
 # Install dependencies
-RUN apk add --no-cache libgcc libstdc++ libuv
+RUN apk add --no-cache libgcc libstdc++ libuv libcrypto1.0 libssl1.0
 
 RUN curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-alpine-i386.tar.gz" \
 	&& echo "eb49f6bb180b2ef05d723c337f996ed8a18e558d5d5c7d601728c07213037ca9  node-v5.12.0-linux-alpine-i386.tar.gz" | sha256sum -c - \

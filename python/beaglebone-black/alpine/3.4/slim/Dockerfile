@@ -10,7 +10,9 @@ ENV LANG C.UTF-8
 # install python dependencies
 RUN apk add --no-cache \
 		sqlite-libs \
-		libssl1.0
+		libssl1.0 \
+		libffi \
+		libbz2
 
 # key 63C7CC90: public key "Simon McVittie <smcv@pseudorandom.co.uk>" imported
 # key 3372DCFA: public key "Donald Stufft (dstufft) <donald@stufft.io>" imported

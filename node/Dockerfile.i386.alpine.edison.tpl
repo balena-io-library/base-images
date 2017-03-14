@@ -4,7 +4,7 @@ FROM #{FROM}
 ENV NODE_VERSION #{NODE_VERSION}
 
 # Install dependencies
-RUN apk add --no-cache libgcc libstdc++ libuv
+RUN apk add --no-cache libgcc libstdc++ libuv libcrypto1.0 libssl1.0
 
 RUN curl -SLO "#{BINARY_URL}" \
 	&& echo "#{CHECKSUM}" | sha256sum -c - \

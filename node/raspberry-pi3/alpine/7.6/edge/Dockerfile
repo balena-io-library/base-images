@@ -4,7 +4,7 @@ FROM resin/raspberry-pi3-alpine-buildpack-deps:edge
 ENV NODE_VERSION 7.6.0
 
 # Install dependencies
-RUN apk add --no-cache libgcc libstdc++ libuv
+RUN apk add --no-cache libgcc libstdc++ libuv libcrypto1.0 libssl1.0
 
 RUN curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-alpine-armhf.tar.gz" \
 	&& echo "ee0dd542f1a87741edc6f9f138c72f982e780bc0d10d71f818c805044691afee  node-v7.6.0-linux-alpine-armhf.tar.gz" | sha256sum -c - \

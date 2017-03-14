@@ -4,7 +4,7 @@ FROM resin/parallella-alpine-buildpack-deps:latest
 ENV NODE_VERSION 4.8.0
 
 # Install dependencies
-RUN apk add --no-cache libgcc libstdc++ libuv
+RUN apk add --no-cache libgcc libstdc++ libuv libcrypto1.0 libssl1.0
 
 RUN curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-alpine-armhf.tar.gz" \
 	&& echo "2a23b1c31c30d0bacac3202ab08cf59f94ad0ce9b864b9b73d18c1e03a5d3211  node-v4.8.0-linux-alpine-armhf.tar.gz" | sha256sum -c - \

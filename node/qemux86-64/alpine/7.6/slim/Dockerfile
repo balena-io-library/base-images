@@ -4,7 +4,7 @@ FROM resin/qemux86-64-alpine:latest
 ENV NODE_VERSION 7.6.0
 
 # Install dependencies
-RUN apk add --no-cache libgcc libstdc++ libuv
+RUN apk add --no-cache libgcc libstdc++ libuv libcrypto1.0 libssl1.0
 
 RUN buildDeps='curl' \
 	&& set -x \

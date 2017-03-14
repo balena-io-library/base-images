@@ -4,7 +4,7 @@ FROM resin/artik5-alpine-buildpack-deps:edge
 ENV NODE_VERSION 6.10.0
 
 # Install dependencies
-RUN apk add --no-cache libgcc libstdc++ libuv
+RUN apk add --no-cache libgcc libstdc++ libuv libcrypto1.0 libssl1.0
 
 RUN curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-alpine-armhf.tar.gz" \
 	&& echo "aa39e6fa304836c03e3581eda328f8e000edb1925433bb5cc4e8053d9aeb6fbe  node-v6.10.0-linux-alpine-armhf.tar.gz" | sha256sum -c - \

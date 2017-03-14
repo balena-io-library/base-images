@@ -4,7 +4,7 @@ FROM resin/qemux86-alpine-buildpack-deps:edge
 ENV NODE_VERSION 6.10.0
 
 # Install dependencies
-RUN apk add --no-cache libgcc libstdc++ libuv
+RUN apk add --no-cache libgcc libstdc++ libuv libcrypto1.0 libssl1.0
 
 RUN curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-alpine-i386.tar.gz" \
 	&& echo "d269d3a9f611ed4680ee0a38ae2bf3d8f03a6562d900fcba4f003c6d8edaacd1  node-v6.10.0-linux-alpine-i386.tar.gz" | sha256sum -c - \

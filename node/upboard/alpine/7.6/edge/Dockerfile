@@ -4,7 +4,7 @@ FROM resin/upboard-alpine-buildpack-deps:edge
 ENV NODE_VERSION 7.6.0
 
 # Install dependencies
-RUN apk add --no-cache libgcc libstdc++ libuv
+RUN apk add --no-cache libgcc libstdc++ libuv libcrypto1.0 libssl1.0
 
 RUN curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-alpine-amd64.tar.gz" \
 	&& echo "f257d5c9b6732fb05f6f85085eb02a1658ef1d4c8db2a13c413a7e91cac5ddf4  node-v7.6.0-linux-alpine-amd64.tar.gz" | sha256sum -c - \
