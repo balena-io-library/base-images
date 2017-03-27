@@ -10,7 +10,9 @@ ENV LANG C.UTF-8
 # install python dependencies
 RUN apk add --no-cache \
 		sqlite-libs \
-		libssl1.0
+		libssl1.0 \
+		libffi \
+		libbz2
 
 # key 63C7CC90: public key "Simon McVittie <smcv@pseudorandom.co.uk>" imported
 # key 3372DCFA: public key "Donald Stufft (dstufft) <donald@stufft.io>" imported
@@ -99,4 +101,3 @@ RUN set -x \
 
 CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command could be found in Dockerfile Guide section in our Docs. Here's the link: http://docs.resin.io/deployment/dockerfile"]
 ENV PYTHONPATH /usr/lib/python2.7/dist-packages:/usr/lib/python2.7/site-packages:$PYTHONPATH
-ONBUILD RUN echo 'This repository is deprecated. Please check https://docs.resin.io/runtime/resin-base-images/ for information about Resin docker images.' 
