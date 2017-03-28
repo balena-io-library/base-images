@@ -61,6 +61,14 @@ function init_non_openrc()
 	fi
 }
 
+INITSYSTEM=$(echo "$INITSYSTEM" | awk '{print tolower($0)}')
+
+case "$INITSYSTEM" in
+	'1' | 'true')
+		INITSYSTEM='on'
+	;;
+esac
+
 if [ ! -z "$RESIN_SUPERVISOR_API_KEY" ] && [ ! -z "$RESIN_DEVICE_UUID" ]; then
 	# run this on resin device only
 	update_hostname
