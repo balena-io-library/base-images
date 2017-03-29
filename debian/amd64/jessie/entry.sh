@@ -92,6 +92,14 @@ function init_non_systemd()
 
 remove_buildtime_env_var
 
+INITSYSTEM=$(echo "$INITSYSTEM" | awk '{print tolower($0)}')
+
+case "$INITSYSTEM" in
+	'1' | 'true')
+		INITSYSTEM='on'
+	;;
+esac
+
 if [ ! -z "$RESIN" ] && [ ! -z "$RESIN_DEVICE_UUID" ]; then
 	# run this on resin device only
 	update_hostname
