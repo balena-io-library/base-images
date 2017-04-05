@@ -1,4 +1,4 @@
-FROM resin/ccon-01-alpine-python:3.6.0
+FROM resin/ccon-01-alpine-python:3.6.1
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app

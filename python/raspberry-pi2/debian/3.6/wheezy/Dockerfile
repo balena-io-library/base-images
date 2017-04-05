@@ -20,18 +20,18 @@ RUN gpg --keyserver keyring.debian.org --recv-keys 4DE8FF2A63C7CC90 \
 	&& gpg --keyserver pgp.mit.edu  --recv-key 6E3CBCE93372DCFA \
 	&& gpg --keyserver pgp.mit.edu --recv-keys 0x52a43a1e4b77b059
 
-ENV PYTHON_VERSION 3.6.0
+ENV PYTHON_VERSION 3.6.1
 
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
 ENV PYTHON_PIP_VERSION 9.0.1
 ENV PYTHON_PIP_SHA256 d03fabbc4fbf2fbfc2f97307960aef2b3ca4c880ecda993dcc35957e33d7cd76
 
-ENV SETUPTOOLS_SHA256 197b0c1e69a29c3a9eab446ef0a1884890da0c9784b8f556d0c64071819991d6
-ENV SETUPTOOLS_VERSION 28.6.1
+ENV SETUPTOOLS_SHA256 03aa511505850019575c571d8ffe0ca994644cc0cfd192224328e29a97dee86d
+ENV SETUPTOOLS_VERSION 34.3.3
 
 RUN set -x \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-armv7hf.tar.gz" \
-	&& echo "55463ab755447f15a70eba40f1366c98e4da9922352b64eed6832b2e45636209  Python-3.6.0.linux-armv7hf.tar.gz" | sha256sum -c - \
+	&& echo "8f93b45014190cd8fbd4dd7a35aa2c34260a7370cea9ba7ed78f9a4e52cb042d  Python-3.6.1.linux-armv7hf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-armv7hf.tar.gz" --strip-components=1 \
 	&& rm -rf "Python-$PYTHON_VERSION.linux-armv7hf.tar.gz" \
 	&& ldconfig \
