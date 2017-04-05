@@ -3,6 +3,86 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2017-03-31
+
+### Changed
+
+- Update the way hostname is set. The entryscript will only set the hostname for ResinOS 1.x devices.
+- Add `fg`command to fix the broken interactive shell when runs container locally.
+- INITSYSTEM will also accept 1 or 0, true or false.
+
+
+## 2017-03-27
+
+### Added
+
+- Add support for new board CloudConnector 01 (ccon-01) and Variscite DART-6UL(imx6ul-var-dart).
+
+### Changed
+
+- Update Node v7.7.3.
+- Update Upboard machine name: upboard -> up-board.
+
+
+
+## 2017-03-15
+
+### Added
+
+- Add support for new board Kitra710.
+
+
+## 2017-02-14
+
+### Changed
+
+- Add gpg key for Node v7.6.x.
+- Add libcrypto1.0 libssl1.0 as the dependencies for Alpine Node base images.
+- Add libffi libbz2 as the dependencies for Alpine Python base images.
+
+
+## 2017-03-08
+
+### Changed
+
+- Update Resin machine name to match with other components.
+	List of updated machine names:
+	raspberrypi* -> raspberry-pi*,
+	beaglebone -> beaglebone-black,
+	edison -> intel-edison,
+	nuc -> intel-nuc,
+	up-board -> upboard,
+	am57xx-evm -> am571x-evm,
+	intel-quark -> cybertan-ze250,
+	apalis-imx6 -> apalis-imx6q,
+	colibri-imx6 -> colibri-imx6dl,
+	odroid-ux3 -> odroid-xu4,
+	parallella-hdmi-resin -> parallella,
+	cubox-i -> hummingboard,
+	zc702-zynq7 -> zynq-xz702,
+	vab820-quad -> via-vab820-quad.
+- Add ONBUILD warning message for deprecated base images.
+
+
+## 2017-03-03
+
+### Changed
+
+- Update Node to v4.8.0, v6.10.0 and v7.6.0.
+- Update Golang to v1.7.5 and v1.8.
+
+
+## 2017-03-01
+
+### Added
+
+- Add support for new board Upboard.
+
+### Changed
+
+- Update QEMU to v2.7.0-resin-rc3.
+
+
 ## 2017-02-13
 
 ### Changed
