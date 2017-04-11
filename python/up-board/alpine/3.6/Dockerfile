@@ -18,14 +18,14 @@ RUN gpg --keyserver keyring.debian.org --recv-keys 4DE8FF2A63C7CC90 \
 	&& gpg --keyserver pgp.mit.edu  --recv-key 6E3CBCE93372DCFA \
 	&& gpg --keyserver pgp.mit.edu --recv-keys 0x52a43a1e4b77b059
 
-ENV PYTHON_VERSION 3.6.0
+ENV PYTHON_VERSION 3.6.1
 
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
 ENV PYTHON_PIP_VERSION 9.0.1
 ENV PYTHON_PIP_SHA256 d03fabbc4fbf2fbfc2f97307960aef2b3ca4c880ecda993dcc35957e33d7cd76
 
-ENV SETUPTOOLS_SHA256 197b0c1e69a29c3a9eab446ef0a1884890da0c9784b8f556d0c64071819991d6
-ENV SETUPTOOLS_VERSION 28.6.1
+ENV SETUPTOOLS_SHA256 03aa511505850019575c571d8ffe0ca994644cc0cfd192224328e29a97dee86d
+ENV SETUPTOOLS_VERSION 34.3.3
 
 # point Python at a system-provided certificate database. Otherwise, we might hit CERTIFICATE_VERIFY_FAILED.
 # https://www.python.org/dev/peps/pep-0476/#trust-database
@@ -33,7 +33,7 @@ ENV SSL_CERT_FILE /etc/ssl/certs/ca-certificates.crt
 
 RUN set -x \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-alpine-amd64.tar.gz" \
-	&& echo "8f520baba66a11f87dc1aa0c76241aa5600b9d16a2a680c1951ce4ace7c467a6  Python-3.6.0.linux-alpine-amd64.tar.gz" | sha256sum -c - \
+	&& echo "d949de343d5c500bd28de0bcb53e393e66a750f3dc258887d5073ba957d4a2b3  Python-3.6.1.linux-alpine-amd64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-alpine-amd64.tar.gz" --strip-components=1 \
 	&& rm -rf "Python-$PYTHON_VERSION.linux-alpine-amd64.tar.gz" \
 	&& mkdir -p /usr/src/python/setuptools \
