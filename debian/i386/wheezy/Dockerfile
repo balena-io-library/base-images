@@ -1,4 +1,4 @@
-FROM i386/debian:wheezy
+FROM i386/debian:wheezy-slim
 
 LABEL io.resin.architecture="i386"
 

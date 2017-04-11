@@ -1,4 +1,4 @@
-FROM i386/debian:jessie
+FROM i386/debian:jessie-slim
 
 LABEL io.resin.architecture="i386"
 

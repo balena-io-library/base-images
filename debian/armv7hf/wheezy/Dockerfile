@@ -1,4 +1,4 @@
-FROM armhf/debian:wheezy
+FROM armhf/debian:wheezy-slim
 
 LABEL io.resin.architecture="armv7hf" io.resin.qemu.version="2.7.0-resin-rc3-arm"
 

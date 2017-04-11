@@ -1,4 +1,4 @@
-FROM aarch64/debian:jessie
+FROM aarch64/debian:jessie-slim
 
 LABEL io.resin.architecture="aarch64" io.resin.qemu.version="2.7.0-resin-rc3-aarch64"
 
