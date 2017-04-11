@@ -23,6 +23,7 @@ for arch in $archs; do
 		baseImage='armhf/debian'
 		label='io.resin.architecture="armv7hf" io.resin.qemu.version="'$QEMU_VERSION'"'
 		suites='jessie wheezy sid'
+		variant='-slim'
 		qemu='COPY qemu-arm-static /usr/bin/'
 		qemuCpu=''
 	;;
@@ -30,6 +31,7 @@ for arch in $archs; do
 		baseImage='i386/debian'
 		label='io.resin.architecture="i386"'
 		suites='jessie wheezy'
+		variant='-slim'
 		qemu=''
 		qemuCpu=''
 	;;
@@ -37,6 +39,7 @@ for arch in $archs; do
 		baseImage='debian'
 		label='io.resin.architecture="amd64"'
 		suites='jessie wheezy'
+		variant='-slim'
 		qemu=''
 		qemuCpu=''
 	;;
@@ -44,6 +47,7 @@ for arch in $archs; do
 		baseImage='armel/debian'
 		label='io.resin.architecture="armv5e" io.resin.qemu.version="'$QEMU_VERSION'"'
 		suites='jessie wheezy'
+		variant=''
 		qemu='COPY qemu-arm-static /usr/bin/'
 		qemuCpu='ENV QEMU_CPU arm1026'
 	;;
@@ -51,6 +55,7 @@ for arch in $archs; do
 		baseImage='aarch64/debian'
 		label='io.resin.architecture="aarch64" io.resin.qemu.version="'$QEMU_AARCH64_VERSION'"'
 		suites='jessie'
+		variant='-slim'
 		qemu='COPY qemu-aarch64-static /usr/bin/'
 		qemuCpu=''
 	;;
@@ -59,7 +64,7 @@ for arch in $archs; do
 
 		dockerfilePath=$arch/$suite
 		mkdir -p $dockerfilePath
-		sed -e s~#{FROM}~$baseImage:$suite~g \
+		sed -e s~#{FROM}~$baseImage:$suite$variant~g \
 			-e s~#{LABEL}~"$label"~g \
 			-e s~#{QEMU_CPU}~"$qemuCpu"~g \
 			-e s~#{QEMU}~"$qemu"~g Dockerfile.tpl > $dockerfilePath/Dockerfile
