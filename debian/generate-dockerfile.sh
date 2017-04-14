@@ -22,7 +22,7 @@ for arch in $archs; do
 	'armv7hf')
 		baseImage='armhf/debian'
 		label='io.resin.architecture="armv7hf" io.resin.qemu.version="'$QEMU_VERSION'"'
-		suites='jessie wheezy sid'
+		suites='jessie wheezy sid stretch'
 		variant='-slim'
 		qemu='COPY qemu-arm-static /usr/bin/'
 		qemuCpu=''
@@ -30,7 +30,7 @@ for arch in $archs; do
 	'i386')
 		baseImage='i386/debian'
 		label='io.resin.architecture="i386"'
-		suites='jessie wheezy'
+		suites='jessie wheezy stretch'
 		variant='-slim'
 		qemu=''
 		qemuCpu=''
@@ -38,7 +38,7 @@ for arch in $archs; do
 	'amd64')
 		baseImage='debian'
 		label='io.resin.architecture="amd64"'
-		suites='jessie wheezy'
+		suites='jessie wheezy stretch'
 		variant='-slim'
 		qemu=''
 		qemuCpu=''
@@ -46,7 +46,7 @@ for arch in $archs; do
 	'armel')
 		baseImage='armel/debian'
 		label='io.resin.architecture="armv5e" io.resin.qemu.version="'$QEMU_VERSION'"'
-		suites='jessie wheezy'
+		suites='jessie wheezy stretch'
 		variant=''
 		qemu='COPY qemu-arm-static /usr/bin/'
 		qemuCpu='ENV QEMU_CPU arm1026'
@@ -54,7 +54,7 @@ for arch in $archs; do
 	'aarch64')
 		baseImage='aarch64/debian'
 		label='io.resin.architecture="aarch64" io.resin.qemu.version="'$QEMU_AARCH64_VERSION'"'
-		suites='jessie'
+		suites='jessie stretch'
 		variant='-slim'
 		qemu='COPY qemu-aarch64-static /usr/bin/'
 		qemuCpu=''
