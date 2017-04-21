@@ -24,9 +24,7 @@ ENV PYTHON_VERSION 2.7.12
 
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
 ENV PYTHON_PIP_VERSION 9.0.1
-ENV PYTHON_PIP_SHA256 d03fabbc4fbf2fbfc2f97307960aef2b3ca4c880ecda993dcc35957e33d7cd76
 
-ENV SETUPTOOLS_SHA256 03aa511505850019575c571d8ffe0ca994644cc0cfd192224328e29a97dee86d
 ENV SETUPTOOLS_VERSION 34.3.3
 
 RUN set -x \
@@ -39,24 +37,14 @@ RUN set -x \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-armv6hf.tar.gz" --strip-components=1 \
 	&& rm -rf "Python-$PYTHON_VERSION.linux-armv6hf.tar.gz" \
 	&& ldconfig \
-	&& mkdir -p /usr/src/python/setuptools \
-	&& curl -SLO https://github.com/pypa/setuptools/archive/v$SETUPTOOLS_VERSION.tar.gz \
-	&& echo "$SETUPTOOLS_SHA256  v$SETUPTOOLS_VERSION.tar.gz" > v$SETUPTOOLS_VERSION.tar.gz.sha256sum \
-	&& sha256sum -c v$SETUPTOOLS_VERSION.tar.gz.sha256sum \
-	&& tar -xzC /usr/src/python/setuptools --strip-components=1 -f v$SETUPTOOLS_VERSION.tar.gz \
-	&& rm -rf v$SETUPTOOLS_VERSION.tar.gz* \
-	&& cd /usr/src/python/setuptools \
-	&& python2 bootstrap.py \
-	&& python2 easy_install.py . \
-	&& mkdir -p /usr/src/python/pip \
-	&& curl -SL "https://github.com/pypa/pip/archive/$PYTHON_PIP_VERSION.tar.gz" -o pip.tar.gz \
-	&& echo "$PYTHON_PIP_SHA256  pip.tar.gz" > pip.tar.gz.sha256sum \
-	&& sha256sum -c pip.tar.gz.sha256sum \
-	&& tar -xzC /usr/src/python/pip --strip-components=1 -f pip.tar.gz \
-	&& rm pip.tar.gz* \
-	&& cd /usr/src/python/pip \
-	&& python2 setup.py install \
-	&& cd .. \
+	&& if [ ! -e /usr/local/bin/pip ]; then : \
+		&& curl -SLO "https://raw.githubusercontent.com/pypa/get-pip/430ba37776ae2ad89f794c7a43b90dc23bac334c/get-pip.py" \
+		&& echo "19dae841a150c86e2a09d475b5eb0602861f2a5b7761ec268049a662dbd2bd0c  get-pip.py" | sha256sum -c - \
+		&& python get-pip.py \
+		&& rm get-pip.py \
+	; fi \
+	&& pip install --no-cache-dir --upgrade --force-reinstall pip=="$PYTHON_PIP_VERSION" setuptools=="$SETUPTOOLS_VERSION" \
+	&& [ "$(pip list |tac|tac| awk -F '[ ()]+' '$1 == "pip" { print $2; exit }')" = "$PYTHON_PIP_VERSION" ] \
 	&& find /usr/local \
 		\( -type d -a -name test -o -name tests \) \
 		-o \( -type f -a -name '*.pyc' -o -name '*.pyo' \) \
