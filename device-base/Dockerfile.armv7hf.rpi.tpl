@@ -7,7 +7,7 @@ RUN #{SOURCES_LIST}
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		less \
 		libraspberrypi-bin \
-		module-init-tools \
+		kmod \
 		nano \
 		net-tools \
 		ifupdown \
