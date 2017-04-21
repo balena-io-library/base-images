@@ -1,4 +1,4 @@
-FROM debian:wheezy
+FROM debian:wheezy-slim
 
 LABEL io.resin.architecture="amd64"
 

@@ -1,4 +1,4 @@
-FROM armhf/debian:jessie
+FROM armhf/debian:jessie-slim
 
 LABEL io.resin.architecture="armv7hf" io.resin.qemu.version="2.7.0-resin-rc3-arm"
 
