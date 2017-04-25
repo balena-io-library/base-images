@@ -4,7 +4,7 @@ FROM resin/raspberrypi3-alpine-buildpack-deps:latest
 ENV NODE_VERSION 0.10.48
 
 # Install dependencies
-RUN apk add --no-cache libgcc libstdc++ libuv
+RUN apk add --no-cache libgcc libstdc++ libuv libcrypto1.0 libssl1.0
 
 RUN curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-alpine-armhf.tar.gz" \
 	&& echo "6f74bc6f62c9b9e3ea60200185dd0e9b87e24f80d29e58bb2a446c06ae820425  node-v0.10.48-linux-alpine-armhf.tar.gz" | sha256sum -c - \
@@ -14,4 +14,3 @@ RUN curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v
 	&& rm -rf /tmp/*
 
 CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command could be found in Dockerfile Guide section in our Docs. Here's the link: http://docs.resin.io/deployment/dockerfile"]
-ONBUILD RUN echo 'This repository is deprecated. Please check https://docs.resin.io/runtime/resin-base-images/ for information about Resin docker images.' 
