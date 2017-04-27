@@ -1,6 +1,15 @@
 #!/bin/bash
 set -e
 
+# for rpi family
+rpi_sourcelist='echo "deb http://archive.raspbian.org/raspbian #{SUITE} main contrib non-free rpi firmware" >>  /etc/apt/sources.list /\
+	\&\& apt-key adv --keyserver pgp.mit.edu  --recv-key 0x9165938D90FDDD2E /\
+	\&\& echo "deb http://archive.raspberrypi.org/debian #{SUITE} main" >>  /etc/apt/sources.list.d/raspi.list /\
+	\&\& apt-key adv --keyserver pgp.mit.edu  --recv-key 0x82B129927FA3303E'
+
+rpi_sourcelist_stretch='echo "deb http://archive.raspbian.org/raspbian #{SUITE} main contrib non-free rpi firmware" >>  /etc/apt/sources.list /\
+	\&\& apt-key adv --keyserver pgp.mit.edu  --recv-key 0x9165938D90FDDD2E'
+
 # for beaglebone
 bb_sourceslist_cmd='echo "deb [arch=armhf] http://repos.rcn-ee.net/debian/ #{SUITE} main" >> /etc/apt/sources.list'
 bb_key_cmd='apt-key adv --keyserver keyserver.ubuntu.com --recv-key D284E608A4C46402'
@@ -22,7 +31,7 @@ intel_edison_wheezy_upm_commit='13e2e7aeb8769707b91b62f23d6669d3ee1a8651'
 
 devices='raspberry-pi raspberry-pi2 beaglebone-black intel-edison intel-nuc via-vab820-quad zc702-zynq7 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green cybertan-ze250 artik710 am571x-evm up-board kitra710 imx6ul-var-dart ccon-01'
 fedora_devices=' raspberry-pi2 beaglebone-black via-vab820-quad zc702-zynq7 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green intel-nuc qemux86-64 artik710 am571x-evm kitra710 up-board imx6ul-var-dart ccon-01 '
-suites='jessie wheezy'
+suites='jessie wheezy stretch'
 alpine_suites='edge 3.2 3.3 3.4 3.5'
 fedora_suites='23 24'
 
@@ -252,13 +261,15 @@ for device in $devices; do
 		for suite in $suites; do
 			mkdir -p $debian_dockerfilePath/$suite
 
-			if [[ $device == "beaglebone"* ]]; then
+			case "$device" in
+			"beaglebone"*)
 				case "$suite" in
 				'wheezy')
 					sourcelist="$bb_sourceslist_cmd \&\& $bb_sourceslist_wheezy_cmd"
 					key="$bb_key_cmd \&\& $bb_key_wheezy_cmd"
 				;;
-				'jessie')
+				*)
+					# jessie and stretch
 					sourcelist="$bb_sourceslist_cmd"
 					key="$bb_key_cmd"
 				;;
@@ -269,31 +280,49 @@ for device in $devices; do
 					-e "s@#{SUITE}@$suite@g" \
 					-e "s@#{KEYS}@$key@g" \
 					-e "s@#{DEV_TYPE}@$device@g" $template > $debian_dockerfilePath/$suite/Dockerfile
-			else
-				if [[ $device == "intel-edison"* ]]; then
-					case "$suite" in
-					'wheezy')
-						upm_commit=$intel_edison_wheezy_upm_commit
-						upm_version=$intel_edison_wheezy_upm_version
-					;;
-					'jessie')
-						upm_commit=$intel_edison_upm_commit
-						upm_version=$intel_edison_upm_version
-					;;
-					esac
-					sed -e "s@#{FROM}@resin/$baseImage:$suite@g" \
-						-e "s@#{SUITE}@$suite@g" \
-						-e "s@#{MRAA_COMMIT}@$intel_edison_mraa_commit@g" \
-						-e "s@#{MRAA_VERSION}@$intel_edison_mraa_version@g" \
-						-e "s@#{UPM_COMMIT}@$upm_commit@g" \
-						-e "s@#{UPM_VERSION}@$upm_version@g" \
-						-e "s@#{DEV_TYPE}@$device@g" $template > $debian_dockerfilePath/$suite/Dockerfile
-				else
-					sed -e s~#{FROM}~resin/$baseImage:$suite~g \
-						-e s~#{SUITE}~$suite~g \
-						-e s@#{DEV_TYPE}@$device@ $template > $debian_dockerfilePath/$suite/Dockerfile
-				fi
-			fi
+			;;
+			"intel-edison"*)
+				case "$suite" in
+				'wheezy')
+					upm_commit=$intel_edison_wheezy_upm_commit
+					upm_version=$intel_edison_wheezy_upm_version
+				;;
+				*)
+					# jessie and stretch
+					upm_commit=$intel_edison_upm_commit
+					upm_version=$intel_edison_upm_version
+				;;
+				esac
+				sed -e "s@#{FROM}@resin/$baseImage:$suite@g" \
+					-e "s@#{SUITE}@$suite@g" \
+					-e "s@#{MRAA_COMMIT}@$intel_edison_mraa_commit@g" \
+					-e "s@#{MRAA_VERSION}@$intel_edison_mraa_version@g" \
+					-e "s@#{UPM_COMMIT}@$upm_commit@g" \
+					-e "s@#{UPM_VERSION}@$upm_version@g" \
+					-e "s@#{DEV_TYPE}@$device@g" $template > $debian_dockerfilePath/$suite/Dockerfile
+			;;
+			"raspberry"*)
+				case "$suite" in
+				'stretch')
+					# raspberrypi foundation doesn't have stretch yet.
+					sourcelist=$rpi_sourcelist_stretch
+				;;
+				*)
+					# jessie and wheezy
+					sourcelist=$rpi_sourcelist
+				;;
+				esac
+				sed -e "s@#{FROM}@resin/$baseImage:$suite@g" \
+					-e "s@#{SOURCES_LIST}@$sourcelist@g" \
+					-e "s@#{SUITE}@$suite@g" \
+					-e "s@#{DEV_TYPE}@$device@g" $template > $debian_dockerfilePath/$suite/Dockerfile
+			;;
+			*)
+				sed -e s~#{FROM}~resin/$baseImage:$suite~g \
+					-e s~#{SUITE}~$suite~g \
+					-e s@#{DEV_TYPE}@$device@ $template > $debian_dockerfilePath/$suite/Dockerfile
+			;;
+			esac
 		done
 	fi
 

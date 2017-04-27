@@ -4,7 +4,7 @@ LABEL io.resin.device-type="colibri-imx6dl"
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		less \
-		module-init-tools \
+		kmod \
 		nano \
 		net-tools \
 		ifupdown \	
