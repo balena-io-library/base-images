@@ -18,14 +18,12 @@ RUN gpg --keyserver keyring.debian.org --recv-keys 4DE8FF2A63C7CC90 \
 	&& gpg --keyserver pgp.mit.edu  --recv-key 6E3CBCE93372DCFA \
 	&& gpg --keyserver pgp.mit.edu --recv-keys 0x52a43a1e4b77b059
 
-ENV PYTHON_VERSION 3.6.0
+ENV PYTHON_VERSION 3.6.1
 
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
 ENV PYTHON_PIP_VERSION 9.0.1
-ENV PYTHON_PIP_SHA256 d03fabbc4fbf2fbfc2f97307960aef2b3ca4c880ecda993dcc35957e33d7cd76
 
-ENV SETUPTOOLS_SHA256 197b0c1e69a29c3a9eab446ef0a1884890da0c9784b8f556d0c64071819991d6
-ENV SETUPTOOLS_VERSION 28.6.1
+ENV SETUPTOOLS_VERSION 34.3.3
 
 # point Python at a system-provided certificate database. Otherwise, we might hit CERTIFICATE_VERIFY_FAILED.
 # https://www.python.org/dev/peps/pep-0476/#trust-database
@@ -33,27 +31,17 @@ ENV SSL_CERT_FILE /etc/ssl/certs/ca-certificates.crt
 
 RUN set -x \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-alpine-armhf.tar.gz" \
-	&& echo "01e9faafa87d5f5ca49d50971a4a1eead18982f9e2cd01880a3651a1bdbfc9f1  Python-3.6.0.linux-alpine-armhf.tar.gz" | sha256sum -c - \
+	&& echo "34eec398575e3914066534c5b1e1c591ad49e0b0c35dd3a3367dcde1c1877975  Python-3.6.1.linux-alpine-armhf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-alpine-armhf.tar.gz" --strip-components=1 \
 	&& rm -rf "Python-$PYTHON_VERSION.linux-alpine-armhf.tar.gz" \
-	&& mkdir -p /usr/src/python/setuptools \
-	&& curl -SLO https://github.com/pypa/setuptools/archive/v$SETUPTOOLS_VERSION.tar.gz \
-	&& echo "$SETUPTOOLS_SHA256  v$SETUPTOOLS_VERSION.tar.gz" > v$SETUPTOOLS_VERSION.tar.gz.sha256sum \
-	&& sha256sum -c v$SETUPTOOLS_VERSION.tar.gz.sha256sum \
-	&& tar -xzC /usr/src/python/setuptools --strip-components=1 -f v$SETUPTOOLS_VERSION.tar.gz \
-	&& rm -rf v$SETUPTOOLS_VERSION.tar.gz* \
-	&& cd /usr/src/python/setuptools \
-	&& python3 bootstrap.py \
-	&& python3 easy_install.py . \
-	&& mkdir -p /usr/src/python/pip \
-	&& curl -SL "https://github.com/pypa/pip/archive/$PYTHON_PIP_VERSION.tar.gz" -o pip.tar.gz \
-	&& echo "$PYTHON_PIP_SHA256  pip.tar.gz" > pip.tar.gz.sha256sum \
-	&& sha256sum -c pip.tar.gz.sha256sum \
-	&& tar -xzC /usr/src/python/pip --strip-components=1 -f pip.tar.gz \
-	&& rm pip.tar.gz* \
-	&& cd /usr/src/python/pip \
-	&& python3 setup.py install \
-	&& cd .. \
+	&& if [ ! -e /usr/local/bin/pip3 ]; then : \
+		&& curl -SLO "https://raw.githubusercontent.com/pypa/get-pip/430ba37776ae2ad89f794c7a43b90dc23bac334c/get-pip.py" \
+		&& echo "19dae841a150c86e2a09d475b5eb0602861f2a5b7761ec268049a662dbd2bd0c  get-pip.py" | sha256sum -c - \
+		&& python3 get-pip.py \
+		&& rm get-pip.py \
+	; fi \
+	&& pip3 install --no-cache-dir --upgrade --force-reinstall pip=="$PYTHON_PIP_VERSION" setuptools=="$SETUPTOOLS_VERSION" \
+	&& [ "$(pip list |tac|tac| awk -F '[ ()]+' '$1 == "pip" { print $2; exit }')" = "$PYTHON_PIP_VERSION" ] \
 	&& find /usr/local \
 		\( -type d -a -name test -o -name tests \) \
 		-o \( -type f -a -name '*.pyc' -o -name '*.pyo' \) \
@@ -84,7 +72,7 @@ RUN set -x \
 # make some useful symlinks that are expected to exist
 RUN cd /usr/local/bin \
 	&& ln -sf pip3 pip \
-	&& ln -sf easy_install-3.6 easy_install \
+	&& { [ -e easy_install ] || ln -s easy_install-* easy_install; } \
 	&& ln -sf idle3 idle \
 	&& ln -sf pydoc3 pydoc \
 	&& ln -sf python3 python \
@@ -92,4 +80,3 @@ RUN cd /usr/local/bin \
 
 CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command could be found in Dockerfile Guide section in our Docs. Here's the link: http://docs.resin.io/deployment/dockerfile"]
 ENV PYTHONPATH /usr/lib/python3.5/site-packages:$PYTHONPATH
-ONBUILD RUN echo 'This repository is deprecated. Please check https://docs.resin.io/runtime/resin-base-images/ for information about Resin docker images.' 
