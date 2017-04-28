@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		ca-certificates \
 		findutils \
 		gnupg \
+		dirmngr \
 	&& rm -rf /var/lib/apt/lists/*
 
 COPY 01_nodoc /etc/dpkg/dpkg.cfg.d/
