@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2017-05-07
+
+### Changed
+
+- Add Node v4.9.0.
+
+
+## 2017-04-27
+
+### Changed
+
+- Change Raspberry Pi 3 machine name to raspberrypi3.
+- Replace module-init-tools with kmod since it is deprecated.
+
+### Added
+
+- Add support for next Debian version: Stretch.
+
+
+## 2017-04-21
+
+### Changed
+
+- Change the base image for all Debian images to slim variant.
+
+
 ## 2017-04-14
 
 ### Changed
