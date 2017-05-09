@@ -19,8 +19,8 @@ bb_sourceslist_wheezy_cmd='echo "deb http://debian.beagleboard.org/packages whee
 bb_key_wheezy_cmd='apt-key adv --keyserver keyserver.ubuntu.com --recv-key B2710B8359890110'
 
 # intel-edison
-intel_edison_mraa_version='1.5.1'
-intel_edison_mraa_commit='6f9b470d8d25e2c8ba1586cd9d707b870ab30010'
+intel_edison_mraa_version='1.7.0'
+intel_edison_mraa_commit='8ddbcde84e2d146bc0f9e38504d6c89c14291480'
 
 intel_edison_upm_version='1.0.2'
 intel_edison_upm_commit='cde747439f7ada792509dd2b56075d4744ac15e4'
