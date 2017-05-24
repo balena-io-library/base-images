@@ -246,23 +246,26 @@ for device in $devices; do
 
 		# Only for intel intel-edison
 		if [ $device == "intel-edison" ]; then
-			sed -e s~#{FROM}~resin/$device-buildpack-deps:jessie~g \
-				-e s~#{BINARY_URL}~$binaryUrl~g \
-				-e s~#{NODE_VERSION}~$nodeVersion~g \
-				-e s~#{CHECKSUM}~"$checksum"~g \
-				-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.i386.edison.tpl > $debian_dockerfilePath/Dockerfile
+			if ! version_ge "$nodeVersion" "7"; then
+				# mraa doesn't support Node.js 7.0.0+ so we will use generic template for them.
+				sed -e s~#{FROM}~resin/$device-buildpack-deps:jessie~g \
+					-e s~#{BINARY_URL}~$binaryUrl~g \
+					-e s~#{NODE_VERSION}~$nodeVersion~g \
+					-e s~#{CHECKSUM}~"$checksum"~g \
+					-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.i386.edison.tpl > $debian_dockerfilePath/Dockerfile
 
-			sed -e s~#{FROM}~resin/$device-buildpack-deps:wheezy~g \
-				-e s~#{BINARY_URL}~$binaryUrl~g \
-				-e s~#{NODE_VERSION}~$wheezyNodeVersion~g \
-				-e s~#{CHECKSUM}~"$wheezyChecksum"~g \
-				-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.i386.edison.tpl > $device/debian/$wheezyBaseVersion/wheezy/Dockerfile
+				sed -e s~#{FROM}~resin/$device-buildpack-deps:wheezy~g \
+					-e s~#{BINARY_URL}~$binaryUrl~g \
+					-e s~#{NODE_VERSION}~$wheezyNodeVersion~g \
+					-e s~#{CHECKSUM}~"$wheezyChecksum"~g \
+					-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.i386.edison.tpl > $device/debian/$wheezyBaseVersion/wheezy/Dockerfile
 
-			sed -e s~#{FROM}~resin/$device-debian:jessie~g \
-				-e s~#{BINARY_URL}~$binaryUrl~g \
-				-e s~#{NODE_VERSION}~$nodeVersion~g \
-				-e s~#{CHECKSUM}~"$checksum"~g \
-				-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.i386.edison.slim.tpl > $debian_dockerfilePath/slim/Dockerfile
+				sed -e s~#{FROM}~resin/$device-debian:jessie~g \
+					-e s~#{BINARY_URL}~$binaryUrl~g \
+					-e s~#{NODE_VERSION}~$nodeVersion~g \
+					-e s~#{CHECKSUM}~"$checksum"~g \
+					-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.i386.edison.slim.tpl > $debian_dockerfilePath/slim/Dockerfile
+			fi
 		fi
 
 		# Fedora
