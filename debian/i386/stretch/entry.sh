@@ -58,7 +58,9 @@ function init_systemd()
 {
 	GREEN='\033[0;32m'
 	echo -e "${GREEN}Systemd init system enabled."
-	env > /etc/docker.env
+	for var in $(compgen -e); do
+		printf '%q="%q"\n' "$var" "${!var}"
+	done > /etc/docker.env
 
 	printf '#!/bin/bash\n exec ' > /etc/resinApp.sh
 	printf '%q ' "$@" >> /etc/resinApp.sh
