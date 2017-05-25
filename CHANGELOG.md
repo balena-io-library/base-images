@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2017-05-24
+
+### Changed
+
+- Add Node v7.10.0, v6.10.3 and v4.8.3.
+- Update UPM to v1.3.0.
+- Update mraa to v1.7.0.
+- Fix issue with env var with spaces by adding quotes to the env var value in docker.env file.
+
+
+## 2017-05-10
+
+### Changed
+
+- Redirect fg stderr to /dev/null to make sure it will not leak to user logs.
+- Fix issue with failing to download gpg since dirmngr is missing in Debian Stretch.
+
+
 ## 2017-05-07
 
 ### Changed
