@@ -1,4 +1,4 @@
-FROM resin/intel-nuc-alpine-python:2.7.12
+FROM resin/intel-nuc-alpine-python:2.7.13
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app

@@ -20,7 +20,7 @@ RUN gpg --keyserver keyring.debian.org --recv-keys 4DE8FF2A63C7CC90 \
 	&& gpg --keyserver pgp.mit.edu  --recv-key 6E3CBCE93372DCFA \
 	&& gpg --keyserver pgp.mit.edu --recv-keys 0x52a43a1e4b77b059
 
-ENV PYTHON_VERSION 2.7.12
+ENV PYTHON_VERSION 2.7.13
 
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
 ENV PYTHON_PIP_VERSION 9.0.1
@@ -33,17 +33,17 @@ RUN set -x \
 	' \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends && rm -rf /var/lib/apt/lists/* \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-amd64.tar.gz" \
-	&& echo "ef0417a1482c70429f293c7334c459d6f81be766c0d6418d39b6f211b7fe7c70  Python-2.7.12.linux-amd64.tar.gz" | sha256sum -c - \
+	&& echo "8f6ca55b8430603a92131e639b58dc3a22a546c05e8eccfec4b1d473b3b8c5eb  Python-2.7.13.linux-amd64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-amd64.tar.gz" --strip-components=1 \
 	&& rm -rf "Python-$PYTHON_VERSION.linux-amd64.tar.gz" \
 	&& ldconfig \
-	&& if [ ! -e /usr/local/bin/pip ]; then : \
+	&& if [ ! -e /usr/local/bin/pip3 ]; then : \
 		&& curl -SLO "https://raw.githubusercontent.com/pypa/get-pip/430ba37776ae2ad89f794c7a43b90dc23bac334c/get-pip.py" \
 		&& echo "19dae841a150c86e2a09d475b5eb0602861f2a5b7761ec268049a662dbd2bd0c  get-pip.py" | sha256sum -c - \
-		&& python get-pip.py \
+		&& python3 get-pip.py \
 		&& rm get-pip.py \
 	; fi \
-	&& pip install --no-cache-dir --upgrade --force-reinstall pip=="$PYTHON_PIP_VERSION" setuptools=="$SETUPTOOLS_VERSION" \
+	&& pip3 install --no-cache-dir --upgrade --force-reinstall pip=="$PYTHON_PIP_VERSION" setuptools=="$SETUPTOOLS_VERSION" \
 	&& [ "$(pip list |tac|tac| awk -F '[ ()]+' '$1 == "pip" { print $2; exit }')" = "$PYTHON_PIP_VERSION" ] \
 	&& find /usr/local \
 		\( -type d -a -name test -o -name tests \) \
@@ -54,7 +54,7 @@ RUN set -x \
 	&& rm -rf /usr/src/python ~/.cache
 
 # install "virtualenv", since the vast majority of users of this image will want it
-RUN pip install --no-cache-dir virtualenv
+RUN pip3 install --no-cache-dir virtualenv
 
 # install dbus-python dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -84,6 +84,15 @@ RUN set -x \
 	&& cd / \
 	&& apt-get purge -y --auto-remove $buildDeps \
 	&& rm -rf /usr/src/dbus-python
+
+# make some useful symlinks that are expected to exist
+RUN cd /usr/local/bin \
+	&& ln -sf pip3 pip \
+	&& { [ -e easy_install ] || ln -s easy_install-* easy_install; } \
+	&& ln -sf idle3 idle \
+	&& ln -sf pydoc3 pydoc \
+	&& ln -sf python3 python \
+	&& ln -sf python3-config python-config
 
 CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command could be found in Dockerfile Guide section in our Docs. Here's the link: http://docs.resin.io/deployment/dockerfile"]
 ENV PYTHONPATH /usr/lib/python2.7/dist-packages:/usr/lib/python2.7/site-packages:$PYTHONPATH
