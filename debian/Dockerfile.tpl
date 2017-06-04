@@ -7,6 +7,9 @@ ENV DEBIAN_FRONTEND noninteractive
 
 #{QEMU}
 #{QEMU_CPU}
+COPY resin-xbuild /usr/bin/
+RUN ln -s resin-xbuild /usr/bin/cross-build-start \
+	&& ln -s resin-xbuild /usr/bin/cross-build-end
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		sudo \
