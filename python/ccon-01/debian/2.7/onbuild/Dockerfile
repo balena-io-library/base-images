@@ -1,4 +1,4 @@
-FROM resin/ccon-01-python:2.7.12
+FROM resin/ccon-01-python:2.7.13
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app

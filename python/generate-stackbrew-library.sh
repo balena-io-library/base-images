@@ -56,7 +56,7 @@ function generate_library(){
 
 declare -A aliases
 aliases=(
-	[2.7.12]='2 latest'
+	[2.7.13]='2 latest'
 	[3.6.1]='3'
 	[2]='latest'
 )
