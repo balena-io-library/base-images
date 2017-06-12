@@ -92,7 +92,11 @@ function init_non_systemd()
 		pid=$!
 		wait "$pid"
 		exit_code=$?
-		fg &> /dev/null || exit "$exit_code"
+		if kill -0 "$pid" &> /dev/null ; then
+			fg > /dev/null
+		else
+			exit "$exit_code"
+		fi
 	else
 		echo "Command not found: $1"
 		exit 1
