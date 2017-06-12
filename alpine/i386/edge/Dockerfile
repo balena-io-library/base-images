@@ -3,6 +3,9 @@ FROM i386/alpine:edge
 LABEL io.resin.architecture="i386"
 
 
+COPY resin-xbuild /usr/bin/
+RUN ln -s resin-xbuild /usr/bin/cross-build-start \
+	&& ln -s resin-xbuild /usr/bin/cross-build-end
 
 RUN apk add --update \
 	bash \

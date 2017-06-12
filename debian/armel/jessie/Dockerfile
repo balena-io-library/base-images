@@ -1,12 +1,15 @@
 FROM armel/debian:jessie
 
-LABEL io.resin.architecture="armv5e" io.resin.qemu.version="2.7.0-resin-rc3-arm"
+LABEL io.resin.architecture="armv5e" io.resin.qemu.version="2.9.0.resin1-arm"
 
 ENV LC_ALL C.UTF-8
 ENV DEBIAN_FRONTEND noninteractive
 
 COPY qemu-arm-static /usr/bin/
 ENV QEMU_CPU arm1026
+COPY resin-xbuild /usr/bin/
+RUN ln -s resin-xbuild /usr/bin/cross-build-start \
+	&& ln -s resin-xbuild /usr/bin/cross-build-end
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		sudo \

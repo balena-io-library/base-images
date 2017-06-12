@@ -3,6 +3,9 @@ FROM #{FROM}
 #{LABEL}
 
 #{QEMU}
+COPY resin-xbuild /usr/bin/
+RUN ln -s resin-xbuild /usr/bin/cross-build-start \
+	&& ln -s resin-xbuild /usr/bin/cross-build-end
 
 RUN apk add --update \
 	bash \
