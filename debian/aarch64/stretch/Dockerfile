@@ -1,12 +1,15 @@
 FROM aarch64/debian:stretch-slim
 
-LABEL io.resin.architecture="aarch64" io.resin.qemu.version="2.7.0-resin-rc3-aarch64"
+LABEL io.resin.architecture="aarch64" io.resin.qemu.version="2.9.0.resin1-aarch64"
 
 ENV LC_ALL C.UTF-8
 ENV DEBIAN_FRONTEND noninteractive
 
 COPY qemu-aarch64-static /usr/bin/
 
+COPY resin-xbuild /usr/bin/
+RUN ln -s resin-xbuild /usr/bin/cross-build-start \
+	&& ln -s resin-xbuild /usr/bin/cross-build-end
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		sudo \

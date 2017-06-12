@@ -1,8 +1,11 @@
 FROM aarch64/alpine:edge
 
-LABEL io.resin.architecture="aarch64" io.resin.qemu.version="2.7.0-resin-rc3-arm"
+LABEL io.resin.architecture="aarch64" io.resin.qemu.version="2.9.0.resin1-arm"
 
 COPY qemu-aarch64-static /usr/bin/qemu-aarch64-static
+COPY resin-xbuild /usr/bin/
+RUN ln -s resin-xbuild /usr/bin/cross-build-start \
+	&& ln -s resin-xbuild /usr/bin/cross-build-end
 
 RUN apk add --update \
 	bash \

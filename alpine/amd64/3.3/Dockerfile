@@ -3,6 +3,9 @@ FROM alpine:3.3
 LABEL io.resin.architecture="amd64"
 
 
+COPY resin-xbuild /usr/bin/
+RUN ln -s resin-xbuild /usr/bin/cross-build-start \
+	&& ln -s resin-xbuild /usr/bin/cross-build-end
 
 RUN apk add --update \
 	bash \
