@@ -18,3 +18,5 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 COPY 01_nodoc /etc/dpkg/dpkg.cfg.d/
 COPY 01_buildconfig /etc/apt/apt.conf.d/
+
+RUN mkdir -p /usr/share/man/man1
