@@ -3,10 +3,10 @@ FROM resin/qemux86-buildpack-deps:jessie
 
 ENV NODE_VERSION 0.12.18
 
-RUN curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-i386.tar.gz" \
-	&& echo "e2f6d436f39d2ffc2a1d5829dd1d25809e45f7d9055a8ca93692c7e12714f49d  node-v0.12.18-linux-i386.tar.gz" | sha256sum -c - \
-	&& tar -xzf "node-v$NODE_VERSION-linux-i386.tar.gz" -C /usr/local --strip-components=1 \
-	&& rm "node-v$NODE_VERSION-linux-i386.tar.gz" \
+RUN curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x86.tar.gz" \
+	&& echo "bed4d747f5e1bb0e22fd53260af95859d3d3567598d902aeb084fa79bdbd9620  node-v0.12.18-linux-x86.tar.gz" | sha256sum -c - \
+	&& tar -xzf "node-v$NODE_VERSION-linux-x86.tar.gz" -C /usr/local --strip-components=1 \
+	&& rm "node-v$NODE_VERSION-linux-x86.tar.gz" \
 	&& npm config set unsafe-perm true -g --unsafe-perm \
 	&& rm -rf /tmp/*
 

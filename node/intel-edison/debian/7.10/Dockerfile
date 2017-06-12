@@ -3,10 +3,10 @@ FROM resin/intel-edison-buildpack-deps:jessie
 
 ENV NODE_VERSION 7.10.0
 
-RUN curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-i386.tar.gz" \
-	&& echo "31f56d8d818358319023e2cd08646df0290443d35ee48cdadde5d26418b0a9ea  node-v7.10.0-linux-i386.tar.gz" | sha256sum -c - \
-	&& tar -xzf "node-v$NODE_VERSION-linux-i386.tar.gz" -C /usr/local --strip-components=1 \
-	&& rm "node-v$NODE_VERSION-linux-i386.tar.gz" \
+RUN curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x86.tar.gz" \
+	&& echo "ca37e75a605497b1f33d085353b1a8315b5a9b4de9463885bf62831f7f4511c1  node-v7.10.0-linux-x86.tar.gz" | sha256sum -c - \
+	&& tar -xzf "node-v$NODE_VERSION-linux-x86.tar.gz" -C /usr/local --strip-components=1 \
+	&& rm "node-v$NODE_VERSION-linux-x86.tar.gz" \
 	&& npm config set unsafe-perm true -g --unsafe-perm \
 	&& rm -rf /tmp/*
 

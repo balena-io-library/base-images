@@ -7,10 +7,10 @@ RUN buildDeps='curl build-essential python' \
 	&& set -x \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/* \
-	&& curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-i386.tar.gz" \
-	&& echo "566dac853617197601895295e3b679561c908186f9fb79a66668dcb29d689cf2  node-v5.12.0-linux-i386.tar.gz" | sha256sum -c - \
-	&& tar -xzf "node-v$NODE_VERSION-linux-i386.tar.gz" -C /usr/local --strip-components=1 \
-	&& rm "node-v$NODE_VERSION-linux-i386.tar.gz" \
+	&& curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x86.tar.gz" \
+	&& echo "1ee1ef4e9f8bfb2976f35ca10658f3828cae10ef462d3fee7c3f159a3e21365b  node-v5.12.0-linux-x86.tar.gz" | sha256sum -c - \
+	&& tar -xzf "node-v$NODE_VERSION-linux-x86.tar.gz" -C /usr/local --strip-components=1 \
+	&& rm "node-v$NODE_VERSION-linux-x86.tar.gz" \
 	&& npm install mraa@$MRAA_VERSION \
 	&& npm cache clear \
 	&& npm config set unsafe-perm true -g --unsafe-perm \

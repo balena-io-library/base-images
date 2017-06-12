@@ -43,7 +43,7 @@ done
 
 devices='raspberry-pi raspberry-pi2 beaglebone-black intel-edison intel-nuc via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green cybertan-ze250 artik710 am571x-evm up-board kitra710 imx6ul-var-dart ccon-01'
 fedora_devices=' raspberry-pi2 beaglebone-black via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green intel-nuc qemux86-64 artik710 am571x-evm kitra710 up-board imx6ul-var-dart ccon-01 '
-nodeVersions='0.10.22 0.10.48 0.12.18 4.8.3 5.12.0 6.10.3 7.10.0'
+nodeVersions='0.10.22 0.10.48 0.12.18 4.8.3 5.12.0 6.10.3 7.10.0 8.0.0'
 defaultVersion='0.10.22'
 resinUrl="http://resin-packages.s3.amazonaws.com/node/v\$NODE_VERSION/node-v\$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz"
 nodejsUrl="http://nodejs.org/dist/v\$NODE_VERSION/node-v\$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz"
@@ -76,12 +76,12 @@ for device in $devices; do
 			binaryArch='armv7hf'
 		;;
 		'intel-edison')
-			binaryUrl=$resinUrl
-			binaryArch='i386'
+			binaryUrl=$nodejsUrl
+			binaryArch='x86'
 		;;
 		'qemux86')
-			binaryUrl=$resinUrl
-			binaryArch='i386'
+			binaryUrl=$nodejsUrl
+			binaryArch='x86'
 		;;
 		'cybertan-ze250')
 			binaryUrl=$resinUrl
@@ -179,6 +179,11 @@ for device in $devices; do
 		fi
 
 		if (version_ge "$nodeVersion" "7") && [ $binaryArch == "armel" ]; then
+			continue
+		fi
+
+		# we don't have Node v8.0.0 for x87 yet.
+		if (version_ge "$nodeVersion" "8") && [ $device == "cybertan-ze250" ]; then
 			continue
 		fi
 
@@ -303,7 +308,7 @@ for device in $devices; do
 			binaryArch='alpine-amd64'
 			binaryUrl=$resinUrl
 		;;
-		'i386')
+		'i386'|'x86')
 			binaryArch='alpine-i386'
 			binaryUrl=$resinUrl
 		;;
