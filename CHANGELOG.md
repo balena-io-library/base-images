@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2017-06-12
+
+### Changed
+
+- Add Node v8.0.0.
+- Add Python v2.7.13.
+- Update QEMU to v2.9.0+resin1. Our base images will be runnable on any x86 machine without any modifications.
+- Create empty man directory to fix missing manpage directory issue on Debian base images.
+
+
 ## 2017-05-24
 
 ### Changed
