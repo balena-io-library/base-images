@@ -2,7 +2,7 @@
 set -e
 
 repos='armhf i386 amd64 aarch64'
-suites='edge 3.2 3.3 3.4 3.5'
+suites='edge 3.5 3.6'
 QEMU_VERSION='2.9.0.resin1-arm'
 QEMU_SHA256='b39d6a878c013abb24f4cccc7c3a79829546ae365069d5712142a4ad21bcb91b'
 QEMU_AARCH64_VERSION='2.9.0.resin1-aarch64'
@@ -27,7 +27,7 @@ chmod +x entry.sh qemu-arm-static resin qemu-aarch64-static resin-xbuild
 for repo in $repos; do
 	case "$repo" in
 	'armhf')
-		baseImage='armhf/alpine'
+		baseImage='arm32v6/alpine'
 		label="LABEL io.resin.architecture=\"armhf\" io.resin.qemu.version=\"$QEMU_VERSION\""
 		qemu='COPY qemu-arm-static /usr/bin/qemu-arm-static'
 	;;
@@ -42,7 +42,7 @@ for repo in $repos; do
 		qemu=''
 	;;
 	'aarch64')
-		baseImage='aarch64/alpine'
+		baseImage='arm64v8/alpine'
 		label="LABEL io.resin.architecture=\"aarch64\" io.resin.qemu.version=\"$QEMU_VERSION\""
 		qemu='COPY qemu-aarch64-static /usr/bin/qemu-aarch64-static'
 	;;
