@@ -255,7 +255,7 @@ for fedoraDevice in $fedora_devices; do
 		fi
 		fedora_dockerfilePath="$fedoraDevice/fedora/8-$variant"
 		mkdir -p $fedora_dockerfilePath
-		sed -e s~#{FROM}~resin/$fedoraDevice-fedora:24~g \
+		sed -e s~#{FROM}~resin/$fedoraDevice-fedora:25~g \
 			-e s~#{FEDORA_PACKAGE}~"$fedoraPackage"~g Dockerfile.fedora.tpl > "$fedora_dockerfilePath/Dockerfile"
 	done
 done
