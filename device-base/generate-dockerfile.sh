@@ -32,8 +32,8 @@ intel_edison_wheezy_upm_commit='13e2e7aeb8769707b91b62f23d6669d3ee1a8651'
 devices='raspberry-pi raspberry-pi2 beaglebone-black intel-edison intel-nuc via-vab820-quad zc702-zynq7 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green cybertan-ze250 artik710 am571x-evm up-board kitra710 imx6ul-var-dart ccon-01'
 fedora_devices=' raspberry-pi2 beaglebone-black via-vab820-quad zc702-zynq7 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green intel-nuc qemux86-64 artik710 am571x-evm kitra710 up-board imx6ul-var-dart ccon-01 '
 suites='jessie wheezy stretch'
-alpine_suites='edge 3.2 3.3 3.4 3.5'
-fedora_suites='23 24'
+alpine_suites='edge 3.5 3.6'
+fedora_suites='24 25'
 
 for device in $devices; do
 

@@ -23,7 +23,7 @@ declare -A debCache=()
 versions='7-jdk 7-jre 8-jdk 8-jre'
 devices='raspberry-pi raspberry-pi2 beaglebone-black intel-edison intel-nuc via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green cybertan-ze250 artik710 am571x-evm up-board kitra710 imx6ul-var-dart ccon-01'
 fedora_devices=' raspberry-pi2 beaglebone-black via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green intel-nuc qemux86-64 artik710 am571x-evm kitra710 up-board imx6ul-var-dart ccon-01 '
-alpineVersion='3.5'
+alpineVersion='3.6'
 alpineDeviceArchs='x86_64 x86 armhf'
 variants='jre jdk'
 
@@ -255,7 +255,7 @@ for fedoraDevice in $fedora_devices; do
 		fi
 		fedora_dockerfilePath="$fedoraDevice/fedora/8-$variant"
 		mkdir -p $fedora_dockerfilePath
-		sed -e s~#{FROM}~resin/$fedoraDevice-fedora:24~g \
+		sed -e s~#{FROM}~resin/$fedoraDevice-fedora:25~g \
 			-e s~#{FEDORA_PACKAGE}~"$fedoraPackage"~g Dockerfile.fedora.tpl > "$fedora_dockerfilePath/Dockerfile"
 	done
 done

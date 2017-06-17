@@ -1,4 +1,4 @@
-FROM aarch64/alpine:3.5
+FROM arm64v8/alpine:3.5
 
 LABEL io.resin.architecture="aarch64" io.resin.qemu.version="2.9.0.resin1-arm"
 

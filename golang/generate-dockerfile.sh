@@ -302,13 +302,13 @@ for device in $devices; do
 				-e s~#{TARGET_ARCH}~$fedora_binary_arch~g Dockerfile.tpl > $fedora_dockerfilePath/Dockerfile
 			cp go-wrapper $fedora_dockerfilePath/
 
-			mkdir -p $fedora_dockerfilePath/23
-			sed -e s~#{FROM}~resin/$device-fedora-buildpack-deps:23~g \
+			mkdir -p $fedora_dockerfilePath/24
+			sed -e s~#{FROM}~resin/$device-fedora-buildpack-deps:24~g \
 				-e s~#{BINARY_URL}~$fedora_binary_url~g \
 				-e s~#{GO_VERSION}~$goVersion~g \
 				-e s~#{CHECKSUM}~"$checksum"~g \
-				-e s~#{TARGET_ARCH}~$fedora_binary_arch~g Dockerfile.tpl > $fedora_dockerfilePath/23/Dockerfile
-			cp go-wrapper $fedora_dockerfilePath/23/
+				-e s~#{TARGET_ARCH}~$fedora_binary_arch~g Dockerfile.tpl > $fedora_dockerfilePath/24/Dockerfile
+			cp go-wrapper $fedora_dockerfilePath/24/
 
 			mkdir -p $fedora_dockerfilePath/onbuild
 			sed -e s~#{FROM}~resin/$device-fedora-golang:$goVersion~g Dockerfile.onbuild.tpl > $fedora_dockerfilePath/onbuild/Dockerfile

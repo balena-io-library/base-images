@@ -337,8 +337,8 @@ for device in $devices; do
 			mkdir -p $fedora_dockerfilePath
 			sed -e s~#{FROM}~"resin/$device-fedora-buildpack-deps:latest"~g $template > $fedora_dockerfilePath/Dockerfile
 
-			mkdir -p $fedora_dockerfilePath/23
-			sed -e s~#{FROM}~"resin/$device-fedora-buildpack-deps:23"~g $template > $fedora_dockerfilePath/23/Dockerfile
+			mkdir -p $fedora_dockerfilePath/24
+			sed -e s~#{FROM}~"resin/$device-fedora-buildpack-deps:24"~g $template > $fedora_dockerfilePath/24/Dockerfile
 
 			mkdir -p $fedora_dockerfilePath/onbuild
 			sed -e s~#{FROM}~"resin/$device-fedora-python:$version"~g Dockerfile.onbuild.tpl > $fedora_dockerfilePath/onbuild/Dockerfile

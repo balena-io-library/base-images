@@ -1,4 +1,4 @@
-FROM aarch64/debian:stretch-slim
+FROM arm64v8/debian:stretch-slim
 
 LABEL io.resin.architecture="aarch64" io.resin.qemu.version="2.9.0.resin1-aarch64"
 
@@ -17,6 +17,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		findutils \
 		gnupg \
 		dirmngr \
+		inetutils-ping \
+		iproute2 \
+		netbase \
 	&& rm -rf /var/lib/apt/lists/*
 
 COPY 01_nodoc /etc/dpkg/dpkg.cfg.d/

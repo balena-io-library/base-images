@@ -25,7 +25,7 @@ chmod +x qemu-arm-static qemu-aarch64-static resin-xbuild
 for arch in $archs; do
 	case "$arch" in
 	'armv7hf')
-		baseImage='armhf/debian'
+		baseImage='arm32v7/debian'
 		label='io.resin.architecture="armv7hf" io.resin.qemu.version="'$QEMU_VERSION'"'
 		suites='jessie wheezy sid stretch'
 		variant='-slim'
@@ -57,7 +57,7 @@ for arch in $archs; do
 		qemuCpu='ENV QEMU_CPU arm1026'
 	;;
 	'aarch64')
-		baseImage='aarch64/debian'
+		baseImage='arm64v8/debian'
 		label='io.resin.architecture="aarch64" io.resin.qemu.version="'$QEMU_AARCH64_VERSION'"'
 		suites='jessie stretch'
 		variant='-slim'
