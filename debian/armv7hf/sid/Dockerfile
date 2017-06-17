@@ -1,4 +1,4 @@
-FROM armhf/debian:sid-slim
+FROM arm32v7/debian:sid-slim
 
 LABEL io.resin.architecture="armv7hf" io.resin.qemu.version="2.9.0.resin1-arm"
 
@@ -17,6 +17,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		findutils \
 		gnupg \
 		dirmngr \
+		inetutils-ping \
+		iproute2 \
+		netbase \
 	&& rm -rf /var/lib/apt/lists/*
 
 COPY 01_nodoc /etc/dpkg/dpkg.cfg.d/
