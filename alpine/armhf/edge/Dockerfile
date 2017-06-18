@@ -15,6 +15,7 @@ RUN apk add --update \
 	openrc \
 	tar \
 	udev \
+	tini \
 	&& rm -rf /var/cache/apk/*
 
 # Config OpenRC

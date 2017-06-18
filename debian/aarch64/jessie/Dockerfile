@@ -7,6 +7,8 @@ ENV DEBIAN_FRONTEND noninteractive
 
 COPY qemu-aarch64-static /usr/bin/
 
+
+# Resin-xbuild
 COPY resin-xbuild /usr/bin/
 RUN ln -s resin-xbuild /usr/bin/cross-build-start \
 	&& ln -s resin-xbuild /usr/bin/cross-build-end
@@ -20,7 +22,17 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		inetutils-ping \
 		iproute2 \
 		netbase \
+		curl \
 	&& rm -rf /var/lib/apt/lists/*
+
+# Tini
+ENV TINI_VERSION 0.14.0
+RUN curl -SLO "http://resin-packages.s3.amazonaws.com/tini/v$TINI_VERSION/tini0.14.0.linux-aarch64.tar.gz" \
+	&& echo "5bfe3dcf7b41476c3ed99f886ac8a1ace2f72d4d5b04328de4a690b4dbec37b5 tini0.14.0.linux-aarch64.tar.gz" | sha256sum -c - \
+	&& tar -xzf "tini0.14.0.linux-aarch64.tar.gz" \
+	&& rm "tini0.14.0.linux-aarch64.tar.gz" \
+    && chmod +x tini \
+    && mv tini /sbin/tini
 
 COPY 01_nodoc /etc/dpkg/dpkg.cfg.d/
 COPY 01_buildconfig /etc/apt/apt.conf.d/
