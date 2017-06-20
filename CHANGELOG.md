@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2017-06-20
+
+### Changed
+
+- Moving the bare minimum base images to official Docker repositories.
+	- Add Apline Linux 3.6.
+	- Drop support for Alpine Linux 3.2, 3.3, 3.4.
+	- Add Fedora 25.
+- Integrating Tini as the new default init for all base images.
+
+
 ## 2017-06-12
 
 ### Changed
