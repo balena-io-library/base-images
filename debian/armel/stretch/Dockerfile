@@ -7,6 +7,8 @@ ENV DEBIAN_FRONTEND noninteractive
 
 COPY qemu-arm-static /usr/bin/
 ENV QEMU_CPU arm1026
+
+# Resin-xbuild
 COPY resin-xbuild /usr/bin/
 RUN ln -s resin-xbuild /usr/bin/cross-build-start \
 	&& ln -s resin-xbuild /usr/bin/cross-build-end
@@ -20,7 +22,17 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		inetutils-ping \
 		iproute2 \
 		netbase \
+		curl \
 	&& rm -rf /var/lib/apt/lists/*
+
+# Tini
+ENV TINI_VERSION 0.14.0
+RUN curl -SLO "http://resin-packages.s3.amazonaws.com/tini/v$TINI_VERSION/tini0.14.0.linux-armel.tar.gz" \
+	&& echo "536054e9a0c665876b7d4e975bdbf866f1fd0b884acf490f10f2ab4fa0aed19d tini0.14.0.linux-armel.tar.gz" | sha256sum -c - \
+	&& tar -xzf "tini0.14.0.linux-armel.tar.gz" \
+	&& rm "tini0.14.0.linux-armel.tar.gz" \
+    && chmod +x tini \
+    && mv tini /sbin/tini
 
 COPY 01_nodoc /etc/dpkg/dpkg.cfg.d/
 COPY 01_buildconfig /etc/apt/apt.conf.d/

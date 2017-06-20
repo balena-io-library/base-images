@@ -7,6 +7,8 @@ ENV DEBIAN_FRONTEND noninteractive
 
 
 
+
+# Resin-xbuild
 COPY resin-xbuild /usr/bin/
 RUN ln -s resin-xbuild /usr/bin/cross-build-start \
 	&& ln -s resin-xbuild /usr/bin/cross-build-end
@@ -20,7 +22,17 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		inetutils-ping \
 		iproute2 \
 		netbase \
+		curl \
 	&& rm -rf /var/lib/apt/lists/*
+
+# Tini
+ENV TINI_VERSION 0.14.0
+RUN curl -SLO "http://resin-packages.s3.amazonaws.com/tini/v$TINI_VERSION/tini0.14.0.linux-i386.tar.gz" \
+	&& echo "d0c4baf134787b87b7124f44ce78674d0c8ec967217a874be7cd221946946397 tini0.14.0.linux-i386.tar.gz" | sha256sum -c - \
+	&& tar -xzf "tini0.14.0.linux-i386.tar.gz" \
+	&& rm "tini0.14.0.linux-i386.tar.gz" \
+    && chmod +x tini \
+    && mv tini /sbin/tini
 
 COPY 01_nodoc /etc/dpkg/dpkg.cfg.d/
 COPY 01_buildconfig /etc/apt/apt.conf.d/

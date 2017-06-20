@@ -9,6 +9,13 @@ QEMU_AARCH64_VERSION='2.9.0.resin1-aarch64'
 QEMU_AARCH64_SHA256='ebd9c4f4ab005f183b8d84b121b5b791c39c5a92013e590e00705e958c5b5c48'
 RESIN_XBUILD_VERSION='1.0.0'
 RESIN_XBUILD_SHA256='1eb099bc3176ed078aa93bd5852dbab9219738d16434c87fc9af499368423437'
+TINI_VERSION='0.14.0'
+TINI_armv6hf='0556dce389e01382ae6661afc53ea18fcf3ef195eee4e75b24a4e965571375f3  tini0.14.0.linux-armv6hf.tar.gz'
+TINI_armv7hf='5926f7d9e4442025bbf8f277bde1accc183be4952c3e3f601aece3fdbcdcd9df  tini0.14.0.linux-armv7hf.tar.gz'
+TINI_armel='536054e9a0c665876b7d4e975bdbf866f1fd0b884acf490f10f2ab4fa0aed19d  tini0.14.0.linux-armel.tar.gz'
+TINI_aarch64='5bfe3dcf7b41476c3ed99f886ac8a1ace2f72d4d5b04328de4a690b4dbec37b5  tini0.14.0.linux-aarch64.tar.gz'
+TINI_i386='d0c4baf134787b87b7124f44ce78674d0c8ec967217a874be7cd221946946397  tini0.14.0.linux-i386.tar.gz'
+TINI_amd64='ed4f65aa016b7efded7948b21fd654718e7a1e4deb6521bf4ca39f956f985e4d  tini0.14.0.linux-amd64.tar.gz'
 
 # Download QEMU
 curl -SLO https://github.com/resin-io/qemu/releases/download/v2.9.0+resin1/qemu-$QEMU_VERSION.tar.gz \
@@ -65,6 +72,11 @@ for arch in $archs; do
 		qemuCpu=''
 	;;
 	esac
+
+	# Tini
+	tiniBinary="tini$TINI_VERSION.linux-$arch.tar.gz"
+	tiniChecksum="TINI_$arch" && tiniChecksum=$(eval echo \$$tiniChecksum)
+
 	for suite in $suites; do
 
 		dockerfilePath=$arch/$suite
@@ -72,7 +84,10 @@ for arch in $archs; do
 		sed -e s~#{FROM}~$baseImage:$suite$variant~g \
 			-e s~#{LABEL}~"$label"~g \
 			-e s~#{QEMU_CPU}~"$qemuCpu"~g \
-			-e s~#{QEMU}~"$qemu"~g Dockerfile.tpl > $dockerfilePath/Dockerfile
+			-e s~#{QEMU}~"$qemu"~g \
+			-e s~#{TINI_VERSION}~"$TINI_VERSION"~g \
+			-e s~#{CHECKSUM}~"$tiniChecksum"~g \
+			-e s~#{TINI_BINARY}~"$tiniBinary"~g Dockerfile.tpl > $dockerfilePath/Dockerfile
 		cp 01_nodoc 01_buildconfig resin-xbuild $dockerfilePath/
 
 		# ARM only

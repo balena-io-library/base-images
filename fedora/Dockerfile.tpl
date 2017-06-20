@@ -15,7 +15,17 @@ RUN dnf update -y \
         udev \
         which \
         hostname \
+        curl \
     && dnf clean all
+
+# Tini
+ENV TINI_VERSION #{TINI_VERSION}
+RUN curl -SLO "http://resin-packages.s3.amazonaws.com/tini/v$TINI_VERSION/#{TINI_BINARY}" \
+    && echo "#{CHECKSUM}" | sha256sum -c - \
+    && tar -xzf "#{TINI_BINARY}" \
+    && rm "#{TINI_BINARY}" \
+    && chmod +x tini \
+    && mv tini /sbin/tini
 
 ENV container docker
 

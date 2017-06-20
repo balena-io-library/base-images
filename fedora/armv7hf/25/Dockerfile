@@ -21,7 +21,17 @@ RUN dnf update -y \
         tar \
         udev \
         which \
+        curl \
     && dnf clean all
+
+# Tini
+ENV TINI_VERSION 0.14.0
+RUN curl -SLO "http://resin-packages.s3.amazonaws.com/tini/v$TINI_VERSION/tini0.14.0.linux-armv7hf.tar.gz" \
+    && echo "5926f7d9e4442025bbf8f277bde1accc183be4952c3e3f601aece3fdbcdcd9df tini0.14.0.linux-armv7hf.tar.gz" | sha256sum -c - \
+    && tar -xzf "tini0.14.0.linux-armv7hf.tar.gz" \
+    && rm "tini0.14.0.linux-armv7hf.tar.gz" \
+    && chmod +x tini \
+    && mv tini /sbin/tini
 
 ENV container docker
 

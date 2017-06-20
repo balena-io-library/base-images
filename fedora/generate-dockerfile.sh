@@ -9,6 +9,10 @@ QEMU_AARCH64_VERSION='2.9.0.resin1-aarch64'
 QEMU_AARCH64_SHA256='ebd9c4f4ab005f183b8d84b121b5b791c39c5a92013e590e00705e958c5b5c48'
 RESIN_XBUILD_VERSION='1.0.0'
 RESIN_XBUILD_SHA256='1eb099bc3176ed078aa93bd5852dbab9219738d16434c87fc9af499368423437'
+TINI_VERSION='0.14.0'
+TINI_armv7hf='5926f7d9e4442025bbf8f277bde1accc183be4952c3e3f601aece3fdbcdcd9df  tini0.14.0.linux-armv7hf.tar.gz'
+TINI_aarch64='5bfe3dcf7b41476c3ed99f886ac8a1ace2f72d4d5b04328de4a690b4dbec37b5  tini0.14.0.linux-aarch64.tar.gz'
+TINI_amd64='ed4f65aa016b7efded7948b21fd654718e7a1e4deb6521bf4ca39f956f985e4d  tini0.14.0.linux-amd64.tar.gz'
 
 function version_le() { test "$(echo "$@" | tr " " "\n" | sort -V | tail -n 1)" != "$1"; }
 
@@ -45,20 +49,28 @@ for repo in $repos; do
 		template='Dockerfile.tpl'
 	;;
 	esac
+
+	# Tini
+	tiniBinary="tini$TINI_VERSION.linux-$repo.tar.gz"
+	tiniChecksum="TINI_$repo" && tiniChecksum=$(eval echo \$$tiniChecksum)
+
 	for suite in $suites; do
 		dockerfilePath=$repo/$suite
 		mkdir -p $dockerfilePath
 
 		sed -e s~#{FROM}~"$baseImage:$suite"~g \
 			-e s~#{LABEL}~"$label"~g \
-			-e s~#{QEMU}~"$qemu"~g "$template" > $dockerfilePath/Dockerfile
-		cp entry.sh launch.service $dockerfilePath/
+			-e s~#{QEMU}~"$qemu"~g \
+			-e s~#{TINI_VERSION}~"$TINI_VERSION"~g \
+			-e s~#{CHECKSUM}~"$tiniChecksum"~g \
+			-e s~#{TINI_BINARY}~"$tiniBinary"~g "$template" > $dockerfilePath/Dockerfile
+		cp entry.sh launch.service resin-xbuild $dockerfilePath/
 
 		if [ $repo == "armv7hf" ]; then
-			cp qemu-arm-static resin-xbuild $dockerfilePath/
+			cp qemu-arm-static $dockerfilePath/
 		fi
 		if [ $repo == "aarch64" ]; then
-			cp qemu-aarch64-static resin-xbuild $dockerfilePath/
+			cp qemu-aarch64-static $dockerfilePath/
 		fi
 	done
 done
