@@ -50,7 +50,7 @@ function init_non_systemd()
 	# echo error message, when executable file doesn't exist.
 	if [ $? == '0' ]; then
 		shift
-		exec tini -sg -- "$CMD" "$@"
+		exec tini -s -g -- "$CMD" "$@"
 	else
 		echo "Command not found: $1"
 		exit 1

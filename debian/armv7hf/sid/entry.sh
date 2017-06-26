@@ -88,7 +88,7 @@ function init_non_systemd()
 			# run this on resin device only
 			start_udev
 		fi
-		tini -sg -- "$CMD" "$@" &
+		tini -s -g -- "$CMD" "$@" &
 		pid=$!
 		wait "$pid"
 	else

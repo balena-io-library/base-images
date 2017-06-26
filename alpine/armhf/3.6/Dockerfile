@@ -2,7 +2,7 @@ FROM arm32v6/alpine:3.6
 
 LABEL io.resin.architecture="armhf" io.resin.qemu.version="2.9.0.resin1-arm"
 
-COPY qemu-arm-static /usr/bin/qemu-arm-static
+COPY qemu-arm-static /usr/bin/
 COPY resin-xbuild /usr/bin/
 RUN ln -s resin-xbuild /usr/bin/cross-build-start \
 	&& ln -s resin-xbuild /usr/bin/cross-build-end
@@ -28,5 +28,5 @@ RUN rc-update add resin default \
 	&& rc-update add dbus default
 
 COPY entry.sh /usr/bin/entry.sh
-                  
+
 ENTRYPOINT ["/usr/bin/entry.sh"]

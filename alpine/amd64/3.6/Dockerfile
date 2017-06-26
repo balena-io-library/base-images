@@ -3,9 +3,7 @@ FROM alpine:3.6
 LABEL io.resin.architecture="amd64"
 
 
-COPY resin-xbuild /usr/bin/
-RUN ln -s resin-xbuild /usr/bin/cross-build-start \
-	&& ln -s resin-xbuild /usr/bin/cross-build-end
+
 
 RUN apk add --update \
 	bash \
@@ -28,5 +26,5 @@ RUN rc-update add resin default \
 	&& rc-update add dbus default
 
 COPY entry.sh /usr/bin/entry.sh
-                  
+
 ENTRYPOINT ["/usr/bin/entry.sh"]

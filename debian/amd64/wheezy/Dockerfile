@@ -1,4 +1,4 @@
-FROM debian:wheezy-slim
+FROM debian:wheezy
 
 LABEL io.resin.architecture="amd64"
 
@@ -8,11 +8,6 @@ ENV DEBIAN_FRONTEND noninteractive
 
 
 
-# Resin-xbuild
-COPY resin-xbuild /usr/bin/
-RUN ln -s resin-xbuild /usr/bin/cross-build-start \
-	&& ln -s resin-xbuild /usr/bin/cross-build-end
-
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		sudo \
 		ca-certificates \
@@ -20,7 +15,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		gnupg \
 		dirmngr \
 		inetutils-ping \
-		iproute2 \
+		iproute \
 		netbase \
 		curl \
 	&& rm -rf /var/lib/apt/lists/*
@@ -28,7 +23,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Tini
 ENV TINI_VERSION 0.14.0
 RUN curl -SLO "http://resin-packages.s3.amazonaws.com/tini/v$TINI_VERSION/tini0.14.0.linux-amd64.tar.gz" \
-	&& echo "ed4f65aa016b7efded7948b21fd654718e7a1e4deb6521bf4ca39f956f985e4d tini0.14.0.linux-amd64.tar.gz" | sha256sum -c - \
+	&& echo "ed4f65aa016b7efded7948b21fd654718e7a1e4deb6521bf4ca39f956f985e4d  tini0.14.0.linux-amd64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "tini0.14.0.linux-amd64.tar.gz" \
 	&& rm "tini0.14.0.linux-amd64.tar.gz" \
     && chmod +x tini \
@@ -38,8 +33,6 @@ COPY 01_nodoc /etc/dpkg/dpkg.cfg.d/
 COPY 01_buildconfig /etc/apt/apt.conf.d/
 
 RUN mkdir -p /usr/share/man/man1
+
 ONBUILD RUN echo $'WARNING: Systemd is not available on this base image! \nSystemd was included in Debian wheezy as a technology preview. Therefore, we do not install systemd on wheezy images and INITSYSTEM will not work.'
-
-COPY entry.sh /usr/bin/entry.sh
-
 ENTRYPOINT ["/usr/bin/entry.sh"]
