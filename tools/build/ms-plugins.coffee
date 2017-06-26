@@ -28,6 +28,25 @@ copyAlpineFile = (obj, destDir) ->
 		else
 			copyFile('./qemu-arm-static', "#{destDir}/qemu-arm-static")
 
+copyDebianFile = (obj, destDir) ->
+	copyFile('./supporting_files/debian.01_buildconfig', "#{destDir}/01_buildconfig")
+	copyFile('./supporting_files/debian.01_nodoc', "#{destDir}/01_nodoc")
+
+	# Systemd
+	if obj.$debian_suite.id is 'wheezy'
+		copyFile('./supporting_files/debian.entry-nosystemd.sh', "#{destDir}/entry.sh")
+	else
+		copyFile('./supporting_files/debian.entry.sh', "#{destDir}/entry.sh")
+		copyFile('./supporting_files/debian.launch.service', "#{destDir}/launch.service")
+
+	# QEMU
+	if obj.$debian_arch.id != 'amd64' and obj.$debian_arch.id != 'i386'
+		copyFile('./resin-xbuild', "#{destDir}/resin-xbuild")
+		if obj.$debian_arch.id is 'aarch64'
+			copyFile('./qemu-aarch64-static', "#{destDir}/qemu-aarch64-static")
+		else
+			copyFile('./qemu-arm-static', "#{destDir}/qemu-arm-static")
+
 exports.expandProps = walkFiles (file, files) ->
 	obj = files[file]
 	propsToExpand = obj.expand_props
@@ -47,3 +66,7 @@ exports.copySupportingFiles = walkFiles (file, files) ->
 	# Copy supporting files for Alpine
 	if obj.$type is 'alpine'
 		copyAlpineFile(obj, destDir)
+
+	# Copy supporting files for Debian
+	if obj.$type is 'debian'
+		copyDebianFile(obj, destDir)

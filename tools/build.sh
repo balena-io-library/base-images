@@ -31,7 +31,7 @@ curl -SLO http://resin-packages.s3.amazonaws.com/resin-xbuild/v$RESIN_XBUILD_VER
 chmod +x qemu-arm-static qemu-aarch64-static resin-xbuild
 
 #IMAGE_TYPES='node debian alpine device-base buildpack-deps golang python'
-IMAGE_TYPES='alpine'
+IMAGE_TYPES='debian'
 TARGET_DIR='resin-base-images'
 
 ./node_modules/.bin/coffee ./build/build.coffee
