@@ -47,6 +47,19 @@ copyDebianFile = (obj, destDir) ->
 		else
 			copyFile('./qemu-arm-static', "#{destDir}/qemu-arm-static")
 
+copyFedoraFile = (obj, destDir) ->
+
+	copyFile('./supporting_files/debian.entry.sh', "#{destDir}/entry.sh")
+	copyFile('./supporting_files/debian.launch.service', "#{destDir}/launch.service")
+
+	# QEMU
+	if obj.$fedora_arch.id != 'amd64'
+		copyFile('./resin-xbuild', "#{destDir}/resin-xbuild")
+		if obj.$fedora_arch.id is 'aarch64'
+			copyFile('./qemu-aarch64-static', "#{destDir}/qemu-aarch64-static")
+		else
+			copyFile('./qemu-arm-static', "#{destDir}/qemu-arm-static")
+
 exports.expandProps = walkFiles (file, files) ->
 	obj = files[file]
 	propsToExpand = obj.expand_props
@@ -70,3 +83,7 @@ exports.copySupportingFiles = walkFiles (file, files) ->
 	# Copy supporting files for Debian
 	if obj.$type is 'debian'
 		copyDebianFile(obj, destDir)
+
+	# Copy supporting files for Fedora
+	if obj.$type is 'fedora'
+		copyFedoraFile(obj, destDir)

@@ -33,3 +33,11 @@ exports.generateBaseImage = (device, distro, type, variant, suite = '', version 
 		return "resin/#{base}-#{type}:#{version}"
 	if variant is 'old_suite'
 		return "resin/#{base}-buildpack-deps:#{distro.suite[1]}"
+
+exports.getTiniChecksum = (arch, tini) ->
+	return tini[arch]
+
+exports.getLabel = (arch, qemu) ->
+	if arch != 'amd64' and arch != 'i386'
+		return "LABEL io.resin.architecture=\"#{arch}\" io.resin.qemu.version=\"#{qemu}\""
+	return "LABEL io.resin.architecture=\"#{arch}\""
