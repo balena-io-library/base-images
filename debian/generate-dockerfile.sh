@@ -10,12 +10,12 @@ QEMU_AARCH64_SHA256='ebd9c4f4ab005f183b8d84b121b5b791c39c5a92013e590e00705e958c5
 RESIN_XBUILD_VERSION='1.0.0'
 RESIN_XBUILD_SHA256='1eb099bc3176ed078aa93bd5852dbab9219738d16434c87fc9af499368423437'
 TINI_VERSION='0.14.0'
-TINI_armv6hf='0556dce389e01382ae6661afc53ea18fcf3ef195eee4e75b24a4e965571375f3  tini0.14.0.linux-armv6hf.tar.gz'
-TINI_armv7hf='5926f7d9e4442025bbf8f277bde1accc183be4952c3e3f601aece3fdbcdcd9df  tini0.14.0.linux-armv7hf.tar.gz'
-TINI_armel='536054e9a0c665876b7d4e975bdbf866f1fd0b884acf490f10f2ab4fa0aed19d  tini0.14.0.linux-armel.tar.gz'
-TINI_aarch64='5bfe3dcf7b41476c3ed99f886ac8a1ace2f72d4d5b04328de4a690b4dbec37b5  tini0.14.0.linux-aarch64.tar.gz'
-TINI_i386='d0c4baf134787b87b7124f44ce78674d0c8ec967217a874be7cd221946946397  tini0.14.0.linux-i386.tar.gz'
-TINI_amd64='ed4f65aa016b7efded7948b21fd654718e7a1e4deb6521bf4ca39f956f985e4d  tini0.14.0.linux-amd64.tar.gz'
+TINI_armv6hf='33a5089c4f222f0504110000e7d3fd0c3c29830a64a19bae4b34f31dcaf6fb31  tini0.14.0.linux-armv6hf.tar.gz'
+TINI_armv7hf='cab86b2ad88ae6a3ef649293a5fecbc55bc31722cc8220f7b82bd6c960553e44  tini0.14.0.linux-armv7hf.tar.gz'
+TINI_armel='0be64a992ce6b13d37a4bcff7a4280289d38842389076f197e6e50784e9693fa  tini0.14.0.linux-armel.tar.gz'
+TINI_aarch64='edddd28f0c683773670592f6013f5eadb96bbf62a100f3d7d6c58e6a5cb248b4  tini0.14.0.linux-aarch64.tar.gz'
+TINI_i386='9f4a0b536efdcbe92bc81c6e68dbf8dc1c5739e58f4e7e3a91f07094655149e8  tini0.14.0.linux-i386.tar.gz'
+TINI_amd64='a662ee1594cb037909237c87d577b6e4dee9879f1c23279f1a829683e542e4a0  tini0.14.0.linux-amd64.tar.gz'
 
 # Download QEMU
 curl -SLO https://github.com/resin-io/qemu/releases/download/v2.9.0+resin1/qemu-$QEMU_VERSION.tar.gz \

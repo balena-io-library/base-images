@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		gnupg \
 		dirmngr \
 		inetutils-ping \
-		iproute2 \
+		iproute \
 		netbase \
 		curl \
 	&& rm -rf /var/lib/apt/lists/*
