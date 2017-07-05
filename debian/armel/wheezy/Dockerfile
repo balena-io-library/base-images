@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		gnupg \
 		dirmngr \
 		inetutils-ping \
-		iproute2 \
+		iproute \
 		netbase \
 		curl \
 	&& rm -rf /var/lib/apt/lists/*
@@ -28,7 +28,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Tini
 ENV TINI_VERSION 0.14.0
 RUN curl -SLO "http://resin-packages.s3.amazonaws.com/tini/v$TINI_VERSION/tini0.14.0.linux-armel.tar.gz" \
-	&& echo "536054e9a0c665876b7d4e975bdbf866f1fd0b884acf490f10f2ab4fa0aed19d tini0.14.0.linux-armel.tar.gz" | sha256sum -c - \
+	&& echo "0be64a992ce6b13d37a4bcff7a4280289d38842389076f197e6e50784e9693fa tini0.14.0.linux-armel.tar.gz" | sha256sum -c - \
 	&& tar -xzf "tini0.14.0.linux-armel.tar.gz" \
 	&& rm "tini0.14.0.linux-armel.tar.gz" \
     && chmod +x tini \

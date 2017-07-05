@@ -21,7 +21,7 @@ RUN dnf update -y \
 # Tini
 ENV TINI_VERSION 0.14.0
 RUN curl -SLO "http://resin-packages.s3.amazonaws.com/tini/v$TINI_VERSION/tini0.14.0.linux-amd64.tar.gz" \
-    && echo "ed4f65aa016b7efded7948b21fd654718e7a1e4deb6521bf4ca39f956f985e4d tini0.14.0.linux-amd64.tar.gz" | sha256sum -c - \
+    && echo "a662ee1594cb037909237c87d577b6e4dee9879f1c23279f1a829683e542e4a0 tini0.14.0.linux-amd64.tar.gz" | sha256sum -c - \
     && tar -xzf "tini0.14.0.linux-amd64.tar.gz" \
     && rm "tini0.14.0.linux-amd64.tar.gz" \
     && chmod +x tini \
