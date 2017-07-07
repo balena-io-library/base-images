@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2017-07-07
+
+### Changed
+
+- Add support for new boards: Kitra520 and Nvidia Jetson Tx2.
+- Fix broken tini on amd64 debian base imaghes.
+- apt-get: replace deprecated "force-yes" option with equivalent settings.
+
 ## 2017-06-20
 
 ### Changed
