@@ -23,6 +23,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		iproute \
 		netbase \
 		curl \
+		udev \
 	&& rm -rf /var/lib/apt/lists/*
 
 # Tini

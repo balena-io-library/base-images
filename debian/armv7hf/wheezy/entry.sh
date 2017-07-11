@@ -43,7 +43,12 @@ function mount_dev()
 function init_non_systemd()
 {
 	
-	udevd & 
+	which udevd
+	if [ $? == '0' ]; then
+		udevd --daemon &> /dev/null
+	else
+		/lib/systemd/systemd-udevd --daemon &> /dev/null
+	fi
 	udevadm trigger &> /dev/null
 	
 	CMD=$(which "$1")
