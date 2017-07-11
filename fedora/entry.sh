@@ -4,7 +4,12 @@ set -m
 
 function start_udev()
 {
-	udevd &
+	which udevd
+	if [ $? == '0' ]; then
+		udevd --daemon &> /dev/null
+	else
+		/lib/systemd/systemd-udevd --daemon &> /dev/null
+	fi
 	udevadm trigger &> /dev/null
 }
 
