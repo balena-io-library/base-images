@@ -325,15 +325,15 @@ for device in $devices; do
 				-e s~#{CHECKSUM}~"$checksum"~g \
 				-e s~#{TARGET_ARCH}~"$alpine_binary_arch"~g $slimTemplate > $alpine_dockerfilePath/slim/Dockerfile
 
-		mkdir -p $alpine_dockerfilePath/edge
-		sed -e s~#{FROM}~"resin/$device-alpine-buildpack-deps:edge"~g \
+		mkdir -p $alpine_dockerfilePath/3.5
+		sed -e s~#{FROM}~"resin/$device-alpine-buildpack-deps:3.5"~g \
 				-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
 				-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
 				-e s~#{BINARY_URL}~"$binary_url"~g \
 				-e s~#{CHECKSUM}~"$checksum"~g \
-				-e s~#{TARGET_ARCH}~"$alpine_binary_arch"~g $template > $alpine_dockerfilePath/edge/Dockerfile
+				-e s~#{TARGET_ARCH}~"$alpine_binary_arch"~g $template > $alpine_dockerfilePath/3.5/Dockerfile
 
-		set_pythonpath "$baseVersion" "$alpine_dockerfilePath" "base edge slim" "alpine"
+		set_pythonpath "$baseVersion" "$alpine_dockerfilePath" "base 3.5 slim" "alpine"
 	done
 	# Fedora
 	if [[ $fedora_devices == *" $device "* ]]; then
