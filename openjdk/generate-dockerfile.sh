@@ -1,6 +1,30 @@
 #!/bin/bash
 set -e
 
+function getZuluVersion() {
+	case "$deviceArch" in
+	'armhf')
+		if [ $javaVersion == '7' ]; then
+			# Not found the binary yet.
+			zuluBinary=
+		else
+			zuluBinary='ezdk-1.8.0_121-8.20.0.42-eval-linux_aarch32hf'
+		fi
+	;;
+	'amd64')
+		if [ $javaVersion == '7' ]; then
+			# Not found the binary yet.
+			zuluBinary=
+		else
+			zuluBinary='zulu8.21.0.1-jdk8.0.131-linux_x64'
+		fi
+	;;
+	*)
+		zuluBinary=
+	;;
+	esac
+}
+
 declare -A debianSuites=(
 	[6]='wheezy'
 	[7]='jessie'
@@ -25,6 +49,8 @@ devices='raspberry-pi raspberry-pi2 beaglebone-black intel-edison intel-nuc via-
 fedora_devices=' raspberry-pi2 beaglebone-black via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green intel-nuc qemux86-64 artik710 am571x-evm kitra710 up-board imx6ul-var-dart kitra520 jetson-tx2 '
 alpineVersion='3.6'
 alpineDeviceArchs='x86_64 x86 armhf'
+zuluVersionArmhf='ezdk-1.8.0_121-8.20.0.42-eval-linux_aarch32hf'
+zuluVersionX86_64='zulu8.21.0.1-jdk8.0.131-linux_x64'
 variants='jre jdk'
 
 for arch in $alpineDeviceArchs; do
@@ -219,6 +245,20 @@ for device in $devices; do
 			-e s@#{CA_HACK0}@"$caHackContent0"@g \
 			-e s@#{CA_HACK1}@"$caHackContent1"@g \
 			-e s@#{CA_HACK2}@"$caHackContent2"@g Dockerfile.tpl > "$debian_dockerfilePath/Dockerfile"
+
+		# Zulu variant
+		getZuluVersion
+		if [ "$zuluBinary" ]; then
+			if [ $javaType == 'jdk' ]; then
+				zulu_template='Dockerfile.zulu.jdk.tpl'
+			else
+				zulu_template='Dockerfile.zulu.jre.tpl'
+			fi
+
+			mkdir -p $debian_dockerfilePath/zulu
+			sed -e s@#{FROM}@"resin/$device-buildpack-deps:$debianSuite-$variant"@g \
+				-e s@#{ZULU_VERSION}@"$zuluBinary"@g $zulu_template > "$debian_dockerfilePath/zulu/Dockerfile"
+		fi
 
 		# Alpine Linux
 		if [ $javaVersion != 9 ] && [ "$deviceArch" != 'armel' ]; then
