@@ -29,7 +29,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Tini
 ENV TINI_VERSION 0.14.0
 RUN curl -SLO "http://resin-packages.s3.amazonaws.com/tini/v$TINI_VERSION/tini0.14.0.linux-i386.tar.gz" \
-	&& echo "9f4a0b536efdcbe92bc81c6e68dbf8dc1c5739e58f4e7e3a91f07094655149e8 tini0.14.0.linux-i386.tar.gz" | sha256sum -c - \
+	&& echo "9f4a0b536efdcbe92bc81c6e68dbf8dc1c5739e58f4e7e3a91f07094655149e8  tini0.14.0.linux-i386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "tini0.14.0.linux-i386.tar.gz" \
 	&& rm "tini0.14.0.linux-i386.tar.gz" \
     && chmod +x tini \

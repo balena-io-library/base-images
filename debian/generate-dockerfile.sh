@@ -75,7 +75,7 @@ for arch in $archs; do
 
 	# Tini
 	tiniBinary="tini$TINI_VERSION.linux-$arch.tar.gz"
-	tiniChecksum="TINI_$arch" && tiniChecksum=$(eval echo \$$tiniChecksum)
+	tiniChecksum=$(eval echo \"\$TINI_$arch\")
 
 	for suite in $suites; do
 
