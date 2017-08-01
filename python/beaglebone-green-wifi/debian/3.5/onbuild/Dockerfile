@@ -1,4 +1,4 @@
-FROM resin/beaglebone-green-wifi-python:3.5.2
+FROM resin/beaglebone-green-wifi-python:3.5.3
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app

@@ -1,4 +1,4 @@
-FROM resin/raspberry-pi2-python:3.6.1
+FROM resin/raspberry-pi2-python:3.6.2
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app

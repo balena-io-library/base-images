@@ -1,4 +1,4 @@
-FROM resin/qemux86-64-alpine-python:3.6.1
+FROM resin/qemux86-64-alpine-python:3.6.2
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
