@@ -1,4 +1,4 @@
-FROM resin/kitra710-python:3.5.2
+FROM resin/kitra710-python:3.5.3
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app

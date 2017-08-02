@@ -1,4 +1,4 @@
-FROM resin/beaglebone-green-alpine-python:3.6.1
+FROM resin/beaglebone-green-alpine-python:3.6.2
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app

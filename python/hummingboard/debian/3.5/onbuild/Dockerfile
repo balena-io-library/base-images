@@ -1,4 +1,4 @@
-FROM resin/hummingboard-python:3.5.2
+FROM resin/hummingboard-python:3.5.3
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
