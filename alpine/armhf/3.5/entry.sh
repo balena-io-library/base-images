@@ -44,8 +44,7 @@ function init_openrc()
 	printf '%q ' "$@" >> /etc/resinApp.sh
 	chmod +x /etc/resinApp.sh
 
-	sed -i -e s~#{DIR}~"$(pwd)"~g \
-		-e s~#{ENV}~"$(env | tr '\n' ' ' | xargs printf '--env "%s" ')"~g /etc/init.d/resin
+	sed -i -e s~#{DIR}~"$(pwd)"~g /etc/init.d/resin
 
 	exec /sbin/init quiet
 }
