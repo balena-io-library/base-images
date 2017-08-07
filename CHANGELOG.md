@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2017-08-07
+
+### Changed
+
+- Fix issue when environment variable value contains dollar signs will be interpreted before being passed to the application on Alpine Linux.
+- Add Python v3.5.3 and v3.6.2.
+- Only generate node v0.10.x armel base images.
+
+
+## 2017-07-23
+
+### Changed
+
+- Fix issue with checksum line format on Debian Wheezy base images.
+- Drop support for edge tag on Alpine Linux base images.
+
+
+## 2017-07-19
+
+### Changed
+
+- Add node v4.8.4 v6.11.1 v7.10.1 and v8.1.4.
+- Drop support for edge tag on Alpine Linux base images.
+
+
+## 2017-07-11
+
+### Changed
+
+- Fix issue with broken udev on Debian stretch base images.
+
+
 ## 2017-07-07
 
 ### Changed
@@ -10,6 +42,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Add support for new boards: Kitra520 and Nvidia Jetson Tx2.
 - Fix broken tini on amd64 debian base imaghes.
 - apt-get: replace deprecated "force-yes" option with equivalent settings.
+
 
 ## 2017-06-20
 
