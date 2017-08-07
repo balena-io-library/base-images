@@ -186,7 +186,7 @@ for device in $devices; do
 			baseVersion=$(expr match "$nodeVersion" '\([0-9]*\.[0-9]*\)')
 		fi
 
-		if (version_ge "$nodeVersion" "7") && [ $binaryArch == "armel" ]; then
+		if [ $baseVersion != '0.10' ] && [ $binaryArch == "armel" ]; then
 			continue
 		fi
 
