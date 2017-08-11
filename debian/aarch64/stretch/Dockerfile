@@ -41,31 +41,33 @@ COPY 01_buildconfig /etc/apt/apt.conf.d/
 RUN mkdir -p /usr/share/man/man1
 # Install Systemd
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN echo 'deb http://deb.debian.org/debian jessie-backports main' >> /etc/apt/sources.list.d/jessie-backports.list \
+	&& apt-get remove -y --allow-remove-essential systemd libsystemd0 udev libudev1 \
+	&& apt autoremove -y \
+	&& apt-get update \
+	&& apt-get -t jessie-backports install -y --no-install-recommends \
 		systemd \
+		systemd-sysv udev \
+	&& apt-mark hold systemd \
+	&& rm -rf /etc/apt/sources.list.d/jessie-backports.list \
 	&& rm -rf /var/lib/apt/lists/*
 
 ENV container docker
 
-# We never want these to run in a container
-RUN systemctl mask \
-    dev-hugepages.mount \
-    sys-fs-fuse-connections.mount \
-    sys-kernel-config.mount \
+# We only want few core services run in the container.
+RUN find /etc/systemd/system \
+		/lib/systemd/system \
+		-path '*.wants/*' \
+		-not -name '*journald*' \
+		-not -name '*udevd*' \
+		-not -name '*systemd-tmpfiles*' \
+		-not -name '*systemd-user-sessions*' \
+		-exec rm \{} \;
 
-    display-manager.service \
-    getty@.service \
-    systemd-logind.service \
-    systemd-remount-fs.service \
-
-    getty.target \
-    graphical.target  
-
-COPY entry.sh /usr/bin/entry.sh    
+COPY entry.sh /usr/bin/entry.sh
 COPY launch.service /etc/systemd/system/launch.service
 
 RUN systemctl enable /etc/systemd/system/launch.service
 
 STOPSIGNAL 37
-VOLUME ["/sys/fs/cgroup"]
 ENTRYPOINT ["/usr/bin/entry.sh"]
