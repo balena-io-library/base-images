@@ -45,15 +45,18 @@ declare -A variants=(
 declare -A debCache=()
 
 versions='7-jdk 7-jre 8-jdk 8-jre'
-devices='raspberry-pi raspberry-pi2 beaglebone-black intel-edison intel-nuc via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green cybertan-ze250 artik710 am571x-evm up-board kitra710 imx6ul-var-dart kitra520 jetson-tx2'
-fedora_devices=' raspberry-pi2 beaglebone-black via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green intel-nuc qemux86-64 artik710 am571x-evm kitra710 up-board imx6ul-var-dart kitra520 jetson-tx2 '
+# List of devices
+targets='raspberry-pi raspberry-pi2 beaglebone-black intel-edison intel-nuc via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green cybertan-ze250 artik710 am571x-evm up-board kitra710 imx6ul-var-dart kitra520 jetson-tx2'
+# List of archs
+targets+=' armv7hf armel i386 amd64'
+fedora_targets=' raspberry-pi2 beaglebone-black via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green intel-nuc qemux86-64 artik710 am571x-evm kitra710 up-board imx6ul-var-dart kitra520 jetson-tx2 armv7hf amd64 '
 alpineVersion='3.6'
 alpineDeviceArchs='x86_64 x86 armhf'
 zuluVersionArmhf='ezdk-1.8.0_121-8.20.0.42-eval-linux_aarch32hf'
 zuluVersionX86_64='zulu8.21.0.1-jdk8.0.131-linux_x64'
 variants='jre jdk'
 
-for arch in $alpineDeviceArchs; do
+for arch in $alpinetargetArchs; do
 	curl -fsSL'#' "http://dl-cdn.alpinelinux.org/alpine/v$alpineVersion/community/$arch/APKINDEX.tar.gz" | tar -zxv APKINDEX
 	case "$arch" in
 	'armhf')
@@ -69,104 +72,116 @@ for arch in $alpineDeviceArchs; do
 
 done
 
-for device in $devices; do
+for target in $targets; do
 	for version in $versions; do
-		case "$device" in
+		case "$target" in
+		'armv7hf')
+			targetArch='armhf'
+		;;
+		'armel')
+			targetArch='armel'
+		;;
+		'i386')
+			targetArch='i386'
+		;;
+		'amd64')
+			targetArch='amd64'
+		;;
 		'raspberry-pi')
-			deviceArch='armhf'
+			targetArch='armhf'
 		;;
 		'raspberry-pi2')
-			deviceArch='armhf'
+			targetArch='armhf'
 		;;
 		'raspberrypi3')
-			deviceArch='armhf'
+			targetArch='armhf'
 		;;
 		'beaglebone-black')
-			deviceArch='armhf'
+			targetArch='armhf'
 		;;
 		'beaglebone-green-wifi')
-			deviceArch='armhf'
+			targetArch='armhf'
 		;;
 		'beaglebone-green')
-			deviceArch='armhf'
+			targetArch='armhf'
 		;;
 		'intel-edison')
-			deviceArch='i386'
+			targetArch='i386'
 		;;
 		'qemux86')
-			deviceArch='i386'
+			targetArch='i386'
 		;;
 		'cybertan-ze250')
-			deviceArch='i386'
+			targetArch='i386'
 		;;
 		'intel-nuc')
-			deviceArch='amd64'
+			targetArch='amd64'
 		;;
 		'qemux86-64')
-			deviceArch='amd64'
+			targetArch='amd64'
 		;;
 		'up-board')
-			deviceArch='amd64'
+			targetArch='amd64'
 		;;
 		'via-vab820-quad')
-			deviceArch='armhf'
+			targetArch='armhf'
 		;;
 		'zynq-xz702')
-			deviceArch='armhf'
+			targetArch='armhf'
 		;;
 		'odroid-c1')
-			deviceArch='armhf'
+			targetArch='armhf'
 		;;
 		'odroid-xu4')
-			deviceArch='armhf'
+			targetArch='armhf'
 		;;
 		'parallella')
-			deviceArch='armhf'
+			targetArch='armhf'
 		;;
 		'nitrogen6x')
-			deviceArch='armhf'
+			targetArch='armhf'
 		;;
 		'hummingboard')
-			deviceArch='armhf'
+			targetArch='armhf'
 		;;
 		'ts4900')
-			deviceArch='armhf'
+			targetArch='armhf'
 		;;
 		'colibri-imx6dl')
-			deviceArch='armhf'
+			targetArch='armhf'
 		;;
 		'apalis-imx6q')
-			deviceArch='armhf'
+			targetArch='armhf'
 		;;
 		'am571x-evm')
-			deviceArch='armhf'
+			targetArch='armhf'
 		;;
 		'ts7700')
-			deviceArch="armel"
+			targetArch="armel"
 		;;
 		'artik5')
-			deviceArch='armhf'
+			targetArch='armhf'
 		;;
 		'artik10')
-			deviceArch='armhf'
+			targetArch='armhf'
 		;;
 		'artik710')
-			deviceArch='armhf'
+			targetArch='armhf'
 		;;
 		'kitra710')
-			deviceArch='armhf'
+			targetArch='armhf'
 		;;
 		'kitra520')
-			deviceArch='armhf'
+			targetArch='armhf'
 		;;
 		'imx6ul-var-dart')
-			deviceArch='armhf'
+			targetArch='armhf'
 		;;
 		'ccon-01')
-			deviceArch='armhf'
+			targetArch='armhf'
 		;;
 		'jetson-tx2')
-			deviceArch='armhf'
+			targetArch='armhf'
 		;;
 		esac
 		# Shared vars
@@ -180,7 +195,7 @@ for device in $devices; do
 		debianAddSuite="${debianAddSuites[$javaVersion]}"
 		
 
-		debianJavaHome="/usr/lib/jvm/java-$javaVersion-openjdk-$deviceArch"
+		debianJavaHome="/usr/lib/jvm/java-$javaVersion-openjdk-$targetArch"
 		if [ "$javaType" = 'jre' -a "$javaVersion" -lt 9 ]; then
 			# woot, this hackery stopped in OpenJDK 9+!
 			debianJavaHome+='/jre'
@@ -192,7 +207,7 @@ for device in $devices; do
 			needCaHack=1
 		fi
 
-		if [ $device == "raspberry-pi" ]; then
+		if [ $target == "raspberry-pi" ]; then
 			dist="resin/rpi-raspbian:$debianSuite"
 		else
 			dist="debian:${debianAddSuite:-$debianSuite}"
@@ -211,7 +226,7 @@ for device in $devices; do
 		fi
 		debianFullVersion="${debianVersion%%-*}"
 
-		if [ "$debianAddSuite" ] && [ $device != "raspberry-pi" ]; then
+		if [ "$debianAddSuite" ] && [ $target != "raspberry-pi" ]; then
 			debianAddSuiteContent="RUN echo 'deb http://deb.debian.org/debian $debianAddSuite main' > /etc/apt/sources.list.d/$debianAddSuite.list"
 			debianPrioritizedSource="-t $debianAddSuite"
 		else
@@ -220,7 +235,7 @@ for device in $devices; do
 		fi
 
 		if [ "$needCaHack" ]; then
-			if [ $device == "raspberry-pi" ]; then
+			if [ $target == "raspberry-pi" ]; then
 				caHackContent0="ENV CA_CERTIFICATES_JAVA_VERSION 20140324"
 			else
 				caHackContent0="ENV CA_CERTIFICATES_JAVA_VERSION 20161107~bpo8+1"
@@ -233,9 +248,9 @@ for device in $devices; do
 			caHackContent2=""
 		fi
 
-		debian_dockerfilePath=$device/debian/$version
+		debian_dockerfilePath=$target/debian/$version
 		mkdir -p $debian_dockerfilePath
-		sed -e s@#{FROM}@"resin/$device-buildpack-deps:$debianSuite-$variant"@g \
+		sed -e s@#{FROM}@"resin/$target-buildpack-deps:$debianSuite-$variant"@g \
 			-e s@#{ADD_SUITE}@"$debianAddSuiteContent"@g \
 			-e s@#{JAVA_HOME}@"$debianJavaHome"@g \
 			-e s@#{FULL_VERSION}@"$debianFullVersion"@g \
@@ -261,7 +276,11 @@ for device in $devices; do
 		fi
 
 		# Alpine Linux
-		if [ $javaVersion != 9 ] && [ "$deviceArch" != 'armel' ]; then
+		if [ $javaVersion != 9 ] && [ "$targetArch" != 'armel' ]; then
+
+			if [ $target == "armv7hf" ]; then
+				target='armhf'
+			fi
 
 			alpinePackage="openjdk$javaVersion"
 			alpineJavaHome="/usr/lib/jvm/java-1.${javaVersion}-openjdk"
@@ -276,13 +295,13 @@ for device in $devices; do
 			;;
 			esac
 
-			alpinePackageVersion="$(awk -F: '$1 == "P" { pkg = $2 } pkg == "'"$alpinePackage"'" && $1 == "V" { print $2 }' APKINDEX.$deviceArch)"
+			alpinePackageVersion="$(awk -F: '$1 == "P" { pkg = $2 } pkg == "'"$alpinePackage"'" && $1 == "V" { print $2 }' APKINDEX.$targetArch)"
 			alpineFullVersion="${alpinePackageVersion/./u}"
 			alpineFullVersion="${alpineFullVersion%%.*}"
 
-			alpine_dockerfilePath=$device/alpine/$version
+			alpine_dockerfilePath=$target/alpine/$version
 			mkdir -p $alpine_dockerfilePath
-			sed -e s@#{FROM}@resin/$device-alpine:$alpineVersion@g \
+			sed -e s@#{FROM}@resin/$target-alpine:$alpineVersion@g \
 				-e s@#{ALPINE_JAVA_HOME}@"$alpineJavaHome"@g \
 				-e s@#{ALPINE_JAVA_PATH}@"$alpinePathAdd"@g \
 				-e s@#{ALPINE_FULL_VERSION}@"$alpineFullVersion"@g \
@@ -292,16 +311,16 @@ for device in $devices; do
 	done
 done
 
-for fedoraDevice in $fedora_devices; do
+for fedoratarget in $fedora_targets; do
 	for variant in $variants; do
 		if [ $variant == 'jre' ]; then
 			fedoraPackage='java-1.8.0-openjdk'
 		else
 			fedoraPackage='java-1.8.0-openjdk java-1.8.0-openjdk-devel'
 		fi
-		fedora_dockerfilePath="$fedoraDevice/fedora/8-$variant"
+		fedora_dockerfilePath="$fedoratarget/fedora/8-$variant"
 		mkdir -p $fedora_dockerfilePath
-		sed -e s~#{FROM}~resin/$fedoraDevice-fedora:25~g \
+		sed -e s~#{FROM}~resin/$fedoratarget-fedora:25~g \
 			-e s~#{FEDORA_PACKAGE}~"$fedoraPackage"~g Dockerfile.fedora.tpl > "$fedora_dockerfilePath/Dockerfile"
 	done
 done

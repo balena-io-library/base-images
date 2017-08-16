@@ -59,14 +59,34 @@ set_pythonpath() {
 	done
 }
 
-devices='raspberry-pi raspberry-pi2 beaglebone-black intel-edison intel-nuc via-via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green cybertan-ze250 artik710 am571x-evm up-board kitra710 imx6ul-var-dart kitra520 jetson-tx2'
-fedora_devices=' raspberry-pi2 beaglebone-black via-via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green intel-nuc qemux86-64 artik710 am571x-evm kitra710 up-board imx6ul-var-dart kitra520 jetson-tx2 '
+# List of devices
+targets='raspberry-pi raspberry-pi2 beaglebone-black intel-edison intel-nuc via-via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green cybertan-ze250 artik710 am571x-evm up-board kitra710 imx6ul-var-dart kitra520 jetson-tx2'
+# List of archs
+targets+=' armv7hf armel i386 amd64'
+fedora_targets=' raspberry-pi2 beaglebone-black via-via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green intel-nuc qemux86-64 artik710 am571x-evm kitra710 up-board imx6ul-var-dart kitra520 jetson-tx2 armv7hf amd64 '
 pythonVersions='2.7.13 3.3.6 3.4.4 3.5.3 3.6.2'
 latestVersion='2.7.13'
 binary_url="http://resin-packages.s3.amazonaws.com/python/v\$PYTHON_VERSION/Python-\$PYTHON_VERSION.linux-#{TARGET_ARCH}.tar.gz"
 
-for device in $devices; do
-	case "$device" in
+for target in $targets; do
+	case "$target" in
+	'armv7hf')
+		binary_arch='armv7hf'
+		alpine_binary_arch='alpine-armhf'
+		fedora_binary_arch='fedora-armhf'
+	;;
+	'armel')
+		binary_arch='armel'
+	;;
+	'i386')
+		binary_arch='i386'
+		alpine_binary_arch='alpine-i386'
+	;;
+	'amd64')
+		binary_arch='amd64'
+		alpine_binary_arch='alpine-amd64'
+		fedora_binary_arch='fedora-amd64'
+	;;
 	'raspberry-pi')
 		binary_arch='armv6hf'
 		alpine_binary_arch='alpine-armhf'
@@ -241,9 +261,9 @@ for device in $devices; do
 		# Extract checksum
 		checksum=$(grep " Python-$pythonVersion.linux-$binary_arch.tar.gz" SHASUMS256.txt)
 
-		debian_dockerfilePath=$device/debian/$baseVersion
+		debian_dockerfilePath=$target/debian/$baseVersion
 		mkdir -p $debian_dockerfilePath
-		sed -e s~#{FROM}~"resin/$device-buildpack-deps:jessie"~g \
+		sed -e s~#{FROM}~"resin/$target-buildpack-deps:jessie"~g \
 				-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
 				-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
 				-e s~#{BINARY_URL}~"$binary_url"~g \
@@ -251,7 +271,7 @@ for device in $devices; do
 				-e s~#{TARGET_ARCH}~"$binary_arch"~g $template > $debian_dockerfilePath/Dockerfile
 
 		mkdir -p $debian_dockerfilePath/wheezy
-		sed -e s~#{FROM}~"resin/$device-buildpack-deps:wheezy"~g \
+		sed -e s~#{FROM}~"resin/$target-buildpack-deps:wheezy"~g \
 				-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
 				-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
 				-e s~#{BINARY_URL}~"$binary_url"~g \
@@ -259,11 +279,11 @@ for device in $devices; do
 				-e s~#{TARGET_ARCH}~"$binary_arch"~g $template > $debian_dockerfilePath/wheezy/Dockerfile
 
 		mkdir -p $debian_dockerfilePath/onbuild
-		sed -e s~#{FROM}~"resin/$device-python:$pythonVersion"~g Dockerfile.onbuild.tpl > $debian_dockerfilePath/onbuild/Dockerfile
+		sed -e s~#{FROM}~"resin/$target-python:$pythonVersion"~g Dockerfile.onbuild.tpl > $debian_dockerfilePath/onbuild/Dockerfile
 		mkdir -p $debian_dockerfilePath/slim
 
-		# Only for RPI1 device
-		if [ $device == "raspberry-pi" ]; then
+		# Only for RPI1 target
+		if [ $target == "raspberry-pi" ]; then
 			sed -e s~#{FROM}~"resin/rpi-raspbian:jessie"~g \
 				-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
 				-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
@@ -271,7 +291,7 @@ for device in $devices; do
 				-e s~#{CHECKSUM}~"$checksum"~g \
 				-e s~#{TARGET_ARCH}~"$binary_arch"~g $slimTemplate > $debian_dockerfilePath/slim/Dockerfile
 		else
-			sed -e s~#{FROM}~"resin/$device-debian:jessie"~g \
+			sed -e s~#{FROM}~"resin/$target-debian:jessie"~g \
 				-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
 				-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
 				-e s~#{BINARY_URL}~"$binary_url"~g \
@@ -280,7 +300,7 @@ for device in $devices; do
 		fi
 
 		# Only for intel intel-edison
-		if [ $device == "intel-edison" ]; then
+		if [ $target == "intel-edison" ]; then
 			append_setup_script "$baseVersion" "$debian_dockerfilePath" "debian" "base wheezy slim"
 		fi
 
@@ -289,9 +309,13 @@ for device in $devices; do
 		# Alpine
 		# TODO: install mraa on intel-edison
 
-		# armel device not supported yet.
-		if [ $device == "ts7700" ]; then
+		# armel target not supported yet.
+		if [ $target == "ts7700" ] || [ $target == "armel" ]; then
 			continue
+		fi
+
+		if [ $target == "armv7hf" ]; then
+			target='armhf'
 		fi
 
 		if [ $pythonVersion != "$latestVersion" ]; then
@@ -305,9 +329,9 @@ for device in $devices; do
 		# Extract checksum
 		checksum=$(grep " Python-$pythonVersion.linux-$alpine_binary_arch.tar.gz" SHASUMS256.txt)
 
-		alpine_dockerfilePath=$device/alpine/$baseVersion
+		alpine_dockerfilePath=$target/alpine/$baseVersion
 		mkdir -p $alpine_dockerfilePath
-		sed -e s~#{FROM}~"resin/$device-alpine-buildpack-deps:latest"~g \
+		sed -e s~#{FROM}~"resin/$target-alpine-buildpack-deps:latest"~g \
 				-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
 				-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
 				-e s~#{BINARY_URL}~"$binary_url"~g \
@@ -315,10 +339,10 @@ for device in $devices; do
 				-e s~#{TARGET_ARCH}~"$alpine_binary_arch"~g $template > $alpine_dockerfilePath/Dockerfile
 
 		mkdir -p $alpine_dockerfilePath/onbuild
-		sed -e s~#{FROM}~"resin/$device-alpine-python:$pythonVersion"~g Dockerfile.onbuild.tpl > $alpine_dockerfilePath/onbuild/Dockerfile
+		sed -e s~#{FROM}~"resin/$target-alpine-python:$pythonVersion"~g Dockerfile.onbuild.tpl > $alpine_dockerfilePath/onbuild/Dockerfile
 
 		mkdir -p $alpine_dockerfilePath/slim
-		sed -e s~#{FROM}~"resin/$device-alpine:latest"~g \
+		sed -e s~#{FROM}~"resin/$target-alpine:latest"~g \
 				-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
 				-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
 				-e s~#{BINARY_URL}~"$binary_url"~g \
@@ -326,7 +350,7 @@ for device in $devices; do
 				-e s~#{TARGET_ARCH}~"$alpine_binary_arch"~g $slimTemplate > $alpine_dockerfilePath/slim/Dockerfile
 
 		mkdir -p $alpine_dockerfilePath/3.5
-		sed -e s~#{FROM}~"resin/$device-alpine-buildpack-deps:3.5"~g \
+		sed -e s~#{FROM}~"resin/$target-alpine-buildpack-deps:3.5"~g \
 				-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
 				-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
 				-e s~#{BINARY_URL}~"$binary_url"~g \
@@ -335,8 +359,13 @@ for device in $devices; do
 
 		set_pythonpath "$baseVersion" "$alpine_dockerfilePath" "base 3.5 slim" "alpine"
 	done
+
 	# Fedora
-	if [[ $fedora_devices == *" $device "* ]]; then
+	if [ $target == "armhf" ]; then
+		target='armv7hf'
+	fi
+
+	if [[ $fedora_targets == *" $target "* ]]; then
 		fedora_python_versions='2 3'
 		for version in $fedora_python_versions; do
 			if [ $version == "2" ]; then
@@ -344,18 +373,18 @@ for device in $devices; do
 			else
 				template='Dockerfile.fedora.python3.tpl'
 			fi
-			fedora_dockerfilePath=$device/fedora/$version
+			fedora_dockerfilePath=$target/fedora/$version
 			mkdir -p $fedora_dockerfilePath
-			sed -e s~#{FROM}~"resin/$device-fedora-buildpack-deps:latest"~g $template > $fedora_dockerfilePath/Dockerfile
+			sed -e s~#{FROM}~"resin/$target-fedora-buildpack-deps:latest"~g $template > $fedora_dockerfilePath/Dockerfile
 
 			mkdir -p $fedora_dockerfilePath/24
-			sed -e s~#{FROM}~"resin/$device-fedora-buildpack-deps:24"~g $template > $fedora_dockerfilePath/24/Dockerfile
+			sed -e s~#{FROM}~"resin/$target-fedora-buildpack-deps:24"~g $template > $fedora_dockerfilePath/24/Dockerfile
 
 			mkdir -p $fedora_dockerfilePath/onbuild
-			sed -e s~#{FROM}~"resin/$device-fedora-python:$version"~g Dockerfile.onbuild.tpl > $fedora_dockerfilePath/onbuild/Dockerfile
+			sed -e s~#{FROM}~"resin/$target-fedora-python:$version"~g Dockerfile.onbuild.tpl > $fedora_dockerfilePath/onbuild/Dockerfile
 
 			mkdir -p $fedora_dockerfilePath/slim
-			sed -e s~#{FROM}~"resin/$device-fedora:latest"~g $template > $fedora_dockerfilePath/slim/Dockerfile
+			sed -e s~#{FROM}~"resin/$target-fedora:latest"~g $template > $fedora_dockerfilePath/slim/Dockerfile
 		done
 	fi
 done

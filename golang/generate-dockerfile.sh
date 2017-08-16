@@ -3,14 +3,43 @@ set -e
 
 function version_le() { test "$(echo "$@" | tr " " "\n" | sort -V | tail -n 1)" != "$1"; }
 
-devices='raspberry-pi raspberry-pi2 beaglebone-black intel-edison intel-nuc via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green cybertan-ze250 artik710 am571x-evm up-board kitra710 imx6ul-var-dart kitra520 jetson-tx2'
-fedora_devices=' raspberry-pi2 beaglebone-black via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green intel-nuc qemux86-64 artik710 am571x-evm kitra710 up-board imx6ul-var-dart kitra520 jetson-tx2 '
+# List of devices
+targets='raspberry-pi raspberry-pi2 beaglebone-black intel-edison intel-nuc via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green cybertan-ze250 artik710 am571x-evm up-board kitra710 imx6ul-var-dart kitra520 jetson-tx2'
+# List of archs
+targets+=' armv7hf armel i386 amd64'
+fedora_targets=' raspberry-pi2 beaglebone-black via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green intel-nuc qemux86-64 artik710 am571x-evm kitra710 up-board imx6ul-var-dart kitra520 jetson-tx2 armv7hf amd64 '
 goVersions='1.4.3 1.5.4 1.6.4 1.7.5 1.8'
 resinUrl="http://resin-packages.s3.amazonaws.com/golang/v\$GO_VERSION/go\$GO_VERSION.linux-#{TARGET_ARCH}.tar.gz"
 golangUrl="https://storage.googleapis.com/golang/go\$GO_VERSION.linux-#{TARGET_ARCH}.tar.gz"
 
-for device in $devices; do
-	case "$device" in
+for target in $targets; do
+	case "$target" in
+	'armv7hf')
+		binary_url=$resinUrl
+		binary_arch='armv7hf'
+		alpine_binary_url=$resinUrl
+		alpine_binary_arch='alpine-armhf'
+		fedora_binary_url=$resinUrl
+		fedora_binary_arch='armv7hf'
+	;;
+	'armel')
+		binary_url=$resinUrl
+		binary_arch='armel'
+	;;
+	'i386')
+		binary_url=$golangUrl
+		binary_arch='386'
+		alpine_binary_url=$resinUrl
+		alpine_binary_arch='alpine-i386'
+	;;
+	'amd64')
+		binary_url=$golangUrl
+		binary_arch='amd64'
+		alpine_binary_url=$resinUrl
+		alpine_binary_arch='alpine-amd64'
+		fedora_binary_url=$golangUrl
+		fedora_binary_arch='amd64'
+	;;
 	'raspberry-pi')
 		binary_url=$resinUrl
 		binary_arch='armv6hf'
@@ -262,7 +291,7 @@ for device in $devices; do
 	for goVersion in $goVersions; do
 		baseVersion=$(expr match "$goVersion" '\([0-9]*\.[0-9]*\)')
 
-		if [ $device == "cybertan-ze250" ] && ( version_le $goVersion "1.6" ); then
+		if [ $target == "cybertan-ze250" ] && ( version_le $goVersion "1.6" ); then
 			continue
 		fi
 
@@ -271,9 +300,9 @@ for device in $devices; do
 		# Extract checksum
 		checksum=$(grep " go$goVersion.linux-$binary_arch.tar.gz" SHASUMS256.txt)
 
-		debian_dockerfilePath=$device/debian/$baseVersion
+		debian_dockerfilePath=$target/debian/$baseVersion
 		mkdir -p $debian_dockerfilePath
-		sed -e s~#{FROM}~resin/$device-buildpack-deps:jessie~g \
+		sed -e s~#{FROM}~resin/$target-buildpack-deps:jessie~g \
 			-e s~#{BINARY_URL}~$binary_url~g \
 			-e s~#{GO_VERSION}~$goVersion~g \
 			-e s~#{CHECKSUM}~"$checksum"~g \
@@ -281,7 +310,7 @@ for device in $devices; do
 		cp go-wrapper $debian_dockerfilePath/
 
 		mkdir -p $debian_dockerfilePath/wheezy
-		sed -e s~#{FROM}~resin/$device-buildpack-deps:wheezy~g \
+		sed -e s~#{FROM}~resin/$target-buildpack-deps:wheezy~g \
 			-e s~#{BINARY_URL}~$binary_url~g \
 			-e s~#{GO_VERSION}~$goVersion~g \
 			-e s~#{CHECKSUM}~"$checksum"~g \
@@ -289,13 +318,13 @@ for device in $devices; do
 		cp go-wrapper $debian_dockerfilePath/wheezy/
 
 		mkdir -p $debian_dockerfilePath/onbuild
-		sed -e s~#{FROM}~resin/$device-golang:$goVersion~g Dockerfile.onbuild.tpl > $debian_dockerfilePath/onbuild/Dockerfile
+		sed -e s~#{FROM}~resin/$target-golang:$goVersion~g Dockerfile.onbuild.tpl > $debian_dockerfilePath/onbuild/Dockerfile
 		
-		# Only for RPI1 device
-		if [ $device == "raspberry-pi" ]; then
+		# Only for RPI1 target
+		if [ $target == "raspberry-pi" ]; then
 			base_image="resin/rpi-raspbian:jessie"
 		else
-			base_image="resin/$device-debian:jessie"
+			base_image="resin/$target-debian:jessie"
 		fi
 
 		mkdir -p $debian_dockerfilePath/slim
@@ -308,10 +337,10 @@ for device in $devices; do
 
 		# Fedora
 
-		if [[ $fedora_devices == *" $device "* ]]; then
-			fedora_dockerfilePath=$device/fedora/$baseVersion
+		if [[ $fedora_targets == *" $target "* ]]; then
+			fedora_dockerfilePath=$target/fedora/$baseVersion
 			mkdir -p $fedora_dockerfilePath
-			sed -e s~#{FROM}~resin/$device-fedora-buildpack-deps:latest~g \
+			sed -e s~#{FROM}~resin/$target-fedora-buildpack-deps:latest~g \
 				-e s~#{BINARY_URL}~$fedora_binary_url~g \
 				-e s~#{GO_VERSION}~$goVersion~g \
 				-e s~#{CHECKSUM}~"$checksum"~g \
@@ -319,7 +348,7 @@ for device in $devices; do
 			cp go-wrapper $fedora_dockerfilePath/
 
 			mkdir -p $fedora_dockerfilePath/24
-			sed -e s~#{FROM}~resin/$device-fedora-buildpack-deps:24~g \
+			sed -e s~#{FROM}~resin/$target-fedora-buildpack-deps:24~g \
 				-e s~#{BINARY_URL}~$fedora_binary_url~g \
 				-e s~#{GO_VERSION}~$goVersion~g \
 				-e s~#{CHECKSUM}~"$checksum"~g \
@@ -327,10 +356,10 @@ for device in $devices; do
 			cp go-wrapper $fedora_dockerfilePath/24/
 
 			mkdir -p $fedora_dockerfilePath/onbuild
-			sed -e s~#{FROM}~resin/$device-fedora-golang:$goVersion~g Dockerfile.onbuild.tpl > $fedora_dockerfilePath/onbuild/Dockerfile
+			sed -e s~#{FROM}~resin/$target-fedora-golang:$goVersion~g Dockerfile.onbuild.tpl > $fedora_dockerfilePath/onbuild/Dockerfile
 
 			mkdir -p $fedora_dockerfilePath/slim
-			sed -e s~#{FROM}~resin/$device-fedora:latest~g \
+			sed -e s~#{FROM}~resin/$target-fedora:latest~g \
 					-e s~#{BINARY_URL}~$fedora_binary_url~g \
 					-e s~#{GO_VERSION}~$goVersion~g \
 					-e s~#{CHECKSUM}~"$checksum"~g \
@@ -342,17 +371,21 @@ for device in $devices; do
 		# Alpine.
 
 		# TS7700 not supported yet
-		if [ $device == "ts7700" ]; then
+		if [ $target == "ts7700" ] || [ $target == "armel" ]; then
 			continue
+		fi
+
+		if [ $target == "armv7hf" ]; then
+			target='armhf'
 		fi
 
 		# Extract checksum
 		checksum=$(grep " go$goVersion.linux-$alpine_binary_arch.tar.gz" SHASUMS256.txt)
 
-		alpine_dockerfilePath=$device/alpine/$baseVersion
+		alpine_dockerfilePath=$target/alpine/$baseVersion
 
 		mkdir -p $alpine_dockerfilePath
-		sed -e s~#{FROM}~"resin/$device-alpine-buildpack-deps:latest"~g \
+		sed -e s~#{FROM}~"resin/$target-alpine-buildpack-deps:latest"~g \
 			-e s~#{BINARY_URL}~"$alpine_binary_url"~g \
 			-e s~#{GO_VERSION}~"$goVersion"~g \
 			-e s~#{CHECKSUM}~"$checksum"~g \
@@ -360,7 +393,7 @@ for device in $devices; do
 		cp go-wrapper $alpine_dockerfilePath/
 
 		mkdir -p $alpine_dockerfilePath/slim
-		sed -e s~#{FROM}~"resin/$device-alpine:latest"~g \
+		sed -e s~#{FROM}~"resin/$target-alpine:latest"~g \
 			-e s~#{BINARY_URL}~"$alpine_binary_url"~g \
 			-e s~#{GO_VERSION}~"$goVersion"~g \
 			-e s~#{CHECKSUM}~"$checksum"~g \
@@ -368,10 +401,10 @@ for device in $devices; do
 		cp go-wrapper $alpine_dockerfilePath/slim/
 
 		mkdir -p $alpine_dockerfilePath/onbuild
-		sed -e s~#{FROM}~resin/$device-alpine-golang:$goVersion~g Dockerfile.onbuild.tpl > $alpine_dockerfilePath/onbuild/Dockerfile
+		sed -e s~#{FROM}~resin/$target-alpine-golang:$goVersion~g Dockerfile.onbuild.tpl > $alpine_dockerfilePath/onbuild/Dockerfile
 
 		mkdir -p $alpine_dockerfilePath/3.5
-		sed -e s~#{FROM}~"resin/$device-alpine-buildpack-deps:3.5"~g \
+		sed -e s~#{FROM}~"resin/$target-alpine-buildpack-deps:3.5"~g \
 			-e s~#{BINARY_URL}~"$alpine_binary_url"~g \
 			-e s~#{GO_VERSION}~"$goVersion"~g \
 			-e s~#{CHECKSUM}~"$checksum"~g \
