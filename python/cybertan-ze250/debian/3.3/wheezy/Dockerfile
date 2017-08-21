@@ -29,7 +29,7 @@ ENV SETUPTOOLS_VERSION 34.3.3
 
 RUN set -x \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-i386.tar.gz" \
-	&& echo "26134913cf8254b6f92b0c68b39bf9202d05eda63383ab6aaf531b7d173b786a  Python-3.3.6.linux-i386.tar.gz" | sha256sum -c - \
+	&& echo "a038d7d51c1cf23857b12a15f4339ec13b5fea3b9886a91c5e7adafa2558b9e8  Python-3.3.6.linux-i386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-i386.tar.gz" --strip-components=1 \
 	&& rm -rf "Python-$PYTHON_VERSION.linux-i386.tar.gz" \
 	&& ldconfig \

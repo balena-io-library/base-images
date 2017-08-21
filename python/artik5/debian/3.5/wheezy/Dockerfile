@@ -29,7 +29,7 @@ ENV SETUPTOOLS_VERSION 34.3.3
 
 RUN set -x \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-armv7hf.tar.gz" \
-	&& echo "5e081e08ae5c74abc81dc2ae1de141b2d0f5dd90a842d16612e5a4e72e172961  Python-3.5.3.linux-armv7hf.tar.gz" | sha256sum -c - \
+	&& echo "d448632ca14ba224b5926d3986fae17a41df3e3a2f1f89ca1badf6ebc11ab2d5  Python-3.5.3.linux-armv7hf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-armv7hf.tar.gz" --strip-components=1 \
 	&& rm -rf "Python-$PYTHON_VERSION.linux-armv7hf.tar.gz" \
 	&& ldconfig \

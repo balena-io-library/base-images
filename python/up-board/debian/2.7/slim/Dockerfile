@@ -33,7 +33,7 @@ RUN set -x \
 	' \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends && rm -rf /var/lib/apt/lists/* \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-amd64.tar.gz" \
-	&& echo "8f6ca55b8430603a92131e639b58dc3a22a546c05e8eccfec4b1d473b3b8c5eb  Python-2.7.13.linux-amd64.tar.gz" | sha256sum -c - \
+	&& echo "5ab32788387aee83f34cf00732a25578b45f8bde6287c512be6f0af2714aaccb  Python-2.7.13.linux-amd64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-amd64.tar.gz" --strip-components=1 \
 	&& rm -rf "Python-$PYTHON_VERSION.linux-amd64.tar.gz" \
 	&& ldconfig \

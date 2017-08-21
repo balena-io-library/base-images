@@ -29,7 +29,7 @@ ENV SETUPTOOLS_VERSION 34.3.3
 
 RUN set -x \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-armel.tar.gz" \
-	&& echo "2e172aa0e51420cf02f76dd2c06cfcf5a457c67538835862da7c4215378c2567  Python-3.6.2.linux-armel.tar.gz" | sha256sum -c - \
+	&& echo "91455eadc4abb6598dbc10eeb881abfca756ccf66849d534ff2e2b47d7d51d07  Python-3.6.2.linux-armel.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-armel.tar.gz" --strip-components=1 \
 	&& rm -rf "Python-$PYTHON_VERSION.linux-armel.tar.gz" \
 	&& ldconfig \

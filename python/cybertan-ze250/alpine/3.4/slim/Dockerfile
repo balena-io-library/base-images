@@ -37,7 +37,7 @@ RUN set -x \
 	' \
 	&& apk add --no-cache --virtual .build-deps $buildDeps \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-alpine-i386.tar.gz" \
-	&& echo "ad97ac09ff348833673b80142eb3c6ca8e8658390a412060b4de3320701ec45b  Python-3.4.4.linux-alpine-i386.tar.gz" | sha256sum -c - \
+	&& echo "9e623e0ec07a6bd0a934f60c60d4331fb006ed0e1c5eed6cde1019b37d520b68  Python-3.4.4.linux-alpine-i386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-alpine-i386.tar.gz" --strip-components=1 \
 	&& rm -rf "Python-$PYTHON_VERSION.linux-alpine-i386.tar.gz" \
 	&& if [ ! -e /usr/local/bin/pip3 ]; then : \

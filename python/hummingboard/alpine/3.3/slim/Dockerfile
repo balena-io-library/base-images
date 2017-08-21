@@ -37,7 +37,7 @@ RUN set -x \
 	' \
 	&& apk add --no-cache --virtual .build-deps $buildDeps \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-alpine-armhf.tar.gz" \
-	&& echo "ab155560ccebeaefa70efe85c83e8b67a6f4284388fb47594b6cb4d438c1425f  Python-3.3.6.linux-alpine-armhf.tar.gz" | sha256sum -c - \
+	&& echo "0c791e2c9bfb02976a30f071ddabdf0da29d0e3985f4b3400ffb2454c6833a79  Python-3.3.6.linux-alpine-armhf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-alpine-armhf.tar.gz" --strip-components=1 \
 	&& rm -rf "Python-$PYTHON_VERSION.linux-alpine-armhf.tar.gz" \
 	&& if [ ! -e /usr/local/bin/pip3 ]; then : \
