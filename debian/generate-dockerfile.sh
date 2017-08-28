@@ -104,7 +104,11 @@ for arch in $archs; do
 			cat Dockerfile.no-systemd.partial >> $dockerfilePath/Dockerfile
 			cp entry-nosystemd.sh $dockerfilePath/entry.sh
 		else
-			cat Dockerfile.systemd.partial >> $dockerfilePath/Dockerfile
+			if [ $suite == 'stretch' ]; then
+				cat Dockerfile.systemd.stretch.partial >> $dockerfilePath/Dockerfile
+			else
+				cat Dockerfile.systemd.partial >> $dockerfilePath/Dockerfile	
+			fi
 			cp entry.sh launch.service $dockerfilePath/
 		fi
 	done
