@@ -33,7 +33,7 @@ RUN set -x \
 	' \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends && rm -rf /var/lib/apt/lists/* \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-armel.tar.gz" \
-	&& echo "fe851731e6b731864ae112b44499091a52f1e504badb79c98578b74a7ee9dc90  Python-3.3.6.linux-armel.tar.gz" | sha256sum -c - \
+	&& echo "f8b0dde63c93f7a9253b141ab24d56e1d168f214417c2a97ff526b9bc07bedc7  Python-3.3.6.linux-armel.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-armel.tar.gz" --strip-components=1 \
 	&& rm -rf "Python-$PYTHON_VERSION.linux-armel.tar.gz" \
 	&& ldconfig \

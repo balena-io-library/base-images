@@ -33,7 +33,7 @@ RUN set -x \
 	' \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends && rm -rf /var/lib/apt/lists/* \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-amd64.tar.gz" \
-	&& echo "839b3ae30b1feeedef288bf1bf23ff0e3ffaa70fe12d84e4a528d4cc1cbd09bc  Python-3.4.4.linux-amd64.tar.gz" | sha256sum -c - \
+	&& echo "867a2c39f3e151f2ef249dc363e58d8e67a0833ae9a2fa757feb589b3e6488ba  Python-3.4.4.linux-amd64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-amd64.tar.gz" --strip-components=1 \
 	&& rm -rf "Python-$PYTHON_VERSION.linux-amd64.tar.gz" \
 	&& ldconfig \

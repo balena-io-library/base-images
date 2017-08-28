@@ -31,7 +31,7 @@ ENV SSL_CERT_FILE /etc/ssl/certs/ca-certificates.crt
 
 RUN set -x \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-alpine-i386.tar.gz" \
-	&& echo "0b5e8a7bd62b09551f2cbfe10c8f14d620e11a994ba9a7f88f1a34da298591e3  Python-3.5.3.linux-alpine-i386.tar.gz" | sha256sum -c - \
+	&& echo "ab3aa3d0312d7ced45e8edb8114f6300ac9da84049efff84601c2c78c10e0e7a  Python-3.5.3.linux-alpine-i386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-alpine-i386.tar.gz" --strip-components=1 \
 	&& rm -rf "Python-$PYTHON_VERSION.linux-alpine-i386.tar.gz" \
 	&& if [ ! -e /usr/local/bin/pip3 ]; then : \

@@ -37,7 +37,7 @@ RUN set -x \
 	' \
 	&& apk add --no-cache --virtual .build-deps $buildDeps \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-alpine-armhf.tar.gz" \
-	&& echo "f25d70d062dc5d445fd94bb94c1d62556e0a40c18a8ae9fd1f846bbb44752da2  Python-2.7.13.linux-alpine-armhf.tar.gz" | sha256sum -c - \
+	&& echo "a29de62c2910052f882c41a2a710f7c21abd7ade4f2322805fe8eee5d674e31a  Python-2.7.13.linux-alpine-armhf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-alpine-armhf.tar.gz" --strip-components=1 \
 	&& rm -rf "Python-$PYTHON_VERSION.linux-alpine-armhf.tar.gz" \
 	&& if [ ! -e /usr/local/bin/pip ]; then : \
