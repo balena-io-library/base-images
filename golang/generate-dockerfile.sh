@@ -6,8 +6,8 @@ function version_le() { test "$(echo "$@" | tr " " "\n" | sort -V | tail -n 1)" 
 # List of devices
 targets='raspberry-pi raspberry-pi2 beaglebone-black intel-edison intel-nuc via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green cybertan-ze250 artik710 am571x-evm up-board kitra710 imx6ul-var-dart kitra520 jetson-tx2'
 # List of archs
-targets+=' armv7hf armel i386 amd64'
-fedora_targets=' raspberry-pi2 beaglebone-black via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green intel-nuc qemux86-64 artik710 am571x-evm kitra710 up-board imx6ul-var-dart kitra520 jetson-tx2 armv7hf amd64 '
+targets+=' armv7hf armel i386 amd64 aarch64'
+fedora_targets=' raspberry-pi2 beaglebone-black via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green intel-nuc qemux86-64 artik710 am571x-evm kitra710 up-board imx6ul-var-dart kitra520 jetson-tx2 armv7hf amd64 aarch64 '
 goVersions='1.4.3 1.5.4 1.6.4 1.7.5 1.8'
 resinUrl="http://resin-packages.s3.amazonaws.com/golang/v\$GO_VERSION/go\$GO_VERSION.linux-#{TARGET_ARCH}.tar.gz"
 golangUrl="https://storage.googleapis.com/golang/go\$GO_VERSION.linux-#{TARGET_ARCH}.tar.gz"
@@ -39,6 +39,14 @@ for target in $targets; do
 		alpine_binary_arch='alpine-amd64'
 		fedora_binary_url=$golangUrl
 		fedora_binary_arch='amd64'
+	;;
+	'aarch64')
+		binary_url=$resinUrl
+		binary_arch='aarch64'
+		alpine_binary_url=$resinUrl
+		alpine_binary_arch='alpine-aarch64'
+		fedora_binary_url=$resinUrl
+		fedora_binary_arch='aarch64'
 	;;
 	'raspberry-pi')
 		binary_url=$resinUrl
@@ -281,17 +289,22 @@ for target in $targets; do
 	;;
 	'jetson-tx2')
 		binary_url=$resinUrl
-		binary_arch='armv7hf'
+		binary_arch='aarch64'
 		alpine_binary_url=$resinUrl
-		alpine_binary_arch='alpine-armhf'
+		alpine_binary_arch='alpine-aarch64'
 		fedora_binary_url=$resinUrl
-		fedora_binary_arch='armv7hf'
+		fedora_binary_arch='aarch64'
 	;;
 	esac
 	for goVersion in $goVersions; do
 		baseVersion=$(expr match "$goVersion" '\([0-9]*\.[0-9]*\)')
 
 		if [ $target == "cybertan-ze250" ] && ( version_le $goVersion "1.6" ); then
+			continue
+		fi
+
+		# Only v1.6 and higher aarch64 binaries are available.
+		if [ $binary_arch == "aarch64" ] && ( version_le $goVersion "1.6" ); then
 			continue
 		fi
 
