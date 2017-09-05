@@ -1,4 +1,4 @@
-FROM resin/armv7hf-debian:wheezy
+FROM resin/aarch64-debian:wheezy
 
 LABEL io.resin.device-type="jetson-tx2"
 

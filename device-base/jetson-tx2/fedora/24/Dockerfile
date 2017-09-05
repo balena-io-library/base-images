@@ -1,4 +1,4 @@
-FROM resin/armv7hf-fedora:24
+FROM resin/aarch64-fedora:24
 
 LABEL io.resin.device-type="jetson-tx2"
 
