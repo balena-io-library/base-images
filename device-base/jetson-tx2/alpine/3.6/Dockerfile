@@ -1,4 +1,4 @@
-FROM resin/armhf-alpine:3.6
+FROM resin/aarch64-alpine:3.6
 
 LABEL io.resin.device-type="jetson-tx2"
 

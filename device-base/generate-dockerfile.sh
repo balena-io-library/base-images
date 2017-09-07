@@ -263,10 +263,10 @@ for device in $devices; do
 	;;
 	'jetson-tx2')
 		template='Dockerfile.tpl'
-		baseImage='armv7hf-debian'
+		baseImage='aarch64-debian'
 		alpine_template='Dockerfile.alpine.tpl'
-		alpine_baseImage='armhf-alpine'
-		fedora_baseImage='armv7hf-fedora'
+		alpine_baseImage='aarch64-alpine'
+		fedora_baseImage='aarch64-fedora'
 	;;
 	esac
 

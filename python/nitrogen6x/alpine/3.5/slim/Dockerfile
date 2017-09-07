@@ -9,6 +9,7 @@ ENV LANG C.UTF-8
 
 # install python dependencies
 RUN apk add --no-cache \
+		gnupg \
 		sqlite-libs \
 		libssl1.0 \
 		libffi \
