@@ -4,7 +4,7 @@ ENV GO_VERSION 1.7.5
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-aarch64.tar.gz" \
-	&& echo "1f9a6aaafc0dfc06c8ba2e7bea81071d36ed185a7303a37d43a5d6c36f6136d4  go1.7.5.linux-alpine-aarch64.tar.gz" | sha256sum -c - \
+	&& echo "eadfd8bfa92147b9792c95ab324faa1e55a9fd75aecf49d493394f5a86e60dc6  go1.7.5.linux-alpine-aarch64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-alpine-aarch64.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-alpine-aarch64.tar.gz
 

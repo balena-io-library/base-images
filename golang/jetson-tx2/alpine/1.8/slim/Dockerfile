@@ -9,7 +9,7 @@ RUN buildDeps='curl' \
 	&& apk add --no-cache $buildDeps \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-aarch64.tar.gz" \
-	&& echo "edeb7f37fbb2fdb410976af63dbc8b68fa7e1eff9e59c40995ee9c6fcd722ab6  go1.8.linux-alpine-aarch64.tar.gz" | sha256sum -c - \
+	&& echo "3a2854d46c2739a38d0601c93a9e4e2914aa30dfbfa220b82bd77ae95055c58f  go1.8.linux-alpine-aarch64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-alpine-aarch64.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-alpine-aarch64.tar.gz \
 	&& apk del $buildDeps
