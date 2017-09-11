@@ -4,7 +4,7 @@ ENV GO_VERSION 1.6.4
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-aarch64.tar.gz" \
-	&& echo "f39dab102caa55eca163cb37ff143b4cad417538863db87b34abbcc5a322897e  go1.6.4.linux-aarch64.tar.gz" | sha256sum -c - \
+	&& echo "83345ebe96ac57de79d6ca2676602efd62a538934c6ce5608a3fe454faf70984  go1.6.4.linux-aarch64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-aarch64.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-aarch64.tar.gz
 

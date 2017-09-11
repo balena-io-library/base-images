@@ -8,7 +8,7 @@ RUN buildDeps='curl gcc g++ git' \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-aarch64.tar.gz" \
-	&& echo "147a7da4afb28d9eb76191f49f7575c57f1c8d4385c0ddf913bea78918323e49  go1.7.5.linux-aarch64.tar.gz" | sha256sum -c - \
+	&& echo "ad531f420f8fd2db2b506ec2683760be7a223af6e995122040526504b11a736c  go1.7.5.linux-aarch64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-aarch64.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-aarch64.tar.gz
 
