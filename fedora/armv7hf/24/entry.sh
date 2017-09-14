@@ -78,7 +78,7 @@ function init_systemd()
 	EOF
 
 	mount -t tmpfs -o mode=0755 cgroup /sys/fs/cgroup
-	exec /sbin/init quiet systemd.show_status=0
+	exec env DBUS_SYSTEM_BUS_ADDRESS=unix:path=/run/dbus/system_bus_socket /sbin/init quiet systemd.show_status=0
 }
 
 function init_non_systemd()
