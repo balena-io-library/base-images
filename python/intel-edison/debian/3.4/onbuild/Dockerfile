@@ -1,4 +1,4 @@
-FROM resin/intel-edison-python:3.4.4
+FROM resin/intel-edison-python:3.4.7
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
