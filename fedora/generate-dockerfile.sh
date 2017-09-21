@@ -55,6 +55,15 @@ for repo in $repos; do
 	tiniChecksum="TINI_$repo" && tiniChecksum=$(eval echo \$$tiniChecksum)
 
 	for suite in $suites; do
+
+		if [ $suite == '24' ]; then
+			cgroup='VOLUME ["/sys/fs/cgroup"]'
+			cgroupEntry='mount -t tmpfs -o mode=0755 cgroup /sys/fs/cgroup'
+		else
+			cgroup=''
+			cgroupEntry=''
+		fi
+
 		dockerfilePath=$repo/$suite
 		mkdir -p $dockerfilePath
 
@@ -62,9 +71,12 @@ for repo in $repos; do
 			-e s~#{LABEL}~"$label"~g \
 			-e s~#{QEMU}~"$qemu"~g \
 			-e s~#{TINI_VERSION}~"$TINI_VERSION"~g \
+			-e s~#{CGROUP}~"$cgroup"~g \
 			-e s~#{CHECKSUM}~"$tiniChecksum"~g \
 			-e s~#{TINI_BINARY}~"$tiniBinary"~g "$template" > $dockerfilePath/Dockerfile
 		cp entry.sh launch.service resin-xbuild $dockerfilePath/
+
+		sed -i -e s~#{CGROUP}~"$cgroupEntry"~g $dockerfilePath/entry.sh
 
 		if [ $repo == "armv7hf" ]; then
 			cp qemu-arm-static $dockerfilePath/

@@ -27,8 +27,10 @@ RUN curl -SLO "http://resin-packages.s3.amazonaws.com/tini/v$TINI_VERSION/#{TINI
     && chmod +x tini \
     && mv tini /sbin/tini
 
+# Install Systemd
 ENV container docker
 
+# We only want few core services run in the container.
 RUN systemctl mask \
         dev-hugepages.mount \
         sys-fs-fuse-connections.mount \
@@ -40,13 +42,14 @@ RUN systemctl mask \
         getty.target \
         graphical.target \
         console-getty.service \
-        systemd-vconsole-setup.service
+        systemd-vconsole-setup.service \
+        kmod-static-nodes.service
 
-COPY entry.sh /usr/bin/
+COPY entry.sh /usr/bin/entry.sh
 COPY launch.service /etc/systemd/system/launch.service
 
-RUN systemctl enable launch.service systemd-udevd
+RUN systemctl enable launch.service
 
 STOPSIGNAL 37
-VOLUME ["/sys/fs/cgroup"]
+#{CGROUP}
 ENTRYPOINT ["/usr/bin/entry.sh"]
