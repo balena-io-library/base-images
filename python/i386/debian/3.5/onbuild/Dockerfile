@@ -1,4 +1,4 @@
-FROM resin/i386-python:3.5.3
+FROM resin/i386-python:3.5.4
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app

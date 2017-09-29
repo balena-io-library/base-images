@@ -1,4 +1,4 @@
-FROM resin/via-via-vab820-quad-python:3.4.4
+FROM resin/via-via-vab820-quad-python:3.4.7
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
