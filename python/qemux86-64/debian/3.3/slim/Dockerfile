@@ -56,12 +56,6 @@ RUN set -x \
 # install "virtualenv", since the vast majority of users of this image will want it
 RUN pip3 install --no-cache-dir virtualenv
 
-# install dbus-python dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
-		libdbus-1-dev \
-		libdbus-glib-1-dev \
-	&& rm -rf /var/lib/apt/lists/*
-
 ENV PYTHON_DBUS_VERSION 1.2.4
 
 # install dbus-python
@@ -69,6 +63,8 @@ RUN set -x \
 	&& buildDeps=' \
 		curl \
 		build-essential \
+		libdbus-1-dev \
+		libdbus-glib-1-dev \
 	' \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends && rm -rf /var/lib/apt/lists/* \
 	&& mkdir -p /usr/src/dbus-python \
@@ -83,6 +79,8 @@ RUN set -x \
 	&& make install -j$(nproc) \
 	&& cd / \
 	&& apt-get purge -y --auto-remove $buildDeps \
+	&& apt-get update && apt-get install -y libdbus-1-3 libdbus-glib-1-2 --no-install-recommends \
+	&& rm -rf /var/lib/apt/lists/* \
 	&& rm -rf /usr/src/dbus-python
 
 # make some useful symlinks that are expected to exist
