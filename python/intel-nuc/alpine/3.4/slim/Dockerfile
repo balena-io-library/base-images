@@ -60,11 +60,6 @@ RUN set -x \
 # install "virtualenv", since the vast majority of users of this image will want it
 RUN pip3 install --no-cache-dir virtualenv
 
-# install dbus-python dependencies
-RUN apk add --no-cache \
-		dbus-dev \
-		dbus-glib-dev
-
 ENV PYTHON_DBUS_VERSION 1.2.4
 
 # install dbus-python
@@ -72,6 +67,8 @@ RUN set -x \
 	&& buildDeps=' \
 		curl \
 		build-base \
+		dbus-dev \
+		dbus-glib-dev \
 	' \
 	&& apk add --no-cache --virtual .build-deps $buildDeps \
 	&& mkdir -p /usr/src/dbus-python \
@@ -86,6 +83,7 @@ RUN set -x \
 	&& make install -j$(nproc) \
 	&& cd / \
 	&& apk del .build-deps \
+	&& apk add --no-cache dbus dbus-glib \
 	&& rm -rf /usr/src/dbus-python
 
 # make some useful symlinks that are expected to exist
