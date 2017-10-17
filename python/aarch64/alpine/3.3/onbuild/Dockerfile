@@ -1,4 +1,4 @@
-FROM resin/aarch64-alpine-python:3.3.6
+FROM resin/aarch64-alpine-python:3.3.7
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app

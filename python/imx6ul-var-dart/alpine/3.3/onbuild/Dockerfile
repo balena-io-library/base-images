@@ -1,4 +1,4 @@
-FROM resin/imx6ul-var-dart-alpine-python:3.3.6
+FROM resin/imx6ul-var-dart-alpine-python:3.3.7
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app

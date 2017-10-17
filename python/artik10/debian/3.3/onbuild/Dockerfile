@@ -1,4 +1,4 @@
-FROM resin/artik10-python:3.3.6
+FROM resin/artik10-python:3.3.7
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
