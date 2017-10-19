@@ -29,7 +29,7 @@ intel_edison_upm_commit='106b6c706268522ab0168a4ddb19e89ce832e084'
 intel_edison_wheezy_upm_version='1.0.0'
 intel_edison_wheezy_upm_commit='13e2e7aeb8769707b91b62f23d6669d3ee1a8651'
 
-devices='raspberry-pi raspberry-pi2 beaglebone-black intel-edison intel-nuc via-vab820-quad zc702-zynq7 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green cybertan-ze250 artik710 am571x-evm up-board kitra710 imx6ul-var-dart kitra520 jetson-tx2'
+devices='raspberry-pi raspberry-pi2 beaglebone-black intel-edison intel-nuc via-vab820-quad zc702-zynq7 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green cybertan-ze250 artik710 am571x-evm up-board kitra710 imx6ul-var-dart kitra520 jetson-tx2 IOT2000'
 fedora_devices=' raspberry-pi2 beaglebone-black via-vab820-quad zc702-zynq7 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green intel-nuc qemux86-64 artik710 am571x-evm kitra710 up-board imx6ul-var-dart kitra520 jetson-tx2 '
 suites='jessie wheezy stretch'
 alpine_suites='3.5 3.6'
@@ -89,16 +89,18 @@ for device in $devices; do
 	'qemux86')
 		template='Dockerfile.tpl'
 		baseImage='i386-debian'
-		# TODO: Can't compile mraa on alpine linux atm, lack of necessary libraries.
-		#alpine_template='Dockerfile.alpine.i386.intel-edison.tpl'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='i386-alpine'
 	;;
 	'cybertan-ze250')
 		template='Dockerfile.tpl'
 		baseImage='i386-debian'
-		# TODO: Can't compile mraa on alpine linux atm, lack of necessary libraries.
-		#alpine_template='Dockerfile.alpine.i386.intel-edison.tpl'
+		alpine_template='Dockerfile.alpine.tpl'
+		alpine_baseImage='i386-alpine'
+	;;
+	'IOT2000')
+		template='Dockerfile.tpl'
+		baseImage='i386-debian'
 		alpine_template='Dockerfile.alpine.tpl'
 		alpine_baseImage='i386-alpine'
 	;;
