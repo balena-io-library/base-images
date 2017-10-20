@@ -8,7 +8,7 @@ RUN buildDeps='curl gcc g++ git' \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-i386.tar.gz" \
-	&& echo "e881d5e958eaa2e62c9354ee96b633cc9770cc838d1fbb1ca2254f1c42565c34  go1.9.linux-i386.tar.gz" | sha256sum -c - \
+	&& echo "d4d310a3386ebdf200b4239b8a32ab788424c578ba64581e1f50de740e6ce70d  go1.9.linux-i386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-i386.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-i386.tar.gz
 

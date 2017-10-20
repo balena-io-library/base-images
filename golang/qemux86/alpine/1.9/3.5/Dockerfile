@@ -4,7 +4,7 @@ ENV GO_VERSION 1.9
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-i386.tar.gz" \
-	&& echo "e956601ff320ae390defdcc93fa61a1492f0d03c0ce873a6bc8c45708d9a7b9b  go1.9.linux-alpine-i386.tar.gz" | sha256sum -c - \
+	&& echo "13d101f664c715611459d3f6ba6cc3cad56b0a254a14e9c899a25de966349e15  go1.9.linux-alpine-i386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-alpine-i386.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-alpine-i386.tar.gz
 

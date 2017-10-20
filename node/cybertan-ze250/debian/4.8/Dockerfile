@@ -4,7 +4,7 @@ FROM resin/cybertan-ze250-buildpack-deps:jessie
 ENV NODE_VERSION 4.8.4
 
 RUN curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-i386.tar.gz" \
-	&& echo "" | sha256sum -c - \
+	&& echo "f2213974b6cca622eec0453f33d2f368779da92b21652ebd9e6ade0f2fdf4fa5  node-v4.8.4-linux-i386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-i386.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-i386.tar.gz" \
 	&& npm config set unsafe-perm true -g --unsafe-perm \
