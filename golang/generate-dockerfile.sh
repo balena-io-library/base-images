@@ -4,7 +4,7 @@ set -e
 function version_le() { test "$(echo "$@" | tr " " "\n" | sort -V | tail -n 1)" != "$1"; }
 
 # List of devices
-targets='raspberry-pi raspberry-pi2 beaglebone-black intel-edison intel-nuc via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green cybertan-ze250 artik710 am571x-evm up-board kitra710 imx6ul-var-dart kitra520 jetson-tx2 IOT2000'
+targets='raspberry-pi raspberry-pi2 beaglebone-black intel-edison intel-nuc via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green cybertan-ze250 artik710 am571x-evm up-board kitra710 imx6ul-var-dart kitra520 jetson-tx2 iot2000'
 # List of archs
 targets+=' armv7hf armel i386 amd64 aarch64'
 fedora_targets=' raspberry-pi2 beaglebone-black via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green intel-nuc qemux86-64 artik710 am571x-evm kitra710 up-board imx6ul-var-dart kitra520 jetson-tx2 armv7hf amd64 aarch64 '
@@ -106,7 +106,7 @@ for target in $targets; do
 		alpine_binary_url=$resinUrl
 		alpine_binary_arch='alpine-i386'
 	;;
-	'IOT2000')
+	'iot2000')
 		binary_url=$resinUrl
 		binary_arch='i386'
 		alpine_binary_url=$resinUrl
@@ -305,7 +305,7 @@ for target in $targets; do
 	for goVersion in $goVersions; do
 		baseVersion=$(expr match "$goVersion" '\([0-9]*\.[0-9]*\)')
 
-		if ([ $target == "cybertan-ze250" ] || [ $target == "IOT2000" ]) && ( version_le $goVersion "1.6" ); then
+		if ([ $target == "cybertan-ze250" ] || [ $target == "iot2000" ]) && ( version_le $goVersion "1.6" ); then
 			continue
 		fi
 
