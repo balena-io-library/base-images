@@ -56,7 +56,7 @@ zuluVersionArmhf='ezdk-1.8.0_121-8.20.0.42-eval-linux_aarch32hf'
 zuluVersionX86_64='zulu8.21.0.1-jdk8.0.131-linux_x64'
 variants='jre jdk'
 
-for arch in $alpinetargetArchs; do
+for arch in $alpineDeviceArchs; do
 	curl -fsSL'#' "http://dl-cdn.alpinelinux.org/alpine/v$alpineVersion/community/$arch/APKINDEX.tar.gz" | tar -zxv APKINDEX
 	case "$arch" in
 	'armhf')
