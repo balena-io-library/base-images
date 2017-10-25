@@ -338,6 +338,10 @@ for device in $devices; do
 				sed -e s~#{FROM}~resin/$baseImage:$suite~g \
 					-e s~#{SUITE}~$suite~g \
 					-e s@#{DEV_TYPE}@$device@ $template > $debian_dockerfilePath/$suite/Dockerfile
+
+				if [ $device == "iot2000" ]; then
+					cat Dockerfile.i386.iot2000.partial >> $debian_dockerfilePath/$suite/Dockerfile
+				fi
 			;;
 			esac
 		done
