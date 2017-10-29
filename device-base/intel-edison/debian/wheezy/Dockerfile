@@ -17,8 +17,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 ENV MRAA_COMMIT eb7238d9afea044701dba1c26cc5076854e3238c
 ENV MRAA_VERSION 1.8.0
 # UPM
-ENV UPM_COMMIT 13e2e7aeb8769707b91b62f23d6669d3ee1a8651
-ENV UPM_VERSION 1.0.0
+ENV UPM_COMMIT b9010059ade9b3ee9fb343b23c506acaed7d0b15
+ENV UPM_VERSION b9010059ade9b3ee9fb343b23c506acaed7d0b15
 
 # Install mraa
 RUN set -x \
@@ -45,7 +45,7 @@ RUN set -x \
 	&& cd /mraa \
 	&& git checkout $MRAA_COMMIT \
 	&& mkdir build && cd build \
-	&& cmake .. -DBUILDSWIGNODE=OFF -DBUILDSWIGPYTHON=OFF -DCMAKE_INSTALL_PREFIX:PATH=/usr \
+	&& cmake .. -DWERROR=NO -DBUILDSWIGNODE=OFF -DBUILDSWIGPYTHON=OFF -DCMAKE_INSTALL_PREFIX:PATH=/usr \
 	&& make -j $(nproc) \
 	&& make install \
 	&& cd / \
@@ -53,7 +53,7 @@ RUN set -x \
 	&& cd /upm \
 	&& git checkout $UPM_COMMIT \
 	&& mkdir build && cd build \
-	&& cmake .. -DBUILDSWIGNODE=OFF -DBUILDSWIGPYTHON=OFF -DCMAKE_INSTALL_PREFIX:PATH=/usr \
+	&& cmake .. -DWERROR=NO -DBUILDSWIGNODE=OFF -DBUILDSWIGPYTHON=OFF -DCMAKE_INSTALL_PREFIX:PATH=/usr \
 	&& make -j $(nproc) \
 	&& make install \
 	&& cd /cmake \

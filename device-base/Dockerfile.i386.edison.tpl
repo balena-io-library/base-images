@@ -45,7 +45,7 @@ RUN set -x \
 	&& cd /mraa \
 	&& git checkout $MRAA_COMMIT \
 	&& mkdir build && cd build \
-	&& cmake .. -DBUILDSWIGNODE=OFF -DBUILDSWIGPYTHON=OFF -DCMAKE_INSTALL_PREFIX:PATH=/usr \
+	&& cmake .. -DWERROR=NO -DBUILDSWIGNODE=OFF -DBUILDSWIGPYTHON=OFF -DCMAKE_INSTALL_PREFIX:PATH=/usr \
 	&& make -j $(nproc) \
 	&& make install \
 	&& cd / \
@@ -53,7 +53,7 @@ RUN set -x \
 	&& cd /upm \
 	&& git checkout $UPM_COMMIT \
 	&& mkdir build && cd build \
-	&& cmake .. -DBUILDSWIGNODE=OFF -DBUILDSWIGPYTHON=OFF -DCMAKE_INSTALL_PREFIX:PATH=/usr \
+	&& cmake .. -DWERROR=NO -DBUILDSWIGNODE=OFF -DBUILDSWIGPYTHON=OFF -DCMAKE_INSTALL_PREFIX:PATH=/usr \
 	&& make -j $(nproc) \
 	&& make install \
 	&& cd /cmake \
