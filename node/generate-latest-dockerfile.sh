@@ -47,7 +47,7 @@ targets='raspberry-pi raspberry-pi2 beaglebone-black intel-edison intel-nuc via-
 # List of archs
 targets+=' armv7hf armel i386 amd64 aarch64'
 fedora_targets=' raspberry-pi2 beaglebone-black via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green intel-nuc qemux86-64 artik710 am571x-evm kitra710 up-board imx6ul-var-dart kitra520 jetson-tx2 armv7hf amd64 aarch64 '
-nodeVersions='0.10.22 0.10.48 0.12.18 4.8.5 5.12.0 6.11.5 7.10.1 8.8.1'
+nodeVersions='0.10.22 0.10.48 0.12.18 4.8.5 5.12.0 6.11.5 7.10.1 8.9.0 9.0.0'
 defaultVersion='0.10.22'
 resinUrl="http://resin-packages.s3.amazonaws.com/node/v\$NODE_VERSION/node-v\$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz"
 nodejsUrl="http://nodejs.org/dist/v\$NODE_VERSION/node-v\$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz"
