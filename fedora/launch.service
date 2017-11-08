@@ -7,6 +7,7 @@ ExecStart=/etc/resinApp.sh
 StandardOutput=tty
 StandardError=tty
 TTYPath=/dev/console
+Restart=always
 
 
 [Install]
