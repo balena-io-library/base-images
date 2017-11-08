@@ -43,6 +43,7 @@ RUN mkdir -p /usr/share/man/man1
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		systemd \
+		systemd-sysv \
 	&& rm -rf /var/lib/apt/lists/*
 
 ENV container docker
@@ -59,13 +60,13 @@ RUN systemctl mask \
     systemd-remount-fs.service \
 
     getty.target \
-    graphical.target  
+    graphical.target \
+    kmod-static-nodes.service
 
-COPY entry.sh /usr/bin/entry.sh    
+COPY entry.sh /usr/bin/entry.sh
 COPY launch.service /etc/systemd/system/launch.service
 
-RUN systemctl enable /etc/systemd/system/launch.service
+RUN systemctl enable launch.service
 
 STOPSIGNAL 37
-VOLUME ["/sys/fs/cgroup"]
 ENTRYPOINT ["/usr/bin/entry.sh"]

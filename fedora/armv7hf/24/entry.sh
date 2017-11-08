@@ -77,8 +77,10 @@ function init_systemd()
 		WorkingDirectory=$(pwd)
 	EOF
 
+	sleep infinity &
 	mount -t tmpfs -o mode=0755 cgroup /sys/fs/cgroup
 	exec env DBUS_SYSTEM_BUS_ADDRESS=unix:path=/run/dbus/system_bus_socket /sbin/init quiet systemd.show_status=0
+
 }
 
 function init_non_systemd()
