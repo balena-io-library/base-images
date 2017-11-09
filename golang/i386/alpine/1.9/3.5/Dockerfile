@@ -1,10 +1,10 @@
 FROM resin/i386-alpine-buildpack-deps:3.5
 
-ENV GO_VERSION 1.9
+ENV GO_VERSION 1.9.1
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-i386.tar.gz" \
-	&& echo "13d101f664c715611459d3f6ba6cc3cad56b0a254a14e9c899a25de966349e15  go1.9.linux-alpine-i386.tar.gz" | sha256sum -c - \
+	&& echo "60d30d5594dd4df2e40476f3df5827e3ddff73fa9d821742aae20f436c8e34cb  go1.9.1.linux-alpine-i386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-alpine-i386.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-alpine-i386.tar.gz
 
