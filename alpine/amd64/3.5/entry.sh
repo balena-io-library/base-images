@@ -44,6 +44,11 @@ function init_openrc()
 	printf '%q ' "$@" >> /etc/resinApp.sh
 	chmod +x /etc/resinApp.sh
 
+	# Make sure there is no pidfile before starting.
+	if [ -f "/var/run/resinapp.pid" ]; then
+		rm -f /var/run/resinapp.pid &> /dev/null
+	fi
+
 	sed -i -e s~#{DIR}~"$(pwd)"~g /etc/init.d/resin
 
 	exec /sbin/init quiet
