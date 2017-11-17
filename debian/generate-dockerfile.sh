@@ -34,40 +34,35 @@ for arch in $archs; do
 	'armv7hf')
 		baseImage='arm32v7/debian'
 		label='io.resin.architecture="armv7hf" io.resin.qemu.version="'$QEMU_VERSION'"'
-		suites='jessie wheezy sid stretch'
-		variant='-slim'
+		suites='jessie wheezy sid stretch buster'
 		qemu='COPY qemu-arm-static /usr/bin/'
 		qemuCpu=''
 	;;
 	'i386')
 		baseImage='i386/debian'
 		label='io.resin.architecture="i386"'
-		suites='jessie wheezy stretch'
-		variant='-slim'
+		suites='jessie wheezy stretch buster'
 		qemu=''
 		qemuCpu=''
 	;;
 	'amd64')
 		baseImage='debian'
 		label='io.resin.architecture="amd64"'
-		suites='jessie wheezy stretch'
-		variant='-slim'
+		suites='jessie wheezy stretch buster'
 		qemu=''
 		qemuCpu=''
 	;;
 	'armel')
-		baseImage='armel/debian'
+		baseImage='arm32v5/debian'
 		label='io.resin.architecture="armv5e" io.resin.qemu.version="'$QEMU_VERSION'"'
-		suites='jessie wheezy stretch'
-		variant=''
+		suites='jessie wheezy stretch buster'
 		qemu='COPY qemu-arm-static /usr/bin/'
 		qemuCpu='ENV QEMU_CPU arm1026'
 	;;
 	'aarch64')
 		baseImage='arm64v8/debian'
 		label='io.resin.architecture="aarch64" io.resin.qemu.version="'$QEMU_AARCH64_VERSION'"'
-		suites='jessie stretch'
-		variant='-slim'
+		suites='jessie stretch buster'
 		qemu='COPY qemu-aarch64-static /usr/bin/'
 		qemuCpu=''
 	;;
@@ -81,7 +76,7 @@ for arch in $archs; do
 
 		dockerfilePath=$arch/$suite
 		mkdir -p $dockerfilePath
-		sed -e s~#{FROM}~$baseImage:$suite$variant~g \
+		sed -e s~#{FROM}~$baseImage:$suite-slim~g \
 			-e s~#{LABEL}~"$label"~g \
 			-e s~#{QEMU_CPU}~"$qemuCpu"~g \
 			-e s~#{QEMU}~"$qemu"~g \

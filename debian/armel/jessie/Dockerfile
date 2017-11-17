@@ -1,4 +1,4 @@
-FROM armel/debian:jessie
+FROM arm32v5/debian:jessie-slim
 
 LABEL io.resin.architecture="armv5e" io.resin.qemu.version="2.9.0.resin1-arm"
 

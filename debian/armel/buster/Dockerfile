@@ -1,4 +1,4 @@
-FROM arm32v5/debian:wheezy-slim
+FROM arm32v5/debian:buster-slim
 
 LABEL io.resin.architecture="armv5e" io.resin.qemu.version="2.9.0.resin1-arm"
 
@@ -39,8 +39,34 @@ COPY 01_nodoc /etc/dpkg/dpkg.cfg.d/
 COPY 01_buildconfig /etc/apt/apt.conf.d/
 
 RUN mkdir -p /usr/share/man/man1
-ONBUILD RUN echo $'WARNING: Systemd is not available on this base image! \nSystemd was included in Debian wheezy as a technology preview. Therefore, we do not install systemd on wheezy images and INITSYSTEM will not work.'
+# Install Systemd
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+		systemd \
+		systemd-sysv \
+	&& rm -rf /var/lib/apt/lists/*
+
+ENV container docker
+
+# We never want these to run in a container
+RUN systemctl mask \
+    dev-hugepages.mount \
+    sys-fs-fuse-connections.mount \
+    sys-kernel-config.mount \
+
+    display-manager.service \
+    getty@.service \
+    systemd-logind.service \
+    systemd-remount-fs.service \
+
+    getty.target \
+    graphical.target \
+    kmod-static-nodes.service
 
 COPY entry.sh /usr/bin/entry.sh
+COPY launch.service /etc/systemd/system/launch.service
 
+RUN systemctl enable launch.service
+
+STOPSIGNAL 37
 ENTRYPOINT ["/usr/bin/entry.sh"]

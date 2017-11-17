@@ -1,12 +1,12 @@
-FROM arm32v5/debian:stretch-slim
+FROM arm64v8/debian:buster-slim
 
-LABEL io.resin.architecture="armv5e" io.resin.qemu.version="2.9.0.resin1-arm"
+LABEL io.resin.architecture="aarch64" io.resin.qemu.version="2.9.0.resin1-aarch64"
 
 ENV LC_ALL C.UTF-8
 ENV DEBIAN_FRONTEND noninteractive
 
-COPY qemu-arm-static /usr/bin/
-ENV QEMU_CPU arm1026
+COPY qemu-aarch64-static /usr/bin/
+
 
 # Resin-xbuild
 COPY resin-xbuild /usr/bin/
@@ -28,10 +28,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # Tini
 ENV TINI_VERSION 0.14.0
-RUN curl -SLO "http://resin-packages.s3.amazonaws.com/tini/v$TINI_VERSION/tini0.14.0.linux-armel.tar.gz" \
-	&& echo "0be64a992ce6b13d37a4bcff7a4280289d38842389076f197e6e50784e9693fa  tini0.14.0.linux-armel.tar.gz" | sha256sum -c - \
-	&& tar -xzf "tini0.14.0.linux-armel.tar.gz" \
-	&& rm "tini0.14.0.linux-armel.tar.gz" \
+RUN curl -SLO "http://resin-packages.s3.amazonaws.com/tini/v$TINI_VERSION/tini0.14.0.linux-aarch64.tar.gz" \
+	&& echo "edddd28f0c683773670592f6013f5eadb96bbf62a100f3d7d6c58e6a5cb248b4  tini0.14.0.linux-aarch64.tar.gz" | sha256sum -c - \
+	&& tar -xzf "tini0.14.0.linux-aarch64.tar.gz" \
+	&& rm "tini0.14.0.linux-aarch64.tar.gz" \
     && chmod +x tini \
     && mv tini /sbin/tini
 
