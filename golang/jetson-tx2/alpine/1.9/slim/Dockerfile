@@ -1,6 +1,6 @@
 FROM resin/jetson-tx2-alpine:latest
 
-ENV GO_VERSION 1.9
+ENV GO_VERSION 1.9.1
 
 RUN apk add --no-cache git gcc
 
@@ -9,7 +9,7 @@ RUN buildDeps='curl' \
 	&& apk add --no-cache $buildDeps \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-aarch64.tar.gz" \
-	&& echo "7005e51b3c0632918a53c658c93691aad77c1f04e59d8c0ef7f8bf5559dcc736  go1.9.linux-alpine-aarch64.tar.gz" | sha256sum -c - \
+	&& echo "dc3cf70675ea3649c8d089c96d7ab770ca70a85bb32270660dd9a00b98fb3387  go1.9.1.linux-alpine-aarch64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-alpine-aarch64.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-alpine-aarch64.tar.gz \
 	&& apk del $buildDeps

@@ -1,4 +1,4 @@
-FROM resin/jetson-tx2-fedora-golang:1.9
+FROM resin/jetson-tx2-fedora-golang:1.9.1
 
 RUN mkdir -p /go/src/app
 WORKDIR /go/src/app
