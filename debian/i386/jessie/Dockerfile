@@ -59,7 +59,7 @@ RUN systemctl mask \
     systemd-remount-fs.service \
 
     getty.target \
-    graphical.target  
+    graphical.target
 
 COPY entry.sh /usr/bin/entry.sh    
 COPY launch.service /etc/systemd/system/launch.service
