@@ -2,7 +2,7 @@
 set -e
 
 repos='armv7hf amd64 aarch64'
-suites='24 25'
+suites='24 25 26'
 QEMU_VERSION='2.9.0.resin1-arm'
 QEMU_SHA256='b39d6a878c013abb24f4cccc7c3a79829546ae365069d5712142a4ad21bcb91b'
 QEMU_AARCH64_VERSION='2.9.0.resin1-aarch64'
