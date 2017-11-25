@@ -1,4 +1,4 @@
-FROM resin/artik710-golang:1.9.1
+FROM resin/artik710-golang:1.9.2
 
 RUN mkdir -p /go/src/app
 WORKDIR /go/src/app

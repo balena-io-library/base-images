@@ -1,4 +1,4 @@
-FROM resin/raspberry-pi2-fedora-golang:1.8
+FROM resin/raspberry-pi2-fedora-golang:1.8.5
 
 RUN mkdir -p /go/src/app
 WORKDIR /go/src/app

@@ -1,10 +1,10 @@
 FROM resin/cybertan-ze250-alpine-buildpack-deps:latest
 
-ENV GO_VERSION 1.9.1
+ENV GO_VERSION 1.9.2
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-i386.tar.gz" \
-	&& echo "60d30d5594dd4df2e40476f3df5827e3ddff73fa9d821742aae20f436c8e34cb  go1.9.1.linux-alpine-i386.tar.gz" | sha256sum -c - \
+	&& echo "a17a4c33baaaacddfca559d14f9b925f929a729fd67ed5f152430eaf635c772b  go1.9.2.linux-alpine-i386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-alpine-i386.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-alpine-i386.tar.gz
 

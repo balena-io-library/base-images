@@ -1,10 +1,10 @@
 FROM resin/i386-buildpack-deps:jessie
 
-ENV GO_VERSION 1.9.1
+ENV GO_VERSION 1.9.2
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "https://storage.googleapis.com/golang/go$GO_VERSION.linux-386.tar.gz" \
-	&& echo "2cea1ce9325cb40839601b566bc02b11c92b2942c21110b1b254c7e72e5581e7  go1.9.1.linux-386.tar.gz" | sha256sum -c - \
+	&& echo "574b2c4b1a248e58ef7d1f825beda15429610a2316d9cbd3096d8d3fa8c0bc1a  go1.9.2.linux-386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-386.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-386.tar.gz
 

@@ -1,10 +1,10 @@
 FROM resin/raspberry-pi-buildpack-deps:jessie
 
-ENV GO_VERSION 1.8
+ENV GO_VERSION 1.8.5
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-armv6hf.tar.gz" \
-	&& echo "64a0bb2ee38061c5f011483a36116dcd4decf07d192d63ac24319524080aea87  go1.8.linux-armv6hf.tar.gz" | sha256sum -c - \
+	&& echo "5511c6ee7cbae946df8918510c66ca69bcf33c4044838e087be69a961ed40902  go1.8.5.linux-armv6hf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-armv6hf.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-armv6hf.tar.gz
 

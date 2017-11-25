@@ -1,10 +1,10 @@
 FROM resin/ts4900-fedora-buildpack-deps:latest
 
-ENV GO_VERSION 1.9.1
+ENV GO_VERSION 1.9.2
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-armv7hf.tar.gz" \
-	&& echo "78acac001e29acdd97cea6ddf0b754e19122610b66c6b7a168c4621c37c1d111  go1.9.1.linux-armv7hf.tar.gz" | sha256sum -c - \
+	&& echo "b7ced5e75a025d25753b3480c54ba63ff74f479ad057f672a7334193236aeb2f  go1.9.2.linux-armv7hf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-armv7hf.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-armv7hf.tar.gz
 

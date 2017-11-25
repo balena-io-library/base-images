@@ -1,10 +1,10 @@
 FROM resin/up-board-fedora-buildpack-deps:24
 
-ENV GO_VERSION 1.9.1
+ENV GO_VERSION 1.9.2
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "https://storage.googleapis.com/golang/go$GO_VERSION.linux-amd64.tar.gz" \
-	&& echo "07d81c6b6b4c2dcf1b5ef7c27aaebd3691cdb40548500941f92b221147c5d9c7  go1.9.1.linux-amd64.tar.gz" | sha256sum -c - \
+	&& echo "de874549d9a8d8d8062be05808509c09a88a248e77ec14eb77453530829ac02b  go1.9.2.linux-amd64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-amd64.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-amd64.tar.gz
 

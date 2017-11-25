@@ -1,6 +1,6 @@
 FROM resin/imx6ul-var-dart-alpine:latest
 
-ENV GO_VERSION 1.9.1
+ENV GO_VERSION 1.9.2
 
 RUN apk add --no-cache git gcc
 
@@ -9,7 +9,7 @@ RUN buildDeps='curl' \
 	&& apk add --no-cache $buildDeps \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-armhf.tar.gz" \
-	&& echo "a30ba5ffd821d4fabacb9a396642a37db845eb49399908d254e2a1f7538259bb  go1.9.1.linux-alpine-armhf.tar.gz" | sha256sum -c - \
+	&& echo "77f4c4b208942271431970106e7ecb06dc495f553895fd58512e8df0df92ac8b  go1.9.2.linux-alpine-armhf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-alpine-armhf.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-alpine-armhf.tar.gz \
 	&& apk del $buildDeps

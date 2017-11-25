@@ -1,6 +1,6 @@
 FROM resin/cybertan-ze250-debian:jessie
 
-ENV GO_VERSION 1.9.1
+ENV GO_VERSION 1.9.2
 
 RUN buildDeps='curl gcc g++ git' \
 	&& set -x \
@@ -8,7 +8,7 @@ RUN buildDeps='curl gcc g++ git' \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-i386.tar.gz" \
-	&& echo "be1f39d252028398cb3f821dbde6cc7089b964447fb7ea3a2b6d5deae31268a8  go1.9.1.linux-i386.tar.gz" | sha256sum -c - \
+	&& echo "45bb0c823d1eb032693a1e1dbcf5bb0b4a96ad2156174063ef289448f4008d28  go1.9.2.linux-i386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-i386.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-i386.tar.gz
 

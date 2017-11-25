@@ -1,6 +1,6 @@
 FROM resin/intel-nuc-alpine:latest
 
-ENV GO_VERSION 1.8
+ENV GO_VERSION 1.8.5
 
 RUN apk add --no-cache git gcc
 
@@ -9,7 +9,7 @@ RUN buildDeps='curl' \
 	&& apk add --no-cache $buildDeps \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-amd64.tar.gz" \
-	&& echo "a13caaca2e7e2522272316a3fac05999493df0d7e5dda118511124ec48c50b3a  go1.8.linux-alpine-amd64.tar.gz" | sha256sum -c - \
+	&& echo "4e4c43d95ddbaf38697adaa63ad3ad2a9854dd095ba3c9ad1de34385073a4e1e  go1.8.5.linux-alpine-amd64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-alpine-amd64.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-alpine-amd64.tar.gz \
 	&& apk del $buildDeps

@@ -1,10 +1,10 @@
 FROM resin/up-board-alpine-buildpack-deps:latest
 
-ENV GO_VERSION 1.9.1
+ENV GO_VERSION 1.9.2
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-amd64.tar.gz" \
-	&& echo "486c84b15486d758de2fe0603d7fd2b806208329ae767f8e7921d4a872bb4e54  go1.9.1.linux-alpine-amd64.tar.gz" | sha256sum -c - \
+	&& echo "95e0d194c7397287dd0b31f8b168175c15f9cb1f9ecabc86bf4cdb0030779dbc  go1.9.2.linux-alpine-amd64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-alpine-amd64.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-alpine-amd64.tar.gz
 

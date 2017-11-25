@@ -1,4 +1,4 @@
-FROM resin/qemux86-64-fedora-golang:1.8
+FROM resin/qemux86-64-fedora-golang:1.8.5
 
 RUN mkdir -p /go/src/app
 WORKDIR /go/src/app
