@@ -1,10 +1,10 @@
 FROM resin/jetson-tx2-buildpack-deps:wheezy
 
-ENV GO_VERSION 1.9.1
+ENV GO_VERSION 1.9.2
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-aarch64.tar.gz" \
-	&& echo "0cd8dffd66e2ac98599c68269874ac90465a3e45e07ab145f4083a959b2c4fac  go1.9.1.linux-aarch64.tar.gz" | sha256sum -c - \
+	&& echo "9458d59f04e5eb7470585b975beefbc5caddc3ec8fc3d732e3bdc4576b1d6faa  go1.9.2.linux-aarch64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-aarch64.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-aarch64.tar.gz
 

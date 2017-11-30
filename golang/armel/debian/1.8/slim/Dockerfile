@@ -1,6 +1,6 @@
 FROM resin/armel-debian:jessie
 
-ENV GO_VERSION 1.8
+ENV GO_VERSION 1.8.5
 
 RUN buildDeps='curl gcc g++ git' \
 	&& set -x \
@@ -8,7 +8,7 @@ RUN buildDeps='curl gcc g++ git' \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-armel.tar.gz" \
-	&& echo "e44bf1c0eb74228f6ee82fdb064b82426db871cc971aab456ed85ea4f89bb4e0  go1.8.linux-armel.tar.gz" | sha256sum -c - \
+	&& echo "6b46211e357226e33e56c98f615a611999cfc666183bbd6228c6eaba695485ca  go1.8.5.linux-armel.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-armel.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-armel.tar.gz
 

@@ -1,4 +1,4 @@
-FROM resin/via-vab820-quad-alpine-golang:1.8
+FROM resin/via-vab820-quad-alpine-golang:1.8.5
 
 RUN mkdir -p /go/src/app
 WORKDIR /go/src/app

@@ -1,6 +1,6 @@
 FROM resin/beaglebone-green-wifi-debian:jessie
 
-ENV GO_VERSION 1.8
+ENV GO_VERSION 1.8.5
 
 RUN buildDeps='curl gcc g++ git' \
 	&& set -x \
@@ -8,7 +8,7 @@ RUN buildDeps='curl gcc g++ git' \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-armv7hf.tar.gz" \
-	&& echo "3a70cfa425cd09b0e549640a483f3c0d034269a2bfc3f47da7f373d16cfe4aa8  go1.8.linux-armv7hf.tar.gz" | sha256sum -c - \
+	&& echo "f4356c9985ae436ec61505fefd59b5f924420b61ab7832a9652bca4605919cf4  go1.8.5.linux-armv7hf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-armv7hf.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-armv7hf.tar.gz
 

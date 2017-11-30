@@ -1,10 +1,10 @@
 FROM resin/raspberrypi3-alpine-buildpack-deps:3.5
 
-ENV GO_VERSION 1.8
+ENV GO_VERSION 1.8.5
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-armhf.tar.gz" \
-	&& echo "d9759ca7bef54e6ca4da6fc690481c51604ded60ad2265facf1986121bcc1fa0  go1.8.linux-alpine-armhf.tar.gz" | sha256sum -c - \
+	&& echo "68f60ebf5f3d6a11e80497a0007cec4467a907551655be2d28e7ea1468d80df0  go1.8.5.linux-alpine-armhf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-alpine-armhf.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-alpine-armhf.tar.gz
 
