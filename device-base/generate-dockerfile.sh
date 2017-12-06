@@ -7,7 +7,7 @@ rpi_sourcelist='echo "deb http://archive.raspbian.org/raspbian #{SUITE} main con
 	\&\& echo "deb http://archive.raspberrypi.org/debian #{SUITE} main" >>  /etc/apt/sources.list.d/raspi.list \\\
 	\&\& apt-key adv --keyserver pgp.mit.edu  --recv-key 0x82B129927FA3303E'
 
-rpi_sourcelist_stretch='echo "deb http://archive.raspbian.org/raspbian #{SUITE} main contrib non-free rpi firmware" >>  /etc/apt/sources.list \\\
+rpi_sourcelist_buster='echo "deb http://archive.raspbian.org/raspbian #{SUITE} main contrib non-free rpi firmware" >>  /etc/apt/sources.list \\\
 	\&\& apt-key adv --keyserver pgp.mit.edu  --recv-key 0x9165938D90FDDD2E'
 
 # for beaglebone
@@ -305,9 +305,9 @@ for device in $devices; do
 			;;
 			"raspberry"*)
 				case "$suite" in
-				'stretch')
-					# raspberrypi foundation doesn't have stretch yet.
-					sourcelist=$rpi_sourcelist_stretch
+				'buster')
+					# raspberrypi foundation doesn't have buster yet.
+					sourcelist=$rpi_sourcelist_buster
 				;;
 				*)
 					# jessie and wheezy
