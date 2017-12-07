@@ -83,7 +83,22 @@ for arch in $archs; do
 			-e s~#{TINI_VERSION}~"$TINI_VERSION"~g \
 			-e s~#{CHECKSUM}~"$tiniChecksum"~g \
 			-e s~#{TINI_BINARY}~"$tiniBinary"~g Dockerfile.tpl > $dockerfilePath/Dockerfile
-		cp 01_nodoc 01_buildconfig resin-xbuild $dockerfilePath/
+		cp 01_nodoc resin-xbuild 01_buildconfig $dockerfilePath/
+
+		case "$suite" in
+		'wheezy')
+			cat Dockerfile.no-systemd.partial >> $dockerfilePath/Dockerfile
+			cp entry-nosystemd.sh $dockerfilePath/entry.sh
+		;;
+		'jessie')
+			cat Dockerfile.systemd.partial >> $dockerfilePath/Dockerfile
+			cp entry.sh launch.service $dockerfilePath/
+		;;
+		*) # stretch buster sid
+			cat Dockerfile.systemd.v230.partial >> $dockerfilePath/Dockerfile
+			cp entry.sh launch.service $dockerfilePath/
+		;;
+		esac
 
 		# ARM only
 		if [ $arch != 'i386' ] && [ $arch != 'amd64' ]; then
@@ -92,19 +107,6 @@ for arch in $archs; do
 			else
 				cp qemu-arm-static $dockerfilePath/
 			fi
-		fi
-
-		# Systemd
-		if [ $suite == 'wheezy' ]; then
-			cat Dockerfile.no-systemd.partial >> $dockerfilePath/Dockerfile
-			cp entry-nosystemd.sh $dockerfilePath/entry.sh
-		else
-			if [ $suite == 'jessie' ]; then
-				cat Dockerfile.systemd.partial >> $dockerfilePath/Dockerfile
-			else
-				cat Dockerfile.systemd.v230.partial >> $dockerfilePath/Dockerfile
-			fi
-			cp entry.sh launch.service $dockerfilePath/
 		fi
 	done
 done
