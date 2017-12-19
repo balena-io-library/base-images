@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		ifupdown \	
 		iputils-ping \	
 		i2c-tools \
+		git \
 		usbutils \	
 	&& rm -rf /var/lib/apt/lists/*
 RUN set -x \

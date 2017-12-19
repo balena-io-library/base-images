@@ -8,5 +8,6 @@ RUN dnf install -y \
 		net-tools \
 		usbutils \
 		gnupg \
+		git-core \
 		i2c-tools \
 	&& dnf clean all

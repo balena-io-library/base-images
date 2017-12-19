@@ -6,11 +6,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		less \
 		kmod \
 		nano \
-		net-tools \		
+		net-tools \
 		i2c-tools \
-		iputils-ping \		
-		ifupdown \				
-		usbutils \		
+		iputils-ping \
+		ifupdown \
+		git \
+		usbutils \
 	&& rm -rf /var/lib/apt/lists/*
 
 # MRAA
@@ -24,7 +25,6 @@ ENV UPM_VERSION b9010059ade9b3ee9fb343b23c506acaed7d0b15
 RUN set -x \
 	&& buildDeps=' \
 		build-essential \
-		git-core \
 		libpcre3-dev \
 		python-dev \
 		swig \

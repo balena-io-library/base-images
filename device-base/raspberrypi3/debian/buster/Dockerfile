@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		kmod \
 		nano \
 		net-tools \
+		git \
 		ifupdown \
 		iputils-ping \
 		i2c-tools \

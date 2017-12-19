@@ -9,4 +9,5 @@ RUN apk add --update \
 		ifupdown \		
 		usbutils \
 		gnupg \
+		git \
 	&& rm -rf /var/cache/apk/*

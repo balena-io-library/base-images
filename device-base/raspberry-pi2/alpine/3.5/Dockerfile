@@ -9,6 +9,7 @@ RUN apk add --update \
 		ifupdown \		
 		usbutils \
 		gnupg \
+		git \
 		raspberrypi \
 		raspberrypi-libs \
 		raspberrypi-dev \
