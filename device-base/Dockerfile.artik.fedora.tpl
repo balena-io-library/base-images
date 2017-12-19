@@ -11,6 +11,7 @@ RUN dnf install -y \
 		net-tools \
 		usbutils \
 		gnupg \
+		git-core \
 		i2c-tools \
 		libartik-sdk-tests \
 		libartik-sdk-zigbee-devel \

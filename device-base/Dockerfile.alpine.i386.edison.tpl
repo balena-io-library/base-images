@@ -8,6 +8,7 @@ RUN apk add --update \
 		net-tools \			
 		ifupdown \				
 		usbutils \
+		git \
 	&& rm -rf /var/cache/apk/*
 
 # MRAA commit
@@ -18,7 +19,6 @@ RUN set -x \
 	&& buildDeps=' \
 		build-base \
 		cmake \
-		git \
 		libpcrecpp \
 		libpcre32 \
 		python-dev \
