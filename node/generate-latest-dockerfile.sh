@@ -50,6 +50,7 @@ targets+=' armv7hf armel i386 amd64 aarch64'
 fedora_targets=' raspberry-pi2 beaglebone-black via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green intel-nuc qemux86-64 artik710 am571x-evm kitra710 up-board imx6ul-var-dart kitra520 jetson-tx2 jetson-tx1 armv7hf amd64 aarch64 generic-aarch64 generic-armv7ahf bananapi-m1-plus '
 nodeVersions='0.10.22 0.10.48 0.12.18 5.12.0 7.10.1 9.11.1 8.11.1 6.14.1 4.9.1 10.0.0'
 defaultVersion='0.10.22'
+yarnVersion='1.5.1'
 resinUrl="http://resin-packages.s3.amazonaws.com/node/v\$NODE_VERSION/node-v\$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz"
 nodejsUrl="http://nodejs.org/dist/v\$NODE_VERSION/node-v\$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz"
 
@@ -242,6 +243,7 @@ for target in $targets; do
 		sed -e s~#{FROM}~resin/$target-buildpack-deps:jessie~g \
 			-e s~#{BINARY_URL}~$binaryUrl~g \
 			-e s~#{NODE_VERSION}~$nodeVersion~g \
+			-e s~#{YARN_VERSION}~$yarnVersion~g \
 			-e s~#{CHECKSUM}~"$checksum"~g \
 			-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.tpl > $debian_dockerfilePath/Dockerfile
 
@@ -249,6 +251,7 @@ for target in $targets; do
 		sed -e s~#{FROM}~resin/$target-buildpack-deps:stretch~g \
 			-e s~#{BINARY_URL}~$binaryUrl~g \
 			-e s~#{NODE_VERSION}~$nodeVersion~g \
+			-e s~#{YARN_VERSION}~$yarnVersion~g \
 			-e s~#{CHECKSUM}~"$checksum"~g \
 			-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.tpl > $debian_dockerfilePath/Dockerfile
 
@@ -261,12 +264,14 @@ for target in $targets; do
 			sed -e s~#{FROM}~resin/rpi-raspbian:jessie~g \
 				-e s~#{BINARY_URL}~$binaryUrl~g \
 				-e s~#{NODE_VERSION}~$nodeVersion~g \
+				-e s~#{YARN_VERSION}~$yarnVersion~g \
 				-e s~#{CHECKSUM}~"$checksum"~g \
 				-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.slim.tpl > $debian_dockerfilePath/slim/Dockerfile
 		else
 			sed -e s~#{FROM}~resin/$target-debian:jessie~g \
 				-e s~#{BINARY_URL}~$binaryUrl~g \
 				-e s~#{NODE_VERSION}~$nodeVersion~g \
+				-e s~#{YARN_VERSION}~$yarnVersion~g \
 				-e s~#{CHECKSUM}~"$checksum"~g \
 				-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.slim.tpl > $debian_dockerfilePath/slim/Dockerfile
 		fi
@@ -278,18 +283,21 @@ for target in $targets; do
 				sed -e s~#{FROM}~resin/$target-buildpack-deps:jessie~g \
 					-e s~#{BINARY_URL}~$binaryUrl~g \
 					-e s~#{NODE_VERSION}~$nodeVersion~g \
+					-e s~#{YARN_VERSION}~$yarnVersion~g \
 					-e s~#{CHECKSUM}~"$checksum"~g \
 					-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.i386.edison.tpl > $debian_dockerfilePath/Dockerfile
 
 				sed -e s~#{FROM}~resin/$target-buildpack-deps:stretch~g \
 					-e s~#{BINARY_URL}~$binaryUrl~g \
 					-e s~#{NODE_VERSION}~$nodeVersion~g \
+					-e s~#{YARN_VERSION}~$yarnVersion~g \
 					-e s~#{CHECKSUM}~"$checksum"~g \
 					-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.i386.edison.tpl > $debian_dockerfilePath/stretch/Dockerfile
 
 				sed -e s~#{FROM}~resin/$target-debian:jessie~g \
 					-e s~#{BINARY_URL}~$binaryUrl~g \
 					-e s~#{NODE_VERSION}~$nodeVersion~g \
+					-e s~#{YARN_VERSION}~$yarnVersion~g \
 					-e s~#{CHECKSUM}~"$checksum"~g \
 					-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.i386.edison.slim.tpl > $debian_dockerfilePath/slim/Dockerfile
 			fi
@@ -303,6 +311,7 @@ for target in $targets; do
 			sed -e s~#{FROM}~resin/$target-fedora-buildpack-deps:latest~g \
 				-e s~#{BINARY_URL}~$binaryUrl~g \
 				-e s~#{NODE_VERSION}~$nodeVersion~g \
+				-e s~#{YARN_VERSION}~$yarnVersion~g \
 				-e s~#{CHECKSUM}~"$checksum"~g \
 				-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.tpl > $fedora_dockerfilePath/Dockerfile
 
@@ -310,6 +319,7 @@ for target in $targets; do
 			sed -e s~#{FROM}~resin/$target-fedora-buildpack-deps:25~g \
 				-e s~#{BINARY_URL}~$binaryUrl~g \
 				-e s~#{NODE_VERSION}~$nodeVersion~g \
+				-e s~#{YARN_VERSION}~$yarnVersion~g \
 				-e s~#{CHECKSUM}~"$checksum"~g \
 				-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.tpl > $fedora_dockerfilePath/25/Dockerfile
 
@@ -320,6 +330,7 @@ for target in $targets; do
 			sed -e s~#{FROM}~resin/$target-fedora:latest~g \
 				-e s~#{BINARY_URL}~$binaryUrl~g \
 				-e s~#{NODE_VERSION}~$nodeVersion~g \
+				-e s~#{YARN_VERSION}~$yarnVersion~g \
 				-e s~#{CHECKSUM}~"$checksum"~g \
 				-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.tpl > $fedora_dockerfilePath/slim/Dockerfile
 		fi
@@ -364,6 +375,7 @@ for target in $targets; do
 		sed -e s~#{FROM}~resin/$target-alpine-buildpack-deps:latest~g \
 			-e s~#{BINARY_URL}~$binaryUrl~g \
 			-e s~#{NODE_VERSION}~$nodeVersion~g \
+			-e s~#{YARN_VERSION}~$yarnVersion~g \
 			-e s~#{CHECKSUM}~"$checksum"~g \
 			-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.alpine.tpl > $alpine_dockerfilePath/Dockerfile
 
@@ -371,6 +383,7 @@ for target in $targets; do
 		sed -e s~#{FROM}~resin/$target-alpine:latest~g \
 			-e s~#{BINARY_URL}~$binaryUrl~g \
 			-e s~#{NODE_VERSION}~$nodeVersion~g \
+			-e s~#{YARN_VERSION}~$yarnVersion~g \
 			-e s~#{CHECKSUM}~"$checksum"~g \
 			-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.alpine.slim.tpl > $alpine_dockerfilePath/slim/Dockerfile
 
@@ -381,6 +394,7 @@ for target in $targets; do
 		sed -e s~#{FROM}~resin/$target-alpine-buildpack-deps:edge~g \
 			-e s~#{BINARY_URL}~$binaryUrl~g \
 			-e s~#{NODE_VERSION}~$nodeVersion~g \
+			-e s~#{YARN_VERSION}~$yarnVersion~g \
 			-e s~#{CHECKSUM}~"$checksum"~g \
 			-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.alpine.tpl > $alpine_dockerfilePath/edge/Dockerfile
 	done
