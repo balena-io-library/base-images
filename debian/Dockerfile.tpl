@@ -24,6 +24,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		netbase \
 		curl \
 		udev \
+		gawk \
 	&& rm -rf /var/lib/apt/lists/*
 
 # Tini
