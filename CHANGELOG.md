@@ -3,6 +3,158 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2018-01-09
+
+### Changed
+
+- Add node v9.2.1 v8.9.3 v6.12.2 and v4.8.7.
+
+
+## 2017-12-15
+
+### Changed
+
+- Remove --force-yes apt option in debian base images.
+
+
+## 2017-12-07
+
+### Changed
+
+- Add node v9.2.0 v8.9.1 v6.12.0 v4.8.6.
+- Update sources.list for RPI base images.
+
+
+## 2017-11-30
+
+### Changed
+
+- Add Golang v1.8.5 and v1.9.2.
+
+
+## 2017-11-28
+
+### Changed
+
+- Update systemd service restart configuration to restart on-failure only.
+
+
+## 2017-11-21
+
+### Changed
+
+- Fix library generating script to make sure there will be no duplicate tag.
+
+
+## 2017-11-17
+
+### Added
+
+- Add support for Fedora 26.
+- Add support for new Debian suite: Buster.
+
+### Changed
+
+- Fix issue of broken systemd (/dev/console) in docker container.
+- Add node v8.9.0 v9.0.0.
+- Add Golang v1.9.1.
+
+
+## 2017-11-08
+
+### Changed
+
+- Add node v4.8.5, v6.11.5 and v8.8.1.
+- Update UPM to v1.5.0 and disable warnings-as-error when building mraa and upm.
+
+
+## 2017-10-29
+
+### Changed
+
+- Add node v4.8.5, v6.11.5 and v8.8.1.
+- Update UPM to v1.5.0 and disable warnings-as-error when building mraa and upm.
+
+
+## 2017-10-25
+
+### Changed
+
+- libmraa: Update to version 1.8.0.
+
+
+## 2017-10-25
+
+### Changed
+
+- Integrate the LOCK prefix fix for Iot2000 base images.
+
+
+## 2017-10-20
+
+### Added
+- Add support for new device: Siemens IOT2000.
+
+### Changed
+
+- Change device name of Siemens IOT2000 to lowercase since we can not use uppercase name for docker image name.
+
+
+## 2017-10-03
+
+### Changed
+
+- Ensure systemd uses /run/dbus/system_bus_socket for dbus.
+
+
+## 2017-09-29
+
+### Changed
+
+- Add node v8.5.0.
+- Add Python v3.5.4 and v3.4.7.
+- Remove unnecessary runtime deps for python dbus.
+
+
+## 2017-09-11
+
+### Added
+
+- Add base images for Go1.9.
+
+
+## 2017-09-07
+
+### Added
+
+- Add aarch64 base images (aarch64 images set and change jetson-tx2 images from armv7hf to aarch64).
+
+
+## 2017-08-28
+
+### Changed
+
+- Due to issues between recent systemd and docker, downgrade systemd on Debian Stretch to v230-7(jessie-backports).
+- Apply new Python binaries with lzma module installed.
+- Add node base images v8.3.0.
+- Add support for zulu variant openjdk base images.
+- Add base images for all supported architectures.
+
+
+## 2017-08-22
+
+### Changed
+
+- Remove ccon base images.
+
+
+## 2017-08-12
+
+### Changed
+
+- Set the latest tag for buildpack-deps base images for Alpine Linux and Fedora to 3.6 and 25 respectively.
+
+
 ## 2017-08-07
 
 ### Changed
