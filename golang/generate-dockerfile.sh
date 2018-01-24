@@ -422,13 +422,13 @@ for target in $targets; do
 		mkdir -p $alpine_dockerfilePath/onbuild
 		sed -e s~#{FROM}~resin/$target-alpine-golang:$goVersion~g Dockerfile.onbuild.tpl > $alpine_dockerfilePath/onbuild/Dockerfile
 
-		mkdir -p $alpine_dockerfilePath/3.5
-		sed -e s~#{FROM}~"resin/$target-alpine-buildpack-deps:3.5"~g \
+		mkdir -p $alpine_dockerfilePath/edge
+		sed -e s~#{FROM}~"resin/$target-alpine-buildpack-deps:edge"~g \
 			-e s~#{BINARY_URL}~"$alpine_binary_url"~g \
 			-e s~#{GO_VERSION}~"$goVersion"~g \
 			-e s~#{CHECKSUM}~"$checksum"~g \
-			-e s~#{TARGET_ARCH}~"$alpine_binary_arch"~g Dockerfile.alpine.tpl > $alpine_dockerfilePath/3.5/Dockerfile
-		cp go-wrapper $alpine_dockerfilePath/3.5/
+			-e s~#{TARGET_ARCH}~"$alpine_binary_arch"~g Dockerfile.alpine.tpl > $alpine_dockerfilePath/edge/Dockerfile
+		cp go-wrapper $alpine_dockerfilePath/edge/
 
 	done
 done

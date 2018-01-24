@@ -396,11 +396,11 @@ for target in $targets; do
 		mkdir -p $alpine_dockerfilePath/onbuild
 		sed -e s~#{FROM}~resin/$target-alpine-node:$nodeVersion~g Dockerfile.onbuild.tpl > $alpine_dockerfilePath/onbuild/Dockerfile
 
-		mkdir -p $alpine_dockerfilePath/3.5
-		sed -e s~#{FROM}~resin/$target-alpine-buildpack-deps:3.5~g \
+		mkdir -p $alpine_dockerfilePath/edge
+		sed -e s~#{FROM}~resin/$target-alpine-buildpack-deps:edge~g \
 			-e s~#{BINARY_URL}~$binaryUrl~g \
 			-e s~#{NODE_VERSION}~$nodeVersion~g \
 			-e s~#{CHECKSUM}~"$checksum"~g \
-			-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.alpine.tpl > $alpine_dockerfilePath/3.5/Dockerfile
+			-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.alpine.tpl > $alpine_dockerfilePath/edge/Dockerfile
 	done
 done
