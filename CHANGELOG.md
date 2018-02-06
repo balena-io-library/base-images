@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## 2018-02-06
+
+### Changed
+
+- Add node v9.4.0 v8.9.4 and v6.12.3.
+
+
+## 2018-02-02
+
+### Changed
+
+- Add support for new board: jetson-tx1.
+
+
 ## 2018-01-24
 
 ### Changed
