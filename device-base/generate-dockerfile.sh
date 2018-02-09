@@ -324,8 +324,8 @@ for device in $devices; do
 					-e s~#{SUITE}~$suite~g \
 					-e s@#{DEV_TYPE}@$device@ $template > $debian_dockerfilePath/$suite/Dockerfile
 
-				if [ $device == "iot2000" ]; then
-					cat Dockerfile.i386.iot2000.partial >> $debian_dockerfilePath/$suite/Dockerfile
+				if [ $device == "iot2000" ] || [ $device == "cybertan-ze250" ]; then
+					cat Dockerfile.i386.nlp.partial >> $debian_dockerfilePath/$suite/Dockerfile
 				fi
 			;;
 			esac
