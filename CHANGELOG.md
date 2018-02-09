@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## 2018-02-09
+
+### Changed
+
+- Apply the LOCK prefix fix for Cybertan base images.
+
+
 ## 2018-02-06
 
 ### Changed
