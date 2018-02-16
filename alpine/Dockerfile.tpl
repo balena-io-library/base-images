@@ -2,6 +2,9 @@ FROM #{FROM}
 
 #{LABEL}
 
+# For backward compatibility, udev is enabled by default
+ENV UDEV on
+
 #{QEMU}
 COPY resin-xbuild /usr/bin/
 RUN ln -s resin-xbuild /usr/bin/cross-build-start \
