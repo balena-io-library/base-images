@@ -1,5 +1,20 @@
 #!/bin/bash
 
+function start_udev()
+{
+	if [ "$UDEV" == "on" ]; then
+		if [ "$INITSYSTEM" != "on" ]; then
+			which udevd
+			if [ $? == '0' ]; then
+				udevd --daemon &> /dev/null
+			else
+				/lib/systemd/systemd-udevd --daemon &> /dev/null
+			fi
+			udevadm trigger &> /dev/null
+		fi
+	fi
+}
+
 function remove_buildtime_env_var()
 {
 	unset QEMU_CPU
@@ -42,15 +57,6 @@ function mount_dev()
 
 function init_non_systemd()
 {
-	
-	which udevd
-	if [ $? == '0' ]; then
-		udevd --daemon &> /dev/null
-	else
-		/lib/systemd/systemd-udevd --daemon &> /dev/null
-	fi
-	udevadm trigger &> /dev/null
-	
 	CMD=$(which "$1")
 	# echo error message, when executable file doesn't exist.
 	if [ $? == '0' ]; then
@@ -72,10 +78,19 @@ case "$INITSYSTEM" in
 	;;
 esac
 
+UDEV=$(echo "$UDEV" | awk '{print tolower($0)}')
+
+case "$UDEV" in
+	'1' | 'true')
+		UDEV='on'
+	;;
+esac
+
 if [ ! -z "$RESIN_SUPERVISOR_API_KEY" ] && [ ! -z "$RESIN_DEVICE_UUID" ]; then
 	# run this on resin device only
 	update_hostname
 	mount_dev
+	start_udev
 fi 
 
 init_non_systemd "$@"
