@@ -2,6 +2,9 @@ FROM i386/alpine:edge
 
 LABEL io.resin.architecture="i386"
 
+# For backward compatibility, udev is enabled by default
+ENV UDEV on
+
 
 COPY resin-xbuild /usr/bin/
 RUN ln -s resin-xbuild /usr/bin/cross-build-start \

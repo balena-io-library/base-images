@@ -2,6 +2,9 @@ FROM arm64v8/alpine:3.5
 
 LABEL io.resin.architecture="aarch64" io.resin.qemu.version="2.9.0.resin1-arm"
 
+# For backward compatibility, udev is enabled by default
+ENV UDEV on
+
 COPY qemu-aarch64-static /usr/bin/qemu-aarch64-static
 COPY resin-xbuild /usr/bin/
 RUN ln -s resin-xbuild /usr/bin/cross-build-start \

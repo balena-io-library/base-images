@@ -2,6 +2,9 @@ FROM arm32v6/alpine:edge
 
 LABEL io.resin.architecture="armhf" io.resin.qemu.version="2.9.0.resin1-arm"
 
+# For backward compatibility, udev is enabled by default
+ENV UDEV on
+
 COPY qemu-arm-static /usr/bin/qemu-arm-static
 COPY resin-xbuild /usr/bin/
 RUN ln -s resin-xbuild /usr/bin/cross-build-start \

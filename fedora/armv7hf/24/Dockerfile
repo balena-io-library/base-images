@@ -7,6 +7,9 @@ COPY resin-xbuild /usr/bin/
 RUN ln -s resin-xbuild /usr/bin/cross-build-start \
     && ln -s resin-xbuild /usr/bin/cross-build-end
 
+# For backward compatibility, udev is enabled by default
+ENV UDEV on
+
 # Few tweaks for Fedora base image
 RUN mkdir -p /etc/dnf/vars \
     && echo "armhfp" > /etc/dnf/vars/basearch \
