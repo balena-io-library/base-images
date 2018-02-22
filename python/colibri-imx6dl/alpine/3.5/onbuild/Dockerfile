@@ -1,4 +1,4 @@
-FROM resin/colibri-imx6dl-alpine-python:3.5.4
+FROM resin/colibri-imx6dl-alpine-python:3.5.5
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
