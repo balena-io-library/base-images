@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## 2018-02-22
+
+### Changed
+
+- Add Python v3.6.4 v3.5.5 and v3.4.8.
+- Add node v9.5.0.
+
+
 ## 2018-02-09
 
 ### Changed
