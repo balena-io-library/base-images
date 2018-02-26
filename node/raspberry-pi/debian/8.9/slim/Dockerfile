@@ -8,7 +8,7 @@ RUN buildDeps='curl' \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-armv6l.tar.gz" \
-	&& echo "" | sha256sum -c - \
+	&& echo "81f138e935323246bd5da518eb0ea8ad00008f3c8a8d606e17589a545a9c73d1  node-v8.9.4-linux-armv6l.tar.gz" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-armv6l.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-armv6l.tar.gz" \
 	&& apt-get purge -y --auto-remove $buildDeps \
