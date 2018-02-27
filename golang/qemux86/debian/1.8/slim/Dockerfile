@@ -1,6 +1,6 @@
 FROM resin/qemux86-debian:jessie
 
-ENV GO_VERSION 1.8.5
+ENV GO_VERSION 1.8.7
 
 RUN buildDeps='curl gcc g++ git' \
 	&& set -x \
@@ -8,7 +8,7 @@ RUN buildDeps='curl gcc g++ git' \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "https://storage.googleapis.com/golang/go$GO_VERSION.linux-386.tar.gz" \
-	&& echo "cf959b60b89acb588843ff985ecb47a7f6c37da6e4987739ab4aafad7211464f  go1.8.5.linux-386.tar.gz" | sha256sum -c - \
+	&& echo "3afab0048a44f66c4132f1fe26d3301fa4c51b47e7176c2d3f311c49d9aa74d6  go1.8.7.linux-386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-386.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-386.tar.gz
 

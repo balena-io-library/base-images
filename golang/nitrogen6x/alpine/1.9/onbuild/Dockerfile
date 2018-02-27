@@ -1,4 +1,4 @@
-FROM resin/nitrogen6x-alpine-golang:1.9.2
+FROM resin/nitrogen6x-alpine-golang:1.9.4
 
 RUN mkdir -p /go/src/app
 WORKDIR /go/src/app

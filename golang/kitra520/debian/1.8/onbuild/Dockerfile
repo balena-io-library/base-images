@@ -1,4 +1,4 @@
-FROM resin/kitra520-golang:1.8.5
+FROM resin/kitra520-golang:1.8.7
 
 RUN mkdir -p /go/src/app
 WORKDIR /go/src/app

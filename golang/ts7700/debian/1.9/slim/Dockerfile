@@ -1,6 +1,6 @@
 FROM resin/ts7700-debian:jessie
 
-ENV GO_VERSION 1.9.2
+ENV GO_VERSION 1.9.4
 
 RUN buildDeps='curl gcc g++ git' \
 	&& set -x \
@@ -8,7 +8,7 @@ RUN buildDeps='curl gcc g++ git' \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-armel.tar.gz" \
-	&& echo "3674a42a0d13aeb4f0ebf9a8f72c90dfd0537f6d063d43b5fba926ff31ab1d93  go1.9.2.linux-armel.tar.gz" | sha256sum -c - \
+	&& echo "998d36ee05e1992aa20d771cb648999a9818d00eba09ed550b5978e70c5890f0  go1.9.4.linux-armel.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-armel.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-armel.tar.gz
 

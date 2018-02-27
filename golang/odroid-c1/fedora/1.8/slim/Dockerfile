@@ -1,6 +1,6 @@
 FROM resin/odroid-c1-fedora:latest
 
-ENV GO_VERSION 1.8.5
+ENV GO_VERSION 1.8.7
 ENV GOROOT /usr/local/go
 ENV GOPATH /go
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
@@ -11,7 +11,7 @@ RUN buildDeps='gcc gcc-c++ git' \
 	&& dnf clean all \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-armv7hf.tar.gz" \
-	&& echo "f4356c9985ae436ec61505fefd59b5f924420b61ab7832a9652bca4605919cf4  go1.8.5.linux-armv7hf.tar.gz" | sha256sum -c - \
+	&& echo "2f1485b0a6a800cd2544fe86387af93bb4c946c1978eeca36280be31bf41a73c  go1.8.7.linux-armv7hf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-armv7hf.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm go$GO_VERSION.linux-armv7hf.tar.gz \
 	&& mkdir -p "$GOPATH/src" "$GOPATH/bin" \

@@ -1,6 +1,6 @@
 FROM resin/cybertan-ze250-alpine:latest
 
-ENV GO_VERSION 1.9.2
+ENV GO_VERSION 1.9.4
 
 RUN apk add --no-cache git gcc
 
@@ -9,7 +9,7 @@ RUN buildDeps='curl' \
 	&& apk add --no-cache $buildDeps \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-i386.tar.gz" \
-	&& echo "a17a4c33baaaacddfca559d14f9b925f929a729fd67ed5f152430eaf635c772b  go1.9.2.linux-alpine-i386.tar.gz" | sha256sum -c - \
+	&& echo "b32ef884061d818d7b11c0407109e33e8898ccff556d395ec0d23f452141c6a1  go1.9.4.linux-alpine-i386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-alpine-i386.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-alpine-i386.tar.gz \
 	&& apk del $buildDeps

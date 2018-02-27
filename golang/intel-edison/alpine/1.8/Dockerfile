@@ -1,10 +1,10 @@
 FROM resin/intel-edison-alpine-buildpack-deps:latest
 
-ENV GO_VERSION 1.8.5
+ENV GO_VERSION 1.8.7
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-i386.tar.gz" \
-	&& echo "7859e95171417c4557f4c00e9242a3978c968d6da799907899a15886a5d3c7f5  go1.8.5.linux-alpine-i386.tar.gz" | sha256sum -c - \
+	&& echo "5add304b3454867b3615e0d00c1afee842828a85be89824b4450d373387e26e7  go1.8.7.linux-alpine-i386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-alpine-i386.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-alpine-i386.tar.gz
 

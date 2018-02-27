@@ -1,10 +1,10 @@
 FROM resin/amd64-alpine-buildpack-deps:edge
 
-ENV GO_VERSION 1.8.5
+ENV GO_VERSION 1.8.7
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-amd64.tar.gz" \
-	&& echo "4e4c43d95ddbaf38697adaa63ad3ad2a9854dd095ba3c9ad1de34385073a4e1e  go1.8.5.linux-alpine-amd64.tar.gz" | sha256sum -c - \
+	&& echo "07ab507a272a02ea8d934175e2b385309926e59ee775aef785f508487a08e163  go1.8.7.linux-alpine-amd64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-alpine-amd64.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-alpine-amd64.tar.gz
 

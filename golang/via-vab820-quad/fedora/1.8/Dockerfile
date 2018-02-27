@@ -1,10 +1,10 @@
 FROM resin/via-vab820-quad-fedora-buildpack-deps:latest
 
-ENV GO_VERSION 1.8.5
+ENV GO_VERSION 1.8.7
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-armv7hf.tar.gz" \
-	&& echo "f4356c9985ae436ec61505fefd59b5f924420b61ab7832a9652bca4605919cf4  go1.8.5.linux-armv7hf.tar.gz" | sha256sum -c - \
+	&& echo "2f1485b0a6a800cd2544fe86387af93bb4c946c1978eeca36280be31bf41a73c  go1.8.7.linux-armv7hf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-armv7hf.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-armv7hf.tar.gz
 
