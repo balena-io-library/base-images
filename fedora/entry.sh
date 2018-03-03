@@ -4,13 +4,21 @@ set -m
 
 function start_udev()
 {
-	which udevd
-	if [ $? == '0' ]; then
-		udevd --daemon &> /dev/null
+	if [ "$UDEV" == "on" ]; then
+		if [ "$INITSYSTEM" != "on" ]; then
+			which udevd
+			if [ $? == '0' ]; then
+				udevd --daemon &> /dev/null
+			else
+				/lib/systemd/systemd-udevd --daemon &> /dev/null
+			fi
+			udevadm trigger &> /dev/null
+		fi
 	else
-		/lib/systemd/systemd-udevd --daemon &> /dev/null
+		if [ "$INITSYSTEM" == "on" ]; then
+			systemctl mask systemd-udevd
+		fi
 	fi
-	udevadm trigger &> /dev/null
 }
 
 function remove_buildtime_env_var()
@@ -92,10 +100,6 @@ function init_non_systemd()
 	# echo error message, when executable file doesn't exist.
 	if [ $? == '0' ]; then
 		shift
-		if [ ! -z "$RESIN" ] && [ ! -z "$RESIN_DEVICE_UUID" ]; then
-			# run this on resin device only
-			start_udev
-		fi
 		tini -sg -- "$CMD" "$@" &
 		pid=$!
 		wait "$pid"
@@ -115,10 +119,19 @@ case "$INITSYSTEM" in
 	;;
 esac
 
+UDEV=$(echo "$UDEV" | awk '{print tolower($0)}')
+
+case "$UDEV" in
+	'1' | 'true')
+		UDEV='on'
+	;;
+esac
+
 if [ ! -z "$RESIN" ] && [ ! -z "$RESIN_DEVICE_UUID" ]; then
 	# run this on resin device only
 	update_hostname
 	mount_dev
+	start_udev
 fi 
 
 if [ "$INITSYSTEM" = "on" ]; then

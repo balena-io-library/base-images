@@ -4,6 +4,8 @@ LABEL io.resin.architecture="amd64"
 
 ENV LC_ALL C.UTF-8
 ENV DEBIAN_FRONTEND noninteractive
+# For backward compatibility, udev is enabled by default
+ENV UDEV on
 
 
 

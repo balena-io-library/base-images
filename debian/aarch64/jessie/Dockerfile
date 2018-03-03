@@ -4,6 +4,8 @@ LABEL io.resin.architecture="aarch64" io.resin.qemu.version="2.9.0.resin1-aarch6
 
 ENV LC_ALL C.UTF-8
 ENV DEBIAN_FRONTEND noninteractive
+# For backward compatibility, udev is enabled by default
+ENV UDEV on
 
 COPY qemu-aarch64-static /usr/bin/
 

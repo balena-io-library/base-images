@@ -1,5 +1,17 @@
 #!/bin/bash
 
+function start_udev()
+{
+	if [ "$UDEV" == "on" ]; then
+		if [ "$INITSYSTEM" == "on" ]; then
+			rc-update add udev default
+		else
+			udevd --daemon &> /dev/null
+			udevadm trigger &> /dev/null
+		fi
+	fi
+}
+
 # On ResinOS 2.x devices, the hostname is set by the hostOS.
 # For backward compatibility, we only update the hostname for ResinOS 1.x devices.
 function update_hostname()
@@ -56,9 +68,6 @@ function init_openrc()
 
 function init_non_openrc()
 {
-	udevd & 
-	udevadm trigger &> /dev/null
-	
 	CMD=$(which "$1")
 	# echo error message, when executable file doesn't exist.
 	if [ $? == '0' ]; then
@@ -78,10 +87,19 @@ case "$INITSYSTEM" in
 	;;
 esac
 
+UDEV=$(echo "$UDEV" | awk '{print tolower($0)}')
+
+case "$UDEV" in
+	'1' | 'true')
+		UDEV='on'
+	;;
+esac
+
 if [ ! -z "$RESIN_SUPERVISOR_API_KEY" ] && [ ! -z "$RESIN_DEVICE_UUID" ]; then
 	# run this on resin device only
 	update_hostname
 	mount_dev
+	start_udev
 fi 
 
 if [ "$INITSYSTEM" = "on" ]; then
