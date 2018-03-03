@@ -4,7 +4,7 @@ FROM resin/intel-nuc-buildpack-deps:jessie
 ENV NODE_VERSION 8.9.4
 
 RUN curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.gz" \
-	&& echo "" | sha256sum -c - \
+	&& echo "21fb4690e349f82d708ae766def01d7fec1b085ce1f5ab30d9bda8ee126ca8fc  node-v8.9.4-linux-x64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-x64.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-x64.tar.gz" \
 	&& npm config set unsafe-perm true -g --unsafe-perm \

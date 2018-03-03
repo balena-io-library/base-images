@@ -38,6 +38,7 @@ C4F0DFFF4E8C1A8236409D08E73BC641CC11F4C8 \
 7937DFD2AB06298B2293C3187D33FF9D0246406D \
 114F43EE0176B71C7BC219DD50A3051F888C628D \
 56730D5401028683275BD23C23EFEFE93C4CFFFE \
+77984A986EBC2AA786BC0F66B01FBB92821C587A \
 ; do \
 	gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; \
 done
@@ -47,7 +48,7 @@ targets='raspberry-pi raspberry-pi2 beaglebone-black intel-edison intel-nuc via-
 # List of archs
 targets+=' armv7hf armel i386 amd64 aarch64'
 fedora_targets=' raspberry-pi2 beaglebone-black via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green intel-nuc qemux86-64 artik710 am571x-evm kitra710 up-board imx6ul-var-dart kitra520 jetson-tx2 jetson-tx1 armv7hf amd64 aarch64 '
-nodeVersions='0.10.22 0.10.48 0.12.18 5.12.0 7.10.1 9.5.0 8.9.4 6.12.3 4.8.7'
+nodeVersions='0.10.22 0.10.48 0.12.18 5.12.0 7.10.1 9.5.0 8.9.4 6.13.0 4.8.7'
 defaultVersion='0.10.22'
 resinUrl="http://resin-packages.s3.amazonaws.com/node/v\$NODE_VERSION/node-v\$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz"
 nodejsUrl="http://nodejs.org/dist/v\$NODE_VERSION/node-v\$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz"
