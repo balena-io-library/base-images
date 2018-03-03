@@ -1,4 +1,4 @@
-FROM resin/apalis-imx6q-fedora-golang:1.9.2
+FROM resin/apalis-imx6q-fedora-golang:1.9.4
 
 RUN mkdir -p /go/src/app
 WORKDIR /go/src/app

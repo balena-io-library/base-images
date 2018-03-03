@@ -1,6 +1,6 @@
 FROM resin/intel-edison-debian:jessie
 
-ENV GO_VERSION 1.9.2
+ENV GO_VERSION 1.9.4
 
 RUN buildDeps='curl gcc g++ git' \
 	&& set -x \
@@ -8,7 +8,7 @@ RUN buildDeps='curl gcc g++ git' \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "https://storage.googleapis.com/golang/go$GO_VERSION.linux-386.tar.gz" \
-	&& echo "574b2c4b1a248e58ef7d1f825beda15429610a2316d9cbd3096d8d3fa8c0bc1a  go1.9.2.linux-386.tar.gz" | sha256sum -c - \
+	&& echo "d440aee90dad851630559bcee2b767b543ce7e54f45162908f3e12c3489888ab  go1.9.4.linux-386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-386.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-386.tar.gz
 

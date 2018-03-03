@@ -1,6 +1,6 @@
 FROM resin/aarch64-fedora:latest
 
-ENV GO_VERSION 1.8.5
+ENV GO_VERSION 1.8.7
 ENV GOROOT /usr/local/go
 ENV GOPATH /go
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
@@ -11,7 +11,7 @@ RUN buildDeps='gcc gcc-c++ git' \
 	&& dnf clean all \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-aarch64.tar.gz" \
-	&& echo "a5c043b28d46921ce106d6be8f52f816c36d08634b30c464e4067af21f4f3114  go1.8.5.linux-aarch64.tar.gz" | sha256sum -c - \
+	&& echo "67ec30fded78b65175e779a0ddfdc19ab1233e51ae44818fcbada9fa3cafd72f  go1.8.7.linux-aarch64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-aarch64.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm go$GO_VERSION.linux-aarch64.tar.gz \
 	&& mkdir -p "$GOPATH/src" "$GOPATH/bin" \

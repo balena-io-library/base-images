@@ -1,4 +1,4 @@
-FROM resin/apalis-imx6q-golang:1.8.5
+FROM resin/apalis-imx6q-golang:1.8.7
 
 RUN mkdir -p /go/src/app
 WORKDIR /go/src/app

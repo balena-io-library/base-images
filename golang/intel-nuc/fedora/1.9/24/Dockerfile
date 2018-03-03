@@ -1,10 +1,10 @@
 FROM resin/intel-nuc-fedora-buildpack-deps:24
 
-ENV GO_VERSION 1.9.2
+ENV GO_VERSION 1.9.4
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "https://storage.googleapis.com/golang/go$GO_VERSION.linux-amd64.tar.gz" \
-	&& echo "de874549d9a8d8d8062be05808509c09a88a248e77ec14eb77453530829ac02b  go1.9.2.linux-amd64.tar.gz" | sha256sum -c - \
+	&& echo "15b0937615809f87321a457bb1265f946f9f6e736c563d6c5e0bd2c22e44f779  go1.9.4.linux-amd64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-amd64.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-amd64.tar.gz
 

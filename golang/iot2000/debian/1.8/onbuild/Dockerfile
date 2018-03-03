@@ -1,4 +1,4 @@
-FROM resin/iot2000-golang:1.8.5
+FROM resin/iot2000-golang:1.8.7
 
 RUN mkdir -p /go/src/app
 WORKDIR /go/src/app

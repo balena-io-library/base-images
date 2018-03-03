@@ -1,10 +1,10 @@
 FROM resin/odroid-c1-buildpack-deps:jessie
 
-ENV GO_VERSION 1.9.2
+ENV GO_VERSION 1.9.4
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-armv7hf.tar.gz" \
-	&& echo "b7ced5e75a025d25753b3480c54ba63ff74f479ad057f672a7334193236aeb2f  go1.9.2.linux-armv7hf.tar.gz" | sha256sum -c - \
+	&& echo "7f65a8338f88d49c373f5bcbf8ec58cc1c2d5a6d3921a17d290011370f6af5b6  go1.9.4.linux-armv7hf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-armv7hf.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-armv7hf.tar.gz
 

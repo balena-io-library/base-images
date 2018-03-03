@@ -1,6 +1,6 @@
 FROM resin/jetson-tx2-fedora:latest
 
-ENV GO_VERSION 1.9.2
+ENV GO_VERSION 1.9.4
 ENV GOROOT /usr/local/go
 ENV GOPATH /go
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
@@ -11,7 +11,7 @@ RUN buildDeps='gcc gcc-c++ git' \
 	&& dnf clean all \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-aarch64.tar.gz" \
-	&& echo "9458d59f04e5eb7470585b975beefbc5caddc3ec8fc3d732e3bdc4576b1d6faa  go1.9.2.linux-aarch64.tar.gz" | sha256sum -c - \
+	&& echo "daec3bb8f6f36161369e5a0886ae2f95f9282a98c83b1f065dce116b3b4c3110  go1.9.4.linux-aarch64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-aarch64.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm go$GO_VERSION.linux-aarch64.tar.gz \
 	&& mkdir -p "$GOPATH/src" "$GOPATH/bin" \

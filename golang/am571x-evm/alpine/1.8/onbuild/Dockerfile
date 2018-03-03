@@ -1,4 +1,4 @@
-FROM resin/am571x-evm-alpine-golang:1.8.5
+FROM resin/am571x-evm-alpine-golang:1.8.7
 
 RUN mkdir -p /go/src/app
 WORKDIR /go/src/app

@@ -1,6 +1,6 @@
 FROM resin/intel-nuc-fedora:latest
 
-ENV GO_VERSION 1.8.5
+ENV GO_VERSION 1.8.7
 ENV GOROOT /usr/local/go
 ENV GOPATH /go
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
@@ -11,7 +11,7 @@ RUN buildDeps='gcc gcc-c++ git' \
 	&& dnf clean all \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "https://storage.googleapis.com/golang/go$GO_VERSION.linux-amd64.tar.gz" \
-	&& echo "4f8aeea2033a2d731f2f75c4d0a4995b357b22af56ed69b3015f4291fca4d42d  go1.8.5.linux-amd64.tar.gz" | sha256sum -c - \
+	&& echo "de32e8db3dc030e1448a6ca52d87a1e04ad31c6b212007616cfcc87beb0e4d60  go1.8.7.linux-amd64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-amd64.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm go$GO_VERSION.linux-amd64.tar.gz \
 	&& mkdir -p "$GOPATH/src" "$GOPATH/bin" \
