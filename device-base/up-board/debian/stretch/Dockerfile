@@ -13,11 +13,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		usbutils \	
 	&& rm -rf /var/lib/apt/lists/*
 # MRAA
-ENV MRAA_COMMIT eb7238d9afea044701dba1c26cc5076854e3238c
-ENV MRAA_VERSION 1.8.0
+ENV MRAA_COMMIT fbb7d9232067eac3f4508a37a8f7ea0c4fcebacb
+ENV MRAA_VERSION 1.9.0
 # UPM
-ENV UPM_COMMIT b9010059ade9b3ee9fb343b23c506acaed7d0b15
-ENV UPM_VERSION 1.5.0
+ENV UPM_COMMIT cc7fec9ae0228add9011bf1c2cd5e0ca2ba0d4f0
+ENV UPM_VERSION 1.6.0
 
 # Install mraa
 RUN set -x \
