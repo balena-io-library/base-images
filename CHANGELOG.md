@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## 2018-03-18
+
+### Changed
+
+- Integrate mraa/upm into Up-board base images.
+- Add node v6.13.1.
+- Upgrade mraa to v1.9.0 and upm to v1.6.0.
+
 
 ## 2018-03-04
 
