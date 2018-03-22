@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## 2018-03-22
+
+### Changed
+
+- Update entry script, inspect running container to check if it is privileged container or not. Some functions only run on privileged container.
+
+
 ## 2018-03-18
 
 ### Changed
