@@ -60,17 +60,17 @@ set_pythonpath() {
 }
 
 # List of devices
-targets='raspberry-pi raspberry-pi2 beaglebone-black intel-edison intel-nuc via-via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green cybertan-ze250 artik710 am571x-evm up-board kitra710 imx6ul-var-dart kitra520 jetson-tx2 jetson-tx1 iot2000'
+targets='raspberry-pi raspberry-pi2 beaglebone-black intel-edison intel-nuc via-via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green cybertan-ze250 artik710 am571x-evm up-board kitra710 imx6ul-var-dart kitra520 jetson-tx2 jetson-tx1 iot2000 generic-armv7ahf generic-aarch64'
 # List of archs
 targets+=' armv7hf armel i386 amd64 aarch64'
-fedora_targets=' raspberry-pi2 beaglebone-black via-via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green intel-nuc qemux86-64 artik710 am571x-evm kitra710 up-board imx6ul-var-dart kitra520 jetson-tx2 jetson-tx1 armv7hf amd64 aarch64 '
+fedora_targets=' raspberry-pi2 beaglebone-black via-via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green intel-nuc qemux86-64 artik710 am571x-evm kitra710 up-board imx6ul-var-dart kitra520 jetson-tx2 jetson-tx1 armv7hf amd64 aarch64 generic-armv7ahf generic-aarch64 '
 pythonVersions='2.7.14 3.3.7 3.4.8 3.5.5 3.6.4'
 latestVersion='2.7.14'
 binary_url="http://resin-packages.s3.amazonaws.com/python/v\$PYTHON_VERSION/Python-\$PYTHON_VERSION.linux-#{TARGET_ARCH}.tar.gz"
 
 for target in $targets; do
 	case "$target" in
-	'armv7hf')
+	'armv7hf'|'generic-armv7ahf')
 		binary_arch='armv7hf'
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_arch='fedora-armhf'
@@ -238,7 +238,7 @@ for target in $targets; do
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_arch='fedora-armhf'
 	;;
-	'jetson-tx2'|'jetson-tx1'|'artik710'|'kitra710')
+	'jetson-tx2'|'jetson-tx1'|'artik710'|'kitra710'|'generic-aarch64')
 		binary_arch='aarch64'
 		alpine_binary_arch='alpine-aarch64'
 		fedora_binary_arch='fedora-aarch64'
