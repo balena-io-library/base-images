@@ -1,5 +1,13 @@
 #!/bin/bash
 
+
+hostname "$HOSTNAME" > /dev/null
+if [[ $? == 0 ]]; then
+	PRIVILEGED=true
+else
+	PRIVILEGED=false
+fi
+
 function start_udev()
 {
 	if [ "$UDEV" == "on" ]; then
@@ -97,8 +105,12 @@ esac
 
 if [ ! -z "$RESIN_SUPERVISOR_API_KEY" ] && [ ! -z "$RESIN_DEVICE_UUID" ]; then
 	# run this on resin device only
-	update_hostname
-	mount_dev
+
+	if $PRIVILEGED; then
+		# Only run this in privileged container
+		update_hostname
+		mount_dev
+	fi
 	start_udev
 fi 
 
