@@ -217,22 +217,6 @@ for device in $devices; do
 		alpine_baseImage='armhf-alpine'
 		fedora_baseImage='armv7hf-fedora'
 	;;
-	'artik710')
-		template='Dockerfile.tpl'
-		baseImage='armv7hf-debian'
-		alpine_template='Dockerfile.alpine.tpl'
-		alpine_baseImage='armhf-alpine'
-		fedora_template='Dockerfile.fedora.tpl'
-		fedora_baseImage='armv7hf-fedora'
-	;;
-	'kitra710')
-		template='Dockerfile.tpl'
-		baseImage='armv7hf-debian'
-		alpine_template='Dockerfile.alpine.tpl'
-		alpine_baseImage='armhf-alpine'
-		fedora_template='Dockerfile.fedora.tpl'
-		fedora_baseImage='armv7hf-fedora'
-	;;
 	'kitra520')
 		template='Dockerfile.tpl'
 		baseImage='armv7hf-debian'
@@ -257,7 +241,7 @@ for device in $devices; do
 		fedora_template='Dockerfile.fedora.tpl'
 		fedora_baseImage='armv7hf-fedora'
 	;;
-	'jetson-tx2'|'jetson-tx1')
+	'jetson-tx2'|'jetson-tx1'|'artik710'|'kitra710')
 		template='Dockerfile.tpl'
 		baseImage='aarch64-debian'
 		alpine_template='Dockerfile.alpine.tpl'
