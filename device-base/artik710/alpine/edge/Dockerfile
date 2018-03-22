@@ -1,4 +1,4 @@
-FROM resin/armhf-alpine:edge
+FROM resin/aarch64-alpine:edge
 
 LABEL io.resin.device-type="artik710"
 

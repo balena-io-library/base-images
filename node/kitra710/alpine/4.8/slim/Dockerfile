@@ -9,10 +9,10 @@ RUN apk add --no-cache libgcc libstdc++ libuv libcrypto1.0 libssl1.0
 RUN buildDeps='curl' \
 	&& set -x \
 	&& apk add --no-cache $buildDeps \
-	&& curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-alpine-armhf.tar.gz" \
-	&& echo "fec4448579a5d9078537bcd719a1578c627845df7919ad39092c6b9df49c9259  node-v4.8.7-linux-alpine-armhf.tar.gz" | sha256sum -c - \
-	&& tar -xzf "node-v$NODE_VERSION-linux-alpine-armhf.tar.gz" -C /usr/local --strip-components=1 \
-	&& rm "node-v$NODE_VERSION-linux-alpine-armhf.tar.gz" \
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-alpine-aarch64.tar.gz" \
+	&& echo "8bbc599bc95cd87490a116d51030437d23fae3682cb38b33bd10cadc30995bc3  node-v4.8.7-linux-alpine-aarch64.tar.gz" | sha256sum -c - \
+	&& tar -xzf "node-v$NODE_VERSION-linux-alpine-aarch64.tar.gz" -C /usr/local --strip-components=1 \
+	&& rm "node-v$NODE_VERSION-linux-alpine-aarch64.tar.gz" \
 	&& apk del $buildDeps \
 	&& npm config set unsafe-perm true -g --unsafe-perm \
 	&& rm -rf /tmp/*

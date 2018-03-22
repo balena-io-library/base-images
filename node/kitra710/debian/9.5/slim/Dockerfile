@@ -7,10 +7,10 @@ RUN buildDeps='curl' \
 	&& set -x \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/* \
-	&& curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-armv7hf.tar.gz" \
-	&& echo "6408a233122cd408f081cbd2e4e79d6c46f653e043dc575a675d91493e9843be  node-v9.5.0-linux-armv7hf.tar.gz" | sha256sum -c - \
-	&& tar -xzf "node-v$NODE_VERSION-linux-armv7hf.tar.gz" -C /usr/local --strip-components=1 \
-	&& rm "node-v$NODE_VERSION-linux-armv7hf.tar.gz" \
+	&& curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-arm64.tar.gz" \
+	&& echo "08924ad820d6322e17cc0fbbc365000b76408a4f17c3ed3169b44d8c7448a617  node-v9.5.0-linux-arm64.tar.gz" | sha256sum -c - \
+	&& tar -xzf "node-v$NODE_VERSION-linux-arm64.tar.gz" -C /usr/local --strip-components=1 \
+	&& rm "node-v$NODE_VERSION-linux-arm64.tar.gz" \
 	&& apt-get purge -y --auto-remove $buildDeps \
 	&& npm config set unsafe-perm true -g --unsafe-perm \
 	&& rm -rf /tmp/*

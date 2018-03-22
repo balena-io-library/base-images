@@ -6,10 +6,10 @@ ENV NODE_VERSION 6.13.1
 # Install dependencies
 RUN apk add --no-cache libgcc libstdc++ libuv libcrypto1.0 libssl1.0
 
-RUN curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-alpine-armhf.tar.gz" \
-	&& echo "03e99b6e5486535c47ff72ff390092f8952c50cc8a9983acc8736bbd77555a8e  node-v6.13.1-linux-alpine-armhf.tar.gz" | sha256sum -c - \
-	&& tar -xzf "node-v$NODE_VERSION-linux-alpine-armhf.tar.gz" -C /usr/local --strip-components=1 \
-	&& rm "node-v$NODE_VERSION-linux-alpine-armhf.tar.gz" \
+RUN curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-alpine-aarch64.tar.gz" \
+	&& echo "367a810c0621bb3d914396ecbe6f596109ee76e4759d122042a54769924cbd63  node-v6.13.1-linux-alpine-aarch64.tar.gz" | sha256sum -c - \
+	&& tar -xzf "node-v$NODE_VERSION-linux-alpine-aarch64.tar.gz" -C /usr/local --strip-components=1 \
+	&& rm "node-v$NODE_VERSION-linux-alpine-aarch64.tar.gz" \
 	&& npm config set unsafe-perm true -g --unsafe-perm \
 	&& rm -rf /tmp/*
 

@@ -3,10 +3,10 @@ FROM resin/artik710-buildpack-deps:wheezy
 
 ENV NODE_VERSION 6.3.1
 
-RUN curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-armv7hf.tar.gz" \
-	&& echo "" | sha256sum -c - \
-	&& tar -xzf "node-v$NODE_VERSION-linux-armv7hf.tar.gz" -C /usr/local --strip-components=1 \
-	&& rm "node-v$NODE_VERSION-linux-armv7hf.tar.gz" \
+RUN curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-arm64.tar.gz" \
+	&& echo "66ef087709f7709f0bf066904df06815ac7ad213181d6dcc2adb4f9dc831704f  node-v6.3.1-linux-arm64.tar.gz" | sha256sum -c - \
+	&& tar -xzf "node-v$NODE_VERSION-linux-arm64.tar.gz" -C /usr/local --strip-components=1 \
+	&& rm "node-v$NODE_VERSION-linux-arm64.tar.gz" \
 	&& npm config set unsafe-perm true -g --unsafe-perm \
 	&& rm -rf /tmp/*
 
