@@ -3,10 +3,10 @@ FROM resin/kitra710-alpine-buildpack-deps:edge
 ENV GO_VERSION 1.8.7
 
 RUN mkdir -p /usr/local/go \
-	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-armhf.tar.gz" \
-	&& echo "a77b103fdc390214c4d1da4fea88d72e93cb2a67a0ece9ab117ef9d6718b0296  go1.8.7.linux-alpine-armhf.tar.gz" | sha256sum -c - \
-	&& tar -xzf "go$GO_VERSION.linux-alpine-armhf.tar.gz" -C /usr/local/go --strip-components=1 \
-	&& rm -f go$GO_VERSION.linux-alpine-armhf.tar.gz
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-aarch64.tar.gz" \
+	&& echo "3412b8ec0fc011b868a253368a4cf6cda6a23d5cb70a717e196825479a15c55c  go1.8.7.linux-alpine-aarch64.tar.gz" | sha256sum -c - \
+	&& tar -xzf "go$GO_VERSION.linux-alpine-aarch64.tar.gz" -C /usr/local/go --strip-components=1 \
+	&& rm -f go$GO_VERSION.linux-alpine-aarch64.tar.gz
 
 ENV GOROOT /usr/local/go
 ENV GOPATH /go

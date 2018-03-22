@@ -1,4 +1,4 @@
-FROM resin/armv7hf-debian:buster
+FROM resin/aarch64-debian:buster
 
 LABEL io.resin.device-type="artik710"
 

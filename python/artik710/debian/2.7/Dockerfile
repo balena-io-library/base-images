@@ -28,10 +28,10 @@ ENV PYTHON_PIP_VERSION 9.0.1
 ENV SETUPTOOLS_VERSION 34.3.3
 
 RUN set -x \
-	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-armv7hf.tar.gz" \
-	&& echo "dc57b43159fb42c4cc7ea5ddd5791776a5fffe215d707912dededfff978c9475  Python-2.7.14.linux-armv7hf.tar.gz" | sha256sum -c - \
-	&& tar -xzf "Python-$PYTHON_VERSION.linux-armv7hf.tar.gz" --strip-components=1 \
-	&& rm -rf "Python-$PYTHON_VERSION.linux-armv7hf.tar.gz" \
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-aarch64.tar.gz" \
+	&& echo "12ec9f5d902c185d60c934eb38b614373d993017071880600ab5af813d2e3fb1  Python-2.7.14.linux-aarch64.tar.gz" | sha256sum -c - \
+	&& tar -xzf "Python-$PYTHON_VERSION.linux-aarch64.tar.gz" --strip-components=1 \
+	&& rm -rf "Python-$PYTHON_VERSION.linux-aarch64.tar.gz" \
 	&& ldconfig \
 	&& if [ ! -e /usr/local/bin/pip ]; then : \
 		&& curl -SLO "https://raw.githubusercontent.com/pypa/get-pip/430ba37776ae2ad89f794c7a43b90dc23bac334c/get-pip.py" \

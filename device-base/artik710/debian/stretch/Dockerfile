@@ -1,4 +1,4 @@
-FROM resin/armv7hf-debian:stretch
+FROM resin/aarch64-debian:stretch
 
 LABEL io.resin.device-type="artik710"
 

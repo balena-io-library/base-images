@@ -10,10 +10,10 @@ RUN buildDeps='gcc gcc-c++ git' \
 	&& dnf install -y $buildDeps \
 	&& dnf clean all \
 	&& mkdir -p /usr/local/go \
-	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-armv7hf.tar.gz" \
-	&& echo "2e1041466b9bdffb1c07c691c2cfd6346ee3ce122f57fdf92710f24a400dc4e6  go1.6.4.linux-armv7hf.tar.gz" | sha256sum -c - \
-	&& tar -xzf "go$GO_VERSION.linux-armv7hf.tar.gz" -C /usr/local/go --strip-components=1 \
-	&& rm go$GO_VERSION.linux-armv7hf.tar.gz \
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-aarch64.tar.gz" \
+	&& echo "83345ebe96ac57de79d6ca2676602efd62a538934c6ce5608a3fe454faf70984  go1.6.4.linux-aarch64.tar.gz" | sha256sum -c - \
+	&& tar -xzf "go$GO_VERSION.linux-aarch64.tar.gz" -C /usr/local/go --strip-components=1 \
+	&& rm go$GO_VERSION.linux-aarch64.tar.gz \
 	&& mkdir -p "$GOPATH/src" "$GOPATH/bin" \
 	&& chmod -R 777 "$GOPATH"
 

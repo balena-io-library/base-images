@@ -1,4 +1,4 @@
-FROM resin/armv7hf-debian:jessie
+FROM resin/aarch64-debian:jessie
 
 LABEL io.resin.device-type="artik710"
 

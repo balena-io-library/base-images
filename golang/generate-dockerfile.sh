@@ -253,22 +253,6 @@ for target in $targets; do
 		fedora_binary_url=$resinUrl
 		fedora_binary_arch='armv7hf'
 	;;
-	'artik710')
-		binary_url=$resinUrl
-		binary_arch='armv7hf'
-		alpine_binary_url=$resinUrl
-		alpine_binary_arch='alpine-armhf'
-		fedora_binary_url=$resinUrl
-		fedora_binary_arch='armv7hf'
-	;;
-	'kitra710')
-		binary_url=$resinUrl
-		binary_arch='armv7hf'
-		alpine_binary_url=$resinUrl
-		alpine_binary_arch='alpine-armhf'
-		fedora_binary_url=$resinUrl
-		fedora_binary_arch='armv7hf'
-	;;
 	'kitra520')
 		binary_url=$resinUrl
 		binary_arch='armv7hf'
@@ -293,7 +277,7 @@ for target in $targets; do
 		fedora_binary_url=$resinUrl
 		fedora_binary_arch='armv7hf'
 	;;
-	'jetson-tx2'|'jetson-tx1')
+	'jetson-tx2'|'jetson-tx1'|'artik710'|'kitra710')
 		binary_url=$resinUrl
 		binary_arch='aarch64'
 		alpine_binary_url=$resinUrl

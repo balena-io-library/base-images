@@ -8,10 +8,10 @@ RUN buildDeps='curl' \
 	&& set -x \
 	&& apk add --no-cache $buildDeps \
 	&& mkdir -p /usr/local/go \
-	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-armhf.tar.gz" \
-	&& echo "01ce5ea71b05cb0e61facea4f992b8695938cb23bbb46a6558203989a9ee3661  go1.9.4.linux-alpine-armhf.tar.gz" | sha256sum -c - \
-	&& tar -xzf "go$GO_VERSION.linux-alpine-armhf.tar.gz" -C /usr/local/go --strip-components=1 \
-	&& rm -f go$GO_VERSION.linux-alpine-armhf.tar.gz \
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-aarch64.tar.gz" \
+	&& echo "85452c2bf5e213db51ea29cbb6cd58bcb6dc7704da5eb526136fdd4911567e57  go1.9.4.linux-alpine-aarch64.tar.gz" | sha256sum -c - \
+	&& tar -xzf "go$GO_VERSION.linux-alpine-aarch64.tar.gz" -C /usr/local/go --strip-components=1 \
+	&& rm -f go$GO_VERSION.linux-alpine-aarch64.tar.gz \
 	&& apk del $buildDeps
 
 ENV GOROOT /usr/local/go

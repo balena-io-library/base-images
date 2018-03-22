@@ -184,14 +184,6 @@ for target in $targets; do
 			binaryUrl=$resinUrl
 			binaryArch='armv7hf'
 		;;
-		'artik710')
-			binaryUrl=$resinUrl
-			binaryArch='armv7hf'
-		;;
-		'kitra710')
-			binaryUrl=$resinUrl
-			binaryArch='armv7hf'
-		;;
 		'kitra520')
 			binaryUrl=$resinUrl
 			binaryArch='armv7hf'
@@ -204,7 +196,7 @@ for target in $targets; do
 			binaryUrl=$resinUrl
 			binaryArch='armv7hf'
 		;;
-		'jetson-tx2'|'jetson-tx1')
+		'jetson-tx2'|'jetson-tx1'|'kitra710'|'artik710')
 			binaryUrl=$nodejsUrl
 			binaryArch='arm64'
 		;;

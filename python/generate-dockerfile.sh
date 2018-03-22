@@ -223,16 +223,6 @@ for target in $targets; do
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_arch='fedora-armhf'
 	;;
-	'artik710')
-		binary_arch='armv7hf'
-		alpine_binary_arch='alpine-armhf'
-		fedora_binary_arch='fedora-armhf'
-	;;
-	'kitra710')
-		binary_arch='armv7hf'
-		alpine_binary_arch='alpine-armhf'
-		fedora_binary_arch='fedora-armhf'
-	;;
 	'kitra520')
 		binary_arch='armv7hf'
 		alpine_binary_arch='alpine-armhf'
@@ -248,7 +238,7 @@ for target in $targets; do
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_arch='fedora-armhf'
 	;;
-	'jetson-tx2'|'jetson-tx1')
+	'jetson-tx2'|'jetson-tx1'|'artik710'|'kitra710')
 		binary_arch='aarch64'
 		alpine_binary_arch='alpine-aarch64'
 		fedora_binary_arch='fedora-aarch64'

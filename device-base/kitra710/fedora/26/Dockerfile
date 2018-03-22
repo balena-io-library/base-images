@@ -1,4 +1,4 @@
-FROM resin/armv7hf-fedora:26
+FROM resin/aarch64-fedora:26
 
 LABEL io.resin.device-type="kitra710"
 

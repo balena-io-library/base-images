@@ -168,12 +168,6 @@ for target in $targets; do
 		'artik10')
 			targetArch='armhf'
 		;;
-		'artik710')
-			targetArch='armhf'
-		;;
-		'kitra710')
-			targetArch='armhf'
-		;;
 		'kitra520')
 			targetArch='armhf'
 		;;
@@ -183,7 +177,7 @@ for target in $targets; do
 		'ccon-01')
 			targetArch='armhf'
 		;;
-		'jetson-tx2'|'jetson-tx1')
+		'jetson-tx2'|'jetson-tx1'|'kitra710'|'artik710')
 			targetArch='armhf'
 		;;
 		esac
