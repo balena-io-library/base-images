@@ -237,18 +237,6 @@ for target in $targets; do
 			extract_checksum 0 $nodeVersion "checksum"
 		fi
 
-		# Set v6.3.1 as the latest node version for debian wheezy (https://github.com/resin-io-library/base-images/issues/177)
-		if version_ge "$nodeVersion" "6"; then
-			wheezyNodeVersion='6.3.1'
-			extract_checksum 1 $wheezyNodeVersion "wheezyChecksum"
-			wheezyBaseVersion='6.3'
-		else
-			wheezyNodeVersion=$nodeVersion
-			wheezyChecksum=$checksum
-			wheezyBaseVersion=$(expr match "$wheezyNodeVersion" '\([0-9]*\.[0-9]*\)')
-		fi
-
-
 		debian_dockerfilePath=$target/debian/$baseVersion
 		mkdir -p $debian_dockerfilePath
 		sed -e s~#{FROM}~resin/$target-buildpack-deps:jessie~g \
@@ -257,12 +245,12 @@ for target in $targets; do
 			-e s~#{CHECKSUM}~"$checksum"~g \
 			-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.tpl > $debian_dockerfilePath/Dockerfile
 
-		mkdir -p $target/debian/$wheezyBaseVersion/wheezy
-		sed -e s~#{FROM}~resin/$target-buildpack-deps:wheezy~g \
+		mkdir -p $debian_dockerfilePath/stretch
+		sed -e s~#{FROM}~resin/$target-buildpack-deps:stretch~g \
 			-e s~#{BINARY_URL}~$binaryUrl~g \
-			-e s~#{NODE_VERSION}~$wheezyNodeVersion~g \
-			-e s~#{CHECKSUM}~"$wheezyChecksum"~g \
-			-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.tpl > $target/debian/$wheezyBaseVersion/wheezy/Dockerfile
+			-e s~#{NODE_VERSION}~$nodeVersion~g \
+			-e s~#{CHECKSUM}~"$checksum"~g \
+			-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.tpl > $debian_dockerfilePath/Dockerfile
 
 		mkdir -p $debian_dockerfilePath/onbuild
 		sed -e s~#{FROM}~resin/$target-node:$nodeVersion~g Dockerfile.onbuild.tpl > $debian_dockerfilePath/onbuild/Dockerfile
@@ -293,11 +281,11 @@ for target in $targets; do
 					-e s~#{CHECKSUM}~"$checksum"~g \
 					-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.i386.edison.tpl > $debian_dockerfilePath/Dockerfile
 
-				sed -e s~#{FROM}~resin/$target-buildpack-deps:wheezy~g \
+				sed -e s~#{FROM}~resin/$target-buildpack-deps:stretch~g \
 					-e s~#{BINARY_URL}~$binaryUrl~g \
-					-e s~#{NODE_VERSION}~$wheezyNodeVersion~g \
-					-e s~#{CHECKSUM}~"$wheezyChecksum"~g \
-					-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.i386.edison.tpl > $target/debian/$wheezyBaseVersion/wheezy/Dockerfile
+					-e s~#{NODE_VERSION}~$nodeVersion~g \
+					-e s~#{CHECKSUM}~"$checksum"~g \
+					-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.i386.edison.tpl > $debian_dockerfilePath/stretch/Dockerfile
 
 				sed -e s~#{FROM}~resin/$target-debian:jessie~g \
 					-e s~#{BINARY_URL}~$binaryUrl~g \

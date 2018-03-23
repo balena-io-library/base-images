@@ -312,13 +312,13 @@ for target in $targets; do
 			-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.tpl > $debian_dockerfilePath/Dockerfile
 		cp go-wrapper $debian_dockerfilePath/
 
-		mkdir -p $debian_dockerfilePath/wheezy
-		sed -e s~#{FROM}~resin/$target-buildpack-deps:wheezy~g \
+		mkdir -p $debian_dockerfilePath/stretch
+		sed -e s~#{FROM}~resin/$target-buildpack-deps:stretch~g \
 			-e s~#{BINARY_URL}~$binary_url~g \
 			-e s~#{GO_VERSION}~$goVersion~g \
 			-e s~#{CHECKSUM}~"$checksum"~g \
-			-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.tpl > $debian_dockerfilePath/wheezy/Dockerfile
-		cp go-wrapper $debian_dockerfilePath/wheezy/
+			-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.tpl > $debian_dockerfilePath/stretch/Dockerfile
+		cp go-wrapper $debian_dockerfilePath/stretch/
 
 		mkdir -p $debian_dockerfilePath/onbuild
 		sed -e s~#{FROM}~resin/$target-golang:$goVersion~g Dockerfile.onbuild.tpl > $debian_dockerfilePath/onbuild/Dockerfile

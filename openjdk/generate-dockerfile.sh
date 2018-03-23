@@ -28,12 +28,11 @@ function getZuluVersion() {
 declare -A debianSuites=(
 	[6]='wheezy'
 	[7]='jessie'
-	[8]='jessie'
+	[8]='stretch'
 	[9]='sid'
 )
 
 declare -A debianAddSuites=(
-	[8]='jessie-backports'
 	[9]='experimental'
 )
 
