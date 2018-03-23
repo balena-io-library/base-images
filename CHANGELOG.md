@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## 2018-03-23
+
+### Changed
+
+- Change the base images for kitra710 and artik710 to aarch64.
+- Add support for two generic device types: aarch64 and generic-armv7ahf.
+
+
 ## 2018-03-22
 
 ### Changed
