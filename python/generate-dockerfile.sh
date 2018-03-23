@@ -376,8 +376,8 @@ for target in $targets; do
 			mkdir -p $fedora_dockerfilePath
 			sed -e s~#{FROM}~"resin/$target-fedora-buildpack-deps:latest"~g $template > $fedora_dockerfilePath/Dockerfile
 
-			mkdir -p $fedora_dockerfilePath/24
-			sed -e s~#{FROM}~"resin/$target-fedora-buildpack-deps:24"~g $template > $fedora_dockerfilePath/24/Dockerfile
+			mkdir -p $fedora_dockerfilePath/25
+			sed -e s~#{FROM}~"resin/$target-fedora-buildpack-deps:25"~g $template > $fedora_dockerfilePath/25/Dockerfile
 
 			mkdir -p $fedora_dockerfilePath/onbuild
 			sed -e s~#{FROM}~"resin/$target-fedora-python:$version"~g Dockerfile.onbuild.tpl > $fedora_dockerfilePath/onbuild/Dockerfile

@@ -350,13 +350,13 @@ for target in $targets; do
 				-e s~#{TARGET_ARCH}~$fedora_binary_arch~g Dockerfile.tpl > $fedora_dockerfilePath/Dockerfile
 			cp go-wrapper $fedora_dockerfilePath/
 
-			mkdir -p $fedora_dockerfilePath/24
-			sed -e s~#{FROM}~resin/$target-fedora-buildpack-deps:24~g \
+			mkdir -p $fedora_dockerfilePath/25
+			sed -e s~#{FROM}~resin/$target-fedora-buildpack-deps:25~g \
 				-e s~#{BINARY_URL}~$fedora_binary_url~g \
 				-e s~#{GO_VERSION}~$goVersion~g \
 				-e s~#{CHECKSUM}~"$checksum"~g \
-				-e s~#{TARGET_ARCH}~$fedora_binary_arch~g Dockerfile.tpl > $fedora_dockerfilePath/24/Dockerfile
-			cp go-wrapper $fedora_dockerfilePath/24/
+				-e s~#{TARGET_ARCH}~$fedora_binary_arch~g Dockerfile.tpl > $fedora_dockerfilePath/25/Dockerfile
+			cp go-wrapper $fedora_dockerfilePath/25/
 
 			mkdir -p $fedora_dockerfilePath/onbuild
 			sed -e s~#{FROM}~resin/$target-fedora-golang:$goVersion~g Dockerfile.onbuild.tpl > $fedora_dockerfilePath/onbuild/Dockerfile

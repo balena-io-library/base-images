@@ -306,12 +306,12 @@ for target in $targets; do
 				-e s~#{CHECKSUM}~"$checksum"~g \
 				-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.tpl > $fedora_dockerfilePath/Dockerfile
 
-			mkdir -p $fedora_dockerfilePath/24
-			sed -e s~#{FROM}~resin/$target-fedora-buildpack-deps:24~g \
+			mkdir -p $fedora_dockerfilePath/25
+			sed -e s~#{FROM}~resin/$target-fedora-buildpack-deps:25~g \
 				-e s~#{BINARY_URL}~$binaryUrl~g \
 				-e s~#{NODE_VERSION}~$nodeVersion~g \
 				-e s~#{CHECKSUM}~"$checksum"~g \
-				-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.tpl > $fedora_dockerfilePath/24/Dockerfile
+				-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.tpl > $fedora_dockerfilePath/25/Dockerfile
 
 			mkdir -p $fedora_dockerfilePath/onbuild
 			sed -e s~#{FROM}~resin/$target-fedora-node:$nodeVersion~g Dockerfile.onbuild.tpl > $fedora_dockerfilePath/onbuild/Dockerfile

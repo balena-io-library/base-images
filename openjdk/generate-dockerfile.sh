@@ -316,7 +316,7 @@ for fedoratarget in $fedora_targets; do
 		fi
 		fedora_dockerfilePath="$fedoratarget/fedora/8-$variant"
 		mkdir -p $fedora_dockerfilePath
-		sed -e s~#{FROM}~resin/$fedoratarget-fedora:25~g \
+		sed -e s~#{FROM}~resin/$fedoratarget-fedora:latest~g \
 			-e s~#{FEDORA_PACKAGE}~"$fedoraPackage"~g Dockerfile.fedora.tpl > "$fedora_dockerfilePath/Dockerfile"
 	done
 done
