@@ -28,12 +28,11 @@ function getZuluVersion() {
 declare -A debianSuites=(
 	[6]='wheezy'
 	[7]='jessie'
-	[8]='jessie'
+	[8]='stretch'
 	[9]='sid'
 )
 
 declare -A debianAddSuites=(
-	[8]='jessie-backports'
 	[9]='experimental'
 )
 
@@ -317,7 +316,7 @@ for fedoratarget in $fedora_targets; do
 		fi
 		fedora_dockerfilePath="$fedoratarget/fedora/8-$variant"
 		mkdir -p $fedora_dockerfilePath
-		sed -e s~#{FROM}~resin/$fedoratarget-fedora:25~g \
+		sed -e s~#{FROM}~resin/$fedoratarget-fedora:latest~g \
 			-e s~#{FEDORA_PACKAGE}~"$fedoraPackage"~g Dockerfile.fedora.tpl > "$fedora_dockerfilePath/Dockerfile"
 	done
 done

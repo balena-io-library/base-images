@@ -269,13 +269,13 @@ for target in $targets; do
 				-e s~#{CHECKSUM}~"$checksum"~g \
 				-e s~#{TARGET_ARCH}~"$binary_arch"~g $template > $debian_dockerfilePath/Dockerfile
 
-		mkdir -p $debian_dockerfilePath/wheezy
-		sed -e s~#{FROM}~"resin/$target-buildpack-deps:wheezy"~g \
+		mkdir -p $debian_dockerfilePath/stretch
+		sed -e s~#{FROM}~"resin/$target-buildpack-deps:stretch"~g \
 				-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
 				-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
 				-e s~#{BINARY_URL}~"$binary_url"~g \
 				-e s~#{CHECKSUM}~"$checksum"~g \
-				-e s~#{TARGET_ARCH}~"$binary_arch"~g $template > $debian_dockerfilePath/wheezy/Dockerfile
+				-e s~#{TARGET_ARCH}~"$binary_arch"~g $template > $debian_dockerfilePath/stretch/Dockerfile
 
 		mkdir -p $debian_dockerfilePath/onbuild
 		sed -e s~#{FROM}~"resin/$target-python:$pythonVersion"~g Dockerfile.onbuild.tpl > $debian_dockerfilePath/onbuild/Dockerfile
@@ -300,10 +300,10 @@ for target in $targets; do
 
 		# Only for intel intel-edison
 		if [ $target == "intel-edison" ]; then
-			append_setup_script "$baseVersion" "$debian_dockerfilePath" "debian" "base wheezy slim"
+			append_setup_script "$baseVersion" "$debian_dockerfilePath" "debian" "base stretch slim"
 		fi
 
-		set_pythonpath "$baseVersion" "$debian_dockerfilePath" "base wheezy slim" "debian"
+		set_pythonpath "$baseVersion" "$debian_dockerfilePath" "base stretch slim" "debian"
 
 		# Alpine
 		# TODO: install mraa on intel-edison
@@ -376,8 +376,8 @@ for target in $targets; do
 			mkdir -p $fedora_dockerfilePath
 			sed -e s~#{FROM}~"resin/$target-fedora-buildpack-deps:latest"~g $template > $fedora_dockerfilePath/Dockerfile
 
-			mkdir -p $fedora_dockerfilePath/24
-			sed -e s~#{FROM}~"resin/$target-fedora-buildpack-deps:24"~g $template > $fedora_dockerfilePath/24/Dockerfile
+			mkdir -p $fedora_dockerfilePath/25
+			sed -e s~#{FROM}~"resin/$target-fedora-buildpack-deps:25"~g $template > $fedora_dockerfilePath/25/Dockerfile
 
 			mkdir -p $fedora_dockerfilePath/onbuild
 			sed -e s~#{FROM}~"resin/$target-fedora-python:$version"~g Dockerfile.onbuild.tpl > $fedora_dockerfilePath/onbuild/Dockerfile
