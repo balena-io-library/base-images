@@ -2,7 +2,7 @@
 
 set -m
 
-hostname "$HOSTNAME" > /dev/null
+hostname "$HOSTNAME" &> /dev/null
 if [[ $? == 0 ]]; then
 	PRIVILEGED=true
 else
