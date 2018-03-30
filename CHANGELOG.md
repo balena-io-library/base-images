@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## 2018-03-29
+
+### Changed
+
+- Add Go v1.10.
+- Add node v9.9.0 and v8.10.0.
+- Add support for Fedora 26 language stack base images (Drop support for Fedora 24 ones).
+- Add support for Debian Stretch language stack base images (Drop support for Debian Wheezy ones).
+- Redirect all outputs from privilege check to /dev/null (not just stdout).
+- Add support for new board: BananPi-M1+.
+
+
 ## 2018-03-23
 
 ### Changed
