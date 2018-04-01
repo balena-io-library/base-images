@@ -1,4 +1,4 @@
-FROM arm64v8/ubuntu:stretch-slim
+FROM arm64v8/ubuntu:xenial
 
 LABEL io.resin.architecture="aarch64" io.resin.qemu.version="2.9.0.resin1-aarch64"
 

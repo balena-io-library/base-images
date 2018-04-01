@@ -55,10 +55,12 @@ RUN systemctl mask \
     dev-hugepages.mount \
     sys-fs-fuse-connections.mount \
     sys-kernel-config.mount \
+
     display-manager.service \
     getty@.service \
     systemd-logind.service \
     systemd-remount-fs.service \
+
     getty.target \
     graphical.target \
     kmod-static-nodes.service

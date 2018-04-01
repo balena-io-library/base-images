@@ -1,4 +1,4 @@
-FROM arm32v7/ubuntu:xenial-slim
+FROM arm32v7/ubuntu:xenial
 
 LABEL io.resin.architecture="armv7hf" io.resin.qemu.version="2.9.0.resin1-arm"
 

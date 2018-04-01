@@ -1,4 +1,4 @@
-FROM i386/ubuntu:xenial-slim
+FROM i386/ubuntu:xenial
 
 LABEL io.resin.architecture="i386"
 

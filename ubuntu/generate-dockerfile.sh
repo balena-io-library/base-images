@@ -62,7 +62,7 @@ for arch in $archs; do
 	'aarch64')
 		baseImage='arm64v8/ubuntu'
 		label='io.resin.architecture="aarch64" io.resin.qemu.version="'$QEMU_AARCH64_VERSION'"'
-		suites='jessie stretch buster'
+		suites='xenial'
 		qemu='COPY qemu-aarch64-static /usr/bin/'
 		qemuCpu=''
 	;;
