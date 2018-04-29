@@ -29,6 +29,9 @@ ENV SETUPTOOLS_VERSION 34.3.3
 # https://www.python.org/dev/peps/pep-0476/#trust-database
 ENV SSL_CERT_FILE /etc/ssl/certs/ca-certificates.crt
 
+# https://github.com/docker-library/python/issues/147
+ENV PYTHONIOENCODING UTF-8
+
 RUN set -x \
 	&& curl -SLO "#{BINARY_URL}" \
 	&& echo "#{CHECKSUM}" | sha256sum -c - \

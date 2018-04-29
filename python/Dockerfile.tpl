@@ -27,6 +27,9 @@ ENV PYTHON_PIP_VERSION 10.0.1
 
 ENV SETUPTOOLS_VERSION 34.3.3
 
+# https://github.com/docker-library/python/issues/147
+ENV PYTHONIOENCODING UTF-8
+
 RUN set -x \
 	&& curl -SLO "#{BINARY_URL}" \
 	&& echo "#{CHECKSUM}" | sha256sum -c - \
