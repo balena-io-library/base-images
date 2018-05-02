@@ -2,14 +2,30 @@
 FROM resin/colibri-imx6dl-alpine-buildpack-deps:edge
 
 ENV NODE_VERSION 6.14.1
+ENV YARN_VERSION 1.5.1
 
 # Install dependencies
 RUN apk add --no-cache libgcc libstdc++ libuv libcrypto1.0 libssl1.0
 
-RUN curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-alpine-armhf.tar.gz" \
+RUN for key in \
+	6A010C5166006599AA17F08146C2130DFD2497F5 \
+	; do \
+		gpg --keyserver pgp.mit.edu --recv-keys "$key" || \
+		gpg --keyserver keyserver.pgp.com --recv-keys "$key" || \
+		gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key" ; \
+	done \
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-alpine-armhf.tar.gz" \
 	&& echo "486999a42df95ee6bc11fbe32efc788291f871012fde0ebf225c3a76b90161bb  node-v6.14.1-linux-alpine-armhf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-alpine-armhf.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-alpine-armhf.tar.gz" \
+	&& curl -fSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz" \
+	&& curl -fSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz.asc" \
+	&& gpg --batch --verify yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz \
+	&& mkdir -p /opt/yarn \
+	&& tar -xzf yarn-v$YARN_VERSION.tar.gz -C /opt/yarn --strip-components=1 \
+	&& ln -s /opt/yarn/bin/yarn /usr/local/bin/yarn \
+	&& ln -s /opt/yarn/bin/yarn /usr/local/bin/yarnpkg \
+	&& rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz \
 	&& npm config set unsafe-perm true -g --unsafe-perm \
 	&& rm -rf /tmp/*
 
