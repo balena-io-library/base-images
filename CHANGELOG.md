@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## 2018-05-02
+
+### Changed
+
+- Add Python v3.6.5.
+- Update pip to v10.0.1.
+- Set PYTHONIOENCODING for Python 2.
+- Update setuptools to v39.1.0.
+- Add node v9.11.1 v8.11.1 v6.14.1 v4.9.1 and v10.0.0.
+- Integrate yarn (v1.5.1) into node base images.
+
+
 ## 2018-03-29
 
 ### Changed
