@@ -254,6 +254,11 @@ for device in $devices; do
 	debian_dockerfilePath="$device/debian"
 	if [ $device != "raspberry-pi" ]; then
 		for suite in $suites; do
+
+			if [ $suite == 'wheezy' ] && [ $baseImage == "aarch64-debian" ]; then
+				continue
+			fi
+
 			mkdir -p $debian_dockerfilePath/$suite
 
 			case "$device" in
