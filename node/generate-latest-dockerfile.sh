@@ -44,10 +44,10 @@ C4F0DFFF4E8C1A8236409D08E73BC641CC11F4C8 \
 done
 
 # List of devices
-targets='raspberry-pi raspberry-pi2 beaglebone-black intel-edison intel-nuc via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green cybertan-ze250 artik710 am571x-evm up-board kitra710 imx6ul-var-dart kitra520 jetson-tx2 jetson-tx1 iot2000 generic-aarch64 generic-armv7ahf bananapi-m1-plus'
+targets='raspberry-pi raspberry-pi2 beaglebone-black intel-edison intel-nuc via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green cybertan-ze250 artik710 am571x-evm up-board kitra710 imx6ul-var-dart kitra520 jetson-tx2 jetson-tx1 iot2000 generic-aarch64 generic-armv7ahf bananapi-m1-plus orangepi-plus2'
 # List of archs
 targets+=' armv7hf armel i386 amd64 aarch64'
-fedora_targets=' raspberry-pi2 beaglebone-black via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green intel-nuc qemux86-64 artik710 am571x-evm kitra710 up-board imx6ul-var-dart kitra520 jetson-tx2 jetson-tx1 armv7hf amd64 aarch64 generic-aarch64 generic-armv7ahf bananapi-m1-plus '
+fedora_targets=' raspberry-pi2 beaglebone-black via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green intel-nuc qemux86-64 artik710 am571x-evm kitra710 up-board imx6ul-var-dart kitra520 jetson-tx2 jetson-tx1 armv7hf amd64 aarch64 generic-aarch64 generic-armv7ahf bananapi-m1-plus orangepi-plus2 '
 nodeVersions='0.10.22 0.10.48 0.12.18 5.12.0 7.10.1 9.11.1 8.11.1 6.14.1 4.9.1 10.0.0'
 defaultVersion='0.10.22'
 yarnVersion='1.5.1'
@@ -57,7 +57,7 @@ nodejsUrl="http://nodejs.org/dist/v\$NODE_VERSION/node-v\$NODE_VERSION-linux-#{T
 for target in $targets; do
 	for nodeVersion in $nodeVersions; do
 		case "$target" in
-		'armv7hf'|'generic-armv7ahf'|'bananapi-m1-plus')
+		'armv7hf'|'generic-armv7ahf'|'bananapi-m1-plus'|'orangepi-plus2')
 			binaryUrl=$resinUrl
 			binaryArch='armv7hf'
 		;;
@@ -253,7 +253,7 @@ for target in $targets; do
 			-e s~#{NODE_VERSION}~$nodeVersion~g \
 			-e s~#{YARN_VERSION}~$yarnVersion~g \
 			-e s~#{CHECKSUM}~"$checksum"~g \
-			-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.tpl > $debian_dockerfilePath/Dockerfile
+			-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.tpl > $debian_dockerfilePath/stretch/Dockerfile
 
 		mkdir -p $debian_dockerfilePath/onbuild
 		sed -e s~#{FROM}~resin/$target-node:$nodeVersion~g Dockerfile.onbuild.tpl > $debian_dockerfilePath/onbuild/Dockerfile
