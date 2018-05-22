@@ -234,7 +234,7 @@ for target in $targets; do
 			if [ $target == "raspberry-pi" ]; then
 				caHackContent0="ENV CA_CERTIFICATES_JAVA_VERSION 20140324"
 			else
-				caHackContent0="ENV CA_CERTIFICATES_JAVA_VERSION 20161107~bpo8+1"
+				caHackContent0="ENV CA_CERTIFICATES_JAVA_VERSION 20170531+nmu1"
 			fi
 			caHackContent1="ca-certificates-java=\$CA_CERTIFICATES_JAVA_VERSION "
 			caHackContent2="RUN /var/lib/dpkg/info/ca-certificates-java.postinst configure"
