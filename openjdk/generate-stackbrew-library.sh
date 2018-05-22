@@ -81,7 +81,7 @@ function generate_library(){
 		# zulu varirant
 		if [ -f "$path/$version/zulu/Dockerfile" ]; then
 			commit="$(git log -1 --format='format:%H' -- "$path/$version/zulu")"
-			echo "$javaVersion-zulu: ${url}@${commit} $repo/$path/$version/zulu" >> $lib_name
+			echo "$javaVersion-zulu-$version: ${url}@${commit} $repo/$path/$version/zulu" >> $lib_name
 		fi
 	done
 }
