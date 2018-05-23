@@ -1,4 +1,4 @@
-FROM resin/imx6ul-var-dart-fedora-golang:1.9.4
+FROM resin/imx6ul-var-dart-fedora-golang:1.9.6
 
 RUN mkdir -p /go/src/app
 WORKDIR /go/src/app

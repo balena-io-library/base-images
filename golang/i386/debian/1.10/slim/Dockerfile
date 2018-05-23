@@ -1,6 +1,6 @@
 FROM resin/i386-debian:jessie
 
-ENV GO_VERSION 1.10
+ENV GO_VERSION 1.10.2
 
 RUN buildDeps='curl gcc g++ git' \
 	&& set -x \
@@ -8,7 +8,7 @@ RUN buildDeps='curl gcc g++ git' \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "https://storage.googleapis.com/golang/go$GO_VERSION.linux-386.tar.gz" \
-	&& echo "2d26a9f41fd80eeb445cc454c2ba6b3d0db2fc732c53d7d0427a9f605bfc55a1  go1.10.linux-386.tar.gz" | sha256sum -c - \
+	&& echo "ea4caddf76b86ed5d101a61bc9a273be5b24d81f0567270bb4d5beaaded9b567  go1.10.2.linux-386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-386.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-386.tar.gz
 

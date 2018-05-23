@@ -1,10 +1,10 @@
 FROM resin/jetson-tx1-alpine-buildpack-deps:edge
 
-ENV GO_VERSION 1.9.4
+ENV GO_VERSION 1.9.6
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-aarch64.tar.gz" \
-	&& echo "85452c2bf5e213db51ea29cbb6cd58bcb6dc7704da5eb526136fdd4911567e57  go1.9.4.linux-alpine-aarch64.tar.gz" | sha256sum -c - \
+	&& echo "9d372959088245f7b28244c6822d1d5aa3a15f2d0d2a93c6fca44fd89578cd61  go1.9.6.linux-alpine-aarch64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-alpine-aarch64.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-alpine-aarch64.tar.gz
 

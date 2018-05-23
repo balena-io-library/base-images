@@ -1,10 +1,10 @@
 FROM resin/raspberry-pi-alpine-buildpack-deps:latest
 
-ENV GO_VERSION 1.10
+ENV GO_VERSION 1.10.2
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-armhf.tar.gz" \
-	&& echo "3014ac05e49af1246279796636d51799666bbf9e73741aa52f0428f3af3afa3e  go1.10.linux-alpine-armhf.tar.gz" | sha256sum -c - \
+	&& echo "ff5c821350240b81e91e0194d9d1934475fa6b73c676d580413950d50468522f  go1.10.2.linux-alpine-armhf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-alpine-armhf.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-alpine-armhf.tar.gz
 

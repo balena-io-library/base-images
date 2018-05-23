@@ -1,4 +1,4 @@
-FROM resin/up-board-alpine-golang:1.9.4
+FROM resin/up-board-alpine-golang:1.9.6
 
 RUN mkdir -p /go/src/app
 WORKDIR /go/src/app

@@ -1,6 +1,6 @@
 FROM resin/up-board-fedora:latest
 
-ENV GO_VERSION 1.9.4
+ENV GO_VERSION 1.9.6
 ENV GOROOT /usr/local/go
 ENV GOPATH /go
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
@@ -11,7 +11,7 @@ RUN buildDeps='gcc gcc-c++ git' \
 	&& dnf clean all \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "https://storage.googleapis.com/golang/go$GO_VERSION.linux-amd64.tar.gz" \
-	&& echo "15b0937615809f87321a457bb1265f946f9f6e736c563d6c5e0bd2c22e44f779  go1.9.4.linux-amd64.tar.gz" | sha256sum -c - \
+	&& echo "d1eb07f99ac06906225ac2b296503f06cc257b472e7d7817b8f822fe3766ebfe  go1.9.6.linux-amd64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-amd64.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm go$GO_VERSION.linux-amd64.tar.gz \
 	&& mkdir -p "$GOPATH/src" "$GOPATH/bin" \
