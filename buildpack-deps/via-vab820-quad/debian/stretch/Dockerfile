@@ -12,7 +12,6 @@ RUN apt-get update && apt-get install -y \
 		libjpeg-dev \
 		libmagickcore-dev \
 		libmagickwand-dev \
-		libmysqlclient-dev \
 		libncurses-dev \
 		libpq-dev \
 		libreadline-dev \
@@ -22,4 +21,11 @@ RUN apt-get update && apt-get install -y \
 		libxslt-dev \
 		libyaml-dev \
 		zlib1g-dev \
+		$( \
+			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then \
+				echo 'default-libmysqlclient-dev'; \
+			else \
+				echo 'libmysqlclient-dev'; \
+			fi \
+		) \
 	&& rm -rf /var/lib/apt/lists/*
