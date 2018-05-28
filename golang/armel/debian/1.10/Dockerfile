@@ -1,10 +1,10 @@
 FROM resin/armel-buildpack-deps:jessie
 
-ENV GO_VERSION 1.10
+ENV GO_VERSION 1.10.2
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-armel.tar.gz" \
-	&& echo "92971b5e90227d5978d77fa908ace4d7644349c5c3156d8f334aad8ff7e7b9fb  go1.10.linux-armel.tar.gz" | sha256sum -c - \
+	&& echo "d055767828bb2b9695b79f8d66d2346d34fb955684f7cbb23fa31a5754525f92  go1.10.2.linux-armel.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-armel.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-armel.tar.gz
 

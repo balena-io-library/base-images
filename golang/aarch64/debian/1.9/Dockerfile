@@ -1,10 +1,10 @@
 FROM resin/aarch64-buildpack-deps:jessie
 
-ENV GO_VERSION 1.9.4
+ENV GO_VERSION 1.9.6
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-aarch64.tar.gz" \
-	&& echo "daec3bb8f6f36161369e5a0886ae2f95f9282a98c83b1f065dce116b3b4c3110  go1.9.4.linux-aarch64.tar.gz" | sha256sum -c - \
+	&& echo "846efbadf3f4272ad61109220289773bd4bbb2ccbc511cd9916ad6ce5893b166  go1.9.6.linux-aarch64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-aarch64.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-aarch64.tar.gz
 

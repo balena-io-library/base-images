@@ -1,10 +1,10 @@
 FROM resin/raspberry-pi-buildpack-deps:stretch
 
-ENV GO_VERSION 1.10
+ENV GO_VERSION 1.10.2
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-armv6hf.tar.gz" \
-	&& echo "5987f7768be6e6ca94d3ad6913a45dc331ed5d40834aad6c4b1d256c23cc472b  go1.10.linux-armv6hf.tar.gz" | sha256sum -c - \
+	&& echo "ed2086311f28101a40de11df410def418342875280130bc2a1fd259593885cd6  go1.10.2.linux-armv6hf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-armv6hf.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-armv6hf.tar.gz
 

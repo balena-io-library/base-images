@@ -1,10 +1,10 @@
 FROM resin/cybertan-ze250-buildpack-deps:jessie
 
-ENV GO_VERSION 1.9.4
+ENV GO_VERSION 1.9.6
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-i386.tar.gz" \
-	&& echo "cb8783e0b43f737bdc09b429301efad5a169db327cab2663f2ce3ec5ae754704  go1.9.4.linux-i386.tar.gz" | sha256sum -c - \
+	&& echo "b2d8962128cb3d7c6b9f2f1e9b1dc2a3de4f3245f2b9c1229d3115b3e760b9a7  go1.9.6.linux-i386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-i386.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-i386.tar.gz
 

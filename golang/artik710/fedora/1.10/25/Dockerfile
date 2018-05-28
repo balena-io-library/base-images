@@ -1,10 +1,10 @@
 FROM resin/artik710-fedora-buildpack-deps:25
 
-ENV GO_VERSION 1.10
+ENV GO_VERSION 1.10.2
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-aarch64.tar.gz" \
-	&& echo "77d0b99898ee3ed8a94c79f60c759277dc017e74c5028ff2e891e7fa6c832287  go1.10.linux-aarch64.tar.gz" | sha256sum -c - \
+	&& echo "7026c5852dfe2ee4f50cbfbe62e6860a5e1a53995e9b34e705fe3e6be018abbd  go1.10.2.linux-aarch64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-aarch64.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-aarch64.tar.gz
 

@@ -1,6 +1,6 @@
 FROM resin/imx6ul-var-dart-fedora:latest
 
-ENV GO_VERSION 1.9.4
+ENV GO_VERSION 1.9.6
 ENV GOROOT /usr/local/go
 ENV GOPATH /go
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
@@ -11,7 +11,7 @@ RUN buildDeps='gcc gcc-c++ git' \
 	&& dnf clean all \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-armv7hf.tar.gz" \
-	&& echo "7f65a8338f88d49c373f5bcbf8ec58cc1c2d5a6d3921a17d290011370f6af5b6  go1.9.4.linux-armv7hf.tar.gz" | sha256sum -c - \
+	&& echo "8dd0327b047077cd89d5a406832f58854f055ced506c933bdc9508ceb1991de6  go1.9.6.linux-armv7hf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-armv7hf.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm go$GO_VERSION.linux-armv7hf.tar.gz \
 	&& mkdir -p "$GOPATH/src" "$GOPATH/bin" \
