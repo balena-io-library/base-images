@@ -1,0 +1,35 @@
+{
+  "name": "base-img-generator",
+  "version": "0.0.1",
+  "description": "base image generator",
+  "main": "scripts/generate-dockerfiles.js",
+  "homepage": "https://github.com/resin-io-library/base-images",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:resin-io-library/base-images.git"
+  },
+  "scripts": {
+    "lint": "eslint scripts",
+    "os-arch": "node scripts/generate-dockerfiles.js os-arch"
+  },
+  "author": "Resin Inc. <hello@resin.io>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "fs-extra": "^0.30.0",
+    "@resin.io/contrato": "0.0.5",
+    "js-combinatorics": "^0.5.3",
+    "js-yaml": "^3.11.0",
+    "lodash": "^4.17.4",
+    "require-all": "^2.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.5.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsdoc": "^3.1.2",
+    "eslint-plugin-lodash": "^2.4.5",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1"
+  }
+}
