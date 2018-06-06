@@ -22,13 +22,6 @@ const path = require('path')
 const contrato = require('@resin.io/contrato')
 const yaml = require('js-yaml')
 
-const swapArrElements = (a, x, y) => {
-  // Swap array element from index x to y
-  if (a.length === 1) return a
-  a.splice(y, 1, a.splice(x, 1, a[y])[0])
-  return a
-}
-
 const DEST_DIR = path.join(__dirname, '../resin-base-images')
 const BLUEPRINT_PATHS = {
   'os-arch': path.join(__dirname, 'blueprints/os-arch.yaml')
@@ -91,7 +84,7 @@ for (const type of types) {
     const json = context.toJSON()
     const destination = path.join(
       DEST_DIR,
-      swapArrElements(json.slug.split(/:|-/g), 0, 1).join('/'),
+      json.path,
       query.output.filename
     )
 
