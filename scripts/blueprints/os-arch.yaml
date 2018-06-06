@@ -6,6 +6,7 @@ output:
   filename: Dockerfile
   type: sw.docker-image.os-arch
   slug: "{{children.arch.sw.slug}}-{{children.sw.os.slug}}:{{children.sw.os.version}}"
+  path: "{{children.sw.os.slug}}/{{children.arch.sw.slug}}/{{children.sw.os.version}}"
   requires:
     - type: hw.device-type
       arch: "{{children.arch.sw.slug}}"
