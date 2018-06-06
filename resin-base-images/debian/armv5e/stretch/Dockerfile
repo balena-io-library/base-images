@@ -1,5 +1,5 @@
-FROM armel/debian:jessie
-LABEL io.resin.architecture="armel"
+FROM arm32v5/debian:stretch-slim
+LABEL io.resin.architecture="armv5e"
 
  ENV QEMU_CPU arm1026
 LABEL io.resin.qemu.version="2.9.0.resin1-arm"
@@ -70,6 +70,7 @@ RUN mkdir -p /usr/share/man/man1
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
         systemd \
+        systemd-sysv \
     && rm -rf /var/lib/apt/lists/*
 
 ENV container docker
@@ -86,7 +87,8 @@ RUN systemctl mask \
     systemd-remount-fs.service \
 
     getty.target \
-    graphical.target
+    graphical.target \
+    kmod-static-nodes.service
 
 COPY entry.sh /usr/bin/entry.sh
 
@@ -105,8 +107,7 @@ Restart=on-failure\n\
 [Install]\n\
 WantedBy=basic.target' > /etc/systemd/system/launch.service
 
-RUN systemctl enable /etc/systemd/system/launch.service
+RUN systemctl enable launch.service
 
 STOPSIGNAL 37
-VOLUME ["/sys/fs/cgroup"]
 ENTRYPOINT ["/usr/bin/entry.sh"]

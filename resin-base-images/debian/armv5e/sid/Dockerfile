@@ -1,5 +1,5 @@
-FROM armel/debian:sid
-LABEL io.resin.architecture="armel"
+FROM arm32v5/debian:sid-slim
+LABEL io.resin.architecture="armv5e"
 
  ENV QEMU_CPU arm1026
 LABEL io.resin.qemu.version="2.9.0.resin1-arm"
