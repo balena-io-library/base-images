@@ -24,7 +24,8 @@ const yaml = require('js-yaml')
 
 const DEST_DIR = path.join(__dirname, '../resin-base-images')
 const BLUEPRINT_PATHS = {
-  'os-arch': path.join(__dirname, 'blueprints/os-arch.yaml')
+  'os-arch': path.join(__dirname, 'blueprints/os-arch.yaml'),
+  'os-device': path.join(__dirname, 'blueprints/os-device.yaml')
 }
 const CONTRACTS_PATH = path.join(__dirname, 'contracts/contracts')
 
@@ -65,7 +66,14 @@ if (types.length === 0) {
   process.exit(1)
 }
 
-for (const type of types) {
+let blueprints = types
+
+if (types.indexOf('all') > -1) {
+  // Generate dockerfile for all blueprints
+  blueprints = Object.keys(BLUEPRINT_PATHS)
+}
+
+for (const type of blueprints) {
   if (!BLUEPRINT_PATHS[type]) {
     console.error(`Blueprint for this base images type: ${type} is missing!`)
     process.exit(1)

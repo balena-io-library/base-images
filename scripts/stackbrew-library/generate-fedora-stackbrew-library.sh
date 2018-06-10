@@ -40,7 +40,7 @@ if [ -d "$root" ]; then
 		for version in "${versions[@]}"; do
 			versionAliases=( $version ${aliases[$version]} )
 			commit="$(git log -1 --format='format:%H' -- "$repo/$version")"
-			echo >> $lib_name
+			echo >> "$destDir/$lib_name"
 			for va in "${versionAliases[@]}"; do
 				echo "$va: ${url}@${commit} $root/$repo/$version" >> "$destDir/$lib_name"
 			done
