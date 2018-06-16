@@ -17,7 +17,6 @@ output:
 
         LABEL io.resin.architecture="{{arch.sw.slug}}"
 
-
         {{#sw.blob.qemu}}
         {{import partial="qemu" combination="sw.os+arch.sw"}}
         {{/sw.blob.qemu}}

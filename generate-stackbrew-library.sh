@@ -3,7 +3,7 @@ set -e
 
 self="$(basename "$0")"
 root="$(dirname "$(readlink -f "$BASH_SOURCE[0]")")"
-images='debian alpine fedora'
+images='debian alpine fedora ubuntu'
 
 usage() {
     cat <<EOUSAGE
@@ -14,7 +14,7 @@ usage: $self [image|all]
 
 This script generates stackbrew library for the specified Dockerfiles.
 
-Supported image: debian, alpine, fedora. Passing 'all' will generate the library file for all Dockerfiles.
+Supported image: debian, alpine, fedora, ubuntu. Passing 'all' will generate the library file for all Dockerfiles.
 
 EOUSAGE
 }
@@ -36,6 +36,9 @@ case $arg in
     ;;
     'fedora')
         bash "$root/scripts/stackbrew-library/generate-fedora-stackbrew-library.sh"
+    ;;
+    'ubuntu')
+        bash "$root/scripts/stackbrew-library/generate-ubuntu-stackbrew-library.sh"
     ;;
     'all')
         for image in $images; do
