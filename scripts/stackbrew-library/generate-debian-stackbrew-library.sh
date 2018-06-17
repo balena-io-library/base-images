@@ -1,13 +1,28 @@
 #!/bin/bash
 set -e
 
+function print_tag(){
+	# Print with resin and balena formats.
+	# $1: tag
+	# $2: content
+
+	# resin
+	echo "$1: $2" >> "$destDir/resin/$lib_name"
+
+	# balena
+	# new format: <baseImageSeries>-<stack1version>-<stack2version>-...-<stackNversion>
+	echo "$imageVersion-$1: $2" >> "$destDir/balena/$lib_name"
+}
+
 declare -A aliases
 aliases=(
 	[jessie]='latest'
 )
+imageVersion='1'
 
 if [ ! -d 'library' ]; then
-	mkdir 'library'
+	mkdir -p 'library/resin'
+	mkdir -p 'library/balena'
 fi
 
 destDir="${PWD}/library"
@@ -35,14 +50,12 @@ if [ -d "$root" ]; then
 		versions=( "${versions[@]%/}" )
 		cd ..
 
-		echo '# maintainer: Trong Nghia Nguyen - resin.io <james@resin.io>' > "$destDir/$lib_name"
 		url='git://github.com/resin-io-library/base-images'
 		for version in "${versions[@]}"; do
 			versionAliases=( $version ${aliases[$version]} )
 			commit="$(git log -1 --format='format:%H' -- "$arch/$version")"
-			echo >> $lib_name
 			for va in "${versionAliases[@]}"; do
-				echo "$va: ${url}@${commit} $root/$arch/$version" >> "$destDir/$lib_name"
+				print_tag "$va" "${url}@${commit} $root/$repo/$version"
 			done
 		done
 	done
