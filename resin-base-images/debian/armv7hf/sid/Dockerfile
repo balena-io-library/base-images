@@ -1,7 +1,7 @@
 FROM arm32v7/debian:sid-slim
 LABEL io.resin.architecture="armv7hf"
-
- LABEL io.resin.qemu.version="2.9.0.resin1-arm"
+ 
+LABEL io.resin.qemu.version="2.9.0.resin1-arm"
 COPY qemu-arm-static /usr/bin 
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
