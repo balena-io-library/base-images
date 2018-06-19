@@ -1,6 +1,5 @@
 FROM arm32v5/debian:wheezy-slim
 LABEL io.resin.architecture="armv5e"
-
  ENV QEMU_CPU arm1026
 LABEL io.resin.qemu.version="2.9.0.resin1-arm"
 COPY qemu-arm-static /usr/bin 
