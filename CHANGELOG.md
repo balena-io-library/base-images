@@ -8,7 +8,21 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 
+- Add support for ubuntu base images (at the os-architecture layer).
+
+
+## 2018-06-04
+
+### Changed
+
 - Use contracts to generate the os-architecture based base images.
+
+
+## 2018-06-01
+
+### Changed
+
+- Add support for new device: artik533s and artik530.
 
 
 ## 2018-05-28
