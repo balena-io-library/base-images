@@ -1,4 +1,4 @@
-FROM resin/imx6ul-var-dart-golang:1.9.6
+FROM resin/imx6ul-var-dart-golang:1.9.7
 
 RUN mkdir -p /go/src/app
 WORKDIR /go/src/app

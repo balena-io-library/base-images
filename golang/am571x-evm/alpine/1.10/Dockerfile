@@ -1,10 +1,10 @@
 FROM resin/am571x-evm-alpine-buildpack-deps:latest
 
-ENV GO_VERSION 1.10.2
+ENV GO_VERSION 1.10.3
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-armhf.tar.gz" \
-	&& echo "ff5c821350240b81e91e0194d9d1934475fa6b73c676d580413950d50468522f  go1.10.2.linux-alpine-armhf.tar.gz" | sha256sum -c - \
+	&& echo "8350f5a63699a6b03cea74c7add9edb0b386b7c65aa6b0ce7aeca924f9b182b3  go1.10.3.linux-alpine-armhf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-alpine-armhf.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-alpine-armhf.tar.gz
 

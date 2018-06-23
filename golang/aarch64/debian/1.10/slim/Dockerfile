@@ -1,6 +1,6 @@
 FROM resin/aarch64-debian:jessie
 
-ENV GO_VERSION 1.10.2
+ENV GO_VERSION 1.10.3
 
 RUN buildDeps='curl gcc g++ git' \
 	&& set -x \
@@ -8,7 +8,7 @@ RUN buildDeps='curl gcc g++ git' \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-aarch64.tar.gz" \
-	&& echo "7026c5852dfe2ee4f50cbfbe62e6860a5e1a53995e9b34e705fe3e6be018abbd  go1.10.2.linux-aarch64.tar.gz" | sha256sum -c - \
+	&& echo "ce1b8a6cc94046dd11b3240c4e1126fec829fa0cf0966be2d6d9e968c137be48  go1.10.3.linux-aarch64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-aarch64.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-aarch64.tar.gz
 

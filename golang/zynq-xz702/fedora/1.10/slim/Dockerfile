@@ -1,6 +1,6 @@
 FROM resin/zynq-xz702-fedora:latest
 
-ENV GO_VERSION 1.10.2
+ENV GO_VERSION 1.10.3
 ENV GOROOT /usr/local/go
 ENV GOPATH /go
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
@@ -11,7 +11,7 @@ RUN buildDeps='gcc gcc-c++ git' \
 	&& dnf clean all \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-armv7hf.tar.gz" \
-	&& echo "f1a007ec49d441fbd781c56635f30e8a4dc7e3692e0b7cb95676bbc65c02925f  go1.10.2.linux-armv7hf.tar.gz" | sha256sum -c - \
+	&& echo "f12011d4c1485ecc958e0c4df93e50da166532a60afec8e01e8f52b9c864d5b5  go1.10.3.linux-armv7hf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-armv7hf.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm go$GO_VERSION.linux-armv7hf.tar.gz \
 	&& mkdir -p "$GOPATH/src" "$GOPATH/bin" \

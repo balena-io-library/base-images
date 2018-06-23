@@ -1,4 +1,4 @@
-FROM resin/aarch64-alpine-golang:1.10.2
+FROM resin/aarch64-alpine-golang:1.10.3
 
 RUN mkdir -p /go/src/app
 WORKDIR /go/src/app

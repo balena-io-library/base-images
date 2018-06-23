@@ -1,6 +1,6 @@
 FROM resin/iot2000-debian:jessie
 
-ENV GO_VERSION 1.10.2
+ENV GO_VERSION 1.10.3
 
 RUN buildDeps='curl gcc g++ git' \
 	&& set -x \
@@ -8,7 +8,7 @@ RUN buildDeps='curl gcc g++ git' \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-i386.tar.gz" \
-	&& echo "ba9588df097896eabedc8453ac96c9afd312a087a7cff3671a9d128d756b7a8b  go1.10.2.linux-i386.tar.gz" | sha256sum -c - \
+	&& echo "309202f2fe82afcd4c76e2e2750dab2b7764bd5c70c8be12189a7904902fbdc8  go1.10.3.linux-i386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-i386.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-i386.tar.gz
 
