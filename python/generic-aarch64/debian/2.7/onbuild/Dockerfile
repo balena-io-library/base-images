@@ -1,4 +1,4 @@
-FROM resin/generic-aarch64-python:2.7.14
+FROM resin/generic-aarch64-python:2.7.15
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
