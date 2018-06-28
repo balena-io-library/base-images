@@ -20,7 +20,7 @@ RUN gpg --keyserver keyring.debian.org --recv-keys 4DE8FF2A63C7CC90 \
 	&& gpg --keyserver pgp.mit.edu  --recv-key 6E3CBCE93372DCFA \
 	&& gpg --keyserver pgp.mit.edu --recv-keys 0x52a43a1e4b77b059
 
-ENV PYTHON_VERSION 2.7.14
+ENV PYTHON_VERSION 2.7.15
 
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
 ENV PYTHON_PIP_VERSION 10.0.1
@@ -32,7 +32,7 @@ ENV PYTHONIOENCODING UTF-8
 
 RUN set -x \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-armv6hf.tar.gz" \
-	&& echo "f5524e29585e8a10de8b8f51c28a040b8cde84ec94aebe43b817b0a097de6ee9  Python-2.7.14.linux-armv6hf.tar.gz" | sha256sum -c - \
+	&& echo "7527d9054eaa92afcb31aa62f192d88beefc0da00d8aad94d4e3f2f2e9ab6723  Python-2.7.15.linux-armv6hf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-armv6hf.tar.gz" --strip-components=1 \
 	&& rm -rf "Python-$PYTHON_VERSION.linux-armv6hf.tar.gz" \
 	&& ldconfig \

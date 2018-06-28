@@ -21,7 +21,7 @@ RUN gpg --keyserver keyring.debian.org --recv-keys 4DE8FF2A63C7CC90 \
 	&& gpg --keyserver pgp.mit.edu  --recv-key 6E3CBCE93372DCFA \
 	&& gpg --keyserver pgp.mit.edu --recv-keys 0x52a43a1e4b77b059
 
-ENV PYTHON_VERSION 2.7.14
+ENV PYTHON_VERSION 2.7.15
 
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
 ENV PYTHON_PIP_VERSION 10.0.1
@@ -41,7 +41,7 @@ RUN set -x \
 	' \
 	&& apk add --no-cache --virtual .build-deps $buildDeps \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-alpine-aarch64.tar.gz" \
-	&& echo "a93f6a0ea8affa6933fc8f53f8d0293b4157357dec8948997ce6801cadeb4734  Python-2.7.14.linux-alpine-aarch64.tar.gz" | sha256sum -c - \
+	&& echo "c7c454b5e3f7d393144ef254e2276632f96dc3eceb09b552c8c9c1e0eb24fd0a  Python-2.7.15.linux-alpine-aarch64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-alpine-aarch64.tar.gz" --strip-components=1 \
 	&& rm -rf "Python-$PYTHON_VERSION.linux-alpine-aarch64.tar.gz" \
 	&& if [ ! -e /usr/local/bin/pip ]; then : \
