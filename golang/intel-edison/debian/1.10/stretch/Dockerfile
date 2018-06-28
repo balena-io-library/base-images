@@ -1,10 +1,10 @@
 FROM resin/intel-edison-buildpack-deps:stretch
 
-ENV GO_VERSION 1.10.2
+ENV GO_VERSION 1.10.3
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "https://storage.googleapis.com/golang/go$GO_VERSION.linux-386.tar.gz" \
-	&& echo "ea4caddf76b86ed5d101a61bc9a273be5b24d81f0567270bb4d5beaaded9b567  go1.10.2.linux-386.tar.gz" | sha256sum -c - \
+	&& echo "3d5fe1932c904a01acb13dae07a5835bffafef38bef9e5a05450c52948ebdeb4  go1.10.3.linux-386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-386.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-386.tar.gz
 

@@ -1,6 +1,6 @@
 FROM resin/iot2000-alpine:latest
 
-ENV GO_VERSION 1.9.6
+ENV GO_VERSION 1.9.7
 
 RUN apk add --no-cache git gcc
 
@@ -9,7 +9,7 @@ RUN buildDeps='curl' \
 	&& apk add --no-cache $buildDeps \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-i386.tar.gz" \
-	&& echo "4e7ade595d540c2dc1f993a6d71f135e657bc924cae34db557c4b85fb7505973  go1.9.6.linux-alpine-i386.tar.gz" | sha256sum -c - \
+	&& echo "17fb585243edf26bf74eff08ba6a806c53f64fcce5fc05ef8094a2cbc37ea6c8  go1.9.7.linux-alpine-i386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-alpine-i386.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-alpine-i386.tar.gz \
 	&& apk del $buildDeps

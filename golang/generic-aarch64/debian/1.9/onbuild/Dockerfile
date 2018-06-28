@@ -1,4 +1,4 @@
-FROM resin/generic-aarch64-golang:1.9.6
+FROM resin/generic-aarch64-golang:1.9.7
 
 RUN mkdir -p /go/src/app
 WORKDIR /go/src/app

@@ -1,10 +1,10 @@
 FROM resin/iot2000-buildpack-deps:jessie
 
-ENV GO_VERSION 1.9.6
+ENV GO_VERSION 1.9.7
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-i386.tar.gz" \
-	&& echo "b2d8962128cb3d7c6b9f2f1e9b1dc2a3de4f3245f2b9c1229d3115b3e760b9a7  go1.9.6.linux-i386.tar.gz" | sha256sum -c - \
+	&& echo "ae7e05e43f7da4dbf2299be1e1640922e16a32aacd64c4b8970b12eddc677e66  go1.9.7.linux-i386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-i386.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-i386.tar.gz
 

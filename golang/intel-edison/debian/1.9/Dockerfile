@@ -1,10 +1,10 @@
 FROM resin/intel-edison-buildpack-deps:jessie
 
-ENV GO_VERSION 1.9.6
+ENV GO_VERSION 1.9.7
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "https://storage.googleapis.com/golang/go$GO_VERSION.linux-386.tar.gz" \
-	&& echo "de65e35d7e540578e78a3c6917b9e9033b55617ef894a1de1a6a6da5a1b948dd  go1.9.6.linux-386.tar.gz" | sha256sum -c - \
+	&& echo "c689fdb0b4f4530e48b44a3e591e53660fcbc97c3757ff9c3028adadabcf8378  go1.9.7.linux-386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-386.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-386.tar.gz
 

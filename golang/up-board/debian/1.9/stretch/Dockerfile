@@ -1,10 +1,10 @@
 FROM resin/up-board-buildpack-deps:stretch
 
-ENV GO_VERSION 1.9.6
+ENV GO_VERSION 1.9.7
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "https://storage.googleapis.com/golang/go$GO_VERSION.linux-amd64.tar.gz" \
-	&& echo "d1eb07f99ac06906225ac2b296503f06cc257b472e7d7817b8f822fe3766ebfe  go1.9.6.linux-amd64.tar.gz" | sha256sum -c - \
+	&& echo "88573008f4f6233b81f81d8ccf92234b4f67238df0f0ab173d75a302a1f3d6ee  go1.9.7.linux-amd64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-amd64.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-amd64.tar.gz
 

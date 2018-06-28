@@ -1,4 +1,4 @@
-FROM resin/up-board-fedora-golang:1.10.2
+FROM resin/up-board-fedora-golang:1.10.3
 
 RUN mkdir -p /go/src/app
 WORKDIR /go/src/app

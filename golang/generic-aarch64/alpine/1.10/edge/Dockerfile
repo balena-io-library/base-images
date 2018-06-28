@@ -1,10 +1,10 @@
 FROM resin/generic-aarch64-alpine-buildpack-deps:edge
 
-ENV GO_VERSION 1.10.2
+ENV GO_VERSION 1.10.3
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-aarch64.tar.gz" \
-	&& echo "77f5498496ab6d3285d72e67d5a0471864bfaffc6d02362ab21fccf1bcdea5ff  go1.10.2.linux-alpine-aarch64.tar.gz" | sha256sum -c - \
+	&& echo "186894be5dff10f9f7d496eff9b0e542941d74066052adcb9f64ce82dc2ccbb3  go1.10.3.linux-alpine-aarch64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-alpine-aarch64.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-alpine-aarch64.tar.gz
 

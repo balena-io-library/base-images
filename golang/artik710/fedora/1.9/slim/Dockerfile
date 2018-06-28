@@ -1,6 +1,6 @@
 FROM resin/artik710-fedora:latest
 
-ENV GO_VERSION 1.9.6
+ENV GO_VERSION 1.9.7
 ENV GOROOT /usr/local/go
 ENV GOPATH /go
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
@@ -11,7 +11,7 @@ RUN buildDeps='gcc gcc-c++ git' \
 	&& dnf clean all \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-aarch64.tar.gz" \
-	&& echo "846efbadf3f4272ad61109220289773bd4bbb2ccbc511cd9916ad6ce5893b166  go1.9.6.linux-aarch64.tar.gz" | sha256sum -c - \
+	&& echo "0c51e372844c4c534cdf20cefbd167cb20c2500ee40fddee6f0485e06b20cf1b  go1.9.7.linux-aarch64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-aarch64.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm go$GO_VERSION.linux-aarch64.tar.gz \
 	&& mkdir -p "$GOPATH/src" "$GOPATH/bin" \
