@@ -1,5 +1,5 @@
-FROM arm32v6/alpine:edge
-LABEL io.resin.architecture="armhf"
+FROM arm32v6/alpine:3.7
+LABEL io.resin.architecture="rpi"
  
 LABEL io.resin.qemu.version="2.9.0.resin1-arm"
 COPY qemu-arm-static /usr/bin 
