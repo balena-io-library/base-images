@@ -48,6 +48,8 @@ targets='raspberry-pi raspberry-pi2 beaglebone-black intel-edison intel-nuc via-
 # List of archs
 targets+=' armv7hf armel i386 amd64 aarch64'
 fedora_targets=' raspberry-pi2 beaglebone-black via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green intel-nuc qemux86-64 artik710 am571x-evm kitra710 up-board imx6ul-var-dart kitra520 jetson-tx2 jetson-tx1 armv7hf amd64 aarch64 generic-aarch64 generic-armv7ahf bananapi-m1-plus orangepi-plus2 fincm3 artik533s artik530 orbitty-tx2 spacely-tx2 '
+# No rpi and armel targets for ubuntu base images
+ubuntu_targets=' raspberry-pi2 beaglebone-black intel-edison intel-nuc via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green cybertan-ze250 artik710 am571x-evm up-board kitra710 imx6ul-var-dart kitra520 jetson-tx2 iot2000 jetson-tx1 generic-armv7ahf generic-aarch64 bananapi-m1-plus orangepi-plus2 fincm3 artik533s artik530 orbitty-tx2 spacely-tx2 armv7hf i386 amd64 aarch64 '
 nodeVersions='0.10.22 0.10.48 0.12.18 5.12.0 7.10.1 9.11.2 8.11.3 6.14.3 4.9.1 10.4.1'
 defaultVersion='0.10.22'
 yarnVersion='1.5.1'
@@ -300,6 +302,64 @@ for target in $targets; do
 					-e s~#{YARN_VERSION}~$yarnVersion~g \
 					-e s~#{CHECKSUM}~"$checksum"~g \
 					-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.i386.edison.slim.tpl > $debian_dockerfilePath/slim/Dockerfile
+			fi
+		fi
+
+		# Ubuntu
+		if [[ $ubuntu_targets == *" $target "* ]]; then
+			ubuntu_dockerfilePath=$target/ubuntu/$baseVersion
+			mkdir -p $ubuntu_dockerfilePath
+			sed -e s~#{FROM}~resin/$target-ubuntu-buildpack-deps:latest~g \
+				-e s~#{BINARY_URL}~$binaryUrl~g \
+				-e s~#{NODE_VERSION}~$nodeVersion~g \
+				-e s~#{YARN_VERSION}~$yarnVersion~g \
+				-e s~#{CHECKSUM}~"$checksum"~g \
+				-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.tpl > $ubuntu_dockerfilePath/Dockerfile
+
+			mkdir -p $ubuntu_dockerfilePath/xenial
+			sed -e s~#{FROM}~resin/$target-ubuntu-buildpack-deps:xenial~g \
+				-e s~#{BINARY_URL}~$binaryUrl~g \
+				-e s~#{NODE_VERSION}~$nodeVersion~g \
+				-e s~#{YARN_VERSION}~$yarnVersion~g \
+				-e s~#{CHECKSUM}~"$checksum"~g \
+				-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.tpl > $ubuntu_dockerfilePath/xenial/Dockerfile
+
+			mkdir -p $ubuntu_dockerfilePath/onbuild
+			sed -e s~#{FROM}~resin/$target-ubuntu-node:$nodeVersion~g Dockerfile.onbuild.tpl > $ubuntu_dockerfilePath/onbuild/Dockerfile
+
+			mkdir -p $ubuntu_dockerfilePath/slim
+			sed -e s~#{FROM}~resin/$target-ubuntu:latest~g \
+				-e s~#{BINARY_URL}~$binaryUrl~g \
+				-e s~#{NODE_VERSION}~$nodeVersion~g \
+				-e s~#{YARN_VERSION}~$yarnVersion~g \
+				-e s~#{CHECKSUM}~"$checksum"~g \
+				-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.slim.tpl > $debian_dockerfilePath/slim/Dockerfile
+
+			# Only for intel intel-edison
+			if [ $target == "intel-edison" ]; then
+				if ! version_ge "$nodeVersion" "7"; then
+					# mraa doesn't support Node.js 7.0.0+ so we will use generic template for them.
+					sed -e s~#{FROM}~resin/$target-ubuntu-buildpack-deps:latest~g \
+						-e s~#{BINARY_URL}~$binaryUrl~g \
+						-e s~#{NODE_VERSION}~$nodeVersion~g \
+						-e s~#{YARN_VERSION}~$yarnVersion~g \
+						-e s~#{CHECKSUM}~"$checksum"~g \
+						-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.i386.edison.tpl > $ubuntu_dockerfilePath/Dockerfile
+
+					sed -e s~#{FROM}~resin/$target-ubuntu-buildpack-deps:xenial~g \
+						-e s~#{BINARY_URL}~$binaryUrl~g \
+						-e s~#{NODE_VERSION}~$nodeVersion~g \
+						-e s~#{YARN_VERSION}~$yarnVersion~g \
+						-e s~#{CHECKSUM}~"$checksum"~g \
+						-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.i386.edison.tpl > $ubuntu_dockerfilePath/xenial/Dockerfile
+
+					sed -e s~#{FROM}~resin/$target-ubuntu:latest~g \
+						-e s~#{BINARY_URL}~$binaryUrl~g \
+						-e s~#{NODE_VERSION}~$nodeVersion~g \
+						-e s~#{YARN_VERSION}~$yarnVersion~g \
+						-e s~#{CHECKSUM}~"$checksum"~g \
+						-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.i386.edison.slim.tpl > $ubuntu_dockerfilePath/slim/Dockerfile
+				fi
 			fi
 		fi
 
