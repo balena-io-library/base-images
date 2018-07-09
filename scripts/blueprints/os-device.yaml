@@ -1,0 +1,22 @@
+selector:
+  sw.os: 1
+  hw.device-type: 1
+  arch.sw: 1
+output:
+  filename: Dockerfile
+  type: sw.docker-image.os-device
+  slug: "{{children.hw.device-type.slug}}-{{children.sw.os.slug}}:{{children.sw.os.version}}"
+  path: "device-base/{{children.hw.device-type.slug}}/{{children.sw.os.slug}}/{{children.sw.os.version}}"
+  requires:
+    - type: hw.device-type
+      arch: "{{children.arch.sw.slug}}"
+  template:
+    - name: os-device
+      data: >
+        FROM resin/{{arch.sw.slug}}-{{sw.os.slug}}:{{sw.os.version}}
+
+        LABEL io.resin.device-type="{{hw.device-type.slug}}"
+
+        {{import partial="distro-config" combination="sw.os+hw.device-type"}}
+
+        {{import partial="dependencies" combination="sw.os+hw.device-type"}}
