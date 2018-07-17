@@ -2,11 +2,11 @@ FROM #{FROM}
 
 RUN apt-get update && apt-get install -y \
 		autoconf \
-		build-essential \		
+		build-essential \
 		i2c-tools \
 		imagemagick \
-		iputils-ping \	
-		ifupdown \	
+		iputils-ping \
+		ifupdown \
 		less \
 		libbz2-dev \
 		libcurl4-openssl-dev \
@@ -16,7 +16,6 @@ RUN apt-get update && apt-get install -y \
 		libjpeg-dev \
 		libmagickcore-dev \
 		libmagickwand-dev \
-		libmysqlclient-dev \
 		libncurses-dev \
 		libpq-dev \
 		libraspberrypi-bin \
@@ -26,9 +25,15 @@ RUN apt-get update && apt-get install -y \
 		libxml2-dev \
 		libxslt-dev \
 		libyaml-dev \
-		module-init-tools \
 		nano \
 		net-tools \
 		zlib1g-dev \
-		usbutils \		
+		usbutils \
+		$( \
+			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then \
+				echo 'default-libmysqlclient-dev'; \
+			else \
+				echo 'libmysqlclient-dev'; \
+			fi \
+		) \
 	&& rm -rf /var/lib/apt/lists/*
