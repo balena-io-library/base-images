@@ -4,7 +4,8 @@ LABEL io.resin.architecture="aarch64"
 LABEL io.resin.qemu.version="2.9.0.resin1-aarch64"
 COPY qemu-aarch64-static /usr/bin 
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN sed -i '/debian-security/{s/^/#/}' /etc/apt/sources.list \
+  && apt-get update && apt-get install -y --no-install-recommends \
   sudo \
   ca-certificates \
   findutils \
