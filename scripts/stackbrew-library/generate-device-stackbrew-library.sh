@@ -20,7 +20,7 @@ function generate_library(){
 		commit="$(git log -1 --format='format:%H' -- "$path/$suite")"
 		echo >> "$destDir/$lib_name"
 		for va in "${suiteAliases[@]}"; do
-			echo "$va: ${url}@${commit} $repo/$path/$suite" >> "$destDir/$lib_name"
+			echo "$va: ${url}@${commit} $root/$path/$suite" >> "$destDir/$lib_name"
 		done
 	done
 }
@@ -28,7 +28,7 @@ function generate_library(){
 declare -A aliases
 aliases=(
 	[jessie]='latest'
-	[3.7]='latest'
+	[3.8]='latest'
 	[26]='latest'
 	[bionic]='latest'
 )

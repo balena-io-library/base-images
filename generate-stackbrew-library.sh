@@ -3,7 +3,7 @@ set -e
 
 self="$(basename "$0")"
 root="$(dirname "$(readlink -f "$BASH_SOURCE[0]")")"
-images='debian alpine fedora ubuntu'
+images='debian alpine fedora ubuntu device'
 
 usage() {
     cat <<EOUSAGE

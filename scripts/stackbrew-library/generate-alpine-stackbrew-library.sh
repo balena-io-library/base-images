@@ -3,7 +3,7 @@ set -e
 
 declare -A aliases
 aliases=(
-	[3.7]='latest'
+	[3.8]='latest'
 )
 
 if [ ! -d 'library' ]; then
