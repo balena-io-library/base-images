@@ -20,3 +20,5 @@ output:
         {{import partial="distro-config" combination="sw.os+hw.device-type"}}
 
         {{import partial="dependencies" combination="sw.os+hw.device-type"}}
+
+        {{import partial="distro-config-1" combination="sw.os+hw.device-type"}}
