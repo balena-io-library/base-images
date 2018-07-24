@@ -17,8 +17,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # key 63C7CC90: public key "Simon McVittie <smcv@pseudorandom.co.uk>" imported
 # key 3372DCFA: public key "Donald Stufft (dstufft) <donald@stufft.io>" imported
 RUN gpg --keyserver keyring.debian.org --recv-keys 4DE8FF2A63C7CC90 \
-	&& gpg --keyserver pgp.mit.edu  --recv-key 6E3CBCE93372DCFA \
-	&& gpg --keyserver pgp.mit.edu --recv-keys 0x52a43a1e4b77b059
+	&& gpg --keyserver keyserver.ubuntu.com --recv-key 6E3CBCE93372DCFA \
+	&& gpg --keyserver keyserver.ubuntu.com --recv-keys 0x52a43a1e4b77b059
 
 ENV PYTHON_VERSION 3.5.5
 

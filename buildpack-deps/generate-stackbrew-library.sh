@@ -47,6 +47,7 @@ aliases=(
 	[jessie]='latest'
 	[3.8]='latest'
 	[26]='latest'
+	[bionic]='latest'
 )
 
 cd "$(dirname "$(readlink -f "$BASH_SOURCE[0]")")"

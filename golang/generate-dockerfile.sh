@@ -8,6 +8,8 @@ targets='raspberry-pi raspberry-pi2 beaglebone-black intel-edison intel-nuc via-
 # List of archs
 targets+=' armv7hf armel i386 amd64 aarch64'
 fedora_targets=' raspberry-pi2 beaglebone-black via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green intel-nuc qemux86-64 artik710 am571x-evm kitra710 up-board imx6ul-var-dart kitra520 jetson-tx2 jetson-tx1 armv7hf amd64 aarch64 generic-armv7ahf generic-aarch64 bananapi-m1-plus orangepi-plus2 fincm3 artik533s artik530 orbitty-tx2 spacely-tx2 '
+# No rpi and armel targets for ubuntu base images
+ubuntu_targets=' raspberry-pi2 beaglebone-black intel-edison intel-nuc via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green cybertan-ze250 artik710 am571x-evm up-board kitra710 imx6ul-var-dart kitra520 jetson-tx2 iot2000 jetson-tx1 generic-armv7ahf generic-aarch64 bananapi-m1-plus orangepi-plus2 fincm3 artik533s artik530 orbitty-tx2 spacely-tx2 armv7hf i386 amd64 aarch64 '
 goVersions='1.4.3 1.5.4 1.6.4 1.7.5 1.8.7 1.9.7 1.10.3'
 resinUrl="http://resin-packages.s3.amazonaws.com/golang/v\$GO_VERSION/go\$GO_VERSION.linux-#{TARGET_ARCH}.tar.gz"
 golangUrl="https://storage.googleapis.com/golang/go\$GO_VERSION.linux-#{TARGET_ARCH}.tar.gz"
@@ -21,6 +23,8 @@ for target in $targets; do
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_url=$resinUrl
 		fedora_binary_arch='armv7hf'
+		ubuntu_binary_url=$resinUrl
+		ubuntu_binary_arch='armv7hf'
 	;;
 	'armel')
 		binary_url=$resinUrl
@@ -31,6 +35,8 @@ for target in $targets; do
 		binary_arch='386'
 		alpine_binary_url=$resinUrl
 		alpine_binary_arch='alpine-i386'
+		ubuntu_binary_url=$golangUrl
+		ubuntu_binary_arch='386'
 	;;
 	'amd64')
 		binary_url=$golangUrl
@@ -39,6 +45,8 @@ for target in $targets; do
 		alpine_binary_arch='alpine-amd64'
 		fedora_binary_url=$golangUrl
 		fedora_binary_arch='amd64'
+		ubuntu_binary_url=$golangUrl
+		ubuntu_binary_arch='amd64'
 	;;
 	'aarch64')
 		binary_url=$resinUrl
@@ -47,6 +55,8 @@ for target in $targets; do
 		alpine_binary_arch='alpine-aarch64'
 		fedora_binary_url=$resinUrl
 		fedora_binary_arch='aarch64'
+		ubuntu_binary_url=$resinUrl
+		ubuntu_binary_arch='aarch64'
 	;;
 	'raspberry-pi')
 		binary_url=$resinUrl
@@ -61,6 +71,8 @@ for target in $targets; do
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_url=$resinUrl
 		fedora_binary_arch='armv7hf'
+		ubuntu_binary_url=$resinUrl
+		ubuntu_binary_arch='armv7hf'
 	;;
 	'raspberrypi3'|'fincm3')
 		binary_url=$resinUrl
@@ -69,6 +81,8 @@ for target in $targets; do
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_url=$resinUrl
 		fedora_binary_arch='armv7hf'
+		ubuntu_binary_url=$resinUrl
+		ubuntu_binary_arch='armv7hf'
 	;;
 	'beaglebone-black')
 		binary_url=$resinUrl
@@ -77,6 +91,8 @@ for target in $targets; do
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_url=$resinUrl
 		fedora_binary_arch='armv7hf'
+		ubuntu_binary_url=$resinUrl
+		ubuntu_binary_arch='armv7hf'
 	;;
 	'beaglebone-green-wifi')
 		binary_url=$resinUrl
@@ -85,6 +101,8 @@ for target in $targets; do
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_url=$resinUrl
 		fedora_binary_arch='armv7hf'
+		ubuntu_binary_url=$resinUrl
+		ubuntu_binary_arch='armv7hf'
 	;;
 	'beaglebone-green')
 		binary_url=$resinUrl
@@ -93,30 +111,40 @@ for target in $targets; do
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_url=$resinUrl
 		fedora_binary_arch='armv7hf'
+		ubuntu_binary_url=$resinUrl
+		ubuntu_binary_arch='armv7hf'
 	;;
 	'intel-edison')
 		binary_url=$golangUrl
 		binary_arch='386'
 		alpine_binary_url=$resinUrl
 		alpine_binary_arch='alpine-i386'
+		ubuntu_binary_url=$golangUrl
+		ubuntu_binary_arch='386'
 	;;
 	'cybertan-ze250')
 		binary_url=$resinUrl
 		binary_arch='i386'
 		alpine_binary_url=$resinUrl
 		alpine_binary_arch='alpine-i386'
+		ubuntu_binary_url=$resinUrl
+		ubuntu_binary_arch='i386'
 	;;
 	'iot2000')
 		binary_url=$resinUrl
 		binary_arch='i386'
 		alpine_binary_url=$resinUrl
 		alpine_binary_arch='alpine-i386'
+		ubuntu_binary_url=$resinUrl
+		ubuntu_binary_arch='i386'
 	;;
 	'qemux86')
 		binary_url=$golangUrl
 		binary_arch='386'
 		alpine_binary_url=$resinUrl
 		alpine_binary_arch='alpine-i386'
+		ubuntu_binary_url=$golangUrl
+		ubuntu_binary_arch='386'
 	;;
 	'intel-nuc')
 		binary_url=$golangUrl
@@ -125,6 +153,8 @@ for target in $targets; do
 		alpine_binary_arch='alpine-amd64'
 		fedora_binary_url=$golangUrl
 		fedora_binary_arch='amd64'
+		ubuntu_binary_url=$golangUrl
+		ubuntu_binary_arch='amd64'
 	;;
 	'qemux86-64')
 		binary_url=$golangUrl
@@ -133,6 +163,8 @@ for target in $targets; do
 		alpine_binary_arch='alpine-amd64'
 		fedora_binary_url=$golangUrl
 		fedora_binary_arch='amd64'
+		ubuntu_binary_url=$golangUrl
+		ubuntu_binary_arch='amd64'
 	;;
 	'up-board')
 		binary_url=$golangUrl
@@ -141,6 +173,8 @@ for target in $targets; do
 		alpine_binary_arch='alpine-amd64'
 		fedora_binary_url=$golangUrl
 		fedora_binary_arch='amd64'
+		ubuntu_binary_url=$golangUrl
+		ubuntu_binary_arch='amd64'
 	;;
 	'via-vab820-quad')
 		binary_url=$resinUrl
@@ -149,6 +183,8 @@ for target in $targets; do
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_url=$resinUrl
 		fedora_binary_arch='armv7hf'
+		ubuntu_binary_url=$resinUrl
+		ubuntu_binary_arch='armv7hf'
 	;;
 	'zynq-xz702')
 		binary_url=$resinUrl
@@ -157,6 +193,8 @@ for target in $targets; do
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_url=$resinUrl
 		fedora_binary_arch='armv7hf'
+		ubuntu_binary_url=$resinUrl
+		ubuntu_binary_arch='armv7hf'
 	;;
 	'odroid-c1')
 		binary_url=$resinUrl
@@ -165,6 +203,8 @@ for target in $targets; do
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_url=$resinUrl
 		fedora_binary_arch='armv7hf'
+		ubuntu_binary_url=$resinUrl
+		ubuntu_binary_arch='armv7hf'
 	;;
 	'odroid-xu4')
 		binary_url=$resinUrl
@@ -173,6 +213,8 @@ for target in $targets; do
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_url=$resinUrl
 		fedora_binary_arch='armv7hf'
+		ubuntu_binary_url=$resinUrl
+		ubuntu_binary_arch='armv7hf'
 	;;
 	'parallella')
 		binary_url=$resinUrl
@@ -181,6 +223,8 @@ for target in $targets; do
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_url=$resinUrl
 		fedora_binary_arch='armv7hf'
+		ubuntu_binary_url=$resinUrl
+		ubuntu_binary_arch='armv7hf'
 	;;
 	'nitrogen6x')
 		binary_url=$resinUrl
@@ -189,6 +233,8 @@ for target in $targets; do
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_url=$resinUrl
 		fedora_binary_arch='armv7hf'
+		ubuntu_binary_url=$resinUrl
+		ubuntu_binary_arch='armv7hf'
 	;;
 	'hummingboard')
 		binary_url=$resinUrl
@@ -197,6 +243,8 @@ for target in $targets; do
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_url=$resinUrl
 		fedora_binary_arch='armv7hf'
+		ubuntu_binary_url=$resinUrl
+		ubuntu_binary_arch='armv7hf'
 	;;
 	'ts4900')
 		binary_url=$resinUrl
@@ -205,6 +253,8 @@ for target in $targets; do
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_url=$resinUrl
 		fedora_binary_arch='armv7hf'
+		ubuntu_binary_url=$resinUrl
+		ubuntu_binary_arch='armv7hf'
 	;;
 	'colibri-imx6dl')
 		binary_url=$resinUrl
@@ -213,6 +263,8 @@ for target in $targets; do
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_url=$resinUrl
 		fedora_binary_arch='armv7hf'
+		ubuntu_binary_url=$resinUrl
+		ubuntu_binary_arch='armv7hf'
 	;;
 	'apalis-imx6q')
 		binary_url=$resinUrl
@@ -221,6 +273,8 @@ for target in $targets; do
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_url=$resinUrl
 		fedora_binary_arch='armv7hf'
+		ubuntu_binary_url=$resinUrl
+		ubuntu_binary_arch='armv7hf'
 	;;
 	'am571x-evm')
 		binary_url=$resinUrl
@@ -229,6 +283,8 @@ for target in $targets; do
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_url=$resinUrl
 		fedora_binary_arch='armv7hf'
+		ubuntu_binary_url=$resinUrl
+		ubuntu_binary_arch='armv7hf'
 	;;
 	'ts7700')
 		binary_url=$resinUrl
@@ -244,6 +300,8 @@ for target in $targets; do
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_url=$resinUrl
 		fedora_binary_arch='armv7hf'
+		ubuntu_binary_url=$resinUrl
+		ubuntu_binary_arch='armv7hf'
 	;;
 	'artik10')
 		binary_url=$resinUrl
@@ -252,6 +310,8 @@ for target in $targets; do
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_url=$resinUrl
 		fedora_binary_arch='armv7hf'
+		ubuntu_binary_url=$resinUrl
+		ubuntu_binary_arch='armv7hf'
 	;;
 	'kitra520')
 		binary_url=$resinUrl
@@ -260,6 +320,8 @@ for target in $targets; do
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_url=$resinUrl
 		fedora_binary_arch='armv7hf'
+		ubuntu_binary_url=$resinUrl
+		ubuntu_binary_arch='armv7hf'
 	;;
 	'imx6ul-var-dart')
 		binary_url=$resinUrl
@@ -268,6 +330,8 @@ for target in $targets; do
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_url=$resinUrl
 		fedora_binary_arch='armv7hf'
+		ubuntu_binary_url=$resinUrl
+		ubuntu_binary_arch='armv7hf'
 	;;
 	'ccon-01')
 		binary_url=$resinUrl
@@ -276,6 +340,8 @@ for target in $targets; do
 		alpine_binary_arch='alpine-armhf'
 		fedora_binary_url=$resinUrl
 		fedora_binary_arch='armv7hf'
+		ubuntu_binary_url=$resinUrl
+		ubuntu_binary_arch='armv7hf'
 	;;
 	'jetson-tx2'|'jetson-tx1'|'artik710'|'kitra710'|'generic-aarch64'|'orbitty-tx2'|'spacely-tx2')
 		binary_url=$resinUrl
@@ -284,6 +350,8 @@ for target in $targets; do
 		alpine_binary_arch='alpine-aarch64'
 		fedora_binary_url=$resinUrl
 		fedora_binary_arch='aarch64'
+		ubuntu_binary_url=$resinUrl
+		ubuntu_binary_arch='aarch64'
 	;;
 	esac
 	for goVersion in $goVersions; do
@@ -337,6 +405,38 @@ for target in $targets; do
 				-e s~#{CHECKSUM}~"$checksum"~g \
 				-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.slim.tpl > $debian_dockerfilePath/slim/Dockerfile
 		cp go-wrapper $debian_dockerfilePath/slim/
+
+		# Ubuntu
+
+		if [[ $ubuntu_targets == *" $target "* ]]; then
+			ubuntu_dockerfilePath=$target/ubuntu/$baseVersion
+			mkdir -p $ubuntu_dockerfilePath
+			sed -e s~#{FROM}~resin/$target-ubuntu-buildpack-deps:latest~g \
+				-e s~#{BINARY_URL}~$binary_url~g \
+				-e s~#{GO_VERSION}~$goVersion~g \
+				-e s~#{CHECKSUM}~"$checksum"~g \
+				-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.tpl > $ubuntu_dockerfilePath/Dockerfile
+			cp go-wrapper $ubuntu_dockerfilePath/
+
+			mkdir -p $ubuntu_dockerfilePath/xenial
+			sed -e s~#{FROM}~resin/$target-ubuntu-buildpack-deps:xenial~g \
+				-e s~#{BINARY_URL}~$binary_url~g \
+				-e s~#{GO_VERSION}~$goVersion~g \
+				-e s~#{CHECKSUM}~"$checksum"~g \
+				-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.tpl > $ubuntu_dockerfilePath/xenial/Dockerfile
+			cp go-wrapper $ubuntu_dockerfilePath/xenial/
+
+			mkdir -p $ubuntu_dockerfilePath/onbuild
+			sed -e s~#{FROM}~resin/$target-ubuntu-golang:$goVersion~g Dockerfile.onbuild.tpl > $ubuntu_dockerfilePath/onbuild/Dockerfile
+
+			mkdir -p $ubuntu_dockerfilePath/slim
+			sed -e s~#{FROM}~resin/$target-ubuntu:latest~g \
+					-e s~#{BINARY_URL}~$binary_url~g \
+					-e s~#{GO_VERSION}~$goVersion~g \
+					-e s~#{CHECKSUM}~"$checksum"~g \
+					-e s~#{TARGET_ARCH}~$binary_arch~g Dockerfile.slim.tpl > $ubuntu_dockerfilePath/slim/Dockerfile
+			cp go-wrapper $ubuntu_dockerfilePath/slim/
+		fi		
 
 		# Fedora
 

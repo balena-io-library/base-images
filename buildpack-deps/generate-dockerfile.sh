@@ -9,6 +9,7 @@ fedora_targets=' raspberry-pi2 beaglebone-black via-vab820-quad zynq-xz702 odroi
 suites='jessie stretch'
 alpine_suites='edge 3.8'
 fedora_suites='25 26'
+ubuntu_suites='bionic xenial'
 
 for target in $targets; do
 
@@ -29,6 +30,23 @@ for target in $targets; do
 		if [ $target == 'raspberry-pi' ]; then
 			sed -e s~#{FROM}~"resin/rpi-raspbian:$suite"~g Dockerfile.curl.tpl > $debian_dockerfilePath/curl/Dockerfile
 			sed -e s~#{FROM}~"resin/$target-buildpack-deps:$suite-scm"~g Dockerfile.rpi.tpl > $debian_dockerfilePath/Dockerfile
+		fi
+	done
+
+	# Ubuntu
+	for ubuntu_suite in $ubuntu_suites; do
+		if [ $target != "raspberry-pi" ] && [ $target != "ts7700" ] && [ $target != "ts7700" ]; then
+
+		ubuntu_dockerfilePath=$target/ubuntu/$ubuntu_suite
+
+		mkdir -p $ubuntu_dockerfilePath
+		sed -e s~#{FROM}~"resin/$target-ubuntu-buildpack-deps:$ubuntu_suite-scm"~g Dockerfile.tpl > $ubuntu_dockerfilePath/Dockerfile
+
+		mkdir -p $ubuntu_dockerfilePath/curl
+		sed -e s~#{FROM}~"resin/$target-ubuntu:$ubuntu_suite"~g Dockerfile.curl.tpl > $ubuntu_dockerfilePath/curl/Dockerfile
+
+		mkdir -p $ubuntu_dockerfilePath/scm
+		sed -e s~#{FROM}~"resin/$target-ubuntu-buildpack-deps:$ubuntu_suite-curl"~g Dockerfile.scm.tpl > $ubuntu_dockerfilePath/scm/Dockerfile
 		fi
 	done
 
