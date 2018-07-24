@@ -4,7 +4,40 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 
-## 2018-06-04
+## 2018-07-24
+
+### Changed
+
+- Add Python v3.6.6.
+- Add support for ubuntu base images (except OpenJDK).
+
+
+## 2018-07-19
+
+### Changed
+
+- new device: add support for CTI Spacely TX2.
+- Add support for new device: CTI Orbitty TX2.
+- Add support for Alpine Linux 3.8.
+
+
+## 2018-07-09
+
+### Changed
+
+- Add blueprint for device-specific base images.
+
+
+## 2018-06-28
+
+### Changed
+
+- Add Go v1.9.7 and v1.10.3.
+- Add Python v2.7.15.
+- Add node 6.14.3 8.11.3 9.11.2 and 10.4.1.
+
+
+## 2018-06-22
 
 ### Changed
 
