@@ -1,4 +1,4 @@
-FROM resin/am571x-evm-alpine-python:3.6.5
+FROM resin/am571x-evm-alpine-python:3.6.6
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
