@@ -333,7 +333,7 @@ for target in $targets; do
 				-e s~#{NODE_VERSION}~$nodeVersion~g \
 				-e s~#{YARN_VERSION}~$yarnVersion~g \
 				-e s~#{CHECKSUM}~"$checksum"~g \
-				-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.slim.tpl > $debian_dockerfilePath/slim/Dockerfile
+				-e s~#{TARGET_ARCH}~$binaryArch~g Dockerfile.slim.tpl > $ubuntu_dockerfilePath/slim/Dockerfile
 
 			# Only for intel intel-edison
 			if [ $target == "intel-edison" ]; then
