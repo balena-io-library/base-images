@@ -98,7 +98,7 @@ for device in "${devices[@]}"; do
 		fi
 		# Alpine
 		if [ $distro == 'alpine' ]; then
-			generate_library "$device" "$distro" "onbuild slim"
+			generate_library "$device" "$distro" "onbuild slim edge"
 		fi
 		# Fedora
 		if [ $distro == 'fedora' ]; then
