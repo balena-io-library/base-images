@@ -94,19 +94,19 @@ for device in "${devices[@]}"; do
 	for distro in "${distros[@]}"; do
 		# Debian
 		if [ $distro == 'debian' ]; then
-			generate_library "$device" "$distro" "onbuild slim"
+			generate_library "$device" "$distro" "onbuild slim stretch"
 		fi
 		# Alpine
 		if [ $distro == 'alpine' ]; then
-			generate_library "$device" "$distro" "onbuild slim"
+			generate_library "$device" "$distro" "onbuild slim edge"
 		fi
 		# Fedora
 		if [ $distro == 'fedora' ]; then
-			generate_library "$device" "$distro" "onbuild slim"
+			generate_library "$device" "$distro" "onbuild slim 25"
 		fi
 		# Ubuntu
 		if [ $distro == 'ubuntu' ]; then
-			generate_library "$device" "$distro" "onbuild slim"
+			generate_library "$device" "$distro" "onbuild slim xenial"
 		fi
 	done
 done
