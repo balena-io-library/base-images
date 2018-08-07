@@ -99,7 +99,7 @@ for device in "${devices[@]}"; do
 		fi
 		# Ubuntu
 		if [ $distro == 'ubuntu' ]; then
-			generate_library "$device" "$distro" "onbuild slim"
+			generate_library "$device" "$distro" "onbuild slim xenial"
 		fi
 	done
 done
