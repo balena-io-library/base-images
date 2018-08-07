@@ -87,7 +87,7 @@ for device in "${devices[@]}"; do
 	for distro in "${distros[@]}"; do
 		# Debian
 		if [ $distro == 'debian' ]; then
-			generate_library "$device" "$distro" "slim onbuild"
+			generate_library "$device" "$distro" "slim onbuild stretch"
 		fi
 		# Alpine
 		if [ $distro == 'alpine' ]; then
