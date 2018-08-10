@@ -214,6 +214,12 @@ for target in $targets; do
 			continue
 		fi
 
+		# https://github.com/nodejs/build/issues/885
+		# x86 dropped for Node v10.x
+		if [[ $baseVersion != '^10.*' ]] && [ $binaryArch == "x86" ]; then
+			continue
+		fi
+
 		# we don't have Node v8.0.0 for x87 yet.
 		if (version_ge "$nodeVersion" "8") && ([ $target == "cybertan-ze250" ] || [ $target == "iot2000" ]); then
 			continue
