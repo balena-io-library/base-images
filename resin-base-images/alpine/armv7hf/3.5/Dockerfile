@@ -1,7 +1,7 @@
 FROM arm32v6/alpine:3.5
 LABEL io.resin.architecture="armv7hf"
  
-LABEL io.resin.qemu.version="2.9.0.resin1-arm"
+LABEL io.resin.qemu.version="3.0.0+resin-arm"
 COPY qemu-arm-static /usr/bin 
 
 RUN apk add --update \

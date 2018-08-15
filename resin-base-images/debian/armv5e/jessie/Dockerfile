@@ -1,7 +1,7 @@
 FROM arm32v5/debian:jessie-slim
 LABEL io.resin.architecture="armv5e"
  ENV QEMU_CPU arm1026
-LABEL io.resin.qemu.version="2.9.0.resin1-arm"
+LABEL io.resin.qemu.version="3.0.0+resin-arm"
 COPY qemu-arm-static /usr/bin 
 
 RUN apt-get update && apt-get install -y --no-install-recommends \

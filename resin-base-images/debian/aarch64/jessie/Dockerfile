@@ -1,7 +1,7 @@
 FROM arm64v8/debian:jessie-slim
 LABEL io.resin.architecture="aarch64"
  
-LABEL io.resin.qemu.version="2.9.0.resin1-aarch64"
+LABEL io.resin.qemu.version="3.0.0+resin-aarch64"
 COPY qemu-aarch64-static /usr/bin 
 
 RUN sed -i '/debian-security/{s/^/#/}' /etc/apt/sources.list \
