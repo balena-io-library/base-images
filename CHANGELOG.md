@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## 2018-08-20
+
+### Changed
+
+- node: Add node v10.7.0.
+- beagle-bone: Fix broken systemd on Debian Jessie images.
+- qemu: Update qemu to v3.0.0+resin
+
+
 ## 2018-08-07
 
 ### Changed
