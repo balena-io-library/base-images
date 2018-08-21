@@ -2,7 +2,7 @@
 FROM resin/beaglebone-green-wifi-debian:jessie
 
 ENV NODE_VERSION 4.9.1
-ENV YARN_VERSION 1.5.1
+ENV YARN_VERSION 1.6.0
 
 RUN buildDeps='curl' \
 	&& set -x \

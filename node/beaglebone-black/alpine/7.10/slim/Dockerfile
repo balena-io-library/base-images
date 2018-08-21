@@ -2,7 +2,7 @@
 FROM resin/beaglebone-black-alpine:latest
 
 ENV NODE_VERSION 7.10.1
-ENV YARN_VERSION 1.5.1
+ENV YARN_VERSION 1.6.0
 
 # Install dependencies
 RUN apk add --no-cache libgcc libstdc++ libuv libcrypto1.0 libssl1.0

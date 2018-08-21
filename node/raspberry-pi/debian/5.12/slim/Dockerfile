@@ -2,7 +2,7 @@
 FROM resin/rpi-raspbian:jessie
 
 ENV NODE_VERSION 5.12.0
-ENV YARN_VERSION 1.5.1
+ENV YARN_VERSION 1.6.0
 
 RUN buildDeps='curl' \
 	&& set -x \
