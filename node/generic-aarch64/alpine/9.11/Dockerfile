@@ -2,7 +2,7 @@
 FROM resin/generic-aarch64-alpine-buildpack-deps:latest
 
 ENV NODE_VERSION 9.11.2
-ENV YARN_VERSION 1.5.1
+ENV YARN_VERSION 1.6.0
 
 # Install dependencies
 RUN apk add --no-cache libgcc libstdc++ libuv libcrypto1.0 libssl1.0

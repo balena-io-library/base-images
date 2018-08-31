@@ -2,7 +2,7 @@
 FROM resin/imx6ul-var-dart-ubuntu:latest
 
 ENV NODE_VERSION 9.11.2
-ENV YARN_VERSION 1.5.1
+ENV YARN_VERSION 1.6.0
 
 RUN buildDeps='curl' \
 	&& set -x \
