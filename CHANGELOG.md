@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## 2018-09-12
+
+### Changed
+
+- new-device: Add new device revpi-core-3.
+- new-device: Add new device stem-x86-32.
+
+
+## 2018-08-31
+
+### Changed
+
+- node: Add node v10.9.0 v8.11.4 and v6.14.4.
+- node: Update yarn to v1.6.0.
+
+
 ## 2018-08-20
 
 ### Changed
