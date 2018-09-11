@@ -45,10 +45,10 @@ declare -A debCache=()
 
 versions='7-jdk 7-jre 8-jdk 8-jre'
 # List of devices
-targets='raspberry-pi raspberry-pi2 beaglebone-black intel-edison intel-nuc via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green cybertan-ze250 artik710 am571x-evm up-board kitra710 imx6ul-var-dart kitra520 jetson-tx2 jetson-tx1 iot2000 generic-armv7ahf generic-aarch64 bananapi-m1-plus orangepi-plus2 fincm3 artik533s artik530 orbitty-tx2 spacely-tx2'
+targets='raspberry-pi raspberry-pi2 beaglebone-black intel-edison intel-nuc via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q ts7700 raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green cybertan-ze250 artik710 am571x-evm up-board kitra710 imx6ul-var-dart kitra520 jetson-tx2 jetson-tx1 iot2000 generic-armv7ahf generic-aarch64 bananapi-m1-plus orangepi-plus2 fincm3 artik533s artik530 orbitty-tx2 spacely-tx2 stem-x86-32 revpi-core-3'
 # List of archs
 targets+=' armv7hf armel i386 amd64 aarch64'
-fedora_targets=' raspberry-pi2 beaglebone-black via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green intel-nuc qemux86-64 artik710 am571x-evm kitra710 up-board imx6ul-var-dart kitra520 jetson-tx2 jetson-tx1 armv7hf amd64 aarch64 generic-aarch64 generic-armv7ahf bananapi-m1-plus orangepi-plus2 fincm3 artik533s artik530 orbitty-tx2 spacely-tx2 '
+fedora_targets=' raspberry-pi2 beaglebone-black via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green intel-nuc qemux86-64 artik710 am571x-evm kitra710 up-board imx6ul-var-dart kitra520 jetson-tx2 jetson-tx1 armv7hf amd64 aarch64 generic-aarch64 generic-armv7ahf bananapi-m1-plus orangepi-plus2 fincm3 artik533s artik530 orbitty-tx2 spacely-tx2 revpi-core-3 '
 alpineVersion='3.8'
 alpineDeviceArchs='x86_64 x86 armhf'
 zuluVersionArmhf='ezdk-1.8.0_121-8.20.0.42-eval-linux_aarch32hf'
@@ -92,7 +92,7 @@ for target in $targets; do
 		'raspberry-pi2')
 			targetArch='armhf'
 		;;
-		'raspberrypi3'|'fincm3')
+		'raspberrypi3'|'fincm3'|'revpi-core-3')
 			targetArch='armhf'
 		;;
 		'beaglebone-black')
@@ -107,7 +107,7 @@ for target in $targets; do
 		'intel-edison')
 			targetArch='i386'
 		;;
-		'qemux86')
+		'qemux86'|'stem-x86-32')
 			targetArch='i386'
 		;;
 		'cybertan-ze250')
