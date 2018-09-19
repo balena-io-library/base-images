@@ -1,10 +1,10 @@
 FROM resin/zynq-xz702-ubuntu-buildpack-deps:xenial
 
-ENV GO_VERSION 1.10.3
+ENV GO_VERSION 1.10.4
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-armv7hf.tar.gz" \
-	&& echo "f12011d4c1485ecc958e0c4df93e50da166532a60afec8e01e8f52b9c864d5b5  go1.10.3.linux-armv7hf.tar.gz" | sha256sum -c - \
+	&& echo "47af4021d98a99efe1fed652da506a78f97d4e9bae85755cd555329bd7723cc3  go1.10.4.linux-armv7hf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-armv7hf.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-armv7hf.tar.gz
 

@@ -1,6 +1,6 @@
 FROM resin/orbitty-tx2-fedora:latest
 
-ENV GO_VERSION 1.10.3
+ENV GO_VERSION 1.10.4
 ENV GOROOT /usr/local/go
 ENV GOPATH /go
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
@@ -11,7 +11,7 @@ RUN buildDeps='gcc gcc-c++ git' \
 	&& dnf clean all \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-aarch64.tar.gz" \
-	&& echo "ce1b8a6cc94046dd11b3240c4e1126fec829fa0cf0966be2d6d9e968c137be48  go1.10.3.linux-aarch64.tar.gz" | sha256sum -c - \
+	&& echo "e149b7b8ff3173425b3f1288d86809b39ec1cc0473d3d07095199f53bc02ff48  go1.10.4.linux-aarch64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-aarch64.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm go$GO_VERSION.linux-aarch64.tar.gz \
 	&& mkdir -p "$GOPATH/src" "$GOPATH/bin" \

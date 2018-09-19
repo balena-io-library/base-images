@@ -1,6 +1,6 @@
 FROM resin/artik710-alpine:latest
 
-ENV GO_VERSION 1.10.3
+ENV GO_VERSION 1.10.4
 
 RUN apk add --no-cache git gcc
 
@@ -9,7 +9,7 @@ RUN buildDeps='curl' \
 	&& apk add --no-cache $buildDeps \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-aarch64.tar.gz" \
-	&& echo "186894be5dff10f9f7d496eff9b0e542941d74066052adcb9f64ce82dc2ccbb3  go1.10.3.linux-alpine-aarch64.tar.gz" | sha256sum -c - \
+	&& echo "b51eb67240a8601a853f119a4bf507c1fd06ad547c76337344d2373c25b784c4  go1.10.4.linux-alpine-aarch64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-alpine-aarch64.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-alpine-aarch64.tar.gz \
 	&& apk del $buildDeps
