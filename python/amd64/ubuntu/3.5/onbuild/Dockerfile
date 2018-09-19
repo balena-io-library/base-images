@@ -1,4 +1,4 @@
-FROM resin/amd64-ubuntu-python:3.5.5
+FROM resin/amd64-ubuntu-python:3.5.6
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app

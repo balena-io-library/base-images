@@ -1,4 +1,4 @@
-FROM resin/spacely-tx2-alpine-python:3.4.8
+FROM resin/spacely-tx2-alpine-python:3.4.9
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app

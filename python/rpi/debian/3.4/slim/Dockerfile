@@ -20,7 +20,7 @@ RUN gpg --keyserver keyring.debian.org --recv-keys 4DE8FF2A63C7CC90 \
 	&& gpg --keyserver keyserver.ubuntu.com --recv-key 6E3CBCE93372DCFA \
 	&& gpg --keyserver keyserver.ubuntu.com --recv-keys 0x52a43a1e4b77b059
 
-ENV PYTHON_VERSION 3.4.8
+ENV PYTHON_VERSION 3.4.9
 
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
 ENV PYTHON_PIP_VERSION 10.0.1
@@ -33,7 +33,7 @@ RUN set -x \
 	' \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends && rm -rf /var/lib/apt/lists/* \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-armv6hf.tar.gz" \
-	&& echo "c125c7865c806f5da8cc337a315483d2f9a763922a9a627524c050e268eb508c  Python-3.4.8.linux-armv6hf.tar.gz" | sha256sum -c - \
+	&& echo "c5ac683c186553f5529b57f40633fc04d2543cd234f9e30c73be71b1e88614ed  Python-3.4.9.linux-armv6hf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-armv6hf.tar.gz" --strip-components=1 \
 	&& rm -rf "Python-$PYTHON_VERSION.linux-armv6hf.tar.gz" \
 	&& ldconfig \

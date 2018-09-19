@@ -18,7 +18,7 @@ RUN gpg --keyserver keyring.debian.org --recv-keys 4DE8FF2A63C7CC90 \
 	&& gpg --keyserver keyserver.ubuntu.com --recv-key 6E3CBCE93372DCFA \
 	&& gpg --keyserver keyserver.ubuntu.com --recv-keys 0x52a43a1e4b77b059
 
-ENV PYTHON_VERSION 3.4.8
+ENV PYTHON_VERSION 3.4.9
 
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
 ENV PYTHON_PIP_VERSION 10.0.1
@@ -31,7 +31,7 @@ ENV SSL_CERT_FILE /etc/ssl/certs/ca-certificates.crt
 
 RUN set -x \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-alpine-armhf.tar.gz" \
-	&& echo "ee29c4846b52b82c2ad6245f46e64ebc76506845e8470e85abdf1827d82aff67  Python-3.4.8.linux-alpine-armhf.tar.gz" | sha256sum -c - \
+	&& echo "28924897c76cb23e4308ca97171a336470e91e50ec228bccabe2f0f2480818bc  Python-3.4.9.linux-alpine-armhf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-alpine-armhf.tar.gz" --strip-components=1 \
 	&& rm -rf "Python-$PYTHON_VERSION.linux-alpine-armhf.tar.gz" \
 	&& if [ ! -e /usr/local/bin/pip3 ]; then : \

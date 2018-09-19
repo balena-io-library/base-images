@@ -20,7 +20,7 @@ RUN gpg --keyserver keyring.debian.org --recv-keys 4DE8FF2A63C7CC90 \
 	&& gpg --keyserver keyserver.ubuntu.com --recv-key 6E3CBCE93372DCFA \
 	&& gpg --keyserver keyserver.ubuntu.com --recv-keys 0x52a43a1e4b77b059
 
-ENV PYTHON_VERSION 3.4.8
+ENV PYTHON_VERSION 3.4.9
 
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
 ENV PYTHON_PIP_VERSION 10.0.1
@@ -29,7 +29,7 @@ ENV SETUPTOOLS_VERSION 39.1.0
 
 RUN set -x \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-amd64.tar.gz" \
-	&& echo "f7a72b11d12352b1e739b9ce05340e8ee90bf7c0fae77ad85e3f6a04ce35f5fc  Python-3.4.8.linux-amd64.tar.gz" | sha256sum -c - \
+	&& echo "2271f5a1361f1386f126a7f70dd2a28511ef944e9aa2caa5ea7d4e5c76b43739  Python-3.4.9.linux-amd64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-amd64.tar.gz" --strip-components=1 \
 	&& rm -rf "Python-$PYTHON_VERSION.linux-amd64.tar.gz" \
 	&& ldconfig \

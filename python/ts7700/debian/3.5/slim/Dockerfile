@@ -20,7 +20,7 @@ RUN gpg --keyserver keyring.debian.org --recv-keys 4DE8FF2A63C7CC90 \
 	&& gpg --keyserver keyserver.ubuntu.com --recv-key 6E3CBCE93372DCFA \
 	&& gpg --keyserver keyserver.ubuntu.com --recv-keys 0x52a43a1e4b77b059
 
-ENV PYTHON_VERSION 3.5.5
+ENV PYTHON_VERSION 3.5.6
 
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
 ENV PYTHON_PIP_VERSION 10.0.1
@@ -33,7 +33,7 @@ RUN set -x \
 	' \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends && rm -rf /var/lib/apt/lists/* \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-armel.tar.gz" \
-	&& echo "29a21df1629b0fe084fd6056e5e13560b75e80c2006702c933e17e4782d2d174  Python-3.5.5.linux-armel.tar.gz" | sha256sum -c - \
+	&& echo "32f34a118b581cb545070682f63ae91706861c8c31c2348309659fb9157e0c13  Python-3.5.6.linux-armel.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-armel.tar.gz" --strip-components=1 \
 	&& rm -rf "Python-$PYTHON_VERSION.linux-armel.tar.gz" \
 	&& ldconfig \
