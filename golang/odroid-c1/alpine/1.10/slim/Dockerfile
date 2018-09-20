@@ -1,6 +1,6 @@
 FROM resin/odroid-c1-alpine:latest
 
-ENV GO_VERSION 1.10.3
+ENV GO_VERSION 1.10.4
 
 RUN apk add --no-cache git gcc
 
@@ -9,7 +9,7 @@ RUN buildDeps='curl' \
 	&& apk add --no-cache $buildDeps \
 	&& mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-armhf.tar.gz" \
-	&& echo "8350f5a63699a6b03cea74c7add9edb0b386b7c65aa6b0ce7aeca924f9b182b3  go1.10.3.linux-alpine-armhf.tar.gz" | sha256sum -c - \
+	&& echo "5f2f2987e38ae0abaff6ee195a9944d7d97a6835d3c3a082d695642a151f8ce3  go1.10.4.linux-alpine-armhf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-alpine-armhf.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-alpine-armhf.tar.gz \
 	&& apk del $buildDeps

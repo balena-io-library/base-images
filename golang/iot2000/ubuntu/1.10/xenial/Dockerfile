@@ -1,10 +1,10 @@
 FROM resin/iot2000-ubuntu-buildpack-deps:xenial
 
-ENV GO_VERSION 1.10.3
+ENV GO_VERSION 1.10.4
 
 RUN mkdir -p /usr/local/go \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-i386.tar.gz" \
-	&& echo "309202f2fe82afcd4c76e2e2750dab2b7764bd5c70c8be12189a7904902fbdc8  go1.10.3.linux-i386.tar.gz" | sha256sum -c - \
+	&& echo "56d9073260a27a4e9fabd36cdfc78e8d8bc31384730cba5b325cf650e2a46e8d  go1.10.4.linux-i386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-i386.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-i386.tar.gz
 
