@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+function version_le() { test "$(echo "$@" | tr " " "\n" | sort -V | tail -n 1)" != "$1"; }
+
 PYTHON2_PATH="/usr/lib/python2.7/dist-packages:/usr/lib/python2.7/site-packages"
 PYTHON3_PATH_debian="/usr/lib/python3/dist-packages"
 PYTHON3_PATH_ubuntu="/usr/lib/python3/dist-packages"
@@ -67,7 +69,7 @@ targets+=' armv7hf armel i386 amd64 aarch64 rpi'
 fedora_targets=' raspberry-pi2 beaglebone-black via-via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q raspberrypi3 artik5 artik10 beaglebone-green-wifi beaglebone-green intel-nuc qemux86-64 artik710 am571x-evm kitra710 up-board imx6ul-var-dart kitra520 jetson-tx2 jetson-tx1 armv7hf amd64 aarch64 generic-armv7ahf generic-aarch64 bananapi-m1-plus orangepi-plus2 fincm3 artik533s artik530 orbitty-tx2 spacely-tx2 revpi-core-3 '
 # No rpi and armel targets for ubuntu base images
 ubuntu_targets=' raspberry-pi2 beaglebone-black intel-edison intel-nuc via-vab820-quad zynq-xz702 odroid-c1 odroid-xu4 parallella nitrogen6x hummingboard ts4900 colibri-imx6dl apalis-imx6q raspberrypi3 artik5 artik10 beaglebone-green-wifi qemux86 qemux86-64 beaglebone-green cybertan-ze250 artik710 am571x-evm up-board kitra710 imx6ul-var-dart kitra520 jetson-tx2 iot2000 jetson-tx1 generic-armv7ahf generic-aarch64 bananapi-m1-plus orangepi-plus2 fincm3 artik533s artik530 orbitty-tx2 spacely-tx2 armv7hf i386 amd64 aarch64 stem-x86-32 revpi-core-3 '
-pythonVersions='2.7.15 3.3.7 3.4.8 3.5.5 3.6.6'
+pythonVersions='2.7.15 3.3.7 3.4.9 3.5.6 3.6.6 3.7.0'
 latestVersion='2.7.15'
 binary_url="http://resin-packages.s3.amazonaws.com/python/v\$PYTHON_VERSION/Python-\$PYTHON_VERSION.linux-#{TARGET_ARCH}.tar.gz"
 
@@ -265,12 +267,6 @@ for target in $targets; do
 
 		debian_dockerfilePath=$target/debian/$baseVersion
 		mkdir -p $debian_dockerfilePath
-		sed -e s~#{FROM}~"resin/$target-buildpack-deps:jessie"~g \
-				-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
-				-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
-				-e s~#{BINARY_URL}~"$binary_url"~g \
-				-e s~#{CHECKSUM}~"$checksum"~g \
-				-e s~#{TARGET_ARCH}~"$binary_arch"~g $template > $debian_dockerfilePath/Dockerfile
 
 		mkdir -p $debian_dockerfilePath/stretch
 		sed -e s~#{FROM}~"resin/$target-buildpack-deps:stretch"~g \
@@ -280,33 +276,47 @@ for target in $targets; do
 				-e s~#{CHECKSUM}~"$checksum"~g \
 				-e s~#{TARGET_ARCH}~"$binary_arch"~g $template > $debian_dockerfilePath/stretch/Dockerfile
 
-		mkdir -p $debian_dockerfilePath/onbuild
-		sed -e s~#{FROM}~"resin/$target-python:$pythonVersion"~g Dockerfile.onbuild.tpl > $debian_dockerfilePath/onbuild/Dockerfile
-		mkdir -p $debian_dockerfilePath/slim
+		if version_le $baseVersion "3.6"; then
+			# Python v3.7.0 and higher don't support Debian Jessie
+			sed -e s~#{FROM}~"resin/$target-buildpack-deps:jessie"~g \
+					-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
+					-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
+					-e s~#{BINARY_URL}~"$binary_url"~g \
+					-e s~#{CHECKSUM}~"$checksum"~g \
+					-e s~#{TARGET_ARCH}~"$binary_arch"~g $template > $debian_dockerfilePath/Dockerfile
 
-		# Only for RPI1 target
-		if [ $target == "raspberry-pi" ]; then
-			sed -e s~#{FROM}~"resin/rpi-raspbian:jessie"~g \
-				-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
-				-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
-				-e s~#{BINARY_URL}~"$binary_url"~g \
-				-e s~#{CHECKSUM}~"$checksum"~g \
-				-e s~#{TARGET_ARCH}~"$binary_arch"~g $slimTemplate > $debian_dockerfilePath/slim/Dockerfile
-		else
-			sed -e s~#{FROM}~"resin/$target-debian:jessie"~g \
-				-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
-				-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
-				-e s~#{BINARY_URL}~"$binary_url"~g \
-				-e s~#{CHECKSUM}~"$checksum"~g \
-				-e s~#{TARGET_ARCH}~"$binary_arch"~g $slimTemplate > $debian_dockerfilePath/slim/Dockerfile
+			mkdir -p $debian_dockerfilePath/onbuild
+			sed -e s~#{FROM}~"resin/$target-python:$pythonVersion"~g Dockerfile.onbuild.tpl > $debian_dockerfilePath/onbuild/Dockerfile
+			mkdir -p $debian_dockerfilePath/slim
+
+			# Only for RPI1 target
+			if [ $target == "raspberry-pi" ]; then
+				sed -e s~#{FROM}~"resin/rpi-raspbian:jessie"~g \
+					-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
+					-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
+					-e s~#{BINARY_URL}~"$binary_url"~g \
+					-e s~#{CHECKSUM}~"$checksum"~g \
+					-e s~#{TARGET_ARCH}~"$binary_arch"~g $slimTemplate > $debian_dockerfilePath/slim/Dockerfile
+			else
+				sed -e s~#{FROM}~"resin/$target-debian:jessie"~g \
+					-e s~#{PYTHON_VERSION}~"$pythonVersion"~g \
+					-e s~#{PYTHON_BASE_VERSION}~"$baseVersion"~g \
+					-e s~#{BINARY_URL}~"$binary_url"~g \
+					-e s~#{CHECKSUM}~"$checksum"~g \
+					-e s~#{TARGET_ARCH}~"$binary_arch"~g $slimTemplate > $debian_dockerfilePath/slim/Dockerfile
+			fi
+
+			# Only for intel intel-edison
+			if [ $target == "intel-edison" ]; then
+				append_setup_script "$baseVersion" "$debian_dockerfilePath" "debian" "base slim"
+			fi
+			set_pythonpath "$baseVersion" "$debian_dockerfilePath" "base slim" "debian"
 		fi
-
 		# Only for intel intel-edison
 		if [ $target == "intel-edison" ]; then
-			append_setup_script "$baseVersion" "$debian_dockerfilePath" "debian" "base stretch slim"
+			append_setup_script "$baseVersion" "$debian_dockerfilePath" "debian" "stretch"
 		fi
-
-		set_pythonpath "$baseVersion" "$debian_dockerfilePath" "base stretch slim" "debian"
+		set_pythonpath "$baseVersion" "$debian_dockerfilePath" "stretch" "debian"
 
 		# Ubuntu
 		if [[ $ubuntu_targets == *" $target "* ]]; then

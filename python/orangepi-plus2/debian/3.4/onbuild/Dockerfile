@@ -1,4 +1,4 @@
-FROM resin/orangepi-plus2-python:3.4.8
+FROM resin/orangepi-plus2-python:3.4.9
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
