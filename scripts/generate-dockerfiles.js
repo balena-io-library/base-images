@@ -25,7 +25,8 @@ const yaml = require('js-yaml')
 const DEST_DIR = path.join(__dirname, '../resin-base-images')
 const BLUEPRINT_PATHS = {
   'os-arch': path.join(__dirname, 'blueprints/os-arch.yaml'),
-  'os-device': path.join(__dirname, 'blueprints/os-device.yaml')
+  'os-device': path.join(__dirname, 'blueprints/os-device.yaml'),
+  'stack-device': path.join(__dirname, 'blueprints/stack-device.yaml')
 }
 const CONTRACTS_PATH = path.join(__dirname, 'contracts/contracts')
 
