@@ -12,6 +12,8 @@
     "lint": "eslint scripts",
     "os-arch": "node scripts/generate-dockerfiles.js os-arch",
     "os-device": "node scripts/generate-dockerfiles.js os-device",
+    "stack-device": "node scripts/generate-dockerfiles.js stack-device",
+    "stack-arch": "node scripts/generate-dockerfiles.js stack-arch",
     "all": "node scripts/generate-dockerfiles.js all"
   },
   "author": "Resin Inc. <hello@resin.io>",

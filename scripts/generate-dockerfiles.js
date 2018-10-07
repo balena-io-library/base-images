@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 resin.io
+ * Copyright 2017 balena.io
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,10 +22,12 @@ const path = require('path')
 const contrato = require('@resin.io/contrato')
 const yaml = require('js-yaml')
 
-const DEST_DIR = path.join(__dirname, '../resin-base-images')
+const DEST_DIR = path.join(__dirname, '../balena-base-images')
 const BLUEPRINT_PATHS = {
   'os-arch': path.join(__dirname, 'blueprints/os-arch.yaml'),
-  'os-device': path.join(__dirname, 'blueprints/os-device.yaml')
+  'os-device': path.join(__dirname, 'blueprints/os-device.yaml'),
+  'stack-device': path.join(__dirname, 'blueprints/stack-device.yaml')
+  'stack-arch': path.join(__dirname, 'blueprints/stack-arch.yaml')
 }
 const CONTRACTS_PATH = path.join(__dirname, 'contracts/contracts')
 
