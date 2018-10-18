@@ -1,12 +1,13 @@
 selector:
   sw.os: 1
   arch.sw: 1
+  sw.stack-variant: 1
   sw.blob: '1+'
 output:
   filename: Dockerfile
   type: sw.docker-image.os-arch
-  slug: "{{children.arch.sw.slug}}-{{children.sw.os.slug}}:{{children.sw.os.version}}"
-  path: "{{children.sw.os.slug}}/{{children.arch.sw.slug}}/{{children.sw.os.version}}"
+  slug: "{{children.arch.sw.slug}}-{{children.sw.os.slug}}"
+  path: "{{children.arch.sw.slug}}/{{children.sw.os.slug}}/{{children.sw.os.version}}/{{children.sw.stack-variant.slug}}"
   requires:
     - type: hw.device-type
       arch: "{{children.arch.sw.slug}}"
@@ -15,7 +16,7 @@ output:
       data: >
         {{import partial="from" combination="sw.os+arch.sw"}}
 
-        LABEL io.resin.architecture="{{arch.sw.slug}}"
+        LABEL io.balena.architecture="{{arch.sw.slug}}"
 
         {{#sw.blob.qemu}}
         {{import partial="qemu" combination="sw.os+arch.sw"}}
@@ -25,13 +26,7 @@ output:
         {{import partial="base-dependencies" combination="sw.os+arch.sw"}}
 
 
-        {{import partial="resin-xbuild" combination="sw.os+arch.sw"}}
-
-
-        {{import partial="tini" combination="sw.os+arch.sw"}}
+        {{import partial="balena-xbuild" combination="sw.os+arch.sw"}}
 
 
         {{import partial="os-config" combination="sw.os+arch.sw"}}
-
-
-        {{import partial="init-system" combination="sw.os+arch.sw"}}
