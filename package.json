@@ -11,7 +11,9 @@
   "scripts": {
     "lint": "eslint scripts",
     "os-arch": "node scripts/generate-dockerfiles.js os-arch",
+    "os-arch-lib": "node scripts/generate-stackbrew-library.js os-arch",
     "os-device": "node scripts/generate-dockerfiles.js os-device",
+    "os-device-lib": "node scripts/generate-stackbrew-library.js os-device",
     "stack-device": "node scripts/generate-dockerfiles.js stack-device",
     "stack-arch": "node scripts/generate-dockerfiles.js stack-arch",
     "all": "node scripts/generate-dockerfiles.js all"

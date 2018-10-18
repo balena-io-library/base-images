@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 balena.io
+ * Copyright 2018 balena.io
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,13 +21,97 @@ const fs = require('fs-extra')
 const path = require('path')
 const contrato = require('@resin.io/contrato')
 const yaml = require('js-yaml')
+const { execSync } = require('child_process');
 
-const DEST_DIR = path.join(__dirname, '../balena-base-images')
+function yyyymmdd() {
+    var now = new Date();
+    var y = now.getFullYear();
+    var m = now.getMonth() + 1;
+    var d = now.getDate();
+    return '' + y + (m < 10 ? '0' : '') + m + (d < 10 ? '0' : '') + d;
+}
+
+// Generate combinations that contain one element from each of the given arrays
+// Inspired by https://www.geeksforgeeks.org/combinations-from-n-arrays-picking-one-element-from-each-array/
+function generateCombinations (arr) {
+  const combinations = []
+  const result = []
+
+  const n = arr.length
+  // keep track index in each of the n arrays
+  const indices = new Array(n).fill(0)
+
+  while (true) {
+    let tmp = []
+
+    // store current combination
+    for (var i = 0; i < n; i++) { 
+      tmp.push(arr[i][indices[i]])
+    }
+
+    combinations.push(tmp.filter(n => n).join("-"))
+
+    // find the rightmost array that has more element left after the current element
+    var next = n - 1
+    while (next >= 0 && indices[next] + 1 >= arr[next].length) {
+      next--
+    }
+
+    // no such array is found so no more combinations left
+    if (next < 0) {
+      break
+    }
+
+    // if next element is found then set the indices for next combination
+    indices[next]++
+    for(i = next + 1; i < n; i++) {
+      indices[i] = 0
+    }
+  }
+
+  return combinations.filter(n => n)
+}
+
+
+function generateOsArchLibrary (context) {
+  var content = ''
+
+  const osVersions = [context.children.sw.os.version]
+  if (context.children.sw.os.version === context.children.sw.os.data.latest) {
+    osVersions.push('latest')
+    osVersions.push(null)
+  }
+
+  const variants = [context.children.sw["stack-variant"].slug]
+  if (context.children.sw["stack-variant"].slug === 'run') {
+    variants.push(null)
+  }
+
+  const commit = execSync(`git log -1 --format='%H' -- ${path.join(DOCKERFILE_DIR,context.path)}`).toString()
+
+  var tags = generateCombinations([osVersions, variants, [yyyymmdd(), null]])
+
+  const destination = path.join(
+    DEST_DIR,
+    context.slug
+  )
+
+  tags.forEach((tag) => {
+    content += `${tag}: ${URL}@${commit.slice(1, -2)} ${path.join(ROOT, context.path)}\n`
+  })
+
+  fs.appendFileSync(destination, content)
+  fs.appendFileSync(destination, `\n`)
+}
+
+const URL = 'git://github.com/balena-io-library/base-images'
+const ROOT = 'balena-base-images'
+const DEST_DIR = path.join(__dirname, '../library')
+const DOCKERFILE_DIR = path.join(__dirname, '../balena-base-images')
 const BLUEPRINT_PATHS = {
   'os-arch': path.join(__dirname, 'blueprints/os-arch.yaml'),
   'os-device': path.join(__dirname, 'blueprints/os-device.yaml'),
-  'stack-device': path.join(__dirname, 'blueprints/stack-device.yaml'),
-  'stack-arch': path.join(__dirname, 'blueprints/stack-arch.yaml')
+  'stack-device': path.join(__dirname, 'blueprints/stack-device.yaml')
 }
 const CONTRACTS_PATH = path.join(__dirname, 'contracts/contracts')
 
@@ -90,31 +174,16 @@ for (const type of blueprints) {
   const template = query.output.template[0].data
 
   // Write output
+  fs.ensureDirSync(DEST_DIR)
   for (const context of result) {
     const json = context.toJSON()
-    const destination = path.join(
-      DEST_DIR,
-      json.path,
-      query.output.filename
-    )
 
-    console.log(`Generating ${json.slug}`)
-    fs.outputFileSync(destination, contrato.buildTemplate(template, context, {
-      directory: CONTRACTS_PATH
-    }))
+    if (type === 'os-arch') {
+      generateOsArchLibrary(json)
+    }
 
-    if (json.children.sw.blob) {
-      // Check and copy local blobs to target directory.
-      for (const blob of _.values(json.children.sw.blob)) {
-        if (blob.assets.bin.url.indexOf('file://') > -1) {
-          try {
-            const src = path.join(__dirname, blob.assets.bin.url.replace('file://', ''))
-            fs.copySync(src, path.join(path.dirname(destination), blob.assets.bin.main))
-          } catch (err) {
-            throw new Error('Error when copying ' + blob.assets.bin.name + ' to ' + path.dirname(destination))
-          }
-        }
-      }
+    if (type === 'os-device') {
+      generateOsArchLibrary(json)
     }
   }
 
