@@ -19,7 +19,7 @@
 const _ = require('lodash')
 const fs = require('fs-extra')
 const path = require('path')
-const contrato = require('@resin.io/contrato')
+const contrato = require('@balena/contrato')
 const yaml = require('js-yaml')
 const { execSync } = require('child_process');
 

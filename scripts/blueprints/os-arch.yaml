@@ -6,17 +6,17 @@ selector:
 output:
   filename: Dockerfile
   type: sw.docker-image.os-arch
-  slug: "{{children.arch.sw.slug}}-{{children.sw.os.slug}}"
-  path: "{{children.arch.sw.slug}}/{{children.sw.os.slug}}/{{children.sw.os.version}}/{{children.sw.stack-variant.slug}}"
+  slug: "{{this.children.arch.sw.slug}}-{{this.children.sw.os.slug}}"
+  path: "{{this.children.arch.sw.slug}}/{{this.children.sw.os.slug}}/{{this.children.sw.os.version}}/{{this.children.sw.stack-variant.slug}}"
   requires:
     - type: hw.device-type
-      arch: "{{children.arch.sw.slug}}"
+      arch: "{{this.children.arch.sw.slug}}"
   template:
     - name: os-arch
       data: >
         {{import partial="from" combination="sw.os+arch.sw"}}
 
-        LABEL io.balena.architecture="{{arch.sw.slug}}"
+        LABEL io.balena.architecture="{{this.arch.sw.slug}}"
 
         {{#sw.blob.qemu}}
         {{import partial="qemu" combination="sw.os+arch.sw"}}
