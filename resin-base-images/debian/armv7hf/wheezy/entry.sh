@@ -1,7 +1,6 @@
 #!/bin/bash
 
-hostname "$HOSTNAME" &> /dev/null
-if [[ $? == 0 ]]; then
+if hostname "$HOSTNAME" &> /dev/null; then
 	PRIVILEGED=true
 else
 	PRIVILEGED=false
@@ -11,8 +10,7 @@ function start_udev()
 {
 	if [ "$UDEV" == "on" ]; then
 		if [ "$INITSYSTEM" != "on" ]; then
-			which udevd
-			if [ $? == '0' ]; then
+			if command -v udevd &>/dev/null; then
 				udevd --daemon &> /dev/null
 			else
 				/lib/systemd/systemd-udevd --daemon &> /dev/null
@@ -31,10 +29,10 @@ function remove_buildtime_env_var()
 # For backward compatibility, we only update the hostname for ResinOS 1.x devices.
 function update_hostname()
 {
-	if [ ${RESIN_DEVICE_UUID:0:7} != ${HOSTNAME:0:7} ]; then
+	if [ "${RESIN_DEVICE_UUID:0:7}" != "${HOSTNAME:0:7}" ]; then
 		# For 1.x Devices only.
 		HOSTNAME="$RESIN_DEVICE_TYPE-${RESIN_DEVICE_UUID:0:7}"
-		echo $HOSTNAME > /etc/hostname
+		echo "$HOSTNAME" > /etc/hostname
 		echo "127.0.1.1 $HOSTNAME" >> /etc/hosts
 		hostname "$HOSTNAME"
 	fi
@@ -64,11 +62,12 @@ function mount_dev()
 
 function init_non_systemd()
 {
-	CMD=$(which "$1")
 	# echo error message, when executable file doesn't exist.
-	if [ $? == '0' ]; then
+	if CMD=$(command -v "$1" 2>/dev/null); then
 		shift
-		exec tini -sg -- "$CMD" "$@"
+		tini -sg -- "$CMD" "$@" &
+		pid=$!
+		wait "$pid"
 	else
 		echo "Command not found: $1"
 		exit 1

@@ -79,6 +79,7 @@ function init_systemd()
 	for var in $(compgen -e); do
 		printf '%q=%q\n' "$var" "${!var}"
 	done > /etc/docker.env
+	echo 'source /etc/docker.env' >> ~/.bashrc
 
 	printf '#!/bin/bash\n exec ' > /etc/resinApp.sh
 	printf '%q ' "$@" >> /etc/resinApp.sh

@@ -2,8 +2,7 @@
 
 set -m
 
-hostname "$HOSTNAME" &> /dev/null
-if [[ $? == 0 ]]; then
+if hostname "$HOSTNAME" &> /dev/null; then
 	PRIVILEGED=true
 else
 	PRIVILEGED=false
@@ -13,8 +12,7 @@ function start_udev()
 {
 	if [ "$UDEV" == "on" ]; then
 		if [ "$INITSYSTEM" != "on" ]; then
-			which udevd
-			if [ $? == '0' ]; then
+			if command -v udevd &>/dev/null; then
 				udevd --daemon &> /dev/null
 			else
 				/lib/systemd/systemd-udevd --daemon &> /dev/null
@@ -36,17 +34,17 @@ function remove_buildtime_env_var()
 # Send SIGTERM to child processes of PID 1.
 function signal_handler()
 {
-	kill $pid
+	kill "$pid"
 }
 
 # On ResinOS 2.x devices, the hostname is set by the hostOS.
 # For backward compatibility, we only update the hostname for ResinOS 1.x devices.
 function update_hostname()
 {
-	if [ ${RESIN_DEVICE_UUID:0:7} != ${HOSTNAME:0:7} ]; then
+	if [ "${RESIN_DEVICE_UUID:0:7}" != "${HOSTNAME:0:7}" ]; then
 		# For 1.x Devices only.
 		HOSTNAME="$RESIN_DEVICE_TYPE-${RESIN_DEVICE_UUID:0:7}"
-		echo $HOSTNAME > /etc/hostname
+		echo "$HOSTNAME" > /etc/hostname
 		echo "127.0.1.1 $HOSTNAME" >> /etc/hosts
 		hostname "$HOSTNAME"
 	fi
@@ -79,7 +77,7 @@ function init_systemd()
 	GREEN='\033[0;32m'
 	echo -e "${GREEN}Systemd init system enabled."
 	for var in $(compgen -e); do
-		printf '%q="%q"\n' "$var" "${!var}"
+		printf '%q=%q\n' "$var" "${!var}"
 	done > /etc/docker.env
 	echo 'source /etc/docker.env' >> ~/.bashrc
 
@@ -104,9 +102,8 @@ function init_non_systemd()
 	# trap the stop signal then send SIGTERM to user processes
 	trap signal_handler SIGRTMIN+3 SIGTERM
 
-	CMD=$(which "$1")
 	# echo error message, when executable file doesn't exist.
-	if [ $? == '0' ]; then
+	if CMD=$(command -v "$1" 2>/dev/null); then
 		shift
 		tini -sg -- "$CMD" "$@" &
 		pid=$!
@@ -144,7 +141,7 @@ if [ ! -z "$RESIN" ] && [ ! -z "$RESIN_DEVICE_UUID" ]; then
 		mount_dev
 	fi
 	start_udev
-fi 
+fi
 
 if [ "$INITSYSTEM" = "on" ]; then
 	init_systemd "$@"
