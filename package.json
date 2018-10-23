@@ -14,9 +14,9 @@
     "os-arch-lib": "node scripts/generate-stackbrew-library.js os-arch",
     "os-device": "node scripts/generate-dockerfiles.js os-device",
     "os-device-lib": "node scripts/generate-stackbrew-library.js os-device",
-    "stack-device": "node scripts/generate-dockerfiles.js stack-device",
+    "stack-device": "node --max-old-space-size=16000 scripts/generate-dockerfiles.js stack-device",
     "stack-arch": "node scripts/generate-dockerfiles.js stack-arch",
-    "stack-device-lib": "node scripts/generate-stackbrew-library.js stack-device",
+    "stack-device-lib": "node --max-old-space-size=16000 scripts/generate-stackbrew-library.js stack-device",
     "stack-arch-lib": "node scripts/generate-stackbrew-library.js stack-arch",
     "all": "node scripts/generate-dockerfiles.js all",
     "all-lib": "node scripts/generate-stackbrew-library.js all"
