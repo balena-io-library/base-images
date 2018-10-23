@@ -16,7 +16,10 @@
     "os-device-lib": "node scripts/generate-stackbrew-library.js os-device",
     "stack-device": "node scripts/generate-dockerfiles.js stack-device",
     "stack-arch": "node scripts/generate-dockerfiles.js stack-arch",
-    "all": "node scripts/generate-dockerfiles.js all"
+    "stack-device-lib": "node scripts/generate-stackbrew-library.js stack-device",
+    "stack-arch-lib": "node scripts/generate-stackbrew-library.js stack-arch",
+    "all": "node scripts/generate-dockerfiles.js all",
+    "all-lib": "node scripts/generate-stackbrew-library.js all"
   },
   "author": "Resin Inc. <hello@resin.io>",
   "license": "Apache-2.0",

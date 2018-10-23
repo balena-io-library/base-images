@@ -23,12 +23,22 @@ const contrato = require('@balena/contrato')
 const yaml = require('js-yaml')
 const { execSync } = require('child_process');
 
-function yyyymmdd() {
+function yyyymmdd () {
     var now = new Date();
     var y = now.getFullYear();
     var m = now.getMonth() + 1;
     var d = now.getDate();
     return '' + y + (m < 10 ? '0' : '') + m + (d < 10 ? '0' : '') + d;
+}
+
+function getVersionAliases (version) {
+  // version can be a full version x.y.z or x.y or just x.
+  const result = [version]
+  var versionAlias = version.match('\([0-9]*\.[0-9]*\)')
+  if (!result.includes(versionAlias[0])) result.push(versionAlias[0])
+  versionAlias = version.match('\([0-9]*\)')
+  if (!result.includes(versionAlias[0])) result.push(versionAlias[0])
+  return result
 }
 
 // Generate combinations that contain one element from each of the given arrays
@@ -104,6 +114,43 @@ function generateOsArchLibrary (context) {
   fs.appendFileSync(destination, `\n`)
 }
 
+function generateStackLibrary (context) {
+  var content = ''
+
+  const stackVersions = getVersionAliases(context.children.sw.stack.version)
+  if (context.children.sw.stack.version === context.children.sw.stack.data.latest) {
+    stackVersions.push('latest')
+    stackVersions.push(null)
+  }
+
+  const osVersions = [context.children.sw.os.version]
+  if (context.children.sw.os.version === context.children.sw.os.data.latest) {
+    osVersions.push('latest')
+    osVersions.push(null)
+  }
+
+  const variants = [context.children.sw["stack-variant"].slug]
+  if (context.children.sw["stack-variant"].slug === 'run') {
+    variants.push(null)
+  }
+
+  const commit = execSync(`git log -1 --format='%H' -- ${path.join(DOCKERFILE_DIR,context.path)}`).toString()
+
+  var tags = generateCombinations([stackVersions, osVersions, variants, [yyyymmdd(), null]])
+
+  const destination = path.join(
+    DEST_DIR,
+    context.slug
+  )
+
+  tags.forEach((tag) => {
+    content += `${tag}: ${URL}@${commit.slice(1, -2)} ${path.join(ROOT, context.path)}\n`
+  })
+
+  fs.appendFileSync(destination, content)
+  fs.appendFileSync(destination, `\n`)
+}
+
 const URL = 'git://github.com/balena-io-library/base-images'
 const ROOT = 'balena-base-images'
 const DEST_DIR = path.join(__dirname, '../library')
@@ -111,7 +158,8 @@ const DOCKERFILE_DIR = path.join(__dirname, '../balena-base-images')
 const BLUEPRINT_PATHS = {
   'os-arch': path.join(__dirname, 'blueprints/os-arch.yaml'),
   'os-device': path.join(__dirname, 'blueprints/os-device.yaml'),
-  'stack-device': path.join(__dirname, 'blueprints/stack-device.yaml')
+  'stack-device': path.join(__dirname, 'blueprints/stack-device.yaml'),
+  'stack-arch': path.join(__dirname, 'blueprints/stack-arch.yaml')
 }
 const CONTRACTS_PATH = path.join(__dirname, 'contracts/contracts')
 
@@ -178,12 +226,12 @@ for (const type of blueprints) {
   for (const context of result) {
     const json = context.toJSON()
 
-    if (type === 'os-arch') {
+    if (type === 'os-arch' || type === 'os-device' ) {
       generateOsArchLibrary(json)
     }
 
-    if (type === 'os-device') {
-      generateOsArchLibrary(json)
+    if (type === 'stack-device' || type === 'stack-arch') {
+      generateStackLibrary(json)
     }
   }
 
