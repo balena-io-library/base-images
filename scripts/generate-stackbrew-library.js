@@ -103,7 +103,7 @@ function generateOsArchLibrary (context) {
 
   const destination = path.join(
     DEST_DIR,
-    context.slug
+    context.imageName
   )
 
   tags.forEach((tag) => {
@@ -140,7 +140,7 @@ function generateStackLibrary (context) {
 
   const destination = path.join(
     DEST_DIR,
-    context.slug
+    context.imageName
   )
 
   tags.forEach((tag) => {

@@ -5,8 +5,9 @@ selector:
   sw.blob: '1+'
 output:
   filename: Dockerfile
+  imageName: "{{this.children.arch.sw.slug}}-{{this.children.sw.os.slug}}"
   type: sw.docker-image.os-arch
-  slug: "{{this.children.arch.sw.slug}}-{{this.children.sw.os.slug}}"
+  slug: "{{this.children.arch.sw.slug}}-{{this.children.sw.os.slug}}:{{this.children.sw.os.version}}-{{this.children.sw.stack-variant.slug}}"
   path: "{{this.children.arch.sw.slug}}/{{this.children.sw.os.slug}}/{{this.children.sw.os.version}}/{{this.children.sw.stack-variant.slug}}"
   requires:
     - type: hw.device-type

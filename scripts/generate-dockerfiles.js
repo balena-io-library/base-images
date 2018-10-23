@@ -98,7 +98,7 @@ for (const type of blueprints) {
       query.output.filename
     )
 
-    console.log(`Generating ${json.slug}`)
+    console.log(`Generating ${json.imageName}`)
     fs.outputFileSync(destination, contrato.buildTemplate(template, context, {
       directory: CONTRACTS_PATH
     }))
