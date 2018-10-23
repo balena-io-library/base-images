@@ -2,7 +2,9 @@ FROM arm32v6/alpine:3.5
 LABEL io.resin.architecture="armv7hf"
  
 LABEL io.resin.qemu.version="3.0.0+resin-arm"
-COPY qemu-arm-static /usr/bin 
+COPY qemu-arm-static /usr/bin
+
+ONBUILD RUN echo 'WARNING: resin base images is now deprecated!\nAll base images are moved to new namespace "balenalib". Please check our docs(https://www.balena.io/docs) or new dockerhub namespace(https://hub.docker.com/u/balenalib/) for more details.' 
 
 RUN apk add --update \
   bash \
