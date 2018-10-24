@@ -1,0 +1,97 @@
+FROM arm64v8/debian:jessie-slim
+LABEL io.balena.architecture="aarch64"
+ 
+LABEL io.balena.qemu.version="3.0.0+resin-aarch64"
+COPY qemu-aarch64-static /usr/bin 
+
+RUN sed -i '/debian-security/{s/^/#/}' /etc/apt/sources.list \
+  && apt-get update && apt-get install -y --no-install-recommends \
+  sudo \
+  ca-certificates \
+  findutils \
+  gnupg \
+  dirmngr \
+  inetutils-ping \
+  netbase \
+  curl \
+  udev \
+  $( \
+      if apt-cache show 'iproute' 2>/dev/null | grep -q '^Version:'; then \
+        echo 'iproute'; \
+      else \
+        echo 'iproute2'; \
+      fi \
+  ) \
+  && rm -rf /var/lib/apt/lists/*
+
+# Install packages for build variant
+RUN apt-get update && apt-get install -y --no-install-recommends \
+		ca-certificates \
+		curl \
+		wget \
+		bzr \
+		git \
+		mercurial \
+		openssh-client \
+		subversion \
+		autoconf \
+		build-essential \
+		imagemagick \
+		libbz2-dev \
+		libcurl4-openssl-dev \
+		libevent-dev \
+		libffi-dev \
+		libglib2.0-dev \
+		libjpeg-dev \
+		libmagickcore-dev \
+		libmagickwand-dev \
+		libncurses-dev \
+		libpq-dev \
+		libreadline-dev \
+		libsqlite3-dev \
+		libssl-dev \
+		libxml2-dev \
+		libxslt-dev \
+		libyaml-dev \
+		zlib1g-dev \
+		$( \
+			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then \
+				echo 'default-libmysqlclient-dev'; \
+			else \
+				echo 'libmysqlclient-dev'; \
+			fi \
+		) \
+	&& rm -rf /var/lib/apt/lists/*
+
+RUN curl -SLO "http://resin-packages.s3.amazonaws.com/resin-xbuild/v1.0.0/resin-xbuild1.0.0.tar.gz" \
+  && echo "1eb099bc3176ed078aa93bd5852dbab9219738d16434c87fc9af499368423437  resin-xbuild1.0.0.tar.gz" | sha256sum -c - \
+  && tar -xzf "resin-xbuild1.0.0.tar.gz" \
+  && rm "resin-xbuild1.0.0.tar.gz" \
+  && chmod +x resin-xbuild \
+  && mv resin-xbuild /usr/bin \
+  && ln -s resin-xbuild /usr/bin/cross-build-start \
+  && ln -s resin-xbuild /usr/bin/cross-build-end
+
+ENV LC_ALL C.UTF-8
+ENV DEBIAN_FRONTEND noninteractive
+ENV UDEV off
+
+# 01_nodoc
+RUN echo 'path-exclude /usr/share/doc/*\n\
+# we need to keep copyright files for legal reasons\n\
+path-include /usr/share/doc/*/copyright\n\
+path-exclude /usr/share/man/*\n\
+path-exclude /usr/share/groff/*\n\
+path-exclude /usr/share/info/*\n\
+path-exclude /usr/share/lintian/*\n\
+path-exclude /usr/share/linda/*\n\
+path-exclude /usr/share/locale/*\n\
+path-include /usr/share/locale/en*' > /etc/dpkg/dpkg.cfg.d/01_nodoc
+
+# 01_buildconfig
+RUN echo 'APT::Get::Assume-Yes "true";\n\
+APT::Install-Recommends "0";\n\
+APT::Install-Suggests "0";\n\
+quiet "true";' > /etc/apt/apt.conf.d/01_buildconfig
+
+RUN mkdir -p /usr/share/man/man1
