@@ -3,7 +3,12 @@
 function start_udev()
 {
 	if [ "$UDEV" == "on" ]; then
-		udevd --daemon &> /dev/null
+		which udevd
+		if [ $? == '0' ]; then
+			udevd --daemon &> /dev/null
+		else
+			/lib/systemd/systemd-udevd --daemon &> /dev/null
+		fi
 		udevadm trigger &> /dev/null
 	fi
 }

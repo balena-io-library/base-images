@@ -11,14 +11,21 @@
   "scripts": {
     "lint": "eslint scripts",
     "os-arch": "node scripts/generate-dockerfiles.js os-arch",
+    "os-arch-lib": "node scripts/generate-stackbrew-library.js os-arch",
     "os-device": "node scripts/generate-dockerfiles.js os-device",
-    "all": "node scripts/generate-dockerfiles.js all"
+    "os-device-lib": "node scripts/generate-stackbrew-library.js os-device",
+    "stack-device": "node --max-old-space-size=16000 scripts/generate-dockerfiles.js stack-device",
+    "stack-arch": "node scripts/generate-dockerfiles.js stack-arch",
+    "stack-device-lib": "node --max-old-space-size=16000 scripts/generate-stackbrew-library.js stack-device",
+    "stack-arch-lib": "node scripts/generate-stackbrew-library.js stack-arch",
+    "all": "node scripts/generate-dockerfiles.js all",
+    "all-lib": "node scripts/generate-stackbrew-library.js all"
   },
   "author": "Resin Inc. <hello@resin.io>",
   "license": "Apache-2.0",
   "dependencies": {
     "fs-extra": "^0.30.0",
-    "@resin.io/contrato": "0.0.5",
+    "@balena/contrato": "^0.0.7",
     "js-combinatorics": "^0.5.3",
     "js-yaml": "^3.11.0",
     "lodash": "^4.17.4",
