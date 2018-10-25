@@ -4,7 +4,7 @@ FROM balenalib/cybertan-ze250-ubuntu:trusty-build
 ENV GO_VERSION 1.11
 
 RUN mkdir -p /usr/local/go \
-	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/{{assets.bin.name}}" \
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-i386.tar.gz" \
 	&& echo "546a168b85cc33eab0664003f29f6f2e6a3a9e5131ff7662932e4666e955e7d7  go$GO_VERSION.linux-i386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-i386.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-i386.tar.gz

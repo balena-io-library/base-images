@@ -9,7 +9,7 @@ ENV GO_VERSION 1.10.4
 RUN [ ! -e /etc/nsswitch.conf ] && echo 'hosts: files dns' > /etc/nsswitch.conf
 
 RUN mkdir -p /usr/local/go \
-	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/{{assets.bin.name}}" \
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-armhf.tar.gz" \
 	&& echo "5f2f2987e38ae0abaff6ee195a9944d7d97a6835d3c3a082d695642a151f8ce3  go$GO_VERSION.linux-alpine-armhf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-alpine-armhf.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-alpine-armhf.tar.gz

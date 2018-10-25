@@ -22,7 +22,7 @@ ENV PYTHON_PIP_VERSION 10.0.1
 ENV SETUPTOOLS_VERSION 39.1.0
 
 RUN set -x \
-	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/{{assets.bin.name}}" \
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-amd64.tar.gz" \
 	&& echo "e024a00030510e0206bd2b2f6eaeb396f25f06d84384539c9d6d626c78759146  Python-$PYTHON_VERSION.linux-amd64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-amd64.tar.gz" --strip-components=1 \
 	&& rm -rf "Python-$PYTHON_VERSION.linux-amd64.tar.gz" \

@@ -4,7 +4,7 @@ FROM balenalib/intel-nuc-debian:jessie-build
 ENV GO_VERSION 1.11
 
 RUN mkdir -p /usr/local/go \
-	&& curl -SLO "https://storage.googleapis.com/golang/{{assets.bin.name}}" \
+	&& curl -SLO "https://storage.googleapis.com/golang/go$GO_VERSION.linux-amd64.tar.gz" \
 	&& echo "b3fcf280ff86558e0559e185b601c9eade0fd24c900b4c63cd14d1d38613e499  go$GO_VERSION.linux-amd64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-amd64.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-amd64.tar.gz

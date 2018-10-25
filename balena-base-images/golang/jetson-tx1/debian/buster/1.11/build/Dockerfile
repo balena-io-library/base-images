@@ -4,7 +4,7 @@ FROM balenalib/jetson-tx1-debian:buster-build
 ENV GO_VERSION 1.11
 
 RUN mkdir -p /usr/local/go \
-	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/{{assets.bin.name}}" \
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-aarch64.tar.gz" \
 	&& echo "daabab2996721387ba91426238e6448ab698829a210b4e230e31d5c28eee496d  go$GO_VERSION.linux-aarch64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-aarch64.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-aarch64.tar.gz

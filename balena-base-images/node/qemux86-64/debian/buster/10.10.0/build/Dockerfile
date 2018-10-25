@@ -11,7 +11,7 @@ RUN for key in \
 		gpg --keyserver keyserver.pgp.com --recv-keys "$key" || \
 		gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key" ; \
 	done \
-	&& curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/{{assets.bin.name}}" \
+	&& curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.gz" \
 	&& echo "789994b9ad5d2b274e949c268480a197d2af8861cb00911fc1d2ce4a01631e0d  node-v$NODE_VERSION-linux-x64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-x64.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-x64.tar.gz" \

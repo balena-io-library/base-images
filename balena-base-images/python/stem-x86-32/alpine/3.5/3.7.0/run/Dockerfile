@@ -34,7 +34,7 @@ RUN set -x \
 		gnupg \
 	' \
 	&& apk add --no-cache --virtual .build-deps $buildDeps \
-	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/{{assets.bin.name}}" \
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-alpine-i386.tar.gz" \
 	&& echo "dacb227f7327d3950dfa4c1a7b184022235bfddf996148a694ea0998f169f4bf  Python-$PYTHON_VERSION.linux-alpine-i386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-alpine-i386.tar.gz" --strip-components=1 \
 	&& rm -rf "Python-$PYTHON_VERSION.linux-alpine-i386.tar.gz" \

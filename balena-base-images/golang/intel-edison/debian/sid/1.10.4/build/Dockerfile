@@ -4,7 +4,7 @@ FROM balenalib/intel-edison-debian:sid-build
 ENV GO_VERSION 1.10.4
 
 RUN mkdir -p /usr/local/go \
-	&& curl -SLO "https://storage.googleapis.com/golang/{{assets.bin.name}}" \
+	&& curl -SLO "https://storage.googleapis.com/golang/go$GO_VERSION.linux-386.tar.gz" \
 	&& echo "771f48e55776d4abc9c2a74907457066c7c282ac05fa01cf5ff4422ced76d2ee  go$GO_VERSION.linux-386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-386.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-386.tar.gz

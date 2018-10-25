@@ -15,7 +15,7 @@ RUN fetchDeps='curl' \
 	&& set -x \
 	&& apk add --no-cache $fetchDeps \
 	&& mkdir -p /usr/local/go \
-	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/{{assets.bin.name}}" \
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-i386.tar.gz" \
 	&& echo "0f7ededadd982ef7e0b65b9d521cf88d6682cd60fce39b2633a6a0fd6e5ec43f  go$GO_VERSION.linux-alpine-i386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-alpine-i386.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-alpine-i386.tar.gz \

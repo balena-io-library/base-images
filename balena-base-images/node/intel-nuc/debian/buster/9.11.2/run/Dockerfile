@@ -15,7 +15,7 @@ RUN buildDeps='curl' \
 	done \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/* \
-	&& curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/{{assets.bin.name}}" \
+	&& curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.gz" \
 	&& echo "bbb46f86c64abe96ee98faa733424fc76f20a38d12f59bdcd60057efa5f1ce89  node-v$NODE_VERSION-linux-x64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-x64.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-x64.tar.gz" \

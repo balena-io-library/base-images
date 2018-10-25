@@ -4,7 +4,7 @@ FROM balenalib/intel-edison-ubuntu:xenial-build
 ENV GO_VERSION 1.11
 
 RUN mkdir -p /usr/local/go \
-	&& curl -SLO "https://storage.googleapis.com/golang/{{assets.bin.name}}" \
+	&& curl -SLO "https://storage.googleapis.com/golang/go$GO_VERSION.linux-386.tar.gz" \
 	&& echo "1a91932b65b4af2f84ef2dce10d790e6a0d3d22c9ea1bdf3d8c4d9279dfa680e  go$GO_VERSION.linux-386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-386.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-386.tar.gz

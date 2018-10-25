@@ -17,7 +17,7 @@ RUN buildDeps='curl' \
 		gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key" ; \
 	done \
 	&& apk add --no-cache $buildDeps \
-	&& curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/{{assets.bin.name}}" \
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-alpine-aarch64.tar.gz" \
 	&& echo "16123488fcb07a35c9197b3ad9edde0c007d2f585bb80221f900e66c0958723b  node-v$NODE_VERSION-linux-alpine-aarch64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-alpine-aarch64.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-alpine-aarch64.tar.gz" \

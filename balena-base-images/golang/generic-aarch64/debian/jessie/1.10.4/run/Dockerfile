@@ -19,7 +19,7 @@ RUN set -x \
 	' \
 	&& apt-get update && apt-get install -y $fetchDeps --no-install-recommends && rm -rf /var/lib/apt/lists/* \
 	&& mkdir -p /usr/local/go \
-	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/{{assets.bin.name}}" \
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-aarch64.tar.gz" \
 	&& echo "e149b7b8ff3173425b3f1288d86809b39ec1cc0473d3d07095199f53bc02ff48  go$GO_VERSION.linux-aarch64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-aarch64.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-aarch64.tar.gz \

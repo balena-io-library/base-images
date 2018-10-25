@@ -15,7 +15,7 @@ RUN buildDeps='curl' \
 	done \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/* \
-	&& curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/{{assets.bin.name}}" \
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-armv7hf.tar.gz" \
 	&& echo "b4bb1a5c07c0a066151d2f1fc0911ed0fb69c6c6fe7ef4f13c932bb265d0ae41  node-v$NODE_VERSION-linux-armv7hf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-armv7hf.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-armv7hf.tar.gz" \

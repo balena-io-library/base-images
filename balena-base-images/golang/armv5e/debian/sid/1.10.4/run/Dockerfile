@@ -19,7 +19,7 @@ RUN set -x \
 	' \
 	&& apt-get update && apt-get install -y $fetchDeps --no-install-recommends && rm -rf /var/lib/apt/lists/* \
 	&& mkdir -p /usr/local/go \
-	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/{{assets.bin.name}}" \
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-armel.tar.gz" \
 	&& echo "0b0905873ea1cb3d3edbaa7a558782b5fdbe8019f5e2bfe38372bf42137b7ee5  go$GO_VERSION.linux-armel.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-armel.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-armel.tar.gz \
