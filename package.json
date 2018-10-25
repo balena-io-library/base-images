@@ -18,8 +18,8 @@
     "stack-arch": "node scripts/generate-dockerfiles.js stack-arch",
     "stack-device-lib": "node --max-old-space-size=16000 scripts/generate-stackbrew-library.js stack-device",
     "stack-arch-lib": "node scripts/generate-stackbrew-library.js stack-arch",
-    "all": "node scripts/generate-dockerfiles.js all",
-    "all-lib": "node scripts/generate-stackbrew-library.js all"
+    "all": "node --max-old-space-size=16000 scripts/generate-dockerfiles.js all",
+    "all-lib": "node --max-old-space-size=16000 scripts/generate-stackbrew-library.js all"
   },
   "author": "Resin Inc. <hello@resin.io>",
   "license": "Apache-2.0",

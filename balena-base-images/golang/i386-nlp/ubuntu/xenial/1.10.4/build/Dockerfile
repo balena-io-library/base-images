@@ -4,7 +4,7 @@ FROM balenalib/i386-nlp-ubuntu:xenial-build
 ENV GO_VERSION 1.10.4
 
 RUN mkdir -p /usr/local/go \
-	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/{{assets.bin.name}}" \
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-i386.tar.gz" \
 	&& echo "56d9073260a27a4e9fabd36cdfc78e8d8bc31384730cba5b325cf650e2a46e8d  go$GO_VERSION.linux-i386.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-i386.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-i386.tar.gz

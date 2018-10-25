@@ -4,7 +4,7 @@ FROM balenalib/raspberrypi3-ubuntu:xenial-build
 ENV GO_VERSION 1.11
 
 RUN mkdir -p /usr/local/go \
-	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/{{assets.bin.name}}" \
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-armv7hf.tar.gz" \
 	&& echo "9592b5ed38c412907739bf3998f6428f6c9e8505d2b00d15b00dfc9c15096f1a  go$GO_VERSION.linux-armv7hf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-armv7hf.tar.gz" -C /usr/local/go --strip-components=1 \
 	&& rm -f go$GO_VERSION.linux-armv7hf.tar.gz

@@ -107,7 +107,7 @@ function generateOsArchLibrary (context) {
   )
 
   tags.forEach((tag) => {
-    content += `${tag}: ${URL}@${commit.slice(1, -2)} ${path.join(ROOT, context.path)}\n`
+    content += `${tag}: ${URL}@${commit.slice(0, -1)} ${path.join(ROOT, context.path)}\n`
   })
 
   fs.appendFileSync(destination, content)
@@ -144,7 +144,7 @@ function generateStackLibrary (context) {
   )
 
   tags.forEach((tag) => {
-    content += `${tag}: ${URL}@${commit.slice(1, -2)} ${path.join(ROOT, context.path)}\n`
+    content += `${tag}: ${URL}@${commit.slice(0, -1)} ${path.join(ROOT, context.path)}\n`
   })
 
   fs.appendFileSync(destination, content)

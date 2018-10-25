@@ -4,6 +4,11 @@ LABEL io.balena.architecture="armv7hf"
 LABEL io.balena.qemu.version="3.0.0+resin-arm"
 COPY qemu-arm-static /usr/bin 
 
+# Few tweaks for Fedora base image
+RUN mkdir -p /etc/dnf/vars \
+    && echo "armhfp" > /etc/dnf/vars/basearch \
+    && echo "armv7hl" > /etc/dnf/vars/arch
+
 RUN dnf update -y && dnf install -y \
   ca-certificates \
   findutils \
@@ -48,8 +53,3 @@ RUN curl -SLO "http://resin-packages.s3.amazonaws.com/resin-xbuild/v1.0.0/resin-
   && ln -s resin-xbuild /usr/bin/cross-build-end
 
 ENV UDEV off
-
-# Few tweaks for Fedora base image
-RUN mkdir -p /etc/dnf/vars \
-    && echo "armhfp" > /etc/dnf/vars/basearch \
-    && echo "armv7hl" > /etc/dnf/vars/arch
