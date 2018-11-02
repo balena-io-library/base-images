@@ -84,8 +84,6 @@ function generateCombinations (arr) {
 
 
 function generateOsArchLibrary (context) {
-  var content = ''
-
   const osVersions = [context.children.sw.os.version]
   if (context.children.sw.os.version === context.children.sw.os.data.latest) {
     osVersions.push('latest')
@@ -106,17 +104,17 @@ function generateOsArchLibrary (context) {
     context.imageName
   )
 
-  tags.forEach((tag) => {
-    content += `${tag}: ${URL}@${commit.slice(0, -1)} ${path.join(ROOT, context.path)}\n`
-  })
+  const content = {
+    tag: tags[0],
+    repoDir: `${URL}@${commit.slice(0, -1)} ${path.join(ROOT, context.path)}`,
+    alias: tags.join(' ')
+  }
 
-  fs.appendFileSync(destination, content)
+  fs.appendFileSync(destination, JSON.stringify(content))
   fs.appendFileSync(destination, `\n`)
 }
 
 function generateStackLibrary (context) {
-  var content = ''
-
   const stackVersions = getVersionAliases(context.children.sw.stack.version)
   if (context.children.sw.stack.version === context.children.sw.stack.data.latest) {
     stackVersions.push('latest')
@@ -143,11 +141,13 @@ function generateStackLibrary (context) {
     context.imageName
   )
 
-  tags.forEach((tag) => {
-    content += `${tag}: ${URL}@${commit.slice(0, -1)} ${path.join(ROOT, context.path)}\n`
-  })
+  const content = {
+    tag: tags[0],
+    repoDir: `${URL}@${commit.slice(0, -1)} ${path.join(ROOT, context.path)}`,
+    alias: tags.join(' ')
+  }
 
-  fs.appendFileSync(destination, content)
+  fs.appendFileSync(destination, JSON.stringify(content))
   fs.appendFileSync(destination, `\n`)
 }
 
