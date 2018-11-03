@@ -24,7 +24,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   && rm -rf /var/lib/apt/lists/* \
   && echo '#!/bin/sh\n\
 set -e\n\
-set -u\n\ 
+set -u\n\
 export DEBIAN_FRONTEND=noninteractive\n\
 n=0\n\
 max=2\n\
@@ -100,3 +100,6 @@ ENV LC_ALL C.UTF-8
 ENV UDEV off
 
 RUN mkdir -p /usr/share/man/man1
+
+COPY entry.sh /usr/bin/entry.sh
+ENTRYPOINT ["/usr/bin/entry.sh"]

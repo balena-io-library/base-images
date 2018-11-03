@@ -4,15 +4,16 @@ LABEL io.balena.architecture="amd64"
 RUN dnf update -y && dnf install -y \
   ca-certificates \
   findutils \
+  gnupg \
   hostname \
   tar \
   udev \
   which \
   curl \
   && dnf clean all \
-  && echo '#!/bin/sh\n\
+  && echo $'#!/bin/sh\n\
 set -e\n\
-set -u\n\ 
+set -u\n\
 n=0\n\
 max=2\n\
 until [ $n -gt $max ]; do\n\
@@ -45,3 +46,6 @@ RUN curl -SLO "http://resin-packages.s3.amazonaws.com/resin-xbuild/v1.0.0/resin-
   && ln -s resin-xbuild /usr/bin/cross-build-end
 
 ENV UDEV off
+
+COPY entry.sh /usr/bin/entry.sh
+ENTRYPOINT ["/usr/bin/entry.sh"]
