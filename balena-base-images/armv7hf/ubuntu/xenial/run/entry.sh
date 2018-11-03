@@ -35,4 +35,4 @@ case "$UDEV" in
 esac
 
 start_udev
-init
+init "$@"
