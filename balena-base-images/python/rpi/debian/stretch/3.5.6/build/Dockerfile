@@ -22,10 +22,10 @@ ENV PYTHON_PIP_VERSION 10.0.1
 ENV SETUPTOOLS_VERSION 39.1.0
 
 RUN set -x \
-	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-armv6hf.tar.gz" \
-	&& echo "6ed7f0e3bc866a1aca5c0358eaa7349c661b327ccee3494d3c8d92ac36eefed6  Python-$PYTHON_VERSION.linux-armv6hf.tar.gz" | sha256sum -c - \
-	&& tar -xzf "Python-$PYTHON_VERSION.linux-armv6hf.tar.gz" --strip-components=1 \
-	&& rm -rf "Python-$PYTHON_VERSION.linux-armv6hf.tar.gz" \
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-armv6hf-openssl1.1.tar.gz" \
+	&& echo "a53e5cc6a2c14cc52f4e3e2aa2163379d89a1e502943b0d165c5f82240676111  Python-$PYTHON_VERSION.linux-armv6hf-openssl1.1.tar.gz" | sha256sum -c - \
+	&& tar -xzf "Python-$PYTHON_VERSION.linux-armv6hf-openssl1.1.tar.gz" --strip-components=1 \
+	&& rm -rf "Python-$PYTHON_VERSION.linux-armv6hf-openssl1.1.tar.gz" \
 	&& ldconfig \
 	&& if [ ! -e /usr/local/bin/pip3 ]; then : \
 		&& curl -SLO "https://raw.githubusercontent.com/pypa/get-pip/430ba37776ae2ad89f794c7a43b90dc23bac334c/get-pip.py" \

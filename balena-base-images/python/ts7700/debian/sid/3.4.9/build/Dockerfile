@@ -22,10 +22,10 @@ ENV PYTHON_PIP_VERSION 10.0.1
 ENV SETUPTOOLS_VERSION 39.1.0
 
 RUN set -x \
-	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-armel.tar.gz" \
-	&& echo "1226b6a2da8383c3e51e7d9e041bcd70bf4cb216e0d00036e5e748833f79304c  Python-$PYTHON_VERSION.linux-armel.tar.gz" | sha256sum -c - \
-	&& tar -xzf "Python-$PYTHON_VERSION.linux-armel.tar.gz" --strip-components=1 \
-	&& rm -rf "Python-$PYTHON_VERSION.linux-armel.tar.gz" \
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-armel-openssl1.1.tar.gz" \
+	&& echo "825813b39927c1dac8f1a58ceeff67286fa091eee597e017ea86264387481149  Python-$PYTHON_VERSION.linux-armel-openssl1.1.tar.gz" | sha256sum -c - \
+	&& tar -xzf "Python-$PYTHON_VERSION.linux-armel-openssl1.1.tar.gz" --strip-components=1 \
+	&& rm -rf "Python-$PYTHON_VERSION.linux-armel-openssl1.1.tar.gz" \
 	&& ldconfig \
 	&& if [ ! -e /usr/local/bin/pip3 ]; then : \
 		&& curl -SLO "https://raw.githubusercontent.com/pypa/get-pip/430ba37776ae2ad89f794c7a43b90dc23bac334c/get-pip.py" \

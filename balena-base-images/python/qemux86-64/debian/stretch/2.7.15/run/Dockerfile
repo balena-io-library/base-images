@@ -32,10 +32,10 @@ RUN set -x \
 		curl \
 	' \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends && rm -rf /var/lib/apt/lists/* \
-	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-amd64.tar.gz" \
-	&& echo "e024a00030510e0206bd2b2f6eaeb396f25f06d84384539c9d6d626c78759146  Python-$PYTHON_VERSION.linux-amd64.tar.gz" | sha256sum -c - \
-	&& tar -xzf "Python-$PYTHON_VERSION.linux-amd64.tar.gz" --strip-components=1 \
-	&& rm -rf "Python-$PYTHON_VERSION.linux-amd64.tar.gz" \
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-amd64-openssl1.1.tar.gz" \
+	&& echo "431bc0560a1c484a770ba372543c3bbbb28effe0d0909ceecdf42f2bc310bd27  Python-$PYTHON_VERSION.linux-amd64-openssl1.1.tar.gz" | sha256sum -c - \
+	&& tar -xzf "Python-$PYTHON_VERSION.linux-amd64-openssl1.1.tar.gz" --strip-components=1 \
+	&& rm -rf "Python-$PYTHON_VERSION.linux-amd64-openssl1.1.tar.gz" \
 	&& ldconfig \
 	&& if [ ! -e /usr/local/bin/pip ]; then : \
 		&& curl -SLO "https://raw.githubusercontent.com/pypa/get-pip/430ba37776ae2ad89f794c7a43b90dc23bac334c/get-pip.py" \
