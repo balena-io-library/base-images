@@ -25,3 +25,6 @@ output:
 
 
         {{import partial="cmd" combination="sw.stack+sw.os+hw.device-type"}}
+
+
+        {{import partial="onbuild" combination="sw.stack+sw.os+hw.device-type"}}

@@ -33,6 +33,9 @@ output:
         {{import partial="os-config" combination="sw.os+arch.sw"}}
 
 
+        {{import partial="onbuild" combination="sw.os+arch.sw"}}
+
+
         COPY entry.sh /usr/bin/entry.sh
 
         ENTRYPOINT ["/usr/bin/entry.sh"]
