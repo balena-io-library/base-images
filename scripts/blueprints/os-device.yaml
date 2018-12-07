@@ -21,8 +21,4 @@ output:
 
         {{import partial="distro-config" combination="sw.os+hw.device-type"}}
 
-
         {{import partial="dependencies" combination="sw.os+hw.device-type"}}
-
-
-        {{import partial="onbuild" combination="sw.os+hw.device-type"}}
