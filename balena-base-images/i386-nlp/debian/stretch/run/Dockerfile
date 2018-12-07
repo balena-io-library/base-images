@@ -96,9 +96,5 @@ quiet "true";' > /etc/apt/apt.conf.d/01_buildconfig
 
 RUN mkdir -p /usr/share/man/man1
 
-RUN [ ! -d /.balena ] && mkdir /.balena; echo 'Here are a few details about this Docker image (For more information please visit https://www.balena.io/docs/reference/base-images/base-images/): \nArchitecture: Intel 32-bit (x86) for Intel Quark \nOS: Debian Stretch \nVariant: run variant \nDefault variable(s): UDEV=off \nExtra features: \n- Easy way to install packages with `install_packages <package-name>` command \n- Run anywhere with cross-build feature  (for ARM only)' > /.balena/image-info
-
-ONBUILD RUN cat /.balena/image-info
-
 COPY entry.sh /usr/bin/entry.sh
 ENTRYPOINT ["/usr/bin/entry.sh"]

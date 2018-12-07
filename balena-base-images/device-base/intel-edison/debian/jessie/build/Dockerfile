@@ -62,7 +62,3 @@ RUN set -x \
 # Update Shared Library Cache
 RUN echo "/usr/local/lib/i386-linux-gnu/" >> /etc/ld.so.conf \
 	&& ldconfig
-
-RUN [ ! -d /.balena ] && mkdir /.balena; echo 'Here are a few details about this Docker image (For more information please visit https://www.balena.io/docs/reference/base-images/base-images/): \nArchitecture: Intel 32-bit (x86) \nOS: Debian Jessie \nVariant: build variant \nDevice: Intel Edison \nDevice-type:intel-edison \nDefault variable(s): UDEV=off \nExtra features: \n- Easy way to install packages with `install_packages <package-name>` command \n- Run anywhere with cross-build feature  (for ARM only)' > /.balena/image-info
-
-ONBUILD RUN cat /.balena/image-info
