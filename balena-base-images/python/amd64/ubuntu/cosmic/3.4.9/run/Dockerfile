@@ -65,7 +65,3 @@ RUN cd /usr/local/bin \
 ENV PYTHONPATH /usr/lib/python3/dist-packages:$PYTHONPATH
 
 CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command could be found in Dockerfile Guide section in our Docs. Here's the link: https://balena.io/docs"]
-
-RUN [ ! -d /.balena ] && mkdir /.balena; echo 'Here are a few details about this Docker image (For more information please visit https://www.balena.io/docs/reference/base-images/base-images/): \nArchitecture: Intel 64-bit (x86-64) \nOS: Ubuntu cosmic \nVariant: run variant \nDevice:  \nDevice-type: \nDefault variable(s): UDEV=off \nThe following software stack is preinstalled: \nPython v3.4.9, Pip v10.0.1, Setuptools v39.1.0 \nExtra features: \n- Easy way to install packages with `install_packages <package-name>` command \n- Run anywhere with cross-build feature  (for ARM only)' > /.balena/image-info
-
-ONBUILD RUN cat /.balena/image-info

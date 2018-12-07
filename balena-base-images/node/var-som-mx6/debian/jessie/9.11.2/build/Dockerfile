@@ -2,14 +2,14 @@
 FROM balenalib/var-som-mx6-debian:jessie-build
 
 ENV NODE_VERSION 9.11.2
-ENV YARN_VERSION 1.6.0
+ENV YARN_VERSION 1.12.3
 
 RUN for key in \
 	6A010C5166006599AA17F08146C2130DFD2497F5 \
 	; do \
-		gpg --keyserver pgp.mit.edu --recv-keys "$key" || \
-		gpg --keyserver keyserver.pgp.com --recv-keys "$key" || \
-		gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key" ; \
+		gpg --batch --keyserver pgp.mit.edu --recv-keys "$key" || \
+		gpg --batch --keyserver keyserver.pgp.com --recv-keys "$key" || \
+		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key" ; \
 	done \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-armv7hf.tar.gz" \
 	&& echo "b94f8935568f746da0cbb89ec97508039c2cad2fc1750ab04150b098614b9241  node-v$NODE_VERSION-linux-armv7hf.tar.gz" | sha256sum -c - \
@@ -27,7 +27,3 @@ RUN for key in \
 	&& rm -rf /tmp/*
 
 CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command could be found in Dockerfile Guide section in our Docs. Here's the link: https://balena.io/docs"]
-
-RUN [ ! -d /.balena ] && mkdir /.balena; echo 'Here are a few details about this Docker image (For more information please visit https://www.balena.io/docs/reference/base-images/base-images/): \nArchitecture: ARM v7 \nOS: Debian Jessie \nVariant: build variant \nDevice: Variscite VAR-SOM-MX6 \nDevice-type:var-som-mx6 \nDefault variable(s): UDEV=off \nThe following software stack is preinstalled: \nNode.js v9.11.2, Yarn v1.6.0 \nExtra features: \n- Easy way to install packages with `install_packages <package-name>` command \n- Run anywhere with cross-build feature  (for ARM only)' > /.balena/image-info
-
-ONBUILD RUN cat /.balena/image-info
