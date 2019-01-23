@@ -13,22 +13,22 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/*
 
 # MRAA
-ENV MRAA_COMMIT fbb7d9232067eac3f4508a37a8f7ea0c4fcebacb
-ENV MRAA_VERSION 1.9.0
+ENV MRAA_COMMIT 967585c9ea0e1a8818d2172d2395d8502f6180a2
+ENV MRAA_VERSION 2.0.0
 # UPM
-ENV UPM_COMMIT cc7fec9ae0228add9011bf1c2cd5e0ca2ba0d4f0
-ENV UPM_VERSION 1.6.0
+ENV UPM_COMMIT 16e72d2ff709e27d411f38b002bc0284354951e2
+ENV UPM_VERSION 1.7.1
 
 # Install mraa
 RUN set -x \
 	&& buildDeps=' \
-		build-essential \
-		git-core \
 		libpcre3-dev \
 		python-dev \
 		swig \
 		pkg-config \
 	' \
+	&& if ! apt-cache show 'build-essential' 2>/dev/null | grep -q '^Version:'; then buildDeps="$buildDeps build-essential"; fi \
+	&& if ! apt-cache show 'git' 2>/dev/null | grep -q '^Version:'; then buildDeps="$buildDeps git"; fi \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends && rm -rf /var/lib/apt/lists/* \
 	&& mkdir /cmake \
 	&& curl -SL https://cmake.org/files/v3.5/cmake-3.5.2.tar.gz -o cmake.tar.gz \
