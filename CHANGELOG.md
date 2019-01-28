@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## 2019-27-01
+
+### Changed
+
+`Contracts v1.1.7`
+- Add node v11.6.0 v10.15.0 v8.15.0 and v6.16.0.
+- Update checksum for Python v2.7.15.
+
+
+## 2019-23-01
+
+### Changed
+
+`Contracts v1.1.6`
+- Add support for new devices: cl-som-imx8, imx8m-var-dart.
+- Add new Python versions: v3.7.2 and v3.6.8.
+- Fix mraa build build dependencies and update to v2.0.0.
+- Add ONBUILD warning message for deprecated resin base images.
+
+
 ## 2018-09-12
 
 ### Changed
