@@ -24,9 +24,9 @@ ENV SSL_CERT_FILE /etc/ssl/certs/ca-certificates.crt
 ENV PYTHON_VERSION 3.6.8
 
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
-ENV PYTHON_PIP_VERSION 10.0.1
+ENV PYTHON_PIP_VERSION 19.0.1
 
-ENV SETUPTOOLS_VERSION 39.1.0
+ENV SETUPTOOLS_VERSION 40.6.3
 
 RUN set -x \
 	&& buildDeps=' \

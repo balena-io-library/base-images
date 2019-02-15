@@ -1471,6 +1471,68 @@
 | balenalib/spacely-tx2-ubuntu-openjdk | [Docker Hub][aarch64-spacely-tx2-ubuntu-openjdk-dockerhub-link], [github][aarch64-spacely-tx2-ubuntu-openjdk-github-link] | For available image tags, refer [here][aarch64-spacely-tx2-ubuntu-openjdk-dockerhub-tag-link] |
 
 
+##### Compulab iMX8
+
+| Image | Links | Available Tag |
+|:-----------|:------------|:------------|
+| balenalib/cl-som-imx8| [Docker Hub][aarch64-cl-som-imx8-dockerhub-link], [github][aarch64-cl-som-imx8-github-link] | latest, buster, stretch, jessie, sid |
+| balenalib/cl-som-imx8-node | [Docker Hub][aarch64-cl-som-imx8-node-dockerhub-link], [github][aarch64-cl-som-imx8-node-github-link] | For available image tags, refer [here][aarch64-cl-som-imx8-node-dockerhub-tag-link] |
+| balenalib/cl-som-imx8-python | [Docker Hub][aarch64-cl-som-imx8-python-dockerhub-link], [github][aarch64-cl-som-imx8-python-github-link] | For available image tags, refer [here][aarch64-cl-som-imx8-python-dockerhub-tag-link] |
+| balenalib/cl-som-imx8-golang | [Docker Hub][aarch64-cl-som-imx8-golang-dockerhub-link], [github][aarch64-cl-som-imx8-golang-github-link] | For available image tags, refer [here][aarch64-cl-som-imx8-golang-dockerhub-tag-link] |
+| balenalib/cl-som-imx8-openjdk | [Docker Hub][aarch64-cl-som-imx8-openjdk-dockerhub-link], [github][aarch64-cl-som-imx8-openjdk-github-link] | For available image tags, refer [here][aarch64-cl-som-imx8-openjdk-dockerhub-tag-link] |
+| balenalib/cl-som-imx8-debian | [Docker Hub][aarch64-cl-som-imx8-debian-dockerhub-link], [github][aarch64-cl-som-imx8-debian-github-link] | latest, buster, stretch, jessie, sid |
+| balenalib/cl-som-imx8-debian-node | [Docker Hub][aarch64-cl-som-imx8-debian-node-dockerhub-link], [github][aarch64-cl-som-imx8-debian-node-github-link] | For available image tags, refer [here][aarch64-cl-som-imx8-debian-node-dockerhub-tag-link] |
+| balenalib/cl-som-imx8-debian-python | [Docker Hub][aarch64-cl-som-imx8-debian-python-dockerhub-link], [github][aarch64-cl-som-imx8-debian-python-github-link] | For available image tags, refer [here][aarch64-cl-som-imx8-debian-python-dockerhub-tag-link] |
+| balenalib/cl-som-imx8-debian-golang | [Docker Hub][aarch64-cl-som-imx8-debian-golang-dockerhub-link], [github][aarch64-cl-som-imx8-debian-golang-github-link] | For available image tags, refer [here][aarch64-cl-som-imx8-debian-golang-dockerhub-tag-link] |
+| balenalib/cl-som-imx8-debian-openjdk | [Docker Hub][aarch64-cl-som-imx8-debian-openjdk-dockerhub-link], [github][aarch64-cl-som-imx8-debian-openjdk-github-link] | For available image tags, refer [here][aarch64-cl-som-imx8-debian-openjdk-dockerhub-tag-link] |
+| balenalib/cl-som-imx8-alpine | [Docker Hub][aarch64-cl-som-imx8-alpine-dockerhub-link], [github][aarch64-cl-som-imx8-alpine-github-link] | latest, 3.8, 3.7, 3.6, 3.5, edge |
+| balenalib/cl-som-imx8-alpine-node | [Docker Hub][aarch64-cl-som-imx8-alpine-node-dockerhub-link], [github][aarch64-cl-som-imx8-alpine-node-github-link] | For available image tags, refer [here][aarch64-cl-som-imx8-alpine-node-dockerhub-tag-link] |
+| balenalib/cl-som-imx8-alpine-python | [Docker Hub][aarch64-cl-som-imx8-alpine-python-dockerhub-link], [github][aarch64-cl-som-imx8-alpine-python-github-link] | For available image tags, refer [here][aarch64-cl-som-imx8-alpine-python-dockerhub-tag-link] |
+| balenalib/cl-som-imx8-alpine-golang | [Docker Hub][aarch64-cl-som-imx8-alpine-golang-dockerhub-link], [github][aarch64-cl-som-imx8-alpine-golang-github-link] | For available image tags, refer [here][aarch64-cl-som-imx8-alpine-golang-dockerhub-tag-link] |
+| balenalib/cl-som-imx8-alpine-openjdk | [Docker Hub][aarch64-cl-som-imx8-alpine-openjdk-dockerhub-link], [github][aarch64-cl-som-imx8-alpine-openjdk-github-link] | For available image tags, refer [here][aarch64-cl-som-imx8-alpine-openjdk-dockerhub-tag-link] |
+| balenalib/cl-som-imx8-fedora | [Docker Hub][aarch64-cl-som-imx8-fedora-node-dockerhub-link], [github][aarch64-cl-som-imx8-fedora-node-github-link] | latest, 28, 26 |
+| balenalib/cl-som-imx8-fedora-node | [Docker Hub][aarch64-cl-som-imx8-fedora-node-dockerhub-link], [github][aarch64-cl-som-imx8-fedora-node-github-link] | For available image tags, refer [here][aarch64-cl-som-imx8-fedora-node-dockerhub-tag-link] |
+| balenalib/cl-som-imx8-fedora-python | [Docker Hub][aarch64-cl-som-imx8-fedora-python-dockerhub-link], [github][aarch64-cl-som-imx8-fedora-python-github-link] | For available image tags, refer [here][aarch64-cl-som-imx8-fedora-python-dockerhub-tag-link] |
+| balenalib/cl-som-imx8-fedora-golang | [Docker Hub][aarch64-cl-som-imx8-fedora-golang-dockerhub-link], [github][aarch64-cl-som-imx8-fedora-golang-github-link] | For available image tags, refer [here][aarch64-cl-som-imx8-fedora-golang-dockerhub-tag-link] |
+| balenalib/cl-som-imx8-fedora-openjdk | [Docker Hub][aarch64-cl-som-imx8-fedora-openjdk-dockerhub-link], [github][aarch64-cl-som-imx8-fedora-openjdk-github-link] | For available image tags, refer [here][aarch64-cl-som-imx8-fedora-openjdk-dockerhub-tag-link] |
+| balenalib/cl-som-imx8-ubuntu | [Docker Hub][aarch64-cl-som-imx8-ubuntu-dockerhub-link], [github][aarch64-cl-som-imx8-ubuntu-github-link] | latest, trusty, xenial, artful, bionic, cosmic |
+| balenalib/cl-som-imx8-ubuntu-node | [Docker Hub][aarch64-cl-som-imx8-ubuntu-node-dockerhub-link], [github][aarch64-cl-som-imx8-ubuntu-node-github-link] | For available image tags, refer [here][aarch64-cl-som-imx8-ubuntu-node-dockerhub-tag-link] |
+| balenalib/cl-som-imx8-ubuntu-python | [Docker Hub][aarch64-cl-som-imx8-ubuntu-python-dockerhub-link], [github][aarch64-cl-som-imx8-ubuntu-python-github-link] | For available image tags, refer [here][aarch64-cl-som-imx8-ubuntu-python-dockerhub-tag-link] |
+| balenalib/cl-som-imx8-ubuntu-golang | [Docker Hub][aarch64-cl-som-imx8-ubuntu-golang-dockerhub-link], [github][aarch64-cl-som-imx8-ubuntu-golang-github-link] | For available image tags, refer [here][aarch64-cl-som-imx8-ubuntu-golang-dockerhub-tag-link] |
+| balenalib/cl-som-imx8-ubuntu-openjdk | [Docker Hub][aarch64-cl-som-imx8-ubuntu-openjdk-dockerhub-link], [github][aarch64-cl-som-imx8-ubuntu-openjdk-github-link] | For available image tags, refer [here][aarch64-cl-som-imx8-ubuntu-openjdk-dockerhub-tag-link] |
+
+
+##### Variscite DART-MX8M
+
+| Image | Links | Available Tag |
+|:-----------|:------------|:------------|
+| balenalib/imx8m-var-dart| [Docker Hub][aarch64-imx8m-var-dart-dockerhub-link], [github][aarch64-imx8m-var-dart-github-link] | latest, buster, stretch, jessie, sid |
+| balenalib/imx8m-var-dart-node | [Docker Hub][aarch64-imx8m-var-dart-node-dockerhub-link], [github][aarch64-imx8m-var-dart-node-github-link] | For available image tags, refer [here][aarch64-imx8m-var-dart-node-dockerhub-tag-link] |
+| balenalib/imx8m-var-dart-python | [Docker Hub][aarch64-imx8m-var-dart-python-dockerhub-link], [github][aarch64-imx8m-var-dart-python-github-link] | For available image tags, refer [here][aarch64-imx8m-var-dart-python-dockerhub-tag-link] |
+| balenalib/imx8m-var-dart-golang | [Docker Hub][aarch64-imx8m-var-dart-golang-dockerhub-link], [github][aarch64-imx8m-var-dart-golang-github-link] | For available image tags, refer [here][aarch64-imx8m-var-dart-golang-dockerhub-tag-link] |
+| balenalib/imx8m-var-dart-openjdk | [Docker Hub][aarch64-imx8m-var-dart-openjdk-dockerhub-link], [github][aarch64-imx8m-var-dart-openjdk-github-link] | For available image tags, refer [here][aarch64-imx8m-var-dart-openjdk-dockerhub-tag-link] |
+| balenalib/imx8m-var-dart-debian | [Docker Hub][aarch64-imx8m-var-dart-debian-dockerhub-link], [github][aarch64-imx8m-var-dart-debian-github-link] | latest, buster, stretch, jessie, sid |
+| balenalib/imx8m-var-dart-debian-node | [Docker Hub][aarch64-imx8m-var-dart-debian-node-dockerhub-link], [github][aarch64-imx8m-var-dart-debian-node-github-link] | For available image tags, refer [here][aarch64-imx8m-var-dart-debian-node-dockerhub-tag-link] |
+| balenalib/imx8m-var-dart-debian-python | [Docker Hub][aarch64-imx8m-var-dart-debian-python-dockerhub-link], [github][aarch64-imx8m-var-dart-debian-python-github-link] | For available image tags, refer [here][aarch64-imx8m-var-dart-debian-python-dockerhub-tag-link] |
+| balenalib/imx8m-var-dart-debian-golang | [Docker Hub][aarch64-imx8m-var-dart-debian-golang-dockerhub-link], [github][aarch64-imx8m-var-dart-debian-golang-github-link] | For available image tags, refer [here][aarch64-imx8m-var-dart-debian-golang-dockerhub-tag-link] |
+| balenalib/imx8m-var-dart-debian-openjdk | [Docker Hub][aarch64-imx8m-var-dart-debian-openjdk-dockerhub-link], [github][aarch64-imx8m-var-dart-debian-openjdk-github-link] | For available image tags, refer [here][aarch64-imx8m-var-dart-debian-openjdk-dockerhub-tag-link] |
+| balenalib/imx8m-var-dart-alpine | [Docker Hub][aarch64-imx8m-var-dart-alpine-dockerhub-link], [github][aarch64-imx8m-var-dart-alpine-github-link] | latest, 3.8, 3.7, 3.6, 3.5, edge |
+| balenalib/imx8m-var-dart-alpine-node | [Docker Hub][aarch64-imx8m-var-dart-alpine-node-dockerhub-link], [github][aarch64-imx8m-var-dart-alpine-node-github-link] | For available image tags, refer [here][aarch64-imx8m-var-dart-alpine-node-dockerhub-tag-link] |
+| balenalib/imx8m-var-dart-alpine-python | [Docker Hub][aarch64-imx8m-var-dart-alpine-python-dockerhub-link], [github][aarch64-imx8m-var-dart-alpine-python-github-link] | For available image tags, refer [here][aarch64-imx8m-var-dart-alpine-python-dockerhub-tag-link] |
+| balenalib/imx8m-var-dart-alpine-golang | [Docker Hub][aarch64-imx8m-var-dart-alpine-golang-dockerhub-link], [github][aarch64-imx8m-var-dart-alpine-golang-github-link] | For available image tags, refer [here][aarch64-imx8m-var-dart-alpine-golang-dockerhub-tag-link] |
+| balenalib/imx8m-var-dart-alpine-openjdk | [Docker Hub][aarch64-imx8m-var-dart-alpine-openjdk-dockerhub-link], [github][aarch64-imx8m-var-dart-alpine-openjdk-github-link] | For available image tags, refer [here][aarch64-imx8m-var-dart-alpine-openjdk-dockerhub-tag-link] |
+| balenalib/imx8m-var-dart-fedora | [Docker Hub][aarch64-imx8m-var-dart-fedora-node-dockerhub-link], [github][aarch64-imx8m-var-dart-fedora-node-github-link] | latest, 28, 26 |
+| balenalib/imx8m-var-dart-fedora-node | [Docker Hub][aarch64-imx8m-var-dart-fedora-node-dockerhub-link], [github][aarch64-imx8m-var-dart-fedora-node-github-link] | For available image tags, refer [here][aarch64-imx8m-var-dart-fedora-node-dockerhub-tag-link] |
+| balenalib/imx8m-var-dart-fedora-python | [Docker Hub][aarch64-imx8m-var-dart-fedora-python-dockerhub-link], [github][aarch64-imx8m-var-dart-fedora-python-github-link] | For available image tags, refer [here][aarch64-imx8m-var-dart-fedora-python-dockerhub-tag-link] |
+| balenalib/imx8m-var-dart-fedora-golang | [Docker Hub][aarch64-imx8m-var-dart-fedora-golang-dockerhub-link], [github][aarch64-imx8m-var-dart-fedora-golang-github-link] | For available image tags, refer [here][aarch64-imx8m-var-dart-fedora-golang-dockerhub-tag-link] |
+| balenalib/imx8m-var-dart-fedora-openjdk | [Docker Hub][aarch64-imx8m-var-dart-fedora-openjdk-dockerhub-link], [github][aarch64-imx8m-var-dart-fedora-openjdk-github-link] | For available image tags, refer [here][aarch64-imx8m-var-dart-fedora-openjdk-dockerhub-tag-link] |
+| balenalib/imx8m-var-dart-ubuntu | [Docker Hub][aarch64-imx8m-var-dart-ubuntu-dockerhub-link], [github][aarch64-imx8m-var-dart-ubuntu-github-link] | latest, trusty, xenial, artful, bionic, cosmic |
+| balenalib/imx8m-var-dart-ubuntu-node | [Docker Hub][aarch64-imx8m-var-dart-ubuntu-node-dockerhub-link], [github][aarch64-imx8m-var-dart-ubuntu-node-github-link] | For available image tags, refer [here][aarch64-imx8m-var-dart-ubuntu-node-dockerhub-tag-link] |
+| balenalib/imx8m-var-dart-ubuntu-python | [Docker Hub][aarch64-imx8m-var-dart-ubuntu-python-dockerhub-link], [github][aarch64-imx8m-var-dart-ubuntu-python-github-link] | For available image tags, refer [here][aarch64-imx8m-var-dart-ubuntu-python-dockerhub-tag-link] |
+| balenalib/imx8m-var-dart-ubuntu-golang | [Docker Hub][aarch64-imx8m-var-dart-ubuntu-golang-dockerhub-link], [github][aarch64-imx8m-var-dart-ubuntu-golang-github-link] | For available image tags, refer [here][aarch64-imx8m-var-dart-ubuntu-golang-dockerhub-tag-link] |
+| balenalib/imx8m-var-dart-ubuntu-openjdk | [Docker Hub][aarch64-imx8m-var-dart-ubuntu-openjdk-dockerhub-link], [github][aarch64-imx8m-var-dart-ubuntu-openjdk-github-link] | For available image tags, refer [here][aarch64-imx8m-var-dart-ubuntu-openjdk-dockerhub-tag-link] |
+
+
 ### armv5e
 
 
@@ -5063,4 +5125,151 @@
 [armv7hf-imx7-var-som-ubuntu-openjdk-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/imx7-var-som-ubuntu-openjdk/tags/manage/
 [armv7hf-imx7-var-som-ubuntu-openjdk-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/openjdk/imx7-var-som
 
+[aarch64-cl-som-imx8-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/device-base/cl-som-imx8
+[aarch64-cl-som-imx8-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8/
+[aarch64-cl-som-imx8-node-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-node/
+[aarch64-cl-som-imx8-node-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-node/tags/manage/
+[aarch64-cl-som-imx8-node-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/node/cl-som-imx8
+[aarch64-cl-som-imx8-python-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-python/
+[aarch64-cl-som-imx8-python-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-python/tags/manage/
+[aarch64-cl-som-imx8-python-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/python/cl-som-imx8
+[aarch64-cl-som-imx8-golang-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-golang/
+[aarch64-cl-som-imx8-golang-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-golang/tags/manage/
+[aarch64-cl-som-imx8-golang-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/golang/cl-som-imx8
+[aarch64-cl-som-imx8-openjdk-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-openjdk/
+[aarch64-cl-som-imx8-openjdk-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-openjdk/tags/manage/
+[aarch64-cl-som-imx8-openjdk-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/openjdk/cl-som-imx8
+[aarch64-cl-som-imx8-debian-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/device-base/cl-som-imx8
+[aarch64-cl-som-imx8-debian-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-debian/
+[aarch64-cl-som-imx8-debian-node-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-debian-node/
+[aarch64-cl-som-imx8-debian-node-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-debian-node/tags/manage/
+[aarch64-cl-som-imx8-debian-node-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/node/cl-som-imx8
+[aarch64-cl-som-imx8-debian-python-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-debian-python/
+[aarch64-cl-som-imx8-debian-python-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-debian-python/tags/manage/
+[aarch64-cl-som-imx8-debian-python-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/python/cl-som-imx8
+[aarch64-cl-som-imx8-debian-golang-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-debian-golang/
+[aarch64-cl-som-imx8-debian-golang-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-debian-golang/tags/manage/
+[aarch64-cl-som-imx8-debian-golang-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/golang/cl-som-imx8
+[aarch64-cl-som-imx8-debian-openjdk-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-debian-openjdk/
+[aarch64-cl-som-imx8-debian-openjdk-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-debian-openjdk/tags/manage/
+[aarch64-cl-som-imx8-debian-openjdk-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/openjdk/cl-som-imx8
 
+[aarch64-cl-som-imx8-alpine-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/device-base/cl-som-imx8
+[aarch64-cl-som-imx8-alpine-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-alpine/
+[aarch64-cl-som-imx8-alpine-node-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/node/cl-som-imx8
+[aarch64-cl-som-imx8-alpine-node-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-alpine-node/
+[aarch64-cl-som-imx8-alpine-node-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-alpine-node/tags/manage/
+[aarch64-cl-som-imx8-alpine-python-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/python/cl-som-imx8
+[aarch64-cl-som-imx8-alpine-python-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-alpine-python/
+[aarch64-cl-som-imx8-alpine-python-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-alpine-python/tags/manage/
+[aarch64-cl-som-imx8-alpine-golang-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-alpine-golang/
+[aarch64-cl-som-imx8-alpine-golang-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-alpine-golang/tags/manage/
+[aarch64-cl-som-imx8-alpine-golang-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/golang/cl-som-imx8
+[aarch64-cl-som-imx8-alpine-openjdk-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-alpine-openjdk/
+[aarch64-cl-som-imx8-alpine-openjdk-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-alpine-openjdk/tags/manage/
+[aarch64-cl-som-imx8-alpine-openjdk-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/openjdk/cl-som-imx8
+
+[aarch64-cl-som-imx8-fedora-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-fedora/
+[aarch64-cl-som-imx8-fedora-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/device-base/cl-som-imx8
+[aarch64-cl-som-imx8-fedora-node-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-fedora-node/
+[aarch64-cl-som-imx8-fedora-node-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-fedora-node/tags/manage/
+[aarch64-cl-som-imx8-fedora-node-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/node/cl-som-imx8
+[aarch64-cl-som-imx8-fedora-python-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-fedora-python/
+[aarch64-cl-som-imx8-fedora-python-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-fedora-python/tags/manage/
+[aarch64-cl-som-imx8-fedora-python-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/python/cl-som-imx8
+[aarch64-cl-som-imx8-fedora-golang-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-fedora-golang/
+[aarch64-cl-som-imx8-fedora-golang-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-fedora-golang/tags/manage/
+[aarch64-cl-som-imx8-fedora-golang-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/golang/cl-som-imx8
+[aarch64-cl-som-imx8-fedora-openjdk-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-fedora-openjdk/
+[aarch64-cl-som-imx8-fedora-openjdk-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-fedora-openjdk/tags/manage/
+[aarch64-cl-som-imx8-fedora-openjdk-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/openjdk/cl-som-imx8
+
+[aarch64-cl-som-imx8-ubuntu-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-ubuntu/
+[aarch64-cl-som-imx8-ubuntu-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/device-base/cl-som-imx8
+[aarch64-cl-som-imx8-ubuntu-node-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-ubuntu-node/
+[aarch64-cl-som-imx8-ubuntu-node-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-ubuntu-node/tags/manage/
+[aarch64-cl-som-imx8-ubuntu-node-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/node/cl-som-imx8
+[aarch64-cl-som-imx8-ubuntu-python-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-ubuntu-python/
+[aarch64-cl-som-imx8-ubuntu-python-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-ubuntu-python/tags/manage/
+[aarch64-cl-som-imx8-ubuntu-python-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/python/cl-som-imx8
+[aarch64-cl-som-imx8-ubuntu-golang-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-ubuntu-golang/
+[aarch64-cl-som-imx8-ubuntu-golang-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-ubuntu-golang/tags/manage/
+[aarch64-cl-som-imx8-ubuntu-golang-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/golang/cl-som-imx8
+[aarch64-cl-som-imx8-ubuntu-openjdk-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-ubuntu-openjdk/
+[aarch64-cl-som-imx8-ubuntu-openjdk-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/cl-som-imx8-ubuntu-openjdk/tags/manage/
+[aarch64-cl-som-imx8-ubuntu-openjdk-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/openjdk/cl-som-imx8
+
+
+[aarch64-imx8m-var-dart-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/device-base/imx8m-var-dart
+[aarch64-imx8m-var-dart-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart/
+[aarch64-imx8m-var-dart-node-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-node/
+[aarch64-imx8m-var-dart-node-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-node/tags/manage/
+[aarch64-imx8m-var-dart-node-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/node/imx8m-var-dart
+[aarch64-imx8m-var-dart-python-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-python/
+[aarch64-imx8m-var-dart-python-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-python/tags/manage/
+[aarch64-imx8m-var-dart-python-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/python/imx8m-var-dart
+[aarch64-imx8m-var-dart-golang-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-golang/
+[aarch64-imx8m-var-dart-golang-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-golang/tags/manage/
+[aarch64-imx8m-var-dart-golang-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/golang/imx8m-var-dart
+[aarch64-imx8m-var-dart-openjdk-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-openjdk/
+[aarch64-imx8m-var-dart-openjdk-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-openjdk/tags/manage/
+[aarch64-imx8m-var-dart-openjdk-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/openjdk/imx8m-var-dart
+[aarch64-imx8m-var-dart-debian-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/device-base/imx8m-var-dart
+[aarch64-imx8m-var-dart-debian-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-debian/
+[aarch64-imx8m-var-dart-debian-node-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-debian-node/
+[aarch64-imx8m-var-dart-debian-node-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-debian-node/tags/manage/
+[aarch64-imx8m-var-dart-debian-node-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/node/imx8m-var-dart
+[aarch64-imx8m-var-dart-debian-python-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-debian-python/
+[aarch64-imx8m-var-dart-debian-python-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-debian-python/tags/manage/
+[aarch64-imx8m-var-dart-debian-python-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/python/imx8m-var-dart
+[aarch64-imx8m-var-dart-debian-golang-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-debian-golang/
+[aarch64-imx8m-var-dart-debian-golang-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-debian-golang/tags/manage/
+[aarch64-imx8m-var-dart-debian-golang-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/golang/imx8m-var-dart
+[aarch64-imx8m-var-dart-debian-openjdk-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-debian-openjdk/
+[aarch64-imx8m-var-dart-debian-openjdk-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-debian-openjdk/tags/manage/
+[aarch64-imx8m-var-dart-debian-openjdk-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/openjdk/imx8m-var-dart
+
+[aarch64-imx8m-var-dart-alpine-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/device-base/imx8m-var-dart
+[aarch64-imx8m-var-dart-alpine-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-alpine/
+[aarch64-imx8m-var-dart-alpine-node-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/node/imx8m-var-dart
+[aarch64-imx8m-var-dart-alpine-node-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-alpine-node/
+[aarch64-imx8m-var-dart-alpine-node-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-alpine-node/tags/manage/
+[aarch64-imx8m-var-dart-alpine-python-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/python/imx8m-var-dart
+[aarch64-imx8m-var-dart-alpine-python-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-alpine-python/
+[aarch64-imx8m-var-dart-alpine-python-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-alpine-python/tags/manage/
+[aarch64-imx8m-var-dart-alpine-golang-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-alpine-golang/
+[aarch64-imx8m-var-dart-alpine-golang-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-alpine-golang/tags/manage/
+[aarch64-imx8m-var-dart-alpine-golang-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/golang/imx8m-var-dart
+[aarch64-imx8m-var-dart-alpine-openjdk-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-alpine-openjdk/
+[aarch64-imx8m-var-dart-alpine-openjdk-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-alpine-openjdk/tags/manage/
+[aarch64-imx8m-var-dart-alpine-openjdk-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/openjdk/imx8m-var-dart
+
+[aarch64-imx8m-var-dart-fedora-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-fedora/
+[aarch64-imx8m-var-dart-fedora-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/device-base/imx8m-var-dart
+[aarch64-imx8m-var-dart-fedora-node-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-fedora-node/
+[aarch64-imx8m-var-dart-fedora-node-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-fedora-node/tags/manage/
+[aarch64-imx8m-var-dart-fedora-node-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/node/imx8m-var-dart
+[aarch64-imx8m-var-dart-fedora-python-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-fedora-python/
+[aarch64-imx8m-var-dart-fedora-python-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-fedora-python/tags/manage/
+[aarch64-imx8m-var-dart-fedora-python-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/python/imx8m-var-dart
+[aarch64-imx8m-var-dart-fedora-golang-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-fedora-golang/
+[aarch64-imx8m-var-dart-fedora-golang-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-fedora-golang/tags/manage/
+[aarch64-imx8m-var-dart-fedora-golang-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/golang/imx8m-var-dart
+[aarch64-imx8m-var-dart-fedora-openjdk-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-fedora-openjdk/
+[aarch64-imx8m-var-dart-fedora-openjdk-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-fedora-openjdk/tags/manage/
+[aarch64-imx8m-var-dart-fedora-openjdk-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/openjdk/imx8m-var-dart
+
+[aarch64-imx8m-var-dart-ubuntu-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-ubuntu/
+[aarch64-imx8m-var-dart-ubuntu-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/device-base/imx8m-var-dart
+[aarch64-imx8m-var-dart-ubuntu-node-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-ubuntu-node/
+[aarch64-imx8m-var-dart-ubuntu-node-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-ubuntu-node/tags/manage/
+[aarch64-imx8m-var-dart-ubuntu-node-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/node/imx8m-var-dart
+[aarch64-imx8m-var-dart-ubuntu-python-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-ubuntu-python/
+[aarch64-imx8m-var-dart-ubuntu-python-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-ubuntu-python/tags/manage/
+[aarch64-imx8m-var-dart-ubuntu-python-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/python/imx8m-var-dart
+[aarch64-imx8m-var-dart-ubuntu-golang-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-ubuntu-golang/
+[aarch64-imx8m-var-dart-ubuntu-golang-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-ubuntu-golang/tags/manage/
+[aarch64-imx8m-var-dart-ubuntu-golang-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/golang/imx8m-var-dart
+[aarch64-imx8m-var-dart-ubuntu-openjdk-dockerhub-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-ubuntu-openjdk/
+[aarch64-imx8m-var-dart-ubuntu-openjdk-dockerhub-tag-link]:https://registry.hub.docker.com/u/balenalib/imx8m-var-dart-ubuntu-openjdk/tags/manage/
+[aarch64-imx8m-var-dart-ubuntu-openjdk-github-link]:{{ $links.githubMain }}-library/base-images/tree/master/balena-base-images/openjdk/imx8m-var-dart

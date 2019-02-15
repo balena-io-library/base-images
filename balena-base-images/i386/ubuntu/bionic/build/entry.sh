@@ -9,18 +9,19 @@ fi
 
 function mount_dev()
 {
-	mkdir -p /tmp
-	mount -t devtmpfs none /tmp
-	mkdir -p /tmp/shm
-	mount --move /dev/shm /tmp/shm
-	mkdir -p /tmp/mqueue
-	mount --move /dev/mqueue /tmp/mqueue
-	mkdir -p /tmp/pts
-	mount --move /dev/pts /tmp/pts
-	touch /tmp/console
-	mount --move /dev/console /tmp/console
+	tmp_dir='/tmp/tmpmount'
+	mkdir -p "$tmp_dir"
+	mount -t devtmpfs none "$tmp_dir"
+	mkdir -p "$tmp_dir/shm"
+	mount --move /dev/shm "$tmp_dir/shm"
+	mkdir -p "$tmp_dir/mqueue"
+	mount --move /dev/mqueue "$tmp_dir/mqueue"
+	mkdir -p "$tmp_dir/pts"
+	mount --move /dev/pts "$tmp_dir/pts"
+	touch "$tmp_dir/console"
+	mount --move /dev/console "$tmp_dir/console"
 	umount /dev || true
-	mount --move /tmp /dev
+	mount --move "$tmp_dir" /dev
 
 	# Since the devpts is mounted with -o newinstance by Docker, we need to make
 	# /dev/ptmx point to its ptmx.
