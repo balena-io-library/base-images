@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   netbase \
   curl \
   udev \
+  procps \
   $( \
       if apt-cache show 'iproute' 2>/dev/null | grep -q '^Version:'; then \
         echo 'iproute'; \
