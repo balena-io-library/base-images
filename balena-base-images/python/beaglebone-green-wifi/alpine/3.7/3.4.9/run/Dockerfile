@@ -9,7 +9,8 @@ RUN apk del python*
 ENV LANG C.UTF-8
 
 # install python dependencies
-RUN apk add --no-cache ca-certificates libffi libssl1.0
+RUN apk add --no-cache ca-certificates libffi \
+	&& apk add --no-cache libssl1.0 || apk add --no-cache libssl1.1
 
 # key 63C7CC90: public key "Simon McVittie <smcv@pseudorandom.co.uk>" imported
 # key 3372DCFA: public key "Donald Stufft (dstufft) <donald@stufft.io>" imported
