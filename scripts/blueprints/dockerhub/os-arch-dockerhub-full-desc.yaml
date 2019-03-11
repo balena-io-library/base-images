@@ -1,0 +1,29 @@
+selector:
+  sw.os: 1
+  arch.sw: 1
+output:
+  filename: "{{this.children.arch.sw.slug}}-{{this.children.sw.os.slug}}-full-description.md"
+  imageName: "{{this.children.arch.sw.slug}}-{{this.children.sw.os.slug}}"
+  slug: "{{this.children.arch.sw.slug}}-{{this.children.sw.os.slug}}:{{this.children.sw.os.version}}"
+  path: "docs/dockerhub"
+  requires:
+    - type: arch.sw
+      arch: "{{this.children.arch.sw.slug}}"
+  template:
+    - name: os-arch
+      data: >
+        <!--
+        THIS IS AUTO-GENERATED CONTENT. DO NOT MANUALLY EDIT.
+        -->
+
+
+        {{import partial="introduction" combination="balenalib/dockerhub"}}
+
+
+        {{import partial="variants" combination="balenalib/dockerhub"}}
+
+
+        {{import partial="dockerhub" combination="sw.os+arch.sw+balenalib"}}
+
+
+        {{import partial="footer" combination="balenalib/dockerhub"}}

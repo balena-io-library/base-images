@@ -1,0 +1,30 @@
+selector:
+  sw.os: 1
+  hw.device-type: 1
+  sw.stack: 1
+output:
+  filename: "{{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}-{{this.children.sw.stack.slug}}-full-description.md"
+  imageName: "{{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}-{{this.children.sw.stack.slug}}"
+  slug: "{{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}-{{this.children.sw.stack.slug}}:{{this.children.sw.stack.version}}-{{this.children.sw.os.version}}"
+  path: "docs/dockerhub"
+  requires:
+    - type: hw.device-type
+      arch: "{{this.children.hw.device-type.slug}}"
+  template:
+    - name: stack-device
+      data: >
+        <!--
+        THIS IS AUTO-GENERATED CONTENT. DO NOT MANUALLY EDIT.
+        -->
+
+
+        {{import partial="introduction" combination="balenalib/dockerhub"}}
+
+
+        {{import partial="variants" combination="balenalib/dockerhub"}}
+
+
+        {{import partial=this.sw.stack.slug combination="balenalib/dockerhub"}}
+
+
+        {{import partial="footer" combination="balenalib/dockerhub"}}

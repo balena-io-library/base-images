@@ -237,5 +237,4 @@ for (const type of blueprints) {
 
   console.log(`Generated ${result.length} results out of ${universe.getChildren().length} contracts`)
   console.log(`Adding generated ${result.length} contracts back to the universe`)
-  universe.addChildren(result)
 }

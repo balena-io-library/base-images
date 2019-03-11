@@ -24,10 +24,10 @@ const yaml = require('js-yaml')
 
 const DEST_DIR = path.join(__dirname, '../balena-base-images')
 const BLUEPRINT_PATHS = {
-  'os-arch': path.join(__dirname, 'blueprints/os-arch.yaml'),
-  'os-device': path.join(__dirname, 'blueprints/os-device.yaml'),
-  'stack-device': path.join(__dirname, 'blueprints/stack-device.yaml'),
-  'stack-arch': path.join(__dirname, 'blueprints/stack-arch.yaml')
+  'os-arch': path.join(__dirname, 'blueprints/dockerhub/os-arch-dockerhub-full-desc.yaml'),
+  'os-device': path.join(__dirname, 'blueprints/dockerhub/os-device-dockerhub-full-desc.yaml'),
+  'stack-arch': path.join(__dirname, 'blueprints/dockerhub/stack-arch-dockerhub-full-desc.yaml'),
+  'stack-device': path.join(__dirname, 'blueprints/dockerhub/stack-device-dockerhub-full-desc.yaml')
 }
 const CONTRACTS_PATH = path.join(__dirname, 'contracts/contracts')
 
@@ -71,7 +71,7 @@ if (types.length === 0) {
 let blueprints = types
 
 if (types.indexOf('all') > -1) {
-  // Generate dockerfile for all blueprints
+  // Use all blueprints
   blueprints = Object.keys(BLUEPRINT_PATHS)
 }
 
@@ -95,29 +95,14 @@ for (const type of blueprints) {
     const destination = path.join(
       DEST_DIR,
       json.path,
-      query.output.filename
+      json.filename
     )
 
-    console.log(`Generating ${json.imageName}`)
-    fs.outputFileSync(destination, contrato.buildTemplate(template, context, {
-      directory: CONTRACTS_PATH
-    }))
-
-    if (json.children.sw.blob) {
-      // Check and copy local blobs to target directory.
-      for (const blob of _.values(json.children.sw.blob)) {
-        if (blob.assets.bin.url.indexOf('file://') > -1) {
-          try {
-            const src = path.join(__dirname, blob.assets.bin.url.replace('file://', ''))
-            fs.copySync(src, path.join(path.dirname(destination), blob.assets.bin.main))
-          } catch (err) {
-            throw new Error('Error when copying ' + blob.assets.bin.name + ' to ' + path.dirname(destination))
-          }
-        }
-      }
+    if (!fs.pathExistsSync(destination)) {
+      console.log(`Generating ${json.imageName}`)
+      fs.outputFileSync(destination, contrato.buildTemplate(template, context, {
+        directory: CONTRACTS_PATH
+      }))
     }
   }
-
-  console.log(`Generated ${result.length} results out of ${universe.getChildren().length} contracts`)
-  console.log(`Adding generated ${result.length} contracts back to the universe`)
 }
