@@ -1,7 +1,8 @@
 FROM debian:jessie-slim
 LABEL io.balena.architecture="amd64"
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN sed -i '/jessie-updates/{s/^/#/}' /etc/apt/sources.list \
+  && apt-get update && apt-get install -y --no-install-recommends \
   sudo \
   ca-certificates \
   findutils \
