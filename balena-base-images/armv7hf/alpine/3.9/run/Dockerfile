@@ -1,4 +1,4 @@
-FROM arm32v6/alpine:3.9
+FROM arm32v7/alpine:3.9
 LABEL io.balena.architecture="armv7hf"
  
 LABEL io.balena.qemu.version="3.0.0+resin-arm"

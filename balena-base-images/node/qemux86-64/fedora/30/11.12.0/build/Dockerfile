@@ -12,7 +12,7 @@ RUN for key in \
 		gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key" ; \
 	done \
 	&& curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.gz" \
-	&& echo "c84fe17ceb999ecd5d0a1ad5b70b502779a22e433f96e0b6a0ddf6d99f954975  node-v$NODE_VERSION-linux-x64.tar.gz" | sha256sum -c - \
+	&& echo "58be8912097b93098bbbc3c1b536b2f9e70efdca64d63d7e4cdb4dbd40b3e751  node-v$NODE_VERSION-linux-x64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-x64.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-x64.tar.gz" \
 	&& curl -fSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz" \

@@ -15,10 +15,10 @@ RUN for key in \
 		gpg --keyserver keyserver.pgp.com --recv-keys "$key" || \
 		gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key" ; \
 	done \
-	&& curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-alpine-armhf.tar.gz" \
-	&& echo "6dcfc13c58372727f98fcb3aed2eb1652c9fd5acd740a7fcb4e7eb382cadea54  node-v$NODE_VERSION-linux-alpine-armhf.tar.gz" | sha256sum -c - \
-	&& tar -xzf "node-v$NODE_VERSION-linux-alpine-armhf.tar.gz" -C /usr/local --strip-components=1 \
-	&& rm "node-v$NODE_VERSION-linux-alpine-armhf.tar.gz" \
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-alpine-armv7hf.tar.gz" \
+	&& echo "464e87c7f69329022fa0d53b7e9736d8456c25f262c5656cc826c470062982fc  node-v$NODE_VERSION-linux-alpine-armv7hf.tar.gz" | sha256sum -c - \
+	&& tar -xzf "node-v$NODE_VERSION-linux-alpine-armv7hf.tar.gz" -C /usr/local --strip-components=1 \
+	&& rm "node-v$NODE_VERSION-linux-alpine-armv7hf.tar.gz" \
 	&& curl -fSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz" \
 	&& curl -fSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz.asc" \
 	&& gpg --batch --verify yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz \

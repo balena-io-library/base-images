@@ -18,10 +18,10 @@ RUN buildDeps='curl' \
 		gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key" ; \
 	done \
 	&& apk add --no-cache $buildDeps \
-	&& curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-alpine-armhf.tar.gz" \
-	&& echo "fdf1e4b211e7af9dae023fe71ea7630a309192d3d948e645505db32e37082970  node-v$NODE_VERSION-linux-alpine-armhf.tar.gz" | sha256sum -c - \
-	&& tar -xzf "node-v$NODE_VERSION-linux-alpine-armhf.tar.gz" -C /usr/local --strip-components=1 \
-	&& rm "node-v$NODE_VERSION-linux-alpine-armhf.tar.gz" \
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-alpine-armv7hf.tar.gz" \
+	&& echo "00ebc56f7843e5381bd57e4d1206fd9045210e67940df52518597302924ec8c1  node-v$NODE_VERSION-linux-alpine-armv7hf.tar.gz" | sha256sum -c - \
+	&& tar -xzf "node-v$NODE_VERSION-linux-alpine-armv7hf.tar.gz" -C /usr/local --strip-components=1 \
+	&& rm "node-v$NODE_VERSION-linux-alpine-armv7hf.tar.gz" \
 	&& curl -fSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz" \
 	&& curl -fSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz.asc" \
 	&& gpg --batch --verify yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz \
