@@ -9,10 +9,10 @@ ENV GO_VERSION 1.11.6
 RUN [ ! -e /etc/nsswitch.conf ] && echo 'hosts: files dns' > /etc/nsswitch.conf
 
 RUN mkdir -p /usr/local/go \
-	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-armhf.tar.gz" \
-	&& echo "9e6ad163b3f4cdba5667d15ebeffe8a87fb7a78ba6c8c11d3c4b695281554ad7  go$GO_VERSION.linux-alpine-armhf.tar.gz" | sha256sum -c - \
-	&& tar -xzf "go$GO_VERSION.linux-alpine-armhf.tar.gz" -C /usr/local/go --strip-components=1 \
-	&& rm -f go$GO_VERSION.linux-alpine-armhf.tar.gz
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-armv7hf.tar.gz" \
+	&& echo "f9289f40d20acc554c6fbee7602840a6cdde91d9468766ff3c522b4425fc2aab  go$GO_VERSION.linux-alpine-armv7hf.tar.gz" | sha256sum -c - \
+	&& tar -xzf "go$GO_VERSION.linux-alpine-armv7hf.tar.gz" -C /usr/local/go --strip-components=1 \
+	&& rm -f go$GO_VERSION.linux-alpine-armv7hf.tar.gz
 
 ENV GOROOT /usr/local/go
 ENV GOPATH /go

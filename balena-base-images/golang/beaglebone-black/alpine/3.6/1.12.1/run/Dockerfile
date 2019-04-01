@@ -15,10 +15,10 @@ RUN fetchDeps='curl' \
 	&& set -x \
 	&& apk add --no-cache $fetchDeps \
 	&& mkdir -p /usr/local/go \
-	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-armhf.tar.gz" \
-	&& echo "39c2d4396c460658ece9bcddfee7cc965b1468484d17f9d1d35969ad960ec81b  go$GO_VERSION.linux-alpine-armhf.tar.gz" | sha256sum -c - \
-	&& tar -xzf "go$GO_VERSION.linux-alpine-armhf.tar.gz" -C /usr/local/go --strip-components=1 \
-	&& rm -f go$GO_VERSION.linux-alpine-armhf.tar.gz \
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-armv7hf.tar.gz" \
+	&& echo "5e8e5ca254e626fcdc79b4392d8f477f15a3054aea71f58fcd9a634d2475d164  go$GO_VERSION.linux-alpine-armv7hf.tar.gz" | sha256sum -c - \
+	&& tar -xzf "go$GO_VERSION.linux-alpine-armv7hf.tar.gz" -C /usr/local/go --strip-components=1 \
+	&& rm -f go$GO_VERSION.linux-alpine-armv7hf.tar.gz \
 	&& apk del $fetchDeps
 
 ENV GOROOT /usr/local/go
