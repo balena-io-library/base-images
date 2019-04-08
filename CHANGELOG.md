@@ -4,11 +4,68 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## 2019-01-04
+
+### Changed
+
+`Contracts v1.1.29`
+- node: Add node v11.12.0.
+- go: Add v1.12.1 and v1.11.6.
+- alpine: Change Alpine Linux v3.9 and edge from arm32v6 to arm32v7.
+- alpine: Add support for armv7hf stack base images.
+
+
+## 2019-25-03
+
+### Changed
+
+`Contracts v1.1.26`
+- node: Add v11.10.1 v10.15.3 v8.15.1 and v6.17.0.
+- go: Add v1.12.
+- Add contract for Aetina N510 TX2.
+- Add contract for Nitrogen 6X Quad 2GB.
+- Add contract for NPE X500 M3.
+
+
+## 2019-01-03
+
+### Changed
+
+`Contracts v1.1.23`
+- device: Add contract for Raspberry Pi 3 64bits.
+- golang: Add v1.11.5 and v1.10.8 to Golang contract.
+- node: Add v11.10.0 to Node contract.
+- device: Add support for Orange Pi One.
+- openjdk: Update Fedora openjdk images.
+- fedora: Add suppor for Fedora 29 and 30.
+- alpineLinux: Install libssl1.1 on latest Alpine Linux.
+- newDevice: Add contract for Orange Pi Zero.
+
+
+## 2019-16-02
+
+### Changed
+
+`Contracts v1.1.20`
+- Add support for Alpine Linux 3.9.
+- Update pip to v19.01 and setuptools to v40.6.3.
+- Add ui component to rpi family base images sources list.
+- Add node v11.9.0 and v10.15.1.
+- Add procps package to default package list for Debian base images.
+
+
+## 2019-15-02
+
+### Changed
+
+- entryscript: Use clean tmp mount when mounting /dev as devtmpfs.
+
+
 ## 2019-27-01
 
 ### Changed
 
-`Contracts v1.1.7`
+`Contracts v1.1.17`
 - Add node v11.6.0 v10.15.0 v8.15.0 and v6.16.0.
 - Update checksum for Python v2.7.15.
 
@@ -17,7 +74,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 
-`Contracts v1.1.6`
+`Contracts v1.1.16`
 - Add support for new devices: cl-som-imx8, imx8m-var-dart.
 - Add new Python versions: v3.7.2 and v3.6.8.
 - Fix mraa build build dependencies and update to v2.0.0.
