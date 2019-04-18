@@ -18,14 +18,17 @@
     "stack-arch": "node scripts/generate-dockerfiles.js stack-arch",
     "stack-device-lib": "node --max-old-space-size=16000 scripts/generate-stackbrew-library.js stack-device",
     "stack-arch-lib": "node scripts/generate-stackbrew-library.js stack-arch",
+    "stack-device-dockerhub": "node --max-old-space-size=16000 scripts/generate-dockerhub-description.js stack-device",
+    "stack-arch-dockerhub": "node --max-old-space-size=16000 scripts/generate-dockerhub-description.js stack-arch",
     "all": "node --max-old-space-size=16000 scripts/generate-dockerfiles.js all",
-    "all-lib": "node --max-old-space-size=16000 scripts/generate-stackbrew-library.js all"
+    "all-lib": "node --max-old-space-size=16000 scripts/generate-stackbrew-library.js all",
+    "all-dockerhub": "node --max-old-space-size=16000 scripts/generate-dockerhub-description.js all"
   },
   "author": "Resin Inc. <hello@resin.io>",
   "license": "Apache-2.0",
   "dependencies": {
-    "fs-extra": "^0.30.0",
     "@balena/contrato": "^0.0.7",
+    "fs-extra": "^7.0.1",
     "js-combinatorics": "^0.5.3",
     "js-yaml": "^3.11.0",
     "lodash": "^4.17.4",

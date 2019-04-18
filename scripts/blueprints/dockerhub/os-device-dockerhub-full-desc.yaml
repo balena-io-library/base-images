@@ -1,0 +1,29 @@
+selector:
+  sw.os: 1
+  hw.device-type: 1
+output:
+  filename: "{{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}-full-description.md"
+  imageName: "{{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}"
+  slug: "{{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}:{{this.children.sw.os.version}}"
+  path: "docs/dockerhub"
+  requires:
+    - type: hw.device-type
+      arch: "{{this.children.hw.device-type.slug}}"
+  template:
+    - name: os-device
+      data: >
+        <!--
+        THIS IS AUTO-GENERATED CONTENT. DO NOT MANUALLY EDIT.
+        -->
+
+
+        {{import partial="introduction" combination="balenalib/dockerhub"}}
+
+
+        {{import partial="variants" combination="balenalib/dockerhub"}}
+
+
+        {{import partial="dockerhub" combination="sw.os+hw.device-type+balenalib"}}
+
+
+        {{import partial="footer" combination="balenalib/dockerhub"}}
