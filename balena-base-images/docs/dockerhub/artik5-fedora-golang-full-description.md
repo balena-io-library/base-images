@@ -40,7 +40,7 @@ Go (a.k.a., Golang) is a programming language first developed at Google. It is a
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;1.12.1 (latest)&#x60;, &#x60;1.11.6&#x60;, &#x60;1.10.8&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/golang/artik5/fedora/)
+[&#x60;1.12.4 (latest)&#x60;, &#x60;1.11.9&#x60;, &#x60;1.10.8&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/golang/artik5/fedora/)
 
 For more information about this image and its history, please see the [relevant manifest file (`artik5-fedora-golang`)](https://github.com/balena-io-library/official-images/blob/master/library/artik5-fedora-golang) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 
