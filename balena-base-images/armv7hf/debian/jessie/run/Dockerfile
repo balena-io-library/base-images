@@ -1,7 +1,7 @@
 FROM arm32v7/debian:jessie-slim
 LABEL io.balena.architecture="armv7hf"
  
-LABEL io.balena.qemu.version="3.0.0+resin-arm"
+LABEL io.balena.qemu.version="4.0.0+balena-arm"
 COPY qemu-arm-static /usr/bin 
 
 RUN sed -i '/jessie-updates/{s/^/#/}' /etc/apt/sources.list \

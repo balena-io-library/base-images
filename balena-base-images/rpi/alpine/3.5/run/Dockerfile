@@ -1,7 +1,7 @@
 FROM arm32v6/alpine:3.5
 LABEL io.balena.architecture="rpi"
  
-LABEL io.balena.qemu.version="3.0.0+resin-arm"
+LABEL io.balena.qemu.version="4.0.0+balena-arm"
 COPY qemu-arm-static /usr/bin 
 
 RUN apk add --no-cache \
