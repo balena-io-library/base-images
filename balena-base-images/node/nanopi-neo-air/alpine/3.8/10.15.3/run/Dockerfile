@@ -2,7 +2,7 @@
 FROM balenalib/nanopi-neo-air-alpine:3.8-run
 
 ENV NODE_VERSION 10.15.3
-ENV YARN_VERSION 1.12.3
+ENV YARN_VERSION 1.15.2
 
 # Install dependencies
 RUN apk add --no-cache libgcc libstdc++ libuv \

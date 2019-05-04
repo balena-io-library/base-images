@@ -2,7 +2,7 @@
 FROM balenalib/artik10-debian:buster-run
 
 ENV NODE_VERSION 9.11.2
-ENV YARN_VERSION 1.12.3
+ENV YARN_VERSION 1.15.2
 
 RUN buildDeps='curl' \
 	&& set -x \

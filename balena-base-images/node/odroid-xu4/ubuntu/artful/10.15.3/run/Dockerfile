@@ -2,7 +2,7 @@
 FROM balenalib/odroid-xu4-ubuntu:artful-run
 
 ENV NODE_VERSION 10.15.3
-ENV YARN_VERSION 1.12.3
+ENV YARN_VERSION 1.15.2
 
 RUN buildDeps='curl' \
 	&& set -x \

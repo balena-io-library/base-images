@@ -2,7 +2,7 @@
 FROM balenalib/qemux86-alpine:3.5-build
 
 ENV NODE_VERSION 8.11.1
-ENV YARN_VERSION 1.12.3
+ENV YARN_VERSION 1.15.2
 
 # Install dependencies
 RUN apk add --no-cache libgcc libstdc++ libuv \

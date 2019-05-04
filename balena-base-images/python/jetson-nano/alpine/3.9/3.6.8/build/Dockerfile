@@ -21,9 +21,9 @@ ENV SSL_CERT_FILE /etc/ssl/certs/ca-certificates.crt
 ENV PYTHON_VERSION 3.6.8
 
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
-ENV PYTHON_PIP_VERSION 19.0.1
+ENV PYTHON_PIP_VERSION 19.1
 
-ENV SETUPTOOLS_VERSION 40.6.3
+ENV SETUPTOOLS_VERSION 41.0.1
 
 RUN set -x \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-alpine-aarch64.tar.gz" \

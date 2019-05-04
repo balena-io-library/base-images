@@ -2,7 +2,7 @@
 FROM balenalib/n510-tx2-alpine:3.6-build
 
 ENV NODE_VERSION 10.15.3
-ENV YARN_VERSION 1.12.3
+ENV YARN_VERSION 1.15.2
 
 # Install dependencies
 RUN apk add --no-cache libgcc libstdc++ libuv \
