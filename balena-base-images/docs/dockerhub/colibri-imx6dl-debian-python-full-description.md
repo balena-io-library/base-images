@@ -40,7 +40,7 @@ Python is an interpreted, interactive, object-oriented, open-source programming 
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;2.7.15 (latest)&#x60;, &#x60;3.7.2&#x60;, &#x60;3.6.8&#x60;, &#x60;3.5.6&#x60;, &#x60;3.4.9&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/python/colibri-imx6dl/debian/)
+[&#x60;2.7.16 (latest)&#x60;, &#x60;3.7.3&#x60;, &#x60;3.6.8&#x60;, &#x60;3.5.7&#x60;, &#x60;3.4.10&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/python/colibri-imx6dl/debian/)
 
 For more information about this image and its history, please see the [relevant manifest file (`colibri-imx6dl-debian-python`)](https://github.com/balena-io-library/official-images/blob/master/library/colibri-imx6dl-debian-python) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 
