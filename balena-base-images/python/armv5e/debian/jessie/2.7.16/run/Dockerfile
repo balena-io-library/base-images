@@ -33,7 +33,7 @@ RUN set -x \
 	' \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends && rm -rf /var/lib/apt/lists/* \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-armel-openssl1.0.tar.gz" \
-	&& echo "3120f09c8a1f7d3f9c7421e077f825410fb06c425ca84271476686d9da1d6593  Python-$PYTHON_VERSION.linux-armel-openssl1.0.tar.gz" | sha256sum -c - \
+	&& echo "e01f67f27b66d73d5761e91e5097a222186c3554791bd008c7b5837e53184606  Python-$PYTHON_VERSION.linux-armel-openssl1.0.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-armel-openssl1.0.tar.gz" --strip-components=1 \
 	&& rm -rf "Python-$PYTHON_VERSION.linux-armel-openssl1.0.tar.gz" \
 	&& ldconfig \
@@ -52,16 +52,10 @@ RUN set -x \
 	&& apt-get purge -y --auto-remove $buildDeps \
 	&& rm -rf /usr/src/python ~/.cache
 
-# make some useful symlinks that are expected to exist
-RUN cd /usr/local/bin \
-	&& ln -sf pip3 pip \
-	&& { [ -e easy_install ] || ln -s easy_install-* easy_install; } \
-	&& ln -sf idle3 idle \
-	&& ln -sf pydoc3 pydoc \
-	&& ln -sf python3 python \
-	&& ln -sf python3-config python-config
+# https://github.com/docker-library/python/issues/147
+ENV PYTHONIOENCODING UTF-8
 
 # set PYTHONPATH to point to dist-packages
-ENV PYTHONPATH /usr/lib/python3/dist-packages:$PYTHONPATH
+ENV PYTHONPATH /usr/lib/python2.7/dist-packages:/usr/lib/python2.7/site-packages:$PYTHONPATH
 
 CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command could be found in Dockerfile Guide section in our Docs. Here's the link: https://balena.io/docs"]

@@ -23,7 +23,7 @@ ENV SETUPTOOLS_VERSION 41.0.1
 
 RUN set -x \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-armv6hf-openssl1.0.tar.gz" \
-	&& echo "9721e729e207cec8593edf9983a5146c4395b6f012b75079c02e9e96e7ab8ce5  Python-$PYTHON_VERSION.linux-armv6hf-openssl1.0.tar.gz" | sha256sum -c - \
+	&& echo "a95dc0dda30ab714d3c27ef94967e6f24b3c5e96af0d56ef17ebdeacebe2001b  Python-$PYTHON_VERSION.linux-armv6hf-openssl1.0.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-armv6hf-openssl1.0.tar.gz" --strip-components=1 \
 	&& rm -rf "Python-$PYTHON_VERSION.linux-armv6hf-openssl1.0.tar.gz" \
 	&& ldconfig \

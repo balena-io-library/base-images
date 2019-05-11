@@ -33,7 +33,7 @@ RUN set -x \
 	' \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends && rm -rf /var/lib/apt/lists/* \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-armv7hf-openssl1.0.tar.gz" \
-	&& echo "3e08de28ce0644ae630c143baed1f800459ab1d012b8a353170f0ac903b6675c  Python-$PYTHON_VERSION.linux-armv7hf-openssl1.0.tar.gz" | sha256sum -c - \
+	&& echo "9cfd34f1713c72ea8dfe966b86ad6de5a78d8239aea052161b5370ac244a94b9  Python-$PYTHON_VERSION.linux-armv7hf-openssl1.0.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-armv7hf-openssl1.0.tar.gz" --strip-components=1 \
 	&& rm -rf "Python-$PYTHON_VERSION.linux-armv7hf-openssl1.0.tar.gz" \
 	&& ldconfig \

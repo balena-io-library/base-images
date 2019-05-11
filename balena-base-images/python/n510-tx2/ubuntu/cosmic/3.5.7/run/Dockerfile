@@ -33,7 +33,7 @@ RUN set -x \
 	' \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends && rm -rf /var/lib/apt/lists/* \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-aarch64-openssl1.1.tar.gz" \
-	&& echo "b7ed707fdf8351ad8230455791ca49b436e2cdeecd7244a37296ecb1516b9fa4  Python-$PYTHON_VERSION.linux-aarch64-openssl1.1.tar.gz" | sha256sum -c - \
+	&& echo "f9c29592c6a13751e55a12abd8bb8fb2396ba3896176f69b7279ef2ea6f3c639  Python-$PYTHON_VERSION.linux-aarch64-openssl1.1.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-aarch64-openssl1.1.tar.gz" --strip-components=1 \
 	&& rm -rf "Python-$PYTHON_VERSION.linux-aarch64-openssl1.1.tar.gz" \
 	&& ldconfig \

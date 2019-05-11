@@ -26,10 +26,10 @@ ENV PYTHON_PIP_VERSION 19.1
 ENV SETUPTOOLS_VERSION 41.0.1
 
 RUN set -x \
-	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-alpine-armv6hf.tar.gz" \
-	&& echo "7e213fb22bdd00462026ce529d5080e75879b69842b37df85dcf9ccd562be09f  Python-$PYTHON_VERSION.linux-alpine-armv6hf.tar.gz" | sha256sum -c - \
-	&& tar -xzf "Python-$PYTHON_VERSION.linux-alpine-armv6hf.tar.gz" --strip-components=1 \
-	&& rm -rf "Python-$PYTHON_VERSION.linux-alpine-armv6hf.tar.gz" \
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-alpine-armv6hf-openssl1.1.tar.gz" \
+	&& echo "6d54ed60bd18d4c74278d7c044d6ead9c6f41035b168a56b33383a0f5cdaca14  Python-$PYTHON_VERSION.linux-alpine-armv6hf-openssl1.1.tar.gz" | sha256sum -c - \
+	&& tar -xzf "Python-$PYTHON_VERSION.linux-alpine-armv6hf-openssl1.1.tar.gz" --strip-components=1 \
+	&& rm -rf "Python-$PYTHON_VERSION.linux-alpine-armv6hf-openssl1.1.tar.gz" \
 	&& if [ ! -e /usr/local/bin/pip3 ]; then : \
 		&& curl -SLO "https://raw.githubusercontent.com/pypa/get-pip/430ba37776ae2ad89f794c7a43b90dc23bac334c/get-pip.py" \
 		&& echo "19dae841a150c86e2a09d475b5eb0602861f2a5b7761ec268049a662dbd2bd0c  get-pip.py" | sha256sum -c - \

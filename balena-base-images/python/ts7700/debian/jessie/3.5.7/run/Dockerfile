@@ -33,7 +33,7 @@ RUN set -x \
 	' \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends && rm -rf /var/lib/apt/lists/* \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-armel-openssl1.0.tar.gz" \
-	&& echo "b094b42f8069e93a7b46f0b61cf428f00af590c64b4a860395d1f38486b2b622  Python-$PYTHON_VERSION.linux-armel-openssl1.0.tar.gz" | sha256sum -c - \
+	&& echo "39ab4bcf8b317070738b6635549eeba0eb19e249e780b55de1190dcc2cd33893  Python-$PYTHON_VERSION.linux-armel-openssl1.0.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-armel-openssl1.0.tar.gz" --strip-components=1 \
 	&& rm -rf "Python-$PYTHON_VERSION.linux-armel-openssl1.0.tar.gz" \
 	&& ldconfig \

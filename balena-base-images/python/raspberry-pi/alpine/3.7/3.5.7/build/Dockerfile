@@ -27,7 +27,7 @@ ENV SETUPTOOLS_VERSION 41.0.1
 
 RUN set -x \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-alpine-armv6hf.tar.gz" \
-	&& echo "bf80d615aa3ae7399367b532fe061741645878aeb73c7c87e2ff99f2b7cdacdf  Python-$PYTHON_VERSION.linux-alpine-armv6hf.tar.gz" | sha256sum -c - \
+	&& echo "4d7fd4a98a5eeb865d52f2041631710935b775f75d872a152a383d6aa1533dad  Python-$PYTHON_VERSION.linux-alpine-armv6hf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-alpine-armv6hf.tar.gz" --strip-components=1 \
 	&& rm -rf "Python-$PYTHON_VERSION.linux-alpine-armv6hf.tar.gz" \
 	&& if [ ! -e /usr/local/bin/pip3 ]; then : \

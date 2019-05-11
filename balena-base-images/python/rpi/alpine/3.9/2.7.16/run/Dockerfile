@@ -35,10 +35,10 @@ RUN set -x \
 		gnupg \
 	' \
 	&& apk add --no-cache --virtual .build-deps $buildDeps \
-	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-alpine-armv6hf.tar.gz" \
-	&& echo "a1b8a1fa901a50de7c621940219fd617da49731a49ae39a2be676431ec1860f7  Python-$PYTHON_VERSION.linux-alpine-armv6hf.tar.gz" | sha256sum -c - \
-	&& tar -xzf "Python-$PYTHON_VERSION.linux-alpine-armv6hf.tar.gz" --strip-components=1 \
-	&& rm -rf "Python-$PYTHON_VERSION.linux-alpine-armv6hf.tar.gz" \
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-alpine-armv6hf-openssl1.1.tar.gz" \
+	&& echo "22152851b46a132b9f64465cf7e4cb320c3b7d035de38e8c4f12f8240b92ff70  Python-$PYTHON_VERSION.linux-alpine-armv6hf-openssl1.1.tar.gz" | sha256sum -c - \
+	&& tar -xzf "Python-$PYTHON_VERSION.linux-alpine-armv6hf-openssl1.1.tar.gz" --strip-components=1 \
+	&& rm -rf "Python-$PYTHON_VERSION.linux-alpine-armv6hf-openssl1.1.tar.gz" \
 	&& if [ ! -e /usr/local/bin/pip ]; then : \
 		&& curl -SLO "https://raw.githubusercontent.com/pypa/get-pip/430ba37776ae2ad89f794c7a43b90dc23bac334c/get-pip.py" \
 		&& echo "19dae841a150c86e2a09d475b5eb0602861f2a5b7761ec268049a662dbd2bd0c  get-pip.py" | sha256sum -c - \
@@ -54,13 +54,10 @@ RUN set -x \
 	&& apk del .build-deps \
 	&& rm -rf /usr/src/python ~/.cache
 
-# make some useful symlinks that are expected to exist
-RUN cd /usr/local/bin \
-	&& ln -sf pip3 pip \
-	&& { [ -e easy_install ] || ln -s easy_install-* easy_install; } \
-	&& ln -sf idle3 idle \
-	&& ln -sf pydoc3 pydoc \
-	&& ln -sf python3 python \
-	&& ln -sf python3-config python-config
+# https://github.com/docker-library/python/issues/147
+ENV PYTHONIOENCODING UTF-8
+
+# set PYTHONPATH to point to dist-packages
+ENV PYTHONPATH /usr/lib/python2.7/site-packages:$PYTHONPATH
 
 CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command could be found in Dockerfile Guide section in our Docs. Here's the link: https://balena.io/docs"]

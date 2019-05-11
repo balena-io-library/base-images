@@ -36,7 +36,7 @@ RUN set -x \
 	' \
 	&& apk add --no-cache --virtual .build-deps $buildDeps \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-alpine-aarch64.tar.gz" \
-	&& echo "ed950a8f67f18583a0866b5fbd515b265586031588e22a9b4f1392d6514ec14f  Python-$PYTHON_VERSION.linux-alpine-aarch64.tar.gz" | sha256sum -c - \
+	&& echo "7e670b1c08a136b27a62fa6433c36d964e0aa21ebd6e055beaf0538b8b92b097  Python-$PYTHON_VERSION.linux-alpine-aarch64.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-alpine-aarch64.tar.gz" --strip-components=1 \
 	&& rm -rf "Python-$PYTHON_VERSION.linux-alpine-aarch64.tar.gz" \
 	&& if [ ! -e /usr/local/bin/pip ]; then : \
@@ -54,13 +54,10 @@ RUN set -x \
 	&& apk del .build-deps \
 	&& rm -rf /usr/src/python ~/.cache
 
-# make some useful symlinks that are expected to exist
-RUN cd /usr/local/bin \
-	&& ln -sf pip3 pip \
-	&& { [ -e easy_install ] || ln -s easy_install-* easy_install; } \
-	&& ln -sf idle3 idle \
-	&& ln -sf pydoc3 pydoc \
-	&& ln -sf python3 python \
-	&& ln -sf python3-config python-config
+# https://github.com/docker-library/python/issues/147
+ENV PYTHONIOENCODING UTF-8
+
+# set PYTHONPATH to point to dist-packages
+ENV PYTHONPATH /usr/lib/python2.7/site-packages:$PYTHONPATH
 
 CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command could be found in Dockerfile Guide section in our Docs. Here's the link: https://balena.io/docs"]

@@ -26,10 +26,10 @@ ENV PYTHON_PIP_VERSION 19.1
 ENV SETUPTOOLS_VERSION 41.0.1
 
 RUN set -x \
-	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-alpine-aarch64.tar.gz" \
-	&& echo "ed950a8f67f18583a0866b5fbd515b265586031588e22a9b4f1392d6514ec14f  Python-$PYTHON_VERSION.linux-alpine-aarch64.tar.gz" | sha256sum -c - \
-	&& tar -xzf "Python-$PYTHON_VERSION.linux-alpine-aarch64.tar.gz" --strip-components=1 \
-	&& rm -rf "Python-$PYTHON_VERSION.linux-alpine-aarch64.tar.gz" \
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-alpine-aarch64-openssl1.1.tar.gz" \
+	&& echo "cd170fc5e518ea96f02a08b9e043aa340b948a6ce5053c6ee5c3a30c1137d3b9  Python-$PYTHON_VERSION.linux-alpine-aarch64-openssl1.1.tar.gz" | sha256sum -c - \
+	&& tar -xzf "Python-$PYTHON_VERSION.linux-alpine-aarch64-openssl1.1.tar.gz" --strip-components=1 \
+	&& rm -rf "Python-$PYTHON_VERSION.linux-alpine-aarch64-openssl1.1.tar.gz" \
 	&& if [ ! -e /usr/local/bin/pip ]; then : \
 		&& curl -SLO "https://raw.githubusercontent.com/pypa/get-pip/430ba37776ae2ad89f794c7a43b90dc23bac334c/get-pip.py" \
 		&& echo "19dae841a150c86e2a09d475b5eb0602861f2a5b7761ec268049a662dbd2bd0c  get-pip.py" | sha256sum -c - \
@@ -69,13 +69,10 @@ RUN set -x \
 	&& cd / \
 	&& rm -rf /usr/src/dbus-python
 
-# make some useful symlinks that are expected to exist
-RUN cd /usr/local/bin \
-	&& ln -sf pip3 pip \
-	&& { [ -e easy_install ] || ln -s easy_install-* easy_install; } \
-	&& ln -sf idle3 idle \
-	&& ln -sf pydoc3 pydoc \
-	&& ln -sf python3 python \
-	&& ln -sf python3-config python-config
+# https://github.com/docker-library/python/issues/147
+ENV PYTHONIOENCODING UTF-8
+
+# set PYTHONPATH to point to dist-packages
+ENV PYTHONPATH /usr/lib/python2.7/site-packages:$PYTHONPATH
 
 CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command could be found in Dockerfile Guide section in our Docs. Here's the link: https://balena.io/docs"]

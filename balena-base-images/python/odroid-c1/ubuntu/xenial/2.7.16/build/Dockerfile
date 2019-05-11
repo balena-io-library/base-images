@@ -23,7 +23,7 @@ ENV SETUPTOOLS_VERSION 41.0.1
 
 RUN set -x \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-armv7hf-openssl1.0.tar.gz" \
-	&& echo "59b2223b2376c872db8deefb8a77243e29651a4ceac190f095c5a4891bc1c21a  Python-$PYTHON_VERSION.linux-armv7hf-openssl1.0.tar.gz" | sha256sum -c - \
+	&& echo "5e6a7b6016bb50d5874d510ef6772929091eacd1dc5195783d3ed47368134640  Python-$PYTHON_VERSION.linux-armv7hf-openssl1.0.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-armv7hf-openssl1.0.tar.gz" --strip-components=1 \
 	&& rm -rf "Python-$PYTHON_VERSION.linux-armv7hf-openssl1.0.tar.gz" \
 	&& ldconfig \
@@ -68,16 +68,10 @@ RUN set -x \
 	&& cd / \
 	&& rm -rf /usr/src/dbus-python
 
-# make some useful symlinks that are expected to exist
-RUN cd /usr/local/bin \
-	&& ln -sf pip3 pip \
-	&& { [ -e easy_install ] || ln -s easy_install-* easy_install; } \
-	&& ln -sf idle3 idle \
-	&& ln -sf pydoc3 pydoc \
-	&& ln -sf python3 python \
-	&& ln -sf python3-config python-config
+# https://github.com/docker-library/python/issues/147
+ENV PYTHONIOENCODING UTF-8
 
 # set PYTHONPATH to point to dist-packages
-ENV PYTHONPATH /usr/lib/python3/dist-packages:$PYTHONPATH
+ENV PYTHONPATH /usr/lib/python2.7/dist-packages:/usr/lib/python2.7/site-packages:$PYTHONPATH
 
 CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command could be found in Dockerfile Guide section in our Docs. Here's the link: https://balena.io/docs"]

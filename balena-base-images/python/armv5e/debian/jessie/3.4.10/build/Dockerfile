@@ -23,7 +23,7 @@ ENV SETUPTOOLS_VERSION 41.0.1
 
 RUN set -x \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-armel-openssl1.0.tar.gz" \
-	&& echo "d7e41c94e7e6e6dcb5d446a1154d3d5be5e48cd7487306161ff8436904f8ab14  Python-$PYTHON_VERSION.linux-armel-openssl1.0.tar.gz" | sha256sum -c - \
+	&& echo "6a7a85989867d202d3a501bcd3c47a6011808a3ba72eea8f6ec982c2f2e98191  Python-$PYTHON_VERSION.linux-armel-openssl1.0.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-armel-openssl1.0.tar.gz" --strip-components=1 \
 	&& rm -rf "Python-$PYTHON_VERSION.linux-armel-openssl1.0.tar.gz" \
 	&& ldconfig \
