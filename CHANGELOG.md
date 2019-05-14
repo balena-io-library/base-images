@@ -4,6 +4,51 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## 2019-11-05
+
+### Changed
+
+`Contracts v1.1.42`
+- python: Fix wrong partials when generates Dockerfile for Python base images.
+- device: Add support for Beaglebone Fastenal.
+- device: Add support for Nvidia D3 TX2.
+
+
+## 2019-06-05
+
+### Changed
+
+`Contracts v1.1.39`
+- node: Add support for v12.1.0, v8.16.0 and v11.15.0.
+- python: Add support for v2.7.16 v3.7.3 v3.5.7 and v3.4.10.
+- openJDK: Update latest openJDK version.
+- node: v6.x EOL.
+
+
+## 2019-03-05
+
+### Changed
+
+`Contracts v1.1.36`
+- qemu: Update QEMU to v4.0.0+balena.
+
+
+## 2019-23-04
+
+### Changed
+
+`Contracts v1.1.34`
+- dockerhub: Add partials for dotnet dockerhub description.
+
+
+## 2019-18-04
+
+### Changed
+
+`Contracts v1.1.31`
+- dockerhub: Add scripts and blueprints to generate dockerhub description.
+- newDevice: Add contract for Nvidia Jetson Nano and BepMarine DL-PM6X.
+
 ## 2019-01-04
 
 ### Changed
