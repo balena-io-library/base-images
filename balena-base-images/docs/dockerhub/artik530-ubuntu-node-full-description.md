@@ -44,7 +44,7 @@ Node.js internally uses the Google V8 JavaScript engine to execute code; a large
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;12.1.0 (latest)&#x60;, &#x60;11.15.0&#x60;, &#x60;10.15.3&#x60;, &#x60;9.11.2&#x60;, &#x60;8.16.0&#x60;, &#x60;6.17.1&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/node/artik530/ubuntu/)
+[&#x60;12.3.1 (latest)&#x60;, &#x60;11.15.0&#x60;, &#x60;10.16.0&#x60;, &#x60;9.11.2&#x60;, &#x60;8.16.0&#x60;, &#x60;6.17.1&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/node/artik530/ubuntu/)
 
 For more information about this image and its history, please see the [relevant manifest file (`artik530-ubuntu-node`)](https://github.com/balena-io-library/official-images/blob/master/library/artik530-ubuntu-node) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 
