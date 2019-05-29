@@ -6,6 +6,7 @@ RUN dnf -y update \
 	&& dnf -y install \
 		gzip \
 		java-11-openjdk \
+		java-11-openjdk-devel \
 		tar \
 	&& dnf clean all
 
