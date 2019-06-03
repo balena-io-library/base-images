@@ -4,6 +4,29 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## 2019-29-05
+
+### Changed
+
+`Contracts v1.1.49`
+- openjdk: Fix missing javac in few Fedora OpenJDK images.
+- node: Add v12.3.1 and v10.16.0.
+- devices: Add support for MS Surface 6.
+
+
+## 2019-22-05
+
+### Changed
+
+`Contracts v1.1.46`
+- node: Add glibc i386 binary for v10.
+- node: Add v12.2.0.
+- device: Add contract for Orange Pi Lite.
+- device: Add contract for Nvidia blackboard TX2.
+- dotnet: Version update for dotnet sdk, runtime and aspnet.
+- aspnet: Install .NET Runtime before aspnet for v3.0
+
+
 ## 2019-11-05
 
 ### Changed
