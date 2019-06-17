@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## 2019-13-06
+
+### Changed
+
+`Contracts v1.1.53`
+- golang: Add support for v1.12.5 and v1.11.10.
+- node: Add support for v12.4.0.
+- devices: Add support for NanoPC-T4, Nvidia Jetson Xavier.
+
+
+## 2019-03-06
+
+### Changed
+
+`Contracts v1.1.50`
+- devices: Add support for BeagleBoard-XM.
+
+
 ## 2019-29-05
 
 ### Changed
