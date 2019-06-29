@@ -28,7 +28,7 @@ The build variant is a heavier image that includes many of the tools required fo
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;3.9 (latest)&#x60;, &#x60;3.8&#x60;, &#x60;3.7&#x60;, &#x60;3.6&#x60;, &#x60;3.5&#x60;, &#x60;edge&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/amd64/alpine/)
+[&#x60;3.9 (latest)&#x60;, &#x60;3.8&#x60;, &#x60;3.7&#x60;, &#x60;3.6&#x60;, &#x60;edge&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/amd64/alpine/)
 
 For more information about this image and its history, please see the [relevant manifest file (`amd64-alpine`)](https://github.com/balena-io-library/official-images/blob/master/library/amd64-alpine) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 

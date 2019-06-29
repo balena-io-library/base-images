@@ -32,7 +32,7 @@ This [guide][getting-started] can help you get started with using this base imag
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;3.9 (latest)&#x60;, &#x60;3.8&#x60;, &#x60;3.7&#x60;, &#x60;3.6&#x60;, &#x60;3.5&#x60;, &#x60;edge&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/odroid-c1/alpine/)
+[&#x60;3.9 (latest)&#x60;, &#x60;3.8&#x60;, &#x60;3.7&#x60;, &#x60;3.6&#x60;, &#x60;edge&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/odroid-c1/alpine/)
 
 For more information about this image and its history, please see the [relevant manifest file (`odroid-c1-alpine`)](https://github.com/balena-io-library/official-images/blob/master/library/odroid-c1-alpine) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 
