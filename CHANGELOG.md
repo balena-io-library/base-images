@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## 2019-29-06
+
+### Changed
+
+`Contracts v1.1.57`
+- golang: Add support for v1.12.6 and v1.11.11.
+- alpine: Handling the CVE-2019-5021 vurnerability (Drop support for v3.5 as it is EOL, other versions were fixed upstream so just need to rebuild all alpine images.).
+- device: Add support for Up-core, Up-core-plus and Up-squared.
+
+
 ## 2019-13-06
 
 ### Changed
