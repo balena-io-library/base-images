@@ -56,8 +56,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # install dbus-python
 RUN set -x \
 	&& mkdir -p /usr/src/dbus-python \
-	&& curl -SL "http://dbus.freedesktop.org/releases/dbus-python/dbus-python-$PYTHON_DBUS_VERSION.tar.gz" -o dbus-python.tar.gz \
-	&& curl -SL "http://dbus.freedesktop.org/releases/dbus-python/dbus-python-$PYTHON_DBUS_VERSION.tar.gz.asc" -o dbus-python.tar.gz.asc \
+	&& wget -O dbus-python.tar.gz "https://dbus.freedesktop.org/releases/dbus-python/dbus-python-$PYTHON_DBUS_VERSION.tar.gz" \
+	&& wget -O dbus-python.tar.gz.asc "https://dbus.freedesktop.org/releases/dbus-python/dbus-python-$PYTHON_DBUS_VERSION.tar.gz.asc" \
 	&& gpg --verify dbus-python.tar.gz.asc \
 	&& tar -xzC /usr/src/dbus-python --strip-components=1 -f dbus-python.tar.gz \
 	&& rm dbus-python.tar.gz* \
