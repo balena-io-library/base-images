@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## 2019-05-07
+
+### Changed
+
+`Contracts v1.1.60`
+- debian: Fix SSL certificate problem when downloading with curl on Debian Buster.
+- device: Add contract for Nitrogen8M Mini SBC.
+
+
+## 2019-02-07
+
+### Changed
+
+`Contracts v1.1.59`
+- alpine: Add support for Alpine Linux v3.10.
+- node: Add node v12.5.0.
+- dotnet: Add latest sdk, runtime and aspnet releases.
+
+
 ## 2019-29-06
 
 ### Changed
