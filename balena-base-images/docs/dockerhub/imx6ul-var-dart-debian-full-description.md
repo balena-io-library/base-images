@@ -32,7 +32,7 @@ This [guide][getting-started] can help you get started with using this base imag
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;stretch (latest)&#x60;, &#x60;jessie&#x60;, &#x60;buster&#x60;, &#x60;sid&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/imx6ul-var-dart/debian/)
+[&#x60;buster (latest)&#x60;, &#x60;jessie&#x60;, &#x60;stretch&#x60;, &#x60;sid&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/imx6ul-var-dart/debian/)
 
 For more information about this image and its history, please see the [relevant manifest file (`imx6ul-var-dart-debian`)](https://github.com/balena-io-library/official-images/blob/master/library/imx6ul-var-dart-debian) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 
