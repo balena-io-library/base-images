@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## 2019-12-07
+
+### Changed
+
+`Contracts v1.1.62`
+- debian: Move latest tag to Debian Buster.
+- systemd: Update systemd examples to use Buster base images.
+
+
 ## 2019-05-07
 
 ### Changed
