@@ -20,6 +20,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
       fi \
   ) \
   && rm -rf /var/lib/apt/lists/* \
+  && c_rehash \
   && echo '#!/bin/sh\n\
 set -e\n\
 set -u\n\
