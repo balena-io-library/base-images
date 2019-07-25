@@ -44,7 +44,7 @@ until [ $n -gt $max ]; do\n\
   echo "apt failed, retrying"\n\
   n=$(($n + 1))\n\
 done\n\
-rm -r /var/lib/apt/lists/*' > /usr/sbin/install_packages \
+rm -r /var/cache/apt/archives/* /var/lib/apt/lists/*' > /usr/sbin/install_packages \
   && chmod 0755 "/usr/sbin/install_packages"
 
 # Install packages for build variant

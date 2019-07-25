@@ -21,7 +21,7 @@ ENV SSL_CERT_FILE /etc/ssl/certs/ca-certificates.crt
 ENV PYTHON_VERSION 3.4.10
 
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
-ENV PYTHON_PIP_VERSION 19.1
+ENV PYTHON_PIP_VERSION 19.2.1
 
 ENV SETUPTOOLS_VERSION 41.0.1
 
@@ -47,7 +47,7 @@ RUN set -x \
 # install "virtualenv", since the vast majority of users of this image will want it
 RUN pip3 install --no-cache-dir virtualenv
 
-ENV PYTHON_DBUS_VERSION 1.2.4
+ENV PYTHON_DBUS_VERSION 1.2.8
 
 # install dbus-python dependencies 
 RUN apk add --no-cache \

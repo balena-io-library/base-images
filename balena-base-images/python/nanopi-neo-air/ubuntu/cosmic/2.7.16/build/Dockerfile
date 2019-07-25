@@ -17,7 +17,7 @@ RUN gpg --keyserver keyring.debian.org --recv-keys 4DE8FF2A63C7CC90 \
 ENV PYTHON_VERSION 2.7.16
 
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
-ENV PYTHON_PIP_VERSION 19.1
+ENV PYTHON_PIP_VERSION 19.2.1
 
 ENV SETUPTOOLS_VERSION 41.0.1
 
@@ -44,7 +44,7 @@ RUN set -x \
 # install "virtualenv", since the vast majority of users of this image will want it
 RUN pip install --no-cache-dir virtualenv
 
-ENV PYTHON_DBUS_VERSION 1.2.4
+ENV PYTHON_DBUS_VERSION 1.2.8
 
 # install dbus-python dependencies 
 RUN apt-get update && apt-get install -y --no-install-recommends \

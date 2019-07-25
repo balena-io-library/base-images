@@ -43,7 +43,7 @@ until [ $n -gt $max ]; do\n\
   echo "apt failed, retrying"\n\
   n=$(($n + 1))\n\
 done\n\
-rm -r /var/lib/apt/lists/*' > /usr/sbin/install_packages \
+rm -r /var/cache/apt/archives/* /var/lib/apt/lists/*' > /usr/sbin/install_packages \
   && chmod 0755 "/usr/sbin/install_packages"
 
 RUN curl -SLO "http://resin-packages.s3.amazonaws.com/resin-xbuild/v1.0.0/resin-xbuild1.0.0.tar.gz" \
