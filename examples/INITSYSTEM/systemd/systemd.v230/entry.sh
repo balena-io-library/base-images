@@ -105,6 +105,14 @@ case "$INITSYSTEM" in
 	;;
 esac
 
+UDEV=$(echo "$UDEV" | awk '{print tolower($0)}')
+
+case "$UDEV" in
+	'1' | 'true')
+		UDEV='on'
+	;;
+esac
+
 if $PRIVILEGED; then
 	# Only run this in privileged container
 	mount_dev
