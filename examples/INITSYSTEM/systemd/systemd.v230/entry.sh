@@ -2,8 +2,12 @@
 
 set -m
 
-if hostname "$HOSTNAME" &> /dev/null; then
+# This command only works in privileged container
+ip link add dummy0 type dummy &> /dev/null
+if [[ $? == 0 ]]; then
 	PRIVILEGED=true
+	# clean the dummy0 link
+    ip link delete dummy0 &> /dev/null
 else
 	PRIVILEGED=false
 fi
