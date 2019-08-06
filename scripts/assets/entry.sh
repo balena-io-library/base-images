@@ -5,7 +5,7 @@ ip link add dummy0 type dummy &> /dev/null
 if [[ $? == 0 ]]; then
 	PRIVILEGED=true
 	# clean the dummy0 link
-    ip link delete dummy0 &> /dev/null
+	ip link delete dummy0 &> /dev/null
 else
 	PRIVILEGED=false
 fi
