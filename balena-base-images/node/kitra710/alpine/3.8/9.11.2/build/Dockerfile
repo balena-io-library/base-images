@@ -2,7 +2,7 @@
 FROM balenalib/kitra710-alpine:3.8-build
 
 ENV NODE_VERSION 9.11.2
-ENV YARN_VERSION 1.15.2
+ENV YARN_VERSION 1.17.3
 
 # Install dependencies
 RUN apk add --no-cache libgcc libstdc++ libuv \

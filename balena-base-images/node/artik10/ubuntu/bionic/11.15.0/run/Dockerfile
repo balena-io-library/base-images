@@ -2,7 +2,7 @@
 FROM balenalib/artik10-ubuntu:bionic-run
 
 ENV NODE_VERSION 11.15.0
-ENV YARN_VERSION 1.15.2
+ENV YARN_VERSION 1.17.3
 
 RUN buildDeps='curl' \
 	&& set -x \

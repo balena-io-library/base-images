@@ -2,7 +2,7 @@
 FROM balenalib/orbitty-tx2-ubuntu:artful-run
 
 ENV NODE_VERSION 8.16.0
-ENV YARN_VERSION 1.15.2
+ENV YARN_VERSION 1.17.3
 
 RUN buildDeps='curl' \
 	&& set -x \

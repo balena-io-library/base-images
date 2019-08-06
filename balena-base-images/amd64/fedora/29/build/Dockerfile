@@ -10,6 +10,7 @@ RUN dnf update -y && dnf install -y \
   udev \
   which \
   curl \
+  iproute \
   && dnf clean all \
   && echo $'#!/bin/sh\n\
 set -e\n\

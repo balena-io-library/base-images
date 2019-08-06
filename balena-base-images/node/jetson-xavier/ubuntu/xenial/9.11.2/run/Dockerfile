@@ -2,7 +2,7 @@
 FROM balenalib/jetson-xavier-ubuntu:xenial-run
 
 ENV NODE_VERSION 9.11.2
-ENV YARN_VERSION 1.15.2
+ENV YARN_VERSION 1.17.3
 
 RUN buildDeps='curl' \
 	&& set -x \

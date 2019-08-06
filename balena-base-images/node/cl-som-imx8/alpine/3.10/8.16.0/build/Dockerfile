@@ -2,7 +2,7 @@
 FROM balenalib/cl-som-imx8-alpine:3.10-build
 
 ENV NODE_VERSION 8.16.0
-ENV YARN_VERSION 1.15.2
+ENV YARN_VERSION 1.17.3
 
 # Install dependencies
 RUN apk add --no-cache libgcc libstdc++ libuv \
