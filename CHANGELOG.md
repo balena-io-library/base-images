@@ -4,6 +4,35 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## 2019-06-08
+
+### Changed
+
+`Contracts v1.1.67`
+- udev: Fix entryscript in the INITSYSTEM examples.
+- entryscript: Change how entry script detects privileged container.
+- fedora: Set Fedora 30 as latest and add Fedora 31.
+
+
+## 2019-25-07
+
+### Changed
+
+`Contracts v1.1.64`
+- python: Add Python v3.7.4 and v3.6.9.
+- install_updates: Remove /var/cache/apt/archives on clean up.
+
+
+## 2019-18-07
+
+### Changed
+
+`Contracts v1.1.63`
+- golang: Add v1.12.7 and v1.11.12.
+- node: Add v12.6.0.
+- debian: Use another workaround for broken certificates on buster.
+
+
 ## 2019-12-07
 
 ### Changed
