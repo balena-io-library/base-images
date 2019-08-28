@@ -1,8 +1,7 @@
 #!/bin/bash
 
 # This command only works in privileged container
-ip link add dummy0 type dummy &> /dev/null
-if [[ $? == 0 ]]; then
+if ip link add dummy0 type dummy &> /dev/null; then
 	PRIVILEGED=true
 	# clean the dummy0 link
 	ip link delete dummy0 &> /dev/null
