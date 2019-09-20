@@ -23,10 +23,10 @@ ENV ASPNETCORE_URLS=http://+:80 \
     DOTNET_RUNNING_IN_CONTAINER=true
 
 # Install .NET Core
-ENV ASPNETCORE_VERSION 2.1.11
+ENV ASPNETCORE_VERSION 2.1.13
 
 RUN curl -SL --output aspnetcore.tar.gz "https://dotnetcli.blob.core.windows.net/dotnet/aspnetcore/Runtime/$ASPNETCORE_VERSION/aspnetcore-runtime-$ASPNETCORE_VERSION-linux-x64.tar.gz" \
-    && aspnetcore_sha512='1FD17BE80E9C4E6F2C70DC234079D535D8218ABCE0D34BCC6621A38AE48143DB11E8E9AC1DD8AF3BF3D47269733D82C04BCFD081566DCE0DA27CC4DD659A7AC6' \
+    && aspnetcore_sha512='1D73B177782F6AE593DD56078D479D879DD470324113EB5A8A3DDEB12DBDCD6B0C0EE0FC722C8106C5117FC08D14A44F2F6FD3A47319DF08EC1EB74AF8A69C22' \
     && echo "$aspnetcore_sha512  aspnetcore.tar.gz" | sha512sum -c - \
     && mkdir -p /usr/share/dotnet \
     && tar -zxf aspnetcore.tar.gz -C /usr/share/dotnet \

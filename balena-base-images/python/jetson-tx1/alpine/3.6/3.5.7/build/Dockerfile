@@ -63,7 +63,7 @@ RUN set -x \
 	&& tar -xzC /usr/src/dbus-python --strip-components=1 -f dbus-python.tar.gz \
 	&& rm dbus-python.tar.gz* \
 	&& cd /usr/src/dbus-python \
-	&& PYTHON=python$(expr match "$PYTHON_VERSION" '\([0-9]*\.[0-9]*\)') ./configure \
+	&& PYTHON_VERSION=$(expr match "$PYTHON_VERSION" '\([0-9]*\.[0-9]*\)') ./configure \
 	&& make -j$(nproc) \
 	&& make install -j$(nproc) \
 	&& cd / \
