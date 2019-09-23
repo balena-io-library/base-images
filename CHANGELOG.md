@@ -4,6 +4,43 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## 2019-20-09
+
+### Changed
+
+`Contracts v1.1.73`
+- dotnet: Update latest .NET releases.
+- python: Fix Python not found when compile dbus-python.
+- rpi64: Use generic debian for 64-bit rpi images.
+
+
+## 2019-09-09
+
+### Changed
+
+`Contracts v1.1.72`
+- node: Add support for v12.10.0.
+
+
+## 2019-28-08
+
+### Changed
+
+`Contracts v1.1.71`
+- device: Add support for raspberrypi4-64.
+- go: Add v1.12.9 and v1.11.13.
+- node: Add v12.9.1.
+
+
+## 2019-19-08
+
+### Changed
+
+`Contracts v1.1.69`
+- device: Add support for Auvidea j120 TX2.
+- node: Add v12.8.1 10.16.3 and v8.16.1.
+
+
 ## 2019-06-08
 
 ### Changed
