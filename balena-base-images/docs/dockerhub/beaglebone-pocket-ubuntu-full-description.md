@@ -32,7 +32,7 @@ This [guide][getting-started] can help you get started with using this base imag
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;bionic (latest)&#x60;, &#x60;cosmic&#x60;, &#x60;artful&#x60;, &#x60;xenial&#x60;, &#x60;trusty&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/beaglebone-pocket/ubuntu/)
+[&#x60;bionic (latest)&#x60;, &#x60;cosmic&#x60;, &#x60;xenial&#x60;, &#x60;disco&#x60;, &#x60;eoan&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/beaglebone-pocket/ubuntu/)
 
 For more information about this image and its history, please see the [relevant manifest file (`beaglebone-pocket-ubuntu`)](https://github.com/balena-io-library/official-images/blob/master/library/beaglebone-pocket-ubuntu) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 
