@@ -36,3 +36,6 @@ output:
         COPY entry.sh /usr/bin/entry.sh
 
         ENTRYPOINT ["/usr/bin/entry.sh"]
+
+
+        {{import partial="test" combination="sw.os+arch.sw"}}

@@ -24,3 +24,8 @@ output:
 
 
         {{import partial="cmd" combination="sw.stack+sw.os+hw.device-type"}}
+
+
+        {{#sw.stack.assets.test}}
+        {{import partial="test" combination="sw.stack+sw.os+hw.device-type"}}
+        {{/sw.stack.assets.test}}
