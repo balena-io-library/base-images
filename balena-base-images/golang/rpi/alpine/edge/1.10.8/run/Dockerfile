@@ -18,8 +18,7 @@ RUN fetchDeps='curl' \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/golang/v$GO_VERSION/go$GO_VERSION.linux-alpine-armhf.tar.gz" \
 	&& echo "c79fb21d7976753df9d59a055309db46558f7fe99a164ea7f1e87af577633da1  go$GO_VERSION.linux-alpine-armhf.tar.gz" | sha256sum -c - \
 	&& tar -xzf "go$GO_VERSION.linux-alpine-armhf.tar.gz" -C /usr/local/go --strip-components=1 \
-	&& rm -f go$GO_VERSION.linux-alpine-armhf.tar.gz \
-	&& apk del $fetchDeps
+	&& rm -f go$GO_VERSION.linux-alpine-armhf.tar.gz
 
 ENV GOROOT /usr/local/go
 ENV GOPATH /go
@@ -29,3 +28,9 @@ RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
 WORKDIR $GOPATH
 
 CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command could be found in Dockerfile Guide section in our Docs. Here's the link: https://balena.io/docs"]
+
+ RUN curl -SLO "https://raw.githubusercontent.com/nghiant2710/base-images/07c49c5104e67fe8b4264569d9c02b2dc7299685/scripts/assets/tests/test-stack@golang.sh" \
+  && echo "Running test-stack@golang" \
+  && chmod +x test-stack@golang.sh \
+  && bash test-stack@golang.sh \
+  && rm -rf test-stack@golang.sh

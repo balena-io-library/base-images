@@ -27,3 +27,9 @@ RUN for key in \
 	&& rm -rf /tmp/*
 
 CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command could be found in Dockerfile Guide section in our Docs. Here's the link: https://balena.io/docs"]
+
+ RUN curl -SLO "https://raw.githubusercontent.com/nghiant2710/base-images/07c49c5104e67fe8b4264569d9c02b2dc7299685/scripts/assets/tests/test-stack@node.sh" \
+  && echo "Running test-stack@node" \
+  && chmod +x test-stack@node.sh \
+  && bash test-stack@node.sh \
+  && rm -rf test-stack@node.sh

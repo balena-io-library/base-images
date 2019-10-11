@@ -51,7 +51,6 @@ RUN set -x \
 		-o \( -type f -a -name '*.pyc' -o -name '*.pyo' \) \
 		-exec rm -rf '{}' + \
 	&& cd / \
-	&& apk del .build-deps \
 	&& rm -rf /usr/src/python ~/.cache
 
 # make some useful symlinks that are expected to exist
@@ -64,3 +63,9 @@ RUN cd /usr/local/bin \
 	&& ln -sf python3-config python-config
 
 CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command could be found in Dockerfile Guide section in our Docs. Here's the link: https://balena.io/docs"]
+
+ RUN curl -SLO "https://raw.githubusercontent.com/nghiant2710/base-images/07c49c5104e67fe8b4264569d9c02b2dc7299685/scripts/assets/tests/test-stack@python.sh" \
+  && echo "Running test-stack@python" \
+  && chmod +x test-stack@python.sh \
+  && bash test-stack@python.sh \
+  && rm -rf test-stack@python.sh

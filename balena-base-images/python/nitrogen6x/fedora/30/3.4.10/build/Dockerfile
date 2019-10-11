@@ -15,3 +15,9 @@ RUN pip3 install -U --no-cache-dir --ignore-installed pip setuptools \
 	&& pip3 install --no-cache-dir virtualenv
 
 CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command could be found in Dockerfile Guide section in our Docs. Here's the link: https://balena.io/docs"]
+
+ RUN curl -SLO "https://raw.githubusercontent.com/nghiant2710/base-images/07c49c5104e67fe8b4264569d9c02b2dc7299685/scripts/assets/tests/test-stack@python.sh" \
+  && echo "Running test-stack@python" \
+  && chmod +x test-stack@python.sh \
+  && bash test-stack@python.sh \
+  && rm -rf test-stack@python.sh

@@ -137,3 +137,9 @@ RUN mkdir -p /usr/share/man/man1
 
 COPY entry.sh /usr/bin/entry.sh
 ENTRYPOINT ["/usr/bin/entry.sh"]
+
+RUN curl -SLO "https://raw.githubusercontent.com/nghiant2710/base-images/07c49c5104e67fe8b4264569d9c02b2dc7299685/scripts/assets/tests/test-os.sh" \
+  && echo "Running test-os" \
+  && chmod +x test-os.sh \
+  && bash test-os.sh debian stretch \
+  && rm -rf test-os.sh

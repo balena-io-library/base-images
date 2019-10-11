@@ -42,3 +42,9 @@ ENV DOTNET_USE_POLLING_FILE_WATCHER=true \
 RUN dotnet help
 
 CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command could be found in Dockerfile Guide section in our Docs. Here's the link: https://balena.io/docs"]
+
+ RUN curl -SLO "https://raw.githubusercontent.com/nghiant2710/base-images/07c49c5104e67fe8b4264569d9c02b2dc7299685/scripts/assets/tests/test-stack@dotnet.sh" \
+  && echo "Running test-stack@dotnet" \
+  && chmod +x test-stack@dotnet.sh \
+  && bash test-stack@dotnet.sh \
+  && rm -rf test-stack@dotnet.sh
