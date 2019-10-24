@@ -26,24 +26,21 @@ function check_os_version {
         echo "Incorrect OS!"; exit 1
     fi
 
-    if [ -n "$os_version" ]; then
-        case "$os" in
-            debian|raspbian|ubuntu)
-                [[ "$VERSION_CODENAME" == "$os_version" ]] || (echo "Incorrect OS version!"; exit 1)
-                ;;
-            alpine)
-                baseVersion=$(expr match "$VERSION_ID" '\([0-9]*\.[0-9]*\)')
-                [[ "$baseVersion" == "$os_version" ]] || (echo "Incorrect OS version!"; exit 1)
-                ;;
-            fedora)
-                [[ "$VERSION_ID" == "$os_version" ]] || (echo "Incorrect OS version!"; exit 1)
-                ;;
-            *)
-                echo "Unsure how to handle OS version for $OS_NAME, skipping test..."; exit 0
-        esac
-        echo "OS version test passed!"
-    fi
-    echo "Empty OS version!"; exit 1
+    case "$os" in
+        debian|raspbian|ubuntu)
+            [[ "$VERSION_CODENAME" == "$os_version" ]] || (echo "Incorrect OS version!"; exit 1)
+        ;;
+        alpine)
+            baseVersion=$(expr match "$VERSION_ID" '\([0-9]*\.[0-9]*\)')
+            [[ "$baseVersion" == "$os_version" ]] || (echo "Incorrect OS version!"; exit 1)
+        ;;
+        fedora)
+            [[ "$VERSION_ID" == "$os_version" ]] || (echo "Incorrect OS version!"; exit 1)
+        ;;
+        *)
+            echo "Unsure how to handle OS version for $OS_NAME, skipping test..."; exit 0
+    esac
+    echo "OS version test passed!"
 }
 
 check_os_version
