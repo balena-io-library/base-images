@@ -2,7 +2,7 @@
 FROM balenalib/raspberry-pi2-ubuntu:xenial-run
 
 ENV NODE_VERSION 11.15.0
-ENV YARN_VERSION 1.17.3
+ENV YARN_VERSION 1.19.1
 
 RUN buildDeps='curl' \
 	&& set -x \

@@ -2,7 +2,7 @@
 FROM balenalib/artik10-alpine:3.10-build
 
 ENV NODE_VERSION 8.16.1
-ENV YARN_VERSION 1.17.3
+ENV YARN_VERSION 1.19.1
 
 # Install dependencies
 RUN apk add --no-cache libgcc libstdc++ libuv \

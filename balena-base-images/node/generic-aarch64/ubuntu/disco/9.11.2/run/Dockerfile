@@ -2,7 +2,7 @@
 FROM balenalib/generic-aarch64-ubuntu:disco-run
 
 ENV NODE_VERSION 9.11.2
-ENV YARN_VERSION 1.17.3
+ENV YARN_VERSION 1.19.1
 
 RUN buildDeps='curl' \
 	&& set -x \

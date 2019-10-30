@@ -2,7 +2,7 @@
 FROM balenalib/cl-som-imx8-ubuntu:disco-run
 
 ENV NODE_VERSION 8.16.1
-ENV YARN_VERSION 1.17.3
+ENV YARN_VERSION 1.19.1
 
 RUN buildDeps='curl' \
 	&& set -x \

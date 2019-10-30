@@ -2,7 +2,7 @@
 FROM balenalib/zc702-zynq7-alpine:3.6-build
 
 ENV NODE_VERSION 8.16.1
-ENV YARN_VERSION 1.17.3
+ENV YARN_VERSION 1.19.1
 
 # Install dependencies
 RUN apk add --no-cache libgcc libstdc++ libuv \

@@ -2,7 +2,7 @@
 FROM balenalib/imx8m-var-dart-debian:buster-run
 
 ENV NODE_VERSION 8.16.1
-ENV YARN_VERSION 1.17.3
+ENV YARN_VERSION 1.19.1
 
 RUN buildDeps='curl' \
 	&& set -x \

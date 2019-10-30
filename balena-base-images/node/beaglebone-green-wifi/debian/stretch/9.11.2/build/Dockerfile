@@ -2,7 +2,7 @@
 FROM balenalib/beaglebone-green-wifi-debian:stretch-build
 
 ENV NODE_VERSION 9.11.2
-ENV YARN_VERSION 1.17.3
+ENV YARN_VERSION 1.19.1
 
 RUN for key in \
 	6A010C5166006599AA17F08146C2130DFD2497F5 \

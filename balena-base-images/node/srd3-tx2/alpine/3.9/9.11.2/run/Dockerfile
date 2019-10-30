@@ -2,7 +2,7 @@
 FROM balenalib/srd3-tx2-alpine:3.9-run
 
 ENV NODE_VERSION 9.11.2
-ENV YARN_VERSION 1.17.3
+ENV YARN_VERSION 1.19.1
 
 # Install dependencies
 RUN apk add --no-cache libgcc libstdc++ libuv \

@@ -2,7 +2,7 @@
 FROM balenalib/odroid-c1-alpine:edge-run
 
 ENV NODE_VERSION 11.15.0
-ENV YARN_VERSION 1.17.3
+ENV YARN_VERSION 1.19.1
 
 # Install dependencies
 RUN apk add --no-cache libgcc libstdc++ libuv \
