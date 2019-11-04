@@ -4,6 +4,47 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## 2019-30-10
+
+### Changed
+
+`Contracts v1.1.81`
+- node: Add v13.0.1 v12.13.0 and v10.17.0 with Yarn v1.19.1.
+- python: Add v2.7.17 v3.7.5 and v3.8.0.
+- curl: Fix curl not working on latest Ubuntu releases.
+
+
+## 2019-25-10
+
+### Changed
+
+`Contracts v1.1.80`
+- entryScript: Update privileged container check.
+- test: Remove unnecessary os version test.
+- install_packages: Fix cleanup command, make sure the cleanup command will not fail when removing non-existent directories.
+- golang: Add v1.13.3 and v1.12.12.
+
+
+## 2019-11-10
+
+### Changed
+
+`Contracts v1.1.78`
+- node: Add support for Node v12.11.0.
+- go: Add v1.13.1 and v1.12.10.
+- test: Add contract and partials for base images test.
+
+
+## 2019-28-09
+
+### Changed
+
+`Contracts v1.1.74`
+- dotnet: Add support for .NET Core v3.0.0.
+- ubuntu: Add support for Ubuntu Disco and Eoan.
+- ubuntu: Drop support for Ubuntu Trusty and Artful.
+
+
 ## 2019-20-09
 
 ### Changed
