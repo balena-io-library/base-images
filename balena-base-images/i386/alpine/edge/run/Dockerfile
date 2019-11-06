@@ -47,7 +47,7 @@ ENV UDEV off
 COPY entry.sh /usr/bin/entry.sh
 ENTRYPOINT ["/usr/bin/entry.sh"]
 
-RUN curl -SLO "https://raw.githubusercontent.com/balena-io-library/base-images/d32c692d9525c15aa1bdd555de62ce198866c59a/scripts/assets/tests/test-os.sh" \
+RUN curl -SLO "https://raw.githubusercontent.com/balena-io-library/base-images/45fb4c638009eedb8f2ede5cddde6b78aeade416/scripts/assets/tests/test-os.sh" \
   && echo "Running test-os" \
   && chmod +x test-os.sh \
   && bash test-os.sh alpine edge \
