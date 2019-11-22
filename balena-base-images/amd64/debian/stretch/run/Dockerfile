@@ -52,8 +52,8 @@ RUN curl -SLO "http://resin-packages.s3.amazonaws.com/resin-xbuild/v1.0.0/resin-
   && rm "resin-xbuild1.0.0.tar.gz" \
   && chmod +x resin-xbuild \
   && mv resin-xbuild /usr/bin \
-  && ln -s resin-xbuild /usr/bin/cross-build-start \
-  && ln -s resin-xbuild /usr/bin/cross-build-end
+  && ln -sf resin-xbuild /usr/bin/cross-build-start \
+  && ln -sf resin-xbuild /usr/bin/cross-build-end
 
 ENV LC_ALL C.UTF-8
 ENV DEBIAN_FRONTEND noninteractive
@@ -82,7 +82,7 @@ RUN mkdir -p /usr/share/man/man1
 COPY entry.sh /usr/bin/entry.sh
 ENTRYPOINT ["/usr/bin/entry.sh"]
 
-RUN curl -SLO "https://raw.githubusercontent.com/balena-io-library/base-images/45fb4c638009eedb8f2ede5cddde6b78aeade416/scripts/assets/tests/test-os.sh" \
+RUN curl -SLO "https://raw.githubusercontent.com/balena-io-library/base-images/a95300eda2320833e537ca20d728a870bf02177d/scripts/assets/tests/test-os.sh" \
   && echo "Running test-os" \
   && chmod +x test-os.sh \
   && bash test-os.sh debian stretch \
