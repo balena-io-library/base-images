@@ -2,7 +2,7 @@
 FROM balenalib/up-squared-alpine:3.10-run
 
 ENV NODE_VERSION 9.11.2
-ENV YARN_VERSION 1.19.1
+ENV YARN_VERSION 1.21.1
 
 # Install dependencies
 RUN apk add --no-cache libgcc libstdc++ libuv \

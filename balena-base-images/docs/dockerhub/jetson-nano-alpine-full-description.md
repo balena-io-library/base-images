@@ -32,7 +32,7 @@ This [guide][getting-started] can help you get started with using this base imag
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;3.10 (latest)&#x60;, &#x60;3.9&#x60;, &#x60;3.8&#x60;, &#x60;3.7&#x60;, &#x60;3.6&#x60;, &#x60;edge&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/jetson-nano/alpine/)
+[&#x60;3.11 (latest)&#x60;, &#x60;3.10&#x60;, &#x60;3.9&#x60;, &#x60;3.8&#x60;, &#x60;3.7&#x60;, &#x60;3.6&#x60;, &#x60;edge&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/jetson-nano/alpine/)
 
 For more information about this image and its history, please see the [relevant manifest file (`jetson-nano-alpine`)](https://github.com/balena-io-library/official-images/blob/master/library/jetson-nano-alpine) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 

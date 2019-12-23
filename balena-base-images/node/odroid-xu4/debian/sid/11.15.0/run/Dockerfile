@@ -2,7 +2,7 @@
 FROM balenalib/odroid-xu4-debian:sid-run
 
 ENV NODE_VERSION 11.15.0
-ENV YARN_VERSION 1.19.1
+ENV YARN_VERSION 1.21.1
 
 RUN buildDeps='curl' \
 	&& set -x \

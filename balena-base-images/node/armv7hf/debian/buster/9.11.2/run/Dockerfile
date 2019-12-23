@@ -2,7 +2,7 @@
 FROM balenalib/armv7hf-debian:buster-run
 
 ENV NODE_VERSION 9.11.2
-ENV YARN_VERSION 1.19.1
+ENV YARN_VERSION 1.21.1
 
 RUN buildDeps='curl' \
 	&& set -x \

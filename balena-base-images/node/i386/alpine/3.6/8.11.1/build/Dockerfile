@@ -2,7 +2,7 @@
 FROM balenalib/i386-alpine:3.6-build
 
 ENV NODE_VERSION 8.11.1
-ENV YARN_VERSION 1.19.1
+ENV YARN_VERSION 1.21.1
 
 # Install dependencies
 RUN apk add --no-cache libgcc libstdc++ libuv \

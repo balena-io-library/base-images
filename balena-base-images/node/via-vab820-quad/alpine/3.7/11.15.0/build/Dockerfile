@@ -2,7 +2,7 @@
 FROM balenalib/via-vab820-quad-alpine:3.7-build
 
 ENV NODE_VERSION 11.15.0
-ENV YARN_VERSION 1.19.1
+ENV YARN_VERSION 1.21.1
 
 # Install dependencies
 RUN apk add --no-cache libgcc libstdc++ libuv \
