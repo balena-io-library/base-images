@@ -10,9 +10,8 @@ RUN apt-get update \
         libc6 \
         libgcc1 \
         libgssapi-krb5-2 \
-        libicu57 \
-        liblttng-ust0 \
-        libssl1.0.2 \
+        libicu63 \
+        libssl1.1 \
         libstdc++6 \
         zlib1g \
     && rm -rf /var/lib/apt/lists/*
@@ -22,25 +21,25 @@ ENV ASPNETCORE_URLS=http://+:80 \
     # Enable detection of running in a container
     DOTNET_RUNNING_IN_CONTAINER=true
 
-# Install .NET Core SDK
-ENV DOTNET_SDK_VERSION 3.1.1
+# Install .NET Core
+ENV DOTNET_VERSION 3.1.1
 
-RUN curl -SL --output dotnet.tar.gz "https://dotnetcli.blob.core.windows.net/dotnet/aspnetcore/Runtime/$ASPNETCORE_VERSION/aspnetcore-runtime-$ASPNETCORE_VERSION-linux-arm.tar.gz" \
-    && dotnet_sha512='5171cdd232f02fbd41abee893ebe3722fe442436bef9792fec9c687a746357d22b4499aa6f0a9e35285bc04783c54e400810acb365c5a1c3401f23a65e6b062f' \
+RUN curl -SL --output dotnet.tar.gz "https://dotnetcli.blob.core.windows.net/dotnet/Runtime/$DOTNET_VERSION/dotnet-runtime-$DOTNET_VERSION-linux-arm.tar.gz" \
+    && dotnet_sha512='553f09d35085f6a8ff7b2392fcf4e392102b5ac855590b9a806174521e9fdbd269c09f367fbbe036f69e54e40a9cd9940937bcf78150d68dd5c793102d304486' \
     && echo "$dotnet_sha512 dotnet.tar.gz" | sha512sum -c - \
     && mkdir -p /usr/share/dotnet \
     && tar -zxf dotnet.tar.gz -C /usr/share/dotnet \
     && rm dotnet.tar.gz \
     && ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet
 
-# Configure web servers to bind to port 80 when present
-# Enable correct mode for dotnet watch (only mode supported in a container)
-ENV DOTNET_USE_POLLING_FILE_WATCHER=true \
-    # Skip extraction of XML docs - generally not useful within an image/container - helps performance
-    NUGET_XMLDOC_MODE=skip
+ENV ASPNETCORE_VERSION 3.1.1
 
-# Trigger first run experience by running arbitrary cmd to populate local package cache
-RUN dotnet help
+RUN curl -SL --output aspnetcore.tar.gz "https://dotnetcli.blob.core.windows.net/dotnet/aspnetcore/Runtime/$ASPNETCORE_VERSION/aspnetcore-runtime-$ASPNETCORE_VERSION-linux-arm.tar.gz" \
+    && aspnetcore_sha512='5171cdd232f02fbd41abee893ebe3722fe442436bef9792fec9c687a746357d22b4499aa6f0a9e35285bc04783c54e400810acb365c5a1c3401f23a65e6b062f' \
+    && echo "$aspnetcore_sha512  aspnetcore.tar.gz" | sha512sum -c - \
+    && mkdir -p /usr/share/dotnet \
+    && tar -zxf aspnetcore.tar.gz -C /usr/share/dotnet ./shared/Microsoft.AspNetCore.App \
+    && rm aspnetcore.tar.gz
 
 CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command could be found in Dockerfile Guide section in our Docs. Here's the link: https://balena.io/docs"]
 

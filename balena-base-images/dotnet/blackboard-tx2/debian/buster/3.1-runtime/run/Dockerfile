@@ -10,9 +10,8 @@ RUN apt-get update \
         libc6 \
         libgcc1 \
         libgssapi-krb5-2 \
-        libicu57 \
-        liblttng-ust0 \
-        libssl1.0.2 \
+        libicu63 \
+        libssl1.1 \
         libstdc++6 \
         zlib1g \
     && rm -rf /var/lib/apt/lists/*
@@ -22,8 +21,8 @@ ENV ASPNETCORE_URLS=http://+:80 \
     # Enable detection of running in a container
     DOTNET_RUNNING_IN_CONTAINER=true
 
-# Install .NET Core SDK
-ENV DOTNET_SDK_VERSION 3.1.1
+# Install .NET Core
+ENV DOTNET_VERSION 3.1.1
 
 RUN curl -SL --output dotnet.tar.gz "https://dotnetcli.blob.core.windows.net/dotnet/Runtime/$DOTNET_VERSION/dotnet-runtime-$DOTNET_VERSION-linux-arm64.tar.gz" \
     && dotnet_sha512='93fe49f09a65217ba07439f5ddf0a92e312d662191cb02fa5307646c70f16bed168d9213d272d3ec0a5a02924cc6350689126926d9f1e2425d48594c4d879cd2' \
@@ -32,15 +31,6 @@ RUN curl -SL --output dotnet.tar.gz "https://dotnetcli.blob.core.windows.net/dot
     && tar -zxf dotnet.tar.gz -C /usr/share/dotnet \
     && rm dotnet.tar.gz \
     && ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet
-
-# Configure web servers to bind to port 80 when present
-# Enable correct mode for dotnet watch (only mode supported in a container)
-ENV DOTNET_USE_POLLING_FILE_WATCHER=true \
-    # Skip extraction of XML docs - generally not useful within an image/container - helps performance
-    NUGET_XMLDOC_MODE=skip
-
-# Trigger first run experience by running arbitrary cmd to populate local package cache
-RUN dotnet help
 
 CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command could be found in Dockerfile Guide section in our Docs. Here's the link: https://balena.io/docs"]
 
