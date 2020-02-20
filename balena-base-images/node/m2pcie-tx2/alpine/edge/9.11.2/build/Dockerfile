@@ -2,7 +2,7 @@
 FROM balenalib/m2pcie-tx2-alpine:edge-build
 
 ENV NODE_VERSION 9.11.2
-ENV YARN_VERSION 1.21.1
+ENV YARN_VERSION 1.22.0
 
 # Install dependencies
 RUN apk add --no-cache libgcc libstdc++ libuv \

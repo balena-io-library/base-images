@@ -2,7 +2,7 @@
 FROM balenalib/orange-pi-one-ubuntu:xenial-run
 
 ENV NODE_VERSION 10.19.0
-ENV YARN_VERSION 1.21.1
+ENV YARN_VERSION 1.22.0
 
 RUN buildDeps='curl' \
 	&& set -x \

@@ -2,7 +2,7 @@
 FROM balenalib/generic-armv7ahf-alpine:3.6-run
 
 ENV NODE_VERSION 9.11.2
-ENV YARN_VERSION 1.21.1
+ENV YARN_VERSION 1.22.0
 
 # Install dependencies
 RUN apk add --no-cache libgcc libstdc++ libuv \

@@ -2,7 +2,7 @@
 FROM balenalib/aarch64-debian:sid-run
 
 ENV NODE_VERSION 9.11.2
-ENV YARN_VERSION 1.21.1
+ENV YARN_VERSION 1.22.0
 
 RUN buildDeps='curl' \
 	&& set -x \
