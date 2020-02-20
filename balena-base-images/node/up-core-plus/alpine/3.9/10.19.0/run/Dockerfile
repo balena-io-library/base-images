@@ -2,7 +2,7 @@
 FROM balenalib/up-core-plus-alpine:3.9-run
 
 ENV NODE_VERSION 10.19.0
-ENV YARN_VERSION 1.21.1
+ENV YARN_VERSION 1.22.0
 
 # Install dependencies
 RUN apk add --no-cache libgcc libstdc++ libuv \

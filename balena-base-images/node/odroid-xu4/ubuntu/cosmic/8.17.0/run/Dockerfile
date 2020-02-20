@@ -2,7 +2,7 @@
 FROM balenalib/odroid-xu4-ubuntu:cosmic-run
 
 ENV NODE_VERSION 8.17.0
-ENV YARN_VERSION 1.21.1
+ENV YARN_VERSION 1.22.0
 
 RUN buildDeps='curl' \
 	&& set -x \

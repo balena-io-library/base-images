@@ -2,7 +2,7 @@
 FROM balenalib/asus-tinker-board-s-ubuntu:cosmic-run
 
 ENV NODE_VERSION 9.11.2
-ENV YARN_VERSION 1.21.1
+ENV YARN_VERSION 1.22.0
 
 RUN buildDeps='curl' \
 	&& set -x \

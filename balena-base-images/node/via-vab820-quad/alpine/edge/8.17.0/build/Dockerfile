@@ -2,7 +2,7 @@
 FROM balenalib/via-vab820-quad-alpine:edge-build
 
 ENV NODE_VERSION 8.17.0
-ENV YARN_VERSION 1.21.1
+ENV YARN_VERSION 1.22.0
 
 # Install dependencies
 RUN apk add --no-cache libgcc libstdc++ libuv \

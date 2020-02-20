@@ -2,7 +2,7 @@
 FROM balenalib/hummingboard-alpine:3.8-build
 
 ENV NODE_VERSION 10.19.0
-ENV YARN_VERSION 1.21.1
+ENV YARN_VERSION 1.22.0
 
 # Install dependencies
 RUN apk add --no-cache libgcc libstdc++ libuv \
