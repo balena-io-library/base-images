@@ -2,7 +2,7 @@
 FROM balenalib/var-som-mx6-ubuntu:bionic-run
 
 ENV NODE_VERSION 11.15.0
-ENV YARN_VERSION 1.22.0
+ENV YARN_VERSION 1.22.4
 
 RUN buildDeps='curl' \
 	&& set -x \

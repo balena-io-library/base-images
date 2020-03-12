@@ -2,7 +2,7 @@
 FROM balenalib/nitrogen8mm-alpine:3.9-run
 
 ENV NODE_VERSION 12.16.1
-ENV YARN_VERSION 1.22.0
+ENV YARN_VERSION 1.22.4
 
 # Install dependencies
 RUN apk add --no-cache libgcc libstdc++ libuv \

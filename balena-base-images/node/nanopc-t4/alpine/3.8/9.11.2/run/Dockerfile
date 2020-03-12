@@ -2,7 +2,7 @@
 FROM balenalib/nanopc-t4-alpine:3.8-run
 
 ENV NODE_VERSION 9.11.2
-ENV YARN_VERSION 1.22.0
+ENV YARN_VERSION 1.22.4
 
 # Install dependencies
 RUN apk add --no-cache libgcc libstdc++ libuv \

@@ -2,7 +2,7 @@
 FROM balenalib/hummingboard-alpine:edge-run
 
 ENV NODE_VERSION 8.17.0
-ENV YARN_VERSION 1.22.0
+ENV YARN_VERSION 1.22.4
 
 # Install dependencies
 RUN apk add --no-cache libgcc libstdc++ libuv \

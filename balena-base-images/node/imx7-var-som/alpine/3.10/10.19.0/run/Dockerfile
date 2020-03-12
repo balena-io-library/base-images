@@ -2,7 +2,7 @@
 FROM balenalib/imx7-var-som-alpine:3.10-run
 
 ENV NODE_VERSION 10.19.0
-ENV YARN_VERSION 1.22.0
+ENV YARN_VERSION 1.22.4
 
 # Install dependencies
 RUN apk add --no-cache libgcc libstdc++ libuv \

@@ -2,7 +2,7 @@
 FROM balenalib/n510-tx2-ubuntu:xenial-run
 
 ENV NODE_VERSION 11.15.0
-ENV YARN_VERSION 1.22.0
+ENV YARN_VERSION 1.22.4
 
 RUN buildDeps='curl' \
 	&& set -x \

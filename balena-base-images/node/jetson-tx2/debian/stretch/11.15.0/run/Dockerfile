@@ -2,7 +2,7 @@
 FROM balenalib/jetson-tx2-debian:stretch-run
 
 ENV NODE_VERSION 11.15.0
-ENV YARN_VERSION 1.22.0
+ENV YARN_VERSION 1.22.4
 
 RUN buildDeps='curl' \
 	&& set -x \

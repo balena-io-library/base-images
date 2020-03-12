@@ -2,7 +2,7 @@
 FROM balenalib/nanopi-neo-air-debian:stretch-run
 
 ENV NODE_VERSION 8.17.0
-ENV YARN_VERSION 1.22.0
+ENV YARN_VERSION 1.22.4
 
 RUN buildDeps='curl' \
 	&& set -x \
