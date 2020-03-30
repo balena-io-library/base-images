@@ -82,6 +82,32 @@ function generateCombinations (arr) {
   return combinations.filter(n => n)
 }
 
+const generateSupervisorLibrary = (context) => {
+  const osVersions = [context.children.sw.os.version]
+  if (context.children.sw.os.version === context.children.sw.os.data.latest) {
+    osVersions.push('latest')
+    osVersions.push(null)
+  }
+
+  const commit = execSync(`git log -1 --format='%H' -- ${path.join(DOCKERFILE_DIR,context.path)}`).toString()
+
+  var tags = generateCombinations([osVersions, [yyyymmdd(), null]])
+
+  const destination = path.join(
+    DEST_DIR,
+    context.imageName
+  )
+
+  const content = {
+    tag: tags[0],
+    repoDir: `${URL}@${commit.slice(0, -1)} ${path.join(ROOT, context.path)}`,
+    alias: tags.join(' ')
+  }
+
+  fs.appendFileSync(destination, JSON.stringify(content))
+  fs.appendFileSync(destination, `\n`)
+}
+
 
 function generateOsArchLibrary (context) {
   const osVersions = [context.children.sw.os.version]
@@ -159,7 +185,8 @@ const BLUEPRINT_PATHS = {
   'os-arch': path.join(__dirname, 'blueprints/os-arch.yaml'),
   'os-device': path.join(__dirname, 'blueprints/os-device.yaml'),
   'stack-device': path.join(__dirname, 'blueprints/stack-device.yaml'),
-  'stack-arch': path.join(__dirname, 'blueprints/stack-arch.yaml')
+  'stack-arch': path.join(__dirname, 'blueprints/stack-arch.yaml'),
+  'supervisor': path.join(__dirname, 'blueprints/supervisor.yaml')
 }
 const CONTRACTS_PATH = path.join(__dirname, 'contracts/contracts')
 
@@ -225,6 +252,10 @@ for (const type of blueprints) {
   fs.ensureDirSync(DEST_DIR)
   for (const context of result) {
     const json = context.toJSON()
+
+    if (type === 'supervisor') {
+      generateSupervisorLibrary(json)
+    }
 
     if (type === 'os-arch' || type === 'os-device' ) {
       generateOsArchLibrary(json)
