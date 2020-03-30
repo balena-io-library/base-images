@@ -10,6 +10,8 @@
   },
   "scripts": {
     "lint": "eslint scripts",
+    "supervisor": "node scripts/generate-dockerfiles.js supervisor",
+    "supervisor-lib": "node scripts/generate-stackbrew-library.js supervisor",
     "os-arch": "node scripts/generate-dockerfiles.js os-arch",
     "os-arch-lib": "node scripts/generate-stackbrew-library.js os-arch",
     "os-device": "node scripts/generate-dockerfiles.js os-device",
