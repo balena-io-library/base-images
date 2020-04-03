@@ -64,7 +64,7 @@ RUN set -x \
   && cd / && rm -rf /libx1000
 
 # Install packages for build variant
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN install_packages \
 		ca-certificates \
 		curl \
 		wget \
