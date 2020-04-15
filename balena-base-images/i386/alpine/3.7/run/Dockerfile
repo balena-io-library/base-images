@@ -45,6 +45,8 @@ RUN curl -SLO "http://resin-packages.s3.amazonaws.com/resin-xbuild/v1.0.0/resin-
 ENV UDEV off
 
 COPY entry.sh /usr/bin/entry.sh
+COPY balena-info /usr/bin/balena-info
+COPY balena-idle /usr/bin/balena-idle
 ENTRYPOINT ["/usr/bin/entry.sh"]
 
 RUN curl -SLO "https://raw.githubusercontent.com/balena-io-library/base-images/a95300eda2320833e537ca20d728a870bf02177d/scripts/assets/tests/test-os.sh" \
@@ -52,3 +54,5 @@ RUN curl -SLO "https://raw.githubusercontent.com/balena-io-library/base-images/a
   && chmod +x test-os.sh \
   && bash test-os.sh alpine 3.7 \
   && rm -rf test-os.sh
+
+RUN [ ! -d /.balena/messages ] && mkdir -p /.balena/messages; echo $'Here are a few details about this Docker image (For more information please visit https://www.balena.io/docs/reference/base-images/base-images/): \nArchitecture: Intel 32-bit (x86) \nOS: Alpine Linux 3.7 \nVariant: run variant \nDefault variable(s): UDEV=off \nExtra features: \n- Easy way to install packages with `install_packages <package-name>` command' > /.balena/messages/image-info

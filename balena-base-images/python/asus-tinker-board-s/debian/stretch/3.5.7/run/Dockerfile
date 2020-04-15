@@ -63,10 +63,19 @@ RUN cd /usr/local/bin \
 # set PYTHONPATH to point to dist-packages
 ENV PYTHONPATH /usr/lib/python3/dist-packages:$PYTHONPATH
 
+RUN [ ! -d /.balena/messages ] && mkdir -p /.balena/messages; echo 'As of January 1st, 2020, Python 2 was end-of-life, we will change the latest tag for Balenalib Python base image to Python 3.x and drop support for Python 2 soon. So after 1st July, 2020, all the balenalib Python latest tag will point to the latest Python 3 version and no changes, or fixes will be made to balenalib Python 2 base image. If you are using Python 2 for your application, please upgrade to Python 3 before 1st July.' > /.balena/messages/python-deprecation-warning
+
 CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command could be found in Dockerfile Guide section in our Docs. Here's the link: https://balena.io/docs"]
 
  RUN curl -SLO "https://raw.githubusercontent.com/balena-io-library/base-images/8accad6af708fca7271c5c65f18a86782e19f877/scripts/assets/tests/test-stack@python.sh" \
   && echo "Running test-stack@python" \
   && chmod +x test-stack@python.sh \
   && bash test-stack@python.sh \
-  && rm -rf test-stack@python.sh
+  && rm -rf test-stack@python.sh 
+
+RUN [ ! -d /.balena/messages ] && mkdir -p /.balena/messages; echo 'Here are a few details about this Docker image (For more information please visit https://www.balena.io/docs/reference/base-images/base-images/): \nArchitecture: ARM v7 \nOS: Debian Stretch \nVariant: run variant \nDevice: Asus Tinker Board S \nDevice-type:asus-tinker-board-s \nDefault variable(s): UDEV=off \nThe following software stack is preinstalled: \nPython v3.5.7, Pip v19.3.1, Setuptools v41.6.0 \nExtra features: \n- Easy way to install packages with `install_packages <package-name>` command \n- Run anywhere with cross-build feature  (for ARM only)' > /.balena/messages/image-info
+
+RUN echo '#!/bin/sh.real\nbalena-info\nrm -f /bin/sh\ncp /bin/sh.real /bin/sh\n/bin/sh "$@"' > /bin/sh-shim \
+	&& chmod +x /bin/sh-shim \
+	&& cp /bin/sh /bin/sh.real \
+	&& mv /bin/sh-shim /bin/sh

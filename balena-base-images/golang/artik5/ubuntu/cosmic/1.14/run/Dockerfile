@@ -37,4 +37,11 @@ CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command co
   && echo "Running test-stack@golang" \
   && chmod +x test-stack@golang.sh \
   && bash test-stack@golang.sh \
-  && rm -rf test-stack@golang.sh
+  && rm -rf test-stack@golang.sh 
+
+RUN [ ! -d /.balena/messages ] && mkdir -p /.balena/messages; echo 'Here are a few details about this Docker image (For more information please visit https://www.balena.io/docs/reference/base-images/base-images/): \nArchitecture: ARM v7 \nOS: Ubuntu cosmic \nVariant: run variant \nDevice: Samsung Artik 5 \nDevice-type:artik5 \nDefault variable(s): UDEV=off \nThe following software stack is preinstalled: \nGo v1.14 \nExtra features: \n- Easy way to install packages with `install_packages <package-name>` command \n- Run anywhere with cross-build feature  (for ARM only)' > /.balena/messages/image-info
+
+RUN echo '#!/bin/sh.real\nbalena-info\nrm -f /bin/sh\ncp /bin/sh.real /bin/sh\n/bin/sh "$@"' > /bin/sh-shim \
+	&& chmod +x /bin/sh-shim \
+	&& cp /bin/sh /bin/sh.real \
+	&& mv /bin/sh-shim /bin/sh

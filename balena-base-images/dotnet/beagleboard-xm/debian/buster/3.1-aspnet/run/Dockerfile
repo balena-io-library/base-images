@@ -47,4 +47,11 @@ CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command co
   && echo "Running test-stack@dotnet" \
   && chmod +x test-stack@dotnet.sh \
   && bash test-stack@dotnet.sh \
-  && rm -rf test-stack@dotnet.sh
+  && rm -rf test-stack@dotnet.sh 
+
+RUN [ ! -d /.balena/messages ] && mkdir -p /.balena/messages; echo 'Here are a few details about this Docker image (For more information please visit https://www.balena.io/docs/reference/base-images/base-images/): \nArchitecture: ARM v7 \nOS: Debian Buster \nVariant: run variant \nDevice: BeagleBoard-XM \nDevice-type:beagleboard-xm \nDefault variable(s): UDEV=off \nThe following software stack is preinstalled: \ndotnet 3.1-aspnet \nExtra features: \n- Easy way to install packages with `install_packages <package-name>` command \n- Run anywhere with cross-build feature  (for ARM only)' > /.balena/messages/image-info
+
+RUN echo '#!/bin/sh.real\nbalena-info\nrm -f /bin/sh\ncp /bin/sh.real /bin/sh\n/bin/sh "$@"' > /bin/sh-shim \
+	&& chmod +x /bin/sh-shim \
+	&& cp /bin/sh /bin/sh.real \
+	&& mv /bin/sh-shim /bin/sh

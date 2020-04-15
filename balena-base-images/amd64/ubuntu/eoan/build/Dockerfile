@@ -47,7 +47,7 @@ rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*' > /usr/sbin/install_packa
   && chmod 0755 "/usr/sbin/install_packages"
 
 # Install packages for build variant
-RUN install_packages \
+RUN apt-get update && apt-get install -y --no-install-recommends \
 		ca-certificates \
 		curl \
 		wget \
@@ -100,6 +100,8 @@ ENV UDEV off
 RUN mkdir -p /usr/share/man/man1
 
 COPY entry.sh /usr/bin/entry.sh
+COPY balena-info /usr/bin/balena-info
+COPY balena-idle /usr/bin/balena-idle
 ENTRYPOINT ["/usr/bin/entry.sh"]
 
 RUN curl -SLO "https://raw.githubusercontent.com/balena-io-library/base-images/a95300eda2320833e537ca20d728a870bf02177d/scripts/assets/tests/test-os.sh" \
@@ -107,3 +109,5 @@ RUN curl -SLO "https://raw.githubusercontent.com/balena-io-library/base-images/a
   && chmod +x test-os.sh \
   && bash test-os.sh ubuntu eoan \
   && rm -rf test-os.sh
+
+RUN [ ! -d /.balena/messages ] && mkdir -p /.balena/messages; echo 'Here are a few details about this Docker image (For more information please visit https://www.balena.io/docs/reference/base-images/base-images/): \nArchitecture: Intel 64-bit (x86-64) \nOS: Ubuntu eoan \nVariant: build variant \nDefault variable(s): UDEV=off \nExtra features: \n- Easy way to install packages with `install_packages <package-name>` command' > /.balena/messages/image-info
