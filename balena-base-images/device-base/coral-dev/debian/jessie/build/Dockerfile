@@ -2,15 +2,15 @@ FROM balenalib/aarch64-debian:jessie-build
 LABEL io.balena.device-type="coral-dev"
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-		less \
-		kmod \
-		nano \
-		net-tools \
-		ifupdown \
-		iputils-ping \
-		i2c-tools \
-		usbutils \
-	&& rm -rf /var/lib/apt/lists/*
+        less \
+        kmod \
+        nano \
+        net-tools \
+        ifupdown \
+        iputils-ping \
+        i2c-tools \
+        usbutils \
+    && rm -rf /var/lib/apt/lists/
 
 RUN [ ! -d /.balena/messages ] && mkdir -p /.balena/messages; echo 'Here are a few details about this Docker image (For more information please visit https://www.balena.io/docs/reference/base-images/base-images/): \nArchitecture: ARM v8 \nOS: Debian Jessie \nVariant: build variant \nDevice: Google Coral Dev Board \nDevice-type:coral-dev \nDefault variable(s): UDEV=off \nExtra features: \n- Easy way to install packages with `install_packages <package-name>` command \n- Run anywhere with cross-build feature  (for ARM only)' > /.balena/messages/image-info
 
