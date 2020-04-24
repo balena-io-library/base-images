@@ -4,6 +4,130 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## 2020-21-04
+
+### Changed
+
+`Contracts v1.1.106`
+- Add node v12.16.2 and v10.20.0.
+- Add Python 2 deprecation warning.
+- Add a fake shell to print onbuild messages.
+- script: Add balena_info command.
+- script: Add balena_idle command.
+- device: Add support for Generic x86_64.
+- device: Add support for Variscite DART MX8M Mini PLT.
+- Add coral package sources to debian and ubuntu images.
+
+
+## 2020-04-04
+
+### Changed
+
+`Contracts v1.1.101`
+- Add support for ubuntu focal (20.04).
+
+
+## 2020-30-03
+
+### Changed
+
+`Contracts v1.1.100`
+- Add blueprint for supervisor-base image.
+- device: Add support for SKX2.
+- Add node v13.12.0.
+
+
+## 2020-18-03
+
+### Changed
+
+`Contracts v1.1.98`
+- Add Golang v1.14.
+- Drop support for armv5e architecture.
+
+
+## 2020-13-03
+
+### Changed
+
+`Contracts v1.1.97`
+- Add node v13.11.0 and update yarn to v1.22.4.
+- device: Remove device type Nvidia Jetson TX2 with PCIe M.2 Slot.
+- device: Add Variscite IMX8M Mini device type.
+
+
+## 2020-21-02
+
+### Changed
+
+`Contracts v1.1.95`
+- node: Add v13.9.0 and v12.16.1.
+- golang: Add v1.13.8 and v1.12.17.
+
+
+## 2020-13-02
+
+### Changed
+
+`Contracts v1.1.94`
+- node: Add node v12.16.0.
+- dotnet: Update dependencies for Debian buster and bullseye.
+
+
+## 2020-07-02
+
+### Changed
+
+`Contracts v1.1.93`
+- device: Add Nitrogen8MM DWE board.
+- device: Add Nvidia Jetson TX2 with PCIe M.2 Slot Enabled.
+- node: Add support for v13.8.0 v12.15.0 and v10.19.0.
+- dotnet: Add support for v3.1.1 sdk/runtime/aspnet.
+
+
+## 2020-15-01
+
+### Changed
+
+`Contracts v1.1.89`
+- alpine: Change latest Alpine Linux to 3.11.
+- alpine: Remove i386-nlp from Alpine Linux supported archs.
+- debian: Add support for Debian Bullseye.
+- node: Add v13.6.0 v12.14.1 and v10.18.1.
+- go: Add v1.13.6 and v1.12.15.
+- python: Add v3.8.1 v3.7.6 and v3.6.10.
+
+
+## 2019-23-12
+
+### Changed
+
+`Contracts v1.1.88`
+- node: Add v13.5.0 v12.14.0 v10.18.0 and v8.17.0, update Yarn to v1.21.1.
+- alpine: Add support for Alpine Linux v3.11.
+- dotnet: Add v3.1.0 v2.2.8 and v2.1.14.
+- device: Add Google Coral Dev Board.
+
+
+## 2019-23-11
+
+### Changed
+
+`Contracts v1.1.85`
+- golang: Add v1.12.13 and v1.13.4.
+- node: Add v13.1.0.
+- device: Add suport for Auvidea JN30B Nano.
+
+
+## 2019-06-11
+
+### Changed
+
+`Contracts v1.1.83`
+- test: Update os version test, use PRETTY_NAME for OS version test as VERSION_CODENAME are not available in all os-release file.
+- device: Add support for Surface Go.
+
+
 ## 2019-30-10
 
 ### Changed
