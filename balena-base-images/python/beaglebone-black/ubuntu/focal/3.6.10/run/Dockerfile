@@ -23,9 +23,9 @@ RUN gpg --keyserver keyring.debian.org --recv-keys 4DE8FF2A63C7CC90 \
 ENV PYTHON_VERSION 3.6.10
 
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
-ENV PYTHON_PIP_VERSION 19.3.1
+ENV PYTHON_PIP_VERSION 20.0.2
 
-ENV SETUPTOOLS_VERSION 41.6.0
+ENV SETUPTOOLS_VERSION 46.1.3
 
 RUN set -x \
 	&& buildDeps=' \
@@ -73,7 +73,7 @@ CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command co
   && bash test-stack@python.sh \
   && rm -rf test-stack@python.sh 
 
-RUN [ ! -d /.balena/messages ] && mkdir -p /.balena/messages; echo 'Here are a few details about this Docker image (For more information please visit https://www.balena.io/docs/reference/base-images/base-images/): \nArchitecture: ARM v7 \nOS: Ubuntu focal \nVariant: run variant \nDevice: BeagleBone Black \nDevice-type:beaglebone-black \nDefault variable(s): UDEV=off \nThe following software stack is preinstalled: \nPython v3.6.10, Pip v19.3.1, Setuptools v41.6.0 \nExtra features: \n- Easy way to install packages with `install_packages <package-name>` command \n- Run anywhere with cross-build feature  (for ARM only)' > /.balena/messages/image-info
+RUN [ ! -d /.balena/messages ] && mkdir -p /.balena/messages; echo 'Here are a few details about this Docker image (For more information please visit https://www.balena.io/docs/reference/base-images/base-images/): \nArchitecture: ARM v7 \nOS: Ubuntu focal \nVariant: run variant \nDefault variable(s): UDEV=off \nThe following software stack is preinstalled: \nPython v3.6.10, Pip v20.0.2, Setuptools v46.1.3 \nExtra features: \n- Easy way to install packages with `install_packages <package-name>` command \n- Run anywhere with cross-build feature  (for ARM only) \n- Keep the container idling with `balena-idle` command \n- Show base image details with `balena-info` command' > /.balena/messages/image-info
 
 RUN echo '#!/bin/sh.real\nbalena-info\nrm -f /bin/sh\ncp /bin/sh.real /bin/sh\n/bin/sh "$@"' > /bin/sh-shim \
 	&& chmod +x /bin/sh-shim \

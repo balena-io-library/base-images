@@ -32,7 +32,7 @@ This [guide][getting-started] can help you get started with using this base imag
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;bionic (latest)&#x60;, &#x60;cosmic&#x60;, &#x60;xenial&#x60;, &#x60;disco&#x60;, &#x60;eoan&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/jetson-tx1/ubuntu/)
+[&#x60;bionic (latest)&#x60;, &#x60;cosmic&#x60;, &#x60;xenial&#x60;, &#x60;disco&#x60;, &#x60;eoan&#x60;, &#x60;focal&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/jetson-tx1/ubuntu/)
 
 For more information about this image and its history, please see the [relevant manifest file (`jetson-tx1-ubuntu`)](https://github.com/balena-io-library/official-images/blob/master/library/jetson-tx1-ubuntu) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 

@@ -34,7 +34,7 @@ CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command co
   && bash test-stack@node.sh \
   && rm -rf test-stack@node.sh 
 
-RUN [ ! -d /.balena/messages ] && mkdir -p /.balena/messages; echo 'Here are a few details about this Docker image (For more information please visit https://www.balena.io/docs/reference/base-images/base-images/): \nArchitecture: ARM v8 \nOS: Ubuntu eoan \nVariant: build variant \nDevice: Nitrogen8M Mini SBC \nDevice-type:nitrogen8mm \nDefault variable(s): UDEV=off \nThe following software stack is preinstalled: \nNode.js v10.20.0, Yarn v1.22.4 \nExtra features: \n- Easy way to install packages with `install_packages <package-name>` command \n- Run anywhere with cross-build feature  (for ARM only)' > /.balena/messages/image-info
+RUN [ ! -d /.balena/messages ] && mkdir -p /.balena/messages; echo 'Here are a few details about this Docker image (For more information please visit https://www.balena.io/docs/reference/base-images/base-images/): \nArchitecture: ARM v8 \nOS: Ubuntu eoan \nVariant: build variant \nDefault variable(s): UDEV=off \nThe following software stack is preinstalled: \nNode.js v10.20.0, Yarn v1.22.4 \nExtra features: \n- Easy way to install packages with `install_packages <package-name>` command \n- Run anywhere with cross-build feature  (for ARM only) \n- Keep the container idling with `balena-idle` command \n- Show base image details with `balena-info` command' > /.balena/messages/image-info
 
 RUN echo '#!/bin/sh.real\nbalena-info\nrm -f /bin/sh\ncp /bin/sh.real /bin/sh\n/bin/sh "$@"' > /bin/sh-shim \
 	&& chmod +x /bin/sh-shim \
