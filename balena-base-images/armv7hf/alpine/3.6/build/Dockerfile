@@ -1,7 +1,7 @@
 FROM arm32v6/alpine:3.6
 LABEL io.balena.architecture="armv7hf"
  
-LABEL io.balena.qemu.version="4.0.0+balena-arm"
+LABEL io.balena.qemu.version="4.0.0+balena2-arm"
 COPY qemu-arm-static /usr/bin 
 
 RUN apk add --no-cache \

@@ -1,7 +1,7 @@
 FROM arm64v8/debian:jessie-slim
 LABEL io.balena.architecture="aarch64"
  
-LABEL io.balena.qemu.version="4.0.0+balena-aarch64"
+LABEL io.balena.qemu.version="4.0.0+balena2-aarch64"
 COPY qemu-aarch64-static /usr/bin 
 
 RUN echo 'deb http://archive.debian.org/debian jessie main' > /etc/apt/sources.list \

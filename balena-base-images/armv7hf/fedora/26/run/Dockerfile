@@ -1,7 +1,7 @@
 FROM arm32v7/fedora:26
 LABEL io.balena.architecture="armv7hf"
  
-LABEL io.balena.qemu.version="4.0.0+balena-arm"
+LABEL io.balena.qemu.version="4.0.0+balena2-arm"
 COPY qemu-arm-static /usr/bin 
 
 # Few tweaks for Fedora base image
