@@ -4,7 +4,7 @@ FROM balenalib/imx8mm-var-dart-plt-ubuntu:xenial-run
 ENV NODE_VERSION 13.13.0
 ENV YARN_VERSION 1.22.4
 
-RUN buildDeps='curl' \
+RUN buildDeps='curl libatomic1' \
 	&& set -x \
 	&& for key in \
 	6A010C5166006599AA17F08146C2130DFD2497F5 \
