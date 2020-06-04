@@ -38,7 +38,6 @@ done' > /usr/sbin/install_packages \
 
 # Install packages for build variant
 RUN apk add --update \
-		bzr \
 		git \
 		mercurial \
 		openssh-client \
