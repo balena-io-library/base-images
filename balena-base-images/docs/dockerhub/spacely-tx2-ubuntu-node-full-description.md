@@ -44,7 +44,7 @@ Node.js internally uses the Google V8 JavaScript engine to execute code; a large
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;14.5.0 (latest)&#x60;, &#x60;12.18.2&#x60;, &#x60;10.21.0&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/node/spacely-tx2/ubuntu/)
+[&#x60;14.7.0 (latest)&#x60;, &#x60;12.18.3&#x60;, &#x60;10.22.0&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/node/spacely-tx2/ubuntu/)
 
 For more information about this image and its history, please see the [relevant manifest file (`spacely-tx2-ubuntu-node`)](https://github.com/balena-io-library/official-images/blob/master/library/spacely-tx2-ubuntu-node) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 

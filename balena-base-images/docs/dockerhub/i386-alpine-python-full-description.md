@@ -36,7 +36,7 @@ Python is an interpreted, interactive, object-oriented, open-source programming 
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;2.7.18 (latest)&#x60;, &#x60;3.8.3&#x60;, &#x60;3.7.7&#x60;, &#x60;3.6.10&#x60;, &#x60;3.5.7&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/python/i386/alpine/)
+[ &#x60;3.8.5 (latest)&#x60;, &#x60;2.7.18&#x60;, &#x60;3.7.8&#x60;, &#x60;3.6.11&#x60;, &#x60;3.5.7&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/python/i386/alpine/)
 
 For more information about this image and its history, please see the [relevant manifest file (`i386-alpine-python`)](https://github.com/balena-io-library/official-images/blob/master/library/i386-alpine-python) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 
