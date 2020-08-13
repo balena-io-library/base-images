@@ -4,7 +4,7 @@ FROM balenalib/npe-x500-m3-debian:sid-run
 ENV NODE_VERSION 12.18.3
 ENV YARN_VERSION 1.22.4
 
-RUN buildDeps='curl' \
+RUN buildDeps='curl libatomic1' \
 	&& set -x \
 	&& for key in \
 	6A010C5166006599AA17F08146C2130DFD2497F5 \
