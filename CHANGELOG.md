@@ -4,6 +4,147 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## 2020-09-09
+
+### Changed
+
+`Contracts v1.4.5`
+- Add repo.download.nvidia.com/jetson sources to Ubuntu base images.
+- Add l4t-core workaround for all Jetson images.
+- Add node v14.9.0.
+
+
+
+## 2020-31-08
+
+### Changed
+
+`Contracts v1.4.3`
+- Add support for new Fedora releases (32, 33 and 34).
+- Add node v14.9.0.
+
+
+## 2020-13-08
+
+### Changed
+
+`Contracts v1.4.3`
+- Add libatomic1 as a dependency for debian node base images.
+- astro-tx2: Add CTI Astro TX2 G+ device type.
+- Add Nvidia package repositories to all Nvidia base images (jetson family).
+- Add node v14.8.0.
+
+
+## 2020-31-07
+
+### Changed
+
+`Contracts v1.4.1`
+- Add archive.raspberrypi.org/debian package repository to rpi family.
+- Add Python v3.8.5.
+- Add node v14.7.0 v12.18.3 and v10.22.0.
+- Add Go v1.14.6 and v1.13.14.
+
+
+## 2020-15-07
+
+### Changed
+
+`Contracts v1.3.2`
+- Change Python latest tag to 3.x and add support for latest releases.
+- photon-xavier-nx: Add CTI Photon Xavier NX device type.
+- jetson-xavier-nx-devkit-emmc: Add device type.
+- jetson-nano-emmc: Add device type.
+- jetson-nano: Update name to match dashboard.
+
+
+## 2020-10-07
+
+### Changed
+
+`Contracts v1.3.0`
+- Change latest Python to v3.8.3.
+- Add Python v3.6.11 and v3.7.8.
+
+
+## 2020-06-07
+
+### Changed
+
+`Contracts v1.2.0`
+- Add node v14.5.0 and v12.18.2.
+- Add latest dotnet releases.
+
+
+## 2020-22-06
+
+### Changed
+
+`Contracts v1.1.116`
+- device: Add support for Variscite DART MX8M Mini NRT.
+
+
+## 2020-04-06
+
+### Changed
+
+`Contracts v1.1.115`
+- Drop support for EOL Golang versions (v1.12 v1.11 and v1.10).
+- Add Golang v1.14.4 and v1.13.12.
+- Drop support for EOL node versions (v13, v11, v9 and v8).
+- Add node v14.4.0 v12.18.0 and v10.21.0.
+
+
+## 2020-02-06
+
+### Changed
+
+`Contracts v1.1.114`
+- Add support for Alpine Linux v3.12 and drop few old versions (v3.6 v3.7 and v3.8).
+
+
+## 2020-28-05
+
+### Changed
+
+`Contracts v1.1.113`
+- device: Add support for AIO 3288C community board.
+- device: Add support for FireFly rk3288 community board.
+- device: Add support for Photon Nano community board.
+- Add libatomic1 as runtime deps for ubuntu node.
+- Add node v14.3.0.
+- Add node v12.17.0.
+
+
+## 2020-18-05
+
+### Changed
+
+`Contracts v1.1.111`
+- Add Python v3.8.3.
+- Add node v14.2.0.
+
+
+## 2020-30-04
+
+### Changed
+
+`Contracts v1.1.110`
+- Add node v12.16.3.
+- Update QEMU to v4.0.0+balena2.
+
+
+## 2020-28-04
+
+### Changed
+
+`Contracts v1.1.108`
+- Add golang v1.14.2 and v1.13.10.
+- Add node v14.0.0 and v13.13.0.
+- Add Python v2.7.18 v3.7.7 and v3.8.2.
+- Add details about `balena-idle` and `balena-info` to base image messages.
+
+
 ## 2020-21-04
 
 ### Changed
