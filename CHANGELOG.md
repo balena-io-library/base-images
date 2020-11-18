@@ -4,6 +4,42 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## 2020-18-11
+
+### Changed
+
+`Contracts v1.9.2`
+- Add node v15.2.1 v14.15.1 and v12.19.1.
+
+
+## 2020-30-10
+
+### Changed
+
+`Contracts v1.9.2`
+- Add node v15.0.1 v14.15.0 and v10.23.0.
+- Add Golang v1.15.3 and v1.14.10.
+
+
+## 2020-12-10
+
+### Changed
+
+`Contracts v1.7.2`
+- Add node v12.19.0 and v14.13.1.
+- Add Python v3.9.0 v3.8.6 v3.7.9 v3.6.12 and v3.5.10.
+
+
+## 2020-14-09
+
+### Changed
+
+`Contracts v1.4.6`
+- Remove Python deprecation message in Python3 base images.
+- Add golang v1.15.2 and v1.14.9.
+- Add node v14.10.1.
+
+
 ## 2020-09-09
 
 ### Changed
