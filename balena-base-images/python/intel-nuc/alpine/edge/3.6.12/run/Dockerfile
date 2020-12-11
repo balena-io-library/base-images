@@ -25,9 +25,9 @@ ENV SSL_CERT_FILE /etc/ssl/certs/ca-certificates.crt
 ENV PYTHON_VERSION 3.6.12
 
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
-ENV PYTHON_PIP_VERSION 20.2.3
+ENV PYTHON_PIP_VERSION 20.3.1
 
-ENV SETUPTOOLS_VERSION 50.3.0
+ENV SETUPTOOLS_VERSION 51.0.0
 
 RUN set -x \
 	&& buildDeps=' \
@@ -70,7 +70,7 @@ CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command co
   && bash test-stack@python.sh \
   && rm -rf test-stack@python.sh 
 
-RUN [ ! -d /.balena/messages ] && mkdir -p /.balena/messages; echo $'Here are a few details about this Docker image (For more information please visit https://www.balena.io/docs/reference/base-images/base-images/): \nArchitecture: Intel 64-bit (x86-64) \nOS: Alpine Linux edge \nVariant: run variant \nDefault variable(s): UDEV=off \nThe following software stack is preinstalled: \nPython v3.6.12, Pip v20.2.3, Setuptools v50.3.0 \nExtra features: \n- Easy way to install packages with `install_packages <package-name>` command \n- Run anywhere with cross-build feature  (for ARM only) \n- Keep the container idling with `balena-idle` command \n- Show base image details with `balena-info` command' > /.balena/messages/image-info
+RUN [ ! -d /.balena/messages ] && mkdir -p /.balena/messages; echo $'Here are a few details about this Docker image (For more information please visit https://www.balena.io/docs/reference/base-images/base-images/): \nArchitecture: Intel 64-bit (x86-64) \nOS: Alpine Linux edge \nVariant: run variant \nDefault variable(s): UDEV=off \nThe following software stack is preinstalled: \nPython v3.6.12, Pip v20.3.1, Setuptools v51.0.0 \nExtra features: \n- Easy way to install packages with `install_packages <package-name>` command \n- Run anywhere with cross-build feature  (for ARM only) \n- Keep the container idling with `balena-idle` command \n- Show base image details with `balena-info` command' > /.balena/messages/image-info
 
 RUN echo $'#!/bin/bash\nbalena-info\nbusybox ln -sf /bin/busybox /bin/sh\n/bin/sh "$@"' > /bin/sh-shim \
 	&& chmod +x /bin/sh-shim \

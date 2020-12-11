@@ -22,10 +22,10 @@ ENV ASPNETCORE_URLS=http://+:80 \
     DOTNET_RUNNING_IN_CONTAINER=true
 
 # Install .NET Core
-ENV DOTNET_VERSION 3.1.5
+ENV DOTNET_VERSION 3.1.10
 
 RUN curl -SL --output dotnet.tar.gz "https://dotnetcli.blob.core.windows.net/dotnet/Runtime/$DOTNET_VERSION/dotnet-runtime-$DOTNET_VERSION-linux-arm.tar.gz" \
-    && dotnet_sha512='c3eb0453893ca7f758e491780031ef0b1323a14c080740847aea652b5c4db99d30e8b3b27fcd306c3a098dc838572c41d3ea871156ba62d9302df32e63a28835' \
+    && dotnet_sha512='734274c23fe56ea689d767da2031fb19ba81c10014f268ded7c63241024478ee1b6b418f114f4b9018aa36ccdb311f7400fea1dfe78465282b51a9e505b0e746' \
     && echo "$dotnet_sha512 dotnet.tar.gz" | sha512sum -c - \
     && mkdir -p /usr/share/dotnet \
     && tar -zxf dotnet.tar.gz -C /usr/share/dotnet \
