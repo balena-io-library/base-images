@@ -28,7 +28,7 @@ The build variant is a heavier image that includes many of the tools required fo
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;30 (latest)&#x60;, &#x60;31&#x60;, &#x60;29&#x60;, &#x60;28&#x60;, &#x60;26&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/amd64/fedora/)
+[&#x60;32 (latest)&#x60;, &#x60;31&#x60;, &#x60;33&#x60;, &#x60;34&#x60;, &#x60;30&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/amd64/fedora/)
 
 For more information about this image and its history, please see the [relevant manifest file (`amd64-fedora`)](https://github.com/balena-io-library/official-images/blob/master/library/amd64-fedora) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 

@@ -40,7 +40,7 @@ Node.js internally uses the Google V8 JavaScript engine to execute code; a large
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;14.7.0 (latest)&#x60;, &#x60;12.18.3&#x60;, &#x60;10.22.0&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/node/armv7hf/ubuntu/)
+[&#x60;15.5.1 (latest)&#x60;, &#x60;14.15.4&#x60;, &#x60;12.20.1&#x60;, &#x60;10.23.1&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/node/armv7hf/ubuntu/)
 
 For more information about this image and its history, please see the [relevant manifest file (`armv7hf-ubuntu-node`)](https://github.com/balena-io-library/official-images/blob/master/library/armv7hf-ubuntu-node) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 

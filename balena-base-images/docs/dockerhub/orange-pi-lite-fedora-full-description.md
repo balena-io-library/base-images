@@ -32,7 +32,7 @@ This [guide][getting-started] can help you get started with using this base imag
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;30 (latest)&#x60;, &#x60;31&#x60;, &#x60;29&#x60;, &#x60;28&#x60;, &#x60;26&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/orange-pi-lite/fedora/)
+[&#x60;32 (latest)&#x60;, &#x60;31&#x60;, &#x60;33&#x60;, &#x60;34&#x60;, &#x60;30&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/orange-pi-lite/fedora/)
 
 For more information about this image and its history, please see the [relevant manifest file (`orange-pi-lite-fedora`)](https://github.com/balena-io-library/official-images/blob/master/library/orange-pi-lite-fedora) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 
