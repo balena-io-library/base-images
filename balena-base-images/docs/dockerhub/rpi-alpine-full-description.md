@@ -28,7 +28,7 @@ The build variant is a heavier image that includes many of the tools required fo
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;3.12 (latest)&#x60;, &#x60;3.11&#x60;, &#x60;3.10&#x60;, &#x60;3.9&#x60;, &#x60;edge&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/rpi/alpine/)
+[&#x60;3.13 (latest)&#x60;, &#x60;3.11&#x60;, &#x60;3.10&#x60;, &#x60;3.12&#x60;, &#x60;edge&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/rpi/alpine/)
 
 For more information about this image and its history, please see the [relevant manifest file (`rpi-alpine`)](https://github.com/balena-io-library/official-images/blob/master/library/rpi-alpine) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 
