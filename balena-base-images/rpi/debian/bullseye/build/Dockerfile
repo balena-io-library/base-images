@@ -1,7 +1,7 @@
 FROM balenalib/rpi-raspbian:bullseye
 LABEL io.balena.architecture="rpi"
  
-LABEL io.balena.qemu.version="4.0.0+balena2-arm"
+LABEL io.balena.qemu.version="5.2.0+balena-arm"
 COPY qemu-arm-static /usr/bin 
 
 RUN apt-get update && apt-get install -y --no-install-recommends \

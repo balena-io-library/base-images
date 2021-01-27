@@ -1,7 +1,7 @@
 FROM arm64v8/fedora:34
 LABEL io.balena.architecture="aarch64"
  
-LABEL io.balena.qemu.version="4.0.0+balena2-aarch64"
+LABEL io.balena.qemu.version="5.2.0+balena-aarch64"
 COPY qemu-aarch64-static /usr/bin 
 
 RUN dnf update -y && dnf install -y \

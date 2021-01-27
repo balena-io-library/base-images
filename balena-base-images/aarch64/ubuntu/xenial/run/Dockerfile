@@ -1,7 +1,7 @@
 FROM arm64v8/ubuntu:xenial
 LABEL io.balena.architecture="aarch64"
  
-LABEL io.balena.qemu.version="4.0.0+balena2-aarch64"
+LABEL io.balena.qemu.version="5.2.0+balena-aarch64"
 COPY qemu-aarch64-static /usr/bin 
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
