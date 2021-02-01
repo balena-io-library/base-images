@@ -1,7 +1,7 @@
 FROM arm64v8/debian:buster-slim
 LABEL io.balena.architecture="aarch64"
  
-LABEL io.balena.qemu.version="5.2.0+balena-aarch64"
+LABEL io.balena.qemu.version="5.2.0+balena1-aarch64"
 COPY qemu-aarch64-static /usr/bin 
 
 RUN apt-get update && apt-get install -y --no-install-recommends \

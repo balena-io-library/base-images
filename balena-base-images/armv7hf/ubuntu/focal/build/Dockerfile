@@ -1,7 +1,7 @@
 FROM arm32v7/ubuntu:focal
 LABEL io.balena.architecture="armv7hf"
  
-LABEL io.balena.qemu.version="5.2.0+balena-arm"
+LABEL io.balena.qemu.version="5.2.0+balena1-arm"
 COPY qemu-arm-static /usr/bin 
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
