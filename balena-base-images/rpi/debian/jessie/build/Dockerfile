@@ -1,7 +1,7 @@
 FROM balenalib/rpi-raspbian:jessie
 LABEL io.balena.architecture="rpi"
  
-LABEL io.balena.qemu.version="5.2.0+balena1-arm"
+LABEL io.balena.qemu.version="5.2.0+balena4-arm"
 COPY qemu-arm-static /usr/bin 
 
 RUN sed -i '/jessie-updates/{s/^/#/}' /etc/apt/sources.list \

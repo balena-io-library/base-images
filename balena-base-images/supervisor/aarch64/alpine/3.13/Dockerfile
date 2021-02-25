@@ -1,6 +1,6 @@
 FROM arm64v8/alpine:3.13
  
-LABEL io.balena.qemu.version="5.2.0+balena1-aarch64"
+LABEL io.balena.qemu.version="5.2.0+balena4-aarch64"
 COPY qemu-aarch64-static /usr/bin 
 RUN curl -SLO "http://resin-packages.s3.amazonaws.com/resin-xbuild/v1.0.0/resin-xbuild1.0.0.tar.gz" \
   && echo "1eb099bc3176ed078aa93bd5852dbab9219738d16434c87fc9af499368423437  resin-xbuild1.0.0.tar.gz" | sha256sum -c - \
