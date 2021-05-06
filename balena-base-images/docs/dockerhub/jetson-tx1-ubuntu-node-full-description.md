@@ -44,7 +44,7 @@ Node.js internally uses the Google V8 JavaScript engine to execute code; a large
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;15.10.0 (latest)&#x60;, &#x60;14.16.0&#x60;, &#x60;12.21.0&#x60;, &#x60;10.24.0&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/node/jetson-tx1/ubuntu/)
+[&#x60;16.1.0 (latest)&#x60;, &#x60;15.14.0&#x60;, &#x60;14.16.1&#x60;, &#x60;12.21.1&#x60;, &#x60;10.24.1&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/node/jetson-tx1/ubuntu/)
 
 For more information about this image and its history, please see the [relevant manifest file (`jetson-tx1-ubuntu-node`)](https://github.com/balena-io-library/official-images/blob/master/library/jetson-tx1-ubuntu-node) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 
