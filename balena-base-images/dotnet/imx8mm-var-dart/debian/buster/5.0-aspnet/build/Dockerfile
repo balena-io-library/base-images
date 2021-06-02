@@ -22,20 +22,20 @@ ENV ASPNETCORE_URLS=http://+:80 \
     DOTNET_RUNNING_IN_CONTAINER=true
 
 # Install .NET Core
-ENV DOTNET_VERSION 5.0.3
+ENV DOTNET_VERSION 5.0.6
 
 RUN curl -SL --output dotnet.tar.gz "https://dotnetcli.blob.core.windows.net/dotnet/Runtime/$DOTNET_VERSION/dotnet-runtime-$DOTNET_VERSION-linux-arm64.tar.gz" \
-    && dotnet_sha512='f4d176b48714121040470a25f76a1b3554edb358953c1bfb39bd111cf0dcc85cb8a5ebcd617efd207b3cfaef0a2d242f94e9f018a186828a750c5c0dc9bd7da5' \
+    && dotnet_sha512='2f7e8b2654655d0d816e4d2e775098c340edf5edb458af9598f33a72e340268136fe6e2516ad4cfe941d0d419fe30357756f6585bcc151110e37c710284570d8' \
     && echo "$dotnet_sha512 dotnet.tar.gz" | sha512sum -c - \
     && mkdir -p /usr/share/dotnet \
     && tar -zxf dotnet.tar.gz -C /usr/share/dotnet \
     && rm dotnet.tar.gz \
     && ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet
 
-ENV ASPNETCORE_VERSION 5.0.3
+ENV ASPNETCORE_VERSION 5.0.6
 
 RUN curl -SL --output aspnetcore.tar.gz "https://dotnetcli.blob.core.windows.net/dotnet/aspnetcore/Runtime/$ASPNETCORE_VERSION/aspnetcore-runtime-$ASPNETCORE_VERSION-linux-arm64.tar.gz" \
-    && aspnetcore_sha512='4eaf1b0120479102b342f1f3a8ad8f40b7326e3657d2b7359c09fd1951c5169ca02d1ead4d4d01f6e594adbe0cb21f135f4c61ff90613219596f6cc222161717' \
+    && aspnetcore_sha512='40a09a9ff07b078cff17da6d0bfeb427c99c64f15135111831eef94c9d8c6274e9c5f3787c7b7652113e93af2547ed41b26b9d59fb55f28f9aa69cf90e804d0e' \
     && echo "$aspnetcore_sha512  aspnetcore.tar.gz" | sha512sum -c - \
     && mkdir -p /usr/share/dotnet \
     && tar -zxf aspnetcore.tar.gz -C /usr/share/dotnet ./shared/Microsoft.AspNetCore.App \
