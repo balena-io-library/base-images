@@ -14,7 +14,7 @@ function check_vesion {
 function test_go_get {
     local result
 
-    go get github.com/golang/example/hello
+    go get golang.org/x/example/hello
 
     result=$(hello)
     rm -rf $GOPATH/bin/* $GOPATH/src/*
