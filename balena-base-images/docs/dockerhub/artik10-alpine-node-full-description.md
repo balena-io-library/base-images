@@ -44,7 +44,7 @@ Node.js internally uses the Google V8 JavaScript engine to execute code; a large
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;16.1.0 (latest)&#x60;, &#x60;15.14.0&#x60;, &#x60;14.16.1&#x60;, &#x60;12.21.1&#x60;, &#x60;10.24.1&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/node/artik10/alpine/)
+[&#x60;16.4.0 (latest)&#x60;, &#x60;14.16.1&#x60;, &#x60;12.21.1&#x60;, &#x60;10.24.1&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/node/artik10/alpine/)
 
 For more information about this image and its history, please see the [relevant manifest file (`artik10-alpine-node`)](https://github.com/balena-io-library/official-images/blob/master/library/artik10-alpine-node) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 

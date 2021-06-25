@@ -47,7 +47,7 @@ RUN set -x \
 # install "virtualenv", since the vast majority of users of this image will want it
 RUN pip install --no-cache-dir virtualenv
 
-ENV PYTHON_DBUS_VERSION 1.2.8
+ENV PYTHON_DBUS_VERSION 1.2.16
 
 # install dbus-python dependencies 
 RUN apk add --no-cache \
