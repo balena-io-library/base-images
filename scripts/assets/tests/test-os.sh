@@ -28,6 +28,10 @@ function check_os_version {
 
     case "$os" in
         debian|raspbian|alpine|fedora)
+            if [ "$os_version" == "sid" ] ; then
+                # skip the os test for Debian sid
+                echo "OS version test skipped!"; exit 0
+            fi
             [[ "$PRETTY_NAME" == *"$os_version"* ]] || (echo "Incorrect OS version!"; exit 1)
         ;;
         ubuntu)
