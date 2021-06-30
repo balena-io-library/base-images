@@ -47,7 +47,7 @@ RUN curl -SLO "https://download.java.net/java/GA/jdk16.0.1/7147401fd7354114ac51e
 	&& java -Xshare:dump \
 	&& fileEncoding="$(echo 'System.out.println(System.getProperty("file.encoding"))' | jshell -s -)"; [ "$fileEncoding" = 'UTF-8' ]; rm -rf ~/.java \
 	&& javac --version \
-	&& java --versio
+	&& java --version
 
 CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command could be found in Dockerfile Guide section in our Docs. Here's the link: https://balena.io/docs"]
 
