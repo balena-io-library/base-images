@@ -40,7 +40,7 @@ Go (a.k.a., Golang) is a programming language first developed at Google. It is a
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;1.16.5 (latest)&#x60;, &#x60;1.15.13&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/golang/spacely-tx2/debian/)
+[&#x60;1.16.6 (latest)&#x60;, &#x60;1.15.15&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/golang/spacely-tx2/debian/)
 
 For more information about this image and its history, please see the [relevant manifest file (`spacely-tx2-debian-golang`)](https://github.com/balena-io-library/official-images/blob/master/library/spacely-tx2-debian-golang) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 

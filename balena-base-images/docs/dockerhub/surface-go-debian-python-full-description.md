@@ -40,7 +40,7 @@ Python is an interpreted, interactive, object-oriented, open-source programming 
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;3.9.5 (latest)&#x60;, &#x60;3.8.10&#x60;, &#x60;2.7.18&#x60;, &#x60;3.7.9&#x60;, &#x60;3.6.12&#x60;, &#x60;3.5.10&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/python/surface-go/debian/)
+[&#x60;3.9.6 (latest)&#x60;, &#x60;3.8.11&#x60;, &#x60;2.7.18&#x60;, &#x60;3.7.11&#x60;, &#x60;3.6.14&#x60;, &#x60;3.5.10&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/python/surface-go/debian/)
 
 For more information about this image and its history, please see the [relevant manifest file (`surface-go-debian-python`)](https://github.com/balena-io-library/official-images/blob/master/library/surface-go-debian-python) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 
