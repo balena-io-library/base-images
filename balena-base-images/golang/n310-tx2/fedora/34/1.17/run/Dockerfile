@@ -25,7 +25,7 @@ WORKDIR $GOPATH
 
 CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command could be found in Dockerfile Guide section in our Docs. Here's the link: https://balena.io/docs"]
 
- RUN curl -SLO "https://raw.githubusercontent.com/balena-io-library/base-images/8accad6af708fca7271c5c65f18a86782e19f877/scripts/assets/tests/test-stack@golang.sh" \
+ RUN curl -SLO "https://raw.githubusercontent.com/balena-io-library/base-images/613d8e9ca8540f29a43fddf658db56a8d826fffe/scripts/assets/tests/test-stack@golang.sh" \
   && echo "Running test-stack@golang" \
   && chmod +x test-stack@golang.sh \
   && bash test-stack@golang.sh \
