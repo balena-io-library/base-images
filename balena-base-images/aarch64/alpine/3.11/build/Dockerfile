@@ -1,7 +1,7 @@
 FROM arm64v8/alpine:3.11
 LABEL io.balena.architecture="aarch64"
  
-LABEL io.balena.qemu.version="5.2.0+balena4-aarch64"
+LABEL io.balena.qemu.version="6.0.0+balena1-aarch64"
 COPY qemu-aarch64-static /usr/bin 
 
 RUN apk add --no-cache \
