@@ -11,17 +11,6 @@ function check_vesion {
     echo "Go version test passed!"
 }
 
-function test_go_get {
-    local result
-
-    go get golang.org/x/example/hello
-
-    result=$(hello)
-    rm -rf $GOPATH/bin/* $GOPATH/src/*
-    [ "$result" == "Hello, Go examples!" ] || ( echo "Go get & run failed." ; exit 1)
-    echo "Go get test passed!"
-}
-
 function test_hello_world {
     local expected_std_out="Hello World!"
 
@@ -40,7 +29,6 @@ EOF
 
 function main {
     check_vesion
-    test_go_get
     test_hello_world
 }
 
