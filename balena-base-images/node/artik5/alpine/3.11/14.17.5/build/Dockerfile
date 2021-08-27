@@ -13,7 +13,7 @@ RUN for key in \
 	; do \
 		gpg --keyserver pgp.mit.edu --recv-keys "$key" || \
 		gpg --keyserver keyserver.pgp.com --recv-keys "$key" || \
-		gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key" ; \
+		gpg --keyserver keyserver.ubuntu.com --recv-keys "$key" ; \
 	done \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-alpine-armv7hf.tar.gz" \
 	&& echo "07f54daded8ec3f681b413cb06385f82edd9deabe092d9a4ce6a60d0f60ade7b  node-v$NODE_VERSION-linux-alpine-armv7hf.tar.gz" | sha256sum -c - \

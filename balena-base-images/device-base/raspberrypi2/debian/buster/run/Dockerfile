@@ -1,9 +1,9 @@
 FROM balenalib/armv7hf-debian:buster-run
 LABEL io.balena.device-type="raspberrypi2"
 RUN echo "deb http://archive.raspbian.org/raspbian buster main contrib non-free rpi firmware" >>  /etc/apt/sources.list \
-	&& apt-key adv --batch --keyserver ha.pool.sks-keyservers.net  --recv-key 0x9165938D90FDDD2E \
+	&& apt-key adv --batch --keyserver keyserver.ubuntu.com  --recv-key 0x9165938D90FDDD2E \
 	&& echo "deb http://archive.raspberrypi.org/debian buster main ui" >>  /etc/apt/sources.list.d/raspi.list \
-	&& apt-key adv --batch --keyserver ha.pool.sks-keyservers.net  --recv-key 0x82B129927FA3303E
+	&& apt-key adv --batch --keyserver keyserver.ubuntu.com  --recv-key 0x82B129927FA3303E
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		less \

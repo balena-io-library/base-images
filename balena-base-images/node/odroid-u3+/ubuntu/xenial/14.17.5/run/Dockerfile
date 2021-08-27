@@ -11,7 +11,7 @@ RUN buildDeps='curl libatomic1' \
 	; do \
 		gpg --keyserver pgp.mit.edu --recv-keys "$key" || \
 		gpg --keyserver keyserver.pgp.com --recv-keys "$key" || \
-		gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key" ; \
+		gpg --keyserver keyserver.ubuntu.com --recv-keys "$key" ; \
 	done \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/* \

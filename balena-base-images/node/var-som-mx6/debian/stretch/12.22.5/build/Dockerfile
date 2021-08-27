@@ -9,7 +9,7 @@ RUN for key in \
 	; do \
 		gpg --batch --keyserver pgp.mit.edu --recv-keys "$key" || \
 		gpg --batch --keyserver keyserver.pgp.com --recv-keys "$key" || \
-		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key" ; \
+		gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ; \
 	done \
 	&& curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-armv7l.tar.gz" \
 	&& echo "0b271c210e26ffb20728dfffa02df47aca896c849968964e2019da67832ee839  node-v$NODE_VERSION-linux-armv7l.tar.gz" | sha256sum -c - \
