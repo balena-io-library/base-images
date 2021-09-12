@@ -28,7 +28,7 @@ The build variant is a heavier image that includes many of the tools required fo
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;focal (latest)&#x60;, &#x60;xenial&#x60;, &#x60;bionic&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/aarch64/ubuntu/)
+[&#x60;focal (latest)&#x60;, &#x60;hirsute&#x60;, &#x60;impish&#x60;, &#x60;xenial&#x60;, &#x60;bionic&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/aarch64/ubuntu/)
 
 For more information about this image and its history, please see the [relevant manifest file (`aarch64-ubuntu`)](https://github.com/balena-io-library/official-images/blob/master/library/aarch64-ubuntu) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 

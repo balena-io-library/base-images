@@ -22,10 +22,10 @@ ENV PYTHON_PIP_VERSION 21.2.4
 ENV SETUPTOOLS_VERSION 58.0.0
 
 RUN set -x \
-	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-amd64-openssl1.1.tar.gz" \
-	&& echo "1c9fdfd11345ce7f28235d97fa7696a5a22bc8898a238cc0eb4bc8e8ff24d3d0  Python-$PYTHON_VERSION.linux-amd64-openssl1.1.tar.gz" | sha256sum -c - \
-	&& tar -xzf "Python-$PYTHON_VERSION.linux-amd64-openssl1.1.tar.gz" --strip-components=1 \
-	&& rm -rf "Python-$PYTHON_VERSION.linux-amd64-openssl1.1.tar.gz" \
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-amd64-libffi3.3.tar.gz" \
+	&& echo "7b3d7645a4cc38baa36f6d1ffbe8f84bbfdeef7ab22436073d61a31aa812424f  Python-$PYTHON_VERSION.linux-amd64-libffi3.3.tar.gz" | sha256sum -c - \
+	&& tar -xzf "Python-$PYTHON_VERSION.linux-amd64-libffi3.3.tar.gz" --strip-components=1 \
+	&& rm -rf "Python-$PYTHON_VERSION.linux-amd64-libffi3.3.tar.gz" \
 	&& ldconfig \
 	&& if [ ! -e /usr/local/bin/pip3 ]; then : \
 		&& curl -SLO "https://raw.githubusercontent.com/pypa/get-pip/430ba37776ae2ad89f794c7a43b90dc23bac334c/get-pip.py" \

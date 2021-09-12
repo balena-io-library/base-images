@@ -1,11 +1,8 @@
 FROM balenalib/aarch64-debian:sid-build
 LABEL io.balena.device-type="raspberrypi4-64"
-RUN echo "deb http://archive.raspberrypi.org/debian sid main ui" >>  /etc/apt/sources.list.d/raspi.list \
-	&& apt-key adv --batch --keyserver keyserver.ubuntu.com  --recv-key 0x82B129927FA3303E
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		less \
-		libraspberrypi-bin \
 		kmod \
 		nano \
 		net-tools \

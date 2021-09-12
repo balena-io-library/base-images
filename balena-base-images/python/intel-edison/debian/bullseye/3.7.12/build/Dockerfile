@@ -22,10 +22,10 @@ ENV PYTHON_PIP_VERSION 21.2.4
 ENV SETUPTOOLS_VERSION 58.0.0
 
 RUN set -x \
-	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-i386-openssl1.1.tar.gz" \
-	&& echo "1fcfbad1bc84c471989c604006fa2463a8411fe203db34b6c4866f6b4a749ed7  Python-$PYTHON_VERSION.linux-i386-openssl1.1.tar.gz" | sha256sum -c - \
-	&& tar -xzf "Python-$PYTHON_VERSION.linux-i386-openssl1.1.tar.gz" --strip-components=1 \
-	&& rm -rf "Python-$PYTHON_VERSION.linux-i386-openssl1.1.tar.gz" \
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-i386-libffi3.3.tar.gz" \
+	&& echo "18a18e9ac6468cbccf9d1d8ab34c94d7e20c501b7850e3a19db49a374f04891b  Python-$PYTHON_VERSION.linux-i386-libffi3.3.tar.gz" | sha256sum -c - \
+	&& tar -xzf "Python-$PYTHON_VERSION.linux-i386-libffi3.3.tar.gz" --strip-components=1 \
+	&& rm -rf "Python-$PYTHON_VERSION.linux-i386-libffi3.3.tar.gz" \
 	&& ldconfig \
 	&& if [ ! -e /usr/local/bin/pip3 ]; then : \
 		&& curl -SLO "https://raw.githubusercontent.com/pypa/get-pip/430ba37776ae2ad89f794c7a43b90dc23bac334c/get-pip.py" \

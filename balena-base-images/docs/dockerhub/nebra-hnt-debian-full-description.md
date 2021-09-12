@@ -32,7 +32,7 @@ This [guide][getting-started] can help you get started with using this base imag
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;bullseye (latest)&#x60;, &#x60;buster&#x60;, &#x60;stretch&#x60;, &#x60;sid&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/nebra-hnt/debian/)
+[&#x60;bullseye (latest)&#x60;, &#x60;bookworm&#x60;, &#x60;buster&#x60;, &#x60;stretch&#x60;, &#x60;sid&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/nebra-hnt/debian/)
 
 For more information about this image and its history, please see the [relevant manifest file (`nebra-hnt-debian`)](https://github.com/balena-io-library/official-images/blob/master/library/nebra-hnt-debian) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 

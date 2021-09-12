@@ -19,6 +19,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
       fi \
   ) \
   && rm -rf /var/lib/apt/lists/* \
+  && c_rehash \
   && echo '#!/bin/sh\n\
 set -e\n\
 set -u\n\
@@ -46,7 +47,7 @@ rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*' > /usr/sbin/install_packa
   && chmod 0755 "/usr/sbin/install_packages"
 
 # Install packages for build variant
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN install_packages \
 		ca-certificates \
 		curl \
 		wget \
