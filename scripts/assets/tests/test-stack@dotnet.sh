@@ -16,7 +16,7 @@ function test_hello_world {
         result=$(dotnet run)
         cd ..
         rm -rf testApp
-        [ "$result" == "Hello World!" ] || ( echo ".NET hello world test failed." ; exit 1 )
+        [[ "$result" == *"Hello"* ]] || ( echo ".NET hello world test failed." ; exit 1 )
         echo ".NET hello test passed!"
     fi
 }
