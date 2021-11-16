@@ -40,7 +40,7 @@ Python is an interpreted, interactive, object-oriented, open-source programming 
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;3.9.7 (latest)&#x60;, &#x60;3.8.12&#x60;, &#x60;3.7.12&#x60;, &#x60;3.6.15&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/python/asus-tinker-edge-t/ubuntu/)
+[&#x60;3.10.0 (latest)&#x60;,&#x60;3.9.7&#x60;, &#x60;3.8.12&#x60;, &#x60;3.7.12&#x60;, &#x60;3.6.15&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/python/asus-tinker-edge-t/ubuntu/)
 
 For more information about this image and its history, please see the [relevant manifest file (`asus-tinker-edge-t-ubuntu-python`)](https://github.com/balena-io-library/official-images/blob/master/library/asus-tinker-edge-t-ubuntu-python) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 

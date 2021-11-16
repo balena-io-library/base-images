@@ -40,7 +40,7 @@ Go (a.k.a., Golang) is a programming language first developed at Google. It is a
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;1.17 (latest)&#x60;, &#x60;1.16.7&#x60;, &#x60;1.15.15&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/golang/imx8m-var-dart/alpine/)
+[&#x60;1.17.2 (latest)&#x60;, &#x60;1.16.9&#x60;, &#x60;1.15.15&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/golang/imx8m-var-dart/alpine/)
 
 For more information about this image and its history, please see the [relevant manifest file (`imx8m-var-dart-alpine-golang`)](https://github.com/balena-io-library/official-images/blob/master/library/imx8m-var-dart-alpine-golang) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 
