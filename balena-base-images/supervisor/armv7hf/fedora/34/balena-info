@@ -1,0 +1,13 @@
+#!/bin/bash
+# Print all files in /.balena/messages directory
+
+set -e
+
+if [ -d /.balena/messages ]; then
+  for i in /.balena/messages/*; do
+    if [ -r $i ]; then
+      cat $i
+    fi
+  done
+  unset i
+fi
