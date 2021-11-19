@@ -22,7 +22,7 @@ ENV \
     DOTNET_RUNNING_IN_CONTAINER=true
 
 # Install .NET Core
-ENV DOTNET_VERSION 5.0.12
+ENV DOTNET_VERSION 6.0.0
 
 RUN curl -SL --output dotnet.tar.gz "https://dotnetcli.blob.core.windows.net/dotnet/Runtime/$DOTNET_VERSION/dotnet-runtime-$DOTNET_VERSION-linux-musl-arm.tar.gz" \
     && dotnet_sha512='b71b2dc2067c130a7855430dce51cac701c5c03f1ce86e76c45413efa1ee5529161c11107ca7f09e83c149558545207efb4140d441e773a2d63ae9f37ed76420' \
