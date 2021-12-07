@@ -32,7 +32,7 @@ This [guide][getting-started] can help you get started with using this base imag
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;34 (latest)&#x60;, &#x60;35&#x60;, &#x60;33&#x60;, &#x60;32&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/cnx100-xavier-nx/fedora/)
+[&#x60;35 (latest)&#x60;, &#x60;36&#x60;, &#x60;34&#x60;, &#x60;33&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/cnx100-xavier-nx/fedora/)
 
 For more information about this image and its history, please see the [relevant manifest file (`cnx100-xavier-nx-fedora`)](https://github.com/balena-io-library/official-images/blob/master/library/cnx100-xavier-nx-fedora) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 

@@ -2,12 +2,6 @@ FROM balenalib/aarch64-ubuntu:focal-build
 LABEL io.balena.device-type="raspberrypi400-64"
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-		software-properties-common \
-	&& add-apt-repository ppa:ubuntu-raspi2/ppa -y \
-	&& apt-get purge -y --auto-remove software-properties-common \
-	&& rm -rf /var/lib/apt/lists/*
-
-RUN apt-get update && apt-get install -y --no-install-recommends \
 		less \
 		libraspberrypi-bin \
 		kmod \

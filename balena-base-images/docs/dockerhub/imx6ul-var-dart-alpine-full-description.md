@@ -32,7 +32,7 @@ This [guide][getting-started] can help you get started with using this base imag
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;3.14 (latest)&#x60;, &#x60;3.13&#x60;, &#x60;3.11&#x60;, &#x60;3.12&#x60;, &#x60;edge&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/imx6ul-var-dart/alpine/)
+[&#x60;3.15 (latest)&#x60;, &#x60;3.14&#x60;, &#x60;3.13&#x60;, &#x60;3.12&#x60;, &#x60;edge&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/imx6ul-var-dart/alpine/)
 
 For more information about this image and its history, please see the [relevant manifest file (`imx6ul-var-dart-alpine`)](https://github.com/balena-io-library/official-images/blob/master/library/imx6ul-var-dart-alpine) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 

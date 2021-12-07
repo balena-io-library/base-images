@@ -3,6 +3,7 @@ LABEL io.balena.device-type="raspberrypi0-2w-64"
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		less \
+		libraspberrypi-bin \
 		kmod \
 		nano \
 		net-tools \
