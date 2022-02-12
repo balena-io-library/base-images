@@ -44,7 +44,7 @@ Node.js internally uses the Google V8 JavaScript engine to execute code; a large
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;17.2.0 (latest)&#x60;, &#x60;16.13.1&#x60;, &#x60;14.18.2&#x60;, &#x60;12.22.7&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/node/beagleboard-xm/debian/)
+[&#x60;17.5.0 (latest)&#x60;, &#x60;16.14.0&#x60;, &#x60;14.18.3&#x60;, &#x60;12.22.9&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/node/beagleboard-xm/debian/)
 
 For more information about this image and its history, please see the [relevant manifest file (`beagleboard-xm-debian-node`)](https://github.com/balena-io-library/official-images/blob/master/library/beagleboard-xm-debian-node) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 
