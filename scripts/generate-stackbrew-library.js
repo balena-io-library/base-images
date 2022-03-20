@@ -177,7 +177,7 @@ function generateStackLibrary (context) {
   fs.appendFileSync(destination, `\n`)
 }
 
-const URL = 'git://github.com/balena-io-library/base-images'
+const URL = 'https://github.com/balena-io-library/base-images'
 const ROOT = 'balena-base-images'
 const DEST_DIR = path.join(__dirname, '../library')
 const DOCKERFILE_DIR = path.join(__dirname, '../balena-base-images')
