@@ -31,13 +31,19 @@ function yyyymmdd () {
     return '' + y + (m < 10 ? '0' : '') + m + (d < 10 ? '0' : '') + d;
 }
 
-function getVersionAliases (version) {
-  // version can be a full version x.y.z or x.y or just x.
+function getVersionAliases (version, latestVersion) {
+  // version can be a full version x.y.z or x.y or just x (only for latest version).
   const result = [version]
-  var versionAlias = version.match('\([0-9]*\.[0-9]*\)')
+
+  // x.y (major.minor)
+  let versionAlias = version.match('\([0-9]*\.[0-9]*\)')
   if (!result.includes(versionAlias[0])) result.push(versionAlias[0])
-  versionAlias = version.match('\([0-9]*\)')
-  if (!result.includes(versionAlias[0])) result.push(versionAlias[0])
+
+  // x (only for latest version)
+  if (version === latestVersion) {
+    versionAlias = version.match('\([0-9]*\)')
+    if (!result.includes(versionAlias[0])) result.push(versionAlias[0])
+  }
   return result
 }
 
@@ -141,7 +147,7 @@ function generateOsArchLibrary (context) {
 }
 
 function generateStackLibrary (context) {
-  const stackVersions = getVersionAliases(context.children.sw.stack.version)
+  const stackVersions = getVersionAliases(context.children.sw.stack.version, context.children.sw.stack.data.latest)
   if (context.children.sw.stack.version === context.children.sw.stack.data.latest) {
     stackVersions.push('latest')
     stackVersions.push(null)
@@ -177,7 +183,7 @@ function generateStackLibrary (context) {
   fs.appendFileSync(destination, `\n`)
 }
 
-const URL = 'git://github.com/balena-io-library/base-images'
+const URL = 'https://github.com/balena-io-library/base-images'
 const ROOT = 'balena-base-images'
 const DEST_DIR = path.join(__dirname, '../library')
 const DOCKERFILE_DIR = path.join(__dirname, '../balena-base-images')
