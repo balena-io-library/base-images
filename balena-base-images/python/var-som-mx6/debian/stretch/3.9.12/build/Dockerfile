@@ -11,8 +11,8 @@ ENV LANG C.UTF-8
 # key 63C7CC90: public key "Simon McVittie <smcv@pseudorandom.co.uk>" imported
 # key 3372DCFA: public key "Donald Stufft (dstufft) <donald@stufft.io>" imported
 RUN gpg --batch --keyserver keyring.debian.org --recv-keys 4DE8FF2A63C7CC90 \
-	&& gpg --batch --keyserver keyserver.ubuntu.com --recv-key 6E3CBCE93372DCFA \
-	&& gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 0x52a43a1e4b77b059
+    && gpg --batch --keyserver keyserver.ubuntu.com --recv-key 6E3CBCE93372DCFA \
+    && gpg --batch --keyserver keyserver.ubuntu.com --recv-keys 0x52a43a1e4b77b059
 
 ENV PYTHON_VERSION 3.9.12
 
@@ -22,24 +22,26 @@ ENV PYTHON_PIP_VERSION 22.0.4
 ENV SETUPTOOLS_VERSION 62.1.0
 
 RUN set -x \
-	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-armv7hf-libffi3.2.tar.gz" \
-	&& echo "44248ad2dad1c6af136dc6b65fd0a7f1d72e907266f3b47989789cee981824d4  Python-$PYTHON_VERSION.linux-armv7hf-libffi3.2.tar.gz" | sha256sum -c - \
-	&& tar -xzf "Python-$PYTHON_VERSION.linux-armv7hf-libffi3.2.tar.gz" --strip-components=1 \
-	&& rm -rf "Python-$PYTHON_VERSION.linux-armv7hf-libffi3.2.tar.gz" \
-	&& ldconfig \
-	&& if [ ! -e /usr/local/bin/pip3 ]; then : \
-		&& curl -SLO "https://raw.githubusercontent.com/pypa/get-pip/430ba37776ae2ad89f794c7a43b90dc23bac334c/get-pip.py" \
-		&& echo "19dae841a150c86e2a09d475b5eb0602861f2a5b7761ec268049a662dbd2bd0c  get-pip.py" | sha256sum -c - \
-		&& python3 get-pip.py \
-		&& rm get-pip.py \
-	; fi \
-	&& pip3 install --no-cache-dir --upgrade --force-reinstall pip=="$PYTHON_PIP_VERSION" setuptools=="$SETUPTOOLS_VERSION" \
-	&& find /usr/local \
-		\( -type d -a -name test -o -name tests \) \
-		-o \( -type f -a -name '*.pyc' -o -name '*.pyo' \) \
-		-exec rm -rf '{}' + \
-	&& cd / \
-	&& rm -rf /usr/src/python ~/.cache
+    && curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-armv7hf-libffi3.2.tar.gz" \
+    && echo "44248ad2dad1c6af136dc6b65fd0a7f1d72e907266f3b47989789cee981824d4  Python-$PYTHON_VERSION.linux-armv7hf-libffi3.2.tar.gz" | sha256sum -c - \
+    && tar -xzf "Python-$PYTHON_VERSION.linux-armv7hf-libffi3.2.tar.gz" --strip-components=1 \
+    && rm -rf "Python-$PYTHON_VERSION.linux-armv7hf-libffi3.2.tar.gz" \
+    && ldconfig \
+    && curl -SL "https://github.com/pypa/get-pip/raw/38e54e5de07c66e875c11a1ebbdb938854625dd8/public/get-pip.py" -o get-pip.py \
+    && echo "e235c437e5c7d7524fbce3880ca39b917a73dc565e0c813465b7a7a329bb279a *get-pip.py" | sha256sum -c - \
+    && python3 get-pip.py \
+        --disable-pip-version-check \
+        --no-cache-dir \
+        --no-compile \
+        "pip==$PYTHON_PIP_VERSION" \
+        "setuptools==$SETUPTOOLS_VERSION" \
+    && rm -f get-pip.py \
+    && find /usr/local \
+        \( -type d -a -name test -o -name tests \) \
+        -o \( -type f -a -name '*.pyc' -o -name '*.pyo' \) \
+        -exec rm -rf '{}' + \
+    && cd / \
+    && rm -rf /usr/src/python ~/.cache
 
 # install "virtualenv", since the vast majority of users of this image will want it
 RUN pip3 install --no-cache-dir virtualenv

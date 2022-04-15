@@ -30,13 +30,15 @@ RUN set -x \
 	&& echo "bdf4d64875dccb53476489e5ea45085de53a5838c2666127a3668ecdfd8d1739  Python-$PYTHON_VERSION.linux-alpine-armv7hf-libffi3.3.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-alpine-armv7hf-libffi3.3.tar.gz" --strip-components=1 \
 	&& rm -rf "Python-$PYTHON_VERSION.linux-alpine-armv7hf-libffi3.3.tar.gz" \
-	&& if [ ! -e /usr/local/bin/pip3 ]; then : \
-		&& curl -SLO "https://raw.githubusercontent.com/pypa/get-pip/430ba37776ae2ad89f794c7a43b90dc23bac334c/get-pip.py" \
-		&& echo "19dae841a150c86e2a09d475b5eb0602861f2a5b7761ec268049a662dbd2bd0c  get-pip.py" | sha256sum -c - \
-		&& python3 get-pip.py \
-		&& rm get-pip.py \
-	; fi \
-	&& pip3 install --no-cache-dir --upgrade --force-reinstall pip=="$PYTHON_PIP_VERSION" setuptools=="$SETUPTOOLS_VERSION" \
+	&& curl -SL "https://github.com/pypa/get-pip/raw/38e54e5de07c66e875c11a1ebbdb938854625dd8/public/get-pip.py" -o get-pip.py \
+    && echo "e235c437e5c7d7524fbce3880ca39b917a73dc565e0c813465b7a7a329bb279a *get-pip.py" | sha256sum -c - \
+    && python3 get-pip.py \
+        --disable-pip-version-check \
+        --no-cache-dir \
+        --no-compile \
+        "pip==$PYTHON_PIP_VERSION" \
+        "setuptools==$SETUPTOOLS_VERSION" \
+	&& rm -f get-pip.py \
 	&& find /usr/local \
 		\( -type d -a -name test -o -name tests \) \
 		-o \( -type f -a -name '*.pyc' -o -name '*.pyo' \) \
