@@ -44,7 +44,7 @@ Node.js internally uses the Google V8 JavaScript engine to execute code; a large
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;17.5.0 (latest)&#x60;, &#x60;16.14.0&#x60;, &#x60;14.18.3&#x60;, &#x60;12.22.9&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/node/asus-tinker-edge-t/alpine/)
+[&#x60;18.1.0 (latest)&#x60;, &#x60;17.9.0&#x60;, &#x60;16.15.0&#x60;, &#x60;14.19.2&#x60;, &#x60;12.22.12&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/node/asus-tinker-edge-t/alpine/)
 
 For more information about this image and its history, please see the [relevant manifest file (`asus-tinker-edge-t-alpine-node`)](https://github.com/balena-io-library/official-images/blob/master/library/asus-tinker-edge-t-alpine-node) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 
