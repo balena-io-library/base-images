@@ -74,8 +74,3 @@ CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command co
   && rm -rf test-stack@python.sh 
 
 RUN [ ! -d /.balena/messages ] && mkdir -p /.balena/messages; echo 'Here are a few details about this Docker image (For more information please visit https://www.balena.io/docs/reference/base-images/base-images/): \nArchitecture: ARM v6 \nOS: Debian Bookworm \nVariant: run variant \nDefault variable(s): UDEV=off \nThe following software stack is preinstalled: \nPython v3.9.12, Pip v22.0.4, Setuptools v62.1.0 \nExtra features: \n- Easy way to install packages with `install_packages <package-name>` command \n- Run anywhere with cross-build feature  (for ARM only) \n- Keep the container idling with `balena-idle` command \n- Show base image details with `balena-info` command' > /.balena/messages/image-info
-
-RUN echo '#!/bin/sh.real\nbalena-info\nrm -f /bin/sh\ncp /bin/sh.real /bin/sh\n/bin/sh "$@"' > /bin/sh-shim \
-	&& chmod +x /bin/sh-shim \
-	&& cp /bin/sh /bin/sh.real \
-	&& mv /bin/sh-shim /bin/sh

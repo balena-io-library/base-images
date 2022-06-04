@@ -1,7 +1,7 @@
 FROM arm64v8/fedora:36
 LABEL io.balena.architecture="aarch64"
  
-LABEL io.balena.qemu.version="6.0.0+balena1-aarch64"
+LABEL io.balena.qemu.version="7.0.0+balena1-aarch64"
 COPY qemu-aarch64-static /usr/bin 
 
 RUN dnf update -y && dnf install -y \
@@ -63,8 +63,3 @@ RUN curl -SLO "https://raw.githubusercontent.com/balena-io-library/base-images/a
   && rm -rf test-os.sh
 
 RUN [ ! -d /.balena/messages ] && mkdir -p /.balena/messages; echo $'Here are a few details about this Docker image (For more information please visit https://www.balena.io/docs/reference/base-images/base-images/): \nArchitecture: ARM v8 \nOS: Fedora 36 \nVariant: run variant \nDefault variable(s): UDEV=off \nExtra features: \n- Easy way to install packages with `install_packages <package-name>` command \n- Run anywhere with cross-build feature  (for ARM only) \n- Keep the container idling with `balena-idle` command \n- Show base image details with `balena-info` command' > /.balena/messages/image-info
-
-RUN echo $'#!/bin/sh.real\nbalena-info\nrm -f /bin/sh\ncp /bin/sh.real /bin/sh\n/bin/sh "$@"' > /bin/sh-shim \
-	&& chmod +x /bin/sh-shim \
-	&& cp /bin/sh /bin/sh.real \
-	&& mv /bin/sh-shim /bin/sh

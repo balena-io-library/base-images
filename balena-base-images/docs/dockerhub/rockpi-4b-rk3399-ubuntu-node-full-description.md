@@ -44,7 +44,7 @@ Node.js internally uses the Google V8 JavaScript engine to execute code; a large
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;18.1.0 (latest)&#x60;, &#x60;17.9.0&#x60;, &#x60;16.15.0&#x60;, &#x60;14.19.2&#x60;, &#x60;12.22.12&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/node/rockpi-4b-rk3399/ubuntu/)
+[&#x60;18.3.0 (latest)&#x60;, &#x60;17.9.1&#x60;, &#x60;16.15.1&#x60;, &#x60;14.19.3&#x60;, &#x60;12.22.12&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/node/rockpi-4b-rk3399/ubuntu/)
 
 For more information about this image and its history, please see the [relevant manifest file (`rockpi-4b-rk3399-ubuntu-node`)](https://github.com/balena-io-library/official-images/blob/master/library/rockpi-4b-rk3399-ubuntu-node) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 

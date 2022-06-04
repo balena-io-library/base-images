@@ -1,7 +1,7 @@
 FROM arm32v6/alpine:3.12
 LABEL io.balena.architecture="rpi"
  
-LABEL io.balena.qemu.version="6.0.0+balena1-arm"
+LABEL io.balena.qemu.version="7.0.0+balena1-arm"
 COPY qemu-arm-static /usr/bin 
 
 RUN apk add --no-cache \
@@ -89,8 +89,3 @@ RUN curl -SLO "https://raw.githubusercontent.com/balena-io-library/base-images/a
   && rm -rf test-os.sh
 
 RUN [ ! -d /.balena/messages ] && mkdir -p /.balena/messages; echo $'Here are a few details about this Docker image (For more information please visit https://www.balena.io/docs/reference/base-images/base-images/): \nArchitecture: ARM v6 \nOS: Alpine Linux 3.12 \nVariant: build variant \nDefault variable(s): UDEV=off \nExtra features: \n- Easy way to install packages with `install_packages <package-name>` command \n- Run anywhere with cross-build feature  (for ARM only) \n- Keep the container idling with `balena-idle` command \n- Show base image details with `balena-info` command' > /.balena/messages/image-info
-
-RUN echo $'#!/bin/bash\nbalena-info\nbusybox ln -sf /bin/busybox /bin/sh\n/bin/sh "$@"' > /bin/sh-shim \
-	&& chmod +x /bin/sh-shim \
-	&& ln -f /bin/sh /bin/sh.real \
-	&& ln -f /bin/sh-shim /bin/sh

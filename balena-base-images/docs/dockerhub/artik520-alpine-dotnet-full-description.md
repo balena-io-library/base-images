@@ -54,7 +54,7 @@ Watch [dotnet/announcements](https://github.com/dotnet/announcements/labels/Dock
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;6.0-sdk&#x60;, &#x60;6.0-runtime&#x60;, &#x60;6.0-aspnet&#x60;, &#x60;5.0-sdk&#x60;, &#x60;5.0-runtime&#x60;, &#x60;5.0-aspnet&#x60;, &#x60;3.1-sdk&#x60;, &#x60;3.1-runtime&#x60;, &#x60;3.1-aspnet&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/dotnet/artik520/alpine/)
+[&#x60;6.0-sdk&#x60;, &#x60;6.0-runtime&#x60;, &#x60;6.0-aspnet&#x60;, &#x60;3.1-sdk&#x60;, &#x60;3.1-runtime&#x60;, &#x60;3.1-aspnet&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/dotnet/artik520/alpine/)
 
 For more information about this image and its history, please see the [relevant manifest file (`artik520-alpine-dotnet`)](https://github.com/balena-io-library/official-images/blob/master/library/artik520-alpine-dotnet) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 
