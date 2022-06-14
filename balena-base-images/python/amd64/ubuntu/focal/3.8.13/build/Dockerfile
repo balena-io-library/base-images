@@ -17,13 +17,13 @@ RUN gpg --keyserver keyring.debian.org --recv-keys 4DE8FF2A63C7CC90 \
 ENV PYTHON_VERSION 3.8.13
 
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
-ENV PYTHON_PIP_VERSION 22.0.4
+ENV PYTHON_PIP_VERSION 22.1.2
 
-ENV SETUPTOOLS_VERSION 62.1.0
+ENV SETUPTOOLS_VERSION 62.4.0
 
 RUN set -x \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-amd64-libffi3.3.tar.gz" \
-	&& echo "28167278f38077a94d0e329683cd04942b28a3c30d7f72ec679d6ebc4e762361  Python-$PYTHON_VERSION.linux-amd64-libffi3.3.tar.gz" | sha256sum -c - \
+	&& echo "c5b293c9a7f6374ba1ed2d361a2f47c48d24e5a76289c08c8ec2c56ade8ce82c  Python-$PYTHON_VERSION.linux-amd64-libffi3.3.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-amd64-libffi3.3.tar.gz" --strip-components=1 \
 	&& rm -rf "Python-$PYTHON_VERSION.linux-amd64-libffi3.3.tar.gz" \
 	&& ldconfig \
@@ -90,4 +90,4 @@ CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command co
   && bash test-stack@python.sh \
   && rm -rf test-stack@python.sh 
 
-RUN [ ! -d /.balena/messages ] && mkdir -p /.balena/messages; echo 'Here are a few details about this Docker image (For more information please visit https://www.balena.io/docs/reference/base-images/base-images/): \nArchitecture: Intel 64-bit (x86-64) \nOS: Ubuntu focal \nVariant: build variant \nDefault variable(s): UDEV=off \nThe following software stack is preinstalled: \nPython v3.8.13, Pip v22.0.4, Setuptools v62.1.0 \nExtra features: \n- Easy way to install packages with `install_packages <package-name>` command \n- Run anywhere with cross-build feature  (for ARM only) \n- Keep the container idling with `balena-idle` command \n- Show base image details with `balena-info` command' > /.balena/messages/image-info
+RUN [ ! -d /.balena/messages ] && mkdir -p /.balena/messages; echo 'Here are a few details about this Docker image (For more information please visit https://www.balena.io/docs/reference/base-images/base-images/): \nArchitecture: Intel 64-bit (x86-64) \nOS: Ubuntu focal \nVariant: build variant \nDefault variable(s): UDEV=off \nThe following software stack is preinstalled: \nPython v3.8.13, Pip v22.1.2, Setuptools v62.4.0 \nExtra features: \n- Easy way to install packages with `install_packages <package-name>` command \n- Run anywhere with cross-build feature  (for ARM only) \n- Keep the container idling with `balena-idle` command \n- Show base image details with `balena-info` command' > /.balena/messages/image-info

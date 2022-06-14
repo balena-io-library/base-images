@@ -25,9 +25,9 @@ ENV SSL_CERT_FILE /etc/ssl/certs/ca-certificates.crt
 ENV PYTHON_VERSION 3.7.13
 
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
-ENV PYTHON_PIP_VERSION 22.0.4
+ENV PYTHON_PIP_VERSION 22.1.2
 
-ENV SETUPTOOLS_VERSION 62.1.0
+ENV SETUPTOOLS_VERSION 62.4.0
 
 RUN set -x \
 	&& buildDeps=' \
@@ -36,7 +36,7 @@ RUN set -x \
 	' \
 	&& apk add --no-cache --virtual .build-deps $buildDeps \
 	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-alpine-aarch64-libffi3.3.tar.gz" \
-	&& echo "72d2a2ee32a7e6422d8f34e007f7044f856ea9ffd5267b2c4b9ba79786ad80fd  Python-$PYTHON_VERSION.linux-alpine-aarch64-libffi3.3.tar.gz" | sha256sum -c - \
+	&& echo "337e02a695a85fe74b234377c9ca0949d7b67c7bd3380d7893e1e52106280e98  Python-$PYTHON_VERSION.linux-alpine-aarch64-libffi3.3.tar.gz" | sha256sum -c - \
 	&& tar -xzf "Python-$PYTHON_VERSION.linux-alpine-aarch64-libffi3.3.tar.gz" --strip-components=1 \
 	&& rm -rf "Python-$PYTHON_VERSION.linux-alpine-aarch64-libffi3.3.tar.gz" \
 	&& curl -SL "https://github.com/pypa/get-pip/raw/38e54e5de07c66e875c11a1ebbdb938854625dd8/public/get-pip.py" -o get-pip.py \
@@ -72,4 +72,4 @@ CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command co
   && bash test-stack@python.sh \
   && rm -rf test-stack@python.sh 
 
-RUN [ ! -d /.balena/messages ] && mkdir -p /.balena/messages; echo $'Here are a few details about this Docker image (For more information please visit https://www.balena.io/docs/reference/base-images/base-images/): \nArchitecture: ARM v8 \nOS: Alpine Linux 3.14 \nVariant: run variant \nDefault variable(s): UDEV=off \nThe following software stack is preinstalled: \nPython v3.7.13, Pip v22.0.4, Setuptools v62.1.0 \nExtra features: \n- Easy way to install packages with `install_packages <package-name>` command \n- Run anywhere with cross-build feature  (for ARM only) \n- Keep the container idling with `balena-idle` command \n- Show base image details with `balena-info` command' > /.balena/messages/image-info
+RUN [ ! -d /.balena/messages ] && mkdir -p /.balena/messages; echo $'Here are a few details about this Docker image (For more information please visit https://www.balena.io/docs/reference/base-images/base-images/): \nArchitecture: ARM v8 \nOS: Alpine Linux 3.14 \nVariant: run variant \nDefault variable(s): UDEV=off \nThe following software stack is preinstalled: \nPython v3.7.13, Pip v22.1.2, Setuptools v62.4.0 \nExtra features: \n- Easy way to install packages with `install_packages <package-name>` command \n- Run anywhere with cross-build feature  (for ARM only) \n- Keep the container idling with `balena-idle` command \n- Show base image details with `balena-info` command' > /.balena/messages/image-info

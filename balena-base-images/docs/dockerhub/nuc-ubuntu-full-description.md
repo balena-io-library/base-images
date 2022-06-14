@@ -32,7 +32,7 @@ This [guide][getting-started] can help you get started with using this base imag
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;focal (latest)&#x60;, &#x60;hirsute&#x60;, &#x60;impish&#x60;, &#x60;xenial&#x60;, &#x60;bionic&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/nuc/ubuntu/)
+[&#x60;jammy (latest)&#x60;, &#x60;focal&#x60;, &#x60;impish&#x60;, &#x60;xenial&#x60;, &#x60;bionic&#x60;, &#x60;kinetic&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/nuc/ubuntu/)
 
 For more information about this image and its history, please see the [relevant manifest file (`nuc-ubuntu`)](https://github.com/balena-io-library/official-images/blob/master/library/nuc-ubuntu) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 

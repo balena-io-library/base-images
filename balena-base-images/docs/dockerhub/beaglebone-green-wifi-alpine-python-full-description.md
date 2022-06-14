@@ -40,7 +40,7 @@ Python is an interpreted, interactive, object-oriented, open-source programming 
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;3.10.4 (latest)&#x60;,&#x60;3.9.12&#x60;, &#x60;3.8.13&#x60;, &#x60;3.7.13&#x60;, &#x60;3.6.15&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/python/beaglebone-green-wifi/alpine/)
+[&#x60;3.10.5 (latest)&#x60;,&#x60;3.9.13&#x60;, &#x60;3.8.13&#x60;, &#x60;3.7.13&#x60;, &#x60;3.6.15&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/python/beaglebone-green-wifi/alpine/)
 
 For more information about this image and its history, please see the [relevant manifest file (`beaglebone-green-wifi-alpine-python`)](https://github.com/balena-io-library/official-images/blob/master/library/beaglebone-green-wifi-alpine-python) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 
