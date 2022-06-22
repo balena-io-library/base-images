@@ -22,10 +22,10 @@ ENV PYTHON_PIP_VERSION 22.1.2
 ENV SETUPTOOLS_VERSION 62.4.0
 
 RUN set -x \
-	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-armv7hf-libffi3.3.tar.gz" \
-	&& echo "caf1ebc7bf50054a1212f57fba205dfce0d6ffdd8af6ecb7a1f6b92ba64cd86d  Python-$PYTHON_VERSION.linux-armv7hf-libffi3.3.tar.gz" | sha256sum -c - \
-	&& tar -xzf "Python-$PYTHON_VERSION.linux-armv7hf-libffi3.3.tar.gz" --strip-components=1 \
-	&& rm -rf "Python-$PYTHON_VERSION.linux-armv7hf-libffi3.3.tar.gz" \
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-armv7hf-libffi3.4.tar.gz" \
+	&& echo "fdbd7dde73380c4cf80933fe015010f909b619e2f9a770e380437993c9b265ab  Python-$PYTHON_VERSION.linux-armv7hf-libffi3.4.tar.gz" | sha256sum -c - \
+	&& tar -xzf "Python-$PYTHON_VERSION.linux-armv7hf-libffi3.4.tar.gz" --strip-components=1 \
+	&& rm -rf "Python-$PYTHON_VERSION.linux-armv7hf-libffi3.4.tar.gz" \
 	&& ldconfig \
 	&& curl -SL "https://github.com/pypa/get-pip/raw/38e54e5de07c66e875c11a1ebbdb938854625dd8/public/get-pip.py" -o get-pip.py \
     && echo "e235c437e5c7d7524fbce3880ca39b917a73dc565e0c813465b7a7a329bb279a *get-pip.py" | sha256sum -c - \

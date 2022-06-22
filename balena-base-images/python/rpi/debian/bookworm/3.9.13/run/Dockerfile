@@ -32,10 +32,10 @@ RUN set -x \
 		curl \
 	' \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends && rm -rf /var/lib/apt/lists/* \
-	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-armv6hf-libffi3.3.tar.gz" \
-	&& echo "9d3da502ee7defe0a154e1cec611cdbf92a0c3efd6324a9ee61d599ebf002c93  Python-$PYTHON_VERSION.linux-armv6hf-libffi3.3.tar.gz" | sha256sum -c - \
-	&& tar -xzf "Python-$PYTHON_VERSION.linux-armv6hf-libffi3.3.tar.gz" --strip-components=1 \
-	&& rm -rf "Python-$PYTHON_VERSION.linux-armv6hf-libffi3.3.tar.gz" \
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-armv6hf-libffi3.4.tar.gz" \
+	&& echo "5f99f2052a5df0cb04dcc3d50fcb1f3ae90a1733fb25043e81197b94d19aa648  Python-$PYTHON_VERSION.linux-armv6hf-libffi3.4.tar.gz" | sha256sum -c - \
+	&& tar -xzf "Python-$PYTHON_VERSION.linux-armv6hf-libffi3.4.tar.gz" --strip-components=1 \
+	&& rm -rf "Python-$PYTHON_VERSION.linux-armv6hf-libffi3.4.tar.gz" \
 	&& ldconfig \
 	&& curl -SL "https://github.com/pypa/get-pip/raw/38e54e5de07c66e875c11a1ebbdb938854625dd8/public/get-pip.py" -o get-pip.py \
     && echo "e235c437e5c7d7524fbce3880ca39b917a73dc565e0c813465b7a7a329bb279a *get-pip.py" | sha256sum -c - \

@@ -26,10 +26,10 @@ ENV PYTHON_PIP_VERSION 22.1.2
 ENV SETUPTOOLS_VERSION 62.4.0
 
 RUN set -x \
-	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-alpine-armv6hf-libffi3.3.tar.gz" \
-	&& echo "de5b61545a317d65772cf7ba9ad7d7deea4c3831ae5af2028692e54d1060a590  Python-$PYTHON_VERSION.linux-alpine-armv6hf-libffi3.3.tar.gz" | sha256sum -c - \
-	&& tar -xzf "Python-$PYTHON_VERSION.linux-alpine-armv6hf-libffi3.3.tar.gz" --strip-components=1 \
-	&& rm -rf "Python-$PYTHON_VERSION.linux-alpine-armv6hf-libffi3.3.tar.gz" \
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-alpine-armv6hf-libffi3.4.tar.gz" \
+	&& echo "bcc6ca2fa562c7dfe8516b36005aed857eb61bca576ce687b847d5f2fd80adb9  Python-$PYTHON_VERSION.linux-alpine-armv6hf-libffi3.4.tar.gz" | sha256sum -c - \
+	&& tar -xzf "Python-$PYTHON_VERSION.linux-alpine-armv6hf-libffi3.4.tar.gz" --strip-components=1 \
+	&& rm -rf "Python-$PYTHON_VERSION.linux-alpine-armv6hf-libffi3.4.tar.gz" \
 	&& curl -SL "https://github.com/pypa/get-pip/raw/38e54e5de07c66e875c11a1ebbdb938854625dd8/public/get-pip.py" -o get-pip.py \
     && echo "e235c437e5c7d7524fbce3880ca39b917a73dc565e0c813465b7a7a329bb279a *get-pip.py" | sha256sum -c - \
     && python3 get-pip.py \

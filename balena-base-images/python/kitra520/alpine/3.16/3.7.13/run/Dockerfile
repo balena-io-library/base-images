@@ -35,10 +35,10 @@ RUN set -x \
 		gnupg \
 	' \
 	&& apk add --no-cache --virtual .build-deps $buildDeps \
-	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-alpine-armv7hf-libffi3.3.tar.gz" \
-	&& echo "c355822f2f47f46a43689107a67e805ba05d888360c31fd1dd296f0eb772c1d0  Python-$PYTHON_VERSION.linux-alpine-armv7hf-libffi3.3.tar.gz" | sha256sum -c - \
-	&& tar -xzf "Python-$PYTHON_VERSION.linux-alpine-armv7hf-libffi3.3.tar.gz" --strip-components=1 \
-	&& rm -rf "Python-$PYTHON_VERSION.linux-alpine-armv7hf-libffi3.3.tar.gz" \
+	&& curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-alpine-armv7hf-libffi3.4.tar.gz" \
+	&& echo "50e6157c9fc2eaf23868f1b1b0d363529ed5953f1fcbdf94f4044834e42bbc27  Python-$PYTHON_VERSION.linux-alpine-armv7hf-libffi3.4.tar.gz" | sha256sum -c - \
+	&& tar -xzf "Python-$PYTHON_VERSION.linux-alpine-armv7hf-libffi3.4.tar.gz" --strip-components=1 \
+	&& rm -rf "Python-$PYTHON_VERSION.linux-alpine-armv7hf-libffi3.4.tar.gz" \
 	&& curl -SL "https://github.com/pypa/get-pip/raw/38e54e5de07c66e875c11a1ebbdb938854625dd8/public/get-pip.py" -o get-pip.py \
     && echo "e235c437e5c7d7524fbce3880ca39b917a73dc565e0c813465b7a7a329bb279a *get-pip.py" | sha256sum -c - \
     && python3 get-pip.py \

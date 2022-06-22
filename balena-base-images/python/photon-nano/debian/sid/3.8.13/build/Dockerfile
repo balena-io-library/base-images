@@ -22,10 +22,10 @@ ENV PYTHON_PIP_VERSION 22.1.2
 ENV SETUPTOOLS_VERSION 62.4.0
 
 RUN set -x \
-    && curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-aarch64-libffi3.3.tar.gz" \
-    && echo "cf9b7c2a888032a258fad5ff8309ea232bf9397735a5af206514241af6a8ea1e  Python-$PYTHON_VERSION.linux-aarch64-libffi3.3.tar.gz" | sha256sum -c - \
-    && tar -xzf "Python-$PYTHON_VERSION.linux-aarch64-libffi3.3.tar.gz" --strip-components=1 \
-    && rm -rf "Python-$PYTHON_VERSION.linux-aarch64-libffi3.3.tar.gz" \
+    && curl -SLO "http://resin-packages.s3.amazonaws.com/python/v$PYTHON_VERSION/Python-$PYTHON_VERSION.linux-aarch64-libffi3.4.tar.gz" \
+    && echo "37ae250a099d31a0dcb993030929ad466ac16e826d94a0900f6b6e22c401a8e6  Python-$PYTHON_VERSION.linux-aarch64-libffi3.4.tar.gz" | sha256sum -c - \
+    && tar -xzf "Python-$PYTHON_VERSION.linux-aarch64-libffi3.4.tar.gz" --strip-components=1 \
+    && rm -rf "Python-$PYTHON_VERSION.linux-aarch64-libffi3.4.tar.gz" \
     && ldconfig \
     && curl -SL "https://github.com/pypa/get-pip/raw/38e54e5de07c66e875c11a1ebbdb938854625dd8/public/get-pip.py" -o get-pip.py \
     && echo "e235c437e5c7d7524fbce3880ca39b917a73dc565e0c813465b7a7a329bb279a *get-pip.py" | sha256sum -c - \
