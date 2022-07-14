@@ -28,7 +28,7 @@ The build variant is a heavier image that includes many of the tools required fo
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;bullseye (latest)&#x60;, &#x60;bookworm&#x60;, &#x60;buster&#x60;, &#x60;stretch&#x60;, &#x60;sid&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/rpi/debian/)
+[&#x60;bullseye (latest)&#x60;, &#x60;bookworm&#x60;, &#x60;buster&#x60;, &#x60;sid&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/rpi/debian/)
 
 For more information about this image and its history, please see the [relevant manifest file (`rpi-debian`)](https://github.com/balena-io-library/official-images/blob/master/library/rpi-debian) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 
