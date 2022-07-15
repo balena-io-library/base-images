@@ -5,7 +5,7 @@ def nodes = [:]
 // https://stackoverflow.com/a/44159250/1559300
 properties([
     buildDiscarder(logRotator(daysToKeepStr: '3', numToKeepStr: '3')),
-    pipelineTriggers([cron('H H * * *')]),
+    pipelineTriggers([cron('H H */3 * *')]),
 ])
 
 // https://stackoverflow.com/a/61692506/1559300
