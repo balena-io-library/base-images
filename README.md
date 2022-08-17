@@ -15,9 +15,8 @@ If you're having any problem, please [raise an issue][issue-tracker] on GitHub.
 ## Related Resources
 
 - [Balena Base Images Document][balena-image-trees]
-- [Legacy Resin Base Images Document][legacy-base-images]
+
 
 [balena-image-trees]:https://www.balena.io/docs/reference/base-images/base-images/#balena-base-images
-[legacy-base-images]:https://www.balena.io/docs/reference/base-images/legacy-base-images/#legacy-resin-base-images
 [source-code]:https://github.com/balena-io-library/base-images/tree/master/balena-base-images
 [issue-tracker]:https://github.com/balena-io-library/base-images/issues
