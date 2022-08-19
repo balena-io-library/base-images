@@ -36,7 +36,7 @@ Go (a.k.a., Golang) is a programming language first developed at Google. It is a
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;1.18.4 (latest)&#x60;, &#x60;1.17.12&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/golang/i386/debian/)
+[&#x60;1.19 (latest)&#x60;, &#x60;1.18.15&#x60;, &#x60;1.17.12&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/golang/i386/debian/)
 
 For more information about this image and its history, please see the [relevant manifest file (`i386-debian-golang`)](https://github.com/balena-io-library/official-images/blob/master/library/i386-debian-golang) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 
