@@ -31,7 +31,15 @@ function mount_dev()
 	# /dev/ptmx point to its ptmx.
 	# ref: https://www.kernel.org/doc/Documentation/filesystems/devpts.txt
 	ln -sf /dev/pts/ptmx /dev/ptmx
-	mount -t debugfs nodev /sys/kernel/debug
+
+	# When using io.balena.features.sysfs the mount point will already exist
+	# we need to check the mountpoint first.
+	sysfs_dir='/sys/kernel/debug'
+
+	if ! mountpoint -q "$sysfs_dir"; then
+		mount -t debugfs nodev "$sysfs_dir"
+	fi
+
 }
 
 function start_udev()
