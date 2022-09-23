@@ -31,19 +31,24 @@ function yyyymmdd () {
     return '' + y + (m < 10 ? '0' : '') + m + (d < 10 ? '0' : '') + d;
 }
 
-function getVersionAliases (version, latestVersion) {
-  // version can be a full version x.y.z or x.y or just x (only for latest version).
+function getVersionAliases (version, latestVersion, generateAllAliases = true) {
+  // version can be a full version x.y.z or x.y or just x (only for latest version if generateAllAliases is false).
   const result = [version]
 
   // x.y (major.minor)
   let versionAlias = version.match('\([0-9]*\.[0-9]*\)')
   if (!result.includes(versionAlias[0])) result.push(versionAlias[0])
 
-  // x (only for latest version)
-  if (version === latestVersion) {
-    versionAlias = version.match('\([0-9]*\)')
+  // x (major)
+  versionAlias = version.match('\([0-9]*\)')
+  if (generateAllAliases) {
     if (!result.includes(versionAlias[0])) result.push(versionAlias[0])
+  } else {
+    if (version === latestVersion) {
+      if (!result.includes(versionAlias[0])) result.push(versionAlias[0])
+    }
   }
+
   return result
 }
 
@@ -147,7 +152,14 @@ function generateOsArchLibrary (context) {
 }
 
 function generateStackLibrary (context) {
-  const stackVersions = getVersionAliases(context.children.sw.stack.version, context.children.sw.stack.data.latest)
+  let stackVersions = []
+  if (context.children.sw.stack.slug === 'python') {
+    // python stack is special since there are some 3.x series supported so do not generate all version aliases for it.
+    stackVersions = getVersionAliases(context.children.sw.stack.version, context.children.sw.stack.data.latest, false)
+  } else {
+    stackVersions = getVersionAliases(context.children.sw.stack.version, context.children.sw.stack.data.latest)
+  }
+
   if (context.children.sw.stack.version === context.children.sw.stack.data.latest) {
     stackVersions.push('latest')
     stackVersions.push(null)
