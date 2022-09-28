@@ -40,7 +40,7 @@ Go (a.k.a., Golang) is a programming language first developed at Google. It is a
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;1.19 (latest)&#x60;, &#x60;1.18.15&#x60;, &#x60;1.17.12&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/golang/jetson-tx2-nx-devkit/debian/)
+[&#x60;1.19.1 (latest)&#x60;, &#x60;1.18.6&#x60;, &#x60;1.17.12&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/golang/jetson-tx2-nx-devkit/debian/)
 
 For more information about this image and its history, please see the [relevant manifest file (`jetson-tx2-nx-devkit-debian-golang`)](https://github.com/balena-io-library/official-images/blob/master/library/jetson-tx2-nx-devkit-debian-golang) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 
