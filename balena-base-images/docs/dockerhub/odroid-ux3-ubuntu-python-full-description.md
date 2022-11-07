@@ -40,7 +40,7 @@ Python is an interpreted, interactive, object-oriented, open-source programming 
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;3.10.7 (latest)&#x60;,&#x60;3.9.14&#x60;, &#x60;3.8.14&#x60;, &#x60;3.7.14&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/python/odroid-ux3/ubuntu/)
+[&#x60;3.11.0 (latest)&#x60;, &#x60;3.10.8&#x60;, &#x60;3.9.15&#x60;, &#x60;3.8.15&#x60;, &#x60;3.7.15&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/python/odroid-ux3/ubuntu/)
 
 For more information about this image and its history, please see the [relevant manifest file (`odroid-ux3-ubuntu-python`)](https://github.com/balena-io-library/official-images/blob/master/library/odroid-ux3-ubuntu-python) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 
