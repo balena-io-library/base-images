@@ -40,7 +40,7 @@ Python is an interpreted, interactive, object-oriented, open-source programming 
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;3.11.0 (latest)&#x60;, &#x60;3.10.8&#x60;, &#x60;3.9.15&#x60;, &#x60;3.8.15&#x60;, &#x60;3.7.15&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/python/bananapi-m1-plus/debian/)
+[&#x60;3.11.1 (latest)&#x60;, &#x60;3.10.9&#x60;, &#x60;3.9.16&#x60;, &#x60;3.8.16&#x60;, &#x60;3.7.16&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/python/bananapi-m1-plus/debian/)
 
 For more information about this image and its history, please see the [relevant manifest file (`bananapi-m1-plus-debian-python`)](https://github.com/balena-io-library/official-images/blob/master/library/bananapi-m1-plus-debian-python) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 
