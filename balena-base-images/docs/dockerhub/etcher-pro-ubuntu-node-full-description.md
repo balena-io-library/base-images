@@ -44,7 +44,7 @@ Node.js internally uses the Google V8 JavaScript engine to execute code; a large
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;19.3.0 (latest)&#x60;, &#x60;18.12.1&#x60;, &#x60;16.19.0&#x60;, &#x60;14.21.2&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/node/etcher-pro/ubuntu/)
+[&#x60;19.4.0 (latest)&#x60;, &#x60;18.13.0&#x60;, &#x60;16.19.0&#x60;, &#x60;14.21.2&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/node/etcher-pro/ubuntu/)
 
 For more information about this image and its history, please see the [relevant manifest file (`etcher-pro-ubuntu-node`)](https://github.com/balena-io-library/official-images/blob/master/library/etcher-pro-ubuntu-node) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 

@@ -40,7 +40,7 @@ Go (a.k.a., Golang) is a programming language first developed at Google. It is a
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;1.19.4 (latest)&#x60;, &#x60;1.18.9&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/golang/colibri-imx6dl/ubuntu/)
+[&#x60;1.19.5 (latest)&#x60;, &#x60;1.18.10&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/golang/colibri-imx6dl/ubuntu/)
 
 For more information about this image and its history, please see the [relevant manifest file (`colibri-imx6dl-ubuntu-golang`)](https://github.com/balena-io-library/official-images/blob/master/library/colibri-imx6dl-ubuntu-golang) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 
