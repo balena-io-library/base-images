@@ -54,7 +54,7 @@ Watch [dotnet/announcements](https://github.com/dotnet/announcements/labels/Dock
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;7.0-sdk&#x60;, &#x60;7.0-runtime&#x60;, &#x60;7.0-aspnet&#x60;, &#x60;6.0-sdk&#x60;, &#x60;6.0-runtime&#x60;, &#x60;6.0-aspnet&#x60;, &#x60;3.1-sdk&#x60;, &#x60;3.1-runtineme&#x60;, &#x60;3.1-aspt&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/dotnet/jetson-tx2/ubuntu/)
+[&#x60;7.0-sdk&#x60;, &#x60;7.0-runtime&#x60;, &#x60;7.0-aspnet&#x60;, &#x60;6.0-sdk&#x60;, &#x60;6.0-runtime&#x60;, &#x60;6.0-aspnet&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/dotnet/jetson-tx2/ubuntu/)
 
 For more information about this image and its history, please see the [relevant manifest file (`jetson-tx2-ubuntu-dotnet`)](https://github.com/balena-io-library/official-images/blob/master/library/jetson-tx2-ubuntu-dotnet) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 
