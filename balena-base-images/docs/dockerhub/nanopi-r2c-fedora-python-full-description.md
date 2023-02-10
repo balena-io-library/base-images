@@ -40,7 +40,7 @@ Python is an interpreted, interactive, object-oriented, open-source programming 
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;3.11.1 (latest)&#x60;, &#x60;3.10.9&#x60;, &#x60;3.9.16&#x60;, &#x60;3.8.16&#x60;, &#x60;3.7.16&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/python/nanopi-r2c/fedora/)
+[&#x60;3.11.2 (latest)&#x60;, &#x60;3.10.10&#x60;, &#x60;3.9.16&#x60;, &#x60;3.8.16&#x60;, &#x60;3.7.16&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/python/nanopi-r2c/fedora/)
 
 For more information about this image and its history, please see the [relevant manifest file (`nanopi-r2c-fedora-python`)](https://github.com/balena-io-library/official-images/blob/master/library/nanopi-r2c-fedora-python) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 
