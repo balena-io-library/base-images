@@ -27,7 +27,7 @@ RUN buildDeps='curl libatomic1' \
 	&& ln -s /opt/yarn/bin/yarn /usr/local/bin/yarn \
 	&& ln -s /opt/yarn/bin/yarn /usr/local/bin/yarnpkg \
 	&& rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz \
-	&& npm config set unsafe-perm true -g --unsafe-perm \
+	&& ( [ "$(npm --version | cut -d '.' -f 1)" -gt 8 ] || npm config set unsafe-perm true -g --unsafe-perm ) \
 	&& rm -rf /tmp/*
 
 CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command could be found in Dockerfile Guide section in our Docs. Here's the link: https://balena.io/docs"]
