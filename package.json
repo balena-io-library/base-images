@@ -8,6 +8,7 @@
     "type": "git",
     "url": "git@github.com:resin-io-library/base-images.git"
   },
+  "private": true,
   "scripts": {
     "lint": "eslint scripts",
     "supervisor": "node scripts/generate-dockerfiles.js supervisor",
@@ -24,7 +25,8 @@
     "stack-arch-dockerhub": "node --max-old-space-size=16000 scripts/generate-dockerhub-description.js stack-arch",
     "all": "node --max-old-space-size=16000 scripts/generate-dockerfiles.js all",
     "all-lib": "node --max-old-space-size=16000 scripts/generate-stackbrew-library.js all",
-    "all-dockerhub": "node --max-old-space-size=16000 scripts/generate-dockerhub-description.js all"
+    "all-dockerhub": "node --max-old-space-size=16000 scripts/generate-dockerhub-description.js all",
+    "test": "echo \"Error: no tests specified\" && exit 0"
   },
   "author": "Resin Inc. <hello@resin.io>",
   "license": "Apache-2.0",
