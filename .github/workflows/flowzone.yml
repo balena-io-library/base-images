@@ -24,3 +24,7 @@ jobs:
         github.event_name == 'pull_request_target'
       )
     secrets: inherit
+    with:
+      repo_config: true
+      repo_description: "Balena base images"
+      repo_homepage: https://docs.balena.io/reference/base-images/base-images/#balena-base-images
