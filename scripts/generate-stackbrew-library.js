@@ -261,7 +261,7 @@ for (const type of blueprints) {
   const query = yaml.safeLoad(fs.readFileSync(BLUEPRINT_PATHS[type], 'utf8'))
 
   // Execute query
-  const result = contrato.query(universe, query.selector, query.output)
+  const result = contrato.query(universe, query.selector, query.output, true)
 
   // Get templates
   const template = query.output.template[0].data
