@@ -96,6 +96,7 @@ for (const type of blueprints) {
   const template = query.output.template[0].data
 
   // Write output
+  let count = 0;
   for (const context of result) {
     const json = context.toJSON()
     const destination = path.join(
@@ -122,8 +123,9 @@ for (const type of blueprints) {
         }
       }
     }
+    count++;
   }
 
-  console.log(`Generated ${result.length} results out of ${universe.getChildren().length} contracts`)
-  console.log(`Adding generated ${result.length} contracts back to the universe`)
+  console.log(`Generated ${count} results out of ${universe.getChildren().length} contracts`)
+  console.log(`Adding generated ${count} contracts back to the universe`)
 }
