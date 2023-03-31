@@ -1,4 +1,19 @@
 - commits:
+    - subject: "renovate: Ignore base images path"
+      hash: 07c058745006dfbc0a23d27fb34d60bfdb298d6e
+      body: |
+        Parsing this path with Renovate takes hours or days.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Kyle Harding <kyle@balena.io>
+        signed-off-by: Kyle Harding <kyle@balena.io>
+      author: Kyle Harding
+      nested: []
+  version: 2.0.2
+  title: ""
+  date: 2023-03-31T18:55:01.153Z
+- commits:
     - subject: Remove max-old-space-size flag from scripts
       hash: 7b928980ebdd447dba438158213600499f910da3
       body: |
