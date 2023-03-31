@@ -5,6 +5,12 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.0.1 - 2023-03-31
+
+* Remove max-old-space-size flag from scripts [Felipe Lalanne]
+* Update generation scripts to use iterable query result [Felipe Lalanne]
+* Bump contrato to v0.8.0 [Felipe Lalanne]
+
 ## 2.0.0 - 2023-03-29
 
 * Remove custom versionist config and bump to v2.0.0 [Kyle Harding]

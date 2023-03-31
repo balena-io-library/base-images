@@ -1,4 +1,39 @@
 - commits:
+    - subject: Remove max-old-space-size flag from scripts
+      hash: 7b928980ebdd447dba438158213600499f910da3
+      body: |
+        This is no longer needed as the results are no longer kept in memory
+        before generating output files
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Felipe Lalanne
+      nested: []
+    - subject: Update generation scripts to use iterable query result
+      hash: ab3795230730dfb5703e82d31d42fe836444673f
+      body: |
+        This should entirely solve the memory usage problem
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Felipe Lalanne
+      nested: []
+    - subject: Bump contrato to v0.8.0
+      hash: 8e068edb36c951f77770feec533e5bc14f439414
+      body: |
+        Update contrato
+
+        This will allow the scritpts to use less memory so they can run as GH
+        actions.
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Felipe Lalanne
+      nested: []
+  version: 2.0.1
+  title: ""
+  date: 2023-03-31T18:31:48.602Z
+- commits:
     - subject: Remove custom versionist config and bump to v2.0.0
       hash: 23cb5adaa9abc0c813137a310106c6d0828d441d
       body: ""
