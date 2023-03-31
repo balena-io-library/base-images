@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.0.3 - 2023-03-31
+
+* Add result counter to fix the summary message [Felipe Lalanne]
+
 ## 2.0.2 - 2023-03-31
 
 * renovate: Ignore base images path [Kyle Harding]
