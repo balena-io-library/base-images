@@ -268,6 +268,8 @@ for (const type of blueprints) {
 
   // Write output
   fs.ensureDirSync(DEST_DIR)
+
+  let count = 0;
   for (const context of result) {
     const json = context.toJSON()
 
@@ -282,8 +284,9 @@ for (const type of blueprints) {
     if (type === 'stack-device' || type === 'stack-arch') {
       generateStackLibrary(json)
     }
+    count++;
   }
 
-  console.log(`Generated ${result.length} results out of ${universe.getChildren().length} contracts`)
-  console.log(`Adding generated ${result.length} contracts back to the universe`)
+  console.log(`Generated ${count} results out of ${universe.getChildren().length} contracts`)
+  console.log(`Adding generated ${count} contracts back to the universe`)
 }
