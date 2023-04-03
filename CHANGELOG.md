@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.1.1 - 2023-04-03
+
+* Add npmignore [Kyle Harding]
+
 ## 2.1.0 - 2023-04-03
 
 * Remove unused stackbrew library scripts [Felipe Lalanne]
