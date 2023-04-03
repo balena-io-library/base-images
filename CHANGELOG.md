@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.1.3 - 2023-04-03
+
+* Generate dockerfiles/descriptions in parallel [Pagan Gazzard]
+
 ## 2.1.2 - 2023-04-03
 
 * Use nodejs 18 for generating dockerfiles [Pagan Gazzard]
