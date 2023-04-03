@@ -28,7 +28,6 @@ const BLUEPRINT_PATHS = {
   'os-device': path.join(__dirname, 'blueprints/os-device.yaml'),
   'stack-device': path.join(__dirname, 'blueprints/stack-device.yaml'),
   'stack-arch': path.join(__dirname, 'blueprints/stack-arch.yaml'),
-  'supervisor': path.join(__dirname, 'blueprints/supervisor.yaml')
 }
 const CONTRACTS_PATH = path.join(__dirname, 'contracts/contracts')
 
