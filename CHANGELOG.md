@@ -5,6 +5,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.1.0 - 2023-04-03
+
+* Remove unused stackbrew library scripts [Felipe Lalanne]
+* Remove balena-supervisor-base contract [Felipe Lalanne]
+
 ## 2.0.3 - 2023-03-31
 
 * Add result counter to fix the summary message [Felipe Lalanne]

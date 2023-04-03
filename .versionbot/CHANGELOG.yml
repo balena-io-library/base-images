@@ -1,4 +1,30 @@
 - commits:
+    - subject: Remove unused stackbrew library scripts
+      hash: d4e5ee325a128b0555a4c234372b63d0300ef596
+      body: |
+        Remove generate-stackbrew-library.sh script and helpers
+        under scripts/stackbrew-library. These don't seem to serve a purpose
+        anymore as they have been replaced by the node scripts.
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Felipe Lalanne
+      nested: []
+    - subject: Remove balena-supervisor-base contract
+      hash: 1c029a0cb2c398396d65a8f1b2799e8b48ee49aa
+      body: |
+        The balena-supervisor-base images have not been used for a while by the
+        supervisor dockerfile. This removes the contract and related scripts to
+        avoid generating images that won't be used.
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Felipe Lalanne
+      nested: []
+  version: 2.1.0
+  title: ""
+  date: 2023-04-03T20:08:13.409Z
+- commits:
     - subject: Add result counter to fix the summary message
       hash: 8526904e8812504efea7b6f0446479b5135115fc
       body: ""
