@@ -75,34 +75,36 @@ if (types.indexOf('all') > -1) {
   blueprints = Object.keys(BLUEPRINT_PATHS)
 }
 
-for (const type of blueprints) {
-  if (!BLUEPRINT_PATHS[type]) {
-    console.error(`Blueprint for this base images type: ${type} is missing!`)
-    process.exit(1)
-  }
-
-  const query = yaml.safeLoad(fs.readFileSync(BLUEPRINT_PATHS[type], 'utf8'))
-
-  // Execute query
-  const result = contrato.query(universe, query.selector, query.output, true)
-
-  // Get templates
-  const template = query.output.template[0].data
-
-  // Write output
-  for (const context of result) {
-    const json = context.toJSON()
-    const destination = path.join(
-      DEST_DIR,
-      json.path,
-      json.filename
-    )
-
-    if (!fs.pathExistsSync(destination)) {
-      console.log(`Generating ${json.imageName}`)
-      fs.outputFileSync(destination, contrato.buildTemplate(template, context, {
-        directory: CONTRACTS_PATH
-      }))
+(async () => {
+  await Promise.all(blueprints.map(async (type) => {
+    if (!BLUEPRINT_PATHS[type]) {
+      console.error(`Blueprint for this base images type: ${type} is missing!`)
+      process.exit(1)
     }
-  }
-}
+
+    const query = yaml.safeLoad(await fs.readFile(BLUEPRINT_PATHS[type], 'utf8'))
+
+    // Execute query
+    const result = contrato.query(universe, query.selector, query.output, true)
+
+    // Get templates
+    const template = query.output.template[0].data
+
+    // Write output
+    for (const context of result) {
+      const json = context.toJSON()
+      const destination = path.join(
+        DEST_DIR,
+        json.path,
+        json.filename
+      )
+
+      if (!(await fs.pathExists(destination))) {
+        console.log(`Generating ${json.imageName}`)
+        await fs.outputFile(destination, await contrato.buildTemplate(template, context, {
+          directory: CONTRACTS_PATH
+        }))
+      }
+    }
+  }))
+})()

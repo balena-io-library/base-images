@@ -27,7 +27,7 @@ const BLUEPRINT_PATHS = {
   'os-arch': path.join(__dirname, 'blueprints/os-arch.yaml'),
   'os-device': path.join(__dirname, 'blueprints/os-device.yaml'),
   'stack-device': path.join(__dirname, 'blueprints/stack-device.yaml'),
-  'stack-arch': path.join(__dirname, 'blueprints/stack-arch.yaml'),
+  'stack-arch': path.join(__dirname, 'blueprints/stack-arch.yaml')
 }
 const CONTRACTS_PATH = path.join(__dirname, 'contracts/contracts')
 
@@ -80,51 +80,53 @@ if (types.indexOf('all') > -1) {
   blueprints = Object.keys(BLUEPRINT_PATHS)
 }
 
-for (const type of blueprints) {
-  if (!BLUEPRINT_PATHS[type]) {
-    console.error(`Blueprint for this base images type: ${type} is missing!`)
-    process.exit(1)
-  }
+(async () => {
+  await Promise.all(blueprints.map(async (type) => {
+    if (!BLUEPRINT_PATHS[type]) {
+      console.error(`Blueprint for this base images type: ${type} is missing!`)
+      process.exit(1)
+    }
 
-  const query = yaml.safeLoad(fs.readFileSync(BLUEPRINT_PATHS[type], 'utf8'))
+    const query = yaml.safeLoad(await fs.readFile(BLUEPRINT_PATHS[type], 'utf8'))
 
-  // Execute query
-  const result = contrato.query(universe, query.selector, query.output, true)
+    // Execute query
+    const result = contrato.query(universe, query.selector, query.output, true)
 
-  // Get templates
-  const template = query.output.template[0].data
+    // Get templates
+    const template = query.output.template[0].data
 
-  // Write output
-  let count = 0;
-  for (const context of result) {
-    const json = context.toJSON()
-    const destination = path.join(
-      DEST_DIR,
-      json.path,
-      query.output.filename
-    )
+    // Write output
+    let count = 0
+    for (const context of result) {
+      const json = context.toJSON()
+      const destination = path.join(
+        DEST_DIR,
+        json.path,
+        query.output.filename
+      )
 
-    console.log(`Generating ${json.imageName}`)
-    fs.outputFileSync(destination, contrato.buildTemplate(template, context, {
-      directory: CONTRACTS_PATH
-    }))
+      console.log(`Generating ${json.imageName}`)
+      await fs.outputFile(destination, await contrato.buildTemplate(template, context, {
+        directory: CONTRACTS_PATH
+      }))
 
-    if (json.children.sw.blob) {
+      if (json.children.sw.blob) {
       // Check and copy local blobs to target directory.
-      for (const blob of _.values(json.children.sw.blob)) {
-        if (blob.assets.bin.url.indexOf('file://') > -1) {
-          try {
-            const src = path.join(__dirname, blob.assets.bin.url.replace('file://', ''))
-            fs.copySync(src, path.join(path.dirname(destination), blob.assets.bin.main))
-          } catch (err) {
-            throw new Error('Error when copying ' + blob.assets.bin.name + ' to ' + path.dirname(destination))
+        for (const blob of _.values(json.children.sw.blob)) {
+          if (blob.assets.bin.url.indexOf('file://') > -1) {
+            try {
+              const src = path.join(__dirname, blob.assets.bin.url.replace('file://', ''))
+              await fs.copy(src, path.join(path.dirname(destination), blob.assets.bin.main))
+            } catch (err) {
+              throw new Error('Error when copying ' + blob.assets.bin.name + ' to ' + path.dirname(destination))
+            }
           }
         }
       }
+      count++
     }
-    count++;
-  }
 
-  console.log(`Generated ${count} results out of ${universe.getChildren().length} contracts`)
-  console.log(`Adding generated ${count} contracts back to the universe`)
-}
+    console.log(`Generated ${count} results out of ${universe.getChildren().length} contracts`)
+    console.log(`Adding generated ${count} contracts back to the universe`)
+  }))
+})()
