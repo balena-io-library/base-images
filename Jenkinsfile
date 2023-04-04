@@ -13,8 +13,8 @@ nodesByLabel('base-images').each {
     nodes[it] = { ->
         node(it) {
             stage("docker-prune@${it}") {
-                sh('docker system prune -af --filter "until=72h"')
-                sh('docker system prune -af --volumes')
+                sh('docker system prune -af --filter "until=72h" || true')
+                sh('docker system prune -af --volumes || true')
             }
         }
     }
