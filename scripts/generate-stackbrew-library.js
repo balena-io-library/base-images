@@ -21,7 +21,8 @@ const fs = require('fs-extra')
 const path = require('path')
 const contrato = require('@balena/contrato')
 const yaml = require('js-yaml')
-const { execSync } = require('child_process');
+const util = require('node:util')
+const exec = util.promisify(require('node:child_process').exec)
 
 function yyyymmdd () {
   var now = new Date()
@@ -104,7 +105,7 @@ async function generateOsArchLibrary (context) {
     variants.push(null)
   }
 
-  const commit = execSync(`git log -1 --format='%H' -- ${path.join(DOCKERFILE_DIR,context.path)}`).toString()
+  const commit = (await exec(`git log -1 --format='%H' -- ${path.join(DOCKERFILE_DIR, context.path)}`)).stdout.toString()
 
   var tags = generateCombinations([osVersions, variants, [yyyymmdd(), null]])
 
@@ -147,7 +148,7 @@ async function generateStackLibrary (context) {
     variants.push(null)
   }
 
-  const commit = execSync(`git log -1 --format='%H' -- ${path.join(DOCKERFILE_DIR,context.path)}`).toString()
+  const commit = (await exec(`git log -1 --format='%H' -- ${path.join(DOCKERFILE_DIR, context.path)}`)).stdout.toString()
 
   var tags = generateCombinations([stackVersions, osVersions, variants, [yyyymmdd(), null]])
 
