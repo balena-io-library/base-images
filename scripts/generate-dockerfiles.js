@@ -21,6 +21,7 @@ const fs = require('fs-extra')
 const path = require('path')
 const contrato = require('@balena/contrato')
 const yaml = require('js-yaml')
+const { concurrentForEach } = require('./utils')
 
 const DEST_DIR = path.join(__dirname, '../balena-base-images')
 const BLUEPRINT_PATHS = {
@@ -97,7 +98,7 @@ if (types.indexOf('all') > -1) {
 
     // Write output
     let count = 0
-    for (const context of result) {
+    await concurrentForEach(result, 5, async (context) => {
       const json = context.toJSON()
       const destination = path.join(
         DEST_DIR,
@@ -124,7 +125,7 @@ if (types.indexOf('all') > -1) {
         }
       }
       count++
-    }
+    })
 
     console.log(`Generated ${count} results out of ${universe.getChildren().length} contracts`)
     console.log(`Adding generated ${count} contracts back to the universe`)

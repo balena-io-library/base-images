@@ -21,6 +21,7 @@ const fs = require('fs-extra')
 const path = require('path')
 const contrato = require('@balena/contrato')
 const yaml = require('js-yaml')
+const { concurrentForEach } = require('./utils')
 
 const DEST_DIR = path.join(__dirname, '../balena-base-images')
 const BLUEPRINT_PATHS = {
@@ -91,7 +92,7 @@ if (types.indexOf('all') > -1) {
     const template = query.output.template[0].data
 
     // Write output
-    for (const context of result) {
+    await concurrentForEach(result, 5, async (context) => {
       const json = context.toJSON()
       const destination = path.join(
         DEST_DIR,
@@ -105,6 +106,6 @@ if (types.indexOf('all') > -1) {
           directory: CONTRACTS_PATH
         }))
       }
-    }
+    })
   }))
 })()
