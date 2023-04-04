@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.1.9 - 2023-04-04
+
+* flowzone: Generate and publish dockerfiles and library files [Kyle Harding]
+
 ## 2.1.8 - 2023-04-04
 
 * Switch to `execFile` to avoid spawning a shell [Pagan Gazzard]
