@@ -1,0 +1,52 @@
+name: "Autogenerate"
+description: "Generate and publish Dockerfiles and Stackbrew Library files"
+inputs:
+  json:
+    description: "JSON stringified object containing all the inputs from the calling workflow"
+    required: true
+  secrets:
+    description: "JSON stringified object containing all the secrets from the calling workflow"
+    required: true
+  variables:
+    description: "JSON stringified object containing all the variables from the calling workflow"
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - name: Setup Node.js 18.x
+      uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
+      with:
+        node-version: 18.x
+
+    - name: Install dependencies
+      shell: bash
+      run: |
+        npm ci
+
+    - name: Generate Dockerfiles
+      shell: bash
+      run: |
+        npm run all
+        tar czf ${{ runner.temp }}/files.tgz -C balena-base-images .
+
+    - name: Generate Stackbrew Library files
+      shell: bash
+      run: |
+        npm run all-lib
+        tar czf ${{ runner.temp }}/libs.tgz -C library .
+
+    # https://github.com/actions/upload-artifact
+    - name: Upload artifact
+      uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
+      with:
+        name: files-${{ github.event.pull_request.head.sha }}
+        path: ${{ runner.temp }}/files.tgz
+        retention-days: 90
+
+    # https://github.com/actions/upload-artifact
+    - name: Upload artifact
+      uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
+      with:
+        name: libs-${{ github.event.pull_request.head.sha }}
+        path: ${{ runner.temp }}/libs.tgz
+        retention-days: 90
