@@ -1,4 +1,18 @@
 - commits:
+    - subject: Iterate the contrato.query for a concurrency of 5
+      hash: 7a1dcb5f046741b70f6722edb2dc930e387ff179
+      body: |
+        This allows for more concurrent work whilst still limiting the number
+        of contracts we process concurrently to avoid excessive memory usage
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Pagan Gazzard
+      nested: []
+  version: 2.1.5
+  title: ""
+  date: 2023-04-04T13:19:54.461Z
+- commits:
     - subject: Use async child process exec for generate-stackbrew-library
       hash: 99c1c94bfbf4bdc14ae6104a8fa84951fccea698
       body: ""
