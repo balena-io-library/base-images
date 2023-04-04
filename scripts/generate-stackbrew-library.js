@@ -24,11 +24,11 @@ const yaml = require('js-yaml')
 const { execSync } = require('child_process');
 
 function yyyymmdd () {
-    var now = new Date();
-    var y = now.getFullYear();
-    var m = now.getMonth() + 1;
-    var d = now.getDate();
-    return '' + y + (m < 10 ? '0' : '') + m + (d < 10 ? '0' : '') + d;
+  var now = new Date()
+  var y = now.getFullYear()
+  var m = now.getMonth() + 1
+  var d = now.getDate()
+  return '' + y + (m < 10 ? '0' : '') + m + (d < 10 ? '0' : '') + d
 }
 
 function getVersionAliases (version, latestVersion, generateAllAliases = true) {
@@ -56,7 +56,6 @@ function getVersionAliases (version, latestVersion, generateAllAliases = true) {
 // Inspired by https://www.geeksforgeeks.org/combinations-from-n-arrays-picking-one-element-from-each-array/
 function generateCombinations (arr) {
   const combinations = []
-  const result = []
 
   const n = arr.length
   // keep track index in each of the n arrays
@@ -66,11 +65,11 @@ function generateCombinations (arr) {
     let tmp = []
 
     // store current combination
-    for (var i = 0; i < n; i++) { 
+    for (var i = 0; i < n; i++) {
       tmp.push(arr[i][indices[i]])
     }
 
-    combinations.push(tmp.filter(n => n).join("-"))
+    combinations.push(tmp.filter(n => n).join('-'))
 
     // find the rightmost array that has more element left after the current element
     var next = n - 1
@@ -85,7 +84,7 @@ function generateCombinations (arr) {
 
     // if next element is found then set the indices for next combination
     indices[next]++
-    for(i = next + 1; i < n; i++) {
+    for (i = next + 1; i < n; i++) {
       indices[i] = 0
     }
   }
@@ -93,16 +92,15 @@ function generateCombinations (arr) {
   return combinations.filter(n => n)
 }
 
-
-function generateOsArchLibrary (context) {
+async function generateOsArchLibrary (context) {
   const osVersions = [context.children.sw.os.version]
   if (context.children.sw.os.version === context.children.sw.os.data.latest) {
     osVersions.push('latest')
     osVersions.push(null)
   }
 
-  const variants = [context.children.sw["stack-variant"].slug]
-  if (context.children.sw["stack-variant"].slug === 'run') {
+  const variants = [context.children.sw['stack-variant'].slug]
+  if (context.children.sw['stack-variant'].slug === 'run') {
     variants.push(null)
   }
 
@@ -121,11 +119,10 @@ function generateOsArchLibrary (context) {
     alias: tags.join(' ')
   }
 
-  fs.appendFileSync(destination, JSON.stringify(content))
-  fs.appendFileSync(destination, `\n`)
+  await fs.appendFile(destination, JSON.stringify(content) + `\n`)
 }
 
-function generateStackLibrary (context) {
+async function generateStackLibrary (context) {
   let stackVersions = []
   if (context.children.sw.stack.slug === 'python') {
     // python stack is special since there are some 3.x series supported so do not generate all version aliases for it.
@@ -145,8 +142,8 @@ function generateStackLibrary (context) {
     osVersions.push(null)
   }
 
-  const variants = [context.children.sw["stack-variant"].slug]
-  if (context.children.sw["stack-variant"].slug === 'run') {
+  const variants = [context.children.sw['stack-variant'].slug]
+  if (context.children.sw['stack-variant'].slug === 'run') {
     variants.push(null)
   }
 
@@ -165,8 +162,7 @@ function generateStackLibrary (context) {
     alias: tags.join(' ')
   }
 
-  fs.appendFileSync(destination, JSON.stringify(content))
-  fs.appendFileSync(destination, `\n`)
+  await fs.appendFile(destination, JSON.stringify(content) + `\n`)
 }
 
 const URL = 'https://github.com/balena-io-library/base-images'
@@ -177,7 +173,7 @@ const BLUEPRINT_PATHS = {
   'os-arch': path.join(__dirname, 'blueprints/os-arch.yaml'),
   'os-device': path.join(__dirname, 'blueprints/os-device.yaml'),
   'stack-device': path.join(__dirname, 'blueprints/stack-device.yaml'),
-  'stack-arch': path.join(__dirname, 'blueprints/stack-arch.yaml'),
+  'stack-arch': path.join(__dirname, 'blueprints/stack-arch.yaml')
 }
 const CONTRACTS_PATH = path.join(__dirname, 'contracts/contracts')
 
@@ -225,37 +221,36 @@ if (types.indexOf('all') > -1) {
   blueprints = Object.keys(BLUEPRINT_PATHS)
 }
 
-for (const type of blueprints) {
-  if (!BLUEPRINT_PATHS[type]) {
-    console.error(`Blueprint for this base images type: ${type} is missing!`)
-    process.exit(1)
-  }
-
-  const query = yaml.safeLoad(fs.readFileSync(BLUEPRINT_PATHS[type], 'utf8'))
-
-  // Execute query
-  const result = contrato.query(universe, query.selector, query.output, true)
-
-  // Get templates
-  const template = query.output.template[0].data
-
-  // Write output
-  fs.ensureDirSync(DEST_DIR)
-
-  let count = 0;
-  for (const context of result) {
-    const json = context.toJSON()
-
-    if (type === 'os-arch' || type === 'os-device' ) {
-      generateOsArchLibrary(json)
+(async () => {
+  for (const type of blueprints) {
+    if (!BLUEPRINT_PATHS[type]) {
+      console.error(`Blueprint for this base images type: ${type} is missing!`)
+      process.exit(1)
     }
 
-    if (type === 'stack-device' || type === 'stack-arch') {
-      generateStackLibrary(json)
-    }
-    count++;
-  }
+    const query = yaml.safeLoad(await fs.readFile(BLUEPRINT_PATHS[type], 'utf8'))
 
-  console.log(`Generated ${count} results out of ${universe.getChildren().length} contracts`)
-  console.log(`Adding generated ${count} contracts back to the universe`)
-}
+    // Execute query
+    const result = contrato.query(universe, query.selector, query.output, true)
+
+    // Write output
+    await fs.ensureDir(DEST_DIR)
+
+    let count = 0
+    for (const context of result) {
+      const json = context.toJSON()
+
+      if (type === 'os-arch' || type === 'os-device') {
+        await generateOsArchLibrary(json)
+      }
+
+      if (type === 'stack-device' || type === 'stack-arch') {
+        await generateStackLibrary(json)
+      }
+      count++
+    }
+
+    console.log(`Generated ${count} results out of ${universe.getChildren().length} contracts`)
+    console.log(`Adding generated ${count} contracts back to the universe`)
+  }
+})()
