@@ -23,7 +23,7 @@ const contrato = require('@balena/contrato')
 const yaml = require('js-yaml')
 const util = require('node:util')
 const { concurrentForEach } = require('./utils')
-const exec = util.promisify(require('node:child_process').exec)
+const execFile = util.promisify(require('node:child_process').execFile)
 
 function yyyymmdd () {
   var now = new Date()
@@ -106,7 +106,7 @@ async function generateOsArchLibrary (context) {
     variants.push(null)
   }
 
-  const commit = (await exec(`git log -1 --format='%H' -- ${path.join(DOCKERFILE_DIR, context.path)}`)).stdout.toString()
+  const commit = (await execFile('git', ['log', '-1', `--format='%H'`, '--', path.join(DOCKERFILE_DIR, context.path)])).stdout.toString()
 
   var tags = generateCombinations([osVersions, variants, [yyyymmdd(), null]])
 
@@ -149,7 +149,7 @@ async function generateStackLibrary (context) {
     variants.push(null)
   }
 
-  const commit = (await exec(`git log -1 --format='%H' -- ${path.join(DOCKERFILE_DIR, context.path)}`)).stdout.toString()
+  const commit = (await execFile('git', ['log', '-1', `--format='%H'`, '--', path.join(DOCKERFILE_DIR, context.path)])).stdout.toString()
 
   var tags = generateCombinations([stackVersions, osVersions, variants, [yyyymmdd(), null]])
 
