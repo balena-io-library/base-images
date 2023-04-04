@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.1.6 - 2023-04-04
+
+* Generate a subset of files and libraries via npm test [Kyle Harding]
+
 ## 2.1.5 - 2023-04-04
 
 * Iterate the contrato.query for a concurrency of 5 [Pagan Gazzard]
