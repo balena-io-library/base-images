@@ -5,6 +5,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.1.4 - 2023-04-04
+
+* Use async child process exec for generate-stackbrew-library [Pagan Gazzard]
+* Use async fs access for generate-stackbrew-library [Pagan Gazzard]
+
 ## 2.1.3 - 2023-04-03
 
 * Generate dockerfiles/descriptions in parallel [Pagan Gazzard]
