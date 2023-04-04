@@ -22,6 +22,7 @@ const path = require('path')
 const contrato = require('@balena/contrato')
 const yaml = require('js-yaml')
 const util = require('node:util')
+const { concurrentForEach } = require('./utils')
 const exec = util.promisify(require('node:child_process').exec)
 
 function yyyymmdd () {
@@ -223,7 +224,7 @@ if (types.indexOf('all') > -1) {
 }
 
 (async () => {
-  for (const type of blueprints) {
+  await Promise.all(blueprints.map(async (type) => {
     if (!BLUEPRINT_PATHS[type]) {
       console.error(`Blueprint for this base images type: ${type} is missing!`)
       process.exit(1)
@@ -238,7 +239,8 @@ if (types.indexOf('all') > -1) {
     await fs.ensureDir(DEST_DIR)
 
     let count = 0
-    for (const context of result) {
+
+    await concurrentForEach(result, 5, async (context) => {
       const json = context.toJSON()
 
       if (type === 'os-arch' || type === 'os-device') {
@@ -249,9 +251,9 @@ if (types.indexOf('all') > -1) {
         await generateStackLibrary(json)
       }
       count++
-    }
+    })
 
     console.log(`Generated ${count} results out of ${universe.getChildren().length} contracts`)
     console.log(`Adding generated ${count} contracts back to the universe`)
-  }
+  }))
 })()
