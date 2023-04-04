@@ -1,4 +1,48 @@
 - commits:
+    - subject: Update scripts/contracts digest to a7fa4ca
+      hash: b1f068bea1da4f1dfca2983b5fee9ac1f5398f7d
+      body: |
+        Update scripts/contracts
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested:
+        - commits:
+            - subject: "jetson-orin-nx-xavier-nx-devkit: Add contract for device type"
+              hash: ddae0174c36b0893d723308d948d72c276787ed5
+              body: |
+                The provisioning instructions are incomplete at this time, they
+                will be updated once the balenaOS integration is complete. The
+                device needs to be inspected in staging first.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+          version: contracts-2.0.56
+          title: ""
+          date: 2023-04-04T08:46:42.967Z
+        - commits:
+            - subject: "iot-gate-imx8plus: Update provisioning instructions"
+              hash: 25cbb9cb1c96a96367a1d35615f6b679e4a20df5
+              body: |
+                Bring in the latest updates from the coffee file
+                in the device repository.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru
+          version: contracts-2.0.55
+          title: ""
+          date: 2023-03-29T18:35:00.091Z
+  version: 2.1.7
+  title: ""
+  date: 2023-04-04T16:07:27.044Z
+- commits:
     - subject: Generate a subset of files and libraries via npm test
       hash: 7e3517dd2578dfedceb8936e2f89334865374104
       body: |

@@ -5,6 +5,23 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.1.7 - 2023-04-04
+
+
+<details>
+<summary> Update scripts/contracts digest to a7fa4ca [Renovate Bot] </summary>
+
+> ### contracts-2.0.56 - 2023-04-04
+> 
+> * jetson-orin-nx-xavier-nx-devkit: Add contract for device type [Alexandru Costache]
+> 
+> ### contracts-2.0.55 - 2023-03-29
+> 
+> * iot-gate-imx8plus: Update provisioning instructions [Alexandru]
+> 
+
+</details>
+
 ## 2.1.6 - 2023-04-04
 
 * Generate a subset of files and libraries via npm test [Kyle Harding]
