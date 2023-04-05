@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.1.13 - 2023-04-05
+
+* Update contrato to 0.9.2 [Pagan Gazzard]
+
 ## 2.1.12 - 2023-04-05
 
 * Disable balena-os stackbrew library file generation [Kyle Harding]
