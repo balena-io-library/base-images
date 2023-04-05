@@ -199,13 +199,18 @@ const universe = new contrato.Contract({
 })
 universe.addChildren(contracts)
 
-// Remove `resinos` OS contract since we don't want it for the base images
-const children = universe.findChildren(contrato.Contract.createMatcher({
+// Remove `resinos` and `balenaos` OS contract since we don't want it for the base images
+const resinosChildren = universe.findChildren(contrato.Contract.createMatcher({
   type: 'sw.os',
   slug: 'resinos'
 }))
 
-children.forEach((child) => {
+const balenaosChildren = universe.findChildren(contrato.Contract.createMatcher({
+  type: 'sw.os',
+  slug: 'balena-os'
+}))
+
+resinosChildren.concat(balenaosChildren).forEach((child) => {
   universe.removeChild(child)
 })
 
