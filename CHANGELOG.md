@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.1.11 - 2023-04-05
+
+* Fix parsing of git status after extraction [Kyle Harding]
+
 ## 2.1.10 - 2023-04-04
 
 * Fix filenames when extracting artifacts on finalize [Kyle Harding]
