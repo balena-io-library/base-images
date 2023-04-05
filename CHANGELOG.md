@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.1.12 - 2023-04-05
+
+* Disable balena-os stackbrew library file generation [Kyle Harding]
+
 ## 2.1.11 - 2023-04-05
 
 * Fix parsing of git status after extraction [Kyle Harding]
