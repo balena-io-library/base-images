@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.2.0 - 2023-04-12
+
+* Generate a patch of modified image files rather than the entire dir [Kyle Harding]
+
 ## 2.1.13 - 2023-04-05
 
 * Update contrato to 0.9.2 [Pagan Gazzard]

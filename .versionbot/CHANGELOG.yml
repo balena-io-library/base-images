@@ -1,4 +1,20 @@
 - commits:
+    - subject: Generate a patch of modified image files rather than the entire dir
+      hash: 665e67031c9944fd2b8e3591e6166bdd7f1ea4f2
+      body: |
+        Also remove existing files before committing new ones. This ensures
+        we only generate files that are still reflected in the contracts.
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Kyle Harding <kyle@balena.io>
+        signed-off-by: Kyle Harding <kyle@balena.io>
+      author: Kyle Harding
+      nested: []
+  version: 2.2.0
+  title: ""
+  date: 2023-04-12T22:33:28.501Z
+- commits:
     - subject: Update contrato to 0.9.2
       hash: 93ed8856eb897e84283dbd882409835d4ac14257
       body: ""
