@@ -35,6 +35,17 @@ runs:
         private_key: ${{ fromJSON(inputs.secrets).GH_APP_PRIVATE_KEY }}
         permissions: ${{ fromJSON(inputs.json).token_scope }}
 
+    # https://github.com/crazy-max/ghaction-import-gpg
+    - name: Import GPG private key
+      id: import-gpg
+      uses: crazy-max/ghaction-import-gpg@111c56156bcc6918c056dbef52164cfa583dc549 # v5.2.0
+      with:
+        gpg_private_key: ${{ fromJSON(inputs.secrets).GPG_PRIVATE_KEY }}
+        passphrase: ${{ fromJSON(inputs.secrets).GPG_PASSPHRASE }}
+        git_config_global: true
+        git_user_signingkey: true
+        git_commit_gpgsign: true
+
     # https://github.com/dawidd6/action-download-artifact
     - name: Download artifacts from PR workflow
       uses: dawidd6/action-download-artifact@5e780fc7bbd0cac69fc73271ed86edf5dcb72d67 # v2
@@ -46,6 +57,11 @@ runs:
 
     - name: Apply and push patches
       shell: bash
+      env:
+        GIT_AUTHOR_NAME: ${{ steps.import-gpg.outputs.name }}
+        GIT_AUTHOR_EMAIL: ${{ steps.import-gpg.outputs.email }}
+        GIT_COMMITTER_NAME: ${{ steps.import-gpg.outputs.name }}
+        GIT_COMMITTER_EMAIL: ${{ steps.import-gpg.outputs.email }}
       run: |
         git am ${{ runner.temp }}/patches-${{ github.event.pull_request.head.sha }}/patches/*.patch
         git push origin HEAD:refs/heads/${{ github.base_ref }}
@@ -58,17 +74,6 @@ runs:
         repository: balena-io-library/official-images
         ref: master
         path: official-images
-
-    # https://github.com/crazy-max/ghaction-import-gpg
-    - name: Import GPG private key
-      id: import-gpg
-      uses: crazy-max/ghaction-import-gpg@111c56156bcc6918c056dbef52164cfa583dc549 # v5.2.0
-      with:
-        gpg_private_key: ${{ fromJSON(inputs.secrets).GPG_PRIVATE_KEY }}
-        passphrase: ${{ fromJSON(inputs.secrets).GPG_PASSPHRASE }}
-        git_config_global: true
-        git_user_signingkey: true
-        git_commit_gpgsign: true
 
     - name: Commit and push official-images
       shell: bash
