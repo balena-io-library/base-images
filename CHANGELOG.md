@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.2.1 - 2023-04-13
+
+* Make GPG private key available to patch step [Kyle Harding]
+
 ## 2.2.0 - 2023-04-12
 
 * Generate a patch of modified image files rather than the entire dir [Kyle Harding]
