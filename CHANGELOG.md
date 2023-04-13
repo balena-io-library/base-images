@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.2.2 - 2023-04-13
+
+* Only download required artifacts on finalize [Kyle Harding]
+
 ## 2.2.1 - 2023-04-13
 
 * Make GPG private key available to patch step [Kyle Harding]
