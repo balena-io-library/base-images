@@ -40,7 +40,7 @@ Node.js internally uses the Google V8 JavaScript engine to execute code; a large
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;19.6.0 (latest)&#x60;, &#x60;18.14.0&#x60;, &#x60;16.19.0&#x60;, &#x60;14.21.2&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/node/i386/ubuntu/)
+[&#x60;19.6.1 (latest)&#x60;, &#x60;18.14.1&#x60;, &#x60;16.19.1&#x60;, &#x60;14.21.3&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/node/i386/ubuntu/)
 
 For more information about this image and its history, please see the [relevant manifest file (`i386-ubuntu-node`)](https://github.com/balena-io-library/official-images/blob/master/library/i386-ubuntu-node) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 

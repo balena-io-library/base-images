@@ -40,7 +40,7 @@ Go (a.k.a., Golang) is a programming language first developed at Google. It is a
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;1.20 (latest)&#x60;, &#x60;1.19.5&#x60;, &#x60;1.18.10&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/golang/cubox-i/ubuntu/)
+[&#x60;1.20.1 (latest)&#x60;, &#x60;1.19.6&#x60;, &#x60;1.18.10&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/golang/cubox-i/ubuntu/)
 
 For more information about this image and its history, please see the [relevant manifest file (`cubox-i-ubuntu-golang`)](https://github.com/balena-io-library/official-images/blob/master/library/cubox-i-ubuntu-golang) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 
