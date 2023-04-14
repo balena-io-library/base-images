@@ -1,4 +1,20 @@
 - commits:
+    - subject: Revert allowing empty commits
+      hash: db3abcf428b56af688766f998879d02eae8968f0
+      body: |
+        Instead we can upload an empty artifact and ignore
+        failures when applying patches.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Kyle Harding <kyle@balena.io>
+        signed-off-by: Kyle Harding <kyle@balena.io>
+      author: Kyle Harding
+      nested: []
+  version: 2.2.4
+  title: ""
+  date: 2023-04-14T14:53:46.202Z
+- commits:
     - subject: Allow empty patches
       hash: 36c55715a4861a7309739e8dda64d1e5d7425445
       body: ""
