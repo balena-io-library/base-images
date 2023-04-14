@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.2.5 - 2023-04-14
+
+* Avoid failing when patches artifact does not exist [Kyle Harding]
+
 ## 2.2.4 - 2023-04-14
 
 * Revert allowing empty commits [Kyle Harding]
