@@ -48,6 +48,8 @@ runs:
 
     # https://github.com/dawidd6/action-download-artifact
     - name: Download patches from PR workflow
+      id: download_patches
+      continue-on-error: true
       uses: dawidd6/action-download-artifact@5e780fc7bbd0cac69fc73271ed86edf5dcb72d67 # v2
       with:
         github_token: ${{ steps.gh_app_installation_token.outputs.token || fromJSON(inputs.secrets).FLOWZONE_TOKEN }}
@@ -57,7 +59,7 @@ runs:
         name: patches-${{ github.event.pull_request.head.sha }}
 
     - name: Apply and push patches
-      continue-on-error: true
+      if: steps.download_patches.outcome == 'success'
       shell: bash --noprofile --norc -eo pipefail -x {0}
       env:
         GIT_AUTHOR_NAME: ${{ steps.import-gpg.outputs.name }}
