@@ -56,6 +56,18 @@ runs:
         workflow_conclusion: success
         name: patches-${{ github.event.pull_request.head.sha }}
 
+    - name: Apply and push patches
+      continue-on-error: true
+      shell: bash --noprofile --norc -eo pipefail -x {0}
+      env:
+        GIT_AUTHOR_NAME: ${{ steps.import-gpg.outputs.name }}
+        GIT_AUTHOR_EMAIL: ${{ steps.import-gpg.outputs.email }}
+        GIT_COMMITTER_NAME: ${{ steps.import-gpg.outputs.name }}
+        GIT_COMMITTER_EMAIL: ${{ steps.import-gpg.outputs.email }}
+      run: |
+        git am -q ${{ runner.temp }}/patches/*.patch
+        git push origin HEAD:refs/heads/${{ github.base_ref }}
+
     # https://github.com/dawidd6/action-download-artifact
     - name: Download libs from PR workflow
       uses: dawidd6/action-download-artifact@5e780fc7bbd0cac69fc73271ed86edf5dcb72d67 # v2
@@ -65,18 +77,6 @@ runs:
         path: ${{ runner.temp }}/libs
         workflow_conclusion: success
         name: libs-${{ github.event.pull_request.head.sha }}
-
-    - name: Apply and push patches
-      shell: bash --noprofile --norc -eo pipefail -x {0}
-      env:
-        GIT_AUTHOR_NAME: ${{ steps.import-gpg.outputs.name }}
-        GIT_AUTHOR_EMAIL: ${{ steps.import-gpg.outputs.email }}
-        GIT_COMMITTER_NAME: ${{ steps.import-gpg.outputs.name }}
-        GIT_COMMITTER_EMAIL: ${{ steps.import-gpg.outputs.email }}
-      run: |
-        git am -q ${{ runner.temp }}/patches/*.patch || find ${{ runner.temp }}/patches -type f -name '*.patch' -exec git am -q {} \;
-        !grep -q '^ 0 files changed' ${{ runner.temp }}/patches/*.patch || exit 0
-        git push origin HEAD:refs/heads/${{ github.base_ref }}
 
     # https://github.com/actions/checkout
     - name: Checkout official-images
