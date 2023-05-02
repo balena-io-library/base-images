@@ -50,7 +50,7 @@ runs:
     - name: Download patches from PR workflow
       id: download_patches
       continue-on-error: true
-      uses: dawidd6/action-download-artifact@5e780fc7bbd0cac69fc73271ed86edf5dcb72d67 # v2
+      uses: dawidd6/action-download-artifact@246dbf436b23d7c49e21a7ab8204ca9ecd1fe615 # v2
       with:
         github_token: ${{ steps.gh_app_installation_token.outputs.token || fromJSON(inputs.secrets).FLOWZONE_TOKEN }}
         commit: ${{ github.event.pull_request.head.sha || github.event.head_commit.id }}
