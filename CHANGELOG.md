@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.3.0 - 2023-05-02
+
+* Remove single quotes from parsed commit [Kyle Harding]
+
 ## 2.2.8 - 2023-05-02
 
 
