@@ -1,4 +1,56 @@
 - commits:
+    - subject: Update scripts/contracts digest to 6c6ed28
+      hash: 8514e8eba9db7a495cdb25293f56cbe3f286716b
+      body: |
+        Update scripts/contracts
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested:
+        - commits:
+            - subject: "jetson-agx-orin-devkit: Mention the RAM configuration in the device
+                name"
+              hash: 82d3a94938956376eeafa518a863a344acd2190b
+              body: |
+                By default the AGX Orin Devkit has 32GB RAM, however, new
+                production modules have been released with L4T 35.3.1 so we
+                should emphasize that newer modules may not work with this
+                image.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+          version: contracts-2.0.58
+          title: ""
+          date: 2023-04-27T11:52:02.405Z
+        - commits:
+            - subject: "debian/ubuntu jetson-orin-nx-xavier-nx-devkit: Add distro configs"
+              hash: ad9d69f447d9091f1ae2a582b02941472efb0539
+              body: |
+                The Orin NX modules uses L4T 35.2
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Alexandru Costache
+            - subject: "Orin NX: Update flashing steps"
+              hash: c7e77638474694870874afa17a453b727b3797d3
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+          version: contracts-2.0.57
+          title: ""
+          date: 2023-04-07T12:53:58.620Z
+  version: 2.2.8
+  title: ""
+  date: 2023-05-02T17:49:00.167Z
+- commits:
     - subject: Update dawidd6/action-download-artifact digest to 246dbf4
       hash: ba22615619190e876af90adcc39b876e527ecbc2
       body: |

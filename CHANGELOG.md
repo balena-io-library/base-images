@@ -5,6 +5,24 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.2.8 - 2023-05-02
+
+
+<details>
+<summary> Update scripts/contracts digest to 6c6ed28 [Renovate Bot] </summary>
+
+> ### contracts-2.0.58 - 2023-04-27
+> 
+> * jetson-agx-orin-devkit: Mention the RAM configuration in the device name [Alexandru Costache]
+> 
+> ### contracts-2.0.57 - 2023-04-07
+> 
+> * debian/ubuntu jetson-orin-nx-xavier-nx-devkit: Add distro configs [Alexandru Costache]
+> * Orin NX: Update flashing steps [Alexandru Costache]
+> 
+
+</details>
+
 ## 2.2.7 - 2023-05-02
 
 * Update dawidd6/action-download-artifact digest to 246dbf4 [Renovate Bot]
