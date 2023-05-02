@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.2.7 - 2023-05-02
+
+* Update dawidd6/action-download-artifact digest to 246dbf4 [Renovate Bot]
+
 ## 2.2.6 - 2023-05-02
 
 * Defer generating stackbrew library files [Kyle Harding]
