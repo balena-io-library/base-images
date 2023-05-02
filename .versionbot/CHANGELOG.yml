@@ -1,4 +1,21 @@
 - commits:
+    - subject: Defer generating stackbrew library files
+      hash: 4fc3ed311b727ad7dee563183b9d4c7f8b52774d
+      body: |
+        Instead the official-images repo will have it's own
+        workflow and base-images submodule to keep things
+        in-sync.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Kyle Harding <kyle@balena.io>
+        signed-off-by: Kyle Harding <kyle@balena.io>
+      author: Kyle Harding
+      nested: []
+  version: 2.2.6
+  title: ""
+  date: 2023-05-02T14:51:03.495Z
+- commits:
     - subject: Avoid failing when patches artifact does not exist
       hash: edc792b5a68851569f3c17f3873ca2a456138359
       body: ""
@@ -689,8 +706,8 @@
     - subject: "entryscript: check if sys/kernel mount point already exists"
       hash: 544c7e957f7b1ffbbbe31422de56c39ad6e4a7f4
       body: >
-        Since the supervisor can bind mount the host OS /sys into the container if
-        io.balena.features.sysfs is set
+        Since the supervisor can bind mount the host OS /sys into the container
+        if io.balena.features.sysfs is set
 
         we need to check whether it exists or not before mounting in the base-images entryscript
       footer:
@@ -1815,8 +1832,8 @@
     - subject: "test: Update os version test"
       hash: 45fb4c638009eedb8f2ede5cddde6b78aeade416
       body: >
-        Use PRETTY_NAME for OS version test as VERSION_CODENAME are not available
-        in all os-release file
+        Use PRETTY_NAME for OS version test as VERSION_CODENAME are not
+        available in all os-release file
       footer:
         Change-type: patch
         change-type: patch
@@ -1959,9 +1976,9 @@
     - subject: "entryscript: Change how entry script detects privileged container"
       hash: accd04465b774cebeefe6a6dc7e510e0bee83913
       body: >
-        Since user can set value for HOSTNAME env var, if the value is not a valid
-        host name then the entry script will always return it as unprivileged
-        container.
+        Since user can set value for HOSTNAME env var, if the value is not a
+        valid host name then the entry script will always return it as
+        unprivileged container.
       footer:
         Change-type: patch
         change-type: patch
@@ -2014,7 +2031,8 @@
     - subject: "systemd: Update systemd examples to use Buster base images"
       hash: 25ae4d33bc65829132d136688d2f0600224d8a8d
       body: >
-        Change to Debian Buster base image since it is the latest tag for Debian.
+        Change to Debian Buster base image since it is the latest tag for
+        Debian.
 
         Set default SYSTEMD_LOG_LEVEL=info to get rid of noisy init log
       footer:
@@ -2318,8 +2336,8 @@
     - subject: "entryscript: Use clean tmp mount"
       hash: 14d406b32d242f9afa0ffa6895ad0131a1d59d2e
       body: >
-        Use clean directory when mounting /dev as devtmpfs instead of /tmp to make
-        sure it wont break other features
+        Use clean directory when mounting /dev as devtmpfs instead of /tmp to
+        make sure it wont break other features
       footer:
         Change-type: patch
         change-type: patch
@@ -2759,8 +2777,8 @@
     - subject: "entryscript: check if sys/kernel mount point already exists"
       hash: 544c7e957f7b1ffbbbe31422de56c39ad6e4a7f4
       body: >
-        Since the supervisor can bind mount the host OS /sys into the container if
-        io.balena.features.sysfs is set
+        Since the supervisor can bind mount the host OS /sys into the container
+        if io.balena.features.sysfs is set
 
         we need to check whether it exists or not before mounting in the base-images entryscript
       footer:
@@ -3774,8 +3792,8 @@
     - subject: "test: Update os version test"
       hash: 45fb4c638009eedb8f2ede5cddde6b78aeade416
       body: >
-        Use PRETTY_NAME for OS version test as VERSION_CODENAME are not available
-        in all os-release file
+        Use PRETTY_NAME for OS version test as VERSION_CODENAME are not
+        available in all os-release file
       footer:
         Change-type: patch
         change-type: patch
@@ -3904,9 +3922,9 @@
     - subject: "entryscript: Change how entry script detects privileged container"
       hash: accd04465b774cebeefe6a6dc7e510e0bee83913
       body: >
-        Since user can set value for HOSTNAME env var, if the value is not a valid
-        host name then the entry script will always return it as unprivileged
-        container.
+        Since user can set value for HOSTNAME env var, if the value is not a
+        valid host name then the entry script will always return it as
+        unprivileged container.
       footer:
         Change-type: patch
         change-type: patch
@@ -3954,7 +3972,8 @@
     - subject: "systemd: Update systemd examples to use Buster base images"
       hash: 25ae4d33bc65829132d136688d2f0600224d8a8d
       body: >
-        Change to Debian Buster base image since it is the latest tag for Debian.
+        Change to Debian Buster base image since it is the latest tag for
+        Debian.
 
         Set default SYSTEMD_LOG_LEVEL=info to get rid of noisy init log
       footer:
@@ -4231,8 +4250,8 @@
     - subject: "entryscript: Use clean tmp mount"
       hash: 14d406b32d242f9afa0ffa6895ad0131a1d59d2e
       body: >
-        Use clean directory when mounting /dev as devtmpfs instead of /tmp to make
-        sure it wont break other features
+        Use clean directory when mounting /dev as devtmpfs instead of /tmp to
+        make sure it wont break other features
       footer:
         Change-type: patch
         change-type: patch
@@ -4637,8 +4656,8 @@
     - subject: "entryscript: check if sys/kernel mount point already exists"
       hash: 544c7e957f7b1ffbbbe31422de56c39ad6e4a7f4
       body: >
-        Since the supervisor can bind mount the host OS /sys into the container if
-        io.balena.features.sysfs is set
+        Since the supervisor can bind mount the host OS /sys into the container
+        if io.balena.features.sysfs is set
 
         we need to check whether it exists or not before mounting in the base-images entryscript
       footer:
@@ -5652,8 +5671,8 @@
     - subject: "test: Update os version test"
       hash: 45fb4c638009eedb8f2ede5cddde6b78aeade416
       body: >
-        Use PRETTY_NAME for OS version test as VERSION_CODENAME are not available
-        in all os-release file
+        Use PRETTY_NAME for OS version test as VERSION_CODENAME are not
+        available in all os-release file
       footer:
         Change-type: patch
         change-type: patch
@@ -5782,9 +5801,9 @@
     - subject: "entryscript: Change how entry script detects privileged container"
       hash: accd04465b774cebeefe6a6dc7e510e0bee83913
       body: >
-        Since user can set value for HOSTNAME env var, if the value is not a valid
-        host name then the entry script will always return it as unprivileged
-        container.
+        Since user can set value for HOSTNAME env var, if the value is not a
+        valid host name then the entry script will always return it as
+        unprivileged container.
       footer:
         Change-type: patch
         change-type: patch
@@ -5832,7 +5851,8 @@
     - subject: "systemd: Update systemd examples to use Buster base images"
       hash: 25ae4d33bc65829132d136688d2f0600224d8a8d
       body: >
-        Change to Debian Buster base image since it is the latest tag for Debian.
+        Change to Debian Buster base image since it is the latest tag for
+        Debian.
 
         Set default SYSTEMD_LOG_LEVEL=info to get rid of noisy init log
       footer:
@@ -6109,8 +6129,8 @@
     - subject: "entryscript: Use clean tmp mount"
       hash: 14d406b32d242f9afa0ffa6895ad0131a1d59d2e
       body: >
-        Use clean directory when mounting /dev as devtmpfs instead of /tmp to make
-        sure it wont break other features
+        Use clean directory when mounting /dev as devtmpfs instead of /tmp to
+        make sure it wont break other features
       footer:
         Change-type: patch
         change-type: patch
@@ -6506,8 +6526,8 @@
     - subject: "entryscript: check if sys/kernel mount point already exists"
       hash: 544c7e957f7b1ffbbbe31422de56c39ad6e4a7f4
       body: >
-        Since the supervisor can bind mount the host OS /sys into the container if
-        io.balena.features.sysfs is set
+        Since the supervisor can bind mount the host OS /sys into the container
+        if io.balena.features.sysfs is set
 
         we need to check whether it exists or not before mounting in the base-images entryscript
       footer:
@@ -7521,8 +7541,8 @@
     - subject: "test: Update os version test"
       hash: 45fb4c638009eedb8f2ede5cddde6b78aeade416
       body: >
-        Use PRETTY_NAME for OS version test as VERSION_CODENAME are not available
-        in all os-release file
+        Use PRETTY_NAME for OS version test as VERSION_CODENAME are not
+        available in all os-release file
       footer:
         Change-type: patch
         change-type: patch
@@ -7651,9 +7671,9 @@
     - subject: "entryscript: Change how entry script detects privileged container"
       hash: accd04465b774cebeefe6a6dc7e510e0bee83913
       body: >
-        Since user can set value for HOSTNAME env var, if the value is not a valid
-        host name then the entry script will always return it as unprivileged
-        container.
+        Since user can set value for HOSTNAME env var, if the value is not a
+        valid host name then the entry script will always return it as
+        unprivileged container.
       footer:
         Change-type: patch
         change-type: patch
@@ -7701,7 +7721,8 @@
     - subject: "systemd: Update systemd examples to use Buster base images"
       hash: 25ae4d33bc65829132d136688d2f0600224d8a8d
       body: >
-        Change to Debian Buster base image since it is the latest tag for Debian.
+        Change to Debian Buster base image since it is the latest tag for
+        Debian.
 
         Set default SYSTEMD_LOG_LEVEL=info to get rid of noisy init log
       footer:
@@ -7978,8 +7999,8 @@
     - subject: "entryscript: Use clean tmp mount"
       hash: 14d406b32d242f9afa0ffa6895ad0131a1d59d2e
       body: >
-        Use clean directory when mounting /dev as devtmpfs instead of /tmp to make
-        sure it wont break other features
+        Use clean directory when mounting /dev as devtmpfs instead of /tmp to
+        make sure it wont break other features
       footer:
         Change-type: patch
         change-type: patch
