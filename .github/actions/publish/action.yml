@@ -33,7 +33,7 @@ runs:
     # https://github.com/crazy-max/ghaction-import-gpg
     - name: Import GPG private key
       id: import-gpg
-      uses: crazy-max/ghaction-import-gpg@111c56156bcc6918c056dbef52164cfa583dc549 # v5.2.0
+      uses: crazy-max/ghaction-import-gpg@72b6676b71ab476b77e676928516f6982eef7a41 # v5.3.0
       with:
         gpg_private_key: ${{ fromJSON(inputs.secrets).GPG_PRIVATE_KEY }}
         passphrase: ${{ fromJSON(inputs.secrets).GPG_PASSPHRASE }}
