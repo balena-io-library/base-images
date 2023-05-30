@@ -5,6 +5,23 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.3.1 - 2023-05-30
+
+
+<details>
+<summary> Update scripts/contracts digest to fd4af4e [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.60 - 2023-05-04
+> 
+> * Fix LED support for ISG-503 [Alexandru Costache]
+> 
+> ### contracts-2.0.59 - 2023-05-03
+> 
+> * hw.device-type: Add revpi-connect-s [Obaid Ch]
+> 
+
+</details>
+
 ## 2.3.0 - 2023-05-02
 
 * Remove single quotes from parsed commit [Kyle Harding]
