@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.4.1 - 2023-07-11
+
+* Update renovate.json [Kyle Harding]
+
 ## 2.4.0 - 2023-05-30
 
 * Update crazy-max/ghaction-import-gpg action to v5.3.0 [Self-hosted Renovate Bot]
