@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.4.2 - 2023-07-11
+
+* Update contracts submodule URL [Kyle Harding]
+
 ## 2.4.1 - 2023-07-11
 
 * Update renovate.json [Kyle Harding]
