@@ -5,6 +5,27 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.4.3 - 2023-07-11
+
+
+<details>
+<summary> Update scripts/contracts digest to 6e3d563 [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.63 - 2023-06-29
+> 
+> * sw.os+hw.device-type: Add ubuntu and debian distro configs for Orin Nano [Alexandru Costache]
+> 
+> ### contracts-2.0.62 - 2023-06-27
+> 
+> * hw.device-type: Add Jetson Orin Nano Devkit 8GB (SD) module [Alexandru Costache]
+> 
+> ### contracts-2.0.61 - 2023-06-14
+> 
+> * hw/device-type: Update contract.json for iot-gate-imx8 [Alexandru Costache]
+> 
+
+</details>
+
 ## 2.4.2 - 2023-07-11
 
 * Update contracts submodule URL [Kyle Harding]
