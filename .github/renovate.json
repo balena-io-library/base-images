@@ -1,5 +1,6 @@
 {
-  "extends": ["github>balena-io/renovate-config"],
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["github>balena-io-library/.github:renovate-config"],
   "ignorePaths": [
     "**/node_modules/**",
     "**/bower_components/**",
