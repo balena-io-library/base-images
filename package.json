@@ -10,7 +10,8 @@
   },
   "private": true,
   "scripts": {
-    "lint": "eslint scripts",
+    "lint": "balena-lint -e js scripts/*.js",
+    "lint-fix": "balena-lint -e js --fix scripts/*.js",
     "os-arch": "node scripts/generate-dockerfiles.js os-arch",
     "os-arch-lib": "node scripts/generate-stackbrew-library.js os-arch",
     "os-device": "node scripts/generate-dockerfiles.js os-device",
@@ -37,14 +38,7 @@
     "require-all": "^2.2.0"
   },
   "devDependencies": {
-    "eslint": "^4.19.1",
-    "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-jsdoc": "^3.15.1",
-    "eslint-plugin-lodash": "^2.7.0",
-    "eslint-plugin-node": "^5.2.1",
-    "eslint-plugin-promise": "^3.8.0",
-    "eslint-plugin-standard": "^3.1.0"
+    "@balena/lint": "^6.2.2"
   },
   "engines": {
     "node": "^18.14.0",
