@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.4.6 - 2023-07-12
+
+* Skip publish steps if modified files do not include ./scripts/ [Kyle Harding]
+
 ## 2.4.5 - 2023-07-12
 
 * Update dependency fs-extra to v11 [Felipe Lalanne]
