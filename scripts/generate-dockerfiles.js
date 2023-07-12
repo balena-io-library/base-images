@@ -14,120 +14,160 @@
  * limitations under the License.
  */
 
-'use strict'
+'use strict';
 
-const _ = require('lodash')
-const fs = require('fs-extra')
-const path = require('path')
-const contrato = require('@balena/contrato')
-const yaml = require('js-yaml')
-const { concurrentForEach } = require('./utils')
+const _ = require('lodash');
+const fs = require('fs-extra');
+const path = require('path');
+const contrato = require('@balena/contrato');
+const yaml = require('js-yaml');
+const { concurrentForEach } = require('./utils');
 
-const DEST_DIR = path.join(__dirname, '../balena-base-images')
+const DEST_DIR = path.join(__dirname, '../balena-base-images');
 const BLUEPRINT_PATHS = {
-  'os-arch': path.join(__dirname, 'blueprints/os-arch.yaml'),
-  'os-device': path.join(__dirname, 'blueprints/os-device.yaml'),
-  'stack-device': path.join(__dirname, 'blueprints/stack-device.yaml'),
-  'stack-arch': path.join(__dirname, 'blueprints/stack-arch.yaml')
-}
-const CONTRACTS_PATH = path.join(__dirname, 'contracts/contracts')
+	'os-arch': path.join(__dirname, 'blueprints/os-arch.yaml'),
+	'os-device': path.join(__dirname, 'blueprints/os-device.yaml'),
+	'stack-device': path.join(__dirname, 'blueprints/stack-device.yaml'),
+	'stack-arch': path.join(__dirname, 'blueprints/stack-arch.yaml'),
+};
+const CONTRACTS_PATH = path.join(__dirname, 'contracts/contracts');
 
 // Find and build all contracts from the contracts/ directory
 const allContracts = require('require-all')({
-  dirname: CONTRACTS_PATH,
-  filter: /.json$/,
-  recursive: true,
-  resolve: (json) => {
-    return contrato.Contract.build(json)
-  }
-})
+	dirname: CONTRACTS_PATH,
+	filter: /.json$/,
+	recursive: true,
+	resolve: (json) => {
+		return contrato.Contract.build(json);
+	},
+});
 
-const contracts = _.reduce(_.values(allContracts), (accumulator, value) => {
-  return _.concat(accumulator, _.flattenDeep(_.map(_.values(value), _.values)))
-}, [])
+const contracts = _.reduce(
+	_.values(allContracts),
+	(accumulator, value) => {
+		return _.concat(
+			accumulator,
+			_.flattenDeep(_.map(_.values(value), _.values)),
+		);
+	},
+	[],
+);
 
 // Create universe of contracts
 const universe = new contrato.Contract({
-  type: 'meta.universe'
-})
-universe.addChildren(contracts)
+	type: 'meta.universe',
+});
+universe.addChildren(contracts);
 
 // Remove `resinos` and `balenaos` OS contract since we don't want it for the base images
-const resinosChildren = universe.findChildren(contrato.Contract.createMatcher({
-  type: 'sw.os',
-  slug: 'resinos'
-}))
+const resinosChildren = universe.findChildren(
+	contrato.Contract.createMatcher({
+		type: 'sw.os',
+		slug: 'resinos',
+	}),
+);
 
-const balenaosChildren = universe.findChildren(contrato.Contract.createMatcher({
-  type: 'sw.os',
-  slug: 'balena-os'
-}))
+const balenaosChildren = universe.findChildren(
+	contrato.Contract.createMatcher({
+		type: 'sw.os',
+		slug: 'balena-os',
+	}),
+);
 
 resinosChildren.concat(balenaosChildren).forEach((child) => {
-  universe.removeChild(child)
-})
+	universe.removeChild(child);
+});
 
 // Load arguments
-const types = process.argv.slice(2)
+const types = process.argv.slice(2);
 if (types.length === 0) {
-  console.error(`Usage: ${process.argv[0]} ${process.argv[1]} <types...>`)
-  process.exit(1)
+	console.error(`Usage: ${process.argv[0]} ${process.argv[1]} <types...>`);
+	process.exit(1);
 }
 
-let blueprints = types
+let blueprints = types;
 
 if (types.indexOf('all') > -1) {
-  // Generate dockerfile for all blueprints
-  blueprints = Object.keys(BLUEPRINT_PATHS)
+	// Generate dockerfile for all blueprints
+	blueprints = Object.keys(BLUEPRINT_PATHS);
 }
 
 (async () => {
-  await Promise.all(blueprints.map(async (type) => {
-    if (!BLUEPRINT_PATHS[type]) {
-      console.error(`Blueprint for this base images type: ${type} is missing!`)
-      process.exit(1)
-    }
+	await Promise.all(
+		blueprints.map(async (type) => {
+			if (!BLUEPRINT_PATHS[type]) {
+				console.error(
+					`Blueprint for this base images type: ${type} is missing!`,
+				);
+				process.exit(1);
+			}
 
-    const query = yaml.safeLoad(await fs.readFile(BLUEPRINT_PATHS[type], 'utf8'))
+			const query = yaml.safeLoad(
+				await fs.readFile(BLUEPRINT_PATHS[type], 'utf8'),
+			);
 
-    // Execute query
-    const result = contrato.query(universe, query.selector, query.output, true)
+			// Execute query
+			const result = contrato.query(
+				universe,
+				query.selector,
+				query.output,
+				true,
+			);
 
-    // Get templates
-    const template = query.output.template[0].data
+			// Get templates
+			const template = query.output.template[0].data;
 
-    // Write output
-    let count = 0
-    await concurrentForEach(result, 5, async (context) => {
-      const json = context.toJSON()
-      const destination = path.join(
-        DEST_DIR,
-        json.path,
-        query.output.filename
-      )
+			// Write output
+			let count = 0;
+			await concurrentForEach(result, 5, async (context) => {
+				const json = context.toJSON();
+				const destination = path.join(
+					DEST_DIR,
+					json.path,
+					query.output.filename,
+				);
 
-      console.log(`Generating ${json.imageName}`)
-      await fs.outputFile(destination, await contrato.buildTemplate(template, context, {
-        directory: CONTRACTS_PATH
-      }))
+				console.log(`Generating ${json.imageName}`);
+				await fs.outputFile(
+					destination,
+					await contrato.buildTemplate(template, context, {
+						directory: CONTRACTS_PATH,
+					}),
+				);
 
-      if (json.children.sw.blob) {
-      // Check and copy local blobs to target directory.
-        for (const blob of _.values(json.children.sw.blob)) {
-          if (blob.assets.bin.url.indexOf('file://') > -1) {
-            try {
-              const src = path.join(__dirname, blob.assets.bin.url.replace('file://', ''))
-              await fs.copy(src, path.join(path.dirname(destination), blob.assets.bin.main))
-            } catch (err) {
-              throw new Error('Error when copying ' + blob.assets.bin.name + ' to ' + path.dirname(destination))
-            }
-          }
-        }
-      }
-      count++
-    })
+				if (json.children.sw.blob) {
+					// Check and copy local blobs to target directory.
+					for (const blob of _.values(json.children.sw.blob)) {
+						if (blob.assets.bin.url.indexOf('file://') > -1) {
+							try {
+								const src = path.join(
+									__dirname,
+									blob.assets.bin.url.replace('file://', ''),
+								);
+								await fs.copy(
+									src,
+									path.join(path.dirname(destination), blob.assets.bin.main),
+								);
+							} catch (err) {
+								throw new Error(
+									'Error when copying ' +
+										blob.assets.bin.name +
+										' to ' +
+										path.dirname(destination),
+								);
+							}
+						}
+					}
+				}
+				count++;
+			});
 
-    console.log(`Generated ${count} results out of ${universe.getChildren().length} contracts`)
-    console.log(`Adding generated ${count} contracts back to the universe`)
-  }))
-})()
+			console.log(
+				`Generated ${count} results out of ${
+					universe.getChildren().length
+				} contracts`,
+			);
+			console.log(`Adding generated ${count} contracts back to the universe`);
+		}),
+	);
+})();

@@ -14,19 +14,23 @@
  * limitations under the License.
  */
 
-'use strict'
+'use strict';
 
-exports.concurrentForEach = async (/** @type IterableIterator<Contract> */ it, /** @type number */ concurrency, /** @type {(context: Contract) => Promise<void>} */fn) => {
-  const run = async () => {
-    const next = it.next()
-    if (next.value && !next.done) {
-      await fn(next.value)
-      await run()
-    }
-  }
-  const runs = []
-  for (let i = 0; i < concurrency; i++) {
-    runs.push(run())
-  }
-  await Promise.all(runs)
-}
+exports.concurrentForEach = async (
+	/** @type IterableIterator<Contract> */ it,
+	/** @type number */ concurrency,
+	/** @type {(context: Contract) => Promise<void>} */ fn,
+) => {
+	const run = async () => {
+		const next = it.next();
+		if (next.value && !next.done) {
+			await fn(next.value);
+			await run();
+		}
+	};
+	const runs = [];
+	for (let i = 0; i < concurrency; i++) {
+		runs.push(run());
+	}
+	await Promise.all(runs);
+};
