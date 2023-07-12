@@ -102,9 +102,7 @@ if (types.indexOf('all') > -1) {
 				process.exit(1);
 			}
 
-			const query = yaml.safeLoad(
-				await fs.readFile(BLUEPRINT_PATHS[type], 'utf8'),
-			);
+			const query = yaml.load(await fs.readFile(BLUEPRINT_PATHS[type], 'utf8'));
 
 			// Execute query
 			const result = contrato.query(
