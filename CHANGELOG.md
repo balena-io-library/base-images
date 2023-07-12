@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.4.4 - 2023-07-12
+
+* Update actions/setup-node digest to e33196f [Self-hosted Renovate Bot]
+
 ## 2.4.3 - 2023-07-11
 
 
