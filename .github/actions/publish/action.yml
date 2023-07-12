@@ -13,17 +13,37 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - name: Check which files were modified
+      shell: bash
+      id: should_publish
+      env:
+        GH_PAGER: "cat"
+        GH_PROMPT_DISABLED: "true"
+        GH_REPO: "${{ github.repository }}"
+        GH_TOKEN: "${{ fromJSON(inputs.secrets).GITHUB_TOKEN }}"
+      run: |
+        if [[ $(gh pr diff ${{ github.event.pull_request.number }} --name-only) =~ ^scripts\/ ]]
+        then
+          echo "result=true" >> $GITHUB_OUTPUT 
+        else
+          echo "::warning::Skipping generation and publication of Dockerfiles because no sources were modified"
+          echo "result=false" >> $GITHUB_OUTPUT 
+        fi
+
     - name: Setup Node.js 18.x
+      if: steps.should_publish.outputs.result == 'true'
       uses: actions/setup-node@e33196f7422957bea03ed53f6fbb155025ffc7b8 # v3
       with:
         node-version: 18.x
 
     - name: Install dependencies
+      if: steps.should_publish.outputs.result == 'true'
       shell: bash
       run: |
         npm ci
 
     - name: Generate Dockerfiles
+      if: steps.should_publish.outputs.result == 'true'
       shell: bash
       run: |
         git rm -q -rf balena-base-images
@@ -32,6 +52,7 @@ runs:
 
     # https://github.com/crazy-max/ghaction-import-gpg
     - name: Import GPG private key
+      if: steps.should_publish.outputs.result == 'true'
       id: import-gpg
       uses: crazy-max/ghaction-import-gpg@72b6676b71ab476b77e676928516f6982eef7a41 # v5.3.0
       with:
@@ -42,6 +63,7 @@ runs:
         git_commit_gpgsign: true
 
     - name: Commit and create patch
+      if: steps.should_publish.outputs.result == 'true'
       continue-on-error: true
       shell: bash --noprofile --norc -eo pipefail -x {0}
       env:
@@ -56,6 +78,7 @@ runs:
 
     # https://github.com/actions/upload-artifact
     - name: Upload patches artifact
+      if: steps.should_publish.outputs.result == 'true'
       uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
       with:
         name: patches-${{ github.event.pull_request.head.sha }}
