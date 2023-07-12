@@ -1,4 +1,53 @@
 - commits:
+    - subject: Update dependency fs-extra to v11
+      hash: d32825587224d7a8dd2b2f76a7ce7ec622e6c56c
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Felipe Lalanne
+      nested: []
+    - subject: Update dependency js-yaml to v4
+      hash: 37c0b30528af88e4a51c81b9ee5864220a5ddfb9
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Felipe Lalanne
+      nested: []
+    - subject: Add husky and lint-staged for code formatting
+      hash: 8698da26f562e98ae30d935875d716726d885c59
+      body: |
+        This is to follow balena-conventions and ensure we don't merge
+        code that does not meet standards.
+
+        This also runs prettify on scripts to allow lint checks to pass
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Felipe Lalanne
+      nested: []
+    - subject: Remove unused js-combinatorics dependency
+      hash: 5e8277ef763355677123d172a74d3680a9d7d237
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Felipe Lalanne
+      nested: []
+    - subject: Replace eslint with @balena/lint
+      hash: c6cecb6fd74ea96ae6ab2500c864a48ead8604b1
+      body: |
+        Also update .editorconfig to follow balena standards
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Felipe Lalanne
+      nested: []
+  version: 2.4.5
+  title: ""
+  date: 2023-07-12T18:27:56.209Z
+- commits:
     - subject: Update actions/setup-node digest to e33196f
       hash: 52231c360a1562d36a4d1e9da08bbaba4674e07b
       body: |

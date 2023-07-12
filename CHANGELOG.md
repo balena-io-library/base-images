@@ -5,6 +5,14 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.4.5 - 2023-07-12
+
+* Update dependency fs-extra to v11 [Felipe Lalanne]
+* Update dependency js-yaml to v4 [Felipe Lalanne]
+* Add husky and lint-staged for code formatting [Felipe Lalanne]
+* Remove unused js-combinatorics dependency [Felipe Lalanne]
+* Replace eslint with @balena/lint [Felipe Lalanne]
+
 ## 2.4.4 - 2023-07-12
 
 * Update actions/setup-node digest to e33196f [Self-hosted Renovate Bot]
