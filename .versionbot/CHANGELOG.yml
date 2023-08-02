@@ -1,4 +1,43 @@
 - commits:
+    - subject: Update scripts/contracts digest to bf0ec3d
+      hash: f80395b8fad59deb5a22d21513fd58d46e6ca425
+      body: |
+        Update scripts/contracts
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: Replace ifupdown with ifupdown-ng for alpine edge
+              hash: cf7dde1ae72cd0edaa94c783da271b1bf22542ea
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+          version: contracts-2.0.65
+          title: ""
+          date: 2023-08-02T20:23:30.063Z
+        - commits:
+            - subject: Remove OpenJDK v7 as it has been removed from alpine edge
+              hash: 343a2f5d0a08de2f9bb5ad1013150e98f23feb2c
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+          version: contracts-2.0.64
+          title: ""
+          date: 2023-08-02T20:02:24.824Z
+  version: 2.4.7
+  title: ""
+  date: 2023-08-02T21:38:16.110Z
+- commits:
     - subject: Skip publish steps if modified files do not include ./scripts/
       hash: 2ba8f10d2cc10cc31b90893ce306978cfed5d5b1
       body: ""

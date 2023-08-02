@@ -5,6 +5,23 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.4.7 - 2023-08-02
+
+
+<details>
+<summary> Update scripts/contracts digest to bf0ec3d [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.65 - 2023-08-02
+> 
+> * Replace ifupdown with ifupdown-ng for alpine edge [Kyle Harding]
+> 
+> ### contracts-2.0.64 - 2023-08-02
+> 
+> * Remove OpenJDK v7 as it has been removed from alpine edge [Kyle Harding]
+> 
+
+</details>
+
 ## 2.4.6 - 2023-07-12
 
 * Skip publish steps if modified files do not include ./scripts/ [Kyle Harding]
