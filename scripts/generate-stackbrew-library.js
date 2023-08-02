@@ -219,7 +219,10 @@ const allContracts = require('require-all')({
 	filter: /.json$/,
 	recursive: true,
 	resolve: (json) => {
-		return contrato.Contract.build(json);
+		// We only want to process the
+		// canonical version of the contract
+		const { aliases, ...obj } = json;
+		return contrato.Contract.build(obj);
 	},
 });
 
@@ -312,8 +315,7 @@ if (types.indexOf('all') > -1) {
 			});
 
 			console.log(
-				`Generated ${count} results out of ${
-					universe.getChildren().length
+				`Generated ${count} results out of ${universe.getChildren().length
 				} contracts`,
 			);
 			console.log(`Adding generated ${count} contracts back to the universe`);
