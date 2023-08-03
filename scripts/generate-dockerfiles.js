@@ -38,7 +38,10 @@ const allContracts = require('require-all')({
 	filter: /.json$/,
 	recursive: true,
 	resolve: (json) => {
-		return contrato.Contract.build(json);
+		// We only want to generate dockerfiles for the
+		// canonical contracts
+		const { aliases, ...obj } = json;
+		return contrato.Contract.build(obj);
 	},
 });
 
@@ -149,9 +152,9 @@ if (types.indexOf('all') > -1) {
 							} catch (err) {
 								throw new Error(
 									'Error when copying ' +
-										blob.assets.bin.name +
-										' to ' +
-										path.dirname(destination),
+									blob.assets.bin.name +
+									' to ' +
+									path.dirname(destination),
 								);
 							}
 						}
@@ -161,8 +164,7 @@ if (types.indexOf('all') > -1) {
 			});
 
 			console.log(
-				`Generated ${count} results out of ${
-					universe.getChildren().length
+				`Generated ${count} results out of ${universe.getChildren().length
 				} contracts`,
 			);
 			console.log(`Adding generated ${count} contracts back to the universe`);
