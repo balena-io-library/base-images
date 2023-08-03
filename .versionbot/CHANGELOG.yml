@@ -1,4 +1,43 @@
 - commits:
+    - subject: Update scripts/contracts digest to bd81b50
+      hash: 4454d554f01850ea1fee7bbb5f0d98b11e9138c8
+      body: |
+        Update scripts/contracts
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: Fix conditional when installing libssl1.1
+              hash: 29e5a99050fb93fcea404fd48d2db029acf4acb3
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+          version: contracts-2.0.67
+          title: ""
+          date: 2023-08-03T20:27:02.315Z
+        - commits:
+            - subject: Fix a condition where /etc/nsswitch.conf exists and the build fails
+              hash: c8c521ae9fdb908fb37642154d5fbe73a2849985
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+          version: contracts-2.0.66
+          title: ""
+          date: 2023-08-03T20:04:14.870Z
+  version: 2.5.1
+  title: ""
+  date: 2023-08-03T21:38:35.432Z
+- commits:
     - subject: Skip aliases from contract processing
       hash: 3a21bbda3902d38b05f289f28f83c7c4bddadd97
       body: >

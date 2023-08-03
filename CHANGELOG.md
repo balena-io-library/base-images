@@ -5,6 +5,23 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.5.1 - 2023-08-03
+
+
+<details>
+<summary> Update scripts/contracts digest to bd81b50 [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.67 - 2023-08-03
+> 
+> * Fix conditional when installing libssl1.1 [Kyle Harding]
+> 
+> ### contracts-2.0.66 - 2023-08-03
+> 
+> * Fix a condition where /etc/nsswitch.conf exists and the build fails [Kyle Harding]
+> 
+
+</details>
+
 ## 2.5.0 - 2023-08-03
 
 * Skip aliases from contract processing [Felipe Lalanne]
