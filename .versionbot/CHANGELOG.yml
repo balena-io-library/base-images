@@ -1,4 +1,25 @@
 - commits:
+    - subject: Skip aliases from contract processing
+      hash: 3a21bbda3902d38b05f289f28f83c7c4bddadd97
+      body: >
+        We only want to generate Dockerfiles for the canonical device type
+
+        names and not their aliases. Ex. There is a `raspberry-pi2-alpine-python` image
+
+        but not a `raspberrypi2-alpine-python` image. This removes the aliases
+
+        before building the contract to prevent the universe reproduction to
+
+        generate combinations for those aliases as well.
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Felipe Lalanne
+      nested: []
+  version: 2.5.0
+  title: ""
+  date: 2023-08-03T16:17:15.801Z
+- commits:
     - subject: Update scripts/contracts digest to bf0ec3d
       hash: f80395b8fad59deb5a22d21513fd58d46e6ca425
       body: |

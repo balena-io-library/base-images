@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.5.0 - 2023-08-03
+
+* Skip aliases from contract processing [Felipe Lalanne]
+
 ## 2.4.7 - 2023-08-02
 
 
