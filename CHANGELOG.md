@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.6.2 - 2023-08-09
+
+* Generate new installation token for push [Kyle Harding]
+
 ## 2.6.1 - 2023-08-09
 
 * Fix permissions on push to master [Kyle Harding]
