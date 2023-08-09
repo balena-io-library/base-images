@@ -28,3 +28,7 @@ jobs:
       repo_config: true
       repo_description: "Balena base images"
       repo_homepage: https://docs.balena.io/reference/base-images/base-images/#balena-base-images
+      custom_runs_on: >
+        [
+          ["self-hosted","X64"]
+        ]
