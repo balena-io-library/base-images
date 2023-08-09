@@ -1,4 +1,28 @@
 - commits:
+    - subject: Generate and commit library files on finalize
+      hash: cd07530a2a25f87485575c9cf8c843cb8f10f23f
+      body: |
+        Use self-hosted runners to generate and merge changes to
+        Dockerfiles and Libaries on finalize.
+
+        On open PR tests, the files will be generated but discarded
+        as the commit hash from master is used in the generation
+        of library files.
+
+        The above is only for testing, and to slow
+        the rate of PR merges to master to allow time for previous merge
+        actions to complete generating.
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Kyle Harding <kyle@balena.io>
+        signed-off-by: Kyle Harding <kyle@balena.io>
+      author: Kyle Harding
+      nested: []
+  version: 2.6.0
+  title: ""
+  date: 2023-08-09T15:13:22.301Z
+- commits:
     - subject: Update scripts/contracts digest to bd81b50
       hash: 4454d554f01850ea1fee7bbb5f0d98b11e9138c8
       body: |

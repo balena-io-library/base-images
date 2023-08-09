@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.6.0 - 2023-08-09
+
+* Generate and commit library files on finalize [Kyle Harding]
+
 ## 2.5.1 - 2023-08-03
 
 
