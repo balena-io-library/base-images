@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.6.5 - 2023-08-11
+
+* Generate files create a new PR on pushes to master [Kyle Harding]
+
 ## 2.6.4 - 2023-08-10
 
 * Test the finalize workflow with a symlink [Kyle Harding]
