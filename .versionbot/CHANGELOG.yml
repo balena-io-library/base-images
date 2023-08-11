@@ -1,4 +1,18 @@
 - commits:
+    - subject: Update generate-all.yml
+      hash: e3d455038ca1f8fa3ea373603dcd6f1dc2f3d81c
+      body: |
+        Add a change-type to both commits in case
+        either of them are skipped.
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Kyle Harding
+      nested: []
+  version: 2.6.7
+  title: ""
+  date: 2023-08-11T17:47:30.821Z
+- commits:
     - subject: Pin actions/checkout action to c85c95e
       hash: dd97b28cf1f900f84beaf29554087a399e737357
       body: |

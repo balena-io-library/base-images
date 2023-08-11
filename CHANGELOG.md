@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.6.7 - 2023-08-11
+
+* Update generate-all.yml [Kyle Harding]
+
 ## 2.6.6 - 2023-08-11
 
 * Pin actions/checkout action to c85c95e [Self-hosted Renovate Bot]
