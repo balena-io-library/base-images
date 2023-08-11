@@ -315,7 +315,8 @@ if (types.indexOf('all') > -1) {
 			});
 
 			console.log(
-				`Generated ${count} results out of ${universe.getChildren().length
+				`Generated ${count} results out of ${
+					universe.getChildren().length
 				} contracts`,
 			);
 			console.log(`Adding generated ${count} contracts back to the universe`);
