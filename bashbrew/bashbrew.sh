@@ -404,9 +404,7 @@ while [ "$#" -gt 0 ]; do
 		continue
 	fi
 	
-	thisLog="$logDir/$subcommand-$repoTag.log"
-	touch "$thisLog"
-	ln -sf "$thisLog" "$latestLogDir/$(basename "$thisLog")"
+	thisLog=/dev/stdout
 	
 	case "$subcommand" in
 		build)
