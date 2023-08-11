@@ -25,6 +25,7 @@
     "all": "node scripts/generate-dockerfiles.js all",
     "all-lib": "node scripts/generate-stackbrew-library.js all",
     "all-dockerhub": "node scripts/generate-dockerhub-description.js all",
+    "all-workflows": "node scripts/generate-workflows.js all",
     "test": "time -p npm run os-arch && time -p npm run os-arch-lib"
   },
   "author": "Resin Inc. <hello@resin.io>",
