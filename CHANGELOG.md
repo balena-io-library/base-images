@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.6.6 - 2023-08-11
+
+* Pin actions/checkout action to c85c95e [Self-hosted Renovate Bot]
+
 ## 2.6.5 - 2023-08-11
 
 * Generate files create a new PR on pushes to master [Kyle Harding]
