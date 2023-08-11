@@ -313,6 +313,12 @@ for (const [topDependency, jobGroupList] of Object.entries(jobGroups)) {
 		name: `Bashbrew (${topDependency})`,
 		on: {
 			// push: {},
+      schedule: [
+        // At 03:45, only on Saturday
+        // { "cron": "45 3 * * 6" },
+        // At 03:45, on day 6 of the month
+        { "cron": "45 3 6 * *" },
+      ],
 			workflow_dispatch: {
 				inputs: {
 					target_job: {
