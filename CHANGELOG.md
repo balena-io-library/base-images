@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.6.10 - 2023-08-11
+
+* Initial commit of generated bashbrew github workflows [Kyle Harding]
+
 ## 2.6.9 - 2023-08-11
 
 * Add generate-workflows.js for generating GitHub Actions workflows [Kyle Harding]
