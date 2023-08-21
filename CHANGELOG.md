@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.6.13 - 2023-08-21
+
+* Remove duplicate raspberrypi aliases [Kyle Harding]
+
 ## 2.6.12 - 2023-08-21
 
 * Ignore generated bashbrew files in GitHub PRs and Renovate [Kyle Harding]
