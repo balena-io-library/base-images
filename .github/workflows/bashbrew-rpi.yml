@@ -65,11 +65,11 @@ jobs:
     if: inputs.target_job == 'rpi-alpine' || inputs.target_job == 'all' || inputs.target_job == 'rpi-alpine-golang' || inputs.target_job == 'rpi-alpine-node' || inputs.target_job == 'rpi-alpine-openjdk' || inputs.target_job == 'rpi-alpine-python' || inputs.target_job == 'raspberry-pi-alpine'
     steps:
       - name: Checkout code
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: Setup QEMU
-        uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7 # v2
+        uses: docker/setup-qemu-action@v2
         with:
           platforms: all
           image: tonistiigi/binfmt:qemu-v6.2.0
@@ -80,7 +80,7 @@ jobs:
         if: ${{ inputs.no_push }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-push" >> $GITHUB_ENV
       - name: Login to DockerHub
-        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc # v2
+        uses: docker/login-action@v2
         with:
           registry: docker.io
           username: ${{ secrets.BALENAIMAGES_USER }}
@@ -89,7 +89,7 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "rpi-alpine" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
+        uses: actions/upload-artifact@v3
         with:
           name: logs
           path: bashbrew/logs/*/*.log
@@ -103,11 +103,11 @@ jobs:
     if: inputs.target_job == 'rpi-alpine-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'rpi-alpine'))
     steps:
       - name: Checkout code
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: Setup QEMU
-        uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7 # v2
+        uses: docker/setup-qemu-action@v2
         with:
           platforms: all
           image: tonistiigi/binfmt:qemu-v6.2.0
@@ -118,7 +118,7 @@ jobs:
         if: ${{ inputs.no_push }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-push" >> $GITHUB_ENV
       - name: Login to DockerHub
-        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc # v2
+        uses: docker/login-action@v2
         with:
           registry: docker.io
           username: ${{ secrets.BALENAIMAGES_USER }}
@@ -127,7 +127,7 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "rpi-alpine-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
+        uses: actions/upload-artifact@v3
         with:
           name: logs
           path: bashbrew/logs/*/*.log
@@ -141,11 +141,11 @@ jobs:
     if: inputs.target_job == 'rpi-alpine-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'rpi-alpine'))
     steps:
       - name: Checkout code
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: Setup QEMU
-        uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7 # v2
+        uses: docker/setup-qemu-action@v2
         with:
           platforms: all
           image: tonistiigi/binfmt:qemu-v6.2.0
@@ -156,7 +156,7 @@ jobs:
         if: ${{ inputs.no_push }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-push" >> $GITHUB_ENV
       - name: Login to DockerHub
-        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc # v2
+        uses: docker/login-action@v2
         with:
           registry: docker.io
           username: ${{ secrets.BALENAIMAGES_USER }}
@@ -165,7 +165,7 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "rpi-alpine-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
+        uses: actions/upload-artifact@v3
         with:
           name: logs
           path: bashbrew/logs/*/*.log
@@ -179,11 +179,11 @@ jobs:
     if: inputs.target_job == 'rpi-alpine-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'rpi-alpine'))
     steps:
       - name: Checkout code
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: Setup QEMU
-        uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7 # v2
+        uses: docker/setup-qemu-action@v2
         with:
           platforms: all
           image: tonistiigi/binfmt:qemu-v6.2.0
@@ -194,7 +194,7 @@ jobs:
         if: ${{ inputs.no_push }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-push" >> $GITHUB_ENV
       - name: Login to DockerHub
-        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc # v2
+        uses: docker/login-action@v2
         with:
           registry: docker.io
           username: ${{ secrets.BALENAIMAGES_USER }}
@@ -203,7 +203,7 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "rpi-alpine-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
+        uses: actions/upload-artifact@v3
         with:
           name: logs
           path: bashbrew/logs/*/*.log
@@ -217,11 +217,11 @@ jobs:
     if: inputs.target_job == 'rpi-alpine-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'rpi-alpine'))
     steps:
       - name: Checkout code
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: Setup QEMU
-        uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7 # v2
+        uses: docker/setup-qemu-action@v2
         with:
           platforms: all
           image: tonistiigi/binfmt:qemu-v6.2.0
@@ -232,7 +232,7 @@ jobs:
         if: ${{ inputs.no_push }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-push" >> $GITHUB_ENV
       - name: Login to DockerHub
-        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc # v2
+        uses: docker/login-action@v2
         with:
           registry: docker.io
           username: ${{ secrets.BALENAIMAGES_USER }}
@@ -241,7 +241,7 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "rpi-alpine-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
+        uses: actions/upload-artifact@v3
         with:
           name: logs
           path: bashbrew/logs/*/*.log
@@ -254,11 +254,11 @@ jobs:
     if: inputs.target_job == 'rpi-debian' || inputs.target_job == 'all' || inputs.target_job == 'rpi-debian-golang' || inputs.target_job == 'rpi-debian-node' || inputs.target_job == 'rpi-debian-openjdk' || inputs.target_job == 'rpi-debian-python' || inputs.target_job == 'raspberry-pi-debian'
     steps:
       - name: Checkout code
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: Setup QEMU
-        uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7 # v2
+        uses: docker/setup-qemu-action@v2
         with:
           platforms: all
           image: tonistiigi/binfmt:qemu-v6.2.0
@@ -269,7 +269,7 @@ jobs:
         if: ${{ inputs.no_push }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-push" >> $GITHUB_ENV
       - name: Login to DockerHub
-        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc # v2
+        uses: docker/login-action@v2
         with:
           registry: docker.io
           username: ${{ secrets.BALENAIMAGES_USER }}
@@ -278,7 +278,7 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "rpi-debian" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
+        uses: actions/upload-artifact@v3
         with:
           name: logs
           path: bashbrew/logs/*/*.log
@@ -292,11 +292,11 @@ jobs:
     if: inputs.target_job == 'rpi-debian-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'rpi-debian'))
     steps:
       - name: Checkout code
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: Setup QEMU
-        uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7 # v2
+        uses: docker/setup-qemu-action@v2
         with:
           platforms: all
           image: tonistiigi/binfmt:qemu-v6.2.0
@@ -307,7 +307,7 @@ jobs:
         if: ${{ inputs.no_push }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-push" >> $GITHUB_ENV
       - name: Login to DockerHub
-        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc # v2
+        uses: docker/login-action@v2
         with:
           registry: docker.io
           username: ${{ secrets.BALENAIMAGES_USER }}
@@ -316,7 +316,7 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "rpi-debian-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
+        uses: actions/upload-artifact@v3
         with:
           name: logs
           path: bashbrew/logs/*/*.log
@@ -330,11 +330,11 @@ jobs:
     if: inputs.target_job == 'rpi-debian-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'rpi-debian'))
     steps:
       - name: Checkout code
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: Setup QEMU
-        uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7 # v2
+        uses: docker/setup-qemu-action@v2
         with:
           platforms: all
           image: tonistiigi/binfmt:qemu-v6.2.0
@@ -345,7 +345,7 @@ jobs:
         if: ${{ inputs.no_push }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-push" >> $GITHUB_ENV
       - name: Login to DockerHub
-        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc # v2
+        uses: docker/login-action@v2
         with:
           registry: docker.io
           username: ${{ secrets.BALENAIMAGES_USER }}
@@ -354,7 +354,7 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "rpi-debian-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
+        uses: actions/upload-artifact@v3
         with:
           name: logs
           path: bashbrew/logs/*/*.log
@@ -368,11 +368,11 @@ jobs:
     if: inputs.target_job == 'rpi-debian-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'rpi-debian'))
     steps:
       - name: Checkout code
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: Setup QEMU
-        uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7 # v2
+        uses: docker/setup-qemu-action@v2
         with:
           platforms: all
           image: tonistiigi/binfmt:qemu-v6.2.0
@@ -383,7 +383,7 @@ jobs:
         if: ${{ inputs.no_push }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-push" >> $GITHUB_ENV
       - name: Login to DockerHub
-        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc # v2
+        uses: docker/login-action@v2
         with:
           registry: docker.io
           username: ${{ secrets.BALENAIMAGES_USER }}
@@ -392,7 +392,7 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "rpi-debian-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
+        uses: actions/upload-artifact@v3
         with:
           name: logs
           path: bashbrew/logs/*/*.log
@@ -406,11 +406,11 @@ jobs:
     if: inputs.target_job == 'rpi-debian-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'rpi-debian'))
     steps:
       - name: Checkout code
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: Setup QEMU
-        uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7 # v2
+        uses: docker/setup-qemu-action@v2
         with:
           platforms: all
           image: tonistiigi/binfmt:qemu-v6.2.0
@@ -421,7 +421,7 @@ jobs:
         if: ${{ inputs.no_push }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-push" >> $GITHUB_ENV
       - name: Login to DockerHub
-        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc # v2
+        uses: docker/login-action@v2
         with:
           registry: docker.io
           username: ${{ secrets.BALENAIMAGES_USER }}
@@ -430,7 +430,7 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "rpi-debian-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
+        uses: actions/upload-artifact@v3
         with:
           name: logs
           path: bashbrew/logs/*/*.log
@@ -444,11 +444,11 @@ jobs:
     if: inputs.target_job == 'raspberry-pi-alpine' || inputs.target_job == 'all' || inputs.target_job == 'raspberry-pi-alpine-golang' || inputs.target_job == 'raspberry-pi-alpine-node' || inputs.target_job == 'raspberry-pi-alpine-openjdk' || inputs.target_job == 'raspberry-pi-alpine-python' || (inputs.include_dependents && (inputs.target_job == 'rpi-alpine'))
     steps:
       - name: Checkout code
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: Setup QEMU
-        uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7 # v2
+        uses: docker/setup-qemu-action@v2
         with:
           platforms: all
           image: tonistiigi/binfmt:qemu-v6.2.0
@@ -459,7 +459,7 @@ jobs:
         if: ${{ inputs.no_push }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-push" >> $GITHUB_ENV
       - name: Login to DockerHub
-        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc # v2
+        uses: docker/login-action@v2
         with:
           registry: docker.io
           username: ${{ secrets.BALENAIMAGES_USER }}
@@ -468,7 +468,7 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberry-pi-alpine" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
+        uses: actions/upload-artifact@v3
         with:
           name: logs
           path: bashbrew/logs/*/*.log
@@ -482,11 +482,11 @@ jobs:
     if: inputs.target_job == 'raspberry-pi-alpine-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberry-pi-alpine' || inputs.target_job == 'rpi-alpine'))
     steps:
       - name: Checkout code
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: Setup QEMU
-        uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7 # v2
+        uses: docker/setup-qemu-action@v2
         with:
           platforms: all
           image: tonistiigi/binfmt:qemu-v6.2.0
@@ -497,7 +497,7 @@ jobs:
         if: ${{ inputs.no_push }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-push" >> $GITHUB_ENV
       - name: Login to DockerHub
-        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc # v2
+        uses: docker/login-action@v2
         with:
           registry: docker.io
           username: ${{ secrets.BALENAIMAGES_USER }}
@@ -506,7 +506,7 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberry-pi-alpine-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
+        uses: actions/upload-artifact@v3
         with:
           name: logs
           path: bashbrew/logs/*/*.log
@@ -520,11 +520,11 @@ jobs:
     if: inputs.target_job == 'raspberry-pi-alpine-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberry-pi-alpine' || inputs.target_job == 'rpi-alpine'))
     steps:
       - name: Checkout code
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: Setup QEMU
-        uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7 # v2
+        uses: docker/setup-qemu-action@v2
         with:
           platforms: all
           image: tonistiigi/binfmt:qemu-v6.2.0
@@ -535,7 +535,7 @@ jobs:
         if: ${{ inputs.no_push }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-push" >> $GITHUB_ENV
       - name: Login to DockerHub
-        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc # v2
+        uses: docker/login-action@v2
         with:
           registry: docker.io
           username: ${{ secrets.BALENAIMAGES_USER }}
@@ -544,7 +544,7 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberry-pi-alpine-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
+        uses: actions/upload-artifact@v3
         with:
           name: logs
           path: bashbrew/logs/*/*.log
@@ -558,11 +558,11 @@ jobs:
     if: inputs.target_job == 'raspberry-pi-alpine-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberry-pi-alpine' || inputs.target_job == 'rpi-alpine'))
     steps:
       - name: Checkout code
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: Setup QEMU
-        uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7 # v2
+        uses: docker/setup-qemu-action@v2
         with:
           platforms: all
           image: tonistiigi/binfmt:qemu-v6.2.0
@@ -573,7 +573,7 @@ jobs:
         if: ${{ inputs.no_push }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-push" >> $GITHUB_ENV
       - name: Login to DockerHub
-        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc # v2
+        uses: docker/login-action@v2
         with:
           registry: docker.io
           username: ${{ secrets.BALENAIMAGES_USER }}
@@ -582,7 +582,7 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberry-pi-alpine-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
+        uses: actions/upload-artifact@v3
         with:
           name: logs
           path: bashbrew/logs/*/*.log
@@ -596,11 +596,11 @@ jobs:
     if: inputs.target_job == 'raspberry-pi-alpine-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberry-pi-alpine' || inputs.target_job == 'rpi-alpine'))
     steps:
       - name: Checkout code
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: Setup QEMU
-        uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7 # v2
+        uses: docker/setup-qemu-action@v2
         with:
           platforms: all
           image: tonistiigi/binfmt:qemu-v6.2.0
@@ -611,7 +611,7 @@ jobs:
         if: ${{ inputs.no_push }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-push" >> $GITHUB_ENV
       - name: Login to DockerHub
-        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc # v2
+        uses: docker/login-action@v2
         with:
           registry: docker.io
           username: ${{ secrets.BALENAIMAGES_USER }}
@@ -620,7 +620,7 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberry-pi-alpine-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
+        uses: actions/upload-artifact@v3
         with:
           name: logs
           path: bashbrew/logs/*/*.log
@@ -634,11 +634,11 @@ jobs:
     if: inputs.target_job == 'raspberry-pi-debian' || inputs.target_job == 'all' || inputs.target_job == 'raspberry-pi-debian-golang' || inputs.target_job == 'raspberry-pi-debian-node' || inputs.target_job == 'raspberry-pi-debian-openjdk' || inputs.target_job == 'raspberry-pi-debian-python' || (inputs.include_dependents && (inputs.target_job == 'rpi-debian'))
     steps:
       - name: Checkout code
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: Setup QEMU
-        uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7 # v2
+        uses: docker/setup-qemu-action@v2
         with:
           platforms: all
           image: tonistiigi/binfmt:qemu-v6.2.0
@@ -649,7 +649,7 @@ jobs:
         if: ${{ inputs.no_push }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-push" >> $GITHUB_ENV
       - name: Login to DockerHub
-        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc # v2
+        uses: docker/login-action@v2
         with:
           registry: docker.io
           username: ${{ secrets.BALENAIMAGES_USER }}
@@ -658,7 +658,7 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberry-pi-debian" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
+        uses: actions/upload-artifact@v3
         with:
           name: logs
           path: bashbrew/logs/*/*.log
@@ -672,11 +672,11 @@ jobs:
     if: inputs.target_job == 'raspberry-pi-debian-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberry-pi-debian' || inputs.target_job == 'rpi-debian'))
     steps:
       - name: Checkout code
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: Setup QEMU
-        uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7 # v2
+        uses: docker/setup-qemu-action@v2
         with:
           platforms: all
           image: tonistiigi/binfmt:qemu-v6.2.0
@@ -687,7 +687,7 @@ jobs:
         if: ${{ inputs.no_push }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-push" >> $GITHUB_ENV
       - name: Login to DockerHub
-        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc # v2
+        uses: docker/login-action@v2
         with:
           registry: docker.io
           username: ${{ secrets.BALENAIMAGES_USER }}
@@ -696,7 +696,7 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberry-pi-debian-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
+        uses: actions/upload-artifact@v3
         with:
           name: logs
           path: bashbrew/logs/*/*.log
@@ -710,11 +710,11 @@ jobs:
     if: inputs.target_job == 'raspberry-pi-debian-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberry-pi-debian' || inputs.target_job == 'rpi-debian'))
     steps:
       - name: Checkout code
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: Setup QEMU
-        uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7 # v2
+        uses: docker/setup-qemu-action@v2
         with:
           platforms: all
           image: tonistiigi/binfmt:qemu-v6.2.0
@@ -725,7 +725,7 @@ jobs:
         if: ${{ inputs.no_push }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-push" >> $GITHUB_ENV
       - name: Login to DockerHub
-        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc # v2
+        uses: docker/login-action@v2
         with:
           registry: docker.io
           username: ${{ secrets.BALENAIMAGES_USER }}
@@ -734,7 +734,7 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberry-pi-debian-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
+        uses: actions/upload-artifact@v3
         with:
           name: logs
           path: bashbrew/logs/*/*.log
@@ -748,11 +748,11 @@ jobs:
     if: inputs.target_job == 'raspberry-pi-debian-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberry-pi-debian' || inputs.target_job == 'rpi-debian'))
     steps:
       - name: Checkout code
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: Setup QEMU
-        uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7 # v2
+        uses: docker/setup-qemu-action@v2
         with:
           platforms: all
           image: tonistiigi/binfmt:qemu-v6.2.0
@@ -763,7 +763,7 @@ jobs:
         if: ${{ inputs.no_push }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-push" >> $GITHUB_ENV
       - name: Login to DockerHub
-        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc # v2
+        uses: docker/login-action@v2
         with:
           registry: docker.io
           username: ${{ secrets.BALENAIMAGES_USER }}
@@ -772,7 +772,7 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberry-pi-debian-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
+        uses: actions/upload-artifact@v3
         with:
           name: logs
           path: bashbrew/logs/*/*.log
@@ -786,11 +786,11 @@ jobs:
     if: inputs.target_job == 'raspberry-pi-debian-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberry-pi-debian' || inputs.target_job == 'rpi-debian'))
     steps:
       - name: Checkout code
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: Setup QEMU
-        uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7 # v2
+        uses: docker/setup-qemu-action@v2
         with:
           platforms: all
           image: tonistiigi/binfmt:qemu-v6.2.0
@@ -801,7 +801,7 @@ jobs:
         if: ${{ inputs.no_push }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-push" >> $GITHUB_ENV
       - name: Login to DockerHub
-        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc # v2
+        uses: docker/login-action@v2
         with:
           registry: docker.io
           username: ${{ secrets.BALENAIMAGES_USER }}
@@ -810,7 +810,7 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberry-pi-debian-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
+        uses: actions/upload-artifact@v3
         with:
           name: logs
           path: bashbrew/logs/*/*.log
