@@ -106,7 +106,7 @@ jobs:
   amd64-alpine:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs: []
     if: inputs.target_job == 'amd64-alpine' || inputs.target_job == 'all' || inputs.target_job == 'amd64-alpine-golang' || inputs.target_job == 'amd64-alpine-node' || inputs.target_job == 'amd64-alpine-openjdk' || inputs.target_job == 'amd64-alpine-python' || inputs.target_job == 'generic-amd64-alpine' || inputs.target_job == 'up-board-alpine'
     steps:
@@ -153,7 +153,7 @@ jobs:
   amd64-alpine-golang:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - amd64-alpine
     if: inputs.target_job == 'amd64-alpine-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'amd64-alpine'))
@@ -201,7 +201,7 @@ jobs:
   amd64-alpine-node:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - amd64-alpine
     if: inputs.target_job == 'amd64-alpine-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'amd64-alpine'))
@@ -249,7 +249,7 @@ jobs:
   amd64-alpine-openjdk:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - amd64-alpine
     if: inputs.target_job == 'amd64-alpine-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'amd64-alpine'))
@@ -297,7 +297,7 @@ jobs:
   amd64-alpine-python:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - amd64-alpine
     if: inputs.target_job == 'amd64-alpine-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'amd64-alpine'))
@@ -345,7 +345,7 @@ jobs:
   amd64-debian:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs: []
     if: inputs.target_job == 'amd64-debian' || inputs.target_job == 'all' || inputs.target_job == 'amd64-debian-dotnet' || inputs.target_job == 'amd64-debian-golang' || inputs.target_job == 'amd64-debian-node' || inputs.target_job == 'amd64-debian-openjdk' || inputs.target_job == 'amd64-debian-python' || inputs.target_job == 'generic-amd64-debian' || inputs.target_job == 'up-board-debian'
     steps:
@@ -392,7 +392,7 @@ jobs:
   amd64-debian-dotnet:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - amd64-debian
     if: inputs.target_job == 'amd64-debian-dotnet' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'amd64-debian'))
@@ -440,7 +440,7 @@ jobs:
   amd64-debian-golang:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - amd64-debian
     if: inputs.target_job == 'amd64-debian-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'amd64-debian'))
@@ -488,7 +488,7 @@ jobs:
   amd64-debian-node:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - amd64-debian
     if: inputs.target_job == 'amd64-debian-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'amd64-debian'))
@@ -536,7 +536,7 @@ jobs:
   amd64-debian-openjdk:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - amd64-debian
     if: inputs.target_job == 'amd64-debian-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'amd64-debian'))
@@ -584,7 +584,7 @@ jobs:
   amd64-debian-python:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - amd64-debian
     if: inputs.target_job == 'amd64-debian-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'amd64-debian'))
@@ -632,7 +632,7 @@ jobs:
   amd64-fedora:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs: []
     if: inputs.target_job == 'amd64-fedora' || inputs.target_job == 'all' || inputs.target_job == 'amd64-fedora-golang' || inputs.target_job == 'amd64-fedora-node' || inputs.target_job == 'amd64-fedora-openjdk' || inputs.target_job == 'amd64-fedora-python' || inputs.target_job == 'generic-amd64-fedora' || inputs.target_job == 'up-board-fedora'
     steps:
@@ -679,7 +679,7 @@ jobs:
   amd64-fedora-golang:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - amd64-fedora
     if: inputs.target_job == 'amd64-fedora-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'amd64-fedora'))
@@ -727,7 +727,7 @@ jobs:
   amd64-fedora-node:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - amd64-fedora
     if: inputs.target_job == 'amd64-fedora-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'amd64-fedora'))
@@ -775,7 +775,7 @@ jobs:
   amd64-fedora-openjdk:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - amd64-fedora
     if: inputs.target_job == 'amd64-fedora-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'amd64-fedora'))
@@ -823,7 +823,7 @@ jobs:
   amd64-fedora-python:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - amd64-fedora
     if: inputs.target_job == 'amd64-fedora-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'amd64-fedora'))
@@ -871,7 +871,7 @@ jobs:
   amd64-ubuntu:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs: []
     if: inputs.target_job == 'amd64-ubuntu' || inputs.target_job == 'all' || inputs.target_job == 'amd64-ubuntu-dotnet' || inputs.target_job == 'amd64-ubuntu-golang' || inputs.target_job == 'amd64-ubuntu-node' || inputs.target_job == 'amd64-ubuntu-openjdk' || inputs.target_job == 'amd64-ubuntu-python' || inputs.target_job == 'generic-amd64-ubuntu' || inputs.target_job == 'up-board-ubuntu'
     steps:
@@ -918,7 +918,7 @@ jobs:
   amd64-ubuntu-dotnet:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - amd64-ubuntu
     if: inputs.target_job == 'amd64-ubuntu-dotnet' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'amd64-ubuntu'))
@@ -966,7 +966,7 @@ jobs:
   amd64-ubuntu-golang:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - amd64-ubuntu
     if: inputs.target_job == 'amd64-ubuntu-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'amd64-ubuntu'))
@@ -1014,7 +1014,7 @@ jobs:
   amd64-ubuntu-node:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - amd64-ubuntu
     if: inputs.target_job == 'amd64-ubuntu-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'amd64-ubuntu'))
@@ -1062,7 +1062,7 @@ jobs:
   amd64-ubuntu-openjdk:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - amd64-ubuntu
     if: inputs.target_job == 'amd64-ubuntu-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'amd64-ubuntu'))
@@ -1110,7 +1110,7 @@ jobs:
   amd64-ubuntu-python:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - amd64-ubuntu
     if: inputs.target_job == 'amd64-ubuntu-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'amd64-ubuntu'))
@@ -1158,7 +1158,7 @@ jobs:
   generic-amd64-alpine:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - amd64-alpine
     if: inputs.target_job == 'generic-amd64-alpine' || inputs.target_job == 'all' || inputs.target_job == 'generic-amd64-alpine-golang' || inputs.target_job == 'generic-amd64-alpine-node' || inputs.target_job == 'generic-amd64-alpine-openjdk' || inputs.target_job == 'generic-amd64-alpine-python' || (inputs.include_dependents && (inputs.target_job == 'amd64-alpine'))
@@ -1206,7 +1206,7 @@ jobs:
   generic-amd64-alpine-golang:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-amd64-alpine
     if: inputs.target_job == 'generic-amd64-alpine-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-alpine' || inputs.target_job == 'amd64-alpine'))
@@ -1254,7 +1254,7 @@ jobs:
   generic-amd64-alpine-node:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-amd64-alpine
     if: inputs.target_job == 'generic-amd64-alpine-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-alpine' || inputs.target_job == 'amd64-alpine'))
@@ -1302,7 +1302,7 @@ jobs:
   generic-amd64-alpine-openjdk:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-amd64-alpine
     if: inputs.target_job == 'generic-amd64-alpine-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-alpine' || inputs.target_job == 'amd64-alpine'))
@@ -1350,7 +1350,7 @@ jobs:
   generic-amd64-alpine-python:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-amd64-alpine
     if: inputs.target_job == 'generic-amd64-alpine-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-alpine' || inputs.target_job == 'amd64-alpine'))
@@ -1398,7 +1398,7 @@ jobs:
   generic-amd64-debian:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - amd64-debian
     if: inputs.target_job == 'generic-amd64-debian' || inputs.target_job == 'all' || inputs.target_job == 'generic-amd64-debian-dotnet' || inputs.target_job == 'generic-amd64-debian-golang' || inputs.target_job == 'generic-amd64-debian-node' || inputs.target_job == 'generic-amd64-debian-openjdk' || inputs.target_job == 'generic-amd64-debian-python' || (inputs.include_dependents && (inputs.target_job == 'amd64-debian'))
@@ -1446,7 +1446,7 @@ jobs:
   generic-amd64-debian-dotnet:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-amd64-debian
     if: inputs.target_job == 'generic-amd64-debian-dotnet' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-debian' || inputs.target_job == 'amd64-debian'))
@@ -1494,7 +1494,7 @@ jobs:
   generic-amd64-debian-golang:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-amd64-debian
     if: inputs.target_job == 'generic-amd64-debian-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-debian' || inputs.target_job == 'amd64-debian'))
@@ -1542,7 +1542,7 @@ jobs:
   generic-amd64-debian-node:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-amd64-debian
     if: inputs.target_job == 'generic-amd64-debian-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-debian' || inputs.target_job == 'amd64-debian'))
@@ -1590,7 +1590,7 @@ jobs:
   generic-amd64-debian-openjdk:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-amd64-debian
     if: inputs.target_job == 'generic-amd64-debian-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-debian' || inputs.target_job == 'amd64-debian'))
@@ -1638,7 +1638,7 @@ jobs:
   generic-amd64-debian-python:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-amd64-debian
     if: inputs.target_job == 'generic-amd64-debian-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-debian' || inputs.target_job == 'amd64-debian'))
@@ -1686,7 +1686,7 @@ jobs:
   generic-amd64-fedora:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - amd64-fedora
     if: inputs.target_job == 'generic-amd64-fedora' || inputs.target_job == 'all' || inputs.target_job == 'generic-amd64-fedora-golang' || inputs.target_job == 'generic-amd64-fedora-node' || inputs.target_job == 'generic-amd64-fedora-openjdk' || inputs.target_job == 'generic-amd64-fedora-python' || (inputs.include_dependents && (inputs.target_job == 'amd64-fedora'))
@@ -1734,7 +1734,7 @@ jobs:
   generic-amd64-fedora-golang:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-amd64-fedora
     if: inputs.target_job == 'generic-amd64-fedora-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-fedora' || inputs.target_job == 'amd64-fedora'))
@@ -1782,7 +1782,7 @@ jobs:
   generic-amd64-fedora-node:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-amd64-fedora
     if: inputs.target_job == 'generic-amd64-fedora-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-fedora' || inputs.target_job == 'amd64-fedora'))
@@ -1830,7 +1830,7 @@ jobs:
   generic-amd64-fedora-openjdk:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-amd64-fedora
     if: inputs.target_job == 'generic-amd64-fedora-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-fedora' || inputs.target_job == 'amd64-fedora'))
@@ -1878,7 +1878,7 @@ jobs:
   generic-amd64-fedora-python:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-amd64-fedora
     if: inputs.target_job == 'generic-amd64-fedora-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-fedora' || inputs.target_job == 'amd64-fedora'))
@@ -1926,7 +1926,7 @@ jobs:
   generic-amd64-ubuntu:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - amd64-ubuntu
     if: inputs.target_job == 'generic-amd64-ubuntu' || inputs.target_job == 'all' || inputs.target_job == 'generic-amd64-ubuntu-dotnet' || inputs.target_job == 'generic-amd64-ubuntu-golang' || inputs.target_job == 'generic-amd64-ubuntu-node' || inputs.target_job == 'generic-amd64-ubuntu-openjdk' || inputs.target_job == 'generic-amd64-ubuntu-python' || (inputs.include_dependents && (inputs.target_job == 'amd64-ubuntu'))
@@ -1974,7 +1974,7 @@ jobs:
   generic-amd64-ubuntu-dotnet:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-amd64-ubuntu
     if: inputs.target_job == 'generic-amd64-ubuntu-dotnet' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-ubuntu' || inputs.target_job == 'amd64-ubuntu'))
@@ -2022,7 +2022,7 @@ jobs:
   generic-amd64-ubuntu-golang:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-amd64-ubuntu
     if: inputs.target_job == 'generic-amd64-ubuntu-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-ubuntu' || inputs.target_job == 'amd64-ubuntu'))
@@ -2070,7 +2070,7 @@ jobs:
   generic-amd64-ubuntu-node:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-amd64-ubuntu
     if: inputs.target_job == 'generic-amd64-ubuntu-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-ubuntu' || inputs.target_job == 'amd64-ubuntu'))
@@ -2118,7 +2118,7 @@ jobs:
   generic-amd64-ubuntu-openjdk:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-amd64-ubuntu
     if: inputs.target_job == 'generic-amd64-ubuntu-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-ubuntu' || inputs.target_job == 'amd64-ubuntu'))
@@ -2166,7 +2166,7 @@ jobs:
   generic-amd64-ubuntu-python:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-amd64-ubuntu
     if: inputs.target_job == 'generic-amd64-ubuntu-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-ubuntu' || inputs.target_job == 'amd64-ubuntu'))
@@ -2214,7 +2214,7 @@ jobs:
   up-board-alpine:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - amd64-alpine
     if: inputs.target_job == 'up-board-alpine' || inputs.target_job == 'all' || inputs.target_job == 'up-board-alpine-golang' || inputs.target_job == 'up-board-alpine-node' || inputs.target_job == 'up-board-alpine-openjdk' || inputs.target_job == 'up-board-alpine-python' || (inputs.include_dependents && (inputs.target_job == 'amd64-alpine'))
@@ -2262,7 +2262,7 @@ jobs:
   up-board-alpine-golang:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - up-board-alpine
     if: inputs.target_job == 'up-board-alpine-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'up-board-alpine' || inputs.target_job == 'amd64-alpine'))
@@ -2310,7 +2310,7 @@ jobs:
   up-board-alpine-node:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - up-board-alpine
     if: inputs.target_job == 'up-board-alpine-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'up-board-alpine' || inputs.target_job == 'amd64-alpine'))
@@ -2358,7 +2358,7 @@ jobs:
   up-board-alpine-openjdk:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - up-board-alpine
     if: inputs.target_job == 'up-board-alpine-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'up-board-alpine' || inputs.target_job == 'amd64-alpine'))
@@ -2406,7 +2406,7 @@ jobs:
   up-board-alpine-python:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - up-board-alpine
     if: inputs.target_job == 'up-board-alpine-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'up-board-alpine' || inputs.target_job == 'amd64-alpine'))
@@ -2454,7 +2454,7 @@ jobs:
   up-board-debian:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - amd64-debian
     if: inputs.target_job == 'up-board-debian' || inputs.target_job == 'all' || inputs.target_job == 'up-board-debian-dotnet' || inputs.target_job == 'up-board-debian-golang' || inputs.target_job == 'up-board-debian-node' || inputs.target_job == 'up-board-debian-openjdk' || inputs.target_job == 'up-board-debian-python' || (inputs.include_dependents && (inputs.target_job == 'amd64-debian'))
@@ -2502,7 +2502,7 @@ jobs:
   up-board-debian-dotnet:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - up-board-debian
     if: inputs.target_job == 'up-board-debian-dotnet' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'up-board-debian' || inputs.target_job == 'amd64-debian'))
@@ -2550,7 +2550,7 @@ jobs:
   up-board-debian-golang:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - up-board-debian
     if: inputs.target_job == 'up-board-debian-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'up-board-debian' || inputs.target_job == 'amd64-debian'))
@@ -2598,7 +2598,7 @@ jobs:
   up-board-debian-node:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - up-board-debian
     if: inputs.target_job == 'up-board-debian-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'up-board-debian' || inputs.target_job == 'amd64-debian'))
@@ -2646,7 +2646,7 @@ jobs:
   up-board-debian-openjdk:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - up-board-debian
     if: inputs.target_job == 'up-board-debian-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'up-board-debian' || inputs.target_job == 'amd64-debian'))
@@ -2694,7 +2694,7 @@ jobs:
   up-board-debian-python:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - up-board-debian
     if: inputs.target_job == 'up-board-debian-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'up-board-debian' || inputs.target_job == 'amd64-debian'))
@@ -2742,7 +2742,7 @@ jobs:
   up-board-fedora:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - amd64-fedora
     if: inputs.target_job == 'up-board-fedora' || inputs.target_job == 'all' || inputs.target_job == 'up-board-fedora-golang' || inputs.target_job == 'up-board-fedora-node' || inputs.target_job == 'up-board-fedora-openjdk' || inputs.target_job == 'up-board-fedora-python' || (inputs.include_dependents && (inputs.target_job == 'amd64-fedora'))
@@ -2790,7 +2790,7 @@ jobs:
   up-board-fedora-golang:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - up-board-fedora
     if: inputs.target_job == 'up-board-fedora-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'up-board-fedora' || inputs.target_job == 'amd64-fedora'))
@@ -2838,7 +2838,7 @@ jobs:
   up-board-fedora-node:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - up-board-fedora
     if: inputs.target_job == 'up-board-fedora-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'up-board-fedora' || inputs.target_job == 'amd64-fedora'))
@@ -2886,7 +2886,7 @@ jobs:
   up-board-fedora-openjdk:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - up-board-fedora
     if: inputs.target_job == 'up-board-fedora-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'up-board-fedora' || inputs.target_job == 'amd64-fedora'))
@@ -2934,7 +2934,7 @@ jobs:
   up-board-fedora-python:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - up-board-fedora
     if: inputs.target_job == 'up-board-fedora-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'up-board-fedora' || inputs.target_job == 'amd64-fedora'))
@@ -2982,7 +2982,7 @@ jobs:
   up-board-ubuntu:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - amd64-ubuntu
     if: inputs.target_job == 'up-board-ubuntu' || inputs.target_job == 'all' || inputs.target_job == 'up-board-ubuntu-dotnet' || inputs.target_job == 'up-board-ubuntu-golang' || inputs.target_job == 'up-board-ubuntu-node' || inputs.target_job == 'up-board-ubuntu-openjdk' || inputs.target_job == 'up-board-ubuntu-python' || (inputs.include_dependents && (inputs.target_job == 'amd64-ubuntu'))
@@ -3030,7 +3030,7 @@ jobs:
   up-board-ubuntu-dotnet:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - up-board-ubuntu
     if: inputs.target_job == 'up-board-ubuntu-dotnet' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'up-board-ubuntu' || inputs.target_job == 'amd64-ubuntu'))
@@ -3078,7 +3078,7 @@ jobs:
   up-board-ubuntu-golang:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - up-board-ubuntu
     if: inputs.target_job == 'up-board-ubuntu-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'up-board-ubuntu' || inputs.target_job == 'amd64-ubuntu'))
@@ -3126,7 +3126,7 @@ jobs:
   up-board-ubuntu-node:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - up-board-ubuntu
     if: inputs.target_job == 'up-board-ubuntu-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'up-board-ubuntu' || inputs.target_job == 'amd64-ubuntu'))
@@ -3174,7 +3174,7 @@ jobs:
   up-board-ubuntu-openjdk:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - up-board-ubuntu
     if: inputs.target_job == 'up-board-ubuntu-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'up-board-ubuntu' || inputs.target_job == 'amd64-ubuntu'))
@@ -3222,7 +3222,7 @@ jobs:
   up-board-ubuntu-python:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - up-board-ubuntu
     if: inputs.target_job == 'up-board-ubuntu-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'up-board-ubuntu' || inputs.target_job == 'amd64-ubuntu'))

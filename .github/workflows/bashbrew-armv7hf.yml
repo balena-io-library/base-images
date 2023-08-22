@@ -120,7 +120,7 @@ jobs:
   armv7hf-alpine:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs: []
     if: inputs.target_job == 'armv7hf-alpine' || inputs.target_job == 'all' || inputs.target_job == 'armv7hf-alpine-golang' || inputs.target_job == 'armv7hf-alpine-node' || inputs.target_job == 'armv7hf-alpine-openjdk' || inputs.target_job == 'armv7hf-alpine-python' || inputs.target_job == 'beaglebone-alpine' || inputs.target_job == 'generic-armv7hf-alpine' || inputs.target_job == 'raspberrypi-armv7hf-alpine'
     steps:
@@ -167,7 +167,7 @@ jobs:
   armv7hf-alpine-golang:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - armv7hf-alpine
     if: inputs.target_job == 'armv7hf-alpine-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-alpine'))
@@ -215,7 +215,7 @@ jobs:
   armv7hf-alpine-node:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - armv7hf-alpine
     if: inputs.target_job == 'armv7hf-alpine-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-alpine'))
@@ -263,7 +263,7 @@ jobs:
   armv7hf-alpine-openjdk:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - armv7hf-alpine
     if: inputs.target_job == 'armv7hf-alpine-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-alpine'))
@@ -311,7 +311,7 @@ jobs:
   armv7hf-alpine-python:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - armv7hf-alpine
     if: inputs.target_job == 'armv7hf-alpine-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-alpine'))
@@ -359,7 +359,7 @@ jobs:
   armv7hf-debian:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs: []
     if: inputs.target_job == 'armv7hf-debian' || inputs.target_job == 'all' || inputs.target_job == 'armv7hf-debian-golang' || inputs.target_job == 'armv7hf-debian-node' || inputs.target_job == 'armv7hf-debian-openjdk' || inputs.target_job == 'armv7hf-debian-python' || inputs.target_job == 'beaglebone-debian' || inputs.target_job == 'generic-armv7hf-debian' || inputs.target_job == 'raspberrypi-armv7hf-debian'
     steps:
@@ -406,7 +406,7 @@ jobs:
   armv7hf-debian-golang:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - armv7hf-debian
     if: inputs.target_job == 'armv7hf-debian-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-debian'))
@@ -454,7 +454,7 @@ jobs:
   armv7hf-debian-node:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - armv7hf-debian
     if: inputs.target_job == 'armv7hf-debian-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-debian'))
@@ -502,7 +502,7 @@ jobs:
   armv7hf-debian-openjdk:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - armv7hf-debian
     if: inputs.target_job == 'armv7hf-debian-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-debian'))
@@ -550,7 +550,7 @@ jobs:
   armv7hf-debian-python:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - armv7hf-debian
     if: inputs.target_job == 'armv7hf-debian-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-debian'))
@@ -598,7 +598,7 @@ jobs:
   armv7hf-fedora:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs: []
     if: inputs.target_job == 'armv7hf-fedora' || inputs.target_job == 'all' || inputs.target_job == 'armv7hf-fedora-golang' || inputs.target_job == 'armv7hf-fedora-node' || inputs.target_job == 'armv7hf-fedora-openjdk' || inputs.target_job == 'armv7hf-fedora-python' || inputs.target_job == 'beaglebone-fedora' || inputs.target_job == 'generic-armv7hf-fedora' || inputs.target_job == 'raspberrypi-armv7hf-fedora'
     steps:
@@ -645,7 +645,7 @@ jobs:
   armv7hf-fedora-golang:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - armv7hf-fedora
     if: inputs.target_job == 'armv7hf-fedora-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-fedora'))
@@ -693,7 +693,7 @@ jobs:
   armv7hf-fedora-node:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - armv7hf-fedora
     if: inputs.target_job == 'armv7hf-fedora-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-fedora'))
@@ -741,7 +741,7 @@ jobs:
   armv7hf-fedora-openjdk:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - armv7hf-fedora
     if: inputs.target_job == 'armv7hf-fedora-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-fedora'))
@@ -789,7 +789,7 @@ jobs:
   armv7hf-fedora-python:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - armv7hf-fedora
     if: inputs.target_job == 'armv7hf-fedora-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-fedora'))
@@ -837,7 +837,7 @@ jobs:
   armv7hf-ubuntu:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs: []
     if: inputs.target_job == 'armv7hf-ubuntu' || inputs.target_job == 'all' || inputs.target_job == 'armv7hf-ubuntu-golang' || inputs.target_job == 'armv7hf-ubuntu-node' || inputs.target_job == 'armv7hf-ubuntu-openjdk' || inputs.target_job == 'armv7hf-ubuntu-python' || inputs.target_job == 'beaglebone-ubuntu' || inputs.target_job == 'generic-armv7hf-ubuntu' || inputs.target_job == 'raspberrypi-armv7hf-ubuntu'
     steps:
@@ -884,7 +884,7 @@ jobs:
   armv7hf-ubuntu-golang:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - armv7hf-ubuntu
     if: inputs.target_job == 'armv7hf-ubuntu-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-ubuntu'))
@@ -932,7 +932,7 @@ jobs:
   armv7hf-ubuntu-node:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - armv7hf-ubuntu
     if: inputs.target_job == 'armv7hf-ubuntu-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-ubuntu'))
@@ -980,7 +980,7 @@ jobs:
   armv7hf-ubuntu-openjdk:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - armv7hf-ubuntu
     if: inputs.target_job == 'armv7hf-ubuntu-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-ubuntu'))
@@ -1028,7 +1028,7 @@ jobs:
   armv7hf-ubuntu-python:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - armv7hf-ubuntu
     if: inputs.target_job == 'armv7hf-ubuntu-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-ubuntu'))
@@ -1076,7 +1076,7 @@ jobs:
   beaglebone-alpine:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - armv7hf-alpine
     if: inputs.target_job == 'beaglebone-alpine' || inputs.target_job == 'all' || inputs.target_job == 'beaglebone-alpine-golang' || inputs.target_job == 'beaglebone-alpine-node' || inputs.target_job == 'beaglebone-alpine-openjdk' || inputs.target_job == 'beaglebone-alpine-python' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-alpine'))
@@ -1124,7 +1124,7 @@ jobs:
   beaglebone-alpine-golang:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - beaglebone-alpine
     if: inputs.target_job == 'beaglebone-alpine-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-alpine' || inputs.target_job == 'armv7hf-alpine'))
@@ -1172,7 +1172,7 @@ jobs:
   beaglebone-alpine-node:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - beaglebone-alpine
     if: inputs.target_job == 'beaglebone-alpine-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-alpine' || inputs.target_job == 'armv7hf-alpine'))
@@ -1220,7 +1220,7 @@ jobs:
   beaglebone-alpine-openjdk:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - beaglebone-alpine
     if: inputs.target_job == 'beaglebone-alpine-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-alpine' || inputs.target_job == 'armv7hf-alpine'))
@@ -1268,7 +1268,7 @@ jobs:
   beaglebone-alpine-python:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - beaglebone-alpine
     if: inputs.target_job == 'beaglebone-alpine-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-alpine' || inputs.target_job == 'armv7hf-alpine'))
@@ -1316,7 +1316,7 @@ jobs:
   beaglebone-debian:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - armv7hf-debian
     if: inputs.target_job == 'beaglebone-debian' || inputs.target_job == 'all' || inputs.target_job == 'beaglebone-debian-golang' || inputs.target_job == 'beaglebone-debian-node' || inputs.target_job == 'beaglebone-debian-openjdk' || inputs.target_job == 'beaglebone-debian-python' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-debian'))
@@ -1364,7 +1364,7 @@ jobs:
   beaglebone-debian-golang:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - beaglebone-debian
     if: inputs.target_job == 'beaglebone-debian-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-debian' || inputs.target_job == 'armv7hf-debian'))
@@ -1412,7 +1412,7 @@ jobs:
   beaglebone-debian-node:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - beaglebone-debian
     if: inputs.target_job == 'beaglebone-debian-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-debian' || inputs.target_job == 'armv7hf-debian'))
@@ -1460,7 +1460,7 @@ jobs:
   beaglebone-debian-openjdk:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - beaglebone-debian
     if: inputs.target_job == 'beaglebone-debian-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-debian' || inputs.target_job == 'armv7hf-debian'))
@@ -1508,7 +1508,7 @@ jobs:
   beaglebone-debian-python:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - beaglebone-debian
     if: inputs.target_job == 'beaglebone-debian-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-debian' || inputs.target_job == 'armv7hf-debian'))
@@ -1556,7 +1556,7 @@ jobs:
   beaglebone-fedora:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - armv7hf-fedora
     if: inputs.target_job == 'beaglebone-fedora' || inputs.target_job == 'all' || inputs.target_job == 'beaglebone-fedora-golang' || inputs.target_job == 'beaglebone-fedora-node' || inputs.target_job == 'beaglebone-fedora-openjdk' || inputs.target_job == 'beaglebone-fedora-python' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-fedora'))
@@ -1604,7 +1604,7 @@ jobs:
   beaglebone-fedora-golang:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - beaglebone-fedora
     if: inputs.target_job == 'beaglebone-fedora-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-fedora' || inputs.target_job == 'armv7hf-fedora'))
@@ -1652,7 +1652,7 @@ jobs:
   beaglebone-fedora-node:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - beaglebone-fedora
     if: inputs.target_job == 'beaglebone-fedora-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-fedora' || inputs.target_job == 'armv7hf-fedora'))
@@ -1700,7 +1700,7 @@ jobs:
   beaglebone-fedora-openjdk:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - beaglebone-fedora
     if: inputs.target_job == 'beaglebone-fedora-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-fedora' || inputs.target_job == 'armv7hf-fedora'))
@@ -1748,7 +1748,7 @@ jobs:
   beaglebone-fedora-python:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - beaglebone-fedora
     if: inputs.target_job == 'beaglebone-fedora-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-fedora' || inputs.target_job == 'armv7hf-fedora'))
@@ -1796,7 +1796,7 @@ jobs:
   beaglebone-ubuntu:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - armv7hf-ubuntu
     if: inputs.target_job == 'beaglebone-ubuntu' || inputs.target_job == 'all' || inputs.target_job == 'beaglebone-ubuntu-golang' || inputs.target_job == 'beaglebone-ubuntu-node' || inputs.target_job == 'beaglebone-ubuntu-openjdk' || inputs.target_job == 'beaglebone-ubuntu-python' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-ubuntu'))
@@ -1844,7 +1844,7 @@ jobs:
   beaglebone-ubuntu-golang:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - beaglebone-ubuntu
     if: inputs.target_job == 'beaglebone-ubuntu-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-ubuntu' || inputs.target_job == 'armv7hf-ubuntu'))
@@ -1892,7 +1892,7 @@ jobs:
   beaglebone-ubuntu-node:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - beaglebone-ubuntu
     if: inputs.target_job == 'beaglebone-ubuntu-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-ubuntu' || inputs.target_job == 'armv7hf-ubuntu'))
@@ -1940,7 +1940,7 @@ jobs:
   beaglebone-ubuntu-openjdk:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - beaglebone-ubuntu
     if: inputs.target_job == 'beaglebone-ubuntu-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-ubuntu' || inputs.target_job == 'armv7hf-ubuntu'))
@@ -1988,7 +1988,7 @@ jobs:
   beaglebone-ubuntu-python:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - beaglebone-ubuntu
     if: inputs.target_job == 'beaglebone-ubuntu-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-ubuntu' || inputs.target_job == 'armv7hf-ubuntu'))
@@ -2036,7 +2036,7 @@ jobs:
   generic-armv7hf-alpine:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - armv7hf-alpine
     if: inputs.target_job == 'generic-armv7hf-alpine' || inputs.target_job == 'all' || inputs.target_job == 'generic-armv7hf-alpine-golang' || inputs.target_job == 'generic-armv7hf-alpine-node' || inputs.target_job == 'generic-armv7hf-alpine-openjdk' || inputs.target_job == 'generic-armv7hf-alpine-python' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-alpine'))
@@ -2084,7 +2084,7 @@ jobs:
   generic-armv7hf-alpine-golang:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-armv7hf-alpine
     if: inputs.target_job == 'generic-armv7hf-alpine-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-alpine' || inputs.target_job == 'armv7hf-alpine'))
@@ -2132,7 +2132,7 @@ jobs:
   generic-armv7hf-alpine-node:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-armv7hf-alpine
     if: inputs.target_job == 'generic-armv7hf-alpine-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-alpine' || inputs.target_job == 'armv7hf-alpine'))
@@ -2180,7 +2180,7 @@ jobs:
   generic-armv7hf-alpine-openjdk:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-armv7hf-alpine
     if: inputs.target_job == 'generic-armv7hf-alpine-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-alpine' || inputs.target_job == 'armv7hf-alpine'))
@@ -2228,7 +2228,7 @@ jobs:
   generic-armv7hf-alpine-python:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-armv7hf-alpine
     if: inputs.target_job == 'generic-armv7hf-alpine-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-alpine' || inputs.target_job == 'armv7hf-alpine'))
@@ -2276,7 +2276,7 @@ jobs:
   generic-armv7hf-debian:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - armv7hf-debian
     if: inputs.target_job == 'generic-armv7hf-debian' || inputs.target_job == 'all' || inputs.target_job == 'generic-armv7hf-debian-golang' || inputs.target_job == 'generic-armv7hf-debian-node' || inputs.target_job == 'generic-armv7hf-debian-openjdk' || inputs.target_job == 'generic-armv7hf-debian-python' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-debian'))
@@ -2324,7 +2324,7 @@ jobs:
   generic-armv7hf-debian-golang:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-armv7hf-debian
     if: inputs.target_job == 'generic-armv7hf-debian-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-debian' || inputs.target_job == 'armv7hf-debian'))
@@ -2372,7 +2372,7 @@ jobs:
   generic-armv7hf-debian-node:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-armv7hf-debian
     if: inputs.target_job == 'generic-armv7hf-debian-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-debian' || inputs.target_job == 'armv7hf-debian'))
@@ -2420,7 +2420,7 @@ jobs:
   generic-armv7hf-debian-openjdk:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-armv7hf-debian
     if: inputs.target_job == 'generic-armv7hf-debian-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-debian' || inputs.target_job == 'armv7hf-debian'))
@@ -2468,7 +2468,7 @@ jobs:
   generic-armv7hf-debian-python:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-armv7hf-debian
     if: inputs.target_job == 'generic-armv7hf-debian-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-debian' || inputs.target_job == 'armv7hf-debian'))
@@ -2516,7 +2516,7 @@ jobs:
   generic-armv7hf-fedora:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - armv7hf-fedora
     if: inputs.target_job == 'generic-armv7hf-fedora' || inputs.target_job == 'all' || inputs.target_job == 'generic-armv7hf-fedora-golang' || inputs.target_job == 'generic-armv7hf-fedora-node' || inputs.target_job == 'generic-armv7hf-fedora-openjdk' || inputs.target_job == 'generic-armv7hf-fedora-python' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-fedora'))
@@ -2564,7 +2564,7 @@ jobs:
   generic-armv7hf-fedora-golang:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-armv7hf-fedora
     if: inputs.target_job == 'generic-armv7hf-fedora-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-fedora' || inputs.target_job == 'armv7hf-fedora'))
@@ -2612,7 +2612,7 @@ jobs:
   generic-armv7hf-fedora-node:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-armv7hf-fedora
     if: inputs.target_job == 'generic-armv7hf-fedora-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-fedora' || inputs.target_job == 'armv7hf-fedora'))
@@ -2660,7 +2660,7 @@ jobs:
   generic-armv7hf-fedora-openjdk:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-armv7hf-fedora
     if: inputs.target_job == 'generic-armv7hf-fedora-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-fedora' || inputs.target_job == 'armv7hf-fedora'))
@@ -2708,7 +2708,7 @@ jobs:
   generic-armv7hf-fedora-python:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-armv7hf-fedora
     if: inputs.target_job == 'generic-armv7hf-fedora-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-fedora' || inputs.target_job == 'armv7hf-fedora'))
@@ -2756,7 +2756,7 @@ jobs:
   generic-armv7hf-ubuntu:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - armv7hf-ubuntu
     if: inputs.target_job == 'generic-armv7hf-ubuntu' || inputs.target_job == 'all' || inputs.target_job == 'generic-armv7hf-ubuntu-golang' || inputs.target_job == 'generic-armv7hf-ubuntu-node' || inputs.target_job == 'generic-armv7hf-ubuntu-openjdk' || inputs.target_job == 'generic-armv7hf-ubuntu-python' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-ubuntu'))
@@ -2804,7 +2804,7 @@ jobs:
   generic-armv7hf-ubuntu-golang:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-armv7hf-ubuntu
     if: inputs.target_job == 'generic-armv7hf-ubuntu-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-ubuntu' || inputs.target_job == 'armv7hf-ubuntu'))
@@ -2852,7 +2852,7 @@ jobs:
   generic-armv7hf-ubuntu-node:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-armv7hf-ubuntu
     if: inputs.target_job == 'generic-armv7hf-ubuntu-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-ubuntu' || inputs.target_job == 'armv7hf-ubuntu'))
@@ -2900,7 +2900,7 @@ jobs:
   generic-armv7hf-ubuntu-openjdk:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-armv7hf-ubuntu
     if: inputs.target_job == 'generic-armv7hf-ubuntu-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-ubuntu' || inputs.target_job == 'armv7hf-ubuntu'))
@@ -2948,7 +2948,7 @@ jobs:
   generic-armv7hf-ubuntu-python:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-armv7hf-ubuntu
     if: inputs.target_job == 'generic-armv7hf-ubuntu-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-ubuntu' || inputs.target_job == 'armv7hf-ubuntu'))
@@ -2996,7 +2996,7 @@ jobs:
   raspberrypi-armv7hf-alpine:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - armv7hf-alpine
     if: inputs.target_job == 'raspberrypi-armv7hf-alpine' || inputs.target_job == 'all' || inputs.target_job == 'raspberrypi-armv7hf-alpine-golang' || inputs.target_job == 'raspberrypi-armv7hf-alpine-node' || inputs.target_job == 'raspberrypi-armv7hf-alpine-openjdk' || inputs.target_job == 'raspberrypi-armv7hf-alpine-python' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-alpine'))
@@ -3044,7 +3044,7 @@ jobs:
   raspberrypi-armv7hf-alpine-golang:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - raspberrypi-armv7hf-alpine
     if: inputs.target_job == 'raspberrypi-armv7hf-alpine-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-alpine' || inputs.target_job == 'armv7hf-alpine'))
@@ -3092,7 +3092,7 @@ jobs:
   raspberrypi-armv7hf-alpine-node:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - raspberrypi-armv7hf-alpine
     if: inputs.target_job == 'raspberrypi-armv7hf-alpine-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-alpine' || inputs.target_job == 'armv7hf-alpine'))
@@ -3140,7 +3140,7 @@ jobs:
   raspberrypi-armv7hf-alpine-openjdk:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - raspberrypi-armv7hf-alpine
     if: inputs.target_job == 'raspberrypi-armv7hf-alpine-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-alpine' || inputs.target_job == 'armv7hf-alpine'))
@@ -3188,7 +3188,7 @@ jobs:
   raspberrypi-armv7hf-alpine-python:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - raspberrypi-armv7hf-alpine
     if: inputs.target_job == 'raspberrypi-armv7hf-alpine-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-alpine' || inputs.target_job == 'armv7hf-alpine'))
@@ -3236,7 +3236,7 @@ jobs:
   raspberrypi-armv7hf-debian:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - armv7hf-debian
     if: inputs.target_job == 'raspberrypi-armv7hf-debian' || inputs.target_job == 'all' || inputs.target_job == 'raspberrypi-armv7hf-debian-golang' || inputs.target_job == 'raspberrypi-armv7hf-debian-node' || inputs.target_job == 'raspberrypi-armv7hf-debian-openjdk' || inputs.target_job == 'raspberrypi-armv7hf-debian-python' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-debian'))
@@ -3284,7 +3284,7 @@ jobs:
   raspberrypi-armv7hf-debian-golang:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - raspberrypi-armv7hf-debian
     if: inputs.target_job == 'raspberrypi-armv7hf-debian-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-debian' || inputs.target_job == 'armv7hf-debian'))
@@ -3332,7 +3332,7 @@ jobs:
   raspberrypi-armv7hf-debian-node:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - raspberrypi-armv7hf-debian
     if: inputs.target_job == 'raspberrypi-armv7hf-debian-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-debian' || inputs.target_job == 'armv7hf-debian'))
@@ -3380,7 +3380,7 @@ jobs:
   raspberrypi-armv7hf-debian-openjdk:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - raspberrypi-armv7hf-debian
     if: inputs.target_job == 'raspberrypi-armv7hf-debian-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-debian' || inputs.target_job == 'armv7hf-debian'))
@@ -3428,7 +3428,7 @@ jobs:
   raspberrypi-armv7hf-debian-python:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - raspberrypi-armv7hf-debian
     if: inputs.target_job == 'raspberrypi-armv7hf-debian-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-debian' || inputs.target_job == 'armv7hf-debian'))
@@ -3476,7 +3476,7 @@ jobs:
   raspberrypi-armv7hf-fedora:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - armv7hf-fedora
     if: inputs.target_job == 'raspberrypi-armv7hf-fedora' || inputs.target_job == 'all' || inputs.target_job == 'raspberrypi-armv7hf-fedora-golang' || inputs.target_job == 'raspberrypi-armv7hf-fedora-node' || inputs.target_job == 'raspberrypi-armv7hf-fedora-openjdk' || inputs.target_job == 'raspberrypi-armv7hf-fedora-python' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-fedora'))
@@ -3524,7 +3524,7 @@ jobs:
   raspberrypi-armv7hf-fedora-golang:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - raspberrypi-armv7hf-fedora
     if: inputs.target_job == 'raspberrypi-armv7hf-fedora-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-fedora' || inputs.target_job == 'armv7hf-fedora'))
@@ -3572,7 +3572,7 @@ jobs:
   raspberrypi-armv7hf-fedora-node:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - raspberrypi-armv7hf-fedora
     if: inputs.target_job == 'raspberrypi-armv7hf-fedora-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-fedora' || inputs.target_job == 'armv7hf-fedora'))
@@ -3620,7 +3620,7 @@ jobs:
   raspberrypi-armv7hf-fedora-openjdk:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - raspberrypi-armv7hf-fedora
     if: inputs.target_job == 'raspberrypi-armv7hf-fedora-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-fedora' || inputs.target_job == 'armv7hf-fedora'))
@@ -3668,7 +3668,7 @@ jobs:
   raspberrypi-armv7hf-fedora-python:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - raspberrypi-armv7hf-fedora
     if: inputs.target_job == 'raspberrypi-armv7hf-fedora-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-fedora' || inputs.target_job == 'armv7hf-fedora'))
@@ -3716,7 +3716,7 @@ jobs:
   raspberrypi-armv7hf-ubuntu:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - armv7hf-ubuntu
     if: inputs.target_job == 'raspberrypi-armv7hf-ubuntu' || inputs.target_job == 'all' || inputs.target_job == 'raspberrypi-armv7hf-ubuntu-golang' || inputs.target_job == 'raspberrypi-armv7hf-ubuntu-node' || inputs.target_job == 'raspberrypi-armv7hf-ubuntu-openjdk' || inputs.target_job == 'raspberrypi-armv7hf-ubuntu-python' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-ubuntu'))
@@ -3764,7 +3764,7 @@ jobs:
   raspberrypi-armv7hf-ubuntu-golang:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - raspberrypi-armv7hf-ubuntu
     if: inputs.target_job == 'raspberrypi-armv7hf-ubuntu-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-ubuntu' || inputs.target_job == 'armv7hf-ubuntu'))
@@ -3812,7 +3812,7 @@ jobs:
   raspberrypi-armv7hf-ubuntu-node:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - raspberrypi-armv7hf-ubuntu
     if: inputs.target_job == 'raspberrypi-armv7hf-ubuntu-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-ubuntu' || inputs.target_job == 'armv7hf-ubuntu'))
@@ -3860,7 +3860,7 @@ jobs:
   raspberrypi-armv7hf-ubuntu-openjdk:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - raspberrypi-armv7hf-ubuntu
     if: inputs.target_job == 'raspberrypi-armv7hf-ubuntu-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-ubuntu' || inputs.target_job == 'armv7hf-ubuntu'))
@@ -3908,7 +3908,7 @@ jobs:
   raspberrypi-armv7hf-ubuntu-python:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - raspberrypi-armv7hf-ubuntu
     if: inputs.target_job == 'raspberrypi-armv7hf-ubuntu-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-ubuntu' || inputs.target_job == 'armv7hf-ubuntu'))

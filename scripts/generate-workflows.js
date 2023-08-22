@@ -135,7 +135,7 @@ const createJob = (
 	// Define the steps and conditions for each job
 	return {
 		'runs-on': currentRunner,
-		'timeout-minutes': 240,
+		'timeout-minutes': 480,
 		needs: currentDependencies.length > 0 ? currentDependencies : [],
 		if: ifConditionsArray.join(' || '),
 		steps: [

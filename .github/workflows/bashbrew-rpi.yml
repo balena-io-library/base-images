@@ -60,7 +60,7 @@ jobs:
   rpi-alpine:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs: []
     if: inputs.target_job == 'rpi-alpine' || inputs.target_job == 'all' || inputs.target_job == 'rpi-alpine-golang' || inputs.target_job == 'rpi-alpine-node' || inputs.target_job == 'rpi-alpine-openjdk' || inputs.target_job == 'rpi-alpine-python' || inputs.target_job == 'raspberry-pi-alpine'
     steps:
@@ -107,7 +107,7 @@ jobs:
   rpi-alpine-golang:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - rpi-alpine
     if: inputs.target_job == 'rpi-alpine-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'rpi-alpine'))
@@ -155,7 +155,7 @@ jobs:
   rpi-alpine-node:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - rpi-alpine
     if: inputs.target_job == 'rpi-alpine-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'rpi-alpine'))
@@ -203,7 +203,7 @@ jobs:
   rpi-alpine-openjdk:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - rpi-alpine
     if: inputs.target_job == 'rpi-alpine-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'rpi-alpine'))
@@ -251,7 +251,7 @@ jobs:
   rpi-alpine-python:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - rpi-alpine
     if: inputs.target_job == 'rpi-alpine-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'rpi-alpine'))
@@ -299,7 +299,7 @@ jobs:
   rpi-debian:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs: []
     if: inputs.target_job == 'rpi-debian' || inputs.target_job == 'all' || inputs.target_job == 'rpi-debian-golang' || inputs.target_job == 'rpi-debian-node' || inputs.target_job == 'rpi-debian-openjdk' || inputs.target_job == 'rpi-debian-python' || inputs.target_job == 'raspberry-pi-debian'
     steps:
@@ -346,7 +346,7 @@ jobs:
   rpi-debian-golang:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - rpi-debian
     if: inputs.target_job == 'rpi-debian-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'rpi-debian'))
@@ -394,7 +394,7 @@ jobs:
   rpi-debian-node:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - rpi-debian
     if: inputs.target_job == 'rpi-debian-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'rpi-debian'))
@@ -442,7 +442,7 @@ jobs:
   rpi-debian-openjdk:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - rpi-debian
     if: inputs.target_job == 'rpi-debian-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'rpi-debian'))
@@ -490,7 +490,7 @@ jobs:
   rpi-debian-python:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - rpi-debian
     if: inputs.target_job == 'rpi-debian-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'rpi-debian'))
@@ -538,7 +538,7 @@ jobs:
   raspberry-pi-alpine:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - rpi-alpine
     if: inputs.target_job == 'raspberry-pi-alpine' || inputs.target_job == 'all' || inputs.target_job == 'raspberry-pi-alpine-golang' || inputs.target_job == 'raspberry-pi-alpine-node' || inputs.target_job == 'raspberry-pi-alpine-openjdk' || inputs.target_job == 'raspberry-pi-alpine-python' || (inputs.include_dependents && (inputs.target_job == 'rpi-alpine'))
@@ -586,7 +586,7 @@ jobs:
   raspberry-pi-alpine-golang:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - raspberry-pi-alpine
     if: inputs.target_job == 'raspberry-pi-alpine-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberry-pi-alpine' || inputs.target_job == 'rpi-alpine'))
@@ -634,7 +634,7 @@ jobs:
   raspberry-pi-alpine-node:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - raspberry-pi-alpine
     if: inputs.target_job == 'raspberry-pi-alpine-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberry-pi-alpine' || inputs.target_job == 'rpi-alpine'))
@@ -682,7 +682,7 @@ jobs:
   raspberry-pi-alpine-openjdk:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - raspberry-pi-alpine
     if: inputs.target_job == 'raspberry-pi-alpine-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberry-pi-alpine' || inputs.target_job == 'rpi-alpine'))
@@ -730,7 +730,7 @@ jobs:
   raspberry-pi-alpine-python:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - raspberry-pi-alpine
     if: inputs.target_job == 'raspberry-pi-alpine-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberry-pi-alpine' || inputs.target_job == 'rpi-alpine'))
@@ -778,7 +778,7 @@ jobs:
   raspberry-pi-debian:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - rpi-debian
     if: inputs.target_job == 'raspberry-pi-debian' || inputs.target_job == 'all' || inputs.target_job == 'raspberry-pi-debian-golang' || inputs.target_job == 'raspberry-pi-debian-node' || inputs.target_job == 'raspberry-pi-debian-openjdk' || inputs.target_job == 'raspberry-pi-debian-python' || (inputs.include_dependents && (inputs.target_job == 'rpi-debian'))
@@ -826,7 +826,7 @@ jobs:
   raspberry-pi-debian-golang:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - raspberry-pi-debian
     if: inputs.target_job == 'raspberry-pi-debian-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberry-pi-debian' || inputs.target_job == 'rpi-debian'))
@@ -874,7 +874,7 @@ jobs:
   raspberry-pi-debian-node:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - raspberry-pi-debian
     if: inputs.target_job == 'raspberry-pi-debian-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberry-pi-debian' || inputs.target_job == 'rpi-debian'))
@@ -922,7 +922,7 @@ jobs:
   raspberry-pi-debian-openjdk:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - raspberry-pi-debian
     if: inputs.target_job == 'raspberry-pi-debian-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberry-pi-debian' || inputs.target_job == 'rpi-debian'))
@@ -970,7 +970,7 @@ jobs:
   raspberry-pi-debian-python:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - raspberry-pi-debian
     if: inputs.target_job == 'raspberry-pi-debian-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberry-pi-debian' || inputs.target_job == 'rpi-debian'))
