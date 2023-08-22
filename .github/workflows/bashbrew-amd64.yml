@@ -119,7 +119,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -145,10 +144,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "amd64-alpine" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   amd64-alpine-golang:
     runs-on:
@@ -167,7 +167,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -193,10 +192,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "amd64-alpine-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   amd64-alpine-node:
     runs-on:
@@ -215,7 +215,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -241,10 +240,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "amd64-alpine-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   amd64-alpine-openjdk:
     runs-on:
@@ -263,7 +263,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -289,10 +288,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "amd64-alpine-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   amd64-alpine-python:
     runs-on:
@@ -311,7 +311,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -337,10 +336,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "amd64-alpine-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   amd64-debian:
     runs-on:
@@ -358,7 +358,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -384,10 +383,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "amd64-debian" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   amd64-debian-dotnet:
     runs-on:
@@ -406,7 +406,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -432,10 +431,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "amd64-debian-dotnet" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   amd64-debian-golang:
     runs-on:
@@ -454,7 +454,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -480,10 +479,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "amd64-debian-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   amd64-debian-node:
     runs-on:
@@ -502,7 +502,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -528,10 +527,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "amd64-debian-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   amd64-debian-openjdk:
     runs-on:
@@ -550,7 +550,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -576,10 +575,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "amd64-debian-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   amd64-debian-python:
     runs-on:
@@ -598,7 +598,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -624,10 +623,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "amd64-debian-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   amd64-fedora:
     runs-on:
@@ -645,7 +645,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -671,10 +670,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "amd64-fedora" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   amd64-fedora-golang:
     runs-on:
@@ -693,7 +693,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -719,10 +718,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "amd64-fedora-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   amd64-fedora-node:
     runs-on:
@@ -741,7 +741,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -767,10 +766,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "amd64-fedora-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   amd64-fedora-openjdk:
     runs-on:
@@ -789,7 +789,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -815,10 +814,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "amd64-fedora-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   amd64-fedora-python:
     runs-on:
@@ -837,7 +837,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -863,10 +862,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "amd64-fedora-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   amd64-ubuntu:
     runs-on:
@@ -884,7 +884,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -910,10 +909,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "amd64-ubuntu" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   amd64-ubuntu-dotnet:
     runs-on:
@@ -932,7 +932,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -958,10 +957,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "amd64-ubuntu-dotnet" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   amd64-ubuntu-golang:
     runs-on:
@@ -980,7 +980,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1006,10 +1005,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "amd64-ubuntu-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   amd64-ubuntu-node:
     runs-on:
@@ -1028,7 +1028,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1054,10 +1053,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "amd64-ubuntu-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   amd64-ubuntu-openjdk:
     runs-on:
@@ -1076,7 +1076,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1102,10 +1101,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "amd64-ubuntu-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   amd64-ubuntu-python:
     runs-on:
@@ -1124,7 +1124,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1150,10 +1149,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "amd64-ubuntu-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-amd64-alpine:
     runs-on:
@@ -1172,7 +1172,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1198,10 +1197,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "intel-nuc-alpine" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-amd64-alpine-golang:
     runs-on:
@@ -1220,7 +1220,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1246,10 +1245,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "intel-nuc-alpine-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-amd64-alpine-node:
     runs-on:
@@ -1268,7 +1268,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1294,10 +1293,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "intel-nuc-alpine-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-amd64-alpine-openjdk:
     runs-on:
@@ -1316,7 +1316,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1342,10 +1341,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "intel-nuc-alpine-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-amd64-alpine-python:
     runs-on:
@@ -1364,7 +1364,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1390,10 +1389,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "intel-nuc-alpine-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-amd64-debian:
     runs-on:
@@ -1412,7 +1412,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1438,10 +1437,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "intel-nuc-debian" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-amd64-debian-dotnet:
     runs-on:
@@ -1460,7 +1460,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1486,10 +1485,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "intel-nuc-debian-dotnet" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-amd64-debian-golang:
     runs-on:
@@ -1508,7 +1508,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1534,10 +1533,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "intel-nuc-debian-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-amd64-debian-node:
     runs-on:
@@ -1556,7 +1556,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1582,10 +1581,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "intel-nuc-debian-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-amd64-debian-openjdk:
     runs-on:
@@ -1604,7 +1604,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1630,10 +1629,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "intel-nuc-debian-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-amd64-debian-python:
     runs-on:
@@ -1652,7 +1652,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1678,10 +1677,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "intel-nuc-debian-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-amd64-fedora:
     runs-on:
@@ -1700,7 +1700,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1726,10 +1725,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "intel-nuc-fedora" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-amd64-fedora-golang:
     runs-on:
@@ -1748,7 +1748,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1774,10 +1773,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "intel-nuc-fedora-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-amd64-fedora-node:
     runs-on:
@@ -1796,7 +1796,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1822,10 +1821,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "intel-nuc-fedora-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-amd64-fedora-openjdk:
     runs-on:
@@ -1844,7 +1844,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1870,10 +1869,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "intel-nuc-fedora-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-amd64-fedora-python:
     runs-on:
@@ -1892,7 +1892,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1918,10 +1917,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "intel-nuc-fedora-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-amd64-ubuntu:
     runs-on:
@@ -1940,7 +1940,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1966,10 +1965,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "intel-nuc-ubuntu" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-amd64-ubuntu-dotnet:
     runs-on:
@@ -1988,7 +1988,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2014,10 +2013,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "intel-nuc-ubuntu-dotnet" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-amd64-ubuntu-golang:
     runs-on:
@@ -2036,7 +2036,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2062,10 +2061,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "intel-nuc-ubuntu-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-amd64-ubuntu-node:
     runs-on:
@@ -2084,7 +2084,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2110,10 +2109,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "intel-nuc-ubuntu-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-amd64-ubuntu-openjdk:
     runs-on:
@@ -2132,7 +2132,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2158,10 +2157,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "intel-nuc-ubuntu-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-amd64-ubuntu-python:
     runs-on:
@@ -2180,7 +2180,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2206,10 +2205,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "intel-nuc-ubuntu-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   up-board-alpine:
     runs-on:
@@ -2228,7 +2228,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2254,10 +2253,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "up-board-alpine" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   up-board-alpine-golang:
     runs-on:
@@ -2276,7 +2276,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2302,10 +2301,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "up-board-alpine-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   up-board-alpine-node:
     runs-on:
@@ -2324,7 +2324,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2350,10 +2349,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "up-board-alpine-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   up-board-alpine-openjdk:
     runs-on:
@@ -2372,7 +2372,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2398,10 +2397,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "up-board-alpine-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   up-board-alpine-python:
     runs-on:
@@ -2420,7 +2420,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2446,10 +2445,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "up-board-alpine-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   up-board-debian:
     runs-on:
@@ -2468,7 +2468,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2494,10 +2493,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "up-board-debian" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   up-board-debian-dotnet:
     runs-on:
@@ -2516,7 +2516,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2542,10 +2541,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "up-board-debian-dotnet" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   up-board-debian-golang:
     runs-on:
@@ -2564,7 +2564,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2590,10 +2589,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "up-board-debian-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   up-board-debian-node:
     runs-on:
@@ -2612,7 +2612,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2638,10 +2637,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "up-board-debian-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   up-board-debian-openjdk:
     runs-on:
@@ -2660,7 +2660,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2686,10 +2685,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "up-board-debian-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   up-board-debian-python:
     runs-on:
@@ -2708,7 +2708,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2734,10 +2733,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "up-board-debian-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   up-board-fedora:
     runs-on:
@@ -2756,7 +2756,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2782,10 +2781,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "up-board-fedora" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   up-board-fedora-golang:
     runs-on:
@@ -2804,7 +2804,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2830,10 +2829,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "up-board-fedora-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   up-board-fedora-node:
     runs-on:
@@ -2852,7 +2852,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2878,10 +2877,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "up-board-fedora-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   up-board-fedora-openjdk:
     runs-on:
@@ -2900,7 +2900,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2926,10 +2925,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "up-board-fedora-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   up-board-fedora-python:
     runs-on:
@@ -2948,7 +2948,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2974,10 +2973,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "up-board-fedora-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   up-board-ubuntu:
     runs-on:
@@ -2996,7 +2996,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -3022,10 +3021,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "up-board-ubuntu" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   up-board-ubuntu-dotnet:
     runs-on:
@@ -3044,7 +3044,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -3070,10 +3069,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "up-board-ubuntu-dotnet" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   up-board-ubuntu-golang:
     runs-on:
@@ -3092,7 +3092,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -3118,10 +3117,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "up-board-ubuntu-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   up-board-ubuntu-node:
     runs-on:
@@ -3140,7 +3140,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -3166,10 +3165,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "up-board-ubuntu-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   up-board-ubuntu-openjdk:
     runs-on:
@@ -3188,7 +3188,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -3214,10 +3213,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "up-board-ubuntu-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   up-board-ubuntu-python:
     runs-on:
@@ -3236,7 +3236,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -3262,8 +3261,9 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "up-board-ubuntu-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90

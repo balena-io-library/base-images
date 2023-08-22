@@ -146,12 +146,11 @@ const createJob = (
 							uses: 'easimon/maximize-build-space@v8',
 							with: {
 								'root-reserve-mb': 40960,
-        						'swap-size-mb': 1024,
+								'swap-size-mb': 1024,
 								'remove-dotnet': 'true',
 								'remove-android': 'true',
 								'remove-haskell': 'true',
 								'remove-codeql': 'true',
-								'remove-docker-images': 'true',
 							},
 						},
 				  ]
@@ -202,10 +201,11 @@ const createJob = (
 			},
 			{
 				name: 'Upload logs',
+				if: 'always()',
 				uses: 'actions/upload-artifact@v3',
 				with: {
 					name: 'logs',
-					path: 'bashbrew/logs/*/*.log',
+					path: 'bashbrew/logs/',
 					'retention-days': 90,
 				},
 			},

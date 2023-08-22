@@ -213,7 +213,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -239,10 +238,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "aarch64-alpine" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   aarch64-alpine-golang:
     runs-on:
@@ -261,7 +261,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -287,10 +286,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "aarch64-alpine-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   aarch64-alpine-node:
     runs-on:
@@ -309,7 +309,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -335,10 +334,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "aarch64-alpine-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   aarch64-alpine-openjdk:
     runs-on:
@@ -357,7 +357,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -383,10 +382,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "aarch64-alpine-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   aarch64-alpine-python:
     runs-on:
@@ -405,7 +405,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -431,10 +430,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "aarch64-alpine-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   aarch64-debian:
     runs-on:
@@ -452,7 +452,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -478,10 +477,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "aarch64-debian" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   aarch64-debian-golang:
     runs-on:
@@ -500,7 +500,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -526,10 +525,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "aarch64-debian-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   aarch64-debian-node:
     runs-on:
@@ -548,7 +548,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -574,10 +573,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "aarch64-debian-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   aarch64-debian-openjdk:
     runs-on:
@@ -596,7 +596,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -622,10 +621,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "aarch64-debian-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   aarch64-debian-python:
     runs-on:
@@ -644,7 +644,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -670,10 +669,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "aarch64-debian-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   aarch64-fedora:
     runs-on:
@@ -691,7 +691,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -717,10 +716,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "aarch64-fedora" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   aarch64-fedora-golang:
     runs-on:
@@ -739,7 +739,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -765,10 +764,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "aarch64-fedora-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   aarch64-fedora-node:
     runs-on:
@@ -787,7 +787,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -813,10 +812,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "aarch64-fedora-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   aarch64-fedora-openjdk:
     runs-on:
@@ -835,7 +835,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -861,10 +860,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "aarch64-fedora-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   aarch64-fedora-python:
     runs-on:
@@ -883,7 +883,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -909,10 +908,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "aarch64-fedora-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   aarch64-ubuntu:
     runs-on:
@@ -930,7 +930,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -956,10 +955,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "aarch64-ubuntu" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   aarch64-ubuntu-golang:
     runs-on:
@@ -978,7 +978,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1004,10 +1003,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "aarch64-ubuntu-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   aarch64-ubuntu-node:
     runs-on:
@@ -1026,7 +1026,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1052,10 +1051,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "aarch64-ubuntu-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   aarch64-ubuntu-openjdk:
     runs-on:
@@ -1074,7 +1074,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1100,10 +1099,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "aarch64-ubuntu-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   aarch64-ubuntu-python:
     runs-on:
@@ -1122,7 +1122,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1148,10 +1147,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "aarch64-ubuntu-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   coral-dev-alpine:
     runs-on:
@@ -1170,7 +1170,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1196,10 +1195,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "coral-dev-alpine" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   coral-dev-alpine-golang:
     runs-on:
@@ -1218,7 +1218,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1244,10 +1243,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "coral-dev-alpine-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   coral-dev-alpine-node:
     runs-on:
@@ -1266,7 +1266,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1292,10 +1291,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "coral-dev-alpine-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   coral-dev-alpine-openjdk:
     runs-on:
@@ -1314,7 +1314,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1340,10 +1339,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "coral-dev-alpine-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   coral-dev-alpine-python:
     runs-on:
@@ -1362,7 +1362,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1388,10 +1387,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "coral-dev-alpine-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   coral-dev-debian:
     runs-on:
@@ -1410,7 +1410,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1436,10 +1435,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "coral-dev-debian" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   coral-dev-debian-golang:
     runs-on:
@@ -1458,7 +1458,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1484,10 +1483,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "coral-dev-debian-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   coral-dev-debian-node:
     runs-on:
@@ -1506,7 +1506,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1532,10 +1531,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "coral-dev-debian-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   coral-dev-debian-openjdk:
     runs-on:
@@ -1554,7 +1554,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1580,10 +1579,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "coral-dev-debian-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   coral-dev-debian-python:
     runs-on:
@@ -1602,7 +1602,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1628,10 +1627,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "coral-dev-debian-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   coral-dev-fedora:
     runs-on:
@@ -1650,7 +1650,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1676,10 +1675,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "coral-dev-fedora" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   coral-dev-fedora-golang:
     runs-on:
@@ -1698,7 +1698,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1724,10 +1723,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "coral-dev-fedora-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   coral-dev-fedora-node:
     runs-on:
@@ -1746,7 +1746,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1772,10 +1771,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "coral-dev-fedora-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   coral-dev-fedora-openjdk:
     runs-on:
@@ -1794,7 +1794,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1820,10 +1819,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "coral-dev-fedora-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   coral-dev-fedora-python:
     runs-on:
@@ -1842,7 +1842,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1868,10 +1867,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "coral-dev-fedora-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   coral-dev-ubuntu:
     runs-on:
@@ -1890,7 +1890,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1916,10 +1915,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "coral-dev-ubuntu" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   coral-dev-ubuntu-golang:
     runs-on:
@@ -1938,7 +1938,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1964,10 +1963,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "coral-dev-ubuntu-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   coral-dev-ubuntu-node:
     runs-on:
@@ -1986,7 +1986,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2012,10 +2011,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "coral-dev-ubuntu-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   coral-dev-ubuntu-openjdk:
     runs-on:
@@ -2034,7 +2034,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2060,10 +2059,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "coral-dev-ubuntu-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   coral-dev-ubuntu-python:
     runs-on:
@@ -2082,7 +2082,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2108,10 +2107,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "coral-dev-ubuntu-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-aarch64-alpine:
     runs-on:
@@ -2130,7 +2130,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2156,10 +2155,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "generic-aarch64-alpine" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="owa5x imx8mm-var-som tdpzu9 radxa-zero nanopi-r2s rockpro64 nanopi-r2c cnx100-xavier-nx isg-503 n310-tx2 photon-tx2-nx rockpi-4b-rk3399 asus-tinker-edge-t photon-nano smarc-px30 ccimx8x-sbc-pro astro-tx2 photon-xavier-nx imx8mm-var-dart-nrt imx8mm-var-dart-plt skx2 imx8mm-var-dart nitrogen8mm-dwe jn30b-nano j120-tx2 nitrogen8mm nanopc-t4 blackboard-tx2 srd3-tx2 n510-tx2 artik710 kitra710 orbitty-tx2 spacely-tx2 cl-som-imx8 imx8m-var-dart iot-gate-imx8 iot-gate-imx8plus" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-aarch64-alpine-golang:
     runs-on:
@@ -2178,7 +2178,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2204,10 +2203,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "generic-aarch64-alpine-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="owa5x imx8mm-var-som tdpzu9 radxa-zero nanopi-r2s rockpro64 nanopi-r2c cnx100-xavier-nx isg-503 n310-tx2 photon-tx2-nx rockpi-4b-rk3399 asus-tinker-edge-t photon-nano smarc-px30 ccimx8x-sbc-pro astro-tx2 photon-xavier-nx imx8mm-var-dart-nrt imx8mm-var-dart-plt skx2 imx8mm-var-dart nitrogen8mm-dwe jn30b-nano j120-tx2 nitrogen8mm nanopc-t4 blackboard-tx2 srd3-tx2 n510-tx2 artik710 kitra710 orbitty-tx2 spacely-tx2 cl-som-imx8 imx8m-var-dart iot-gate-imx8 iot-gate-imx8plus" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-aarch64-alpine-node:
     runs-on:
@@ -2226,7 +2226,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2252,10 +2251,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "generic-aarch64-alpine-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="owa5x imx8mm-var-som tdpzu9 radxa-zero nanopi-r2s rockpro64 nanopi-r2c cnx100-xavier-nx isg-503 n310-tx2 photon-tx2-nx rockpi-4b-rk3399 asus-tinker-edge-t photon-nano smarc-px30 ccimx8x-sbc-pro astro-tx2 photon-xavier-nx imx8mm-var-dart-nrt imx8mm-var-dart-plt skx2 imx8mm-var-dart nitrogen8mm-dwe jn30b-nano j120-tx2 nitrogen8mm nanopc-t4 blackboard-tx2 srd3-tx2 n510-tx2 artik710 kitra710 orbitty-tx2 spacely-tx2 cl-som-imx8 imx8m-var-dart iot-gate-imx8 iot-gate-imx8plus" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-aarch64-alpine-openjdk:
     runs-on:
@@ -2274,7 +2274,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2300,10 +2299,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "generic-aarch64-alpine-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="owa5x imx8mm-var-som tdpzu9 radxa-zero nanopi-r2s rockpro64 nanopi-r2c cnx100-xavier-nx isg-503 n310-tx2 photon-tx2-nx rockpi-4b-rk3399 asus-tinker-edge-t photon-nano smarc-px30 ccimx8x-sbc-pro astro-tx2 photon-xavier-nx imx8mm-var-dart-nrt imx8mm-var-dart-plt skx2 imx8mm-var-dart nitrogen8mm-dwe jn30b-nano j120-tx2 nitrogen8mm nanopc-t4 blackboard-tx2 srd3-tx2 n510-tx2 artik710 kitra710 orbitty-tx2 spacely-tx2 cl-som-imx8 imx8m-var-dart iot-gate-imx8 iot-gate-imx8plus" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-aarch64-alpine-python:
     runs-on:
@@ -2322,7 +2322,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2348,10 +2347,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "generic-aarch64-alpine-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="owa5x imx8mm-var-som tdpzu9 radxa-zero nanopi-r2s rockpro64 nanopi-r2c cnx100-xavier-nx isg-503 n310-tx2 photon-tx2-nx rockpi-4b-rk3399 asus-tinker-edge-t photon-nano smarc-px30 ccimx8x-sbc-pro astro-tx2 photon-xavier-nx imx8mm-var-dart-nrt imx8mm-var-dart-plt skx2 imx8mm-var-dart nitrogen8mm-dwe jn30b-nano j120-tx2 nitrogen8mm nanopc-t4 blackboard-tx2 srd3-tx2 n510-tx2 artik710 kitra710 orbitty-tx2 spacely-tx2 cl-som-imx8 imx8m-var-dart iot-gate-imx8 iot-gate-imx8plus" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-aarch64-debian:
     runs-on:
@@ -2370,7 +2370,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2396,10 +2395,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "generic-aarch64-debian" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="owa5x imx8mm-var-som tdpzu9 radxa-zero nanopi-r2s rockpro64 nanopi-r2c cnx100-xavier-nx isg-503 n310-tx2 photon-tx2-nx rockpi-4b-rk3399 asus-tinker-edge-t photon-nano smarc-px30 ccimx8x-sbc-pro astro-tx2 photon-xavier-nx imx8mm-var-dart-nrt imx8mm-var-dart-plt skx2 imx8mm-var-dart nitrogen8mm-dwe jn30b-nano j120-tx2 nitrogen8mm nanopc-t4 blackboard-tx2 srd3-tx2 n510-tx2 artik710 kitra710 orbitty-tx2 spacely-tx2 cl-som-imx8 imx8m-var-dart iot-gate-imx8 iot-gate-imx8plus" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-aarch64-debian-golang:
     runs-on:
@@ -2418,7 +2418,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2444,10 +2443,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "generic-aarch64-debian-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="owa5x imx8mm-var-som tdpzu9 radxa-zero nanopi-r2s rockpro64 nanopi-r2c cnx100-xavier-nx isg-503 n310-tx2 photon-tx2-nx rockpi-4b-rk3399 asus-tinker-edge-t photon-nano smarc-px30 ccimx8x-sbc-pro astro-tx2 photon-xavier-nx imx8mm-var-dart-nrt imx8mm-var-dart-plt skx2 imx8mm-var-dart nitrogen8mm-dwe jn30b-nano j120-tx2 nitrogen8mm nanopc-t4 blackboard-tx2 srd3-tx2 n510-tx2 artik710 kitra710 orbitty-tx2 spacely-tx2 cl-som-imx8 imx8m-var-dart iot-gate-imx8 iot-gate-imx8plus" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-aarch64-debian-node:
     runs-on:
@@ -2466,7 +2466,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2492,10 +2491,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "generic-aarch64-debian-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="owa5x imx8mm-var-som tdpzu9 radxa-zero nanopi-r2s rockpro64 nanopi-r2c cnx100-xavier-nx isg-503 n310-tx2 photon-tx2-nx rockpi-4b-rk3399 asus-tinker-edge-t photon-nano smarc-px30 ccimx8x-sbc-pro astro-tx2 photon-xavier-nx imx8mm-var-dart-nrt imx8mm-var-dart-plt skx2 imx8mm-var-dart nitrogen8mm-dwe jn30b-nano j120-tx2 nitrogen8mm nanopc-t4 blackboard-tx2 srd3-tx2 n510-tx2 artik710 kitra710 orbitty-tx2 spacely-tx2 cl-som-imx8 imx8m-var-dart iot-gate-imx8 iot-gate-imx8plus" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-aarch64-debian-openjdk:
     runs-on:
@@ -2514,7 +2514,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2540,10 +2539,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "generic-aarch64-debian-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="owa5x imx8mm-var-som tdpzu9 radxa-zero nanopi-r2s rockpro64 nanopi-r2c cnx100-xavier-nx isg-503 n310-tx2 photon-tx2-nx rockpi-4b-rk3399 asus-tinker-edge-t photon-nano smarc-px30 ccimx8x-sbc-pro astro-tx2 photon-xavier-nx imx8mm-var-dart-nrt imx8mm-var-dart-plt skx2 imx8mm-var-dart nitrogen8mm-dwe jn30b-nano j120-tx2 nitrogen8mm nanopc-t4 blackboard-tx2 srd3-tx2 n510-tx2 artik710 kitra710 orbitty-tx2 spacely-tx2 cl-som-imx8 imx8m-var-dart iot-gate-imx8 iot-gate-imx8plus" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-aarch64-debian-python:
     runs-on:
@@ -2562,7 +2562,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2588,10 +2587,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "generic-aarch64-debian-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="owa5x imx8mm-var-som tdpzu9 radxa-zero nanopi-r2s rockpro64 nanopi-r2c cnx100-xavier-nx isg-503 n310-tx2 photon-tx2-nx rockpi-4b-rk3399 asus-tinker-edge-t photon-nano smarc-px30 ccimx8x-sbc-pro astro-tx2 photon-xavier-nx imx8mm-var-dart-nrt imx8mm-var-dart-plt skx2 imx8mm-var-dart nitrogen8mm-dwe jn30b-nano j120-tx2 nitrogen8mm nanopc-t4 blackboard-tx2 srd3-tx2 n510-tx2 artik710 kitra710 orbitty-tx2 spacely-tx2 cl-som-imx8 imx8m-var-dart iot-gate-imx8 iot-gate-imx8plus" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-aarch64-fedora:
     runs-on:
@@ -2610,7 +2610,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2636,10 +2635,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "generic-aarch64-fedora" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="owa5x imx8mm-var-som tdpzu9 radxa-zero nanopi-r2s rockpro64 nanopi-r2c cnx100-xavier-nx isg-503 n310-tx2 photon-tx2-nx rockpi-4b-rk3399 asus-tinker-edge-t photon-nano smarc-px30 ccimx8x-sbc-pro astro-tx2 photon-xavier-nx imx8mm-var-dart-nrt imx8mm-var-dart-plt skx2 imx8mm-var-dart nitrogen8mm-dwe jn30b-nano j120-tx2 nitrogen8mm nanopc-t4 blackboard-tx2 srd3-tx2 n510-tx2 artik710 kitra710 orbitty-tx2 spacely-tx2 cl-som-imx8 imx8m-var-dart iot-gate-imx8 iot-gate-imx8plus" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-aarch64-fedora-golang:
     runs-on:
@@ -2658,7 +2658,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2684,10 +2683,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "generic-aarch64-fedora-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="owa5x imx8mm-var-som tdpzu9 radxa-zero nanopi-r2s rockpro64 nanopi-r2c cnx100-xavier-nx isg-503 n310-tx2 photon-tx2-nx rockpi-4b-rk3399 asus-tinker-edge-t photon-nano smarc-px30 ccimx8x-sbc-pro astro-tx2 photon-xavier-nx imx8mm-var-dart-nrt imx8mm-var-dart-plt skx2 imx8mm-var-dart nitrogen8mm-dwe jn30b-nano j120-tx2 nitrogen8mm nanopc-t4 blackboard-tx2 srd3-tx2 n510-tx2 artik710 kitra710 orbitty-tx2 spacely-tx2 cl-som-imx8 imx8m-var-dart iot-gate-imx8 iot-gate-imx8plus" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-aarch64-fedora-node:
     runs-on:
@@ -2706,7 +2706,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2732,10 +2731,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "generic-aarch64-fedora-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="owa5x imx8mm-var-som tdpzu9 radxa-zero nanopi-r2s rockpro64 nanopi-r2c cnx100-xavier-nx isg-503 n310-tx2 photon-tx2-nx rockpi-4b-rk3399 asus-tinker-edge-t photon-nano smarc-px30 ccimx8x-sbc-pro astro-tx2 photon-xavier-nx imx8mm-var-dart-nrt imx8mm-var-dart-plt skx2 imx8mm-var-dart nitrogen8mm-dwe jn30b-nano j120-tx2 nitrogen8mm nanopc-t4 blackboard-tx2 srd3-tx2 n510-tx2 artik710 kitra710 orbitty-tx2 spacely-tx2 cl-som-imx8 imx8m-var-dart iot-gate-imx8 iot-gate-imx8plus" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-aarch64-fedora-openjdk:
     runs-on:
@@ -2754,7 +2754,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2780,10 +2779,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "generic-aarch64-fedora-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="owa5x imx8mm-var-som tdpzu9 radxa-zero nanopi-r2s rockpro64 nanopi-r2c cnx100-xavier-nx isg-503 n310-tx2 photon-tx2-nx rockpi-4b-rk3399 asus-tinker-edge-t photon-nano smarc-px30 ccimx8x-sbc-pro astro-tx2 photon-xavier-nx imx8mm-var-dart-nrt imx8mm-var-dart-plt skx2 imx8mm-var-dart nitrogen8mm-dwe jn30b-nano j120-tx2 nitrogen8mm nanopc-t4 blackboard-tx2 srd3-tx2 n510-tx2 artik710 kitra710 orbitty-tx2 spacely-tx2 cl-som-imx8 imx8m-var-dart iot-gate-imx8 iot-gate-imx8plus" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-aarch64-fedora-python:
     runs-on:
@@ -2802,7 +2802,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2828,10 +2827,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "generic-aarch64-fedora-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="owa5x imx8mm-var-som tdpzu9 radxa-zero nanopi-r2s rockpro64 nanopi-r2c cnx100-xavier-nx isg-503 n310-tx2 photon-tx2-nx rockpi-4b-rk3399 asus-tinker-edge-t photon-nano smarc-px30 ccimx8x-sbc-pro astro-tx2 photon-xavier-nx imx8mm-var-dart-nrt imx8mm-var-dart-plt skx2 imx8mm-var-dart nitrogen8mm-dwe jn30b-nano j120-tx2 nitrogen8mm nanopc-t4 blackboard-tx2 srd3-tx2 n510-tx2 artik710 kitra710 orbitty-tx2 spacely-tx2 cl-som-imx8 imx8m-var-dart iot-gate-imx8 iot-gate-imx8plus" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-aarch64-ubuntu:
     runs-on:
@@ -2850,7 +2850,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2876,10 +2875,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "generic-aarch64-ubuntu" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="owa5x imx8mm-var-som tdpzu9 radxa-zero nanopi-r2s rockpro64 nanopi-r2c cnx100-xavier-nx isg-503 n310-tx2 photon-tx2-nx rockpi-4b-rk3399 asus-tinker-edge-t photon-nano smarc-px30 ccimx8x-sbc-pro astro-tx2 photon-xavier-nx imx8mm-var-dart-nrt imx8mm-var-dart-plt skx2 imx8mm-var-dart nitrogen8mm-dwe jn30b-nano j120-tx2 nitrogen8mm nanopc-t4 blackboard-tx2 srd3-tx2 n510-tx2 artik710 kitra710 orbitty-tx2 spacely-tx2 cl-som-imx8 imx8m-var-dart iot-gate-imx8 iot-gate-imx8plus" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-aarch64-ubuntu-golang:
     runs-on:
@@ -2898,7 +2898,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2924,10 +2923,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "generic-aarch64-ubuntu-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="owa5x imx8mm-var-som tdpzu9 radxa-zero nanopi-r2s rockpro64 nanopi-r2c cnx100-xavier-nx isg-503 n310-tx2 photon-tx2-nx rockpi-4b-rk3399 asus-tinker-edge-t photon-nano smarc-px30 ccimx8x-sbc-pro astro-tx2 photon-xavier-nx imx8mm-var-dart-nrt imx8mm-var-dart-plt skx2 imx8mm-var-dart nitrogen8mm-dwe jn30b-nano j120-tx2 nitrogen8mm nanopc-t4 blackboard-tx2 srd3-tx2 n510-tx2 artik710 kitra710 orbitty-tx2 spacely-tx2 cl-som-imx8 imx8m-var-dart iot-gate-imx8 iot-gate-imx8plus" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-aarch64-ubuntu-node:
     runs-on:
@@ -2946,7 +2946,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -2972,10 +2971,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "generic-aarch64-ubuntu-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="owa5x imx8mm-var-som tdpzu9 radxa-zero nanopi-r2s rockpro64 nanopi-r2c cnx100-xavier-nx isg-503 n310-tx2 photon-tx2-nx rockpi-4b-rk3399 asus-tinker-edge-t photon-nano smarc-px30 ccimx8x-sbc-pro astro-tx2 photon-xavier-nx imx8mm-var-dart-nrt imx8mm-var-dart-plt skx2 imx8mm-var-dart nitrogen8mm-dwe jn30b-nano j120-tx2 nitrogen8mm nanopc-t4 blackboard-tx2 srd3-tx2 n510-tx2 artik710 kitra710 orbitty-tx2 spacely-tx2 cl-som-imx8 imx8m-var-dart iot-gate-imx8 iot-gate-imx8plus" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-aarch64-ubuntu-openjdk:
     runs-on:
@@ -2994,7 +2994,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -3020,10 +3019,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "generic-aarch64-ubuntu-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="owa5x imx8mm-var-som tdpzu9 radxa-zero nanopi-r2s rockpro64 nanopi-r2c cnx100-xavier-nx isg-503 n310-tx2 photon-tx2-nx rockpi-4b-rk3399 asus-tinker-edge-t photon-nano smarc-px30 ccimx8x-sbc-pro astro-tx2 photon-xavier-nx imx8mm-var-dart-nrt imx8mm-var-dart-plt skx2 imx8mm-var-dart nitrogen8mm-dwe jn30b-nano j120-tx2 nitrogen8mm nanopc-t4 blackboard-tx2 srd3-tx2 n510-tx2 artik710 kitra710 orbitty-tx2 spacely-tx2 cl-som-imx8 imx8m-var-dart iot-gate-imx8 iot-gate-imx8plus" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-aarch64-ubuntu-python:
     runs-on:
@@ -3042,7 +3042,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -3068,10 +3067,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "generic-aarch64-ubuntu-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="owa5x imx8mm-var-som tdpzu9 radxa-zero nanopi-r2s rockpro64 nanopi-r2c cnx100-xavier-nx isg-503 n310-tx2 photon-tx2-nx rockpi-4b-rk3399 asus-tinker-edge-t photon-nano smarc-px30 ccimx8x-sbc-pro astro-tx2 photon-xavier-nx imx8mm-var-dart-nrt imx8mm-var-dart-plt skx2 imx8mm-var-dart nitrogen8mm-dwe jn30b-nano j120-tx2 nitrogen8mm nanopc-t4 blackboard-tx2 srd3-tx2 n510-tx2 artik710 kitra710 orbitty-tx2 spacely-tx2 cl-som-imx8 imx8m-var-dart iot-gate-imx8 iot-gate-imx8plus" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-orin-alpine:
     runs-on:
@@ -3090,7 +3090,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -3116,10 +3115,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-agx-orin-devkit-alpine" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-orin-nx-xavier-nx-devkit jetson-orin-nano-devkit-nvme" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-orin-alpine-golang:
     runs-on:
@@ -3138,7 +3138,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -3164,10 +3163,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-agx-orin-devkit-alpine-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-orin-nx-xavier-nx-devkit jetson-orin-nano-devkit-nvme" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-orin-alpine-node:
     runs-on:
@@ -3186,7 +3186,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -3212,10 +3211,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-agx-orin-devkit-alpine-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-orin-nx-xavier-nx-devkit jetson-orin-nano-devkit-nvme" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-orin-alpine-openjdk:
     runs-on:
@@ -3234,7 +3234,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -3260,10 +3259,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-agx-orin-devkit-alpine-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-orin-nx-xavier-nx-devkit jetson-orin-nano-devkit-nvme" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-orin-alpine-python:
     runs-on:
@@ -3282,7 +3282,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -3308,10 +3307,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-agx-orin-devkit-alpine-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-orin-nx-xavier-nx-devkit jetson-orin-nano-devkit-nvme" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-orin-debian:
     runs-on:
@@ -3330,7 +3330,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -3356,10 +3355,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-agx-orin-devkit-debian" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-orin-nx-xavier-nx-devkit jetson-orin-nano-devkit-nvme" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-orin-debian-golang:
     runs-on:
@@ -3378,7 +3378,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -3404,10 +3403,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-agx-orin-devkit-debian-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-orin-nx-xavier-nx-devkit jetson-orin-nano-devkit-nvme" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-orin-debian-node:
     runs-on:
@@ -3426,7 +3426,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -3452,10 +3451,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-agx-orin-devkit-debian-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-orin-nx-xavier-nx-devkit jetson-orin-nano-devkit-nvme" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-orin-debian-openjdk:
     runs-on:
@@ -3474,7 +3474,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -3500,10 +3499,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-agx-orin-devkit-debian-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-orin-nx-xavier-nx-devkit jetson-orin-nano-devkit-nvme" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-orin-debian-python:
     runs-on:
@@ -3522,7 +3522,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -3548,10 +3547,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-agx-orin-devkit-debian-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-orin-nx-xavier-nx-devkit jetson-orin-nano-devkit-nvme" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-orin-fedora:
     runs-on:
@@ -3570,7 +3570,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -3596,10 +3595,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-agx-orin-devkit-fedora" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-orin-nx-xavier-nx-devkit jetson-orin-nano-devkit-nvme" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-orin-fedora-golang:
     runs-on:
@@ -3618,7 +3618,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -3644,10 +3643,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-agx-orin-devkit-fedora-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-orin-nx-xavier-nx-devkit jetson-orin-nano-devkit-nvme" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-orin-fedora-node:
     runs-on:
@@ -3666,7 +3666,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -3692,10 +3691,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-agx-orin-devkit-fedora-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-orin-nx-xavier-nx-devkit jetson-orin-nano-devkit-nvme" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-orin-fedora-openjdk:
     runs-on:
@@ -3714,7 +3714,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -3740,10 +3739,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-agx-orin-devkit-fedora-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-orin-nx-xavier-nx-devkit jetson-orin-nano-devkit-nvme" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-orin-fedora-python:
     runs-on:
@@ -3762,7 +3762,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -3788,10 +3787,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-agx-orin-devkit-fedora-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-orin-nx-xavier-nx-devkit jetson-orin-nano-devkit-nvme" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-orin-ubuntu:
     runs-on:
@@ -3810,7 +3810,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -3836,10 +3835,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-agx-orin-devkit-ubuntu" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-orin-nx-xavier-nx-devkit jetson-orin-nano-devkit-nvme" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-orin-ubuntu-golang:
     runs-on:
@@ -3858,7 +3858,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -3884,10 +3883,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-agx-orin-devkit-ubuntu-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-orin-nx-xavier-nx-devkit jetson-orin-nano-devkit-nvme" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-orin-ubuntu-node:
     runs-on:
@@ -3906,7 +3906,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -3932,10 +3931,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-agx-orin-devkit-ubuntu-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-orin-nx-xavier-nx-devkit jetson-orin-nano-devkit-nvme" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-orin-ubuntu-openjdk:
     runs-on:
@@ -3954,7 +3954,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -3980,10 +3979,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-agx-orin-devkit-ubuntu-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-orin-nx-xavier-nx-devkit jetson-orin-nano-devkit-nvme" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-orin-ubuntu-python:
     runs-on:
@@ -4002,7 +4002,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -4028,10 +4027,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-agx-orin-devkit-ubuntu-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-orin-nx-xavier-nx-devkit jetson-orin-nano-devkit-nvme" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-nano-alpine:
     runs-on:
@@ -4050,7 +4050,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -4076,10 +4075,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-nano-alpine" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-nano-2gb-devkit jetson-nano-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-nano-alpine-golang:
     runs-on:
@@ -4098,7 +4098,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -4124,10 +4123,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-nano-alpine-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-nano-2gb-devkit jetson-nano-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-nano-alpine-node:
     runs-on:
@@ -4146,7 +4146,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -4172,10 +4171,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-nano-alpine-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-nano-2gb-devkit jetson-nano-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-nano-alpine-openjdk:
     runs-on:
@@ -4194,7 +4194,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -4220,10 +4219,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-nano-alpine-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-nano-2gb-devkit jetson-nano-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-nano-alpine-python:
     runs-on:
@@ -4242,7 +4242,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -4268,10 +4267,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-nano-alpine-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-nano-2gb-devkit jetson-nano-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-nano-debian:
     runs-on:
@@ -4290,7 +4290,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -4316,10 +4315,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-nano-debian" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-nano-2gb-devkit jetson-nano-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-nano-debian-golang:
     runs-on:
@@ -4338,7 +4338,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -4364,10 +4363,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-nano-debian-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-nano-2gb-devkit jetson-nano-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-nano-debian-node:
     runs-on:
@@ -4386,7 +4386,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -4412,10 +4411,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-nano-debian-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-nano-2gb-devkit jetson-nano-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-nano-debian-openjdk:
     runs-on:
@@ -4434,7 +4434,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -4460,10 +4459,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-nano-debian-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-nano-2gb-devkit jetson-nano-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-nano-debian-python:
     runs-on:
@@ -4482,7 +4482,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -4508,10 +4507,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-nano-debian-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-nano-2gb-devkit jetson-nano-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-nano-fedora:
     runs-on:
@@ -4530,7 +4530,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -4556,10 +4555,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-nano-fedora" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-nano-2gb-devkit jetson-nano-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-nano-fedora-golang:
     runs-on:
@@ -4578,7 +4578,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -4604,10 +4603,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-nano-fedora-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-nano-2gb-devkit jetson-nano-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-nano-fedora-node:
     runs-on:
@@ -4626,7 +4626,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -4652,10 +4651,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-nano-fedora-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-nano-2gb-devkit jetson-nano-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-nano-fedora-openjdk:
     runs-on:
@@ -4674,7 +4674,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -4700,10 +4699,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-nano-fedora-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-nano-2gb-devkit jetson-nano-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-nano-fedora-python:
     runs-on:
@@ -4722,7 +4722,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -4748,10 +4747,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-nano-fedora-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-nano-2gb-devkit jetson-nano-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-nano-ubuntu:
     runs-on:
@@ -4770,7 +4770,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -4796,10 +4795,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-nano-ubuntu" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-nano-2gb-devkit jetson-nano-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-nano-ubuntu-golang:
     runs-on:
@@ -4818,7 +4818,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -4844,10 +4843,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-nano-ubuntu-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-nano-2gb-devkit jetson-nano-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-nano-ubuntu-node:
     runs-on:
@@ -4866,7 +4866,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -4892,10 +4891,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-nano-ubuntu-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-nano-2gb-devkit jetson-nano-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-nano-ubuntu-openjdk:
     runs-on:
@@ -4914,7 +4914,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -4940,10 +4939,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-nano-ubuntu-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-nano-2gb-devkit jetson-nano-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-nano-ubuntu-python:
     runs-on:
@@ -4962,7 +4962,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -4988,10 +4987,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-nano-ubuntu-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-nano-2gb-devkit jetson-nano-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-tx2-alpine:
     runs-on:
@@ -5010,7 +5010,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -5036,10 +5035,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-tx2-alpine" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-tx2-nx-devkit" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-tx2-alpine-golang:
     runs-on:
@@ -5058,7 +5058,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -5084,10 +5083,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-tx2-alpine-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-tx2-nx-devkit" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-tx2-alpine-node:
     runs-on:
@@ -5106,7 +5106,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -5132,10 +5131,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-tx2-alpine-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-tx2-nx-devkit" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-tx2-alpine-openjdk:
     runs-on:
@@ -5154,7 +5154,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -5180,10 +5179,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-tx2-alpine-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-tx2-nx-devkit" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-tx2-alpine-python:
     runs-on:
@@ -5202,7 +5202,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -5228,10 +5227,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-tx2-alpine-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-tx2-nx-devkit" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-tx2-debian:
     runs-on:
@@ -5250,7 +5250,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -5276,10 +5275,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-tx2-debian" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-tx2-nx-devkit" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-tx2-debian-golang:
     runs-on:
@@ -5298,7 +5298,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -5324,10 +5323,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-tx2-debian-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-tx2-nx-devkit" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-tx2-debian-node:
     runs-on:
@@ -5346,7 +5346,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -5372,10 +5371,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-tx2-debian-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-tx2-nx-devkit" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-tx2-debian-openjdk:
     runs-on:
@@ -5394,7 +5394,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -5420,10 +5419,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-tx2-debian-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-tx2-nx-devkit" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-tx2-debian-python:
     runs-on:
@@ -5442,7 +5442,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -5468,10 +5467,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-tx2-debian-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-tx2-nx-devkit" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-tx2-fedora:
     runs-on:
@@ -5490,7 +5490,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -5516,10 +5515,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-tx2-fedora" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-tx2-nx-devkit" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-tx2-fedora-golang:
     runs-on:
@@ -5538,7 +5538,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -5564,10 +5563,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-tx2-fedora-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-tx2-nx-devkit" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-tx2-fedora-node:
     runs-on:
@@ -5586,7 +5586,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -5612,10 +5611,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-tx2-fedora-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-tx2-nx-devkit" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-tx2-fedora-openjdk:
     runs-on:
@@ -5634,7 +5634,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -5660,10 +5659,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-tx2-fedora-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-tx2-nx-devkit" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-tx2-fedora-python:
     runs-on:
@@ -5682,7 +5682,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -5708,10 +5707,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-tx2-fedora-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-tx2-nx-devkit" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-tx2-ubuntu:
     runs-on:
@@ -5730,7 +5730,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -5756,10 +5755,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-tx2-ubuntu" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-tx2-nx-devkit" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-tx2-ubuntu-golang:
     runs-on:
@@ -5778,7 +5778,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -5804,10 +5803,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-tx2-ubuntu-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-tx2-nx-devkit" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-tx2-ubuntu-node:
     runs-on:
@@ -5826,7 +5826,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -5852,10 +5851,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-tx2-ubuntu-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-tx2-nx-devkit" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-tx2-ubuntu-openjdk:
     runs-on:
@@ -5874,7 +5874,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -5900,10 +5899,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-tx2-ubuntu-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-tx2-nx-devkit" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-tx2-ubuntu-python:
     runs-on:
@@ -5922,7 +5922,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -5948,10 +5947,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-tx2-ubuntu-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="jetson-tx2-nx-devkit" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-xavier-alpine:
     runs-on:
@@ -5970,7 +5970,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -5996,10 +5995,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-xavier-alpine" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="forecr-dsb-nx2-xavier-nx-emmc jetson-xavier-nx-devkit-seeed-2mic-hat jetson-xavier-nx-devkit jetson-xavier-nx-devkit-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-xavier-alpine-golang:
     runs-on:
@@ -6018,7 +6018,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -6044,10 +6043,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-xavier-alpine-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="forecr-dsb-nx2-xavier-nx-emmc jetson-xavier-nx-devkit-seeed-2mic-hat jetson-xavier-nx-devkit jetson-xavier-nx-devkit-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-xavier-alpine-node:
     runs-on:
@@ -6066,7 +6066,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -6092,10 +6091,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-xavier-alpine-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="forecr-dsb-nx2-xavier-nx-emmc jetson-xavier-nx-devkit-seeed-2mic-hat jetson-xavier-nx-devkit jetson-xavier-nx-devkit-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-xavier-alpine-openjdk:
     runs-on:
@@ -6114,7 +6114,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -6140,10 +6139,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-xavier-alpine-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="forecr-dsb-nx2-xavier-nx-emmc jetson-xavier-nx-devkit-seeed-2mic-hat jetson-xavier-nx-devkit jetson-xavier-nx-devkit-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-xavier-alpine-python:
     runs-on:
@@ -6162,7 +6162,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -6188,10 +6187,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-xavier-alpine-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="forecr-dsb-nx2-xavier-nx-emmc jetson-xavier-nx-devkit-seeed-2mic-hat jetson-xavier-nx-devkit jetson-xavier-nx-devkit-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-xavier-debian:
     runs-on:
@@ -6210,7 +6210,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -6236,10 +6235,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-xavier-debian" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="forecr-dsb-nx2-xavier-nx-emmc jetson-xavier-nx-devkit-seeed-2mic-hat jetson-xavier-nx-devkit jetson-xavier-nx-devkit-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-xavier-debian-golang:
     runs-on:
@@ -6258,7 +6258,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -6284,10 +6283,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-xavier-debian-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="forecr-dsb-nx2-xavier-nx-emmc jetson-xavier-nx-devkit-seeed-2mic-hat jetson-xavier-nx-devkit jetson-xavier-nx-devkit-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-xavier-debian-node:
     runs-on:
@@ -6306,7 +6306,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -6332,10 +6331,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-xavier-debian-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="forecr-dsb-nx2-xavier-nx-emmc jetson-xavier-nx-devkit-seeed-2mic-hat jetson-xavier-nx-devkit jetson-xavier-nx-devkit-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-xavier-debian-openjdk:
     runs-on:
@@ -6354,7 +6354,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -6380,10 +6379,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-xavier-debian-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="forecr-dsb-nx2-xavier-nx-emmc jetson-xavier-nx-devkit-seeed-2mic-hat jetson-xavier-nx-devkit jetson-xavier-nx-devkit-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-xavier-debian-python:
     runs-on:
@@ -6402,7 +6402,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -6428,10 +6427,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-xavier-debian-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="forecr-dsb-nx2-xavier-nx-emmc jetson-xavier-nx-devkit-seeed-2mic-hat jetson-xavier-nx-devkit jetson-xavier-nx-devkit-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-xavier-fedora:
     runs-on:
@@ -6450,7 +6450,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -6476,10 +6475,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-xavier-fedora" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="forecr-dsb-nx2-xavier-nx-emmc jetson-xavier-nx-devkit-seeed-2mic-hat jetson-xavier-nx-devkit jetson-xavier-nx-devkit-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-xavier-fedora-golang:
     runs-on:
@@ -6498,7 +6498,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -6524,10 +6523,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-xavier-fedora-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="forecr-dsb-nx2-xavier-nx-emmc jetson-xavier-nx-devkit-seeed-2mic-hat jetson-xavier-nx-devkit jetson-xavier-nx-devkit-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-xavier-fedora-node:
     runs-on:
@@ -6546,7 +6546,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -6572,10 +6571,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-xavier-fedora-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="forecr-dsb-nx2-xavier-nx-emmc jetson-xavier-nx-devkit-seeed-2mic-hat jetson-xavier-nx-devkit jetson-xavier-nx-devkit-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-xavier-fedora-openjdk:
     runs-on:
@@ -6594,7 +6594,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -6620,10 +6619,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-xavier-fedora-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="forecr-dsb-nx2-xavier-nx-emmc jetson-xavier-nx-devkit-seeed-2mic-hat jetson-xavier-nx-devkit jetson-xavier-nx-devkit-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-xavier-fedora-python:
     runs-on:
@@ -6642,7 +6642,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -6668,10 +6667,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-xavier-fedora-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="forecr-dsb-nx2-xavier-nx-emmc jetson-xavier-nx-devkit-seeed-2mic-hat jetson-xavier-nx-devkit jetson-xavier-nx-devkit-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-xavier-ubuntu:
     runs-on:
@@ -6690,7 +6690,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -6716,10 +6715,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-xavier-ubuntu" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="forecr-dsb-nx2-xavier-nx-emmc jetson-xavier-nx-devkit-seeed-2mic-hat jetson-xavier-nx-devkit jetson-xavier-nx-devkit-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-xavier-ubuntu-golang:
     runs-on:
@@ -6738,7 +6738,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -6764,10 +6763,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-xavier-ubuntu-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="forecr-dsb-nx2-xavier-nx-emmc jetson-xavier-nx-devkit-seeed-2mic-hat jetson-xavier-nx-devkit jetson-xavier-nx-devkit-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-xavier-ubuntu-node:
     runs-on:
@@ -6786,7 +6786,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -6812,10 +6811,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-xavier-ubuntu-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="forecr-dsb-nx2-xavier-nx-emmc jetson-xavier-nx-devkit-seeed-2mic-hat jetson-xavier-nx-devkit jetson-xavier-nx-devkit-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-xavier-ubuntu-openjdk:
     runs-on:
@@ -6834,7 +6834,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -6860,10 +6859,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-xavier-ubuntu-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="forecr-dsb-nx2-xavier-nx-emmc jetson-xavier-nx-devkit-seeed-2mic-hat jetson-xavier-nx-devkit jetson-xavier-nx-devkit-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   jetson-xavier-ubuntu-python:
     runs-on:
@@ -6882,7 +6882,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -6908,10 +6907,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "jetson-xavier-ubuntu-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="forecr-dsb-nx2-xavier-nx-emmc jetson-xavier-nx-devkit-seeed-2mic-hat jetson-xavier-nx-devkit jetson-xavier-nx-devkit-emmc" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   raspberrypi-aarch64-alpine:
     runs-on:
@@ -6930,7 +6930,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -6956,10 +6955,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberrypi3-64-alpine" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="radxa-cm3-rpicm4-ioboard raspberrypi0-2w-64 raspberrypicm4-ioboard raspberrypi400-64 raspberrypi4-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   raspberrypi-aarch64-alpine-golang:
     runs-on:
@@ -6978,7 +6978,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -7004,10 +7003,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberrypi3-64-alpine-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="radxa-cm3-rpicm4-ioboard raspberrypi0-2w-64 raspberrypicm4-ioboard raspberrypi400-64 raspberrypi4-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   raspberrypi-aarch64-alpine-node:
     runs-on:
@@ -7026,7 +7026,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -7052,10 +7051,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberrypi3-64-alpine-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="radxa-cm3-rpicm4-ioboard raspberrypi0-2w-64 raspberrypicm4-ioboard raspberrypi400-64 raspberrypi4-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   raspberrypi-aarch64-alpine-openjdk:
     runs-on:
@@ -7074,7 +7074,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -7100,10 +7099,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberrypi3-64-alpine-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="radxa-cm3-rpicm4-ioboard raspberrypi0-2w-64 raspberrypicm4-ioboard raspberrypi400-64 raspberrypi4-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   raspberrypi-aarch64-alpine-python:
     runs-on:
@@ -7122,7 +7122,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -7148,10 +7147,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberrypi3-64-alpine-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="radxa-cm3-rpicm4-ioboard raspberrypi0-2w-64 raspberrypicm4-ioboard raspberrypi400-64 raspberrypi4-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   raspberrypi-aarch64-debian:
     runs-on:
@@ -7170,7 +7170,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -7196,10 +7195,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberrypi3-64-debian" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="radxa-cm3-rpicm4-ioboard raspberrypi0-2w-64 raspberrypicm4-ioboard raspberrypi400-64 raspberrypi4-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   raspberrypi-aarch64-debian-golang:
     runs-on:
@@ -7218,7 +7218,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -7244,10 +7243,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberrypi3-64-debian-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="radxa-cm3-rpicm4-ioboard raspberrypi0-2w-64 raspberrypicm4-ioboard raspberrypi400-64 raspberrypi4-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   raspberrypi-aarch64-debian-node:
     runs-on:
@@ -7266,7 +7266,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -7292,10 +7291,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberrypi3-64-debian-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="radxa-cm3-rpicm4-ioboard raspberrypi0-2w-64 raspberrypicm4-ioboard raspberrypi400-64 raspberrypi4-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   raspberrypi-aarch64-debian-openjdk:
     runs-on:
@@ -7314,7 +7314,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -7340,10 +7339,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberrypi3-64-debian-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="radxa-cm3-rpicm4-ioboard raspberrypi0-2w-64 raspberrypicm4-ioboard raspberrypi400-64 raspberrypi4-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   raspberrypi-aarch64-debian-python:
     runs-on:
@@ -7362,7 +7362,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -7388,10 +7387,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberrypi3-64-debian-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="radxa-cm3-rpicm4-ioboard raspberrypi0-2w-64 raspberrypicm4-ioboard raspberrypi400-64 raspberrypi4-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   raspberrypi-aarch64-fedora:
     runs-on:
@@ -7410,7 +7410,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -7436,10 +7435,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberrypi3-64-fedora" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="radxa-cm3-rpicm4-ioboard raspberrypi0-2w-64 raspberrypicm4-ioboard raspberrypi400-64 raspberrypi4-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   raspberrypi-aarch64-fedora-golang:
     runs-on:
@@ -7458,7 +7458,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -7484,10 +7483,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberrypi3-64-fedora-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="radxa-cm3-rpicm4-ioboard raspberrypi0-2w-64 raspberrypicm4-ioboard raspberrypi400-64 raspberrypi4-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   raspberrypi-aarch64-fedora-node:
     runs-on:
@@ -7506,7 +7506,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -7532,10 +7531,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberrypi3-64-fedora-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="radxa-cm3-rpicm4-ioboard raspberrypi0-2w-64 raspberrypicm4-ioboard raspberrypi400-64 raspberrypi4-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   raspberrypi-aarch64-fedora-openjdk:
     runs-on:
@@ -7554,7 +7554,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -7580,10 +7579,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberrypi3-64-fedora-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="radxa-cm3-rpicm4-ioboard raspberrypi0-2w-64 raspberrypicm4-ioboard raspberrypi400-64 raspberrypi4-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   raspberrypi-aarch64-fedora-python:
     runs-on:
@@ -7602,7 +7602,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -7628,10 +7627,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberrypi3-64-fedora-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="radxa-cm3-rpicm4-ioboard raspberrypi0-2w-64 raspberrypicm4-ioboard raspberrypi400-64 raspberrypi4-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   raspberrypi-aarch64-ubuntu:
     runs-on:
@@ -7650,7 +7650,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -7676,10 +7675,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberrypi3-64-ubuntu" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="radxa-cm3-rpicm4-ioboard raspberrypi0-2w-64 raspberrypicm4-ioboard raspberrypi400-64 raspberrypi4-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   raspberrypi-aarch64-ubuntu-golang:
     runs-on:
@@ -7698,7 +7698,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -7724,10 +7723,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberrypi3-64-ubuntu-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="radxa-cm3-rpicm4-ioboard raspberrypi0-2w-64 raspberrypicm4-ioboard raspberrypi400-64 raspberrypi4-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   raspberrypi-aarch64-ubuntu-node:
     runs-on:
@@ -7746,7 +7746,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -7772,10 +7771,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberrypi3-64-ubuntu-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="radxa-cm3-rpicm4-ioboard raspberrypi0-2w-64 raspberrypicm4-ioboard raspberrypi400-64 raspberrypi4-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   raspberrypi-aarch64-ubuntu-openjdk:
     runs-on:
@@ -7794,7 +7794,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -7820,10 +7819,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberrypi3-64-ubuntu-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="radxa-cm3-rpicm4-ioboard raspberrypi0-2w-64 raspberrypicm4-ioboard raspberrypi400-64 raspberrypi4-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   raspberrypi-aarch64-ubuntu-python:
     runs-on:
@@ -7842,7 +7842,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -7868,8 +7867,9 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberrypi3-64-ubuntu-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm64" --alias="radxa-cm3-rpicm4-ioboard raspberrypi0-2w-64 raspberrypicm4-ioboard raspberrypi400-64 raspberrypi4-64" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90

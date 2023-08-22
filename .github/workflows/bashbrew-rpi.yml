@@ -73,7 +73,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -99,10 +98,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "rpi-alpine" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   rpi-alpine-golang:
     runs-on:
@@ -121,7 +121,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -147,10 +146,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "rpi-alpine-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   rpi-alpine-node:
     runs-on:
@@ -169,7 +169,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -195,10 +194,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "rpi-alpine-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   rpi-alpine-openjdk:
     runs-on:
@@ -217,7 +217,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -243,10 +242,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "rpi-alpine-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   rpi-alpine-python:
     runs-on:
@@ -265,7 +265,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -291,10 +290,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "rpi-alpine-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   rpi-debian:
     runs-on:
@@ -312,7 +312,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -338,10 +337,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "rpi-debian" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   rpi-debian-golang:
     runs-on:
@@ -360,7 +360,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -386,10 +385,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "rpi-debian-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   rpi-debian-node:
     runs-on:
@@ -408,7 +408,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -434,10 +433,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "rpi-debian-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   rpi-debian-openjdk:
     runs-on:
@@ -456,7 +456,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -482,10 +481,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "rpi-debian-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   rpi-debian-python:
     runs-on:
@@ -504,7 +504,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -530,10 +529,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "rpi-debian-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   raspberry-pi-alpine:
     runs-on:
@@ -552,7 +552,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -578,10 +577,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberry-pi-alpine" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   raspberry-pi-alpine-golang:
     runs-on:
@@ -600,7 +600,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -626,10 +625,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberry-pi-alpine-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   raspberry-pi-alpine-node:
     runs-on:
@@ -648,7 +648,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -674,10 +673,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberry-pi-alpine-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   raspberry-pi-alpine-openjdk:
     runs-on:
@@ -696,7 +696,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -722,10 +721,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberry-pi-alpine-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   raspberry-pi-alpine-python:
     runs-on:
@@ -744,7 +744,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -770,10 +769,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberry-pi-alpine-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   raspberry-pi-debian:
     runs-on:
@@ -792,7 +792,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -818,10 +817,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberry-pi-debian" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   raspberry-pi-debian-golang:
     runs-on:
@@ -840,7 +840,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -866,10 +865,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberry-pi-debian-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   raspberry-pi-debian-node:
     runs-on:
@@ -888,7 +888,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -914,10 +913,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberry-pi-debian-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   raspberry-pi-debian-openjdk:
     runs-on:
@@ -936,7 +936,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -962,10 +961,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberry-pi-debian-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   raspberry-pi-debian-python:
     runs-on:
@@ -984,7 +984,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1010,8 +1009,9 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "raspberry-pi-debian-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v5" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90

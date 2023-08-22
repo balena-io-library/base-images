@@ -83,7 +83,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -109,10 +108,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "i386-alpine" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   i386-alpine-golang:
     runs-on:
@@ -131,7 +131,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -157,10 +156,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "i386-alpine-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   i386-alpine-node:
     runs-on:
@@ -179,7 +179,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -205,10 +204,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "i386-alpine-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   i386-alpine-openjdk:
     runs-on:
@@ -227,7 +227,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -253,10 +252,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "i386-alpine-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   i386-alpine-python:
     runs-on:
@@ -275,7 +275,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -301,10 +300,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "i386-alpine-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   i386-debian:
     runs-on:
@@ -322,7 +322,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -348,10 +347,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "i386-debian" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   i386-debian-golang:
     runs-on:
@@ -370,7 +370,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -396,10 +395,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "i386-debian-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   i386-debian-node:
     runs-on:
@@ -418,7 +418,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -444,10 +443,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "i386-debian-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   i386-debian-openjdk:
     runs-on:
@@ -466,7 +466,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -492,10 +491,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "i386-debian-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   i386-debian-python:
     runs-on:
@@ -514,7 +514,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -540,10 +539,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "i386-debian-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   i386-ubuntu:
     runs-on:
@@ -561,7 +561,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -587,10 +586,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "i386-ubuntu" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   i386-ubuntu-golang:
     runs-on:
@@ -609,7 +609,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -635,10 +634,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "i386-ubuntu-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   i386-ubuntu-node:
     runs-on:
@@ -657,7 +657,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -683,10 +682,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "i386-ubuntu-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   i386-ubuntu-openjdk:
     runs-on:
@@ -705,7 +705,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -731,10 +730,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "i386-ubuntu-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   i386-ubuntu-python:
     runs-on:
@@ -753,7 +753,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -779,10 +778,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "i386-ubuntu-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-x86-alpine:
     runs-on:
@@ -801,7 +801,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -827,10 +826,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "qemux86-alpine" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-x86-alpine-golang:
     runs-on:
@@ -849,7 +849,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -875,10 +874,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "qemux86-alpine-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-x86-alpine-node:
     runs-on:
@@ -897,7 +897,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -923,10 +922,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "qemux86-alpine-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-x86-alpine-openjdk:
     runs-on:
@@ -945,7 +945,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -971,10 +970,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "qemux86-alpine-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-x86-alpine-python:
     runs-on:
@@ -993,7 +993,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1019,10 +1018,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "qemux86-alpine-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-x86-debian:
     runs-on:
@@ -1041,7 +1041,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1067,10 +1066,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "qemux86-debian" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-x86-debian-golang:
     runs-on:
@@ -1089,7 +1089,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1115,10 +1114,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "qemux86-debian-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-x86-debian-node:
     runs-on:
@@ -1137,7 +1137,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1163,10 +1162,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "qemux86-debian-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-x86-debian-openjdk:
     runs-on:
@@ -1185,7 +1185,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1211,10 +1210,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "qemux86-debian-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-x86-debian-python:
     runs-on:
@@ -1233,7 +1233,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1259,10 +1258,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "qemux86-debian-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-x86-ubuntu:
     runs-on:
@@ -1281,7 +1281,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1307,10 +1306,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "qemux86-ubuntu" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-x86-ubuntu-golang:
     runs-on:
@@ -1329,7 +1329,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1355,10 +1354,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "qemux86-ubuntu-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-x86-ubuntu-node:
     runs-on:
@@ -1377,7 +1377,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1403,10 +1402,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "qemux86-ubuntu-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-x86-ubuntu-openjdk:
     runs-on:
@@ -1425,7 +1425,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1451,10 +1450,11 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "qemux86-ubuntu-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-x86-ubuntu-python:
     runs-on:
@@ -1473,7 +1473,6 @@ jobs:
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1499,8 +1498,9 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "qemux86-ubuntu-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
