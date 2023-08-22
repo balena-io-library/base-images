@@ -64,6 +64,14 @@ jobs:
     needs: []
     if: inputs.target_job == 'rpi-alpine' || inputs.target_job == 'all' || inputs.target_job == 'rpi-alpine-golang' || inputs.target_job == 'rpi-alpine-node' || inputs.target_job == 'rpi-alpine-openjdk' || inputs.target_job == 'rpi-alpine-python' || inputs.target_job == 'raspberry-pi-alpine'
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -102,6 +110,14 @@ jobs:
       - rpi-alpine
     if: inputs.target_job == 'rpi-alpine-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'rpi-alpine'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -140,6 +156,14 @@ jobs:
       - rpi-alpine
     if: inputs.target_job == 'rpi-alpine-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'rpi-alpine'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -178,6 +202,14 @@ jobs:
       - rpi-alpine
     if: inputs.target_job == 'rpi-alpine-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'rpi-alpine'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -216,6 +248,14 @@ jobs:
       - rpi-alpine
     if: inputs.target_job == 'rpi-alpine-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'rpi-alpine'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -253,6 +293,14 @@ jobs:
     needs: []
     if: inputs.target_job == 'rpi-debian' || inputs.target_job == 'all' || inputs.target_job == 'rpi-debian-golang' || inputs.target_job == 'rpi-debian-node' || inputs.target_job == 'rpi-debian-openjdk' || inputs.target_job == 'rpi-debian-python' || inputs.target_job == 'raspberry-pi-debian'
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -291,6 +339,14 @@ jobs:
       - rpi-debian
     if: inputs.target_job == 'rpi-debian-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'rpi-debian'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -329,6 +385,14 @@ jobs:
       - rpi-debian
     if: inputs.target_job == 'rpi-debian-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'rpi-debian'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -367,6 +431,14 @@ jobs:
       - rpi-debian
     if: inputs.target_job == 'rpi-debian-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'rpi-debian'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -405,6 +477,14 @@ jobs:
       - rpi-debian
     if: inputs.target_job == 'rpi-debian-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'rpi-debian'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -443,6 +523,14 @@ jobs:
       - rpi-alpine
     if: inputs.target_job == 'raspberry-pi-alpine' || inputs.target_job == 'all' || inputs.target_job == 'raspberry-pi-alpine-golang' || inputs.target_job == 'raspberry-pi-alpine-node' || inputs.target_job == 'raspberry-pi-alpine-openjdk' || inputs.target_job == 'raspberry-pi-alpine-python' || (inputs.include_dependents && (inputs.target_job == 'rpi-alpine'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -481,6 +569,14 @@ jobs:
       - raspberry-pi-alpine
     if: inputs.target_job == 'raspberry-pi-alpine-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberry-pi-alpine' || inputs.target_job == 'rpi-alpine'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -519,6 +615,14 @@ jobs:
       - raspberry-pi-alpine
     if: inputs.target_job == 'raspberry-pi-alpine-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberry-pi-alpine' || inputs.target_job == 'rpi-alpine'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -557,6 +661,14 @@ jobs:
       - raspberry-pi-alpine
     if: inputs.target_job == 'raspberry-pi-alpine-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberry-pi-alpine' || inputs.target_job == 'rpi-alpine'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -595,6 +707,14 @@ jobs:
       - raspberry-pi-alpine
     if: inputs.target_job == 'raspberry-pi-alpine-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberry-pi-alpine' || inputs.target_job == 'rpi-alpine'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -633,6 +753,14 @@ jobs:
       - rpi-debian
     if: inputs.target_job == 'raspberry-pi-debian' || inputs.target_job == 'all' || inputs.target_job == 'raspberry-pi-debian-golang' || inputs.target_job == 'raspberry-pi-debian-node' || inputs.target_job == 'raspberry-pi-debian-openjdk' || inputs.target_job == 'raspberry-pi-debian-python' || (inputs.include_dependents && (inputs.target_job == 'rpi-debian'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -671,6 +799,14 @@ jobs:
       - raspberry-pi-debian
     if: inputs.target_job == 'raspberry-pi-debian-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberry-pi-debian' || inputs.target_job == 'rpi-debian'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -709,6 +845,14 @@ jobs:
       - raspberry-pi-debian
     if: inputs.target_job == 'raspberry-pi-debian-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberry-pi-debian' || inputs.target_job == 'rpi-debian'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -747,6 +891,14 @@ jobs:
       - raspberry-pi-debian
     if: inputs.target_job == 'raspberry-pi-debian-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberry-pi-debian' || inputs.target_job == 'rpi-debian'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -785,6 +937,14 @@ jobs:
       - raspberry-pi-debian
     if: inputs.target_job == 'raspberry-pi-debian-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberry-pi-debian' || inputs.target_job == 'rpi-debian'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:

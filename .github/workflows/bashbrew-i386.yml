@@ -74,6 +74,14 @@ jobs:
     needs: []
     if: inputs.target_job == 'i386-alpine' || inputs.target_job == 'all' || inputs.target_job == 'i386-alpine-golang' || inputs.target_job == 'i386-alpine-node' || inputs.target_job == 'i386-alpine-openjdk' || inputs.target_job == 'i386-alpine-python' || inputs.target_job == 'generic-x86-alpine'
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -112,6 +120,14 @@ jobs:
       - i386-alpine
     if: inputs.target_job == 'i386-alpine-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-alpine'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -150,6 +166,14 @@ jobs:
       - i386-alpine
     if: inputs.target_job == 'i386-alpine-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-alpine'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -188,6 +212,14 @@ jobs:
       - i386-alpine
     if: inputs.target_job == 'i386-alpine-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-alpine'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -226,6 +258,14 @@ jobs:
       - i386-alpine
     if: inputs.target_job == 'i386-alpine-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-alpine'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -263,6 +303,14 @@ jobs:
     needs: []
     if: inputs.target_job == 'i386-debian' || inputs.target_job == 'all' || inputs.target_job == 'i386-debian-golang' || inputs.target_job == 'i386-debian-node' || inputs.target_job == 'i386-debian-openjdk' || inputs.target_job == 'i386-debian-python' || inputs.target_job == 'generic-x86-debian'
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -301,6 +349,14 @@ jobs:
       - i386-debian
     if: inputs.target_job == 'i386-debian-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-debian'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -339,6 +395,14 @@ jobs:
       - i386-debian
     if: inputs.target_job == 'i386-debian-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-debian'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -377,6 +441,14 @@ jobs:
       - i386-debian
     if: inputs.target_job == 'i386-debian-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-debian'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -415,6 +487,14 @@ jobs:
       - i386-debian
     if: inputs.target_job == 'i386-debian-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-debian'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -452,6 +532,14 @@ jobs:
     needs: []
     if: inputs.target_job == 'i386-ubuntu' || inputs.target_job == 'all' || inputs.target_job == 'i386-ubuntu-golang' || inputs.target_job == 'i386-ubuntu-node' || inputs.target_job == 'i386-ubuntu-openjdk' || inputs.target_job == 'i386-ubuntu-python' || inputs.target_job == 'generic-x86-ubuntu'
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -490,6 +578,14 @@ jobs:
       - i386-ubuntu
     if: inputs.target_job == 'i386-ubuntu-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-ubuntu'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -528,6 +624,14 @@ jobs:
       - i386-ubuntu
     if: inputs.target_job == 'i386-ubuntu-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-ubuntu'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -566,6 +670,14 @@ jobs:
       - i386-ubuntu
     if: inputs.target_job == 'i386-ubuntu-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-ubuntu'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -604,6 +716,14 @@ jobs:
       - i386-ubuntu
     if: inputs.target_job == 'i386-ubuntu-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-ubuntu'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -642,6 +762,14 @@ jobs:
       - i386-alpine
     if: inputs.target_job == 'generic-x86-alpine' || inputs.target_job == 'all' || inputs.target_job == 'generic-x86-alpine-golang' || inputs.target_job == 'generic-x86-alpine-node' || inputs.target_job == 'generic-x86-alpine-openjdk' || inputs.target_job == 'generic-x86-alpine-python' || (inputs.include_dependents && (inputs.target_job == 'i386-alpine'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -680,6 +808,14 @@ jobs:
       - generic-x86-alpine
     if: inputs.target_job == 'generic-x86-alpine-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-alpine' || inputs.target_job == 'i386-alpine'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -718,6 +854,14 @@ jobs:
       - generic-x86-alpine
     if: inputs.target_job == 'generic-x86-alpine-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-alpine' || inputs.target_job == 'i386-alpine'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -756,6 +900,14 @@ jobs:
       - generic-x86-alpine
     if: inputs.target_job == 'generic-x86-alpine-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-alpine' || inputs.target_job == 'i386-alpine'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -794,6 +946,14 @@ jobs:
       - generic-x86-alpine
     if: inputs.target_job == 'generic-x86-alpine-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-alpine' || inputs.target_job == 'i386-alpine'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -832,6 +992,14 @@ jobs:
       - i386-debian
     if: inputs.target_job == 'generic-x86-debian' || inputs.target_job == 'all' || inputs.target_job == 'generic-x86-debian-golang' || inputs.target_job == 'generic-x86-debian-node' || inputs.target_job == 'generic-x86-debian-openjdk' || inputs.target_job == 'generic-x86-debian-python' || (inputs.include_dependents && (inputs.target_job == 'i386-debian'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -870,6 +1038,14 @@ jobs:
       - generic-x86-debian
     if: inputs.target_job == 'generic-x86-debian-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-debian' || inputs.target_job == 'i386-debian'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -908,6 +1084,14 @@ jobs:
       - generic-x86-debian
     if: inputs.target_job == 'generic-x86-debian-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-debian' || inputs.target_job == 'i386-debian'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -946,6 +1130,14 @@ jobs:
       - generic-x86-debian
     if: inputs.target_job == 'generic-x86-debian-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-debian' || inputs.target_job == 'i386-debian'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -984,6 +1176,14 @@ jobs:
       - generic-x86-debian
     if: inputs.target_job == 'generic-x86-debian-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-debian' || inputs.target_job == 'i386-debian'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1022,6 +1222,14 @@ jobs:
       - i386-ubuntu
     if: inputs.target_job == 'generic-x86-ubuntu' || inputs.target_job == 'all' || inputs.target_job == 'generic-x86-ubuntu-golang' || inputs.target_job == 'generic-x86-ubuntu-node' || inputs.target_job == 'generic-x86-ubuntu-openjdk' || inputs.target_job == 'generic-x86-ubuntu-python' || (inputs.include_dependents && (inputs.target_job == 'i386-ubuntu'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1060,6 +1268,14 @@ jobs:
       - generic-x86-ubuntu
     if: inputs.target_job == 'generic-x86-ubuntu-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-ubuntu' || inputs.target_job == 'i386-ubuntu'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1098,6 +1314,14 @@ jobs:
       - generic-x86-ubuntu
     if: inputs.target_job == 'generic-x86-ubuntu-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-ubuntu' || inputs.target_job == 'i386-ubuntu'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1136,6 +1360,14 @@ jobs:
       - generic-x86-ubuntu
     if: inputs.target_job == 'generic-x86-ubuntu-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-ubuntu' || inputs.target_job == 'i386-ubuntu'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -1174,6 +1406,14 @@ jobs:
       - generic-x86-ubuntu
     if: inputs.target_job == 'generic-x86-ubuntu-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-ubuntu' || inputs.target_job == 'i386-ubuntu'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:

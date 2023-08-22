@@ -139,12 +139,26 @@ const createJob = (
 		needs: currentDependencies.length > 0 ? currentDependencies : [],
 		if: ifConditionsArray.join(' || '),
 		steps: [
+			...(!currentRunner.includes('self-hosted')
+				? [
+						{
+							name: 'Maximize build space',
+							uses: 'easimon/maximize-build-space@v8',
+							with: {
+								'remove-dotnet': 'true',
+								'remove-android': 'true',
+								'remove-haskell': 'true',
+								'remove-codeql': 'true',
+								'remove-docker-images': 'true',
+							},
+						},
+				  ]
+				: []),
 			{
 				name: 'Checkout code',
 				uses: 'actions/checkout@v3',
 				with: {
 					'fetch-depth': 0,
-					// submodules: "recursive",
 				},
 			},
 			...(!currentRunner.includes('self-hosted')
@@ -313,12 +327,12 @@ for (const [topDependency, jobGroupList] of Object.entries(jobGroups)) {
 		name: `Bashbrew (${topDependency})`,
 		on: {
 			// push: {},
-      schedule: [
-        // At 03:45, only on Saturday
-        // { "cron": "45 3 * * 6" },
-        // At 03:45, on day 6 of the month
-        { "cron": "45 3 6 * *" },
-      ],
+			schedule: [
+				// At 03:45, only on Saturday
+				// { "cron": "45 3 * * 6" },
+				// At 03:45, on day 6 of the month
+				{ cron: '45 3 6 * *' },
+			],
 			workflow_dispatch: {
 				inputs: {
 					target_job: {
