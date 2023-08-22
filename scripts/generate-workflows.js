@@ -158,7 +158,7 @@ const createJob = (
 				name: 'Checkout code',
 				uses: 'actions/checkout@v3',
 				with: {
-					'fetch-depth': 0,
+					'fetch-depth': 1,
 				},
 			},
 			...(!currentRunner.includes('self-hosted')
