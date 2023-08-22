@@ -145,6 +145,8 @@ const createJob = (
 							name: 'Maximize build space',
 							uses: 'easimon/maximize-build-space@v8',
 							with: {
+								'root-reserve-mb': 40960,
+        						'swap-size-mb': 1024,
 								'remove-dotnet': 'true',
 								'remove-android': 'true',
 								'remove-haskell': 'true',
