@@ -32,7 +32,7 @@ This [guide][getting-started] can help you get started with using this base imag
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;3.17 (latest)&#x60;, &#x60;3.16&#x60;, &#x60;3.15&#x60;, &#x60;3.14&#x60;, &#x60;3.13&#x60;, &#x60;3.12&#x60;, &#x60;edge&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/jetson-orin-nano-devkit-nvme/alpine/)
+[&#x60;3.18 (latest)&#x60;, &#x60;3.17&#x60;, &#x60;3.16&#x60;, &#x60;3.15&#x60;, &#x60;3.14&#x60;, &#x60;3.13&#x60;, &#x60;3.12&#x60;, &#x60;edge&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/jetson-orin-nano-devkit-nvme/alpine/)
 
 For more information about this image and its history, please see the [relevant manifest file (`jetson-orin-nano-devkit-nvme-alpine`)](https://github.com/balena-io-library/official-images/blob/master/library/jetson-orin-nano-devkit-nvme-alpine) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 
