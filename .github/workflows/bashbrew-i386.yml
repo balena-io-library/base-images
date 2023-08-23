@@ -70,14 +70,23 @@ jobs:
   i386-alpine:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs: []
     if: inputs.target_job == 'i386-alpine' || inputs.target_job == 'all' || inputs.target_job == 'i386-alpine-golang' || inputs.target_job == 'i386-alpine-node' || inputs.target_job == 'i386-alpine-openjdk' || inputs.target_job == 'i386-alpine-python' || inputs.target_job == 'generic-x86-alpine'
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          root-reserve-mb: 40960
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - name: Setup QEMU
         uses: docker/setup-qemu-action@v2
         with:
@@ -99,23 +108,33 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "i386-alpine" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   i386-alpine-golang:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - i386-alpine
     if: inputs.target_job == 'i386-alpine-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-alpine'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          root-reserve-mb: 40960
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - name: Setup QEMU
         uses: docker/setup-qemu-action@v2
         with:
@@ -137,23 +156,33 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "i386-alpine-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   i386-alpine-node:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - i386-alpine
     if: inputs.target_job == 'i386-alpine-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-alpine'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          root-reserve-mb: 40960
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - name: Setup QEMU
         uses: docker/setup-qemu-action@v2
         with:
@@ -175,23 +204,33 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "i386-alpine-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   i386-alpine-openjdk:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - i386-alpine
     if: inputs.target_job == 'i386-alpine-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-alpine'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          root-reserve-mb: 40960
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - name: Setup QEMU
         uses: docker/setup-qemu-action@v2
         with:
@@ -213,23 +252,33 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "i386-alpine-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   i386-alpine-python:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - i386-alpine
     if: inputs.target_job == 'i386-alpine-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-alpine'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          root-reserve-mb: 40960
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - name: Setup QEMU
         uses: docker/setup-qemu-action@v2
         with:
@@ -251,22 +300,32 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "i386-alpine-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   i386-debian:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs: []
     if: inputs.target_job == 'i386-debian' || inputs.target_job == 'all' || inputs.target_job == 'i386-debian-golang' || inputs.target_job == 'i386-debian-node' || inputs.target_job == 'i386-debian-openjdk' || inputs.target_job == 'i386-debian-python' || inputs.target_job == 'generic-x86-debian'
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          root-reserve-mb: 40960
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - name: Setup QEMU
         uses: docker/setup-qemu-action@v2
         with:
@@ -288,23 +347,33 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "i386-debian" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   i386-debian-golang:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - i386-debian
     if: inputs.target_job == 'i386-debian-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-debian'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          root-reserve-mb: 40960
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - name: Setup QEMU
         uses: docker/setup-qemu-action@v2
         with:
@@ -326,23 +395,33 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "i386-debian-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   i386-debian-node:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - i386-debian
     if: inputs.target_job == 'i386-debian-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-debian'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          root-reserve-mb: 40960
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - name: Setup QEMU
         uses: docker/setup-qemu-action@v2
         with:
@@ -364,23 +443,33 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "i386-debian-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   i386-debian-openjdk:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - i386-debian
     if: inputs.target_job == 'i386-debian-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-debian'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          root-reserve-mb: 40960
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - name: Setup QEMU
         uses: docker/setup-qemu-action@v2
         with:
@@ -402,23 +491,33 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "i386-debian-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   i386-debian-python:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - i386-debian
     if: inputs.target_job == 'i386-debian-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-debian'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          root-reserve-mb: 40960
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - name: Setup QEMU
         uses: docker/setup-qemu-action@v2
         with:
@@ -440,22 +539,32 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "i386-debian-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   i386-ubuntu:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs: []
     if: inputs.target_job == 'i386-ubuntu' || inputs.target_job == 'all' || inputs.target_job == 'i386-ubuntu-golang' || inputs.target_job == 'i386-ubuntu-node' || inputs.target_job == 'i386-ubuntu-openjdk' || inputs.target_job == 'i386-ubuntu-python' || inputs.target_job == 'generic-x86-ubuntu'
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          root-reserve-mb: 40960
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - name: Setup QEMU
         uses: docker/setup-qemu-action@v2
         with:
@@ -477,23 +586,33 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "i386-ubuntu" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   i386-ubuntu-golang:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - i386-ubuntu
     if: inputs.target_job == 'i386-ubuntu-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-ubuntu'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          root-reserve-mb: 40960
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - name: Setup QEMU
         uses: docker/setup-qemu-action@v2
         with:
@@ -515,23 +634,33 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "i386-ubuntu-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   i386-ubuntu-node:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - i386-ubuntu
     if: inputs.target_job == 'i386-ubuntu-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-ubuntu'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          root-reserve-mb: 40960
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - name: Setup QEMU
         uses: docker/setup-qemu-action@v2
         with:
@@ -553,23 +682,33 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "i386-ubuntu-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   i386-ubuntu-openjdk:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - i386-ubuntu
     if: inputs.target_job == 'i386-ubuntu-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-ubuntu'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          root-reserve-mb: 40960
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - name: Setup QEMU
         uses: docker/setup-qemu-action@v2
         with:
@@ -591,23 +730,33 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "i386-ubuntu-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   i386-ubuntu-python:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - i386-ubuntu
     if: inputs.target_job == 'i386-ubuntu-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-ubuntu'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          root-reserve-mb: 40960
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - name: Setup QEMU
         uses: docker/setup-qemu-action@v2
         with:
@@ -629,23 +778,33 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "i386-ubuntu-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-x86-alpine:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - i386-alpine
     if: inputs.target_job == 'generic-x86-alpine' || inputs.target_job == 'all' || inputs.target_job == 'generic-x86-alpine-golang' || inputs.target_job == 'generic-x86-alpine-node' || inputs.target_job == 'generic-x86-alpine-openjdk' || inputs.target_job == 'generic-x86-alpine-python' || (inputs.include_dependents && (inputs.target_job == 'i386-alpine'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          root-reserve-mb: 40960
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - name: Setup QEMU
         uses: docker/setup-qemu-action@v2
         with:
@@ -667,23 +826,33 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "qemux86-alpine" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-x86-alpine-golang:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-x86-alpine
     if: inputs.target_job == 'generic-x86-alpine-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-alpine' || inputs.target_job == 'i386-alpine'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          root-reserve-mb: 40960
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - name: Setup QEMU
         uses: docker/setup-qemu-action@v2
         with:
@@ -705,23 +874,33 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "qemux86-alpine-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-x86-alpine-node:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-x86-alpine
     if: inputs.target_job == 'generic-x86-alpine-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-alpine' || inputs.target_job == 'i386-alpine'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          root-reserve-mb: 40960
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - name: Setup QEMU
         uses: docker/setup-qemu-action@v2
         with:
@@ -743,23 +922,33 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "qemux86-alpine-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-x86-alpine-openjdk:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-x86-alpine
     if: inputs.target_job == 'generic-x86-alpine-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-alpine' || inputs.target_job == 'i386-alpine'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          root-reserve-mb: 40960
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - name: Setup QEMU
         uses: docker/setup-qemu-action@v2
         with:
@@ -781,23 +970,33 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "qemux86-alpine-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-x86-alpine-python:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-x86-alpine
     if: inputs.target_job == 'generic-x86-alpine-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-alpine' || inputs.target_job == 'i386-alpine'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          root-reserve-mb: 40960
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - name: Setup QEMU
         uses: docker/setup-qemu-action@v2
         with:
@@ -819,23 +1018,33 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "qemux86-alpine-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-x86-debian:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - i386-debian
     if: inputs.target_job == 'generic-x86-debian' || inputs.target_job == 'all' || inputs.target_job == 'generic-x86-debian-golang' || inputs.target_job == 'generic-x86-debian-node' || inputs.target_job == 'generic-x86-debian-openjdk' || inputs.target_job == 'generic-x86-debian-python' || (inputs.include_dependents && (inputs.target_job == 'i386-debian'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          root-reserve-mb: 40960
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - name: Setup QEMU
         uses: docker/setup-qemu-action@v2
         with:
@@ -857,23 +1066,33 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "qemux86-debian" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-x86-debian-golang:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-x86-debian
     if: inputs.target_job == 'generic-x86-debian-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-debian' || inputs.target_job == 'i386-debian'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          root-reserve-mb: 40960
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - name: Setup QEMU
         uses: docker/setup-qemu-action@v2
         with:
@@ -895,23 +1114,33 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "qemux86-debian-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-x86-debian-node:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-x86-debian
     if: inputs.target_job == 'generic-x86-debian-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-debian' || inputs.target_job == 'i386-debian'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          root-reserve-mb: 40960
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - name: Setup QEMU
         uses: docker/setup-qemu-action@v2
         with:
@@ -933,23 +1162,33 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "qemux86-debian-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-x86-debian-openjdk:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-x86-debian
     if: inputs.target_job == 'generic-x86-debian-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-debian' || inputs.target_job == 'i386-debian'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          root-reserve-mb: 40960
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - name: Setup QEMU
         uses: docker/setup-qemu-action@v2
         with:
@@ -971,23 +1210,33 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "qemux86-debian-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-x86-debian-python:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-x86-debian
     if: inputs.target_job == 'generic-x86-debian-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-debian' || inputs.target_job == 'i386-debian'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          root-reserve-mb: 40960
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - name: Setup QEMU
         uses: docker/setup-qemu-action@v2
         with:
@@ -1009,23 +1258,33 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "qemux86-debian-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-x86-ubuntu:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - i386-ubuntu
     if: inputs.target_job == 'generic-x86-ubuntu' || inputs.target_job == 'all' || inputs.target_job == 'generic-x86-ubuntu-golang' || inputs.target_job == 'generic-x86-ubuntu-node' || inputs.target_job == 'generic-x86-ubuntu-openjdk' || inputs.target_job == 'generic-x86-ubuntu-python' || (inputs.include_dependents && (inputs.target_job == 'i386-ubuntu'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          root-reserve-mb: 40960
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - name: Setup QEMU
         uses: docker/setup-qemu-action@v2
         with:
@@ -1047,23 +1306,33 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "qemux86-ubuntu" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-x86-ubuntu-golang:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-x86-ubuntu
     if: inputs.target_job == 'generic-x86-ubuntu-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-ubuntu' || inputs.target_job == 'i386-ubuntu'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          root-reserve-mb: 40960
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - name: Setup QEMU
         uses: docker/setup-qemu-action@v2
         with:
@@ -1085,23 +1354,33 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "qemux86-ubuntu-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-x86-ubuntu-node:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-x86-ubuntu
     if: inputs.target_job == 'generic-x86-ubuntu-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-ubuntu' || inputs.target_job == 'i386-ubuntu'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          root-reserve-mb: 40960
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - name: Setup QEMU
         uses: docker/setup-qemu-action@v2
         with:
@@ -1123,23 +1402,33 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "qemux86-ubuntu-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-x86-ubuntu-openjdk:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-x86-ubuntu
     if: inputs.target_job == 'generic-x86-ubuntu-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-ubuntu' || inputs.target_job == 'i386-ubuntu'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          root-reserve-mb: 40960
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - name: Setup QEMU
         uses: docker/setup-qemu-action@v2
         with:
@@ -1161,23 +1450,33 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "qemux86-ubuntu-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
   generic-x86-ubuntu-python:
     runs-on:
       - ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 480
     needs:
       - generic-x86-ubuntu
     if: inputs.target_job == 'generic-x86-ubuntu-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-ubuntu' || inputs.target_job == 'i386-ubuntu'))
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@v8
+        with:
+          root-reserve-mb: 40960
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - name: Setup QEMU
         uses: docker/setup-qemu-action@v2
         with:
@@ -1199,8 +1498,9 @@ jobs:
         working-directory: bashbrew
         run: ./bashbrew.sh build "qemux86-ubuntu-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: logs
-          path: bashbrew/logs/*/*.log
+          path: bashbrew/logs/
           retention-days: 90
