@@ -28,7 +28,7 @@ The build variant is a heavier image that includes many of the tools required fo
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;jammy (latest)&#x60;, &#x60;focal&#x60;, &#x60;impish&#x60;, &#x60;xenial&#x60;, &#x60;bionic&#x60;, &#x60;kinetic&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/armv7hf/ubuntu/)
+[&#x60;jammy (latest)&#x60;, &#x60;focal&#x60;, &#x60;xenial&#x60;, &#x60;bionic&#x60;, &#x60;lunar&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/armv7hf/ubuntu/)
 
 For more information about this image and its history, please see the [relevant manifest file (`armv7hf-ubuntu`)](https://github.com/balena-io-library/official-images/blob/master/library/armv7hf-ubuntu) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 
