@@ -5,6 +5,12 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.6.15 - 2023-08-23
+
+* Increase the job timeout to 4h [Kyle Harding]
+* Change fetch depth to 1 [Kyle Harding]
+* Maximize build space on github hosted runners [Kyle Harding]
+
 ## 2.6.14 - 2023-08-23
 
 * Update actions/setup-node digest to 5e21ff4 [Self-hosted Renovate Bot]
