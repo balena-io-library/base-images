@@ -5,6 +5,27 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.6.16 - 2023-08-23
+
+
+<details>
+<summary> Update scripts/contracts digest to d61d911 [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.70 - 2023-08-23
+> 
+> * Add alpine 3.18 [Kyle Harding]
+> 
+> ### contracts-2.0.69 - 2023-08-22
+> 
+> * Remove Ubuntu Impish and Kinetic and add Lunar [Kyle Harding]
+> 
+> ### contracts-2.0.68 - 2023-08-15
+> 
+> * iot-gate-imx8plus: Improve provisioning instructions for Windows [Alexandru Costache]
+> 
+
+</details>
+
 ## 2.6.15 - 2023-08-23
 
 * Increase the job timeout to 4h [Kyle Harding]
