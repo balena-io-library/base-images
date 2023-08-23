@@ -3,7 +3,7 @@
 name: Bashbrew (amd64)
 'on':
   schedule:
-    - cron: 45 3 6 * *
+    - cron: 45 3 * * 6
   workflow_dispatch:
     inputs:
       target_job:
