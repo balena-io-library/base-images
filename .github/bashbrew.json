@@ -2,27 +2,27 @@
   "aarch64": {
     "library": "aarch64",
     "platform": "linux/arm64",
-    "runner": ["ubuntu-latest"]
+    "runner": ["self-hosted","base-images","X64"]
   },
   "amd64": {
     "library": "amd64",
     "platform": "linux/amd64",
-    "runner": ["ubuntu-latest"]
+    "runner": ["self-hosted","base-images","X64"]
   },
   "armv7hf": {
     "library": "armv7hf",
     "platform": "linux/arm/v7",
-    "runner": ["ubuntu-latest"]
+    "runner": ["self-hosted","base-images","X64"]
   },
   "i386": {
     "library": "i386",
     "platform": "linux/386",
-    "runner": ["ubuntu-latest"]
+    "runner": ["self-hosted","base-images","X64"]
   },
   "rpi": {
     "library": "rpi",
     "platform": "linux/arm/v5",
-    "runner": ["ubuntu-latest"]
+    "runner": ["self-hosted","base-images","X64"]
   },
   "beaglebone": {
     "library": "beaglebone-black",

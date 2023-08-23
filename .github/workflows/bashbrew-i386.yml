@@ -69,29 +69,17 @@ concurrency:
 jobs:
   i386-alpine:
     runs-on:
-      - ubuntu-latest
+      - self-hosted
+      - base-images
+      - X64
     timeout-minutes: 480
     needs: []
     if: inputs.target_job == 'i386-alpine' || inputs.target_job == 'all' || inputs.target_job == 'i386-alpine-golang' || inputs.target_job == 'i386-alpine-node' || inputs.target_job == 'i386-alpine-openjdk' || inputs.target_job == 'i386-alpine-python' || inputs.target_job == 'generic-x86-alpine'
     steps:
-      - name: Maximize build space
-        uses: easimon/maximize-build-space@v8
-        with:
-          root-reserve-mb: 40960
-          swap-size-mb: 1024
-          remove-dotnet: 'true'
-          remove-android: 'true'
-          remove-haskell: 'true'
-          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@v2
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
       - name: Disable build
         if: ${{ inputs.no_build }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-build" >> $GITHUB_ENV
@@ -116,30 +104,18 @@ jobs:
           retention-days: 90
   i386-alpine-golang:
     runs-on:
-      - ubuntu-latest
+      - self-hosted
+      - base-images
+      - X64
     timeout-minutes: 480
     needs:
       - i386-alpine
     if: inputs.target_job == 'i386-alpine-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-alpine'))
     steps:
-      - name: Maximize build space
-        uses: easimon/maximize-build-space@v8
-        with:
-          root-reserve-mb: 40960
-          swap-size-mb: 1024
-          remove-dotnet: 'true'
-          remove-android: 'true'
-          remove-haskell: 'true'
-          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@v2
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
       - name: Disable build
         if: ${{ inputs.no_build }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-build" >> $GITHUB_ENV
@@ -164,30 +140,18 @@ jobs:
           retention-days: 90
   i386-alpine-node:
     runs-on:
-      - ubuntu-latest
+      - self-hosted
+      - base-images
+      - X64
     timeout-minutes: 480
     needs:
       - i386-alpine
     if: inputs.target_job == 'i386-alpine-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-alpine'))
     steps:
-      - name: Maximize build space
-        uses: easimon/maximize-build-space@v8
-        with:
-          root-reserve-mb: 40960
-          swap-size-mb: 1024
-          remove-dotnet: 'true'
-          remove-android: 'true'
-          remove-haskell: 'true'
-          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@v2
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
       - name: Disable build
         if: ${{ inputs.no_build }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-build" >> $GITHUB_ENV
@@ -212,30 +176,18 @@ jobs:
           retention-days: 90
   i386-alpine-openjdk:
     runs-on:
-      - ubuntu-latest
+      - self-hosted
+      - base-images
+      - X64
     timeout-minutes: 480
     needs:
       - i386-alpine
     if: inputs.target_job == 'i386-alpine-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-alpine'))
     steps:
-      - name: Maximize build space
-        uses: easimon/maximize-build-space@v8
-        with:
-          root-reserve-mb: 40960
-          swap-size-mb: 1024
-          remove-dotnet: 'true'
-          remove-android: 'true'
-          remove-haskell: 'true'
-          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@v2
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
       - name: Disable build
         if: ${{ inputs.no_build }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-build" >> $GITHUB_ENV
@@ -260,30 +212,18 @@ jobs:
           retention-days: 90
   i386-alpine-python:
     runs-on:
-      - ubuntu-latest
+      - self-hosted
+      - base-images
+      - X64
     timeout-minutes: 480
     needs:
       - i386-alpine
     if: inputs.target_job == 'i386-alpine-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-alpine'))
     steps:
-      - name: Maximize build space
-        uses: easimon/maximize-build-space@v8
-        with:
-          root-reserve-mb: 40960
-          swap-size-mb: 1024
-          remove-dotnet: 'true'
-          remove-android: 'true'
-          remove-haskell: 'true'
-          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@v2
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
       - name: Disable build
         if: ${{ inputs.no_build }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-build" >> $GITHUB_ENV
@@ -308,29 +248,17 @@ jobs:
           retention-days: 90
   i386-debian:
     runs-on:
-      - ubuntu-latest
+      - self-hosted
+      - base-images
+      - X64
     timeout-minutes: 480
     needs: []
     if: inputs.target_job == 'i386-debian' || inputs.target_job == 'all' || inputs.target_job == 'i386-debian-golang' || inputs.target_job == 'i386-debian-node' || inputs.target_job == 'i386-debian-openjdk' || inputs.target_job == 'i386-debian-python' || inputs.target_job == 'generic-x86-debian'
     steps:
-      - name: Maximize build space
-        uses: easimon/maximize-build-space@v8
-        with:
-          root-reserve-mb: 40960
-          swap-size-mb: 1024
-          remove-dotnet: 'true'
-          remove-android: 'true'
-          remove-haskell: 'true'
-          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@v2
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
       - name: Disable build
         if: ${{ inputs.no_build }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-build" >> $GITHUB_ENV
@@ -355,30 +283,18 @@ jobs:
           retention-days: 90
   i386-debian-golang:
     runs-on:
-      - ubuntu-latest
+      - self-hosted
+      - base-images
+      - X64
     timeout-minutes: 480
     needs:
       - i386-debian
     if: inputs.target_job == 'i386-debian-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-debian'))
     steps:
-      - name: Maximize build space
-        uses: easimon/maximize-build-space@v8
-        with:
-          root-reserve-mb: 40960
-          swap-size-mb: 1024
-          remove-dotnet: 'true'
-          remove-android: 'true'
-          remove-haskell: 'true'
-          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@v2
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
       - name: Disable build
         if: ${{ inputs.no_build }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-build" >> $GITHUB_ENV
@@ -403,30 +319,18 @@ jobs:
           retention-days: 90
   i386-debian-node:
     runs-on:
-      - ubuntu-latest
+      - self-hosted
+      - base-images
+      - X64
     timeout-minutes: 480
     needs:
       - i386-debian
     if: inputs.target_job == 'i386-debian-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-debian'))
     steps:
-      - name: Maximize build space
-        uses: easimon/maximize-build-space@v8
-        with:
-          root-reserve-mb: 40960
-          swap-size-mb: 1024
-          remove-dotnet: 'true'
-          remove-android: 'true'
-          remove-haskell: 'true'
-          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@v2
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
       - name: Disable build
         if: ${{ inputs.no_build }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-build" >> $GITHUB_ENV
@@ -451,30 +355,18 @@ jobs:
           retention-days: 90
   i386-debian-openjdk:
     runs-on:
-      - ubuntu-latest
+      - self-hosted
+      - base-images
+      - X64
     timeout-minutes: 480
     needs:
       - i386-debian
     if: inputs.target_job == 'i386-debian-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-debian'))
     steps:
-      - name: Maximize build space
-        uses: easimon/maximize-build-space@v8
-        with:
-          root-reserve-mb: 40960
-          swap-size-mb: 1024
-          remove-dotnet: 'true'
-          remove-android: 'true'
-          remove-haskell: 'true'
-          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@v2
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
       - name: Disable build
         if: ${{ inputs.no_build }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-build" >> $GITHUB_ENV
@@ -499,30 +391,18 @@ jobs:
           retention-days: 90
   i386-debian-python:
     runs-on:
-      - ubuntu-latest
+      - self-hosted
+      - base-images
+      - X64
     timeout-minutes: 480
     needs:
       - i386-debian
     if: inputs.target_job == 'i386-debian-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-debian'))
     steps:
-      - name: Maximize build space
-        uses: easimon/maximize-build-space@v8
-        with:
-          root-reserve-mb: 40960
-          swap-size-mb: 1024
-          remove-dotnet: 'true'
-          remove-android: 'true'
-          remove-haskell: 'true'
-          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@v2
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
       - name: Disable build
         if: ${{ inputs.no_build }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-build" >> $GITHUB_ENV
@@ -547,29 +427,17 @@ jobs:
           retention-days: 90
   i386-ubuntu:
     runs-on:
-      - ubuntu-latest
+      - self-hosted
+      - base-images
+      - X64
     timeout-minutes: 480
     needs: []
     if: inputs.target_job == 'i386-ubuntu' || inputs.target_job == 'all' || inputs.target_job == 'i386-ubuntu-golang' || inputs.target_job == 'i386-ubuntu-node' || inputs.target_job == 'i386-ubuntu-openjdk' || inputs.target_job == 'i386-ubuntu-python' || inputs.target_job == 'generic-x86-ubuntu'
     steps:
-      - name: Maximize build space
-        uses: easimon/maximize-build-space@v8
-        with:
-          root-reserve-mb: 40960
-          swap-size-mb: 1024
-          remove-dotnet: 'true'
-          remove-android: 'true'
-          remove-haskell: 'true'
-          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@v2
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
       - name: Disable build
         if: ${{ inputs.no_build }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-build" >> $GITHUB_ENV
@@ -594,30 +462,18 @@ jobs:
           retention-days: 90
   i386-ubuntu-golang:
     runs-on:
-      - ubuntu-latest
+      - self-hosted
+      - base-images
+      - X64
     timeout-minutes: 480
     needs:
       - i386-ubuntu
     if: inputs.target_job == 'i386-ubuntu-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-ubuntu'))
     steps:
-      - name: Maximize build space
-        uses: easimon/maximize-build-space@v8
-        with:
-          root-reserve-mb: 40960
-          swap-size-mb: 1024
-          remove-dotnet: 'true'
-          remove-android: 'true'
-          remove-haskell: 'true'
-          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@v2
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
       - name: Disable build
         if: ${{ inputs.no_build }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-build" >> $GITHUB_ENV
@@ -642,30 +498,18 @@ jobs:
           retention-days: 90
   i386-ubuntu-node:
     runs-on:
-      - ubuntu-latest
+      - self-hosted
+      - base-images
+      - X64
     timeout-minutes: 480
     needs:
       - i386-ubuntu
     if: inputs.target_job == 'i386-ubuntu-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-ubuntu'))
     steps:
-      - name: Maximize build space
-        uses: easimon/maximize-build-space@v8
-        with:
-          root-reserve-mb: 40960
-          swap-size-mb: 1024
-          remove-dotnet: 'true'
-          remove-android: 'true'
-          remove-haskell: 'true'
-          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@v2
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
       - name: Disable build
         if: ${{ inputs.no_build }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-build" >> $GITHUB_ENV
@@ -690,30 +534,18 @@ jobs:
           retention-days: 90
   i386-ubuntu-openjdk:
     runs-on:
-      - ubuntu-latest
+      - self-hosted
+      - base-images
+      - X64
     timeout-minutes: 480
     needs:
       - i386-ubuntu
     if: inputs.target_job == 'i386-ubuntu-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-ubuntu'))
     steps:
-      - name: Maximize build space
-        uses: easimon/maximize-build-space@v8
-        with:
-          root-reserve-mb: 40960
-          swap-size-mb: 1024
-          remove-dotnet: 'true'
-          remove-android: 'true'
-          remove-haskell: 'true'
-          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@v2
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
       - name: Disable build
         if: ${{ inputs.no_build }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-build" >> $GITHUB_ENV
@@ -738,30 +570,18 @@ jobs:
           retention-days: 90
   i386-ubuntu-python:
     runs-on:
-      - ubuntu-latest
+      - self-hosted
+      - base-images
+      - X64
     timeout-minutes: 480
     needs:
       - i386-ubuntu
     if: inputs.target_job == 'i386-ubuntu-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-ubuntu'))
     steps:
-      - name: Maximize build space
-        uses: easimon/maximize-build-space@v8
-        with:
-          root-reserve-mb: 40960
-          swap-size-mb: 1024
-          remove-dotnet: 'true'
-          remove-android: 'true'
-          remove-haskell: 'true'
-          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@v2
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
       - name: Disable build
         if: ${{ inputs.no_build }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-build" >> $GITHUB_ENV
@@ -786,30 +606,18 @@ jobs:
           retention-days: 90
   generic-x86-alpine:
     runs-on:
-      - ubuntu-latest
+      - self-hosted
+      - base-images
+      - X64
     timeout-minutes: 480
     needs:
       - i386-alpine
     if: inputs.target_job == 'generic-x86-alpine' || inputs.target_job == 'all' || inputs.target_job == 'generic-x86-alpine-golang' || inputs.target_job == 'generic-x86-alpine-node' || inputs.target_job == 'generic-x86-alpine-openjdk' || inputs.target_job == 'generic-x86-alpine-python' || (inputs.include_dependents && (inputs.target_job == 'i386-alpine'))
     steps:
-      - name: Maximize build space
-        uses: easimon/maximize-build-space@v8
-        with:
-          root-reserve-mb: 40960
-          swap-size-mb: 1024
-          remove-dotnet: 'true'
-          remove-android: 'true'
-          remove-haskell: 'true'
-          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@v2
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
       - name: Disable build
         if: ${{ inputs.no_build }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-build" >> $GITHUB_ENV
@@ -834,30 +642,18 @@ jobs:
           retention-days: 90
   generic-x86-alpine-golang:
     runs-on:
-      - ubuntu-latest
+      - self-hosted
+      - base-images
+      - X64
     timeout-minutes: 480
     needs:
       - generic-x86-alpine
     if: inputs.target_job == 'generic-x86-alpine-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-alpine' || inputs.target_job == 'i386-alpine'))
     steps:
-      - name: Maximize build space
-        uses: easimon/maximize-build-space@v8
-        with:
-          root-reserve-mb: 40960
-          swap-size-mb: 1024
-          remove-dotnet: 'true'
-          remove-android: 'true'
-          remove-haskell: 'true'
-          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@v2
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
       - name: Disable build
         if: ${{ inputs.no_build }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-build" >> $GITHUB_ENV
@@ -882,30 +678,18 @@ jobs:
           retention-days: 90
   generic-x86-alpine-node:
     runs-on:
-      - ubuntu-latest
+      - self-hosted
+      - base-images
+      - X64
     timeout-minutes: 480
     needs:
       - generic-x86-alpine
     if: inputs.target_job == 'generic-x86-alpine-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-alpine' || inputs.target_job == 'i386-alpine'))
     steps:
-      - name: Maximize build space
-        uses: easimon/maximize-build-space@v8
-        with:
-          root-reserve-mb: 40960
-          swap-size-mb: 1024
-          remove-dotnet: 'true'
-          remove-android: 'true'
-          remove-haskell: 'true'
-          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@v2
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
       - name: Disable build
         if: ${{ inputs.no_build }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-build" >> $GITHUB_ENV
@@ -930,30 +714,18 @@ jobs:
           retention-days: 90
   generic-x86-alpine-openjdk:
     runs-on:
-      - ubuntu-latest
+      - self-hosted
+      - base-images
+      - X64
     timeout-minutes: 480
     needs:
       - generic-x86-alpine
     if: inputs.target_job == 'generic-x86-alpine-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-alpine' || inputs.target_job == 'i386-alpine'))
     steps:
-      - name: Maximize build space
-        uses: easimon/maximize-build-space@v8
-        with:
-          root-reserve-mb: 40960
-          swap-size-mb: 1024
-          remove-dotnet: 'true'
-          remove-android: 'true'
-          remove-haskell: 'true'
-          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@v2
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
       - name: Disable build
         if: ${{ inputs.no_build }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-build" >> $GITHUB_ENV
@@ -978,30 +750,18 @@ jobs:
           retention-days: 90
   generic-x86-alpine-python:
     runs-on:
-      - ubuntu-latest
+      - self-hosted
+      - base-images
+      - X64
     timeout-minutes: 480
     needs:
       - generic-x86-alpine
     if: inputs.target_job == 'generic-x86-alpine-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-alpine' || inputs.target_job == 'i386-alpine'))
     steps:
-      - name: Maximize build space
-        uses: easimon/maximize-build-space@v8
-        with:
-          root-reserve-mb: 40960
-          swap-size-mb: 1024
-          remove-dotnet: 'true'
-          remove-android: 'true'
-          remove-haskell: 'true'
-          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@v2
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
       - name: Disable build
         if: ${{ inputs.no_build }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-build" >> $GITHUB_ENV
@@ -1026,30 +786,18 @@ jobs:
           retention-days: 90
   generic-x86-debian:
     runs-on:
-      - ubuntu-latest
+      - self-hosted
+      - base-images
+      - X64
     timeout-minutes: 480
     needs:
       - i386-debian
     if: inputs.target_job == 'generic-x86-debian' || inputs.target_job == 'all' || inputs.target_job == 'generic-x86-debian-golang' || inputs.target_job == 'generic-x86-debian-node' || inputs.target_job == 'generic-x86-debian-openjdk' || inputs.target_job == 'generic-x86-debian-python' || (inputs.include_dependents && (inputs.target_job == 'i386-debian'))
     steps:
-      - name: Maximize build space
-        uses: easimon/maximize-build-space@v8
-        with:
-          root-reserve-mb: 40960
-          swap-size-mb: 1024
-          remove-dotnet: 'true'
-          remove-android: 'true'
-          remove-haskell: 'true'
-          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@v2
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
       - name: Disable build
         if: ${{ inputs.no_build }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-build" >> $GITHUB_ENV
@@ -1074,30 +822,18 @@ jobs:
           retention-days: 90
   generic-x86-debian-golang:
     runs-on:
-      - ubuntu-latest
+      - self-hosted
+      - base-images
+      - X64
     timeout-minutes: 480
     needs:
       - generic-x86-debian
     if: inputs.target_job == 'generic-x86-debian-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-debian' || inputs.target_job == 'i386-debian'))
     steps:
-      - name: Maximize build space
-        uses: easimon/maximize-build-space@v8
-        with:
-          root-reserve-mb: 40960
-          swap-size-mb: 1024
-          remove-dotnet: 'true'
-          remove-android: 'true'
-          remove-haskell: 'true'
-          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@v2
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
       - name: Disable build
         if: ${{ inputs.no_build }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-build" >> $GITHUB_ENV
@@ -1122,30 +858,18 @@ jobs:
           retention-days: 90
   generic-x86-debian-node:
     runs-on:
-      - ubuntu-latest
+      - self-hosted
+      - base-images
+      - X64
     timeout-minutes: 480
     needs:
       - generic-x86-debian
     if: inputs.target_job == 'generic-x86-debian-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-debian' || inputs.target_job == 'i386-debian'))
     steps:
-      - name: Maximize build space
-        uses: easimon/maximize-build-space@v8
-        with:
-          root-reserve-mb: 40960
-          swap-size-mb: 1024
-          remove-dotnet: 'true'
-          remove-android: 'true'
-          remove-haskell: 'true'
-          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@v2
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
       - name: Disable build
         if: ${{ inputs.no_build }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-build" >> $GITHUB_ENV
@@ -1170,30 +894,18 @@ jobs:
           retention-days: 90
   generic-x86-debian-openjdk:
     runs-on:
-      - ubuntu-latest
+      - self-hosted
+      - base-images
+      - X64
     timeout-minutes: 480
     needs:
       - generic-x86-debian
     if: inputs.target_job == 'generic-x86-debian-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-debian' || inputs.target_job == 'i386-debian'))
     steps:
-      - name: Maximize build space
-        uses: easimon/maximize-build-space@v8
-        with:
-          root-reserve-mb: 40960
-          swap-size-mb: 1024
-          remove-dotnet: 'true'
-          remove-android: 'true'
-          remove-haskell: 'true'
-          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@v2
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
       - name: Disable build
         if: ${{ inputs.no_build }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-build" >> $GITHUB_ENV
@@ -1218,30 +930,18 @@ jobs:
           retention-days: 90
   generic-x86-debian-python:
     runs-on:
-      - ubuntu-latest
+      - self-hosted
+      - base-images
+      - X64
     timeout-minutes: 480
     needs:
       - generic-x86-debian
     if: inputs.target_job == 'generic-x86-debian-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-debian' || inputs.target_job == 'i386-debian'))
     steps:
-      - name: Maximize build space
-        uses: easimon/maximize-build-space@v8
-        with:
-          root-reserve-mb: 40960
-          swap-size-mb: 1024
-          remove-dotnet: 'true'
-          remove-android: 'true'
-          remove-haskell: 'true'
-          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@v2
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
       - name: Disable build
         if: ${{ inputs.no_build }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-build" >> $GITHUB_ENV
@@ -1266,30 +966,18 @@ jobs:
           retention-days: 90
   generic-x86-ubuntu:
     runs-on:
-      - ubuntu-latest
+      - self-hosted
+      - base-images
+      - X64
     timeout-minutes: 480
     needs:
       - i386-ubuntu
     if: inputs.target_job == 'generic-x86-ubuntu' || inputs.target_job == 'all' || inputs.target_job == 'generic-x86-ubuntu-golang' || inputs.target_job == 'generic-x86-ubuntu-node' || inputs.target_job == 'generic-x86-ubuntu-openjdk' || inputs.target_job == 'generic-x86-ubuntu-python' || (inputs.include_dependents && (inputs.target_job == 'i386-ubuntu'))
     steps:
-      - name: Maximize build space
-        uses: easimon/maximize-build-space@v8
-        with:
-          root-reserve-mb: 40960
-          swap-size-mb: 1024
-          remove-dotnet: 'true'
-          remove-android: 'true'
-          remove-haskell: 'true'
-          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@v2
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
       - name: Disable build
         if: ${{ inputs.no_build }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-build" >> $GITHUB_ENV
@@ -1314,30 +1002,18 @@ jobs:
           retention-days: 90
   generic-x86-ubuntu-golang:
     runs-on:
-      - ubuntu-latest
+      - self-hosted
+      - base-images
+      - X64
     timeout-minutes: 480
     needs:
       - generic-x86-ubuntu
     if: inputs.target_job == 'generic-x86-ubuntu-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-ubuntu' || inputs.target_job == 'i386-ubuntu'))
     steps:
-      - name: Maximize build space
-        uses: easimon/maximize-build-space@v8
-        with:
-          root-reserve-mb: 40960
-          swap-size-mb: 1024
-          remove-dotnet: 'true'
-          remove-android: 'true'
-          remove-haskell: 'true'
-          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@v2
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
       - name: Disable build
         if: ${{ inputs.no_build }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-build" >> $GITHUB_ENV
@@ -1362,30 +1038,18 @@ jobs:
           retention-days: 90
   generic-x86-ubuntu-node:
     runs-on:
-      - ubuntu-latest
+      - self-hosted
+      - base-images
+      - X64
     timeout-minutes: 480
     needs:
       - generic-x86-ubuntu
     if: inputs.target_job == 'generic-x86-ubuntu-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-ubuntu' || inputs.target_job == 'i386-ubuntu'))
     steps:
-      - name: Maximize build space
-        uses: easimon/maximize-build-space@v8
-        with:
-          root-reserve-mb: 40960
-          swap-size-mb: 1024
-          remove-dotnet: 'true'
-          remove-android: 'true'
-          remove-haskell: 'true'
-          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@v2
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
       - name: Disable build
         if: ${{ inputs.no_build }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-build" >> $GITHUB_ENV
@@ -1410,30 +1074,18 @@ jobs:
           retention-days: 90
   generic-x86-ubuntu-openjdk:
     runs-on:
-      - ubuntu-latest
+      - self-hosted
+      - base-images
+      - X64
     timeout-minutes: 480
     needs:
       - generic-x86-ubuntu
     if: inputs.target_job == 'generic-x86-ubuntu-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-ubuntu' || inputs.target_job == 'i386-ubuntu'))
     steps:
-      - name: Maximize build space
-        uses: easimon/maximize-build-space@v8
-        with:
-          root-reserve-mb: 40960
-          swap-size-mb: 1024
-          remove-dotnet: 'true'
-          remove-android: 'true'
-          remove-haskell: 'true'
-          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@v2
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
       - name: Disable build
         if: ${{ inputs.no_build }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-build" >> $GITHUB_ENV
@@ -1458,30 +1110,18 @@ jobs:
           retention-days: 90
   generic-x86-ubuntu-python:
     runs-on:
-      - ubuntu-latest
+      - self-hosted
+      - base-images
+      - X64
     timeout-minutes: 480
     needs:
       - generic-x86-ubuntu
     if: inputs.target_job == 'generic-x86-ubuntu-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-ubuntu' || inputs.target_job == 'i386-ubuntu'))
     steps:
-      - name: Maximize build space
-        uses: easimon/maximize-build-space@v8
-        with:
-          root-reserve-mb: 40960
-          swap-size-mb: 1024
-          remove-dotnet: 'true'
-          remove-android: 'true'
-          remove-haskell: 'true'
-          remove-codeql: 'true'
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@v2
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
       - name: Disable build
         if: ${{ inputs.no_build }}
         run: echo "EXTRA_OPTS=$EXTRA_OPTS --no-build" >> $GITHUB_ENV
