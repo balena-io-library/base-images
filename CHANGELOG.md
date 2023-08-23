@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.6.14 - 2023-08-23
+
+* Update actions/setup-node digest to 5e21ff4 [Self-hosted Renovate Bot]
+
 ## 2.6.13 - 2023-08-21
 
 * Remove duplicate raspberrypi aliases [Kyle Harding]
