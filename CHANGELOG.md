@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.6.19 - 2023-08-24
+
+* Update actions/checkout digest to f43a0e5 [Self-hosted Renovate Bot]
+
 ## 2.6.18 - 2023-08-23
 
 * Build images every Saturday [Kyle Harding]
