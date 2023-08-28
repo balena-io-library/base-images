@@ -114,7 +114,7 @@ name: Bashbrew (armv7hf)
         type: boolean
         default: false
 concurrency:
-  group: ${{ github.workflow }}-${{ inputs.namespaces }}
+  group: ${{ github.workflow }}-${{ inputs.namespaces || 'balenalib' }}
   cancel-in-progress: true
 jobs:
   armv7hf-alpine:
@@ -122,7 +122,7 @@ jobs:
       - ubuntu-latest
     timeout-minutes: 480
     needs: []
-    if: inputs.target_job == 'armv7hf-alpine' || inputs.target_job == 'all' || inputs.target_job == 'armv7hf-alpine-golang' || inputs.target_job == 'armv7hf-alpine-node' || inputs.target_job == 'armv7hf-alpine-openjdk' || inputs.target_job == 'armv7hf-alpine-python' || inputs.target_job == 'beaglebone-alpine' || inputs.target_job == 'generic-armv7hf-alpine' || inputs.target_job == 'raspberrypi-armv7hf-alpine'
+    if: inputs.target_job == 'armv7hf-alpine' || inputs.target_job == 'all' || inputs.target_job == '' || inputs.target_job == 'armv7hf-alpine-golang' || inputs.target_job == 'armv7hf-alpine-node' || inputs.target_job == 'armv7hf-alpine-openjdk' || inputs.target_job == 'armv7hf-alpine-python' || inputs.target_job == 'beaglebone-alpine' || inputs.target_job == 'generic-armv7hf-alpine' || inputs.target_job == 'raspberrypi-armv7hf-alpine'
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -156,7 +156,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "armv7hf-alpine" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "armv7hf-alpine" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -170,7 +172,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - armv7hf-alpine
-    if: inputs.target_job == 'armv7hf-alpine-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-alpine'))
+    if: inputs.target_job == 'armv7hf-alpine-golang' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -204,7 +206,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "armv7hf-alpine-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "armv7hf-alpine-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -218,7 +222,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - armv7hf-alpine
-    if: inputs.target_job == 'armv7hf-alpine-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-alpine'))
+    if: inputs.target_job == 'armv7hf-alpine-node' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -252,7 +256,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "armv7hf-alpine-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "armv7hf-alpine-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -266,7 +272,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - armv7hf-alpine
-    if: inputs.target_job == 'armv7hf-alpine-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-alpine'))
+    if: inputs.target_job == 'armv7hf-alpine-openjdk' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -300,7 +306,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "armv7hf-alpine-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "armv7hf-alpine-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -314,7 +322,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - armv7hf-alpine
-    if: inputs.target_job == 'armv7hf-alpine-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-alpine'))
+    if: inputs.target_job == 'armv7hf-alpine-python' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -348,7 +356,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "armv7hf-alpine-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "armv7hf-alpine-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -361,7 +371,7 @@ jobs:
       - ubuntu-latest
     timeout-minutes: 480
     needs: []
-    if: inputs.target_job == 'armv7hf-debian' || inputs.target_job == 'all' || inputs.target_job == 'armv7hf-debian-golang' || inputs.target_job == 'armv7hf-debian-node' || inputs.target_job == 'armv7hf-debian-openjdk' || inputs.target_job == 'armv7hf-debian-python' || inputs.target_job == 'beaglebone-debian' || inputs.target_job == 'generic-armv7hf-debian' || inputs.target_job == 'raspberrypi-armv7hf-debian'
+    if: inputs.target_job == 'armv7hf-debian' || inputs.target_job == 'all' || inputs.target_job == '' || inputs.target_job == 'armv7hf-debian-golang' || inputs.target_job == 'armv7hf-debian-node' || inputs.target_job == 'armv7hf-debian-openjdk' || inputs.target_job == 'armv7hf-debian-python' || inputs.target_job == 'beaglebone-debian' || inputs.target_job == 'generic-armv7hf-debian' || inputs.target_job == 'raspberrypi-armv7hf-debian'
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -395,7 +405,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "armv7hf-debian" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "armv7hf-debian" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -409,7 +421,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - armv7hf-debian
-    if: inputs.target_job == 'armv7hf-debian-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-debian'))
+    if: inputs.target_job == 'armv7hf-debian-golang' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -443,7 +455,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "armv7hf-debian-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "armv7hf-debian-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -457,7 +471,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - armv7hf-debian
-    if: inputs.target_job == 'armv7hf-debian-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-debian'))
+    if: inputs.target_job == 'armv7hf-debian-node' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -491,7 +505,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "armv7hf-debian-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "armv7hf-debian-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -505,7 +521,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - armv7hf-debian
-    if: inputs.target_job == 'armv7hf-debian-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-debian'))
+    if: inputs.target_job == 'armv7hf-debian-openjdk' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -539,7 +555,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "armv7hf-debian-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "armv7hf-debian-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -553,7 +571,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - armv7hf-debian
-    if: inputs.target_job == 'armv7hf-debian-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-debian'))
+    if: inputs.target_job == 'armv7hf-debian-python' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -587,7 +605,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "armv7hf-debian-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "armv7hf-debian-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -600,7 +620,7 @@ jobs:
       - ubuntu-latest
     timeout-minutes: 480
     needs: []
-    if: inputs.target_job == 'armv7hf-fedora' || inputs.target_job == 'all' || inputs.target_job == 'armv7hf-fedora-golang' || inputs.target_job == 'armv7hf-fedora-node' || inputs.target_job == 'armv7hf-fedora-openjdk' || inputs.target_job == 'armv7hf-fedora-python' || inputs.target_job == 'beaglebone-fedora' || inputs.target_job == 'generic-armv7hf-fedora' || inputs.target_job == 'raspberrypi-armv7hf-fedora'
+    if: inputs.target_job == 'armv7hf-fedora' || inputs.target_job == 'all' || inputs.target_job == '' || inputs.target_job == 'armv7hf-fedora-golang' || inputs.target_job == 'armv7hf-fedora-node' || inputs.target_job == 'armv7hf-fedora-openjdk' || inputs.target_job == 'armv7hf-fedora-python' || inputs.target_job == 'beaglebone-fedora' || inputs.target_job == 'generic-armv7hf-fedora' || inputs.target_job == 'raspberrypi-armv7hf-fedora'
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -634,7 +654,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "armv7hf-fedora" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "armv7hf-fedora" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -648,7 +670,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - armv7hf-fedora
-    if: inputs.target_job == 'armv7hf-fedora-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-fedora'))
+    if: inputs.target_job == 'armv7hf-fedora-golang' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-fedora'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -682,7 +704,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "armv7hf-fedora-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "armv7hf-fedora-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -696,7 +720,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - armv7hf-fedora
-    if: inputs.target_job == 'armv7hf-fedora-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-fedora'))
+    if: inputs.target_job == 'armv7hf-fedora-node' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-fedora'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -730,7 +754,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "armv7hf-fedora-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "armv7hf-fedora-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -744,7 +770,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - armv7hf-fedora
-    if: inputs.target_job == 'armv7hf-fedora-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-fedora'))
+    if: inputs.target_job == 'armv7hf-fedora-openjdk' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-fedora'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -778,7 +804,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "armv7hf-fedora-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "armv7hf-fedora-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -792,7 +820,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - armv7hf-fedora
-    if: inputs.target_job == 'armv7hf-fedora-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-fedora'))
+    if: inputs.target_job == 'armv7hf-fedora-python' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-fedora'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -826,7 +854,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "armv7hf-fedora-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "armv7hf-fedora-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -839,7 +869,7 @@ jobs:
       - ubuntu-latest
     timeout-minutes: 480
     needs: []
-    if: inputs.target_job == 'armv7hf-ubuntu' || inputs.target_job == 'all' || inputs.target_job == 'armv7hf-ubuntu-golang' || inputs.target_job == 'armv7hf-ubuntu-node' || inputs.target_job == 'armv7hf-ubuntu-openjdk' || inputs.target_job == 'armv7hf-ubuntu-python' || inputs.target_job == 'beaglebone-ubuntu' || inputs.target_job == 'generic-armv7hf-ubuntu' || inputs.target_job == 'raspberrypi-armv7hf-ubuntu'
+    if: inputs.target_job == 'armv7hf-ubuntu' || inputs.target_job == 'all' || inputs.target_job == '' || inputs.target_job == 'armv7hf-ubuntu-golang' || inputs.target_job == 'armv7hf-ubuntu-node' || inputs.target_job == 'armv7hf-ubuntu-openjdk' || inputs.target_job == 'armv7hf-ubuntu-python' || inputs.target_job == 'beaglebone-ubuntu' || inputs.target_job == 'generic-armv7hf-ubuntu' || inputs.target_job == 'raspberrypi-armv7hf-ubuntu'
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -873,7 +903,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "armv7hf-ubuntu" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "armv7hf-ubuntu" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -887,7 +919,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - armv7hf-ubuntu
-    if: inputs.target_job == 'armv7hf-ubuntu-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-ubuntu'))
+    if: inputs.target_job == 'armv7hf-ubuntu-golang' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -921,7 +953,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "armv7hf-ubuntu-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "armv7hf-ubuntu-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -935,7 +969,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - armv7hf-ubuntu
-    if: inputs.target_job == 'armv7hf-ubuntu-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-ubuntu'))
+    if: inputs.target_job == 'armv7hf-ubuntu-node' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -969,7 +1003,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "armv7hf-ubuntu-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "armv7hf-ubuntu-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -983,7 +1019,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - armv7hf-ubuntu
-    if: inputs.target_job == 'armv7hf-ubuntu-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-ubuntu'))
+    if: inputs.target_job == 'armv7hf-ubuntu-openjdk' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1017,7 +1053,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "armv7hf-ubuntu-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "armv7hf-ubuntu-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1031,7 +1069,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - armv7hf-ubuntu
-    if: inputs.target_job == 'armv7hf-ubuntu-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-ubuntu'))
+    if: inputs.target_job == 'armv7hf-ubuntu-python' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1065,7 +1103,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "armv7hf-ubuntu-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "armv7hf-ubuntu-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1079,7 +1119,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - armv7hf-alpine
-    if: inputs.target_job == 'beaglebone-alpine' || inputs.target_job == 'all' || inputs.target_job == 'beaglebone-alpine-golang' || inputs.target_job == 'beaglebone-alpine-node' || inputs.target_job == 'beaglebone-alpine-openjdk' || inputs.target_job == 'beaglebone-alpine-python' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-alpine'))
+    if: inputs.target_job == 'beaglebone-alpine' || inputs.target_job == 'all' || inputs.target_job == '' || inputs.target_job == 'beaglebone-alpine-golang' || inputs.target_job == 'beaglebone-alpine-node' || inputs.target_job == 'beaglebone-alpine-openjdk' || inputs.target_job == 'beaglebone-alpine-python' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1113,7 +1153,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "beaglebone-black-alpine" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "beaglebone-black-alpine" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1127,7 +1169,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - beaglebone-alpine
-    if: inputs.target_job == 'beaglebone-alpine-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-alpine' || inputs.target_job == 'armv7hf-alpine'))
+    if: inputs.target_job == 'beaglebone-alpine-golang' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-alpine' || inputs.target_job == 'armv7hf-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1161,7 +1203,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "beaglebone-black-alpine-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "beaglebone-black-alpine-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1175,7 +1219,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - beaglebone-alpine
-    if: inputs.target_job == 'beaglebone-alpine-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-alpine' || inputs.target_job == 'armv7hf-alpine'))
+    if: inputs.target_job == 'beaglebone-alpine-node' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-alpine' || inputs.target_job == 'armv7hf-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1209,7 +1253,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "beaglebone-black-alpine-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "beaglebone-black-alpine-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1223,7 +1269,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - beaglebone-alpine
-    if: inputs.target_job == 'beaglebone-alpine-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-alpine' || inputs.target_job == 'armv7hf-alpine'))
+    if: inputs.target_job == 'beaglebone-alpine-openjdk' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-alpine' || inputs.target_job == 'armv7hf-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1257,7 +1303,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "beaglebone-black-alpine-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "beaglebone-black-alpine-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1271,7 +1319,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - beaglebone-alpine
-    if: inputs.target_job == 'beaglebone-alpine-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-alpine' || inputs.target_job == 'armv7hf-alpine'))
+    if: inputs.target_job == 'beaglebone-alpine-python' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-alpine' || inputs.target_job == 'armv7hf-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1305,7 +1353,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "beaglebone-black-alpine-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "beaglebone-black-alpine-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1319,7 +1369,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - armv7hf-debian
-    if: inputs.target_job == 'beaglebone-debian' || inputs.target_job == 'all' || inputs.target_job == 'beaglebone-debian-golang' || inputs.target_job == 'beaglebone-debian-node' || inputs.target_job == 'beaglebone-debian-openjdk' || inputs.target_job == 'beaglebone-debian-python' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-debian'))
+    if: inputs.target_job == 'beaglebone-debian' || inputs.target_job == 'all' || inputs.target_job == '' || inputs.target_job == 'beaglebone-debian-golang' || inputs.target_job == 'beaglebone-debian-node' || inputs.target_job == 'beaglebone-debian-openjdk' || inputs.target_job == 'beaglebone-debian-python' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1353,7 +1403,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "beaglebone-black-debian" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "beaglebone-black-debian" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1367,7 +1419,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - beaglebone-debian
-    if: inputs.target_job == 'beaglebone-debian-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-debian' || inputs.target_job == 'armv7hf-debian'))
+    if: inputs.target_job == 'beaglebone-debian-golang' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-debian' || inputs.target_job == 'armv7hf-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1401,7 +1453,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "beaglebone-black-debian-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "beaglebone-black-debian-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1415,7 +1469,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - beaglebone-debian
-    if: inputs.target_job == 'beaglebone-debian-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-debian' || inputs.target_job == 'armv7hf-debian'))
+    if: inputs.target_job == 'beaglebone-debian-node' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-debian' || inputs.target_job == 'armv7hf-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1449,7 +1503,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "beaglebone-black-debian-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "beaglebone-black-debian-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1463,7 +1519,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - beaglebone-debian
-    if: inputs.target_job == 'beaglebone-debian-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-debian' || inputs.target_job == 'armv7hf-debian'))
+    if: inputs.target_job == 'beaglebone-debian-openjdk' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-debian' || inputs.target_job == 'armv7hf-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1497,7 +1553,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "beaglebone-black-debian-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "beaglebone-black-debian-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1511,7 +1569,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - beaglebone-debian
-    if: inputs.target_job == 'beaglebone-debian-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-debian' || inputs.target_job == 'armv7hf-debian'))
+    if: inputs.target_job == 'beaglebone-debian-python' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-debian' || inputs.target_job == 'armv7hf-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1545,7 +1603,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "beaglebone-black-debian-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "beaglebone-black-debian-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1559,7 +1619,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - armv7hf-fedora
-    if: inputs.target_job == 'beaglebone-fedora' || inputs.target_job == 'all' || inputs.target_job == 'beaglebone-fedora-golang' || inputs.target_job == 'beaglebone-fedora-node' || inputs.target_job == 'beaglebone-fedora-openjdk' || inputs.target_job == 'beaglebone-fedora-python' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-fedora'))
+    if: inputs.target_job == 'beaglebone-fedora' || inputs.target_job == 'all' || inputs.target_job == '' || inputs.target_job == 'beaglebone-fedora-golang' || inputs.target_job == 'beaglebone-fedora-node' || inputs.target_job == 'beaglebone-fedora-openjdk' || inputs.target_job == 'beaglebone-fedora-python' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-fedora'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1593,7 +1653,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "beaglebone-black-fedora" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "beaglebone-black-fedora" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1607,7 +1669,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - beaglebone-fedora
-    if: inputs.target_job == 'beaglebone-fedora-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-fedora' || inputs.target_job == 'armv7hf-fedora'))
+    if: inputs.target_job == 'beaglebone-fedora-golang' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-fedora' || inputs.target_job == 'armv7hf-fedora'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1641,7 +1703,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "beaglebone-black-fedora-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "beaglebone-black-fedora-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1655,7 +1719,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - beaglebone-fedora
-    if: inputs.target_job == 'beaglebone-fedora-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-fedora' || inputs.target_job == 'armv7hf-fedora'))
+    if: inputs.target_job == 'beaglebone-fedora-node' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-fedora' || inputs.target_job == 'armv7hf-fedora'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1689,7 +1753,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "beaglebone-black-fedora-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "beaglebone-black-fedora-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1703,7 +1769,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - beaglebone-fedora
-    if: inputs.target_job == 'beaglebone-fedora-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-fedora' || inputs.target_job == 'armv7hf-fedora'))
+    if: inputs.target_job == 'beaglebone-fedora-openjdk' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-fedora' || inputs.target_job == 'armv7hf-fedora'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1737,7 +1803,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "beaglebone-black-fedora-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "beaglebone-black-fedora-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1751,7 +1819,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - beaglebone-fedora
-    if: inputs.target_job == 'beaglebone-fedora-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-fedora' || inputs.target_job == 'armv7hf-fedora'))
+    if: inputs.target_job == 'beaglebone-fedora-python' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-fedora' || inputs.target_job == 'armv7hf-fedora'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1785,7 +1853,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "beaglebone-black-fedora-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "beaglebone-black-fedora-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1799,7 +1869,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - armv7hf-ubuntu
-    if: inputs.target_job == 'beaglebone-ubuntu' || inputs.target_job == 'all' || inputs.target_job == 'beaglebone-ubuntu-golang' || inputs.target_job == 'beaglebone-ubuntu-node' || inputs.target_job == 'beaglebone-ubuntu-openjdk' || inputs.target_job == 'beaglebone-ubuntu-python' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-ubuntu'))
+    if: inputs.target_job == 'beaglebone-ubuntu' || inputs.target_job == 'all' || inputs.target_job == '' || inputs.target_job == 'beaglebone-ubuntu-golang' || inputs.target_job == 'beaglebone-ubuntu-node' || inputs.target_job == 'beaglebone-ubuntu-openjdk' || inputs.target_job == 'beaglebone-ubuntu-python' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1833,7 +1903,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "beaglebone-black-ubuntu" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "beaglebone-black-ubuntu" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1847,7 +1919,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - beaglebone-ubuntu
-    if: inputs.target_job == 'beaglebone-ubuntu-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-ubuntu' || inputs.target_job == 'armv7hf-ubuntu'))
+    if: inputs.target_job == 'beaglebone-ubuntu-golang' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-ubuntu' || inputs.target_job == 'armv7hf-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1881,7 +1953,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "beaglebone-black-ubuntu-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "beaglebone-black-ubuntu-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1895,7 +1969,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - beaglebone-ubuntu
-    if: inputs.target_job == 'beaglebone-ubuntu-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-ubuntu' || inputs.target_job == 'armv7hf-ubuntu'))
+    if: inputs.target_job == 'beaglebone-ubuntu-node' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-ubuntu' || inputs.target_job == 'armv7hf-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1929,7 +2003,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "beaglebone-black-ubuntu-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "beaglebone-black-ubuntu-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1943,7 +2019,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - beaglebone-ubuntu
-    if: inputs.target_job == 'beaglebone-ubuntu-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-ubuntu' || inputs.target_job == 'armv7hf-ubuntu'))
+    if: inputs.target_job == 'beaglebone-ubuntu-openjdk' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-ubuntu' || inputs.target_job == 'armv7hf-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1977,7 +2053,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "beaglebone-black-ubuntu-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "beaglebone-black-ubuntu-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1991,7 +2069,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - beaglebone-ubuntu
-    if: inputs.target_job == 'beaglebone-ubuntu-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-ubuntu' || inputs.target_job == 'armv7hf-ubuntu'))
+    if: inputs.target_job == 'beaglebone-ubuntu-python' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'beaglebone-ubuntu' || inputs.target_job == 'armv7hf-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2025,7 +2103,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "beaglebone-black-ubuntu-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "beaglebone-black-ubuntu-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="beaglebone-green-gateway beagleboard-xm beaglebone-green-wifi beaglebone-green beaglebone-pocket" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2039,7 +2119,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - armv7hf-alpine
-    if: inputs.target_job == 'generic-armv7hf-alpine' || inputs.target_job == 'all' || inputs.target_job == 'generic-armv7hf-alpine-golang' || inputs.target_job == 'generic-armv7hf-alpine-node' || inputs.target_job == 'generic-armv7hf-alpine-openjdk' || inputs.target_job == 'generic-armv7hf-alpine-python' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-alpine'))
+    if: inputs.target_job == 'generic-armv7hf-alpine' || inputs.target_job == 'all' || inputs.target_job == '' || inputs.target_job == 'generic-armv7hf-alpine-golang' || inputs.target_job == 'generic-armv7hf-alpine-node' || inputs.target_job == 'generic-armv7hf-alpine-openjdk' || inputs.target_job == 'generic-armv7hf-alpine-python' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2073,7 +2153,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "generic-armv7ahf-alpine" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "generic-armv7ahf-alpine" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2087,7 +2169,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-armv7hf-alpine
-    if: inputs.target_job == 'generic-armv7hf-alpine-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-alpine' || inputs.target_job == 'armv7hf-alpine'))
+    if: inputs.target_job == 'generic-armv7hf-alpine-golang' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-alpine' || inputs.target_job == 'armv7hf-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2121,7 +2203,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "generic-armv7ahf-alpine-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "generic-armv7ahf-alpine-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2135,7 +2219,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-armv7hf-alpine
-    if: inputs.target_job == 'generic-armv7hf-alpine-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-alpine' || inputs.target_job == 'armv7hf-alpine'))
+    if: inputs.target_job == 'generic-armv7hf-alpine-node' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-alpine' || inputs.target_job == 'armv7hf-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2169,7 +2253,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "generic-armv7ahf-alpine-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "generic-armv7ahf-alpine-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2183,7 +2269,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-armv7hf-alpine
-    if: inputs.target_job == 'generic-armv7hf-alpine-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-alpine' || inputs.target_job == 'armv7hf-alpine'))
+    if: inputs.target_job == 'generic-armv7hf-alpine-openjdk' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-alpine' || inputs.target_job == 'armv7hf-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2217,7 +2303,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "generic-armv7ahf-alpine-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "generic-armv7ahf-alpine-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2231,7 +2319,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-armv7hf-alpine
-    if: inputs.target_job == 'generic-armv7hf-alpine-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-alpine' || inputs.target_job == 'armv7hf-alpine'))
+    if: inputs.target_job == 'generic-armv7hf-alpine-python' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-alpine' || inputs.target_job == 'armv7hf-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2265,7 +2353,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "generic-armv7ahf-alpine-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "generic-armv7ahf-alpine-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2279,7 +2369,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - armv7hf-debian
-    if: inputs.target_job == 'generic-armv7hf-debian' || inputs.target_job == 'all' || inputs.target_job == 'generic-armv7hf-debian-golang' || inputs.target_job == 'generic-armv7hf-debian-node' || inputs.target_job == 'generic-armv7hf-debian-openjdk' || inputs.target_job == 'generic-armv7hf-debian-python' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-debian'))
+    if: inputs.target_job == 'generic-armv7hf-debian' || inputs.target_job == 'all' || inputs.target_job == '' || inputs.target_job == 'generic-armv7hf-debian-golang' || inputs.target_job == 'generic-armv7hf-debian-node' || inputs.target_job == 'generic-armv7hf-debian-openjdk' || inputs.target_job == 'generic-armv7hf-debian-python' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2313,7 +2403,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "generic-armv7ahf-debian" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "generic-armv7ahf-debian" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2327,7 +2419,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-armv7hf-debian
-    if: inputs.target_job == 'generic-armv7hf-debian-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-debian' || inputs.target_job == 'armv7hf-debian'))
+    if: inputs.target_job == 'generic-armv7hf-debian-golang' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-debian' || inputs.target_job == 'armv7hf-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2361,7 +2453,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "generic-armv7ahf-debian-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "generic-armv7ahf-debian-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2375,7 +2469,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-armv7hf-debian
-    if: inputs.target_job == 'generic-armv7hf-debian-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-debian' || inputs.target_job == 'armv7hf-debian'))
+    if: inputs.target_job == 'generic-armv7hf-debian-node' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-debian' || inputs.target_job == 'armv7hf-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2409,7 +2503,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "generic-armv7ahf-debian-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "generic-armv7ahf-debian-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2423,7 +2519,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-armv7hf-debian
-    if: inputs.target_job == 'generic-armv7hf-debian-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-debian' || inputs.target_job == 'armv7hf-debian'))
+    if: inputs.target_job == 'generic-armv7hf-debian-openjdk' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-debian' || inputs.target_job == 'armv7hf-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2457,7 +2553,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "generic-armv7ahf-debian-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "generic-armv7ahf-debian-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2471,7 +2569,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-armv7hf-debian
-    if: inputs.target_job == 'generic-armv7hf-debian-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-debian' || inputs.target_job == 'armv7hf-debian'))
+    if: inputs.target_job == 'generic-armv7hf-debian-python' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-debian' || inputs.target_job == 'armv7hf-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2505,7 +2603,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "generic-armv7ahf-debian-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "generic-armv7ahf-debian-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2519,7 +2619,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - armv7hf-fedora
-    if: inputs.target_job == 'generic-armv7hf-fedora' || inputs.target_job == 'all' || inputs.target_job == 'generic-armv7hf-fedora-golang' || inputs.target_job == 'generic-armv7hf-fedora-node' || inputs.target_job == 'generic-armv7hf-fedora-openjdk' || inputs.target_job == 'generic-armv7hf-fedora-python' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-fedora'))
+    if: inputs.target_job == 'generic-armv7hf-fedora' || inputs.target_job == 'all' || inputs.target_job == '' || inputs.target_job == 'generic-armv7hf-fedora-golang' || inputs.target_job == 'generic-armv7hf-fedora-node' || inputs.target_job == 'generic-armv7hf-fedora-openjdk' || inputs.target_job == 'generic-armv7hf-fedora-python' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-fedora'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2553,7 +2653,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "generic-armv7ahf-fedora" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "generic-armv7ahf-fedora" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2567,7 +2669,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-armv7hf-fedora
-    if: inputs.target_job == 'generic-armv7hf-fedora-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-fedora' || inputs.target_job == 'armv7hf-fedora'))
+    if: inputs.target_job == 'generic-armv7hf-fedora-golang' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-fedora' || inputs.target_job == 'armv7hf-fedora'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2601,7 +2703,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "generic-armv7ahf-fedora-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "generic-armv7ahf-fedora-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2615,7 +2719,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-armv7hf-fedora
-    if: inputs.target_job == 'generic-armv7hf-fedora-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-fedora' || inputs.target_job == 'armv7hf-fedora'))
+    if: inputs.target_job == 'generic-armv7hf-fedora-node' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-fedora' || inputs.target_job == 'armv7hf-fedora'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2649,7 +2753,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "generic-armv7ahf-fedora-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "generic-armv7ahf-fedora-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2663,7 +2769,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-armv7hf-fedora
-    if: inputs.target_job == 'generic-armv7hf-fedora-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-fedora' || inputs.target_job == 'armv7hf-fedora'))
+    if: inputs.target_job == 'generic-armv7hf-fedora-openjdk' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-fedora' || inputs.target_job == 'armv7hf-fedora'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2697,7 +2803,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "generic-armv7ahf-fedora-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "generic-armv7ahf-fedora-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2711,7 +2819,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-armv7hf-fedora
-    if: inputs.target_job == 'generic-armv7hf-fedora-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-fedora' || inputs.target_job == 'armv7hf-fedora'))
+    if: inputs.target_job == 'generic-armv7hf-fedora-python' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-fedora' || inputs.target_job == 'armv7hf-fedora'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2745,7 +2853,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "generic-armv7ahf-fedora-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "generic-armv7ahf-fedora-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2759,7 +2869,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - armv7hf-ubuntu
-    if: inputs.target_job == 'generic-armv7hf-ubuntu' || inputs.target_job == 'all' || inputs.target_job == 'generic-armv7hf-ubuntu-golang' || inputs.target_job == 'generic-armv7hf-ubuntu-node' || inputs.target_job == 'generic-armv7hf-ubuntu-openjdk' || inputs.target_job == 'generic-armv7hf-ubuntu-python' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-ubuntu'))
+    if: inputs.target_job == 'generic-armv7hf-ubuntu' || inputs.target_job == 'all' || inputs.target_job == '' || inputs.target_job == 'generic-armv7hf-ubuntu-golang' || inputs.target_job == 'generic-armv7hf-ubuntu-node' || inputs.target_job == 'generic-armv7hf-ubuntu-openjdk' || inputs.target_job == 'generic-armv7hf-ubuntu-python' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2793,7 +2903,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "generic-armv7ahf-ubuntu" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "generic-armv7ahf-ubuntu" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2807,7 +2919,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-armv7hf-ubuntu
-    if: inputs.target_job == 'generic-armv7hf-ubuntu-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-ubuntu' || inputs.target_job == 'armv7hf-ubuntu'))
+    if: inputs.target_job == 'generic-armv7hf-ubuntu-golang' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-ubuntu' || inputs.target_job == 'armv7hf-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2841,7 +2953,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "generic-armv7ahf-ubuntu-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "generic-armv7ahf-ubuntu-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2855,7 +2969,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-armv7hf-ubuntu
-    if: inputs.target_job == 'generic-armv7hf-ubuntu-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-ubuntu' || inputs.target_job == 'armv7hf-ubuntu'))
+    if: inputs.target_job == 'generic-armv7hf-ubuntu-node' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-ubuntu' || inputs.target_job == 'armv7hf-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2889,7 +3003,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "generic-armv7ahf-ubuntu-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "generic-armv7ahf-ubuntu-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2903,7 +3019,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-armv7hf-ubuntu
-    if: inputs.target_job == 'generic-armv7hf-ubuntu-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-ubuntu' || inputs.target_job == 'armv7hf-ubuntu'))
+    if: inputs.target_job == 'generic-armv7hf-ubuntu-openjdk' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-ubuntu' || inputs.target_job == 'armv7hf-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2937,7 +3053,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "generic-armv7ahf-ubuntu-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "generic-armv7ahf-ubuntu-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2951,7 +3069,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-armv7hf-ubuntu
-    if: inputs.target_job == 'generic-armv7hf-ubuntu-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-ubuntu' || inputs.target_job == 'armv7hf-ubuntu'))
+    if: inputs.target_job == 'generic-armv7hf-ubuntu-python' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-armv7hf-ubuntu' || inputs.target_job == 'armv7hf-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2985,7 +3103,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "generic-armv7ahf-ubuntu-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "generic-armv7ahf-ubuntu-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="solidrun-n6g aio-3288c revpi-connect firefly-rk3288 orange-pi-lite npe-x500-m3 nitrogen6xq2g orange-pi-one orange-pi-zero nanopi-neo-air imx7-var-som var-som-mx6 orangepi-plus2 imx6ul-var-dart bananapi-m1-plus odroid-xu4 parallella hummingboard asus-tinker-board-s asus-tinker-board" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2999,7 +3119,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - armv7hf-alpine
-    if: inputs.target_job == 'raspberrypi-armv7hf-alpine' || inputs.target_job == 'all' || inputs.target_job == 'raspberrypi-armv7hf-alpine-golang' || inputs.target_job == 'raspberrypi-armv7hf-alpine-node' || inputs.target_job == 'raspberrypi-armv7hf-alpine-openjdk' || inputs.target_job == 'raspberrypi-armv7hf-alpine-python' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-alpine'))
+    if: inputs.target_job == 'raspberrypi-armv7hf-alpine' || inputs.target_job == 'all' || inputs.target_job == '' || inputs.target_job == 'raspberrypi-armv7hf-alpine-golang' || inputs.target_job == 'raspberrypi-armv7hf-alpine-node' || inputs.target_job == 'raspberrypi-armv7hf-alpine-openjdk' || inputs.target_job == 'raspberrypi-armv7hf-alpine-python' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -3033,7 +3153,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "raspberry-pi2-alpine" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "raspberry-pi2-alpine" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -3047,7 +3169,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - raspberrypi-armv7hf-alpine
-    if: inputs.target_job == 'raspberrypi-armv7hf-alpine-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-alpine' || inputs.target_job == 'armv7hf-alpine'))
+    if: inputs.target_job == 'raspberrypi-armv7hf-alpine-golang' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-alpine' || inputs.target_job == 'armv7hf-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -3081,7 +3203,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "raspberry-pi2-alpine-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "raspberry-pi2-alpine-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -3095,7 +3219,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - raspberrypi-armv7hf-alpine
-    if: inputs.target_job == 'raspberrypi-armv7hf-alpine-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-alpine' || inputs.target_job == 'armv7hf-alpine'))
+    if: inputs.target_job == 'raspberrypi-armv7hf-alpine-node' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-alpine' || inputs.target_job == 'armv7hf-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -3129,7 +3253,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "raspberry-pi2-alpine-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "raspberry-pi2-alpine-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -3143,7 +3269,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - raspberrypi-armv7hf-alpine
-    if: inputs.target_job == 'raspberrypi-armv7hf-alpine-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-alpine' || inputs.target_job == 'armv7hf-alpine'))
+    if: inputs.target_job == 'raspberrypi-armv7hf-alpine-openjdk' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-alpine' || inputs.target_job == 'armv7hf-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -3177,7 +3303,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "raspberry-pi2-alpine-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "raspberry-pi2-alpine-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -3191,7 +3319,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - raspberrypi-armv7hf-alpine
-    if: inputs.target_job == 'raspberrypi-armv7hf-alpine-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-alpine' || inputs.target_job == 'armv7hf-alpine'))
+    if: inputs.target_job == 'raspberrypi-armv7hf-alpine-python' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-alpine' || inputs.target_job == 'armv7hf-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -3225,7 +3353,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "raspberry-pi2-alpine-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "raspberry-pi2-alpine-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -3239,7 +3369,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - armv7hf-debian
-    if: inputs.target_job == 'raspberrypi-armv7hf-debian' || inputs.target_job == 'all' || inputs.target_job == 'raspberrypi-armv7hf-debian-golang' || inputs.target_job == 'raspberrypi-armv7hf-debian-node' || inputs.target_job == 'raspberrypi-armv7hf-debian-openjdk' || inputs.target_job == 'raspberrypi-armv7hf-debian-python' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-debian'))
+    if: inputs.target_job == 'raspberrypi-armv7hf-debian' || inputs.target_job == 'all' || inputs.target_job == '' || inputs.target_job == 'raspberrypi-armv7hf-debian-golang' || inputs.target_job == 'raspberrypi-armv7hf-debian-node' || inputs.target_job == 'raspberrypi-armv7hf-debian-openjdk' || inputs.target_job == 'raspberrypi-armv7hf-debian-python' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -3273,7 +3403,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "raspberry-pi2-debian" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "raspberry-pi2-debian" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -3287,7 +3419,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - raspberrypi-armv7hf-debian
-    if: inputs.target_job == 'raspberrypi-armv7hf-debian-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-debian' || inputs.target_job == 'armv7hf-debian'))
+    if: inputs.target_job == 'raspberrypi-armv7hf-debian-golang' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-debian' || inputs.target_job == 'armv7hf-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -3321,7 +3453,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "raspberry-pi2-debian-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "raspberry-pi2-debian-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -3335,7 +3469,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - raspberrypi-armv7hf-debian
-    if: inputs.target_job == 'raspberrypi-armv7hf-debian-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-debian' || inputs.target_job == 'armv7hf-debian'))
+    if: inputs.target_job == 'raspberrypi-armv7hf-debian-node' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-debian' || inputs.target_job == 'armv7hf-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -3369,7 +3503,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "raspberry-pi2-debian-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "raspberry-pi2-debian-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -3383,7 +3519,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - raspberrypi-armv7hf-debian
-    if: inputs.target_job == 'raspberrypi-armv7hf-debian-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-debian' || inputs.target_job == 'armv7hf-debian'))
+    if: inputs.target_job == 'raspberrypi-armv7hf-debian-openjdk' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-debian' || inputs.target_job == 'armv7hf-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -3417,7 +3553,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "raspberry-pi2-debian-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "raspberry-pi2-debian-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -3431,7 +3569,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - raspberrypi-armv7hf-debian
-    if: inputs.target_job == 'raspberrypi-armv7hf-debian-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-debian' || inputs.target_job == 'armv7hf-debian'))
+    if: inputs.target_job == 'raspberrypi-armv7hf-debian-python' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-debian' || inputs.target_job == 'armv7hf-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -3465,7 +3603,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "raspberry-pi2-debian-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "raspberry-pi2-debian-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -3479,7 +3619,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - armv7hf-fedora
-    if: inputs.target_job == 'raspberrypi-armv7hf-fedora' || inputs.target_job == 'all' || inputs.target_job == 'raspberrypi-armv7hf-fedora-golang' || inputs.target_job == 'raspberrypi-armv7hf-fedora-node' || inputs.target_job == 'raspberrypi-armv7hf-fedora-openjdk' || inputs.target_job == 'raspberrypi-armv7hf-fedora-python' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-fedora'))
+    if: inputs.target_job == 'raspberrypi-armv7hf-fedora' || inputs.target_job == 'all' || inputs.target_job == '' || inputs.target_job == 'raspberrypi-armv7hf-fedora-golang' || inputs.target_job == 'raspberrypi-armv7hf-fedora-node' || inputs.target_job == 'raspberrypi-armv7hf-fedora-openjdk' || inputs.target_job == 'raspberrypi-armv7hf-fedora-python' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-fedora'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -3513,7 +3653,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "raspberry-pi2-fedora" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "raspberry-pi2-fedora" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -3527,7 +3669,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - raspberrypi-armv7hf-fedora
-    if: inputs.target_job == 'raspberrypi-armv7hf-fedora-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-fedora' || inputs.target_job == 'armv7hf-fedora'))
+    if: inputs.target_job == 'raspberrypi-armv7hf-fedora-golang' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-fedora' || inputs.target_job == 'armv7hf-fedora'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -3561,7 +3703,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "raspberry-pi2-fedora-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "raspberry-pi2-fedora-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -3575,7 +3719,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - raspberrypi-armv7hf-fedora
-    if: inputs.target_job == 'raspberrypi-armv7hf-fedora-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-fedora' || inputs.target_job == 'armv7hf-fedora'))
+    if: inputs.target_job == 'raspberrypi-armv7hf-fedora-node' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-fedora' || inputs.target_job == 'armv7hf-fedora'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -3609,7 +3753,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "raspberry-pi2-fedora-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "raspberry-pi2-fedora-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -3623,7 +3769,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - raspberrypi-armv7hf-fedora
-    if: inputs.target_job == 'raspberrypi-armv7hf-fedora-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-fedora' || inputs.target_job == 'armv7hf-fedora'))
+    if: inputs.target_job == 'raspberrypi-armv7hf-fedora-openjdk' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-fedora' || inputs.target_job == 'armv7hf-fedora'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -3657,7 +3803,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "raspberry-pi2-fedora-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "raspberry-pi2-fedora-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -3671,7 +3819,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - raspberrypi-armv7hf-fedora
-    if: inputs.target_job == 'raspberrypi-armv7hf-fedora-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-fedora' || inputs.target_job == 'armv7hf-fedora'))
+    if: inputs.target_job == 'raspberrypi-armv7hf-fedora-python' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-fedora' || inputs.target_job == 'armv7hf-fedora'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -3705,7 +3853,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "raspberry-pi2-fedora-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "raspberry-pi2-fedora-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -3719,7 +3869,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - armv7hf-ubuntu
-    if: inputs.target_job == 'raspberrypi-armv7hf-ubuntu' || inputs.target_job == 'all' || inputs.target_job == 'raspberrypi-armv7hf-ubuntu-golang' || inputs.target_job == 'raspberrypi-armv7hf-ubuntu-node' || inputs.target_job == 'raspberrypi-armv7hf-ubuntu-openjdk' || inputs.target_job == 'raspberrypi-armv7hf-ubuntu-python' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-ubuntu'))
+    if: inputs.target_job == 'raspberrypi-armv7hf-ubuntu' || inputs.target_job == 'all' || inputs.target_job == '' || inputs.target_job == 'raspberrypi-armv7hf-ubuntu-golang' || inputs.target_job == 'raspberrypi-armv7hf-ubuntu-node' || inputs.target_job == 'raspberrypi-armv7hf-ubuntu-openjdk' || inputs.target_job == 'raspberrypi-armv7hf-ubuntu-python' || (inputs.include_dependents && (inputs.target_job == 'armv7hf-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -3753,7 +3903,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "raspberry-pi2-ubuntu" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "raspberry-pi2-ubuntu" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -3767,7 +3919,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - raspberrypi-armv7hf-ubuntu
-    if: inputs.target_job == 'raspberrypi-armv7hf-ubuntu-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-ubuntu' || inputs.target_job == 'armv7hf-ubuntu'))
+    if: inputs.target_job == 'raspberrypi-armv7hf-ubuntu-golang' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-ubuntu' || inputs.target_job == 'armv7hf-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -3801,7 +3953,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "raspberry-pi2-ubuntu-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "raspberry-pi2-ubuntu-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -3815,7 +3969,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - raspberrypi-armv7hf-ubuntu
-    if: inputs.target_job == 'raspberrypi-armv7hf-ubuntu-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-ubuntu' || inputs.target_job == 'armv7hf-ubuntu'))
+    if: inputs.target_job == 'raspberrypi-armv7hf-ubuntu-node' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-ubuntu' || inputs.target_job == 'armv7hf-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -3849,7 +4003,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "raspberry-pi2-ubuntu-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "raspberry-pi2-ubuntu-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -3863,7 +4019,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - raspberrypi-armv7hf-ubuntu
-    if: inputs.target_job == 'raspberrypi-armv7hf-ubuntu-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-ubuntu' || inputs.target_job == 'armv7hf-ubuntu'))
+    if: inputs.target_job == 'raspberrypi-armv7hf-ubuntu-openjdk' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-ubuntu' || inputs.target_job == 'armv7hf-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -3897,7 +4053,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "raspberry-pi2-ubuntu-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "raspberry-pi2-ubuntu-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -3911,7 +4069,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - raspberrypi-armv7hf-ubuntu
-    if: inputs.target_job == 'raspberrypi-armv7hf-ubuntu-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-ubuntu' || inputs.target_job == 'armv7hf-ubuntu'))
+    if: inputs.target_job == 'raspberrypi-armv7hf-ubuntu-python' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'raspberrypi-armv7hf-ubuntu' || inputs.target_job == 'armv7hf-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -3945,7 +4103,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "raspberry-pi2-ubuntu-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "raspberry-pi2-ubuntu-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/arm/v7" --alias="raspberrypi3 fincm3 revpi-core-3 revpi-connect-s" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3

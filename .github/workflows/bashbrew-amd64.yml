@@ -100,7 +100,7 @@ name: Bashbrew (amd64)
         type: boolean
         default: false
 concurrency:
-  group: ${{ github.workflow }}-${{ inputs.namespaces }}
+  group: ${{ github.workflow }}-${{ inputs.namespaces || 'balenalib' }}
   cancel-in-progress: true
 jobs:
   amd64-alpine:
@@ -108,7 +108,7 @@ jobs:
       - ubuntu-latest
     timeout-minutes: 480
     needs: []
-    if: inputs.target_job == 'amd64-alpine' || inputs.target_job == 'all' || inputs.target_job == 'amd64-alpine-golang' || inputs.target_job == 'amd64-alpine-node' || inputs.target_job == 'amd64-alpine-openjdk' || inputs.target_job == 'amd64-alpine-python' || inputs.target_job == 'generic-amd64-alpine' || inputs.target_job == 'up-board-alpine'
+    if: inputs.target_job == 'amd64-alpine' || inputs.target_job == 'all' || inputs.target_job == '' || inputs.target_job == 'amd64-alpine-golang' || inputs.target_job == 'amd64-alpine-node' || inputs.target_job == 'amd64-alpine-openjdk' || inputs.target_job == 'amd64-alpine-python' || inputs.target_job == 'generic-amd64-alpine' || inputs.target_job == 'up-board-alpine'
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -142,7 +142,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "amd64-alpine" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "amd64-alpine" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -156,7 +158,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - amd64-alpine
-    if: inputs.target_job == 'amd64-alpine-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'amd64-alpine'))
+    if: inputs.target_job == 'amd64-alpine-golang' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'amd64-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -190,7 +192,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "amd64-alpine-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "amd64-alpine-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -204,7 +208,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - amd64-alpine
-    if: inputs.target_job == 'amd64-alpine-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'amd64-alpine'))
+    if: inputs.target_job == 'amd64-alpine-node' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'amd64-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -238,7 +242,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "amd64-alpine-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "amd64-alpine-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -252,7 +258,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - amd64-alpine
-    if: inputs.target_job == 'amd64-alpine-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'amd64-alpine'))
+    if: inputs.target_job == 'amd64-alpine-openjdk' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'amd64-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -286,7 +292,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "amd64-alpine-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "amd64-alpine-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -300,7 +308,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - amd64-alpine
-    if: inputs.target_job == 'amd64-alpine-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'amd64-alpine'))
+    if: inputs.target_job == 'amd64-alpine-python' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'amd64-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -334,7 +342,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "amd64-alpine-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "amd64-alpine-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -347,7 +357,7 @@ jobs:
       - ubuntu-latest
     timeout-minutes: 480
     needs: []
-    if: inputs.target_job == 'amd64-debian' || inputs.target_job == 'all' || inputs.target_job == 'amd64-debian-dotnet' || inputs.target_job == 'amd64-debian-golang' || inputs.target_job == 'amd64-debian-node' || inputs.target_job == 'amd64-debian-openjdk' || inputs.target_job == 'amd64-debian-python' || inputs.target_job == 'generic-amd64-debian' || inputs.target_job == 'up-board-debian'
+    if: inputs.target_job == 'amd64-debian' || inputs.target_job == 'all' || inputs.target_job == '' || inputs.target_job == 'amd64-debian-dotnet' || inputs.target_job == 'amd64-debian-golang' || inputs.target_job == 'amd64-debian-node' || inputs.target_job == 'amd64-debian-openjdk' || inputs.target_job == 'amd64-debian-python' || inputs.target_job == 'generic-amd64-debian' || inputs.target_job == 'up-board-debian'
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -381,7 +391,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "amd64-debian" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "amd64-debian" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -395,7 +407,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - amd64-debian
-    if: inputs.target_job == 'amd64-debian-dotnet' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'amd64-debian'))
+    if: inputs.target_job == 'amd64-debian-dotnet' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'amd64-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -429,7 +441,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "amd64-debian-dotnet" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "amd64-debian-dotnet" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -443,7 +457,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - amd64-debian
-    if: inputs.target_job == 'amd64-debian-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'amd64-debian'))
+    if: inputs.target_job == 'amd64-debian-golang' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'amd64-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -477,7 +491,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "amd64-debian-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "amd64-debian-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -491,7 +507,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - amd64-debian
-    if: inputs.target_job == 'amd64-debian-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'amd64-debian'))
+    if: inputs.target_job == 'amd64-debian-node' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'amd64-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -525,7 +541,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "amd64-debian-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "amd64-debian-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -539,7 +557,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - amd64-debian
-    if: inputs.target_job == 'amd64-debian-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'amd64-debian'))
+    if: inputs.target_job == 'amd64-debian-openjdk' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'amd64-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -573,7 +591,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "amd64-debian-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "amd64-debian-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -587,7 +607,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - amd64-debian
-    if: inputs.target_job == 'amd64-debian-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'amd64-debian'))
+    if: inputs.target_job == 'amd64-debian-python' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'amd64-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -621,7 +641,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "amd64-debian-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "amd64-debian-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -634,7 +656,7 @@ jobs:
       - ubuntu-latest
     timeout-minutes: 480
     needs: []
-    if: inputs.target_job == 'amd64-fedora' || inputs.target_job == 'all' || inputs.target_job == 'amd64-fedora-golang' || inputs.target_job == 'amd64-fedora-node' || inputs.target_job == 'amd64-fedora-openjdk' || inputs.target_job == 'amd64-fedora-python' || inputs.target_job == 'generic-amd64-fedora' || inputs.target_job == 'up-board-fedora'
+    if: inputs.target_job == 'amd64-fedora' || inputs.target_job == 'all' || inputs.target_job == '' || inputs.target_job == 'amd64-fedora-golang' || inputs.target_job == 'amd64-fedora-node' || inputs.target_job == 'amd64-fedora-openjdk' || inputs.target_job == 'amd64-fedora-python' || inputs.target_job == 'generic-amd64-fedora' || inputs.target_job == 'up-board-fedora'
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -668,7 +690,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "amd64-fedora" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "amd64-fedora" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -682,7 +706,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - amd64-fedora
-    if: inputs.target_job == 'amd64-fedora-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'amd64-fedora'))
+    if: inputs.target_job == 'amd64-fedora-golang' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'amd64-fedora'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -716,7 +740,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "amd64-fedora-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "amd64-fedora-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -730,7 +756,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - amd64-fedora
-    if: inputs.target_job == 'amd64-fedora-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'amd64-fedora'))
+    if: inputs.target_job == 'amd64-fedora-node' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'amd64-fedora'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -764,7 +790,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "amd64-fedora-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "amd64-fedora-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -778,7 +806,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - amd64-fedora
-    if: inputs.target_job == 'amd64-fedora-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'amd64-fedora'))
+    if: inputs.target_job == 'amd64-fedora-openjdk' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'amd64-fedora'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -812,7 +840,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "amd64-fedora-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "amd64-fedora-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -826,7 +856,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - amd64-fedora
-    if: inputs.target_job == 'amd64-fedora-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'amd64-fedora'))
+    if: inputs.target_job == 'amd64-fedora-python' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'amd64-fedora'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -860,7 +890,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "amd64-fedora-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "amd64-fedora-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -873,7 +905,7 @@ jobs:
       - ubuntu-latest
     timeout-minutes: 480
     needs: []
-    if: inputs.target_job == 'amd64-ubuntu' || inputs.target_job == 'all' || inputs.target_job == 'amd64-ubuntu-dotnet' || inputs.target_job == 'amd64-ubuntu-golang' || inputs.target_job == 'amd64-ubuntu-node' || inputs.target_job == 'amd64-ubuntu-openjdk' || inputs.target_job == 'amd64-ubuntu-python' || inputs.target_job == 'generic-amd64-ubuntu' || inputs.target_job == 'up-board-ubuntu'
+    if: inputs.target_job == 'amd64-ubuntu' || inputs.target_job == 'all' || inputs.target_job == '' || inputs.target_job == 'amd64-ubuntu-dotnet' || inputs.target_job == 'amd64-ubuntu-golang' || inputs.target_job == 'amd64-ubuntu-node' || inputs.target_job == 'amd64-ubuntu-openjdk' || inputs.target_job == 'amd64-ubuntu-python' || inputs.target_job == 'generic-amd64-ubuntu' || inputs.target_job == 'up-board-ubuntu'
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -907,7 +939,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "amd64-ubuntu" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "amd64-ubuntu" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -921,7 +955,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - amd64-ubuntu
-    if: inputs.target_job == 'amd64-ubuntu-dotnet' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'amd64-ubuntu'))
+    if: inputs.target_job == 'amd64-ubuntu-dotnet' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'amd64-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -955,7 +989,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "amd64-ubuntu-dotnet" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "amd64-ubuntu-dotnet" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -969,7 +1005,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - amd64-ubuntu
-    if: inputs.target_job == 'amd64-ubuntu-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'amd64-ubuntu'))
+    if: inputs.target_job == 'amd64-ubuntu-golang' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'amd64-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1003,7 +1039,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "amd64-ubuntu-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "amd64-ubuntu-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1017,7 +1055,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - amd64-ubuntu
-    if: inputs.target_job == 'amd64-ubuntu-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'amd64-ubuntu'))
+    if: inputs.target_job == 'amd64-ubuntu-node' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'amd64-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1051,7 +1089,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "amd64-ubuntu-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "amd64-ubuntu-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1065,7 +1105,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - amd64-ubuntu
-    if: inputs.target_job == 'amd64-ubuntu-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'amd64-ubuntu'))
+    if: inputs.target_job == 'amd64-ubuntu-openjdk' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'amd64-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1099,7 +1139,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "amd64-ubuntu-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "amd64-ubuntu-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1113,7 +1155,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - amd64-ubuntu
-    if: inputs.target_job == 'amd64-ubuntu-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'amd64-ubuntu'))
+    if: inputs.target_job == 'amd64-ubuntu-python' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'amd64-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1147,7 +1189,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "amd64-ubuntu-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "amd64-ubuntu-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1161,7 +1205,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - amd64-alpine
-    if: inputs.target_job == 'generic-amd64-alpine' || inputs.target_job == 'all' || inputs.target_job == 'generic-amd64-alpine-golang' || inputs.target_job == 'generic-amd64-alpine-node' || inputs.target_job == 'generic-amd64-alpine-openjdk' || inputs.target_job == 'generic-amd64-alpine-python' || (inputs.include_dependents && (inputs.target_job == 'amd64-alpine'))
+    if: inputs.target_job == 'generic-amd64-alpine' || inputs.target_job == 'all' || inputs.target_job == '' || inputs.target_job == 'generic-amd64-alpine-golang' || inputs.target_job == 'generic-amd64-alpine-node' || inputs.target_job == 'generic-amd64-alpine-openjdk' || inputs.target_job == 'generic-amd64-alpine-python' || (inputs.include_dependents && (inputs.target_job == 'amd64-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1195,7 +1239,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "intel-nuc-alpine" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "intel-nuc-alpine" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1209,7 +1255,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-amd64-alpine
-    if: inputs.target_job == 'generic-amd64-alpine-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-alpine' || inputs.target_job == 'amd64-alpine'))
+    if: inputs.target_job == 'generic-amd64-alpine-golang' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-alpine' || inputs.target_job == 'amd64-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1243,7 +1289,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "intel-nuc-alpine-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "intel-nuc-alpine-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1257,7 +1305,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-amd64-alpine
-    if: inputs.target_job == 'generic-amd64-alpine-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-alpine' || inputs.target_job == 'amd64-alpine'))
+    if: inputs.target_job == 'generic-amd64-alpine-node' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-alpine' || inputs.target_job == 'amd64-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1291,7 +1339,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "intel-nuc-alpine-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "intel-nuc-alpine-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1305,7 +1355,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-amd64-alpine
-    if: inputs.target_job == 'generic-amd64-alpine-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-alpine' || inputs.target_job == 'amd64-alpine'))
+    if: inputs.target_job == 'generic-amd64-alpine-openjdk' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-alpine' || inputs.target_job == 'amd64-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1339,7 +1389,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "intel-nuc-alpine-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "intel-nuc-alpine-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1353,7 +1405,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-amd64-alpine
-    if: inputs.target_job == 'generic-amd64-alpine-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-alpine' || inputs.target_job == 'amd64-alpine'))
+    if: inputs.target_job == 'generic-amd64-alpine-python' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-alpine' || inputs.target_job == 'amd64-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1387,7 +1439,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "intel-nuc-alpine-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "intel-nuc-alpine-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1401,7 +1455,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - amd64-debian
-    if: inputs.target_job == 'generic-amd64-debian' || inputs.target_job == 'all' || inputs.target_job == 'generic-amd64-debian-dotnet' || inputs.target_job == 'generic-amd64-debian-golang' || inputs.target_job == 'generic-amd64-debian-node' || inputs.target_job == 'generic-amd64-debian-openjdk' || inputs.target_job == 'generic-amd64-debian-python' || (inputs.include_dependents && (inputs.target_job == 'amd64-debian'))
+    if: inputs.target_job == 'generic-amd64-debian' || inputs.target_job == 'all' || inputs.target_job == '' || inputs.target_job == 'generic-amd64-debian-dotnet' || inputs.target_job == 'generic-amd64-debian-golang' || inputs.target_job == 'generic-amd64-debian-node' || inputs.target_job == 'generic-amd64-debian-openjdk' || inputs.target_job == 'generic-amd64-debian-python' || (inputs.include_dependents && (inputs.target_job == 'amd64-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1435,7 +1489,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "intel-nuc-debian" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "intel-nuc-debian" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1449,7 +1505,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-amd64-debian
-    if: inputs.target_job == 'generic-amd64-debian-dotnet' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-debian' || inputs.target_job == 'amd64-debian'))
+    if: inputs.target_job == 'generic-amd64-debian-dotnet' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-debian' || inputs.target_job == 'amd64-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1483,7 +1539,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "intel-nuc-debian-dotnet" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "intel-nuc-debian-dotnet" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1497,7 +1555,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-amd64-debian
-    if: inputs.target_job == 'generic-amd64-debian-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-debian' || inputs.target_job == 'amd64-debian'))
+    if: inputs.target_job == 'generic-amd64-debian-golang' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-debian' || inputs.target_job == 'amd64-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1531,7 +1589,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "intel-nuc-debian-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "intel-nuc-debian-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1545,7 +1605,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-amd64-debian
-    if: inputs.target_job == 'generic-amd64-debian-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-debian' || inputs.target_job == 'amd64-debian'))
+    if: inputs.target_job == 'generic-amd64-debian-node' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-debian' || inputs.target_job == 'amd64-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1579,7 +1639,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "intel-nuc-debian-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "intel-nuc-debian-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1593,7 +1655,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-amd64-debian
-    if: inputs.target_job == 'generic-amd64-debian-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-debian' || inputs.target_job == 'amd64-debian'))
+    if: inputs.target_job == 'generic-amd64-debian-openjdk' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-debian' || inputs.target_job == 'amd64-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1627,7 +1689,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "intel-nuc-debian-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "intel-nuc-debian-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1641,7 +1705,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-amd64-debian
-    if: inputs.target_job == 'generic-amd64-debian-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-debian' || inputs.target_job == 'amd64-debian'))
+    if: inputs.target_job == 'generic-amd64-debian-python' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-debian' || inputs.target_job == 'amd64-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1675,7 +1739,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "intel-nuc-debian-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "intel-nuc-debian-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1689,7 +1755,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - amd64-fedora
-    if: inputs.target_job == 'generic-amd64-fedora' || inputs.target_job == 'all' || inputs.target_job == 'generic-amd64-fedora-golang' || inputs.target_job == 'generic-amd64-fedora-node' || inputs.target_job == 'generic-amd64-fedora-openjdk' || inputs.target_job == 'generic-amd64-fedora-python' || (inputs.include_dependents && (inputs.target_job == 'amd64-fedora'))
+    if: inputs.target_job == 'generic-amd64-fedora' || inputs.target_job == 'all' || inputs.target_job == '' || inputs.target_job == 'generic-amd64-fedora-golang' || inputs.target_job == 'generic-amd64-fedora-node' || inputs.target_job == 'generic-amd64-fedora-openjdk' || inputs.target_job == 'generic-amd64-fedora-python' || (inputs.include_dependents && (inputs.target_job == 'amd64-fedora'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1723,7 +1789,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "intel-nuc-fedora" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "intel-nuc-fedora" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1737,7 +1805,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-amd64-fedora
-    if: inputs.target_job == 'generic-amd64-fedora-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-fedora' || inputs.target_job == 'amd64-fedora'))
+    if: inputs.target_job == 'generic-amd64-fedora-golang' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-fedora' || inputs.target_job == 'amd64-fedora'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1771,7 +1839,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "intel-nuc-fedora-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "intel-nuc-fedora-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1785,7 +1855,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-amd64-fedora
-    if: inputs.target_job == 'generic-amd64-fedora-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-fedora' || inputs.target_job == 'amd64-fedora'))
+    if: inputs.target_job == 'generic-amd64-fedora-node' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-fedora' || inputs.target_job == 'amd64-fedora'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1819,7 +1889,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "intel-nuc-fedora-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "intel-nuc-fedora-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1833,7 +1905,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-amd64-fedora
-    if: inputs.target_job == 'generic-amd64-fedora-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-fedora' || inputs.target_job == 'amd64-fedora'))
+    if: inputs.target_job == 'generic-amd64-fedora-openjdk' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-fedora' || inputs.target_job == 'amd64-fedora'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1867,7 +1939,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "intel-nuc-fedora-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "intel-nuc-fedora-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1881,7 +1955,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-amd64-fedora
-    if: inputs.target_job == 'generic-amd64-fedora-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-fedora' || inputs.target_job == 'amd64-fedora'))
+    if: inputs.target_job == 'generic-amd64-fedora-python' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-fedora' || inputs.target_job == 'amd64-fedora'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1915,7 +1989,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "intel-nuc-fedora-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "intel-nuc-fedora-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1929,7 +2005,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - amd64-ubuntu
-    if: inputs.target_job == 'generic-amd64-ubuntu' || inputs.target_job == 'all' || inputs.target_job == 'generic-amd64-ubuntu-dotnet' || inputs.target_job == 'generic-amd64-ubuntu-golang' || inputs.target_job == 'generic-amd64-ubuntu-node' || inputs.target_job == 'generic-amd64-ubuntu-openjdk' || inputs.target_job == 'generic-amd64-ubuntu-python' || (inputs.include_dependents && (inputs.target_job == 'amd64-ubuntu'))
+    if: inputs.target_job == 'generic-amd64-ubuntu' || inputs.target_job == 'all' || inputs.target_job == '' || inputs.target_job == 'generic-amd64-ubuntu-dotnet' || inputs.target_job == 'generic-amd64-ubuntu-golang' || inputs.target_job == 'generic-amd64-ubuntu-node' || inputs.target_job == 'generic-amd64-ubuntu-openjdk' || inputs.target_job == 'generic-amd64-ubuntu-python' || (inputs.include_dependents && (inputs.target_job == 'amd64-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1963,7 +2039,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "intel-nuc-ubuntu" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "intel-nuc-ubuntu" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1977,7 +2055,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-amd64-ubuntu
-    if: inputs.target_job == 'generic-amd64-ubuntu-dotnet' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-ubuntu' || inputs.target_job == 'amd64-ubuntu'))
+    if: inputs.target_job == 'generic-amd64-ubuntu-dotnet' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-ubuntu' || inputs.target_job == 'amd64-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2011,7 +2089,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "intel-nuc-ubuntu-dotnet" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "intel-nuc-ubuntu-dotnet" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2025,7 +2105,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-amd64-ubuntu
-    if: inputs.target_job == 'generic-amd64-ubuntu-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-ubuntu' || inputs.target_job == 'amd64-ubuntu'))
+    if: inputs.target_job == 'generic-amd64-ubuntu-golang' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-ubuntu' || inputs.target_job == 'amd64-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2059,7 +2139,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "intel-nuc-ubuntu-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "intel-nuc-ubuntu-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2073,7 +2155,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-amd64-ubuntu
-    if: inputs.target_job == 'generic-amd64-ubuntu-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-ubuntu' || inputs.target_job == 'amd64-ubuntu'))
+    if: inputs.target_job == 'generic-amd64-ubuntu-node' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-ubuntu' || inputs.target_job == 'amd64-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2107,7 +2189,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "intel-nuc-ubuntu-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "intel-nuc-ubuntu-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2121,7 +2205,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-amd64-ubuntu
-    if: inputs.target_job == 'generic-amd64-ubuntu-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-ubuntu' || inputs.target_job == 'amd64-ubuntu'))
+    if: inputs.target_job == 'generic-amd64-ubuntu-openjdk' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-ubuntu' || inputs.target_job == 'amd64-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2155,7 +2239,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "intel-nuc-ubuntu-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "intel-nuc-ubuntu-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2169,7 +2255,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-amd64-ubuntu
-    if: inputs.target_job == 'generic-amd64-ubuntu-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-ubuntu' || inputs.target_job == 'amd64-ubuntu'))
+    if: inputs.target_job == 'generic-amd64-ubuntu-python' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-amd64-ubuntu' || inputs.target_job == 'amd64-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2203,7 +2289,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "intel-nuc-ubuntu-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "intel-nuc-ubuntu-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" --alias="generic-amd64 odyssey-x86 generic-amd64-fde generic genericx86-64-ext surface-go up-core up-core-plus up-squared surface-pro-6 qemux86-64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2217,7 +2305,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - amd64-alpine
-    if: inputs.target_job == 'up-board-alpine' || inputs.target_job == 'all' || inputs.target_job == 'up-board-alpine-golang' || inputs.target_job == 'up-board-alpine-node' || inputs.target_job == 'up-board-alpine-openjdk' || inputs.target_job == 'up-board-alpine-python' || (inputs.include_dependents && (inputs.target_job == 'amd64-alpine'))
+    if: inputs.target_job == 'up-board-alpine' || inputs.target_job == 'all' || inputs.target_job == '' || inputs.target_job == 'up-board-alpine-golang' || inputs.target_job == 'up-board-alpine-node' || inputs.target_job == 'up-board-alpine-openjdk' || inputs.target_job == 'up-board-alpine-python' || (inputs.include_dependents && (inputs.target_job == 'amd64-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2251,7 +2339,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "up-board-alpine" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "up-board-alpine" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2265,7 +2355,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - up-board-alpine
-    if: inputs.target_job == 'up-board-alpine-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'up-board-alpine' || inputs.target_job == 'amd64-alpine'))
+    if: inputs.target_job == 'up-board-alpine-golang' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'up-board-alpine' || inputs.target_job == 'amd64-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2299,7 +2389,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "up-board-alpine-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "up-board-alpine-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2313,7 +2405,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - up-board-alpine
-    if: inputs.target_job == 'up-board-alpine-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'up-board-alpine' || inputs.target_job == 'amd64-alpine'))
+    if: inputs.target_job == 'up-board-alpine-node' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'up-board-alpine' || inputs.target_job == 'amd64-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2347,7 +2439,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "up-board-alpine-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "up-board-alpine-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2361,7 +2455,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - up-board-alpine
-    if: inputs.target_job == 'up-board-alpine-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'up-board-alpine' || inputs.target_job == 'amd64-alpine'))
+    if: inputs.target_job == 'up-board-alpine-openjdk' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'up-board-alpine' || inputs.target_job == 'amd64-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2395,7 +2489,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "up-board-alpine-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "up-board-alpine-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2409,7 +2505,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - up-board-alpine
-    if: inputs.target_job == 'up-board-alpine-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'up-board-alpine' || inputs.target_job == 'amd64-alpine'))
+    if: inputs.target_job == 'up-board-alpine-python' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'up-board-alpine' || inputs.target_job == 'amd64-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2443,7 +2539,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "up-board-alpine-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "up-board-alpine-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2457,7 +2555,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - amd64-debian
-    if: inputs.target_job == 'up-board-debian' || inputs.target_job == 'all' || inputs.target_job == 'up-board-debian-dotnet' || inputs.target_job == 'up-board-debian-golang' || inputs.target_job == 'up-board-debian-node' || inputs.target_job == 'up-board-debian-openjdk' || inputs.target_job == 'up-board-debian-python' || (inputs.include_dependents && (inputs.target_job == 'amd64-debian'))
+    if: inputs.target_job == 'up-board-debian' || inputs.target_job == 'all' || inputs.target_job == '' || inputs.target_job == 'up-board-debian-dotnet' || inputs.target_job == 'up-board-debian-golang' || inputs.target_job == 'up-board-debian-node' || inputs.target_job == 'up-board-debian-openjdk' || inputs.target_job == 'up-board-debian-python' || (inputs.include_dependents && (inputs.target_job == 'amd64-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2491,7 +2589,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "up-board-debian" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "up-board-debian" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2505,7 +2605,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - up-board-debian
-    if: inputs.target_job == 'up-board-debian-dotnet' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'up-board-debian' || inputs.target_job == 'amd64-debian'))
+    if: inputs.target_job == 'up-board-debian-dotnet' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'up-board-debian' || inputs.target_job == 'amd64-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2539,7 +2639,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "up-board-debian-dotnet" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "up-board-debian-dotnet" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2553,7 +2655,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - up-board-debian
-    if: inputs.target_job == 'up-board-debian-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'up-board-debian' || inputs.target_job == 'amd64-debian'))
+    if: inputs.target_job == 'up-board-debian-golang' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'up-board-debian' || inputs.target_job == 'amd64-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2587,7 +2689,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "up-board-debian-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "up-board-debian-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2601,7 +2705,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - up-board-debian
-    if: inputs.target_job == 'up-board-debian-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'up-board-debian' || inputs.target_job == 'amd64-debian'))
+    if: inputs.target_job == 'up-board-debian-node' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'up-board-debian' || inputs.target_job == 'amd64-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2635,7 +2739,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "up-board-debian-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "up-board-debian-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2649,7 +2755,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - up-board-debian
-    if: inputs.target_job == 'up-board-debian-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'up-board-debian' || inputs.target_job == 'amd64-debian'))
+    if: inputs.target_job == 'up-board-debian-openjdk' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'up-board-debian' || inputs.target_job == 'amd64-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2683,7 +2789,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "up-board-debian-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "up-board-debian-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2697,7 +2805,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - up-board-debian
-    if: inputs.target_job == 'up-board-debian-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'up-board-debian' || inputs.target_job == 'amd64-debian'))
+    if: inputs.target_job == 'up-board-debian-python' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'up-board-debian' || inputs.target_job == 'amd64-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2731,7 +2839,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "up-board-debian-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "up-board-debian-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2745,7 +2855,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - amd64-fedora
-    if: inputs.target_job == 'up-board-fedora' || inputs.target_job == 'all' || inputs.target_job == 'up-board-fedora-golang' || inputs.target_job == 'up-board-fedora-node' || inputs.target_job == 'up-board-fedora-openjdk' || inputs.target_job == 'up-board-fedora-python' || (inputs.include_dependents && (inputs.target_job == 'amd64-fedora'))
+    if: inputs.target_job == 'up-board-fedora' || inputs.target_job == 'all' || inputs.target_job == '' || inputs.target_job == 'up-board-fedora-golang' || inputs.target_job == 'up-board-fedora-node' || inputs.target_job == 'up-board-fedora-openjdk' || inputs.target_job == 'up-board-fedora-python' || (inputs.include_dependents && (inputs.target_job == 'amd64-fedora'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2779,7 +2889,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "up-board-fedora" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "up-board-fedora" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2793,7 +2905,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - up-board-fedora
-    if: inputs.target_job == 'up-board-fedora-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'up-board-fedora' || inputs.target_job == 'amd64-fedora'))
+    if: inputs.target_job == 'up-board-fedora-golang' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'up-board-fedora' || inputs.target_job == 'amd64-fedora'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2827,7 +2939,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "up-board-fedora-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "up-board-fedora-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2841,7 +2955,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - up-board-fedora
-    if: inputs.target_job == 'up-board-fedora-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'up-board-fedora' || inputs.target_job == 'amd64-fedora'))
+    if: inputs.target_job == 'up-board-fedora-node' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'up-board-fedora' || inputs.target_job == 'amd64-fedora'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2875,7 +2989,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "up-board-fedora-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "up-board-fedora-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2889,7 +3005,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - up-board-fedora
-    if: inputs.target_job == 'up-board-fedora-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'up-board-fedora' || inputs.target_job == 'amd64-fedora'))
+    if: inputs.target_job == 'up-board-fedora-openjdk' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'up-board-fedora' || inputs.target_job == 'amd64-fedora'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2923,7 +3039,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "up-board-fedora-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "up-board-fedora-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2937,7 +3055,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - up-board-fedora
-    if: inputs.target_job == 'up-board-fedora-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'up-board-fedora' || inputs.target_job == 'amd64-fedora'))
+    if: inputs.target_job == 'up-board-fedora-python' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'up-board-fedora' || inputs.target_job == 'amd64-fedora'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -2971,7 +3089,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "up-board-fedora-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "up-board-fedora-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -2985,7 +3105,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - amd64-ubuntu
-    if: inputs.target_job == 'up-board-ubuntu' || inputs.target_job == 'all' || inputs.target_job == 'up-board-ubuntu-dotnet' || inputs.target_job == 'up-board-ubuntu-golang' || inputs.target_job == 'up-board-ubuntu-node' || inputs.target_job == 'up-board-ubuntu-openjdk' || inputs.target_job == 'up-board-ubuntu-python' || (inputs.include_dependents && (inputs.target_job == 'amd64-ubuntu'))
+    if: inputs.target_job == 'up-board-ubuntu' || inputs.target_job == 'all' || inputs.target_job == '' || inputs.target_job == 'up-board-ubuntu-dotnet' || inputs.target_job == 'up-board-ubuntu-golang' || inputs.target_job == 'up-board-ubuntu-node' || inputs.target_job == 'up-board-ubuntu-openjdk' || inputs.target_job == 'up-board-ubuntu-python' || (inputs.include_dependents && (inputs.target_job == 'amd64-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -3019,7 +3139,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "up-board-ubuntu" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "up-board-ubuntu" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -3033,7 +3155,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - up-board-ubuntu
-    if: inputs.target_job == 'up-board-ubuntu-dotnet' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'up-board-ubuntu' || inputs.target_job == 'amd64-ubuntu'))
+    if: inputs.target_job == 'up-board-ubuntu-dotnet' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'up-board-ubuntu' || inputs.target_job == 'amd64-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -3067,7 +3189,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "up-board-ubuntu-dotnet" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "up-board-ubuntu-dotnet" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -3081,7 +3205,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - up-board-ubuntu
-    if: inputs.target_job == 'up-board-ubuntu-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'up-board-ubuntu' || inputs.target_job == 'amd64-ubuntu'))
+    if: inputs.target_job == 'up-board-ubuntu-golang' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'up-board-ubuntu' || inputs.target_job == 'amd64-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -3115,7 +3239,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "up-board-ubuntu-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "up-board-ubuntu-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -3129,7 +3255,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - up-board-ubuntu
-    if: inputs.target_job == 'up-board-ubuntu-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'up-board-ubuntu' || inputs.target_job == 'amd64-ubuntu'))
+    if: inputs.target_job == 'up-board-ubuntu-node' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'up-board-ubuntu' || inputs.target_job == 'amd64-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -3163,7 +3289,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "up-board-ubuntu-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "up-board-ubuntu-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -3177,7 +3305,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - up-board-ubuntu
-    if: inputs.target_job == 'up-board-ubuntu-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'up-board-ubuntu' || inputs.target_job == 'amd64-ubuntu'))
+    if: inputs.target_job == 'up-board-ubuntu-openjdk' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'up-board-ubuntu' || inputs.target_job == 'amd64-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -3211,7 +3339,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "up-board-ubuntu-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "up-board-ubuntu-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -3225,7 +3355,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - up-board-ubuntu
-    if: inputs.target_job == 'up-board-ubuntu-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'up-board-ubuntu' || inputs.target_job == 'amd64-ubuntu'))
+    if: inputs.target_job == 'up-board-ubuntu-python' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'up-board-ubuntu' || inputs.target_job == 'amd64-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -3259,7 +3389,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "up-board-ubuntu-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/amd64" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "up-board-ubuntu-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/amd64" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
