@@ -120,6 +120,12 @@ jobs:
           draft: false
           delete-branch: true
 
+      - name: Enable Pull Request Automerge
+        if: steps.cpr.outputs.pull-request-number != ''
+        env:
+          GH_TOKEN: ${{ steps.gh_token.outputs.token }}
+        run: gh pr merge ${{ steps.cpr.outputs.pull-request-number }} --merge --auto || true
+
       - name: Update summary
         if: steps.cpr.outputs.pull-request-number != ''
         run: |
