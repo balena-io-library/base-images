@@ -88,7 +88,7 @@ const getTopDependency = (currentJobName, checkedNames = []) => {
 // Function to generate the run command for bashbrew build
 const createRunCommand = (currentLibrary, currentPlatform, currentAliases) => {
 	let runCmd = `./bashbrew.sh build "${currentLibrary}" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library`;
-	runCmd += ` --namespaces="\${{ inputs.namespaces }}"`;
+	runCmd += ` --namespaces="\${NAMESPACES}"`;
 
 	if (currentPlatform) {
 		runCmd += ` --platform="${currentPlatform}"`;
@@ -120,6 +120,7 @@ const createJob = (
 	const ifConditionsArray = [
 		`inputs.target_job == '${currentJobName}'`, // if the target job is the job in question, it must run
 		`inputs.target_job == 'all'`, // if the target job is 'all', the job must run
+		`inputs.target_job == ''`, // if the target job is undefined, the job must run
 		...dependentJobsList.map((job) => `inputs.target_job == '${job}'`), // if the target job is one of its dependents, the job must run
 	];
 
@@ -196,6 +197,9 @@ const createJob = (
 			{
 				name: 'Run bashbrew build',
 				'working-directory': 'bashbrew',
+				env: {
+					NAMESPACES: '${{ inputs.namespaces || \'balenalib\' }}',
+				},
 				// "continue-on-error": true,
 				run: createRunCommand(currentLibrary, currentPlatform, currentAliases),
 			},
@@ -375,7 +379,7 @@ for (const [topDependency, jobGroupList] of Object.entries(jobGroups)) {
 			},
 		},
 		concurrency: {
-			group: '${{ github.workflow }}-${{ inputs.namespaces }}',
+			group: '${{ github.workflow }}-${{ inputs.namespaces || \'balenalib\' }}',
 			'cancel-in-progress': true,
 		},
 		jobs: {},

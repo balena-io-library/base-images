@@ -64,7 +64,7 @@ name: Bashbrew (i386)
         type: boolean
         default: false
 concurrency:
-  group: ${{ github.workflow }}-${{ inputs.namespaces }}
+  group: ${{ github.workflow }}-${{ inputs.namespaces || 'balenalib' }}
   cancel-in-progress: true
 jobs:
   i386-alpine:
@@ -72,7 +72,7 @@ jobs:
       - ubuntu-latest
     timeout-minutes: 480
     needs: []
-    if: inputs.target_job == 'i386-alpine' || inputs.target_job == 'all' || inputs.target_job == 'i386-alpine-golang' || inputs.target_job == 'i386-alpine-node' || inputs.target_job == 'i386-alpine-openjdk' || inputs.target_job == 'i386-alpine-python' || inputs.target_job == 'generic-x86-alpine'
+    if: inputs.target_job == 'i386-alpine' || inputs.target_job == 'all' || inputs.target_job == '' || inputs.target_job == 'i386-alpine-golang' || inputs.target_job == 'i386-alpine-node' || inputs.target_job == 'i386-alpine-openjdk' || inputs.target_job == 'i386-alpine-python' || inputs.target_job == 'generic-x86-alpine'
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -106,7 +106,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "i386-alpine" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "i386-alpine" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -120,7 +122,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - i386-alpine
-    if: inputs.target_job == 'i386-alpine-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-alpine'))
+    if: inputs.target_job == 'i386-alpine-golang' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'i386-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -154,7 +156,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "i386-alpine-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "i386-alpine-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -168,7 +172,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - i386-alpine
-    if: inputs.target_job == 'i386-alpine-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-alpine'))
+    if: inputs.target_job == 'i386-alpine-node' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'i386-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -202,7 +206,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "i386-alpine-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "i386-alpine-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -216,7 +222,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - i386-alpine
-    if: inputs.target_job == 'i386-alpine-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-alpine'))
+    if: inputs.target_job == 'i386-alpine-openjdk' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'i386-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -250,7 +256,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "i386-alpine-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "i386-alpine-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -264,7 +272,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - i386-alpine
-    if: inputs.target_job == 'i386-alpine-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-alpine'))
+    if: inputs.target_job == 'i386-alpine-python' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'i386-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -298,7 +306,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "i386-alpine-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "i386-alpine-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -311,7 +321,7 @@ jobs:
       - ubuntu-latest
     timeout-minutes: 480
     needs: []
-    if: inputs.target_job == 'i386-debian' || inputs.target_job == 'all' || inputs.target_job == 'i386-debian-golang' || inputs.target_job == 'i386-debian-node' || inputs.target_job == 'i386-debian-openjdk' || inputs.target_job == 'i386-debian-python' || inputs.target_job == 'generic-x86-debian'
+    if: inputs.target_job == 'i386-debian' || inputs.target_job == 'all' || inputs.target_job == '' || inputs.target_job == 'i386-debian-golang' || inputs.target_job == 'i386-debian-node' || inputs.target_job == 'i386-debian-openjdk' || inputs.target_job == 'i386-debian-python' || inputs.target_job == 'generic-x86-debian'
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -345,7 +355,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "i386-debian" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "i386-debian" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -359,7 +371,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - i386-debian
-    if: inputs.target_job == 'i386-debian-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-debian'))
+    if: inputs.target_job == 'i386-debian-golang' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'i386-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -393,7 +405,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "i386-debian-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "i386-debian-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -407,7 +421,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - i386-debian
-    if: inputs.target_job == 'i386-debian-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-debian'))
+    if: inputs.target_job == 'i386-debian-node' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'i386-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -441,7 +455,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "i386-debian-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "i386-debian-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -455,7 +471,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - i386-debian
-    if: inputs.target_job == 'i386-debian-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-debian'))
+    if: inputs.target_job == 'i386-debian-openjdk' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'i386-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -489,7 +505,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "i386-debian-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "i386-debian-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -503,7 +521,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - i386-debian
-    if: inputs.target_job == 'i386-debian-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-debian'))
+    if: inputs.target_job == 'i386-debian-python' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'i386-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -537,7 +555,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "i386-debian-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "i386-debian-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -550,7 +570,7 @@ jobs:
       - ubuntu-latest
     timeout-minutes: 480
     needs: []
-    if: inputs.target_job == 'i386-ubuntu' || inputs.target_job == 'all' || inputs.target_job == 'i386-ubuntu-golang' || inputs.target_job == 'i386-ubuntu-node' || inputs.target_job == 'i386-ubuntu-openjdk' || inputs.target_job == 'i386-ubuntu-python' || inputs.target_job == 'generic-x86-ubuntu'
+    if: inputs.target_job == 'i386-ubuntu' || inputs.target_job == 'all' || inputs.target_job == '' || inputs.target_job == 'i386-ubuntu-golang' || inputs.target_job == 'i386-ubuntu-node' || inputs.target_job == 'i386-ubuntu-openjdk' || inputs.target_job == 'i386-ubuntu-python' || inputs.target_job == 'generic-x86-ubuntu'
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -584,7 +604,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "i386-ubuntu" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "i386-ubuntu" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -598,7 +620,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - i386-ubuntu
-    if: inputs.target_job == 'i386-ubuntu-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-ubuntu'))
+    if: inputs.target_job == 'i386-ubuntu-golang' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'i386-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -632,7 +654,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "i386-ubuntu-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "i386-ubuntu-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -646,7 +670,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - i386-ubuntu
-    if: inputs.target_job == 'i386-ubuntu-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-ubuntu'))
+    if: inputs.target_job == 'i386-ubuntu-node' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'i386-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -680,7 +704,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "i386-ubuntu-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "i386-ubuntu-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -694,7 +720,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - i386-ubuntu
-    if: inputs.target_job == 'i386-ubuntu-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-ubuntu'))
+    if: inputs.target_job == 'i386-ubuntu-openjdk' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'i386-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -728,7 +754,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "i386-ubuntu-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "i386-ubuntu-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -742,7 +770,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - i386-ubuntu
-    if: inputs.target_job == 'i386-ubuntu-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'i386-ubuntu'))
+    if: inputs.target_job == 'i386-ubuntu-python' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'i386-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -776,7 +804,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "i386-ubuntu-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "i386-ubuntu-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/386" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -790,7 +820,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - i386-alpine
-    if: inputs.target_job == 'generic-x86-alpine' || inputs.target_job == 'all' || inputs.target_job == 'generic-x86-alpine-golang' || inputs.target_job == 'generic-x86-alpine-node' || inputs.target_job == 'generic-x86-alpine-openjdk' || inputs.target_job == 'generic-x86-alpine-python' || (inputs.include_dependents && (inputs.target_job == 'i386-alpine'))
+    if: inputs.target_job == 'generic-x86-alpine' || inputs.target_job == 'all' || inputs.target_job == '' || inputs.target_job == 'generic-x86-alpine-golang' || inputs.target_job == 'generic-x86-alpine-node' || inputs.target_job == 'generic-x86-alpine-openjdk' || inputs.target_job == 'generic-x86-alpine-python' || (inputs.include_dependents && (inputs.target_job == 'i386-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -824,7 +854,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "qemux86-alpine" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "qemux86-alpine" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -838,7 +870,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-x86-alpine
-    if: inputs.target_job == 'generic-x86-alpine-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-alpine' || inputs.target_job == 'i386-alpine'))
+    if: inputs.target_job == 'generic-x86-alpine-golang' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-alpine' || inputs.target_job == 'i386-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -872,7 +904,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "qemux86-alpine-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "qemux86-alpine-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -886,7 +920,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-x86-alpine
-    if: inputs.target_job == 'generic-x86-alpine-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-alpine' || inputs.target_job == 'i386-alpine'))
+    if: inputs.target_job == 'generic-x86-alpine-node' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-alpine' || inputs.target_job == 'i386-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -920,7 +954,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "qemux86-alpine-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "qemux86-alpine-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -934,7 +970,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-x86-alpine
-    if: inputs.target_job == 'generic-x86-alpine-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-alpine' || inputs.target_job == 'i386-alpine'))
+    if: inputs.target_job == 'generic-x86-alpine-openjdk' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-alpine' || inputs.target_job == 'i386-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -968,7 +1004,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "qemux86-alpine-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "qemux86-alpine-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -982,7 +1020,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-x86-alpine
-    if: inputs.target_job == 'generic-x86-alpine-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-alpine' || inputs.target_job == 'i386-alpine'))
+    if: inputs.target_job == 'generic-x86-alpine-python' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-alpine' || inputs.target_job == 'i386-alpine'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1016,7 +1054,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "qemux86-alpine-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "qemux86-alpine-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1030,7 +1070,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - i386-debian
-    if: inputs.target_job == 'generic-x86-debian' || inputs.target_job == 'all' || inputs.target_job == 'generic-x86-debian-golang' || inputs.target_job == 'generic-x86-debian-node' || inputs.target_job == 'generic-x86-debian-openjdk' || inputs.target_job == 'generic-x86-debian-python' || (inputs.include_dependents && (inputs.target_job == 'i386-debian'))
+    if: inputs.target_job == 'generic-x86-debian' || inputs.target_job == 'all' || inputs.target_job == '' || inputs.target_job == 'generic-x86-debian-golang' || inputs.target_job == 'generic-x86-debian-node' || inputs.target_job == 'generic-x86-debian-openjdk' || inputs.target_job == 'generic-x86-debian-python' || (inputs.include_dependents && (inputs.target_job == 'i386-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1064,7 +1104,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "qemux86-debian" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "qemux86-debian" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1078,7 +1120,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-x86-debian
-    if: inputs.target_job == 'generic-x86-debian-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-debian' || inputs.target_job == 'i386-debian'))
+    if: inputs.target_job == 'generic-x86-debian-golang' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-debian' || inputs.target_job == 'i386-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1112,7 +1154,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "qemux86-debian-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "qemux86-debian-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1126,7 +1170,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-x86-debian
-    if: inputs.target_job == 'generic-x86-debian-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-debian' || inputs.target_job == 'i386-debian'))
+    if: inputs.target_job == 'generic-x86-debian-node' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-debian' || inputs.target_job == 'i386-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1160,7 +1204,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "qemux86-debian-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "qemux86-debian-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1174,7 +1220,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-x86-debian
-    if: inputs.target_job == 'generic-x86-debian-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-debian' || inputs.target_job == 'i386-debian'))
+    if: inputs.target_job == 'generic-x86-debian-openjdk' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-debian' || inputs.target_job == 'i386-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1208,7 +1254,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "qemux86-debian-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "qemux86-debian-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1222,7 +1270,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-x86-debian
-    if: inputs.target_job == 'generic-x86-debian-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-debian' || inputs.target_job == 'i386-debian'))
+    if: inputs.target_job == 'generic-x86-debian-python' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-debian' || inputs.target_job == 'i386-debian'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1256,7 +1304,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "qemux86-debian-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "qemux86-debian-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1270,7 +1320,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - i386-ubuntu
-    if: inputs.target_job == 'generic-x86-ubuntu' || inputs.target_job == 'all' || inputs.target_job == 'generic-x86-ubuntu-golang' || inputs.target_job == 'generic-x86-ubuntu-node' || inputs.target_job == 'generic-x86-ubuntu-openjdk' || inputs.target_job == 'generic-x86-ubuntu-python' || (inputs.include_dependents && (inputs.target_job == 'i386-ubuntu'))
+    if: inputs.target_job == 'generic-x86-ubuntu' || inputs.target_job == 'all' || inputs.target_job == '' || inputs.target_job == 'generic-x86-ubuntu-golang' || inputs.target_job == 'generic-x86-ubuntu-node' || inputs.target_job == 'generic-x86-ubuntu-openjdk' || inputs.target_job == 'generic-x86-ubuntu-python' || (inputs.include_dependents && (inputs.target_job == 'i386-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1304,7 +1354,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "qemux86-ubuntu" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "qemux86-ubuntu" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1318,7 +1370,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-x86-ubuntu
-    if: inputs.target_job == 'generic-x86-ubuntu-golang' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-ubuntu' || inputs.target_job == 'i386-ubuntu'))
+    if: inputs.target_job == 'generic-x86-ubuntu-golang' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-ubuntu' || inputs.target_job == 'i386-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1352,7 +1404,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "qemux86-ubuntu-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "qemux86-ubuntu-golang" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1366,7 +1420,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-x86-ubuntu
-    if: inputs.target_job == 'generic-x86-ubuntu-node' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-ubuntu' || inputs.target_job == 'i386-ubuntu'))
+    if: inputs.target_job == 'generic-x86-ubuntu-node' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-ubuntu' || inputs.target_job == 'i386-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1400,7 +1454,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "qemux86-ubuntu-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "qemux86-ubuntu-node" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1414,7 +1470,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-x86-ubuntu
-    if: inputs.target_job == 'generic-x86-ubuntu-openjdk' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-ubuntu' || inputs.target_job == 'i386-ubuntu'))
+    if: inputs.target_job == 'generic-x86-ubuntu-openjdk' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-ubuntu' || inputs.target_job == 'i386-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1448,7 +1504,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "qemux86-ubuntu-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "qemux86-ubuntu-openjdk" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
@@ -1462,7 +1520,7 @@ jobs:
     timeout-minutes: 480
     needs:
       - generic-x86-ubuntu
-    if: inputs.target_job == 'generic-x86-ubuntu-python' || inputs.target_job == 'all' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-ubuntu' || inputs.target_job == 'i386-ubuntu'))
+    if: inputs.target_job == 'generic-x86-ubuntu-python' || inputs.target_job == 'all' || inputs.target_job == '' || (inputs.include_dependents && (inputs.target_job == 'generic-x86-ubuntu' || inputs.target_job == 'i386-ubuntu'))
     steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@v8
@@ -1496,7 +1554,9 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Run bashbrew build
         working-directory: bashbrew
-        run: ./bashbrew.sh build "qemux86-ubuntu-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${{ inputs.namespaces }}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
+        env:
+          NAMESPACES: ${{ inputs.namespaces || 'balenalib' }}
+        run: ./bashbrew.sh build "qemux86-ubuntu-python" --src=$(pwd)/src --logs=$(pwd)/logs --library=$(pwd)/../library --namespaces="${NAMESPACES}" --platform="linux/386" --alias="stem-x86-32" $EXTRA_OPTS
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
