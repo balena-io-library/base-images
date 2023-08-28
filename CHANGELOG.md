@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.6.21 - 2023-08-28
+
+* Enable automerge on the generated PR [Kyle Harding]
+
 ## 2.6.20 - 2023-08-28
 
 * Populate default inputs for scheduled jobs [Kyle Harding]
