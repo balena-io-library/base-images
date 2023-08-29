@@ -1,4 +1,71 @@
 - commits:
+    - subject: Update scripts/contracts digest to ca46c34
+      hash: f307b75feb52b956cd911a7b62a5c45fcc39f89f
+      body: |
+        Update scripts/contracts
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: Add the BeagleBone AI-64.
+              hash: 4296cf27d047c669da781c1c7b304bab5fa848fe
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Changelog-entry: Add the BeagleBone AI-64.
+                changelog-entry: Add the BeagleBone AI-64.
+                Signed-off-by: Lisandro Pérez Meyer <lperezmeyer@ics.com>
+                signed-off-by: Lisandro Pérez Meyer <lperezmeyer@ics.com>
+              author: Lisandro Damián Nicanor Pérez Meyer
+          version: contracts-2.0.71
+          title: ""
+          date: 2023-08-29T11:19:00.577Z
+        - commits:
+            - subject: Add alpine 3.18
+              hash: d0c33e6434de4e194a3e940a339f58d248b11709
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+          version: contracts-2.0.70
+          title: ""
+          date: 2023-08-23T12:54:03.746Z
+        - commits:
+            - subject: Remove Ubuntu Impish and Kinetic and add Lunar
+              hash: 44b45eae5a0e77c8cae05971aed7d1c4906221f9
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+          version: contracts-2.0.69
+          title: ""
+          date: 2023-08-22T16:59:36.789Z
+        - commits:
+            - subject: "iot-gate-imx8plus: Improve provisioning instructions for Windows"
+              hash: dbfd03e791d69c657a295d92cd823e32f4bf2369
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+          version: contracts-2.0.68
+          title: ""
+          date: 2023-08-15T07:20:27.206Z
+  version: 2.6.22
+  title: ""
+  date: 2023-08-29T12:57:04.542Z
+- commits:
     - subject: Enable automerge on the generated PR
       hash: 8692172781c352fd6064326a5eb70b6b7747d0ff
       body: ""
