@@ -90,7 +90,7 @@ jobs:
 
       # https://github.com/tibdex/github-app-token
       - name: Get installation token
-        uses: tibdex/github-app-token@b62528385c34dbc9f38e5f4225ac829252d1ea92 # v1.8.0
+        uses: tibdex/github-app-token@d6edb790cfa657f678d2f6188875e9837622c415 # v1.8.1
         if: inputs.dry_run != true
         id: gh_token
         with:
