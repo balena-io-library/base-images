@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.6.25 - 2023-08-31
+
+* Update tibdex/github-app-token action to v1.8.2 [Self-hosted Renovate Bot]
+
 ## 2.6.24 - 2023-08-31
 
 * Update tibdex/github-app-token action to v1.8.1 [Self-hosted Renovate Bot]
