@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.6.26 - 2023-09-04
+
+
+<details>
+<summary> Update scripts/contracts digest to 518a1d4 [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.72 - 2023-09-04
+> 
+> * raspberrypi4-unipi-neuron: Add new device type [Florin Sarbu]
+> 
+
+</details>
+
 ## 2.6.25 - 2023-08-31
 
 * Update tibdex/github-app-token action to v1.8.2 [Self-hosted Renovate Bot]
