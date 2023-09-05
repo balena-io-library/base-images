@@ -24,6 +24,12 @@ const yaml = require('js-yaml');
 const util = require('node:util');
 const { concurrentForEach } = require('./utils');
 const execFile = util.promisify(require('node:child_process').execFile);
+const { getSdk } = require('balena-sdk');
+
+const balena = getSdk({
+	apiUrl: 'https://api.balena-cloud.com/',
+	dataDirectory: false,
+});
 
 function yyyymmdd() {
 	var now = new Date();
@@ -277,6 +283,19 @@ if (types.indexOf('all') > -1) {
 }
 
 (async () => {
+	const supportedDeviceTypes = await balena.models.deviceType.getAllSupported({
+		$select: ['name', 'slug'],
+	});
+	// Remove discontinued device types
+	const supportedDeviceFilter = {
+		type: 'object',
+		properties: {
+			slug: {
+				type: 'string',
+				enum: supportedDeviceTypes.map((device) => device.slug),
+			},
+		},
+	};
 	await Promise.all(
 		blueprints.map(async (type) => {
 			if (!BLUEPRINT_PATHS[type]) {
@@ -287,6 +306,13 @@ if (types.indexOf('all') > -1) {
 			}
 
 			const query = yaml.load(await fs.readFile(BLUEPRINT_PATHS[type], 'utf8'));
+
+			if (Object.keys(query.selector).includes('hw.device-type')) {
+				query.selector['hw.device-type'] = {
+					cardinality: query.selector['hw.device-type'],
+					filter: supportedDeviceFilter,
+				};
+			}
 
 			// Execute query
 			const result = contrato.query(
@@ -303,6 +329,8 @@ if (types.indexOf('all') > -1) {
 
 			await concurrentForEach(result, 5, async (context) => {
 				const json = context.toJSON();
+
+				console.log(`Generating ${json.slug}`);
 
 				if (type === 'os-arch' || type === 'os-device') {
 					await generateOsArchLibrary(json);

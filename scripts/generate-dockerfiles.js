@@ -22,6 +22,12 @@ const path = require('path');
 const contrato = require('@balena/contrato');
 const yaml = require('js-yaml');
 const { concurrentForEach } = require('./utils');
+const { getSdk } = require('balena-sdk');
+
+const balena = getSdk({
+	apiUrl: 'https://api.balena-cloud.com/',
+	dataDirectory: false,
+});
 
 const DEST_DIR = path.join(__dirname, '../balena-base-images');
 const BLUEPRINT_PATHS = {
@@ -96,6 +102,19 @@ if (types.indexOf('all') > -1) {
 }
 
 (async () => {
+	const supportedDeviceTypes = await balena.models.deviceType.getAllSupported({
+		$select: ['name', 'slug'],
+	});
+	// Remove discontinued device types
+	const supportedDeviceFilter = {
+		type: 'object',
+		properties: {
+			slug: {
+				type: 'string',
+				enum: supportedDeviceTypes.map((device) => device.slug),
+			},
+		},
+	};
 	await Promise.all(
 		blueprints.map(async (type) => {
 			if (!BLUEPRINT_PATHS[type]) {
@@ -106,6 +125,13 @@ if (types.indexOf('all') > -1) {
 			}
 
 			const query = yaml.load(await fs.readFile(BLUEPRINT_PATHS[type], 'utf8'));
+
+			if (Object.keys(query.selector).includes('hw.device-type')) {
+				query.selector['hw.device-type'] = {
+					cardinality: query.selector['hw.device-type'],
+					filter: supportedDeviceFilter,
+				};
+			}
 
 			// Execute query
 			const result = contrato.query(
@@ -128,7 +154,7 @@ if (types.indexOf('all') > -1) {
 					query.output.filename,
 				);
 
-				console.log(`Generating ${json.imageName}`);
+				console.log(`Generating ${json.slug}`);
 				await fs.outputFile(
 					destination,
 					await contrato.buildTemplate(template, context, {
