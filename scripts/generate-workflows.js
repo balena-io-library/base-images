@@ -198,7 +198,7 @@ const createJob = (
 				name: 'Run bashbrew build',
 				'working-directory': 'bashbrew',
 				env: {
-					NAMESPACES: '${{ inputs.namespaces || \'balenalib\' }}',
+					NAMESPACES: "${{ inputs.namespaces || 'balenalib' }}",
 				},
 				// "continue-on-error": true,
 				run: createRunCommand(currentLibrary, currentPlatform, currentAliases),
@@ -335,7 +335,7 @@ for (const [topDependency, jobGroupList] of Object.entries(jobGroups)) {
 			// push: {},
 			schedule: [
 				// At 03:45, every Saturday
-				{ "cron": "45 3 * * 6" },
+				{ cron: '45 3 * * 6' },
 				// At 03:45, on day 6 of the month
 				// { cron: '45 3 6 * *' },
 			],
@@ -379,7 +379,7 @@ for (const [topDependency, jobGroupList] of Object.entries(jobGroups)) {
 			},
 		},
 		concurrency: {
-			group: '${{ github.workflow }}-${{ inputs.namespaces || \'balenalib\' }}',
+			group: "${{ github.workflow }}-${{ inputs.namespaces || 'balenalib' }}",
 			'cancel-in-progress': true,
 		},
 		jobs: {},
