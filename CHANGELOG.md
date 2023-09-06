@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.6.29 - 2023-09-06
+
+* Update actions/checkout action to v4 [Self-hosted Renovate Bot]
+
 ## 2.6.28 - 2023-09-06
 
 * Delete Jenkinsfile [Kyle Harding]
