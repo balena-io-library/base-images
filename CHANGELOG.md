@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.7.0 - 2023-09-06
+
+* Remove discontinued device types from generated libraries [Kyle Harding]
+
 ## 2.6.29 - 2023-09-06
 
 * Update actions/checkout action to v4 [Self-hosted Renovate Bot]
