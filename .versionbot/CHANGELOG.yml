@@ -1,4 +1,20 @@
 - commits:
+    - subject: Revert "Autogenerate workflow files on pre-commit"
+      hash: d84d36ca70a17fc293fd6894ecce99bcdcdec1e4
+      body: |
+        This reverts commit 89afe302fa99497322d91a90373ee734e1c1279f.
+
+        The pre-commit is being called during automated workflows
+        and fails to commit the resulting files due to lack of permissions.
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Kyle Harding
+      nested: []
+  version: 2.7.1
+  title: ""
+  date: 2023-09-07T12:55:02.960Z
+- commits:
     - subject: Remove discontinued device types from generated libraries
       hash: fb1a8a87d8986b94a54699d01bdbb99a942269f9
       body: ""

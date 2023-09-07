@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.7.1 - 2023-09-07
+
+* Revert "Autogenerate workflow files on pre-commit" [Kyle Harding]
+
 ## 2.7.0 - 2023-09-06
 
 * Remove discontinued device types from generated libraries [Kyle Harding]
