@@ -1,0 +1,122 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "beaglebone-green-gateway-fedora-openjdk-8-jdk-36-build",
+        "beaglebone-green-gateway-fedora-openjdk-8-jdk-36-run",
+        "beaglebone-green-gateway-fedora-openjdk-8-jre-36-build",
+        "beaglebone-green-gateway-fedora-openjdk-8-jre-36-run"
+      ]
+    }
+  },
+  "target": {
+    "beaglebone-green-gateway-fedora-openjdk-8-jdk-36-build": {
+      "context": "openjdk/beaglebone-green-gateway/fedora/36/8-jdk/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-jdk-36-build-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-jdk-36-build",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8--36-build-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8--36-build",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-36-build-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-36-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-jdk-36-build-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-jdk-36-build",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8--36-build-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8--36-build",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-36-build-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-36-build"
+      ]
+    },
+    "beaglebone-green-gateway-fedora-openjdk-8-jdk-36-run": {
+      "context": "openjdk/beaglebone-green-gateway/fedora/36/8-jdk/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-jdk-36-run-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-jdk-36-run",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-jdk-36-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-jdk-36",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8--36-run-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8--36-run",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8--36-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8--36",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-36-run-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-36-run",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-36-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-36"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-jdk-36-run-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-jdk-36-run",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-jdk-36-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-jdk-36",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8--36-run-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8--36-run",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8--36-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8--36",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-36-run-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-36-run",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-36-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-36"
+      ]
+    },
+    "beaglebone-green-gateway-fedora-openjdk-8-jre-36-build": {
+      "context": "openjdk/beaglebone-green-gateway/fedora/36/8-jre/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-jre-36-build-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-jre-36-build",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8--36-build-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8--36-build",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-36-build-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-36-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-jre-36-build-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-jre-36-build",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8--36-build-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8--36-build",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-36-build-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-36-build"
+      ]
+    },
+    "beaglebone-green-gateway-fedora-openjdk-8-jre-36-run": {
+      "context": "openjdk/beaglebone-green-gateway/fedora/36/8-jre/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-jre-36-run-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-jre-36-run",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-jre-36-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-jre-36",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8--36-run-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8--36-run",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8--36-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8--36",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-36-run-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-36-run",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-36-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-36"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-jre-36-run-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-jre-36-run",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-jre-36-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-jre-36",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8--36-run-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8--36-run",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8--36-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8--36",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-36-run-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-36-run",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-36-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-fedora-openjdk:8-36"
+      ]
+    }
+  }
+}

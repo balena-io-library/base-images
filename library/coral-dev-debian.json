@@ -1,0 +1,230 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "coral-dev-debian-buster-build",
+        "coral-dev-debian-buster-run",
+        "coral-dev-debian-bullseye-build",
+        "coral-dev-debian-bullseye-run",
+        "coral-dev-debian-bookworm-build",
+        "coral-dev-debian-bookworm-run",
+        "coral-dev-debian-sid-build",
+        "coral-dev-debian-sid-run"
+      ]
+    }
+  },
+  "target": {
+    "coral-dev-debian-buster-build": {
+      "context": "device-base/coral-dev/debian/buster/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/coral-dev-debian:buster-build-20230911",
+        "docker.io/balenalib/coral-dev-debian:buster-build",
+        "docker.io/balenalib/coral-dev:buster-build-20230911",
+        "docker.io/balenalib/coral-dev:buster-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/coral-dev-debian:buster-build-20230911",
+        "docker.io/balenalib/coral-dev-debian:buster-build",
+        "docker.io/balenalib/coral-dev:buster-build-20230911",
+        "docker.io/balenalib/coral-dev:buster-build"
+      ]
+    },
+    "coral-dev-debian-buster-run": {
+      "context": "device-base/coral-dev/debian/buster/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/coral-dev-debian:buster-run-20230911",
+        "docker.io/balenalib/coral-dev-debian:buster-run",
+        "docker.io/balenalib/coral-dev-debian:buster-20230911",
+        "docker.io/balenalib/coral-dev-debian:buster",
+        "docker.io/balenalib/coral-dev:buster-run-20230911",
+        "docker.io/balenalib/coral-dev:buster-run",
+        "docker.io/balenalib/coral-dev:buster-20230911",
+        "docker.io/balenalib/coral-dev:buster"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/coral-dev-debian:buster-run-20230911",
+        "docker.io/balenalib/coral-dev-debian:buster-run",
+        "docker.io/balenalib/coral-dev-debian:buster-20230911",
+        "docker.io/balenalib/coral-dev-debian:buster",
+        "docker.io/balenalib/coral-dev:buster-run-20230911",
+        "docker.io/balenalib/coral-dev:buster-run",
+        "docker.io/balenalib/coral-dev:buster-20230911",
+        "docker.io/balenalib/coral-dev:buster"
+      ]
+    },
+    "coral-dev-debian-bullseye-build": {
+      "context": "device-base/coral-dev/debian/bullseye/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/coral-dev-debian:bullseye-build-20230911",
+        "docker.io/balenalib/coral-dev-debian:bullseye-build",
+        "docker.io/balenalib/coral-dev-debian:latest-build-20230911",
+        "docker.io/balenalib/coral-dev-debian:latest-build",
+        "docker.io/balenalib/coral-dev-debian:build-20230911",
+        "docker.io/balenalib/coral-dev-debian:build",
+        "docker.io/balenalib/coral-dev:bullseye-build-20230911",
+        "docker.io/balenalib/coral-dev:bullseye-build",
+        "docker.io/balenalib/coral-dev:latest-build-20230911",
+        "docker.io/balenalib/coral-dev:latest-build",
+        "docker.io/balenalib/coral-dev:build-20230911",
+        "docker.io/balenalib/coral-dev:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/coral-dev-debian:bullseye-build-20230911",
+        "docker.io/balenalib/coral-dev-debian:bullseye-build",
+        "docker.io/balenalib/coral-dev-debian:latest-build-20230911",
+        "docker.io/balenalib/coral-dev-debian:latest-build",
+        "docker.io/balenalib/coral-dev-debian:build-20230911",
+        "docker.io/balenalib/coral-dev-debian:build",
+        "docker.io/balenalib/coral-dev:bullseye-build-20230911",
+        "docker.io/balenalib/coral-dev:bullseye-build",
+        "docker.io/balenalib/coral-dev:latest-build-20230911",
+        "docker.io/balenalib/coral-dev:latest-build",
+        "docker.io/balenalib/coral-dev:build-20230911",
+        "docker.io/balenalib/coral-dev:build"
+      ]
+    },
+    "coral-dev-debian-bullseye-run": {
+      "context": "device-base/coral-dev/debian/bullseye/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/coral-dev-debian:bullseye-run-20230911",
+        "docker.io/balenalib/coral-dev-debian:bullseye-run",
+        "docker.io/balenalib/coral-dev-debian:bullseye-20230911",
+        "docker.io/balenalib/coral-dev-debian:bullseye",
+        "docker.io/balenalib/coral-dev-debian:latest-run-20230911",
+        "docker.io/balenalib/coral-dev-debian:latest-run",
+        "docker.io/balenalib/coral-dev-debian:latest-20230911",
+        "docker.io/balenalib/coral-dev-debian:latest",
+        "docker.io/balenalib/coral-dev-debian:run-20230911",
+        "docker.io/balenalib/coral-dev-debian:run",
+        "docker.io/balenalib/coral-dev-debian:20230911",
+        "docker.io/balenalib/coral-dev:bullseye-run-20230911",
+        "docker.io/balenalib/coral-dev:bullseye-run",
+        "docker.io/balenalib/coral-dev:bullseye-20230911",
+        "docker.io/balenalib/coral-dev:bullseye",
+        "docker.io/balenalib/coral-dev:latest-run-20230911",
+        "docker.io/balenalib/coral-dev:latest-run",
+        "docker.io/balenalib/coral-dev:latest-20230911",
+        "docker.io/balenalib/coral-dev:latest",
+        "docker.io/balenalib/coral-dev:run-20230911",
+        "docker.io/balenalib/coral-dev:run",
+        "docker.io/balenalib/coral-dev:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/coral-dev-debian:bullseye-run-20230911",
+        "docker.io/balenalib/coral-dev-debian:bullseye-run",
+        "docker.io/balenalib/coral-dev-debian:bullseye-20230911",
+        "docker.io/balenalib/coral-dev-debian:bullseye",
+        "docker.io/balenalib/coral-dev-debian:latest-run-20230911",
+        "docker.io/balenalib/coral-dev-debian:latest-run",
+        "docker.io/balenalib/coral-dev-debian:latest-20230911",
+        "docker.io/balenalib/coral-dev-debian:latest",
+        "docker.io/balenalib/coral-dev-debian:run-20230911",
+        "docker.io/balenalib/coral-dev-debian:run",
+        "docker.io/balenalib/coral-dev-debian:20230911",
+        "docker.io/balenalib/coral-dev:bullseye-run-20230911",
+        "docker.io/balenalib/coral-dev:bullseye-run",
+        "docker.io/balenalib/coral-dev:bullseye-20230911",
+        "docker.io/balenalib/coral-dev:bullseye",
+        "docker.io/balenalib/coral-dev:latest-run-20230911",
+        "docker.io/balenalib/coral-dev:latest-run",
+        "docker.io/balenalib/coral-dev:latest-20230911",
+        "docker.io/balenalib/coral-dev:latest",
+        "docker.io/balenalib/coral-dev:run-20230911",
+        "docker.io/balenalib/coral-dev:run",
+        "docker.io/balenalib/coral-dev:20230911"
+      ]
+    },
+    "coral-dev-debian-bookworm-build": {
+      "context": "device-base/coral-dev/debian/bookworm/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/coral-dev-debian:bookworm-build-20230911",
+        "docker.io/balenalib/coral-dev-debian:bookworm-build",
+        "docker.io/balenalib/coral-dev:bookworm-build-20230911",
+        "docker.io/balenalib/coral-dev:bookworm-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/coral-dev-debian:bookworm-build-20230911",
+        "docker.io/balenalib/coral-dev-debian:bookworm-build",
+        "docker.io/balenalib/coral-dev:bookworm-build-20230911",
+        "docker.io/balenalib/coral-dev:bookworm-build"
+      ]
+    },
+    "coral-dev-debian-bookworm-run": {
+      "context": "device-base/coral-dev/debian/bookworm/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/coral-dev-debian:bookworm-run-20230911",
+        "docker.io/balenalib/coral-dev-debian:bookworm-run",
+        "docker.io/balenalib/coral-dev-debian:bookworm-20230911",
+        "docker.io/balenalib/coral-dev-debian:bookworm",
+        "docker.io/balenalib/coral-dev:bookworm-run-20230911",
+        "docker.io/balenalib/coral-dev:bookworm-run",
+        "docker.io/balenalib/coral-dev:bookworm-20230911",
+        "docker.io/balenalib/coral-dev:bookworm"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/coral-dev-debian:bookworm-run-20230911",
+        "docker.io/balenalib/coral-dev-debian:bookworm-run",
+        "docker.io/balenalib/coral-dev-debian:bookworm-20230911",
+        "docker.io/balenalib/coral-dev-debian:bookworm",
+        "docker.io/balenalib/coral-dev:bookworm-run-20230911",
+        "docker.io/balenalib/coral-dev:bookworm-run",
+        "docker.io/balenalib/coral-dev:bookworm-20230911",
+        "docker.io/balenalib/coral-dev:bookworm"
+      ]
+    },
+    "coral-dev-debian-sid-build": {
+      "context": "device-base/coral-dev/debian/sid/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/coral-dev-debian:sid-build-20230911",
+        "docker.io/balenalib/coral-dev-debian:sid-build",
+        "docker.io/balenalib/coral-dev:sid-build-20230911",
+        "docker.io/balenalib/coral-dev:sid-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/coral-dev-debian:sid-build-20230911",
+        "docker.io/balenalib/coral-dev-debian:sid-build",
+        "docker.io/balenalib/coral-dev:sid-build-20230911",
+        "docker.io/balenalib/coral-dev:sid-build"
+      ]
+    },
+    "coral-dev-debian-sid-run": {
+      "context": "device-base/coral-dev/debian/sid/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/coral-dev-debian:sid-run-20230911",
+        "docker.io/balenalib/coral-dev-debian:sid-run",
+        "docker.io/balenalib/coral-dev-debian:sid-20230911",
+        "docker.io/balenalib/coral-dev-debian:sid",
+        "docker.io/balenalib/coral-dev:sid-run-20230911",
+        "docker.io/balenalib/coral-dev:sid-run",
+        "docker.io/balenalib/coral-dev:sid-20230911",
+        "docker.io/balenalib/coral-dev:sid"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/coral-dev-debian:sid-run-20230911",
+        "docker.io/balenalib/coral-dev-debian:sid-run",
+        "docker.io/balenalib/coral-dev-debian:sid-20230911",
+        "docker.io/balenalib/coral-dev-debian:sid",
+        "docker.io/balenalib/coral-dev:sid-run-20230911",
+        "docker.io/balenalib/coral-dev:sid-run",
+        "docker.io/balenalib/coral-dev:sid-20230911",
+        "docker.io/balenalib/coral-dev:sid"
+      ]
+    }
+  }
+}

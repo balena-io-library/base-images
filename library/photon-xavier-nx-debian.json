@@ -1,0 +1,230 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "photon-xavier-nx-debian-buster-build",
+        "photon-xavier-nx-debian-buster-run",
+        "photon-xavier-nx-debian-bullseye-build",
+        "photon-xavier-nx-debian-bullseye-run",
+        "photon-xavier-nx-debian-bookworm-build",
+        "photon-xavier-nx-debian-bookworm-run",
+        "photon-xavier-nx-debian-sid-build",
+        "photon-xavier-nx-debian-sid-run"
+      ]
+    }
+  },
+  "target": {
+    "photon-xavier-nx-debian-buster-build": {
+      "context": "device-base/photon-xavier-nx/debian/buster/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/photon-xavier-nx-debian:buster-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx-debian:buster-build",
+        "docker.io/balenalib/photon-xavier-nx:buster-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx:buster-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/photon-xavier-nx-debian:buster-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx-debian:buster-build",
+        "docker.io/balenalib/photon-xavier-nx:buster-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx:buster-build"
+      ]
+    },
+    "photon-xavier-nx-debian-buster-run": {
+      "context": "device-base/photon-xavier-nx/debian/buster/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/photon-xavier-nx-debian:buster-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx-debian:buster-run",
+        "docker.io/balenalib/photon-xavier-nx-debian:buster-20230911",
+        "docker.io/balenalib/photon-xavier-nx-debian:buster",
+        "docker.io/balenalib/photon-xavier-nx:buster-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx:buster-run",
+        "docker.io/balenalib/photon-xavier-nx:buster-20230911",
+        "docker.io/balenalib/photon-xavier-nx:buster"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/photon-xavier-nx-debian:buster-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx-debian:buster-run",
+        "docker.io/balenalib/photon-xavier-nx-debian:buster-20230911",
+        "docker.io/balenalib/photon-xavier-nx-debian:buster",
+        "docker.io/balenalib/photon-xavier-nx:buster-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx:buster-run",
+        "docker.io/balenalib/photon-xavier-nx:buster-20230911",
+        "docker.io/balenalib/photon-xavier-nx:buster"
+      ]
+    },
+    "photon-xavier-nx-debian-bullseye-build": {
+      "context": "device-base/photon-xavier-nx/debian/bullseye/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/photon-xavier-nx-debian:bullseye-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx-debian:bullseye-build",
+        "docker.io/balenalib/photon-xavier-nx-debian:latest-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx-debian:latest-build",
+        "docker.io/balenalib/photon-xavier-nx-debian:build-20230911",
+        "docker.io/balenalib/photon-xavier-nx-debian:build",
+        "docker.io/balenalib/photon-xavier-nx:bullseye-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx:bullseye-build",
+        "docker.io/balenalib/photon-xavier-nx:latest-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx:latest-build",
+        "docker.io/balenalib/photon-xavier-nx:build-20230911",
+        "docker.io/balenalib/photon-xavier-nx:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/photon-xavier-nx-debian:bullseye-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx-debian:bullseye-build",
+        "docker.io/balenalib/photon-xavier-nx-debian:latest-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx-debian:latest-build",
+        "docker.io/balenalib/photon-xavier-nx-debian:build-20230911",
+        "docker.io/balenalib/photon-xavier-nx-debian:build",
+        "docker.io/balenalib/photon-xavier-nx:bullseye-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx:bullseye-build",
+        "docker.io/balenalib/photon-xavier-nx:latest-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx:latest-build",
+        "docker.io/balenalib/photon-xavier-nx:build-20230911",
+        "docker.io/balenalib/photon-xavier-nx:build"
+      ]
+    },
+    "photon-xavier-nx-debian-bullseye-run": {
+      "context": "device-base/photon-xavier-nx/debian/bullseye/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/photon-xavier-nx-debian:bullseye-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx-debian:bullseye-run",
+        "docker.io/balenalib/photon-xavier-nx-debian:bullseye-20230911",
+        "docker.io/balenalib/photon-xavier-nx-debian:bullseye",
+        "docker.io/balenalib/photon-xavier-nx-debian:latest-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx-debian:latest-run",
+        "docker.io/balenalib/photon-xavier-nx-debian:latest-20230911",
+        "docker.io/balenalib/photon-xavier-nx-debian:latest",
+        "docker.io/balenalib/photon-xavier-nx-debian:run-20230911",
+        "docker.io/balenalib/photon-xavier-nx-debian:run",
+        "docker.io/balenalib/photon-xavier-nx-debian:20230911",
+        "docker.io/balenalib/photon-xavier-nx:bullseye-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx:bullseye-run",
+        "docker.io/balenalib/photon-xavier-nx:bullseye-20230911",
+        "docker.io/balenalib/photon-xavier-nx:bullseye",
+        "docker.io/balenalib/photon-xavier-nx:latest-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx:latest-run",
+        "docker.io/balenalib/photon-xavier-nx:latest-20230911",
+        "docker.io/balenalib/photon-xavier-nx:latest",
+        "docker.io/balenalib/photon-xavier-nx:run-20230911",
+        "docker.io/balenalib/photon-xavier-nx:run",
+        "docker.io/balenalib/photon-xavier-nx:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/photon-xavier-nx-debian:bullseye-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx-debian:bullseye-run",
+        "docker.io/balenalib/photon-xavier-nx-debian:bullseye-20230911",
+        "docker.io/balenalib/photon-xavier-nx-debian:bullseye",
+        "docker.io/balenalib/photon-xavier-nx-debian:latest-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx-debian:latest-run",
+        "docker.io/balenalib/photon-xavier-nx-debian:latest-20230911",
+        "docker.io/balenalib/photon-xavier-nx-debian:latest",
+        "docker.io/balenalib/photon-xavier-nx-debian:run-20230911",
+        "docker.io/balenalib/photon-xavier-nx-debian:run",
+        "docker.io/balenalib/photon-xavier-nx-debian:20230911",
+        "docker.io/balenalib/photon-xavier-nx:bullseye-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx:bullseye-run",
+        "docker.io/balenalib/photon-xavier-nx:bullseye-20230911",
+        "docker.io/balenalib/photon-xavier-nx:bullseye",
+        "docker.io/balenalib/photon-xavier-nx:latest-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx:latest-run",
+        "docker.io/balenalib/photon-xavier-nx:latest-20230911",
+        "docker.io/balenalib/photon-xavier-nx:latest",
+        "docker.io/balenalib/photon-xavier-nx:run-20230911",
+        "docker.io/balenalib/photon-xavier-nx:run",
+        "docker.io/balenalib/photon-xavier-nx:20230911"
+      ]
+    },
+    "photon-xavier-nx-debian-bookworm-build": {
+      "context": "device-base/photon-xavier-nx/debian/bookworm/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/photon-xavier-nx-debian:bookworm-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx-debian:bookworm-build",
+        "docker.io/balenalib/photon-xavier-nx:bookworm-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx:bookworm-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/photon-xavier-nx-debian:bookworm-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx-debian:bookworm-build",
+        "docker.io/balenalib/photon-xavier-nx:bookworm-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx:bookworm-build"
+      ]
+    },
+    "photon-xavier-nx-debian-bookworm-run": {
+      "context": "device-base/photon-xavier-nx/debian/bookworm/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/photon-xavier-nx-debian:bookworm-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx-debian:bookworm-run",
+        "docker.io/balenalib/photon-xavier-nx-debian:bookworm-20230911",
+        "docker.io/balenalib/photon-xavier-nx-debian:bookworm",
+        "docker.io/balenalib/photon-xavier-nx:bookworm-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx:bookworm-run",
+        "docker.io/balenalib/photon-xavier-nx:bookworm-20230911",
+        "docker.io/balenalib/photon-xavier-nx:bookworm"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/photon-xavier-nx-debian:bookworm-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx-debian:bookworm-run",
+        "docker.io/balenalib/photon-xavier-nx-debian:bookworm-20230911",
+        "docker.io/balenalib/photon-xavier-nx-debian:bookworm",
+        "docker.io/balenalib/photon-xavier-nx:bookworm-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx:bookworm-run",
+        "docker.io/balenalib/photon-xavier-nx:bookworm-20230911",
+        "docker.io/balenalib/photon-xavier-nx:bookworm"
+      ]
+    },
+    "photon-xavier-nx-debian-sid-build": {
+      "context": "device-base/photon-xavier-nx/debian/sid/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/photon-xavier-nx-debian:sid-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx-debian:sid-build",
+        "docker.io/balenalib/photon-xavier-nx:sid-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx:sid-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/photon-xavier-nx-debian:sid-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx-debian:sid-build",
+        "docker.io/balenalib/photon-xavier-nx:sid-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx:sid-build"
+      ]
+    },
+    "photon-xavier-nx-debian-sid-run": {
+      "context": "device-base/photon-xavier-nx/debian/sid/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/photon-xavier-nx-debian:sid-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx-debian:sid-run",
+        "docker.io/balenalib/photon-xavier-nx-debian:sid-20230911",
+        "docker.io/balenalib/photon-xavier-nx-debian:sid",
+        "docker.io/balenalib/photon-xavier-nx:sid-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx:sid-run",
+        "docker.io/balenalib/photon-xavier-nx:sid-20230911",
+        "docker.io/balenalib/photon-xavier-nx:sid"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/photon-xavier-nx-debian:sid-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx-debian:sid-run",
+        "docker.io/balenalib/photon-xavier-nx-debian:sid-20230911",
+        "docker.io/balenalib/photon-xavier-nx-debian:sid",
+        "docker.io/balenalib/photon-xavier-nx:sid-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx:sid-run",
+        "docker.io/balenalib/photon-xavier-nx:sid-20230911",
+        "docker.io/balenalib/photon-xavier-nx:sid"
+      ]
+    }
+  }
+}

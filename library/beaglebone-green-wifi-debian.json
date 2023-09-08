@@ -1,0 +1,230 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "beaglebone-green-wifi-debian-buster-build",
+        "beaglebone-green-wifi-debian-buster-run",
+        "beaglebone-green-wifi-debian-bullseye-build",
+        "beaglebone-green-wifi-debian-bullseye-run",
+        "beaglebone-green-wifi-debian-bookworm-build",
+        "beaglebone-green-wifi-debian-bookworm-run",
+        "beaglebone-green-wifi-debian-sid-build",
+        "beaglebone-green-wifi-debian-sid-run"
+      ]
+    }
+  },
+  "target": {
+    "beaglebone-green-wifi-debian-buster-build": {
+      "context": "device-base/beaglebone-green-wifi/debian/buster/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-wifi-debian:buster-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:buster-build",
+        "docker.io/balenalib/beaglebone-green-wifi:buster-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi:buster-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-wifi-debian:buster-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:buster-build",
+        "docker.io/balenalib/beaglebone-green-wifi:buster-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi:buster-build"
+      ]
+    },
+    "beaglebone-green-wifi-debian-buster-run": {
+      "context": "device-base/beaglebone-green-wifi/debian/buster/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-wifi-debian:buster-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:buster-run",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:buster-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:buster",
+        "docker.io/balenalib/beaglebone-green-wifi:buster-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi:buster-run",
+        "docker.io/balenalib/beaglebone-green-wifi:buster-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi:buster"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-wifi-debian:buster-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:buster-run",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:buster-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:buster",
+        "docker.io/balenalib/beaglebone-green-wifi:buster-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi:buster-run",
+        "docker.io/balenalib/beaglebone-green-wifi:buster-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi:buster"
+      ]
+    },
+    "beaglebone-green-wifi-debian-bullseye-build": {
+      "context": "device-base/beaglebone-green-wifi/debian/bullseye/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-wifi-debian:bullseye-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:bullseye-build",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:latest-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:latest-build",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:build",
+        "docker.io/balenalib/beaglebone-green-wifi:bullseye-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi:bullseye-build",
+        "docker.io/balenalib/beaglebone-green-wifi:latest-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi:latest-build",
+        "docker.io/balenalib/beaglebone-green-wifi:build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-wifi-debian:bullseye-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:bullseye-build",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:latest-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:latest-build",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:build",
+        "docker.io/balenalib/beaglebone-green-wifi:bullseye-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi:bullseye-build",
+        "docker.io/balenalib/beaglebone-green-wifi:latest-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi:latest-build",
+        "docker.io/balenalib/beaglebone-green-wifi:build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi:build"
+      ]
+    },
+    "beaglebone-green-wifi-debian-bullseye-run": {
+      "context": "device-base/beaglebone-green-wifi/debian/bullseye/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-wifi-debian:bullseye-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:bullseye-run",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:bullseye-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:bullseye",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:latest-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:latest-run",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:latest-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:latest",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:run",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:20230911",
+        "docker.io/balenalib/beaglebone-green-wifi:bullseye-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi:bullseye-run",
+        "docker.io/balenalib/beaglebone-green-wifi:bullseye-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi:bullseye",
+        "docker.io/balenalib/beaglebone-green-wifi:latest-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi:latest-run",
+        "docker.io/balenalib/beaglebone-green-wifi:latest-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi:latest",
+        "docker.io/balenalib/beaglebone-green-wifi:run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi:run",
+        "docker.io/balenalib/beaglebone-green-wifi:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-wifi-debian:bullseye-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:bullseye-run",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:bullseye-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:bullseye",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:latest-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:latest-run",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:latest-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:latest",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:run",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:20230911",
+        "docker.io/balenalib/beaglebone-green-wifi:bullseye-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi:bullseye-run",
+        "docker.io/balenalib/beaglebone-green-wifi:bullseye-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi:bullseye",
+        "docker.io/balenalib/beaglebone-green-wifi:latest-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi:latest-run",
+        "docker.io/balenalib/beaglebone-green-wifi:latest-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi:latest",
+        "docker.io/balenalib/beaglebone-green-wifi:run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi:run",
+        "docker.io/balenalib/beaglebone-green-wifi:20230911"
+      ]
+    },
+    "beaglebone-green-wifi-debian-bookworm-build": {
+      "context": "device-base/beaglebone-green-wifi/debian/bookworm/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-wifi-debian:bookworm-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:bookworm-build",
+        "docker.io/balenalib/beaglebone-green-wifi:bookworm-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi:bookworm-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-wifi-debian:bookworm-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:bookworm-build",
+        "docker.io/balenalib/beaglebone-green-wifi:bookworm-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi:bookworm-build"
+      ]
+    },
+    "beaglebone-green-wifi-debian-bookworm-run": {
+      "context": "device-base/beaglebone-green-wifi/debian/bookworm/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-wifi-debian:bookworm-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:bookworm-run",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:bookworm-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:bookworm",
+        "docker.io/balenalib/beaglebone-green-wifi:bookworm-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi:bookworm-run",
+        "docker.io/balenalib/beaglebone-green-wifi:bookworm-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi:bookworm"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-wifi-debian:bookworm-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:bookworm-run",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:bookworm-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:bookworm",
+        "docker.io/balenalib/beaglebone-green-wifi:bookworm-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi:bookworm-run",
+        "docker.io/balenalib/beaglebone-green-wifi:bookworm-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi:bookworm"
+      ]
+    },
+    "beaglebone-green-wifi-debian-sid-build": {
+      "context": "device-base/beaglebone-green-wifi/debian/sid/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-wifi-debian:sid-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:sid-build",
+        "docker.io/balenalib/beaglebone-green-wifi:sid-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi:sid-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-wifi-debian:sid-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:sid-build",
+        "docker.io/balenalib/beaglebone-green-wifi:sid-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi:sid-build"
+      ]
+    },
+    "beaglebone-green-wifi-debian-sid-run": {
+      "context": "device-base/beaglebone-green-wifi/debian/sid/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-wifi-debian:sid-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:sid-run",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:sid-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:sid",
+        "docker.io/balenalib/beaglebone-green-wifi:sid-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi:sid-run",
+        "docker.io/balenalib/beaglebone-green-wifi:sid-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi:sid"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-wifi-debian:sid-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:sid-run",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:sid-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-debian:sid",
+        "docker.io/balenalib/beaglebone-green-wifi:sid-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi:sid-run",
+        "docker.io/balenalib/beaglebone-green-wifi:sid-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi:sid"
+      ]
+    }
+  }
+}

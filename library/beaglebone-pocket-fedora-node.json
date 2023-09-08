@@ -1,0 +1,258 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "beaglebone-pocket-fedora-node-19-6-1-36-build",
+        "beaglebone-pocket-fedora-node-19-6-1-36-run",
+        "beaglebone-pocket-fedora-node-18-14-1-36-build",
+        "beaglebone-pocket-fedora-node-18-14-1-36-run",
+        "beaglebone-pocket-fedora-node-16-19-1-36-build",
+        "beaglebone-pocket-fedora-node-16-19-1-36-run",
+        "beaglebone-pocket-fedora-node-14-21-3-36-build",
+        "beaglebone-pocket-fedora-node-14-21-3-36-run"
+      ]
+    }
+  },
+  "target": {
+    "beaglebone-pocket-fedora-node-19-6-1-36-build": {
+      "context": "node/beaglebone-pocket/fedora/36/19.6.1/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:19.6.1-36-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:19.6.1-36-build",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:19.6-36-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:19.6-36-build",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:19-36-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:19-36-build",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:latest-36-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:latest-36-build",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:36-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:36-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:19.6.1-36-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:19.6.1-36-build",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:19.6-36-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:19.6-36-build",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:19-36-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:19-36-build",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:latest-36-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:latest-36-build",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:36-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:36-build"
+      ]
+    },
+    "beaglebone-pocket-fedora-node-19-6-1-36-run": {
+      "context": "node/beaglebone-pocket/fedora/36/19.6.1/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:19.6.1-36-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:19.6.1-36-run",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:19.6.1-36-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:19.6.1-36",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:19.6-36-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:19.6-36-run",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:19.6-36-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:19.6-36",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:19-36-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:19-36-run",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:19-36-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:19-36",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:latest-36-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:latest-36-run",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:latest-36-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:latest-36",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:36-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:36-run",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:36-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:36"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:19.6.1-36-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:19.6.1-36-run",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:19.6.1-36-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:19.6.1-36",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:19.6-36-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:19.6-36-run",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:19.6-36-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:19.6-36",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:19-36-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:19-36-run",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:19-36-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:19-36",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:latest-36-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:latest-36-run",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:latest-36-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:latest-36",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:36-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:36-run",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:36-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:36"
+      ]
+    },
+    "beaglebone-pocket-fedora-node-18-14-1-36-build": {
+      "context": "node/beaglebone-pocket/fedora/36/18.14.1/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:18.14.1-36-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:18.14.1-36-build",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:18.14-36-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:18.14-36-build",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:18-36-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:18-36-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:18.14.1-36-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:18.14.1-36-build",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:18.14-36-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:18.14-36-build",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:18-36-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:18-36-build"
+      ]
+    },
+    "beaglebone-pocket-fedora-node-18-14-1-36-run": {
+      "context": "node/beaglebone-pocket/fedora/36/18.14.1/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:18.14.1-36-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:18.14.1-36-run",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:18.14.1-36-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:18.14.1-36",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:18.14-36-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:18.14-36-run",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:18.14-36-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:18.14-36",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:18-36-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:18-36-run",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:18-36-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:18-36"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:18.14.1-36-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:18.14.1-36-run",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:18.14.1-36-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:18.14.1-36",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:18.14-36-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:18.14-36-run",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:18.14-36-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:18.14-36",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:18-36-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:18-36-run",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:18-36-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:18-36"
+      ]
+    },
+    "beaglebone-pocket-fedora-node-16-19-1-36-build": {
+      "context": "node/beaglebone-pocket/fedora/36/16.19.1/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:16.19.1-36-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:16.19.1-36-build",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:16.19-36-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:16.19-36-build",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:16-36-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:16-36-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:16.19.1-36-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:16.19.1-36-build",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:16.19-36-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:16.19-36-build",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:16-36-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:16-36-build"
+      ]
+    },
+    "beaglebone-pocket-fedora-node-16-19-1-36-run": {
+      "context": "node/beaglebone-pocket/fedora/36/16.19.1/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:16.19.1-36-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:16.19.1-36-run",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:16.19.1-36-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:16.19.1-36",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:16.19-36-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:16.19-36-run",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:16.19-36-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:16.19-36",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:16-36-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:16-36-run",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:16-36-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:16-36"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:16.19.1-36-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:16.19.1-36-run",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:16.19.1-36-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:16.19.1-36",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:16.19-36-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:16.19-36-run",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:16.19-36-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:16.19-36",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:16-36-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:16-36-run",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:16-36-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:16-36"
+      ]
+    },
+    "beaglebone-pocket-fedora-node-14-21-3-36-build": {
+      "context": "node/beaglebone-pocket/fedora/36/14.21.3/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:14.21.3-36-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:14.21.3-36-build",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:14.21-36-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:14.21-36-build",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:14-36-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:14-36-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:14.21.3-36-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:14.21.3-36-build",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:14.21-36-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:14.21-36-build",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:14-36-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:14-36-build"
+      ]
+    },
+    "beaglebone-pocket-fedora-node-14-21-3-36-run": {
+      "context": "node/beaglebone-pocket/fedora/36/14.21.3/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:14.21.3-36-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:14.21.3-36-run",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:14.21.3-36-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:14.21.3-36",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:14.21-36-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:14.21-36-run",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:14.21-36-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:14.21-36",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:14-36-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:14-36-run",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:14-36-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:14-36"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:14.21.3-36-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:14.21.3-36-run",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:14.21.3-36-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:14.21.3-36",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:14.21-36-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:14.21-36-run",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:14.21-36-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:14.21-36",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:14-36-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:14-36-run",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:14-36-20230911",
+        "docker.io/balenalib/beaglebone-pocket-fedora-node:14-36"
+      ]
+    }
+  }
+}

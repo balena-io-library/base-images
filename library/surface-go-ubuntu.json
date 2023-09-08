@@ -1,0 +1,192 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "surface-go-ubuntu-lunar-build",
+        "surface-go-ubuntu-lunar-run",
+        "surface-go-ubuntu-jammy-build",
+        "surface-go-ubuntu-jammy-run",
+        "surface-go-ubuntu-focal-build",
+        "surface-go-ubuntu-focal-run",
+        "surface-go-ubuntu-xenial-build",
+        "surface-go-ubuntu-xenial-run",
+        "surface-go-ubuntu-bionic-build",
+        "surface-go-ubuntu-bionic-run"
+      ]
+    }
+  },
+  "target": {
+    "surface-go-ubuntu-lunar-build": {
+      "context": "device-base/surface-go/ubuntu/lunar/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-ubuntu:lunar-build-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:lunar-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-ubuntu:lunar-build-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:lunar-build"
+      ]
+    },
+    "surface-go-ubuntu-lunar-run": {
+      "context": "device-base/surface-go/ubuntu/lunar/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-ubuntu:lunar-run-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:lunar-run",
+        "docker.io/balenalib/surface-go-ubuntu:lunar-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:lunar"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-ubuntu:lunar-run-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:lunar-run",
+        "docker.io/balenalib/surface-go-ubuntu:lunar-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:lunar"
+      ]
+    },
+    "surface-go-ubuntu-jammy-build": {
+      "context": "device-base/surface-go/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-ubuntu:jammy-build-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:jammy-build",
+        "docker.io/balenalib/surface-go-ubuntu:latest-build-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:latest-build",
+        "docker.io/balenalib/surface-go-ubuntu:build-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-ubuntu:jammy-build-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:jammy-build",
+        "docker.io/balenalib/surface-go-ubuntu:latest-build-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:latest-build",
+        "docker.io/balenalib/surface-go-ubuntu:build-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:build"
+      ]
+    },
+    "surface-go-ubuntu-jammy-run": {
+      "context": "device-base/surface-go/ubuntu/jammy/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-ubuntu:jammy-run-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:jammy-run",
+        "docker.io/balenalib/surface-go-ubuntu:jammy-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:jammy",
+        "docker.io/balenalib/surface-go-ubuntu:latest-run-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:latest-run",
+        "docker.io/balenalib/surface-go-ubuntu:latest-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:latest",
+        "docker.io/balenalib/surface-go-ubuntu:run-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:run",
+        "docker.io/balenalib/surface-go-ubuntu:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-ubuntu:jammy-run-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:jammy-run",
+        "docker.io/balenalib/surface-go-ubuntu:jammy-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:jammy",
+        "docker.io/balenalib/surface-go-ubuntu:latest-run-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:latest-run",
+        "docker.io/balenalib/surface-go-ubuntu:latest-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:latest",
+        "docker.io/balenalib/surface-go-ubuntu:run-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:run",
+        "docker.io/balenalib/surface-go-ubuntu:20230911"
+      ]
+    },
+    "surface-go-ubuntu-focal-build": {
+      "context": "device-base/surface-go/ubuntu/focal/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-ubuntu:focal-build-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:focal-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-ubuntu:focal-build-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:focal-build"
+      ]
+    },
+    "surface-go-ubuntu-focal-run": {
+      "context": "device-base/surface-go/ubuntu/focal/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-ubuntu:focal-run-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:focal-run",
+        "docker.io/balenalib/surface-go-ubuntu:focal-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:focal"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-ubuntu:focal-run-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:focal-run",
+        "docker.io/balenalib/surface-go-ubuntu:focal-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:focal"
+      ]
+    },
+    "surface-go-ubuntu-xenial-build": {
+      "context": "device-base/surface-go/ubuntu/xenial/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-ubuntu:xenial-build-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:xenial-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-ubuntu:xenial-build-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:xenial-build"
+      ]
+    },
+    "surface-go-ubuntu-xenial-run": {
+      "context": "device-base/surface-go/ubuntu/xenial/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-ubuntu:xenial-run-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:xenial-run",
+        "docker.io/balenalib/surface-go-ubuntu:xenial-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:xenial"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-ubuntu:xenial-run-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:xenial-run",
+        "docker.io/balenalib/surface-go-ubuntu:xenial-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:xenial"
+      ]
+    },
+    "surface-go-ubuntu-bionic-build": {
+      "context": "device-base/surface-go/ubuntu/bionic/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-ubuntu:bionic-build-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:bionic-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-ubuntu:bionic-build-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:bionic-build"
+      ]
+    },
+    "surface-go-ubuntu-bionic-run": {
+      "context": "device-base/surface-go/ubuntu/bionic/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-ubuntu:bionic-run-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:bionic-run",
+        "docker.io/balenalib/surface-go-ubuntu:bionic-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:bionic"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-ubuntu:bionic-run-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:bionic-run",
+        "docker.io/balenalib/surface-go-ubuntu:bionic-20230911",
+        "docker.io/balenalib/surface-go-ubuntu:bionic"
+      ]
+    }
+  }
+}

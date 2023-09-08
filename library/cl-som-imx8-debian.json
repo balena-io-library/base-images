@@ -1,0 +1,230 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "cl-som-imx8-debian-buster-build",
+        "cl-som-imx8-debian-buster-run",
+        "cl-som-imx8-debian-bullseye-build",
+        "cl-som-imx8-debian-bullseye-run",
+        "cl-som-imx8-debian-bookworm-build",
+        "cl-som-imx8-debian-bookworm-run",
+        "cl-som-imx8-debian-sid-build",
+        "cl-som-imx8-debian-sid-run"
+      ]
+    }
+  },
+  "target": {
+    "cl-som-imx8-debian-buster-build": {
+      "context": "device-base/cl-som-imx8/debian/buster/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/cl-som-imx8-debian:buster-build-20230911",
+        "docker.io/balenalib/cl-som-imx8-debian:buster-build",
+        "docker.io/balenalib/cl-som-imx8:buster-build-20230911",
+        "docker.io/balenalib/cl-som-imx8:buster-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/cl-som-imx8-debian:buster-build-20230911",
+        "docker.io/balenalib/cl-som-imx8-debian:buster-build",
+        "docker.io/balenalib/cl-som-imx8:buster-build-20230911",
+        "docker.io/balenalib/cl-som-imx8:buster-build"
+      ]
+    },
+    "cl-som-imx8-debian-buster-run": {
+      "context": "device-base/cl-som-imx8/debian/buster/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/cl-som-imx8-debian:buster-run-20230911",
+        "docker.io/balenalib/cl-som-imx8-debian:buster-run",
+        "docker.io/balenalib/cl-som-imx8-debian:buster-20230911",
+        "docker.io/balenalib/cl-som-imx8-debian:buster",
+        "docker.io/balenalib/cl-som-imx8:buster-run-20230911",
+        "docker.io/balenalib/cl-som-imx8:buster-run",
+        "docker.io/balenalib/cl-som-imx8:buster-20230911",
+        "docker.io/balenalib/cl-som-imx8:buster"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/cl-som-imx8-debian:buster-run-20230911",
+        "docker.io/balenalib/cl-som-imx8-debian:buster-run",
+        "docker.io/balenalib/cl-som-imx8-debian:buster-20230911",
+        "docker.io/balenalib/cl-som-imx8-debian:buster",
+        "docker.io/balenalib/cl-som-imx8:buster-run-20230911",
+        "docker.io/balenalib/cl-som-imx8:buster-run",
+        "docker.io/balenalib/cl-som-imx8:buster-20230911",
+        "docker.io/balenalib/cl-som-imx8:buster"
+      ]
+    },
+    "cl-som-imx8-debian-bullseye-build": {
+      "context": "device-base/cl-som-imx8/debian/bullseye/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/cl-som-imx8-debian:bullseye-build-20230911",
+        "docker.io/balenalib/cl-som-imx8-debian:bullseye-build",
+        "docker.io/balenalib/cl-som-imx8-debian:latest-build-20230911",
+        "docker.io/balenalib/cl-som-imx8-debian:latest-build",
+        "docker.io/balenalib/cl-som-imx8-debian:build-20230911",
+        "docker.io/balenalib/cl-som-imx8-debian:build",
+        "docker.io/balenalib/cl-som-imx8:bullseye-build-20230911",
+        "docker.io/balenalib/cl-som-imx8:bullseye-build",
+        "docker.io/balenalib/cl-som-imx8:latest-build-20230911",
+        "docker.io/balenalib/cl-som-imx8:latest-build",
+        "docker.io/balenalib/cl-som-imx8:build-20230911",
+        "docker.io/balenalib/cl-som-imx8:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/cl-som-imx8-debian:bullseye-build-20230911",
+        "docker.io/balenalib/cl-som-imx8-debian:bullseye-build",
+        "docker.io/balenalib/cl-som-imx8-debian:latest-build-20230911",
+        "docker.io/balenalib/cl-som-imx8-debian:latest-build",
+        "docker.io/balenalib/cl-som-imx8-debian:build-20230911",
+        "docker.io/balenalib/cl-som-imx8-debian:build",
+        "docker.io/balenalib/cl-som-imx8:bullseye-build-20230911",
+        "docker.io/balenalib/cl-som-imx8:bullseye-build",
+        "docker.io/balenalib/cl-som-imx8:latest-build-20230911",
+        "docker.io/balenalib/cl-som-imx8:latest-build",
+        "docker.io/balenalib/cl-som-imx8:build-20230911",
+        "docker.io/balenalib/cl-som-imx8:build"
+      ]
+    },
+    "cl-som-imx8-debian-bullseye-run": {
+      "context": "device-base/cl-som-imx8/debian/bullseye/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/cl-som-imx8-debian:bullseye-run-20230911",
+        "docker.io/balenalib/cl-som-imx8-debian:bullseye-run",
+        "docker.io/balenalib/cl-som-imx8-debian:bullseye-20230911",
+        "docker.io/balenalib/cl-som-imx8-debian:bullseye",
+        "docker.io/balenalib/cl-som-imx8-debian:latest-run-20230911",
+        "docker.io/balenalib/cl-som-imx8-debian:latest-run",
+        "docker.io/balenalib/cl-som-imx8-debian:latest-20230911",
+        "docker.io/balenalib/cl-som-imx8-debian:latest",
+        "docker.io/balenalib/cl-som-imx8-debian:run-20230911",
+        "docker.io/balenalib/cl-som-imx8-debian:run",
+        "docker.io/balenalib/cl-som-imx8-debian:20230911",
+        "docker.io/balenalib/cl-som-imx8:bullseye-run-20230911",
+        "docker.io/balenalib/cl-som-imx8:bullseye-run",
+        "docker.io/balenalib/cl-som-imx8:bullseye-20230911",
+        "docker.io/balenalib/cl-som-imx8:bullseye",
+        "docker.io/balenalib/cl-som-imx8:latest-run-20230911",
+        "docker.io/balenalib/cl-som-imx8:latest-run",
+        "docker.io/balenalib/cl-som-imx8:latest-20230911",
+        "docker.io/balenalib/cl-som-imx8:latest",
+        "docker.io/balenalib/cl-som-imx8:run-20230911",
+        "docker.io/balenalib/cl-som-imx8:run",
+        "docker.io/balenalib/cl-som-imx8:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/cl-som-imx8-debian:bullseye-run-20230911",
+        "docker.io/balenalib/cl-som-imx8-debian:bullseye-run",
+        "docker.io/balenalib/cl-som-imx8-debian:bullseye-20230911",
+        "docker.io/balenalib/cl-som-imx8-debian:bullseye",
+        "docker.io/balenalib/cl-som-imx8-debian:latest-run-20230911",
+        "docker.io/balenalib/cl-som-imx8-debian:latest-run",
+        "docker.io/balenalib/cl-som-imx8-debian:latest-20230911",
+        "docker.io/balenalib/cl-som-imx8-debian:latest",
+        "docker.io/balenalib/cl-som-imx8-debian:run-20230911",
+        "docker.io/balenalib/cl-som-imx8-debian:run",
+        "docker.io/balenalib/cl-som-imx8-debian:20230911",
+        "docker.io/balenalib/cl-som-imx8:bullseye-run-20230911",
+        "docker.io/balenalib/cl-som-imx8:bullseye-run",
+        "docker.io/balenalib/cl-som-imx8:bullseye-20230911",
+        "docker.io/balenalib/cl-som-imx8:bullseye",
+        "docker.io/balenalib/cl-som-imx8:latest-run-20230911",
+        "docker.io/balenalib/cl-som-imx8:latest-run",
+        "docker.io/balenalib/cl-som-imx8:latest-20230911",
+        "docker.io/balenalib/cl-som-imx8:latest",
+        "docker.io/balenalib/cl-som-imx8:run-20230911",
+        "docker.io/balenalib/cl-som-imx8:run",
+        "docker.io/balenalib/cl-som-imx8:20230911"
+      ]
+    },
+    "cl-som-imx8-debian-bookworm-build": {
+      "context": "device-base/cl-som-imx8/debian/bookworm/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/cl-som-imx8-debian:bookworm-build-20230911",
+        "docker.io/balenalib/cl-som-imx8-debian:bookworm-build",
+        "docker.io/balenalib/cl-som-imx8:bookworm-build-20230911",
+        "docker.io/balenalib/cl-som-imx8:bookworm-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/cl-som-imx8-debian:bookworm-build-20230911",
+        "docker.io/balenalib/cl-som-imx8-debian:bookworm-build",
+        "docker.io/balenalib/cl-som-imx8:bookworm-build-20230911",
+        "docker.io/balenalib/cl-som-imx8:bookworm-build"
+      ]
+    },
+    "cl-som-imx8-debian-bookworm-run": {
+      "context": "device-base/cl-som-imx8/debian/bookworm/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/cl-som-imx8-debian:bookworm-run-20230911",
+        "docker.io/balenalib/cl-som-imx8-debian:bookworm-run",
+        "docker.io/balenalib/cl-som-imx8-debian:bookworm-20230911",
+        "docker.io/balenalib/cl-som-imx8-debian:bookworm",
+        "docker.io/balenalib/cl-som-imx8:bookworm-run-20230911",
+        "docker.io/balenalib/cl-som-imx8:bookworm-run",
+        "docker.io/balenalib/cl-som-imx8:bookworm-20230911",
+        "docker.io/balenalib/cl-som-imx8:bookworm"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/cl-som-imx8-debian:bookworm-run-20230911",
+        "docker.io/balenalib/cl-som-imx8-debian:bookworm-run",
+        "docker.io/balenalib/cl-som-imx8-debian:bookworm-20230911",
+        "docker.io/balenalib/cl-som-imx8-debian:bookworm",
+        "docker.io/balenalib/cl-som-imx8:bookworm-run-20230911",
+        "docker.io/balenalib/cl-som-imx8:bookworm-run",
+        "docker.io/balenalib/cl-som-imx8:bookworm-20230911",
+        "docker.io/balenalib/cl-som-imx8:bookworm"
+      ]
+    },
+    "cl-som-imx8-debian-sid-build": {
+      "context": "device-base/cl-som-imx8/debian/sid/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/cl-som-imx8-debian:sid-build-20230911",
+        "docker.io/balenalib/cl-som-imx8-debian:sid-build",
+        "docker.io/balenalib/cl-som-imx8:sid-build-20230911",
+        "docker.io/balenalib/cl-som-imx8:sid-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/cl-som-imx8-debian:sid-build-20230911",
+        "docker.io/balenalib/cl-som-imx8-debian:sid-build",
+        "docker.io/balenalib/cl-som-imx8:sid-build-20230911",
+        "docker.io/balenalib/cl-som-imx8:sid-build"
+      ]
+    },
+    "cl-som-imx8-debian-sid-run": {
+      "context": "device-base/cl-som-imx8/debian/sid/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/cl-som-imx8-debian:sid-run-20230911",
+        "docker.io/balenalib/cl-som-imx8-debian:sid-run",
+        "docker.io/balenalib/cl-som-imx8-debian:sid-20230911",
+        "docker.io/balenalib/cl-som-imx8-debian:sid",
+        "docker.io/balenalib/cl-som-imx8:sid-run-20230911",
+        "docker.io/balenalib/cl-som-imx8:sid-run",
+        "docker.io/balenalib/cl-som-imx8:sid-20230911",
+        "docker.io/balenalib/cl-som-imx8:sid"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/cl-som-imx8-debian:sid-run-20230911",
+        "docker.io/balenalib/cl-som-imx8-debian:sid-run",
+        "docker.io/balenalib/cl-som-imx8-debian:sid-20230911",
+        "docker.io/balenalib/cl-som-imx8-debian:sid",
+        "docker.io/balenalib/cl-som-imx8:sid-run-20230911",
+        "docker.io/balenalib/cl-som-imx8:sid-run",
+        "docker.io/balenalib/cl-som-imx8:sid-20230911",
+        "docker.io/balenalib/cl-som-imx8:sid"
+      ]
+    }
+  }
+}

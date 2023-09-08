@@ -11,6 +11,9 @@
     "**/tests//**",
     "**/__fixtures__/**",
     "**/balena-base-images/**",
-    ".github/workflows/bashbrew-*.yml"
-  ]
+    ".github/workflows/bake-*.yml"
+  ],
+  "github-actions": {
+		"fileMatch": ["scripts/workflows/*.yml"]
+	}
 }

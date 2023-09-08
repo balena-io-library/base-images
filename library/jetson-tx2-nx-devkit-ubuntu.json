@@ -1,0 +1,192 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "jetson-tx2-nx-devkit-ubuntu-lunar-build",
+        "jetson-tx2-nx-devkit-ubuntu-lunar-run",
+        "jetson-tx2-nx-devkit-ubuntu-jammy-build",
+        "jetson-tx2-nx-devkit-ubuntu-jammy-run",
+        "jetson-tx2-nx-devkit-ubuntu-focal-build",
+        "jetson-tx2-nx-devkit-ubuntu-focal-run",
+        "jetson-tx2-nx-devkit-ubuntu-xenial-build",
+        "jetson-tx2-nx-devkit-ubuntu-xenial-run",
+        "jetson-tx2-nx-devkit-ubuntu-bionic-build",
+        "jetson-tx2-nx-devkit-ubuntu-bionic-run"
+      ]
+    }
+  },
+  "target": {
+    "jetson-tx2-nx-devkit-ubuntu-lunar-build": {
+      "context": "device-base/jetson-tx2-nx-devkit/ubuntu/lunar/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:lunar-build-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:lunar-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:lunar-build-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:lunar-build"
+      ]
+    },
+    "jetson-tx2-nx-devkit-ubuntu-lunar-run": {
+      "context": "device-base/jetson-tx2-nx-devkit/ubuntu/lunar/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:lunar-run-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:lunar-run",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:lunar-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:lunar"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:lunar-run-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:lunar-run",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:lunar-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:lunar"
+      ]
+    },
+    "jetson-tx2-nx-devkit-ubuntu-jammy-build": {
+      "context": "device-base/jetson-tx2-nx-devkit/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:jammy-build-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:jammy-build",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:latest-build-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:latest-build",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:build-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:jammy-build-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:jammy-build",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:latest-build-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:latest-build",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:build-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:build"
+      ]
+    },
+    "jetson-tx2-nx-devkit-ubuntu-jammy-run": {
+      "context": "device-base/jetson-tx2-nx-devkit/ubuntu/jammy/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:jammy-run-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:jammy-run",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:jammy-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:jammy",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:latest-run-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:latest-run",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:latest-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:latest",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:run-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:run",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:jammy-run-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:jammy-run",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:jammy-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:jammy",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:latest-run-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:latest-run",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:latest-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:latest",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:run-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:run",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:20230911"
+      ]
+    },
+    "jetson-tx2-nx-devkit-ubuntu-focal-build": {
+      "context": "device-base/jetson-tx2-nx-devkit/ubuntu/focal/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:focal-build-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:focal-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:focal-build-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:focal-build"
+      ]
+    },
+    "jetson-tx2-nx-devkit-ubuntu-focal-run": {
+      "context": "device-base/jetson-tx2-nx-devkit/ubuntu/focal/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:focal-run-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:focal-run",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:focal-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:focal"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:focal-run-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:focal-run",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:focal-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:focal"
+      ]
+    },
+    "jetson-tx2-nx-devkit-ubuntu-xenial-build": {
+      "context": "device-base/jetson-tx2-nx-devkit/ubuntu/xenial/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:xenial-build-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:xenial-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:xenial-build-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:xenial-build"
+      ]
+    },
+    "jetson-tx2-nx-devkit-ubuntu-xenial-run": {
+      "context": "device-base/jetson-tx2-nx-devkit/ubuntu/xenial/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:xenial-run-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:xenial-run",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:xenial-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:xenial"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:xenial-run-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:xenial-run",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:xenial-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:xenial"
+      ]
+    },
+    "jetson-tx2-nx-devkit-ubuntu-bionic-build": {
+      "context": "device-base/jetson-tx2-nx-devkit/ubuntu/bionic/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:bionic-build-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:bionic-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:bionic-build-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:bionic-build"
+      ]
+    },
+    "jetson-tx2-nx-devkit-ubuntu-bionic-run": {
+      "context": "device-base/jetson-tx2-nx-devkit/ubuntu/bionic/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:bionic-run-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:bionic-run",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:bionic-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:bionic"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:bionic-run-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:bionic-run",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:bionic-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-ubuntu:bionic"
+      ]
+    }
+  }
+}

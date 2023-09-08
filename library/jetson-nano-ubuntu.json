@@ -1,0 +1,192 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "jetson-nano-ubuntu-lunar-build",
+        "jetson-nano-ubuntu-lunar-run",
+        "jetson-nano-ubuntu-jammy-build",
+        "jetson-nano-ubuntu-jammy-run",
+        "jetson-nano-ubuntu-focal-build",
+        "jetson-nano-ubuntu-focal-run",
+        "jetson-nano-ubuntu-xenial-build",
+        "jetson-nano-ubuntu-xenial-run",
+        "jetson-nano-ubuntu-bionic-build",
+        "jetson-nano-ubuntu-bionic-run"
+      ]
+    }
+  },
+  "target": {
+    "jetson-nano-ubuntu-lunar-build": {
+      "context": "device-base/jetson-nano/ubuntu/lunar/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-nano-ubuntu:lunar-build-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:lunar-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-nano-ubuntu:lunar-build-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:lunar-build"
+      ]
+    },
+    "jetson-nano-ubuntu-lunar-run": {
+      "context": "device-base/jetson-nano/ubuntu/lunar/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-nano-ubuntu:lunar-run-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:lunar-run",
+        "docker.io/balenalib/jetson-nano-ubuntu:lunar-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:lunar"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-nano-ubuntu:lunar-run-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:lunar-run",
+        "docker.io/balenalib/jetson-nano-ubuntu:lunar-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:lunar"
+      ]
+    },
+    "jetson-nano-ubuntu-jammy-build": {
+      "context": "device-base/jetson-nano/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-nano-ubuntu:jammy-build-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:jammy-build",
+        "docker.io/balenalib/jetson-nano-ubuntu:latest-build-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:latest-build",
+        "docker.io/balenalib/jetson-nano-ubuntu:build-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-nano-ubuntu:jammy-build-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:jammy-build",
+        "docker.io/balenalib/jetson-nano-ubuntu:latest-build-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:latest-build",
+        "docker.io/balenalib/jetson-nano-ubuntu:build-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:build"
+      ]
+    },
+    "jetson-nano-ubuntu-jammy-run": {
+      "context": "device-base/jetson-nano/ubuntu/jammy/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-nano-ubuntu:jammy-run-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:jammy-run",
+        "docker.io/balenalib/jetson-nano-ubuntu:jammy-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:jammy",
+        "docker.io/balenalib/jetson-nano-ubuntu:latest-run-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:latest-run",
+        "docker.io/balenalib/jetson-nano-ubuntu:latest-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:latest",
+        "docker.io/balenalib/jetson-nano-ubuntu:run-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:run",
+        "docker.io/balenalib/jetson-nano-ubuntu:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-nano-ubuntu:jammy-run-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:jammy-run",
+        "docker.io/balenalib/jetson-nano-ubuntu:jammy-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:jammy",
+        "docker.io/balenalib/jetson-nano-ubuntu:latest-run-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:latest-run",
+        "docker.io/balenalib/jetson-nano-ubuntu:latest-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:latest",
+        "docker.io/balenalib/jetson-nano-ubuntu:run-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:run",
+        "docker.io/balenalib/jetson-nano-ubuntu:20230911"
+      ]
+    },
+    "jetson-nano-ubuntu-focal-build": {
+      "context": "device-base/jetson-nano/ubuntu/focal/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-nano-ubuntu:focal-build-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:focal-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-nano-ubuntu:focal-build-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:focal-build"
+      ]
+    },
+    "jetson-nano-ubuntu-focal-run": {
+      "context": "device-base/jetson-nano/ubuntu/focal/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-nano-ubuntu:focal-run-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:focal-run",
+        "docker.io/balenalib/jetson-nano-ubuntu:focal-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:focal"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-nano-ubuntu:focal-run-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:focal-run",
+        "docker.io/balenalib/jetson-nano-ubuntu:focal-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:focal"
+      ]
+    },
+    "jetson-nano-ubuntu-xenial-build": {
+      "context": "device-base/jetson-nano/ubuntu/xenial/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-nano-ubuntu:xenial-build-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:xenial-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-nano-ubuntu:xenial-build-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:xenial-build"
+      ]
+    },
+    "jetson-nano-ubuntu-xenial-run": {
+      "context": "device-base/jetson-nano/ubuntu/xenial/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-nano-ubuntu:xenial-run-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:xenial-run",
+        "docker.io/balenalib/jetson-nano-ubuntu:xenial-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:xenial"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-nano-ubuntu:xenial-run-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:xenial-run",
+        "docker.io/balenalib/jetson-nano-ubuntu:xenial-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:xenial"
+      ]
+    },
+    "jetson-nano-ubuntu-bionic-build": {
+      "context": "device-base/jetson-nano/ubuntu/bionic/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-nano-ubuntu:bionic-build-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:bionic-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-nano-ubuntu:bionic-build-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:bionic-build"
+      ]
+    },
+    "jetson-nano-ubuntu-bionic-run": {
+      "context": "device-base/jetson-nano/ubuntu/bionic/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-nano-ubuntu:bionic-run-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:bionic-run",
+        "docker.io/balenalib/jetson-nano-ubuntu:bionic-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:bionic"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-nano-ubuntu:bionic-run-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:bionic-run",
+        "docker.io/balenalib/jetson-nano-ubuntu:bionic-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:bionic"
+      ]
+    }
+  }
+}

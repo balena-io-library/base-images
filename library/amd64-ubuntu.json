@@ -1,0 +1,192 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "amd64-ubuntu-lunar-build",
+        "amd64-ubuntu-lunar-run",
+        "amd64-ubuntu-jammy-build",
+        "amd64-ubuntu-jammy-run",
+        "amd64-ubuntu-focal-build",
+        "amd64-ubuntu-focal-run",
+        "amd64-ubuntu-xenial-build",
+        "amd64-ubuntu-xenial-run",
+        "amd64-ubuntu-bionic-build",
+        "amd64-ubuntu-bionic-run"
+      ]
+    }
+  },
+  "target": {
+    "amd64-ubuntu-lunar-build": {
+      "context": "amd64/ubuntu/lunar/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/amd64-ubuntu:lunar-build-20230911",
+        "docker.io/balenalib/amd64-ubuntu:lunar-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/amd64-ubuntu:lunar-build-20230911",
+        "docker.io/balenalib/amd64-ubuntu:lunar-build"
+      ]
+    },
+    "amd64-ubuntu-lunar-run": {
+      "context": "amd64/ubuntu/lunar/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/amd64-ubuntu:lunar-run-20230911",
+        "docker.io/balenalib/amd64-ubuntu:lunar-run",
+        "docker.io/balenalib/amd64-ubuntu:lunar-20230911",
+        "docker.io/balenalib/amd64-ubuntu:lunar"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/amd64-ubuntu:lunar-run-20230911",
+        "docker.io/balenalib/amd64-ubuntu:lunar-run",
+        "docker.io/balenalib/amd64-ubuntu:lunar-20230911",
+        "docker.io/balenalib/amd64-ubuntu:lunar"
+      ]
+    },
+    "amd64-ubuntu-jammy-build": {
+      "context": "amd64/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/amd64-ubuntu:jammy-build-20230911",
+        "docker.io/balenalib/amd64-ubuntu:jammy-build",
+        "docker.io/balenalib/amd64-ubuntu:latest-build-20230911",
+        "docker.io/balenalib/amd64-ubuntu:latest-build",
+        "docker.io/balenalib/amd64-ubuntu:build-20230911",
+        "docker.io/balenalib/amd64-ubuntu:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/amd64-ubuntu:jammy-build-20230911",
+        "docker.io/balenalib/amd64-ubuntu:jammy-build",
+        "docker.io/balenalib/amd64-ubuntu:latest-build-20230911",
+        "docker.io/balenalib/amd64-ubuntu:latest-build",
+        "docker.io/balenalib/amd64-ubuntu:build-20230911",
+        "docker.io/balenalib/amd64-ubuntu:build"
+      ]
+    },
+    "amd64-ubuntu-jammy-run": {
+      "context": "amd64/ubuntu/jammy/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/amd64-ubuntu:jammy-run-20230911",
+        "docker.io/balenalib/amd64-ubuntu:jammy-run",
+        "docker.io/balenalib/amd64-ubuntu:jammy-20230911",
+        "docker.io/balenalib/amd64-ubuntu:jammy",
+        "docker.io/balenalib/amd64-ubuntu:latest-run-20230911",
+        "docker.io/balenalib/amd64-ubuntu:latest-run",
+        "docker.io/balenalib/amd64-ubuntu:latest-20230911",
+        "docker.io/balenalib/amd64-ubuntu:latest",
+        "docker.io/balenalib/amd64-ubuntu:run-20230911",
+        "docker.io/balenalib/amd64-ubuntu:run",
+        "docker.io/balenalib/amd64-ubuntu:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/amd64-ubuntu:jammy-run-20230911",
+        "docker.io/balenalib/amd64-ubuntu:jammy-run",
+        "docker.io/balenalib/amd64-ubuntu:jammy-20230911",
+        "docker.io/balenalib/amd64-ubuntu:jammy",
+        "docker.io/balenalib/amd64-ubuntu:latest-run-20230911",
+        "docker.io/balenalib/amd64-ubuntu:latest-run",
+        "docker.io/balenalib/amd64-ubuntu:latest-20230911",
+        "docker.io/balenalib/amd64-ubuntu:latest",
+        "docker.io/balenalib/amd64-ubuntu:run-20230911",
+        "docker.io/balenalib/amd64-ubuntu:run",
+        "docker.io/balenalib/amd64-ubuntu:20230911"
+      ]
+    },
+    "amd64-ubuntu-focal-build": {
+      "context": "amd64/ubuntu/focal/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/amd64-ubuntu:focal-build-20230911",
+        "docker.io/balenalib/amd64-ubuntu:focal-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/amd64-ubuntu:focal-build-20230911",
+        "docker.io/balenalib/amd64-ubuntu:focal-build"
+      ]
+    },
+    "amd64-ubuntu-focal-run": {
+      "context": "amd64/ubuntu/focal/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/amd64-ubuntu:focal-run-20230911",
+        "docker.io/balenalib/amd64-ubuntu:focal-run",
+        "docker.io/balenalib/amd64-ubuntu:focal-20230911",
+        "docker.io/balenalib/amd64-ubuntu:focal"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/amd64-ubuntu:focal-run-20230911",
+        "docker.io/balenalib/amd64-ubuntu:focal-run",
+        "docker.io/balenalib/amd64-ubuntu:focal-20230911",
+        "docker.io/balenalib/amd64-ubuntu:focal"
+      ]
+    },
+    "amd64-ubuntu-xenial-build": {
+      "context": "amd64/ubuntu/xenial/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/amd64-ubuntu:xenial-build-20230911",
+        "docker.io/balenalib/amd64-ubuntu:xenial-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/amd64-ubuntu:xenial-build-20230911",
+        "docker.io/balenalib/amd64-ubuntu:xenial-build"
+      ]
+    },
+    "amd64-ubuntu-xenial-run": {
+      "context": "amd64/ubuntu/xenial/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/amd64-ubuntu:xenial-run-20230911",
+        "docker.io/balenalib/amd64-ubuntu:xenial-run",
+        "docker.io/balenalib/amd64-ubuntu:xenial-20230911",
+        "docker.io/balenalib/amd64-ubuntu:xenial"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/amd64-ubuntu:xenial-run-20230911",
+        "docker.io/balenalib/amd64-ubuntu:xenial-run",
+        "docker.io/balenalib/amd64-ubuntu:xenial-20230911",
+        "docker.io/balenalib/amd64-ubuntu:xenial"
+      ]
+    },
+    "amd64-ubuntu-bionic-build": {
+      "context": "amd64/ubuntu/bionic/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/amd64-ubuntu:bionic-build-20230911",
+        "docker.io/balenalib/amd64-ubuntu:bionic-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/amd64-ubuntu:bionic-build-20230911",
+        "docker.io/balenalib/amd64-ubuntu:bionic-build"
+      ]
+    },
+    "amd64-ubuntu-bionic-run": {
+      "context": "amd64/ubuntu/bionic/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/amd64-ubuntu:bionic-run-20230911",
+        "docker.io/balenalib/amd64-ubuntu:bionic-run",
+        "docker.io/balenalib/amd64-ubuntu:bionic-20230911",
+        "docker.io/balenalib/amd64-ubuntu:bionic"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/amd64-ubuntu:bionic-run-20230911",
+        "docker.io/balenalib/amd64-ubuntu:bionic-run",
+        "docker.io/balenalib/amd64-ubuntu:bionic-20230911",
+        "docker.io/balenalib/amd64-ubuntu:bionic"
+      ]
+    }
+  }
+}

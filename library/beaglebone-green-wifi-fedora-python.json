@@ -1,0 +1,266 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "beaglebone-green-wifi-fedora-python-3-11-2-36-build",
+        "beaglebone-green-wifi-fedora-python-3-11-2-36-run",
+        "beaglebone-green-wifi-fedora-python-3-10-10-36-build",
+        "beaglebone-green-wifi-fedora-python-3-10-10-36-run",
+        "beaglebone-green-wifi-fedora-python-3-9-16-36-build",
+        "beaglebone-green-wifi-fedora-python-3-9-16-36-run",
+        "beaglebone-green-wifi-fedora-python-3-8-16-36-build",
+        "beaglebone-green-wifi-fedora-python-3-8-16-36-run",
+        "beaglebone-green-wifi-fedora-python-3-7-16-36-build",
+        "beaglebone-green-wifi-fedora-python-3-7-16-36-run"
+      ]
+    }
+  },
+  "target": {
+    "beaglebone-green-wifi-fedora-python-3-11-2-36-build": {
+      "context": "python/beaglebone-green-wifi/fedora/36/3.11.2/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.11.2-36-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.11.2-36-build",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.11-36-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.11-36-build",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3-36-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3-36-build",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:latest-36-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:latest-36-build",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:36-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:36-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.11.2-36-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.11.2-36-build",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.11-36-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.11-36-build",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3-36-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3-36-build",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:latest-36-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:latest-36-build",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:36-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:36-build"
+      ]
+    },
+    "beaglebone-green-wifi-fedora-python-3-11-2-36-run": {
+      "context": "python/beaglebone-green-wifi/fedora/36/3.11.2/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.11.2-36-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.11.2-36-run",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.11.2-36-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.11.2-36",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.11-36-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.11-36-run",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.11-36-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.11-36",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3-36-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3-36-run",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3-36-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3-36",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:latest-36-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:latest-36-run",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:latest-36-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:latest-36",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:36-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:36-run",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:36-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:36"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.11.2-36-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.11.2-36-run",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.11.2-36-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.11.2-36",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.11-36-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.11-36-run",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.11-36-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.11-36",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3-36-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3-36-run",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3-36-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3-36",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:latest-36-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:latest-36-run",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:latest-36-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:latest-36",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:36-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:36-run",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:36-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:36"
+      ]
+    },
+    "beaglebone-green-wifi-fedora-python-3-10-10-36-build": {
+      "context": "python/beaglebone-green-wifi/fedora/36/3.10.10/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.10.10-36-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.10.10-36-build",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.10-36-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.10-36-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.10.10-36-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.10.10-36-build",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.10-36-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.10-36-build"
+      ]
+    },
+    "beaglebone-green-wifi-fedora-python-3-10-10-36-run": {
+      "context": "python/beaglebone-green-wifi/fedora/36/3.10.10/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.10.10-36-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.10.10-36-run",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.10.10-36-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.10.10-36",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.10-36-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.10-36-run",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.10-36-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.10-36"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.10.10-36-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.10.10-36-run",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.10.10-36-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.10.10-36",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.10-36-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.10-36-run",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.10-36-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.10-36"
+      ]
+    },
+    "beaglebone-green-wifi-fedora-python-3-9-16-36-build": {
+      "context": "python/beaglebone-green-wifi/fedora/36/3.9.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.9.16-36-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.9.16-36-build",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.9-36-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.9-36-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.9.16-36-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.9.16-36-build",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.9-36-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.9-36-build"
+      ]
+    },
+    "beaglebone-green-wifi-fedora-python-3-9-16-36-run": {
+      "context": "python/beaglebone-green-wifi/fedora/36/3.9.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.9.16-36-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.9.16-36-run",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.9.16-36-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.9.16-36",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.9-36-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.9-36-run",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.9-36-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.9-36"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.9.16-36-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.9.16-36-run",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.9.16-36-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.9.16-36",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.9-36-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.9-36-run",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.9-36-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.9-36"
+      ]
+    },
+    "beaglebone-green-wifi-fedora-python-3-8-16-36-build": {
+      "context": "python/beaglebone-green-wifi/fedora/36/3.8.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.8.16-36-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.8.16-36-build",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.8-36-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.8-36-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.8.16-36-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.8.16-36-build",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.8-36-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.8-36-build"
+      ]
+    },
+    "beaglebone-green-wifi-fedora-python-3-8-16-36-run": {
+      "context": "python/beaglebone-green-wifi/fedora/36/3.8.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.8.16-36-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.8.16-36-run",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.8.16-36-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.8.16-36",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.8-36-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.8-36-run",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.8-36-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.8-36"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.8.16-36-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.8.16-36-run",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.8.16-36-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.8.16-36",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.8-36-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.8-36-run",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.8-36-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.8-36"
+      ]
+    },
+    "beaglebone-green-wifi-fedora-python-3-7-16-36-build": {
+      "context": "python/beaglebone-green-wifi/fedora/36/3.7.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.7.16-36-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.7.16-36-build",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.7-36-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.7-36-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.7.16-36-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.7.16-36-build",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.7-36-build-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.7-36-build"
+      ]
+    },
+    "beaglebone-green-wifi-fedora-python-3-7-16-36-run": {
+      "context": "python/beaglebone-green-wifi/fedora/36/3.7.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.7.16-36-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.7.16-36-run",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.7.16-36-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.7.16-36",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.7-36-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.7-36-run",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.7-36-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.7-36"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.7.16-36-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.7.16-36-run",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.7.16-36-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.7.16-36",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.7-36-run-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.7-36-run",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.7-36-20230911",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora-python:3.7-36"
+      ]
+    }
+  }
+}

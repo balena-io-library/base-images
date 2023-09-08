@@ -1,0 +1,230 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "jetson-xavier-nx-devkit-seeed-2mic-hat-debian-buster-build",
+        "jetson-xavier-nx-devkit-seeed-2mic-hat-debian-buster-run",
+        "jetson-xavier-nx-devkit-seeed-2mic-hat-debian-bullseye-build",
+        "jetson-xavier-nx-devkit-seeed-2mic-hat-debian-bullseye-run",
+        "jetson-xavier-nx-devkit-seeed-2mic-hat-debian-bookworm-build",
+        "jetson-xavier-nx-devkit-seeed-2mic-hat-debian-bookworm-run",
+        "jetson-xavier-nx-devkit-seeed-2mic-hat-debian-sid-build",
+        "jetson-xavier-nx-devkit-seeed-2mic-hat-debian-sid-run"
+      ]
+    }
+  },
+  "target": {
+    "jetson-xavier-nx-devkit-seeed-2mic-hat-debian-buster-build": {
+      "context": "device-base/jetson-xavier-nx-devkit-seeed-2mic-hat/debian/buster/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:buster-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:buster-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:buster-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:buster-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:buster-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:buster-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:buster-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:buster-build"
+      ]
+    },
+    "jetson-xavier-nx-devkit-seeed-2mic-hat-debian-buster-run": {
+      "context": "device-base/jetson-xavier-nx-devkit-seeed-2mic-hat/debian/buster/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:buster-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:buster-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:buster-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:buster",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:buster-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:buster-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:buster-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:buster"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:buster-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:buster-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:buster-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:buster",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:buster-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:buster-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:buster-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:buster"
+      ]
+    },
+    "jetson-xavier-nx-devkit-seeed-2mic-hat-debian-bullseye-build": {
+      "context": "device-base/jetson-xavier-nx-devkit-seeed-2mic-hat/debian/bullseye/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:bullseye-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:bullseye-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:latest-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:latest-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:bullseye-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:bullseye-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:latest-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:latest-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:bullseye-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:bullseye-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:latest-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:latest-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:bullseye-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:bullseye-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:latest-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:latest-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:build"
+      ]
+    },
+    "jetson-xavier-nx-devkit-seeed-2mic-hat-debian-bullseye-run": {
+      "context": "device-base/jetson-xavier-nx-devkit-seeed-2mic-hat/debian/bullseye/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:bullseye-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:bullseye-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:bullseye-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:bullseye",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:latest-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:latest-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:latest-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:latest",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:bullseye-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:bullseye-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:bullseye-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:bullseye",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:latest-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:latest-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:latest-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:latest",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:bullseye-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:bullseye-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:bullseye-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:bullseye",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:latest-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:latest-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:latest-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:latest",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:bullseye-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:bullseye-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:bullseye-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:bullseye",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:latest-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:latest-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:latest-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:latest",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:20230911"
+      ]
+    },
+    "jetson-xavier-nx-devkit-seeed-2mic-hat-debian-bookworm-build": {
+      "context": "device-base/jetson-xavier-nx-devkit-seeed-2mic-hat/debian/bookworm/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:bookworm-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:bookworm-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:bookworm-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:bookworm-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:bookworm-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:bookworm-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:bookworm-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:bookworm-build"
+      ]
+    },
+    "jetson-xavier-nx-devkit-seeed-2mic-hat-debian-bookworm-run": {
+      "context": "device-base/jetson-xavier-nx-devkit-seeed-2mic-hat/debian/bookworm/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:bookworm-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:bookworm-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:bookworm-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:bookworm",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:bookworm-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:bookworm-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:bookworm-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:bookworm"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:bookworm-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:bookworm-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:bookworm-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:bookworm",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:bookworm-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:bookworm-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:bookworm-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:bookworm"
+      ]
+    },
+    "jetson-xavier-nx-devkit-seeed-2mic-hat-debian-sid-build": {
+      "context": "device-base/jetson-xavier-nx-devkit-seeed-2mic-hat/debian/sid/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:sid-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:sid-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:sid-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:sid-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:sid-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:sid-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:sid-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:sid-build"
+      ]
+    },
+    "jetson-xavier-nx-devkit-seeed-2mic-hat-debian-sid-run": {
+      "context": "device-base/jetson-xavier-nx-devkit-seeed-2mic-hat/debian/sid/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:sid-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:sid-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:sid-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:sid",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:sid-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:sid-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:sid-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:sid"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:sid-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:sid-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:sid-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-debian:sid",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:sid-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:sid-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:sid-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat:sid"
+      ]
+    }
+  }
+}

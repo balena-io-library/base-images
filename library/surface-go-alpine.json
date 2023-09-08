@@ -1,0 +1,288 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "surface-go-alpine-edge-build",
+        "surface-go-alpine-edge-run",
+        "surface-go-alpine-3-14-build",
+        "surface-go-alpine-3-14-run",
+        "surface-go-alpine-3-16-build",
+        "surface-go-alpine-3-16-run",
+        "surface-go-alpine-3-17-build",
+        "surface-go-alpine-3-17-run",
+        "surface-go-alpine-3-18-build",
+        "surface-go-alpine-3-18-run",
+        "surface-go-alpine-3-13-build",
+        "surface-go-alpine-3-13-run",
+        "surface-go-alpine-3-12-build",
+        "surface-go-alpine-3-12-run",
+        "surface-go-alpine-3-15-build",
+        "surface-go-alpine-3-15-run"
+      ]
+    }
+  },
+  "target": {
+    "surface-go-alpine-edge-build": {
+      "context": "device-base/surface-go/alpine/edge/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-alpine:edge-build-20230911",
+        "docker.io/balenalib/surface-go-alpine:edge-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-alpine:edge-build-20230911",
+        "docker.io/balenalib/surface-go-alpine:edge-build"
+      ]
+    },
+    "surface-go-alpine-edge-run": {
+      "context": "device-base/surface-go/alpine/edge/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-alpine:edge-run-20230911",
+        "docker.io/balenalib/surface-go-alpine:edge-run",
+        "docker.io/balenalib/surface-go-alpine:edge-20230911",
+        "docker.io/balenalib/surface-go-alpine:edge"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-alpine:edge-run-20230911",
+        "docker.io/balenalib/surface-go-alpine:edge-run",
+        "docker.io/balenalib/surface-go-alpine:edge-20230911",
+        "docker.io/balenalib/surface-go-alpine:edge"
+      ]
+    },
+    "surface-go-alpine-3-14-build": {
+      "context": "device-base/surface-go/alpine/3.14/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-alpine:3.14-build-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.14-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-alpine:3.14-build-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.14-build"
+      ]
+    },
+    "surface-go-alpine-3-14-run": {
+      "context": "device-base/surface-go/alpine/3.14/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-alpine:3.14-run-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.14-run",
+        "docker.io/balenalib/surface-go-alpine:3.14-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.14"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-alpine:3.14-run-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.14-run",
+        "docker.io/balenalib/surface-go-alpine:3.14-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.14"
+      ]
+    },
+    "surface-go-alpine-3-16-build": {
+      "context": "device-base/surface-go/alpine/3.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-alpine:3.16-build-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.16-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-alpine:3.16-build-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.16-build"
+      ]
+    },
+    "surface-go-alpine-3-16-run": {
+      "context": "device-base/surface-go/alpine/3.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-alpine:3.16-run-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.16-run",
+        "docker.io/balenalib/surface-go-alpine:3.16-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.16"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-alpine:3.16-run-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.16-run",
+        "docker.io/balenalib/surface-go-alpine:3.16-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.16"
+      ]
+    },
+    "surface-go-alpine-3-17-build": {
+      "context": "device-base/surface-go/alpine/3.17/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-alpine:3.17-build-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.17-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-alpine:3.17-build-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.17-build"
+      ]
+    },
+    "surface-go-alpine-3-17-run": {
+      "context": "device-base/surface-go/alpine/3.17/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-alpine:3.17-run-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.17-run",
+        "docker.io/balenalib/surface-go-alpine:3.17-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.17"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-alpine:3.17-run-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.17-run",
+        "docker.io/balenalib/surface-go-alpine:3.17-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.17"
+      ]
+    },
+    "surface-go-alpine-3-18-build": {
+      "context": "device-base/surface-go/alpine/3.18/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-alpine:3.18-build-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.18-build",
+        "docker.io/balenalib/surface-go-alpine:latest-build-20230911",
+        "docker.io/balenalib/surface-go-alpine:latest-build",
+        "docker.io/balenalib/surface-go-alpine:build-20230911",
+        "docker.io/balenalib/surface-go-alpine:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-alpine:3.18-build-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.18-build",
+        "docker.io/balenalib/surface-go-alpine:latest-build-20230911",
+        "docker.io/balenalib/surface-go-alpine:latest-build",
+        "docker.io/balenalib/surface-go-alpine:build-20230911",
+        "docker.io/balenalib/surface-go-alpine:build"
+      ]
+    },
+    "surface-go-alpine-3-18-run": {
+      "context": "device-base/surface-go/alpine/3.18/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-alpine:3.18-run-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.18-run",
+        "docker.io/balenalib/surface-go-alpine:3.18-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.18",
+        "docker.io/balenalib/surface-go-alpine:latest-run-20230911",
+        "docker.io/balenalib/surface-go-alpine:latest-run",
+        "docker.io/balenalib/surface-go-alpine:latest-20230911",
+        "docker.io/balenalib/surface-go-alpine:latest",
+        "docker.io/balenalib/surface-go-alpine:run-20230911",
+        "docker.io/balenalib/surface-go-alpine:run",
+        "docker.io/balenalib/surface-go-alpine:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-alpine:3.18-run-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.18-run",
+        "docker.io/balenalib/surface-go-alpine:3.18-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.18",
+        "docker.io/balenalib/surface-go-alpine:latest-run-20230911",
+        "docker.io/balenalib/surface-go-alpine:latest-run",
+        "docker.io/balenalib/surface-go-alpine:latest-20230911",
+        "docker.io/balenalib/surface-go-alpine:latest",
+        "docker.io/balenalib/surface-go-alpine:run-20230911",
+        "docker.io/balenalib/surface-go-alpine:run",
+        "docker.io/balenalib/surface-go-alpine:20230911"
+      ]
+    },
+    "surface-go-alpine-3-13-build": {
+      "context": "device-base/surface-go/alpine/3.13/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-alpine:3.13-build-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.13-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-alpine:3.13-build-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.13-build"
+      ]
+    },
+    "surface-go-alpine-3-13-run": {
+      "context": "device-base/surface-go/alpine/3.13/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-alpine:3.13-run-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.13-run",
+        "docker.io/balenalib/surface-go-alpine:3.13-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.13"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-alpine:3.13-run-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.13-run",
+        "docker.io/balenalib/surface-go-alpine:3.13-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.13"
+      ]
+    },
+    "surface-go-alpine-3-12-build": {
+      "context": "device-base/surface-go/alpine/3.12/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-alpine:3.12-build-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.12-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-alpine:3.12-build-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.12-build"
+      ]
+    },
+    "surface-go-alpine-3-12-run": {
+      "context": "device-base/surface-go/alpine/3.12/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-alpine:3.12-run-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.12-run",
+        "docker.io/balenalib/surface-go-alpine:3.12-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.12"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-alpine:3.12-run-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.12-run",
+        "docker.io/balenalib/surface-go-alpine:3.12-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.12"
+      ]
+    },
+    "surface-go-alpine-3-15-build": {
+      "context": "device-base/surface-go/alpine/3.15/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-alpine:3.15-build-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.15-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-alpine:3.15-build-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.15-build"
+      ]
+    },
+    "surface-go-alpine-3-15-run": {
+      "context": "device-base/surface-go/alpine/3.15/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-alpine:3.15-run-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.15-run",
+        "docker.io/balenalib/surface-go-alpine:3.15-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.15"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-alpine:3.15-run-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.15-run",
+        "docker.io/balenalib/surface-go-alpine:3.15-20230911",
+        "docker.io/balenalib/surface-go-alpine:3.15"
+      ]
+    }
+  }
+}

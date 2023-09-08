@@ -1,0 +1,522 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "i386-ubuntu-python-3-11-2-xenial-build",
+        "i386-ubuntu-python-3-11-2-xenial-run",
+        "i386-ubuntu-python-3-10-10-xenial-build",
+        "i386-ubuntu-python-3-10-10-xenial-run",
+        "i386-ubuntu-python-3-9-16-xenial-build",
+        "i386-ubuntu-python-3-9-16-xenial-run",
+        "i386-ubuntu-python-3-8-16-xenial-build",
+        "i386-ubuntu-python-3-8-16-xenial-run",
+        "i386-ubuntu-python-3-7-16-xenial-build",
+        "i386-ubuntu-python-3-7-16-xenial-run",
+        "i386-ubuntu-python-3-11-2-bionic-build",
+        "i386-ubuntu-python-3-11-2-bionic-run",
+        "i386-ubuntu-python-3-10-10-bionic-build",
+        "i386-ubuntu-python-3-10-10-bionic-run",
+        "i386-ubuntu-python-3-9-16-bionic-build",
+        "i386-ubuntu-python-3-9-16-bionic-run",
+        "i386-ubuntu-python-3-8-16-bionic-build",
+        "i386-ubuntu-python-3-8-16-bionic-run",
+        "i386-ubuntu-python-3-7-16-bionic-build",
+        "i386-ubuntu-python-3-7-16-bionic-run"
+      ]
+    }
+  },
+  "target": {
+    "i386-ubuntu-python-3-11-2-xenial-build": {
+      "context": "python/i386/ubuntu/xenial/3.11.2/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/i386-ubuntu-python:3.11.2-xenial-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.11.2-xenial-build",
+        "docker.io/balenalib/i386-ubuntu-python:3.11-xenial-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.11-xenial-build",
+        "docker.io/balenalib/i386-ubuntu-python:3-xenial-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3-xenial-build",
+        "docker.io/balenalib/i386-ubuntu-python:latest-xenial-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:latest-xenial-build",
+        "docker.io/balenalib/i386-ubuntu-python:xenial-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:xenial-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/i386-ubuntu-python:3.11.2-xenial-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.11.2-xenial-build",
+        "docker.io/balenalib/i386-ubuntu-python:3.11-xenial-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.11-xenial-build",
+        "docker.io/balenalib/i386-ubuntu-python:3-xenial-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3-xenial-build",
+        "docker.io/balenalib/i386-ubuntu-python:latest-xenial-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:latest-xenial-build",
+        "docker.io/balenalib/i386-ubuntu-python:xenial-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:xenial-build"
+      ]
+    },
+    "i386-ubuntu-python-3-11-2-xenial-run": {
+      "context": "python/i386/ubuntu/xenial/3.11.2/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/i386-ubuntu-python:3.11.2-xenial-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.11.2-xenial-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.11.2-xenial-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.11.2-xenial",
+        "docker.io/balenalib/i386-ubuntu-python:3.11-xenial-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.11-xenial-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.11-xenial-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.11-xenial",
+        "docker.io/balenalib/i386-ubuntu-python:3-xenial-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3-xenial-run",
+        "docker.io/balenalib/i386-ubuntu-python:3-xenial-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3-xenial",
+        "docker.io/balenalib/i386-ubuntu-python:latest-xenial-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:latest-xenial-run",
+        "docker.io/balenalib/i386-ubuntu-python:latest-xenial-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:latest-xenial",
+        "docker.io/balenalib/i386-ubuntu-python:xenial-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:xenial-run",
+        "docker.io/balenalib/i386-ubuntu-python:xenial-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:xenial"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/i386-ubuntu-python:3.11.2-xenial-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.11.2-xenial-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.11.2-xenial-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.11.2-xenial",
+        "docker.io/balenalib/i386-ubuntu-python:3.11-xenial-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.11-xenial-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.11-xenial-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.11-xenial",
+        "docker.io/balenalib/i386-ubuntu-python:3-xenial-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3-xenial-run",
+        "docker.io/balenalib/i386-ubuntu-python:3-xenial-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3-xenial",
+        "docker.io/balenalib/i386-ubuntu-python:latest-xenial-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:latest-xenial-run",
+        "docker.io/balenalib/i386-ubuntu-python:latest-xenial-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:latest-xenial",
+        "docker.io/balenalib/i386-ubuntu-python:xenial-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:xenial-run",
+        "docker.io/balenalib/i386-ubuntu-python:xenial-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:xenial"
+      ]
+    },
+    "i386-ubuntu-python-3-10-10-xenial-build": {
+      "context": "python/i386/ubuntu/xenial/3.10.10/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/i386-ubuntu-python:3.10.10-xenial-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.10.10-xenial-build",
+        "docker.io/balenalib/i386-ubuntu-python:3.10-xenial-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.10-xenial-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/i386-ubuntu-python:3.10.10-xenial-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.10.10-xenial-build",
+        "docker.io/balenalib/i386-ubuntu-python:3.10-xenial-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.10-xenial-build"
+      ]
+    },
+    "i386-ubuntu-python-3-10-10-xenial-run": {
+      "context": "python/i386/ubuntu/xenial/3.10.10/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/i386-ubuntu-python:3.10.10-xenial-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.10.10-xenial-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.10.10-xenial-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.10.10-xenial",
+        "docker.io/balenalib/i386-ubuntu-python:3.10-xenial-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.10-xenial-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.10-xenial-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.10-xenial"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/i386-ubuntu-python:3.10.10-xenial-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.10.10-xenial-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.10.10-xenial-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.10.10-xenial",
+        "docker.io/balenalib/i386-ubuntu-python:3.10-xenial-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.10-xenial-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.10-xenial-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.10-xenial"
+      ]
+    },
+    "i386-ubuntu-python-3-9-16-xenial-build": {
+      "context": "python/i386/ubuntu/xenial/3.9.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/i386-ubuntu-python:3.9.16-xenial-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.9.16-xenial-build",
+        "docker.io/balenalib/i386-ubuntu-python:3.9-xenial-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.9-xenial-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/i386-ubuntu-python:3.9.16-xenial-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.9.16-xenial-build",
+        "docker.io/balenalib/i386-ubuntu-python:3.9-xenial-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.9-xenial-build"
+      ]
+    },
+    "i386-ubuntu-python-3-9-16-xenial-run": {
+      "context": "python/i386/ubuntu/xenial/3.9.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/i386-ubuntu-python:3.9.16-xenial-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.9.16-xenial-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.9.16-xenial-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.9.16-xenial",
+        "docker.io/balenalib/i386-ubuntu-python:3.9-xenial-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.9-xenial-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.9-xenial-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.9-xenial"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/i386-ubuntu-python:3.9.16-xenial-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.9.16-xenial-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.9.16-xenial-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.9.16-xenial",
+        "docker.io/balenalib/i386-ubuntu-python:3.9-xenial-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.9-xenial-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.9-xenial-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.9-xenial"
+      ]
+    },
+    "i386-ubuntu-python-3-8-16-xenial-build": {
+      "context": "python/i386/ubuntu/xenial/3.8.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/i386-ubuntu-python:3.8.16-xenial-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.8.16-xenial-build",
+        "docker.io/balenalib/i386-ubuntu-python:3.8-xenial-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.8-xenial-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/i386-ubuntu-python:3.8.16-xenial-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.8.16-xenial-build",
+        "docker.io/balenalib/i386-ubuntu-python:3.8-xenial-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.8-xenial-build"
+      ]
+    },
+    "i386-ubuntu-python-3-8-16-xenial-run": {
+      "context": "python/i386/ubuntu/xenial/3.8.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/i386-ubuntu-python:3.8.16-xenial-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.8.16-xenial-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.8.16-xenial-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.8.16-xenial",
+        "docker.io/balenalib/i386-ubuntu-python:3.8-xenial-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.8-xenial-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.8-xenial-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.8-xenial"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/i386-ubuntu-python:3.8.16-xenial-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.8.16-xenial-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.8.16-xenial-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.8.16-xenial",
+        "docker.io/balenalib/i386-ubuntu-python:3.8-xenial-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.8-xenial-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.8-xenial-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.8-xenial"
+      ]
+    },
+    "i386-ubuntu-python-3-7-16-xenial-build": {
+      "context": "python/i386/ubuntu/xenial/3.7.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/i386-ubuntu-python:3.7.16-xenial-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.7.16-xenial-build",
+        "docker.io/balenalib/i386-ubuntu-python:3.7-xenial-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.7-xenial-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/i386-ubuntu-python:3.7.16-xenial-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.7.16-xenial-build",
+        "docker.io/balenalib/i386-ubuntu-python:3.7-xenial-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.7-xenial-build"
+      ]
+    },
+    "i386-ubuntu-python-3-7-16-xenial-run": {
+      "context": "python/i386/ubuntu/xenial/3.7.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/i386-ubuntu-python:3.7.16-xenial-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.7.16-xenial-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.7.16-xenial-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.7.16-xenial",
+        "docker.io/balenalib/i386-ubuntu-python:3.7-xenial-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.7-xenial-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.7-xenial-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.7-xenial"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/i386-ubuntu-python:3.7.16-xenial-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.7.16-xenial-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.7.16-xenial-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.7.16-xenial",
+        "docker.io/balenalib/i386-ubuntu-python:3.7-xenial-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.7-xenial-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.7-xenial-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.7-xenial"
+      ]
+    },
+    "i386-ubuntu-python-3-11-2-bionic-build": {
+      "context": "python/i386/ubuntu/bionic/3.11.2/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/i386-ubuntu-python:3.11.2-bionic-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.11.2-bionic-build",
+        "docker.io/balenalib/i386-ubuntu-python:3.11-bionic-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.11-bionic-build",
+        "docker.io/balenalib/i386-ubuntu-python:3-bionic-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3-bionic-build",
+        "docker.io/balenalib/i386-ubuntu-python:latest-bionic-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:latest-bionic-build",
+        "docker.io/balenalib/i386-ubuntu-python:bionic-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:bionic-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/i386-ubuntu-python:3.11.2-bionic-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.11.2-bionic-build",
+        "docker.io/balenalib/i386-ubuntu-python:3.11-bionic-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.11-bionic-build",
+        "docker.io/balenalib/i386-ubuntu-python:3-bionic-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3-bionic-build",
+        "docker.io/balenalib/i386-ubuntu-python:latest-bionic-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:latest-bionic-build",
+        "docker.io/balenalib/i386-ubuntu-python:bionic-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:bionic-build"
+      ]
+    },
+    "i386-ubuntu-python-3-11-2-bionic-run": {
+      "context": "python/i386/ubuntu/bionic/3.11.2/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/i386-ubuntu-python:3.11.2-bionic-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.11.2-bionic-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.11.2-bionic-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.11.2-bionic",
+        "docker.io/balenalib/i386-ubuntu-python:3.11-bionic-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.11-bionic-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.11-bionic-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.11-bionic",
+        "docker.io/balenalib/i386-ubuntu-python:3-bionic-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3-bionic-run",
+        "docker.io/balenalib/i386-ubuntu-python:3-bionic-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3-bionic",
+        "docker.io/balenalib/i386-ubuntu-python:latest-bionic-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:latest-bionic-run",
+        "docker.io/balenalib/i386-ubuntu-python:latest-bionic-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:latest-bionic",
+        "docker.io/balenalib/i386-ubuntu-python:bionic-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:bionic-run",
+        "docker.io/balenalib/i386-ubuntu-python:bionic-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:bionic"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/i386-ubuntu-python:3.11.2-bionic-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.11.2-bionic-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.11.2-bionic-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.11.2-bionic",
+        "docker.io/balenalib/i386-ubuntu-python:3.11-bionic-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.11-bionic-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.11-bionic-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.11-bionic",
+        "docker.io/balenalib/i386-ubuntu-python:3-bionic-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3-bionic-run",
+        "docker.io/balenalib/i386-ubuntu-python:3-bionic-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3-bionic",
+        "docker.io/balenalib/i386-ubuntu-python:latest-bionic-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:latest-bionic-run",
+        "docker.io/balenalib/i386-ubuntu-python:latest-bionic-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:latest-bionic",
+        "docker.io/balenalib/i386-ubuntu-python:bionic-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:bionic-run",
+        "docker.io/balenalib/i386-ubuntu-python:bionic-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:bionic"
+      ]
+    },
+    "i386-ubuntu-python-3-10-10-bionic-build": {
+      "context": "python/i386/ubuntu/bionic/3.10.10/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/i386-ubuntu-python:3.10.10-bionic-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.10.10-bionic-build",
+        "docker.io/balenalib/i386-ubuntu-python:3.10-bionic-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.10-bionic-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/i386-ubuntu-python:3.10.10-bionic-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.10.10-bionic-build",
+        "docker.io/balenalib/i386-ubuntu-python:3.10-bionic-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.10-bionic-build"
+      ]
+    },
+    "i386-ubuntu-python-3-10-10-bionic-run": {
+      "context": "python/i386/ubuntu/bionic/3.10.10/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/i386-ubuntu-python:3.10.10-bionic-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.10.10-bionic-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.10.10-bionic-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.10.10-bionic",
+        "docker.io/balenalib/i386-ubuntu-python:3.10-bionic-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.10-bionic-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.10-bionic-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.10-bionic"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/i386-ubuntu-python:3.10.10-bionic-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.10.10-bionic-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.10.10-bionic-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.10.10-bionic",
+        "docker.io/balenalib/i386-ubuntu-python:3.10-bionic-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.10-bionic-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.10-bionic-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.10-bionic"
+      ]
+    },
+    "i386-ubuntu-python-3-9-16-bionic-build": {
+      "context": "python/i386/ubuntu/bionic/3.9.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/i386-ubuntu-python:3.9.16-bionic-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.9.16-bionic-build",
+        "docker.io/balenalib/i386-ubuntu-python:3.9-bionic-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.9-bionic-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/i386-ubuntu-python:3.9.16-bionic-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.9.16-bionic-build",
+        "docker.io/balenalib/i386-ubuntu-python:3.9-bionic-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.9-bionic-build"
+      ]
+    },
+    "i386-ubuntu-python-3-9-16-bionic-run": {
+      "context": "python/i386/ubuntu/bionic/3.9.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/i386-ubuntu-python:3.9.16-bionic-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.9.16-bionic-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.9.16-bionic-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.9.16-bionic",
+        "docker.io/balenalib/i386-ubuntu-python:3.9-bionic-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.9-bionic-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.9-bionic-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.9-bionic"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/i386-ubuntu-python:3.9.16-bionic-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.9.16-bionic-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.9.16-bionic-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.9.16-bionic",
+        "docker.io/balenalib/i386-ubuntu-python:3.9-bionic-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.9-bionic-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.9-bionic-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.9-bionic"
+      ]
+    },
+    "i386-ubuntu-python-3-8-16-bionic-build": {
+      "context": "python/i386/ubuntu/bionic/3.8.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/i386-ubuntu-python:3.8.16-bionic-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.8.16-bionic-build",
+        "docker.io/balenalib/i386-ubuntu-python:3.8-bionic-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.8-bionic-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/i386-ubuntu-python:3.8.16-bionic-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.8.16-bionic-build",
+        "docker.io/balenalib/i386-ubuntu-python:3.8-bionic-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.8-bionic-build"
+      ]
+    },
+    "i386-ubuntu-python-3-8-16-bionic-run": {
+      "context": "python/i386/ubuntu/bionic/3.8.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/i386-ubuntu-python:3.8.16-bionic-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.8.16-bionic-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.8.16-bionic-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.8.16-bionic",
+        "docker.io/balenalib/i386-ubuntu-python:3.8-bionic-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.8-bionic-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.8-bionic-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.8-bionic"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/i386-ubuntu-python:3.8.16-bionic-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.8.16-bionic-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.8.16-bionic-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.8.16-bionic",
+        "docker.io/balenalib/i386-ubuntu-python:3.8-bionic-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.8-bionic-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.8-bionic-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.8-bionic"
+      ]
+    },
+    "i386-ubuntu-python-3-7-16-bionic-build": {
+      "context": "python/i386/ubuntu/bionic/3.7.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/i386-ubuntu-python:3.7.16-bionic-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.7.16-bionic-build",
+        "docker.io/balenalib/i386-ubuntu-python:3.7-bionic-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.7-bionic-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/i386-ubuntu-python:3.7.16-bionic-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.7.16-bionic-build",
+        "docker.io/balenalib/i386-ubuntu-python:3.7-bionic-build-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.7-bionic-build"
+      ]
+    },
+    "i386-ubuntu-python-3-7-16-bionic-run": {
+      "context": "python/i386/ubuntu/bionic/3.7.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/i386-ubuntu-python:3.7.16-bionic-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.7.16-bionic-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.7.16-bionic-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.7.16-bionic",
+        "docker.io/balenalib/i386-ubuntu-python:3.7-bionic-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.7-bionic-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.7-bionic-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.7-bionic"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/i386-ubuntu-python:3.7.16-bionic-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.7.16-bionic-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.7.16-bionic-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.7.16-bionic",
+        "docker.io/balenalib/i386-ubuntu-python:3.7-bionic-run-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.7-bionic-run",
+        "docker.io/balenalib/i386-ubuntu-python:3.7-bionic-20230911",
+        "docker.io/balenalib/i386-ubuntu-python:3.7-bionic"
+      ]
+    }
+  }
+}

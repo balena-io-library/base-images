@@ -1,0 +1,230 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "intel-nuc-debian-buster-build",
+        "intel-nuc-debian-buster-run",
+        "intel-nuc-debian-bullseye-build",
+        "intel-nuc-debian-bullseye-run",
+        "intel-nuc-debian-bookworm-build",
+        "intel-nuc-debian-bookworm-run",
+        "intel-nuc-debian-sid-build",
+        "intel-nuc-debian-sid-run"
+      ]
+    }
+  },
+  "target": {
+    "intel-nuc-debian-buster-build": {
+      "context": "device-base/intel-nuc/debian/buster/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/intel-nuc-debian:buster-build-20230911",
+        "docker.io/balenalib/intel-nuc-debian:buster-build",
+        "docker.io/balenalib/intel-nuc:buster-build-20230911",
+        "docker.io/balenalib/intel-nuc:buster-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/intel-nuc-debian:buster-build-20230911",
+        "docker.io/balenalib/intel-nuc-debian:buster-build",
+        "docker.io/balenalib/intel-nuc:buster-build-20230911",
+        "docker.io/balenalib/intel-nuc:buster-build"
+      ]
+    },
+    "intel-nuc-debian-buster-run": {
+      "context": "device-base/intel-nuc/debian/buster/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/intel-nuc-debian:buster-run-20230911",
+        "docker.io/balenalib/intel-nuc-debian:buster-run",
+        "docker.io/balenalib/intel-nuc-debian:buster-20230911",
+        "docker.io/balenalib/intel-nuc-debian:buster",
+        "docker.io/balenalib/intel-nuc:buster-run-20230911",
+        "docker.io/balenalib/intel-nuc:buster-run",
+        "docker.io/balenalib/intel-nuc:buster-20230911",
+        "docker.io/balenalib/intel-nuc:buster"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/intel-nuc-debian:buster-run-20230911",
+        "docker.io/balenalib/intel-nuc-debian:buster-run",
+        "docker.io/balenalib/intel-nuc-debian:buster-20230911",
+        "docker.io/balenalib/intel-nuc-debian:buster",
+        "docker.io/balenalib/intel-nuc:buster-run-20230911",
+        "docker.io/balenalib/intel-nuc:buster-run",
+        "docker.io/balenalib/intel-nuc:buster-20230911",
+        "docker.io/balenalib/intel-nuc:buster"
+      ]
+    },
+    "intel-nuc-debian-bullseye-build": {
+      "context": "device-base/intel-nuc/debian/bullseye/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/intel-nuc-debian:bullseye-build-20230911",
+        "docker.io/balenalib/intel-nuc-debian:bullseye-build",
+        "docker.io/balenalib/intel-nuc-debian:latest-build-20230911",
+        "docker.io/balenalib/intel-nuc-debian:latest-build",
+        "docker.io/balenalib/intel-nuc-debian:build-20230911",
+        "docker.io/balenalib/intel-nuc-debian:build",
+        "docker.io/balenalib/intel-nuc:bullseye-build-20230911",
+        "docker.io/balenalib/intel-nuc:bullseye-build",
+        "docker.io/balenalib/intel-nuc:latest-build-20230911",
+        "docker.io/balenalib/intel-nuc:latest-build",
+        "docker.io/balenalib/intel-nuc:build-20230911",
+        "docker.io/balenalib/intel-nuc:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/intel-nuc-debian:bullseye-build-20230911",
+        "docker.io/balenalib/intel-nuc-debian:bullseye-build",
+        "docker.io/balenalib/intel-nuc-debian:latest-build-20230911",
+        "docker.io/balenalib/intel-nuc-debian:latest-build",
+        "docker.io/balenalib/intel-nuc-debian:build-20230911",
+        "docker.io/balenalib/intel-nuc-debian:build",
+        "docker.io/balenalib/intel-nuc:bullseye-build-20230911",
+        "docker.io/balenalib/intel-nuc:bullseye-build",
+        "docker.io/balenalib/intel-nuc:latest-build-20230911",
+        "docker.io/balenalib/intel-nuc:latest-build",
+        "docker.io/balenalib/intel-nuc:build-20230911",
+        "docker.io/balenalib/intel-nuc:build"
+      ]
+    },
+    "intel-nuc-debian-bullseye-run": {
+      "context": "device-base/intel-nuc/debian/bullseye/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/intel-nuc-debian:bullseye-run-20230911",
+        "docker.io/balenalib/intel-nuc-debian:bullseye-run",
+        "docker.io/balenalib/intel-nuc-debian:bullseye-20230911",
+        "docker.io/balenalib/intel-nuc-debian:bullseye",
+        "docker.io/balenalib/intel-nuc-debian:latest-run-20230911",
+        "docker.io/balenalib/intel-nuc-debian:latest-run",
+        "docker.io/balenalib/intel-nuc-debian:latest-20230911",
+        "docker.io/balenalib/intel-nuc-debian:latest",
+        "docker.io/balenalib/intel-nuc-debian:run-20230911",
+        "docker.io/balenalib/intel-nuc-debian:run",
+        "docker.io/balenalib/intel-nuc-debian:20230911",
+        "docker.io/balenalib/intel-nuc:bullseye-run-20230911",
+        "docker.io/balenalib/intel-nuc:bullseye-run",
+        "docker.io/balenalib/intel-nuc:bullseye-20230911",
+        "docker.io/balenalib/intel-nuc:bullseye",
+        "docker.io/balenalib/intel-nuc:latest-run-20230911",
+        "docker.io/balenalib/intel-nuc:latest-run",
+        "docker.io/balenalib/intel-nuc:latest-20230911",
+        "docker.io/balenalib/intel-nuc:latest",
+        "docker.io/balenalib/intel-nuc:run-20230911",
+        "docker.io/balenalib/intel-nuc:run",
+        "docker.io/balenalib/intel-nuc:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/intel-nuc-debian:bullseye-run-20230911",
+        "docker.io/balenalib/intel-nuc-debian:bullseye-run",
+        "docker.io/balenalib/intel-nuc-debian:bullseye-20230911",
+        "docker.io/balenalib/intel-nuc-debian:bullseye",
+        "docker.io/balenalib/intel-nuc-debian:latest-run-20230911",
+        "docker.io/balenalib/intel-nuc-debian:latest-run",
+        "docker.io/balenalib/intel-nuc-debian:latest-20230911",
+        "docker.io/balenalib/intel-nuc-debian:latest",
+        "docker.io/balenalib/intel-nuc-debian:run-20230911",
+        "docker.io/balenalib/intel-nuc-debian:run",
+        "docker.io/balenalib/intel-nuc-debian:20230911",
+        "docker.io/balenalib/intel-nuc:bullseye-run-20230911",
+        "docker.io/balenalib/intel-nuc:bullseye-run",
+        "docker.io/balenalib/intel-nuc:bullseye-20230911",
+        "docker.io/balenalib/intel-nuc:bullseye",
+        "docker.io/balenalib/intel-nuc:latest-run-20230911",
+        "docker.io/balenalib/intel-nuc:latest-run",
+        "docker.io/balenalib/intel-nuc:latest-20230911",
+        "docker.io/balenalib/intel-nuc:latest",
+        "docker.io/balenalib/intel-nuc:run-20230911",
+        "docker.io/balenalib/intel-nuc:run",
+        "docker.io/balenalib/intel-nuc:20230911"
+      ]
+    },
+    "intel-nuc-debian-bookworm-build": {
+      "context": "device-base/intel-nuc/debian/bookworm/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/intel-nuc-debian:bookworm-build-20230911",
+        "docker.io/balenalib/intel-nuc-debian:bookworm-build",
+        "docker.io/balenalib/intel-nuc:bookworm-build-20230911",
+        "docker.io/balenalib/intel-nuc:bookworm-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/intel-nuc-debian:bookworm-build-20230911",
+        "docker.io/balenalib/intel-nuc-debian:bookworm-build",
+        "docker.io/balenalib/intel-nuc:bookworm-build-20230911",
+        "docker.io/balenalib/intel-nuc:bookworm-build"
+      ]
+    },
+    "intel-nuc-debian-bookworm-run": {
+      "context": "device-base/intel-nuc/debian/bookworm/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/intel-nuc-debian:bookworm-run-20230911",
+        "docker.io/balenalib/intel-nuc-debian:bookworm-run",
+        "docker.io/balenalib/intel-nuc-debian:bookworm-20230911",
+        "docker.io/balenalib/intel-nuc-debian:bookworm",
+        "docker.io/balenalib/intel-nuc:bookworm-run-20230911",
+        "docker.io/balenalib/intel-nuc:bookworm-run",
+        "docker.io/balenalib/intel-nuc:bookworm-20230911",
+        "docker.io/balenalib/intel-nuc:bookworm"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/intel-nuc-debian:bookworm-run-20230911",
+        "docker.io/balenalib/intel-nuc-debian:bookworm-run",
+        "docker.io/balenalib/intel-nuc-debian:bookworm-20230911",
+        "docker.io/balenalib/intel-nuc-debian:bookworm",
+        "docker.io/balenalib/intel-nuc:bookworm-run-20230911",
+        "docker.io/balenalib/intel-nuc:bookworm-run",
+        "docker.io/balenalib/intel-nuc:bookworm-20230911",
+        "docker.io/balenalib/intel-nuc:bookworm"
+      ]
+    },
+    "intel-nuc-debian-sid-build": {
+      "context": "device-base/intel-nuc/debian/sid/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/intel-nuc-debian:sid-build-20230911",
+        "docker.io/balenalib/intel-nuc-debian:sid-build",
+        "docker.io/balenalib/intel-nuc:sid-build-20230911",
+        "docker.io/balenalib/intel-nuc:sid-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/intel-nuc-debian:sid-build-20230911",
+        "docker.io/balenalib/intel-nuc-debian:sid-build",
+        "docker.io/balenalib/intel-nuc:sid-build-20230911",
+        "docker.io/balenalib/intel-nuc:sid-build"
+      ]
+    },
+    "intel-nuc-debian-sid-run": {
+      "context": "device-base/intel-nuc/debian/sid/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/intel-nuc-debian:sid-run-20230911",
+        "docker.io/balenalib/intel-nuc-debian:sid-run",
+        "docker.io/balenalib/intel-nuc-debian:sid-20230911",
+        "docker.io/balenalib/intel-nuc-debian:sid",
+        "docker.io/balenalib/intel-nuc:sid-run-20230911",
+        "docker.io/balenalib/intel-nuc:sid-run",
+        "docker.io/balenalib/intel-nuc:sid-20230911",
+        "docker.io/balenalib/intel-nuc:sid"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/intel-nuc-debian:sid-run-20230911",
+        "docker.io/balenalib/intel-nuc-debian:sid-run",
+        "docker.io/balenalib/intel-nuc-debian:sid-20230911",
+        "docker.io/balenalib/intel-nuc-debian:sid",
+        "docker.io/balenalib/intel-nuc:sid-run-20230911",
+        "docker.io/balenalib/intel-nuc:sid-run",
+        "docker.io/balenalib/intel-nuc:sid-20230911",
+        "docker.io/balenalib/intel-nuc:sid"
+      ]
+    }
+  }
+}

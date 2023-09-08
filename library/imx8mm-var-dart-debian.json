@@ -1,0 +1,230 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "imx8mm-var-dart-debian-buster-build",
+        "imx8mm-var-dart-debian-buster-run",
+        "imx8mm-var-dart-debian-bullseye-build",
+        "imx8mm-var-dart-debian-bullseye-run",
+        "imx8mm-var-dart-debian-bookworm-build",
+        "imx8mm-var-dart-debian-bookworm-run",
+        "imx8mm-var-dart-debian-sid-build",
+        "imx8mm-var-dart-debian-sid-run"
+      ]
+    }
+  },
+  "target": {
+    "imx8mm-var-dart-debian-buster-build": {
+      "context": "device-base/imx8mm-var-dart/debian/buster/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/imx8mm-var-dart-debian:buster-build-20230911",
+        "docker.io/balenalib/imx8mm-var-dart-debian:buster-build",
+        "docker.io/balenalib/imx8mm-var-dart:buster-build-20230911",
+        "docker.io/balenalib/imx8mm-var-dart:buster-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/imx8mm-var-dart-debian:buster-build-20230911",
+        "docker.io/balenalib/imx8mm-var-dart-debian:buster-build",
+        "docker.io/balenalib/imx8mm-var-dart:buster-build-20230911",
+        "docker.io/balenalib/imx8mm-var-dart:buster-build"
+      ]
+    },
+    "imx8mm-var-dart-debian-buster-run": {
+      "context": "device-base/imx8mm-var-dart/debian/buster/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/imx8mm-var-dart-debian:buster-run-20230911",
+        "docker.io/balenalib/imx8mm-var-dart-debian:buster-run",
+        "docker.io/balenalib/imx8mm-var-dart-debian:buster-20230911",
+        "docker.io/balenalib/imx8mm-var-dart-debian:buster",
+        "docker.io/balenalib/imx8mm-var-dart:buster-run-20230911",
+        "docker.io/balenalib/imx8mm-var-dart:buster-run",
+        "docker.io/balenalib/imx8mm-var-dart:buster-20230911",
+        "docker.io/balenalib/imx8mm-var-dart:buster"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/imx8mm-var-dart-debian:buster-run-20230911",
+        "docker.io/balenalib/imx8mm-var-dart-debian:buster-run",
+        "docker.io/balenalib/imx8mm-var-dart-debian:buster-20230911",
+        "docker.io/balenalib/imx8mm-var-dart-debian:buster",
+        "docker.io/balenalib/imx8mm-var-dart:buster-run-20230911",
+        "docker.io/balenalib/imx8mm-var-dart:buster-run",
+        "docker.io/balenalib/imx8mm-var-dart:buster-20230911",
+        "docker.io/balenalib/imx8mm-var-dart:buster"
+      ]
+    },
+    "imx8mm-var-dart-debian-bullseye-build": {
+      "context": "device-base/imx8mm-var-dart/debian/bullseye/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/imx8mm-var-dart-debian:bullseye-build-20230911",
+        "docker.io/balenalib/imx8mm-var-dart-debian:bullseye-build",
+        "docker.io/balenalib/imx8mm-var-dart-debian:latest-build-20230911",
+        "docker.io/balenalib/imx8mm-var-dart-debian:latest-build",
+        "docker.io/balenalib/imx8mm-var-dart-debian:build-20230911",
+        "docker.io/balenalib/imx8mm-var-dart-debian:build",
+        "docker.io/balenalib/imx8mm-var-dart:bullseye-build-20230911",
+        "docker.io/balenalib/imx8mm-var-dart:bullseye-build",
+        "docker.io/balenalib/imx8mm-var-dart:latest-build-20230911",
+        "docker.io/balenalib/imx8mm-var-dart:latest-build",
+        "docker.io/balenalib/imx8mm-var-dart:build-20230911",
+        "docker.io/balenalib/imx8mm-var-dart:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/imx8mm-var-dart-debian:bullseye-build-20230911",
+        "docker.io/balenalib/imx8mm-var-dart-debian:bullseye-build",
+        "docker.io/balenalib/imx8mm-var-dart-debian:latest-build-20230911",
+        "docker.io/balenalib/imx8mm-var-dart-debian:latest-build",
+        "docker.io/balenalib/imx8mm-var-dart-debian:build-20230911",
+        "docker.io/balenalib/imx8mm-var-dart-debian:build",
+        "docker.io/balenalib/imx8mm-var-dart:bullseye-build-20230911",
+        "docker.io/balenalib/imx8mm-var-dart:bullseye-build",
+        "docker.io/balenalib/imx8mm-var-dart:latest-build-20230911",
+        "docker.io/balenalib/imx8mm-var-dart:latest-build",
+        "docker.io/balenalib/imx8mm-var-dart:build-20230911",
+        "docker.io/balenalib/imx8mm-var-dart:build"
+      ]
+    },
+    "imx8mm-var-dart-debian-bullseye-run": {
+      "context": "device-base/imx8mm-var-dart/debian/bullseye/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/imx8mm-var-dart-debian:bullseye-run-20230911",
+        "docker.io/balenalib/imx8mm-var-dart-debian:bullseye-run",
+        "docker.io/balenalib/imx8mm-var-dart-debian:bullseye-20230911",
+        "docker.io/balenalib/imx8mm-var-dart-debian:bullseye",
+        "docker.io/balenalib/imx8mm-var-dart-debian:latest-run-20230911",
+        "docker.io/balenalib/imx8mm-var-dart-debian:latest-run",
+        "docker.io/balenalib/imx8mm-var-dart-debian:latest-20230911",
+        "docker.io/balenalib/imx8mm-var-dart-debian:latest",
+        "docker.io/balenalib/imx8mm-var-dart-debian:run-20230911",
+        "docker.io/balenalib/imx8mm-var-dart-debian:run",
+        "docker.io/balenalib/imx8mm-var-dart-debian:20230911",
+        "docker.io/balenalib/imx8mm-var-dart:bullseye-run-20230911",
+        "docker.io/balenalib/imx8mm-var-dart:bullseye-run",
+        "docker.io/balenalib/imx8mm-var-dart:bullseye-20230911",
+        "docker.io/balenalib/imx8mm-var-dart:bullseye",
+        "docker.io/balenalib/imx8mm-var-dart:latest-run-20230911",
+        "docker.io/balenalib/imx8mm-var-dart:latest-run",
+        "docker.io/balenalib/imx8mm-var-dart:latest-20230911",
+        "docker.io/balenalib/imx8mm-var-dart:latest",
+        "docker.io/balenalib/imx8mm-var-dart:run-20230911",
+        "docker.io/balenalib/imx8mm-var-dart:run",
+        "docker.io/balenalib/imx8mm-var-dart:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/imx8mm-var-dart-debian:bullseye-run-20230911",
+        "docker.io/balenalib/imx8mm-var-dart-debian:bullseye-run",
+        "docker.io/balenalib/imx8mm-var-dart-debian:bullseye-20230911",
+        "docker.io/balenalib/imx8mm-var-dart-debian:bullseye",
+        "docker.io/balenalib/imx8mm-var-dart-debian:latest-run-20230911",
+        "docker.io/balenalib/imx8mm-var-dart-debian:latest-run",
+        "docker.io/balenalib/imx8mm-var-dart-debian:latest-20230911",
+        "docker.io/balenalib/imx8mm-var-dart-debian:latest",
+        "docker.io/balenalib/imx8mm-var-dart-debian:run-20230911",
+        "docker.io/balenalib/imx8mm-var-dart-debian:run",
+        "docker.io/balenalib/imx8mm-var-dart-debian:20230911",
+        "docker.io/balenalib/imx8mm-var-dart:bullseye-run-20230911",
+        "docker.io/balenalib/imx8mm-var-dart:bullseye-run",
+        "docker.io/balenalib/imx8mm-var-dart:bullseye-20230911",
+        "docker.io/balenalib/imx8mm-var-dart:bullseye",
+        "docker.io/balenalib/imx8mm-var-dart:latest-run-20230911",
+        "docker.io/balenalib/imx8mm-var-dart:latest-run",
+        "docker.io/balenalib/imx8mm-var-dart:latest-20230911",
+        "docker.io/balenalib/imx8mm-var-dart:latest",
+        "docker.io/balenalib/imx8mm-var-dart:run-20230911",
+        "docker.io/balenalib/imx8mm-var-dart:run",
+        "docker.io/balenalib/imx8mm-var-dart:20230911"
+      ]
+    },
+    "imx8mm-var-dart-debian-bookworm-build": {
+      "context": "device-base/imx8mm-var-dart/debian/bookworm/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/imx8mm-var-dart-debian:bookworm-build-20230911",
+        "docker.io/balenalib/imx8mm-var-dart-debian:bookworm-build",
+        "docker.io/balenalib/imx8mm-var-dart:bookworm-build-20230911",
+        "docker.io/balenalib/imx8mm-var-dart:bookworm-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/imx8mm-var-dart-debian:bookworm-build-20230911",
+        "docker.io/balenalib/imx8mm-var-dart-debian:bookworm-build",
+        "docker.io/balenalib/imx8mm-var-dart:bookworm-build-20230911",
+        "docker.io/balenalib/imx8mm-var-dart:bookworm-build"
+      ]
+    },
+    "imx8mm-var-dart-debian-bookworm-run": {
+      "context": "device-base/imx8mm-var-dart/debian/bookworm/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/imx8mm-var-dart-debian:bookworm-run-20230911",
+        "docker.io/balenalib/imx8mm-var-dart-debian:bookworm-run",
+        "docker.io/balenalib/imx8mm-var-dart-debian:bookworm-20230911",
+        "docker.io/balenalib/imx8mm-var-dart-debian:bookworm",
+        "docker.io/balenalib/imx8mm-var-dart:bookworm-run-20230911",
+        "docker.io/balenalib/imx8mm-var-dart:bookworm-run",
+        "docker.io/balenalib/imx8mm-var-dart:bookworm-20230911",
+        "docker.io/balenalib/imx8mm-var-dart:bookworm"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/imx8mm-var-dart-debian:bookworm-run-20230911",
+        "docker.io/balenalib/imx8mm-var-dart-debian:bookworm-run",
+        "docker.io/balenalib/imx8mm-var-dart-debian:bookworm-20230911",
+        "docker.io/balenalib/imx8mm-var-dart-debian:bookworm",
+        "docker.io/balenalib/imx8mm-var-dart:bookworm-run-20230911",
+        "docker.io/balenalib/imx8mm-var-dart:bookworm-run",
+        "docker.io/balenalib/imx8mm-var-dart:bookworm-20230911",
+        "docker.io/balenalib/imx8mm-var-dart:bookworm"
+      ]
+    },
+    "imx8mm-var-dart-debian-sid-build": {
+      "context": "device-base/imx8mm-var-dart/debian/sid/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/imx8mm-var-dart-debian:sid-build-20230911",
+        "docker.io/balenalib/imx8mm-var-dart-debian:sid-build",
+        "docker.io/balenalib/imx8mm-var-dart:sid-build-20230911",
+        "docker.io/balenalib/imx8mm-var-dart:sid-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/imx8mm-var-dart-debian:sid-build-20230911",
+        "docker.io/balenalib/imx8mm-var-dart-debian:sid-build",
+        "docker.io/balenalib/imx8mm-var-dart:sid-build-20230911",
+        "docker.io/balenalib/imx8mm-var-dart:sid-build"
+      ]
+    },
+    "imx8mm-var-dart-debian-sid-run": {
+      "context": "device-base/imx8mm-var-dart/debian/sid/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/imx8mm-var-dart-debian:sid-run-20230911",
+        "docker.io/balenalib/imx8mm-var-dart-debian:sid-run",
+        "docker.io/balenalib/imx8mm-var-dart-debian:sid-20230911",
+        "docker.io/balenalib/imx8mm-var-dart-debian:sid",
+        "docker.io/balenalib/imx8mm-var-dart:sid-run-20230911",
+        "docker.io/balenalib/imx8mm-var-dart:sid-run",
+        "docker.io/balenalib/imx8mm-var-dart:sid-20230911",
+        "docker.io/balenalib/imx8mm-var-dart:sid"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/imx8mm-var-dart-debian:sid-run-20230911",
+        "docker.io/balenalib/imx8mm-var-dart-debian:sid-run",
+        "docker.io/balenalib/imx8mm-var-dart-debian:sid-20230911",
+        "docker.io/balenalib/imx8mm-var-dart-debian:sid",
+        "docker.io/balenalib/imx8mm-var-dart:sid-run-20230911",
+        "docker.io/balenalib/imx8mm-var-dart:sid-run",
+        "docker.io/balenalib/imx8mm-var-dart:sid-20230911",
+        "docker.io/balenalib/imx8mm-var-dart:sid"
+      ]
+    }
+  }
+}

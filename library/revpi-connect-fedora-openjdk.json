@@ -1,0 +1,122 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "revpi-connect-fedora-openjdk-8-jdk-36-build",
+        "revpi-connect-fedora-openjdk-8-jdk-36-run",
+        "revpi-connect-fedora-openjdk-8-jre-36-build",
+        "revpi-connect-fedora-openjdk-8-jre-36-run"
+      ]
+    }
+  },
+  "target": {
+    "revpi-connect-fedora-openjdk-8-jdk-36-build": {
+      "context": "openjdk/revpi-connect/fedora/36/8-jdk/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-jdk-36-build-20230911",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-jdk-36-build",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8--36-build-20230911",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8--36-build",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-36-build-20230911",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-36-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-jdk-36-build-20230911",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-jdk-36-build",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8--36-build-20230911",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8--36-build",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-36-build-20230911",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-36-build"
+      ]
+    },
+    "revpi-connect-fedora-openjdk-8-jdk-36-run": {
+      "context": "openjdk/revpi-connect/fedora/36/8-jdk/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-jdk-36-run-20230911",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-jdk-36-run",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-jdk-36-20230911",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-jdk-36",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8--36-run-20230911",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8--36-run",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8--36-20230911",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8--36",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-36-run-20230911",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-36-run",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-36-20230911",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-36"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-jdk-36-run-20230911",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-jdk-36-run",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-jdk-36-20230911",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-jdk-36",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8--36-run-20230911",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8--36-run",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8--36-20230911",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8--36",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-36-run-20230911",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-36-run",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-36-20230911",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-36"
+      ]
+    },
+    "revpi-connect-fedora-openjdk-8-jre-36-build": {
+      "context": "openjdk/revpi-connect/fedora/36/8-jre/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-jre-36-build-20230911",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-jre-36-build",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8--36-build-20230911",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8--36-build",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-36-build-20230911",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-36-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-jre-36-build-20230911",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-jre-36-build",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8--36-build-20230911",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8--36-build",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-36-build-20230911",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-36-build"
+      ]
+    },
+    "revpi-connect-fedora-openjdk-8-jre-36-run": {
+      "context": "openjdk/revpi-connect/fedora/36/8-jre/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-jre-36-run-20230911",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-jre-36-run",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-jre-36-20230911",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-jre-36",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8--36-run-20230911",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8--36-run",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8--36-20230911",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8--36",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-36-run-20230911",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-36-run",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-36-20230911",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-36"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-jre-36-run-20230911",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-jre-36-run",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-jre-36-20230911",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-jre-36",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8--36-run-20230911",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8--36-run",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8--36-20230911",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8--36",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-36-run-20230911",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-36-run",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-36-20230911",
+        "docker.io/balenalib/revpi-connect-fedora-openjdk:8-36"
+      ]
+    }
+  }
+}

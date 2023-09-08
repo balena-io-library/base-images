@@ -1,0 +1,230 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "beaglebone-black-debian-buster-build",
+        "beaglebone-black-debian-buster-run",
+        "beaglebone-black-debian-bullseye-build",
+        "beaglebone-black-debian-bullseye-run",
+        "beaglebone-black-debian-bookworm-build",
+        "beaglebone-black-debian-bookworm-run",
+        "beaglebone-black-debian-sid-build",
+        "beaglebone-black-debian-sid-run"
+      ]
+    }
+  },
+  "target": {
+    "beaglebone-black-debian-buster-build": {
+      "context": "device-base/beaglebone-black/debian/buster/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-black-debian:buster-build-20230911",
+        "docker.io/balenalib/beaglebone-black-debian:buster-build",
+        "docker.io/balenalib/beaglebone-black:buster-build-20230911",
+        "docker.io/balenalib/beaglebone-black:buster-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-black-debian:buster-build-20230911",
+        "docker.io/balenalib/beaglebone-black-debian:buster-build",
+        "docker.io/balenalib/beaglebone-black:buster-build-20230911",
+        "docker.io/balenalib/beaglebone-black:buster-build"
+      ]
+    },
+    "beaglebone-black-debian-buster-run": {
+      "context": "device-base/beaglebone-black/debian/buster/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-black-debian:buster-run-20230911",
+        "docker.io/balenalib/beaglebone-black-debian:buster-run",
+        "docker.io/balenalib/beaglebone-black-debian:buster-20230911",
+        "docker.io/balenalib/beaglebone-black-debian:buster",
+        "docker.io/balenalib/beaglebone-black:buster-run-20230911",
+        "docker.io/balenalib/beaglebone-black:buster-run",
+        "docker.io/balenalib/beaglebone-black:buster-20230911",
+        "docker.io/balenalib/beaglebone-black:buster"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-black-debian:buster-run-20230911",
+        "docker.io/balenalib/beaglebone-black-debian:buster-run",
+        "docker.io/balenalib/beaglebone-black-debian:buster-20230911",
+        "docker.io/balenalib/beaglebone-black-debian:buster",
+        "docker.io/balenalib/beaglebone-black:buster-run-20230911",
+        "docker.io/balenalib/beaglebone-black:buster-run",
+        "docker.io/balenalib/beaglebone-black:buster-20230911",
+        "docker.io/balenalib/beaglebone-black:buster"
+      ]
+    },
+    "beaglebone-black-debian-bullseye-build": {
+      "context": "device-base/beaglebone-black/debian/bullseye/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-black-debian:bullseye-build-20230911",
+        "docker.io/balenalib/beaglebone-black-debian:bullseye-build",
+        "docker.io/balenalib/beaglebone-black-debian:latest-build-20230911",
+        "docker.io/balenalib/beaglebone-black-debian:latest-build",
+        "docker.io/balenalib/beaglebone-black-debian:build-20230911",
+        "docker.io/balenalib/beaglebone-black-debian:build",
+        "docker.io/balenalib/beaglebone-black:bullseye-build-20230911",
+        "docker.io/balenalib/beaglebone-black:bullseye-build",
+        "docker.io/balenalib/beaglebone-black:latest-build-20230911",
+        "docker.io/balenalib/beaglebone-black:latest-build",
+        "docker.io/balenalib/beaglebone-black:build-20230911",
+        "docker.io/balenalib/beaglebone-black:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-black-debian:bullseye-build-20230911",
+        "docker.io/balenalib/beaglebone-black-debian:bullseye-build",
+        "docker.io/balenalib/beaglebone-black-debian:latest-build-20230911",
+        "docker.io/balenalib/beaglebone-black-debian:latest-build",
+        "docker.io/balenalib/beaglebone-black-debian:build-20230911",
+        "docker.io/balenalib/beaglebone-black-debian:build",
+        "docker.io/balenalib/beaglebone-black:bullseye-build-20230911",
+        "docker.io/balenalib/beaglebone-black:bullseye-build",
+        "docker.io/balenalib/beaglebone-black:latest-build-20230911",
+        "docker.io/balenalib/beaglebone-black:latest-build",
+        "docker.io/balenalib/beaglebone-black:build-20230911",
+        "docker.io/balenalib/beaglebone-black:build"
+      ]
+    },
+    "beaglebone-black-debian-bullseye-run": {
+      "context": "device-base/beaglebone-black/debian/bullseye/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-black-debian:bullseye-run-20230911",
+        "docker.io/balenalib/beaglebone-black-debian:bullseye-run",
+        "docker.io/balenalib/beaglebone-black-debian:bullseye-20230911",
+        "docker.io/balenalib/beaglebone-black-debian:bullseye",
+        "docker.io/balenalib/beaglebone-black-debian:latest-run-20230911",
+        "docker.io/balenalib/beaglebone-black-debian:latest-run",
+        "docker.io/balenalib/beaglebone-black-debian:latest-20230911",
+        "docker.io/balenalib/beaglebone-black-debian:latest",
+        "docker.io/balenalib/beaglebone-black-debian:run-20230911",
+        "docker.io/balenalib/beaglebone-black-debian:run",
+        "docker.io/balenalib/beaglebone-black-debian:20230911",
+        "docker.io/balenalib/beaglebone-black:bullseye-run-20230911",
+        "docker.io/balenalib/beaglebone-black:bullseye-run",
+        "docker.io/balenalib/beaglebone-black:bullseye-20230911",
+        "docker.io/balenalib/beaglebone-black:bullseye",
+        "docker.io/balenalib/beaglebone-black:latest-run-20230911",
+        "docker.io/balenalib/beaglebone-black:latest-run",
+        "docker.io/balenalib/beaglebone-black:latest-20230911",
+        "docker.io/balenalib/beaglebone-black:latest",
+        "docker.io/balenalib/beaglebone-black:run-20230911",
+        "docker.io/balenalib/beaglebone-black:run",
+        "docker.io/balenalib/beaglebone-black:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-black-debian:bullseye-run-20230911",
+        "docker.io/balenalib/beaglebone-black-debian:bullseye-run",
+        "docker.io/balenalib/beaglebone-black-debian:bullseye-20230911",
+        "docker.io/balenalib/beaglebone-black-debian:bullseye",
+        "docker.io/balenalib/beaglebone-black-debian:latest-run-20230911",
+        "docker.io/balenalib/beaglebone-black-debian:latest-run",
+        "docker.io/balenalib/beaglebone-black-debian:latest-20230911",
+        "docker.io/balenalib/beaglebone-black-debian:latest",
+        "docker.io/balenalib/beaglebone-black-debian:run-20230911",
+        "docker.io/balenalib/beaglebone-black-debian:run",
+        "docker.io/balenalib/beaglebone-black-debian:20230911",
+        "docker.io/balenalib/beaglebone-black:bullseye-run-20230911",
+        "docker.io/balenalib/beaglebone-black:bullseye-run",
+        "docker.io/balenalib/beaglebone-black:bullseye-20230911",
+        "docker.io/balenalib/beaglebone-black:bullseye",
+        "docker.io/balenalib/beaglebone-black:latest-run-20230911",
+        "docker.io/balenalib/beaglebone-black:latest-run",
+        "docker.io/balenalib/beaglebone-black:latest-20230911",
+        "docker.io/balenalib/beaglebone-black:latest",
+        "docker.io/balenalib/beaglebone-black:run-20230911",
+        "docker.io/balenalib/beaglebone-black:run",
+        "docker.io/balenalib/beaglebone-black:20230911"
+      ]
+    },
+    "beaglebone-black-debian-bookworm-build": {
+      "context": "device-base/beaglebone-black/debian/bookworm/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-black-debian:bookworm-build-20230911",
+        "docker.io/balenalib/beaglebone-black-debian:bookworm-build",
+        "docker.io/balenalib/beaglebone-black:bookworm-build-20230911",
+        "docker.io/balenalib/beaglebone-black:bookworm-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-black-debian:bookworm-build-20230911",
+        "docker.io/balenalib/beaglebone-black-debian:bookworm-build",
+        "docker.io/balenalib/beaglebone-black:bookworm-build-20230911",
+        "docker.io/balenalib/beaglebone-black:bookworm-build"
+      ]
+    },
+    "beaglebone-black-debian-bookworm-run": {
+      "context": "device-base/beaglebone-black/debian/bookworm/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-black-debian:bookworm-run-20230911",
+        "docker.io/balenalib/beaglebone-black-debian:bookworm-run",
+        "docker.io/balenalib/beaglebone-black-debian:bookworm-20230911",
+        "docker.io/balenalib/beaglebone-black-debian:bookworm",
+        "docker.io/balenalib/beaglebone-black:bookworm-run-20230911",
+        "docker.io/balenalib/beaglebone-black:bookworm-run",
+        "docker.io/balenalib/beaglebone-black:bookworm-20230911",
+        "docker.io/balenalib/beaglebone-black:bookworm"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-black-debian:bookworm-run-20230911",
+        "docker.io/balenalib/beaglebone-black-debian:bookworm-run",
+        "docker.io/balenalib/beaglebone-black-debian:bookworm-20230911",
+        "docker.io/balenalib/beaglebone-black-debian:bookworm",
+        "docker.io/balenalib/beaglebone-black:bookworm-run-20230911",
+        "docker.io/balenalib/beaglebone-black:bookworm-run",
+        "docker.io/balenalib/beaglebone-black:bookworm-20230911",
+        "docker.io/balenalib/beaglebone-black:bookworm"
+      ]
+    },
+    "beaglebone-black-debian-sid-build": {
+      "context": "device-base/beaglebone-black/debian/sid/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-black-debian:sid-build-20230911",
+        "docker.io/balenalib/beaglebone-black-debian:sid-build",
+        "docker.io/balenalib/beaglebone-black:sid-build-20230911",
+        "docker.io/balenalib/beaglebone-black:sid-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-black-debian:sid-build-20230911",
+        "docker.io/balenalib/beaglebone-black-debian:sid-build",
+        "docker.io/balenalib/beaglebone-black:sid-build-20230911",
+        "docker.io/balenalib/beaglebone-black:sid-build"
+      ]
+    },
+    "beaglebone-black-debian-sid-run": {
+      "context": "device-base/beaglebone-black/debian/sid/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-black-debian:sid-run-20230911",
+        "docker.io/balenalib/beaglebone-black-debian:sid-run",
+        "docker.io/balenalib/beaglebone-black-debian:sid-20230911",
+        "docker.io/balenalib/beaglebone-black-debian:sid",
+        "docker.io/balenalib/beaglebone-black:sid-run-20230911",
+        "docker.io/balenalib/beaglebone-black:sid-run",
+        "docker.io/balenalib/beaglebone-black:sid-20230911",
+        "docker.io/balenalib/beaglebone-black:sid"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-black-debian:sid-run-20230911",
+        "docker.io/balenalib/beaglebone-black-debian:sid-run",
+        "docker.io/balenalib/beaglebone-black-debian:sid-20230911",
+        "docker.io/balenalib/beaglebone-black-debian:sid",
+        "docker.io/balenalib/beaglebone-black:sid-run-20230911",
+        "docker.io/balenalib/beaglebone-black:sid-run",
+        "docker.io/balenalib/beaglebone-black:sid-20230911",
+        "docker.io/balenalib/beaglebone-black:sid"
+      ]
+    }
+  }
+}

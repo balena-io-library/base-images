@@ -1,0 +1,230 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "jetson-tx2-nx-devkit-debian-buster-build",
+        "jetson-tx2-nx-devkit-debian-buster-run",
+        "jetson-tx2-nx-devkit-debian-bullseye-build",
+        "jetson-tx2-nx-devkit-debian-bullseye-run",
+        "jetson-tx2-nx-devkit-debian-bookworm-build",
+        "jetson-tx2-nx-devkit-debian-bookworm-run",
+        "jetson-tx2-nx-devkit-debian-sid-build",
+        "jetson-tx2-nx-devkit-debian-sid-run"
+      ]
+    }
+  },
+  "target": {
+    "jetson-tx2-nx-devkit-debian-buster-build": {
+      "context": "device-base/jetson-tx2-nx-devkit/debian/buster/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:buster-build-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:buster-build",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:buster-build-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:buster-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:buster-build-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:buster-build",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:buster-build-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:buster-build"
+      ]
+    },
+    "jetson-tx2-nx-devkit-debian-buster-run": {
+      "context": "device-base/jetson-tx2-nx-devkit/debian/buster/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:buster-run-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:buster-run",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:buster-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:buster",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:buster-run-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:buster-run",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:buster-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:buster"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:buster-run-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:buster-run",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:buster-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:buster",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:buster-run-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:buster-run",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:buster-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:buster"
+      ]
+    },
+    "jetson-tx2-nx-devkit-debian-bullseye-build": {
+      "context": "device-base/jetson-tx2-nx-devkit/debian/bullseye/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:bullseye-build-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:bullseye-build",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:latest-build-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:latest-build",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:build-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:build",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:bullseye-build-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:bullseye-build",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:latest-build-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:latest-build",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:build-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:bullseye-build-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:bullseye-build",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:latest-build-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:latest-build",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:build-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:build",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:bullseye-build-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:bullseye-build",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:latest-build-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:latest-build",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:build-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:build"
+      ]
+    },
+    "jetson-tx2-nx-devkit-debian-bullseye-run": {
+      "context": "device-base/jetson-tx2-nx-devkit/debian/bullseye/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:bullseye-run-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:bullseye-run",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:bullseye-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:bullseye",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:latest-run-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:latest-run",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:latest-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:latest",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:run-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:run",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:bullseye-run-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:bullseye-run",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:bullseye-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:bullseye",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:latest-run-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:latest-run",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:latest-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:latest",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:run-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:run",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:bullseye-run-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:bullseye-run",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:bullseye-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:bullseye",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:latest-run-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:latest-run",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:latest-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:latest",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:run-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:run",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:bullseye-run-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:bullseye-run",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:bullseye-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:bullseye",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:latest-run-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:latest-run",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:latest-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:latest",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:run-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:run",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:20230911"
+      ]
+    },
+    "jetson-tx2-nx-devkit-debian-bookworm-build": {
+      "context": "device-base/jetson-tx2-nx-devkit/debian/bookworm/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:bookworm-build-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:bookworm-build",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:bookworm-build-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:bookworm-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:bookworm-build-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:bookworm-build",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:bookworm-build-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:bookworm-build"
+      ]
+    },
+    "jetson-tx2-nx-devkit-debian-bookworm-run": {
+      "context": "device-base/jetson-tx2-nx-devkit/debian/bookworm/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:bookworm-run-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:bookworm-run",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:bookworm-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:bookworm",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:bookworm-run-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:bookworm-run",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:bookworm-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:bookworm"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:bookworm-run-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:bookworm-run",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:bookworm-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:bookworm",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:bookworm-run-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:bookworm-run",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:bookworm-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:bookworm"
+      ]
+    },
+    "jetson-tx2-nx-devkit-debian-sid-build": {
+      "context": "device-base/jetson-tx2-nx-devkit/debian/sid/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:sid-build-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:sid-build",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:sid-build-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:sid-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:sid-build-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:sid-build",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:sid-build-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:sid-build"
+      ]
+    },
+    "jetson-tx2-nx-devkit-debian-sid-run": {
+      "context": "device-base/jetson-tx2-nx-devkit/debian/sid/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:sid-run-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:sid-run",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:sid-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:sid",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:sid-run-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:sid-run",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:sid-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:sid"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:sid-run-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:sid-run",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:sid-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit-debian:sid",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:sid-run-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:sid-run",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:sid-20230911",
+        "docker.io/balenalib/jetson-tx2-nx-devkit:sid"
+      ]
+    }
+  }
+}

@@ -1,0 +1,288 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "raspberrypi4-unipi-neuron-alpine-edge-build",
+        "raspberrypi4-unipi-neuron-alpine-edge-run",
+        "raspberrypi4-unipi-neuron-alpine-3-14-build",
+        "raspberrypi4-unipi-neuron-alpine-3-14-run",
+        "raspberrypi4-unipi-neuron-alpine-3-16-build",
+        "raspberrypi4-unipi-neuron-alpine-3-16-run",
+        "raspberrypi4-unipi-neuron-alpine-3-17-build",
+        "raspberrypi4-unipi-neuron-alpine-3-17-run",
+        "raspberrypi4-unipi-neuron-alpine-3-18-build",
+        "raspberrypi4-unipi-neuron-alpine-3-18-run",
+        "raspberrypi4-unipi-neuron-alpine-3-13-build",
+        "raspberrypi4-unipi-neuron-alpine-3-13-run",
+        "raspberrypi4-unipi-neuron-alpine-3-12-build",
+        "raspberrypi4-unipi-neuron-alpine-3-12-run",
+        "raspberrypi4-unipi-neuron-alpine-3-15-build",
+        "raspberrypi4-unipi-neuron-alpine-3-15-run"
+      ]
+    }
+  },
+  "target": {
+    "raspberrypi4-unipi-neuron-alpine-edge-build": {
+      "context": "device-base/raspberrypi4-unipi-neuron/alpine/edge/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:edge-build-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:edge-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:edge-build-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:edge-build"
+      ]
+    },
+    "raspberrypi4-unipi-neuron-alpine-edge-run": {
+      "context": "device-base/raspberrypi4-unipi-neuron/alpine/edge/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:edge-run-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:edge-run",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:edge-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:edge"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:edge-run-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:edge-run",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:edge-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:edge"
+      ]
+    },
+    "raspberrypi4-unipi-neuron-alpine-3-14-build": {
+      "context": "device-base/raspberrypi4-unipi-neuron/alpine/3.14/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.14-build-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.14-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.14-build-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.14-build"
+      ]
+    },
+    "raspberrypi4-unipi-neuron-alpine-3-14-run": {
+      "context": "device-base/raspberrypi4-unipi-neuron/alpine/3.14/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.14-run-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.14-run",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.14-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.14"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.14-run-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.14-run",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.14-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.14"
+      ]
+    },
+    "raspberrypi4-unipi-neuron-alpine-3-16-build": {
+      "context": "device-base/raspberrypi4-unipi-neuron/alpine/3.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.16-build-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.16-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.16-build-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.16-build"
+      ]
+    },
+    "raspberrypi4-unipi-neuron-alpine-3-16-run": {
+      "context": "device-base/raspberrypi4-unipi-neuron/alpine/3.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.16-run-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.16-run",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.16-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.16"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.16-run-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.16-run",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.16-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.16"
+      ]
+    },
+    "raspberrypi4-unipi-neuron-alpine-3-17-build": {
+      "context": "device-base/raspberrypi4-unipi-neuron/alpine/3.17/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.17-build-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.17-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.17-build-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.17-build"
+      ]
+    },
+    "raspberrypi4-unipi-neuron-alpine-3-17-run": {
+      "context": "device-base/raspberrypi4-unipi-neuron/alpine/3.17/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.17-run-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.17-run",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.17-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.17"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.17-run-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.17-run",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.17-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.17"
+      ]
+    },
+    "raspberrypi4-unipi-neuron-alpine-3-18-build": {
+      "context": "device-base/raspberrypi4-unipi-neuron/alpine/3.18/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.18-build-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.18-build",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:latest-build-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:latest-build",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:build-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.18-build-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.18-build",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:latest-build-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:latest-build",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:build-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:build"
+      ]
+    },
+    "raspberrypi4-unipi-neuron-alpine-3-18-run": {
+      "context": "device-base/raspberrypi4-unipi-neuron/alpine/3.18/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.18-run-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.18-run",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.18-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.18",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:latest-run-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:latest-run",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:latest-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:latest",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:run-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:run",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.18-run-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.18-run",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.18-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.18",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:latest-run-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:latest-run",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:latest-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:latest",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:run-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:run",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:20230911"
+      ]
+    },
+    "raspberrypi4-unipi-neuron-alpine-3-13-build": {
+      "context": "device-base/raspberrypi4-unipi-neuron/alpine/3.13/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.13-build-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.13-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.13-build-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.13-build"
+      ]
+    },
+    "raspberrypi4-unipi-neuron-alpine-3-13-run": {
+      "context": "device-base/raspberrypi4-unipi-neuron/alpine/3.13/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.13-run-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.13-run",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.13-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.13"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.13-run-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.13-run",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.13-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.13"
+      ]
+    },
+    "raspberrypi4-unipi-neuron-alpine-3-12-build": {
+      "context": "device-base/raspberrypi4-unipi-neuron/alpine/3.12/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.12-build-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.12-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.12-build-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.12-build"
+      ]
+    },
+    "raspberrypi4-unipi-neuron-alpine-3-12-run": {
+      "context": "device-base/raspberrypi4-unipi-neuron/alpine/3.12/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.12-run-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.12-run",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.12-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.12"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.12-run-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.12-run",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.12-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.12"
+      ]
+    },
+    "raspberrypi4-unipi-neuron-alpine-3-15-build": {
+      "context": "device-base/raspberrypi4-unipi-neuron/alpine/3.15/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.15-build-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.15-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.15-build-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.15-build"
+      ]
+    },
+    "raspberrypi4-unipi-neuron-alpine-3-15-run": {
+      "context": "device-base/raspberrypi4-unipi-neuron/alpine/3.15/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.15-run-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.15-run",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.15-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.15"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.15-run-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.15-run",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.15-20230911",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-alpine:3.15"
+      ]
+    }
+  }
+}

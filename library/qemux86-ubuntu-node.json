@@ -1,0 +1,234 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "qemux86-ubuntu-node-16-19-1-xenial-build",
+        "qemux86-ubuntu-node-16-19-1-xenial-run",
+        "qemux86-ubuntu-node-14-21-3-xenial-build",
+        "qemux86-ubuntu-node-14-21-3-xenial-run",
+        "qemux86-ubuntu-node-16-19-1-bionic-build",
+        "qemux86-ubuntu-node-16-19-1-bionic-run",
+        "qemux86-ubuntu-node-14-21-3-bionic-build",
+        "qemux86-ubuntu-node-14-21-3-bionic-run"
+      ]
+    }
+  },
+  "target": {
+    "qemux86-ubuntu-node-16-19-1-xenial-build": {
+      "context": "node/qemux86/ubuntu/xenial/16.19.1/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19.1-xenial-build-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19.1-xenial-build",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19-xenial-build-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19-xenial-build",
+        "docker.io/balenalib/qemux86-ubuntu-node:16-xenial-build-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:16-xenial-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19.1-xenial-build-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19.1-xenial-build",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19-xenial-build-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19-xenial-build",
+        "docker.io/balenalib/qemux86-ubuntu-node:16-xenial-build-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:16-xenial-build"
+      ]
+    },
+    "qemux86-ubuntu-node-16-19-1-xenial-run": {
+      "context": "node/qemux86/ubuntu/xenial/16.19.1/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19.1-xenial-run-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19.1-xenial-run",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19.1-xenial-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19.1-xenial",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19-xenial-run-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19-xenial-run",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19-xenial-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19-xenial",
+        "docker.io/balenalib/qemux86-ubuntu-node:16-xenial-run-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:16-xenial-run",
+        "docker.io/balenalib/qemux86-ubuntu-node:16-xenial-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:16-xenial"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19.1-xenial-run-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19.1-xenial-run",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19.1-xenial-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19.1-xenial",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19-xenial-run-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19-xenial-run",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19-xenial-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19-xenial",
+        "docker.io/balenalib/qemux86-ubuntu-node:16-xenial-run-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:16-xenial-run",
+        "docker.io/balenalib/qemux86-ubuntu-node:16-xenial-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:16-xenial"
+      ]
+    },
+    "qemux86-ubuntu-node-14-21-3-xenial-build": {
+      "context": "node/qemux86/ubuntu/xenial/14.21.3/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21.3-xenial-build-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21.3-xenial-build",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21-xenial-build-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21-xenial-build",
+        "docker.io/balenalib/qemux86-ubuntu-node:14-xenial-build-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:14-xenial-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21.3-xenial-build-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21.3-xenial-build",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21-xenial-build-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21-xenial-build",
+        "docker.io/balenalib/qemux86-ubuntu-node:14-xenial-build-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:14-xenial-build"
+      ]
+    },
+    "qemux86-ubuntu-node-14-21-3-xenial-run": {
+      "context": "node/qemux86/ubuntu/xenial/14.21.3/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21.3-xenial-run-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21.3-xenial-run",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21.3-xenial-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21.3-xenial",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21-xenial-run-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21-xenial-run",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21-xenial-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21-xenial",
+        "docker.io/balenalib/qemux86-ubuntu-node:14-xenial-run-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:14-xenial-run",
+        "docker.io/balenalib/qemux86-ubuntu-node:14-xenial-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:14-xenial"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21.3-xenial-run-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21.3-xenial-run",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21.3-xenial-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21.3-xenial",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21-xenial-run-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21-xenial-run",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21-xenial-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21-xenial",
+        "docker.io/balenalib/qemux86-ubuntu-node:14-xenial-run-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:14-xenial-run",
+        "docker.io/balenalib/qemux86-ubuntu-node:14-xenial-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:14-xenial"
+      ]
+    },
+    "qemux86-ubuntu-node-16-19-1-bionic-build": {
+      "context": "node/qemux86/ubuntu/bionic/16.19.1/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19.1-bionic-build-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19.1-bionic-build",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19-bionic-build-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19-bionic-build",
+        "docker.io/balenalib/qemux86-ubuntu-node:16-bionic-build-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:16-bionic-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19.1-bionic-build-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19.1-bionic-build",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19-bionic-build-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19-bionic-build",
+        "docker.io/balenalib/qemux86-ubuntu-node:16-bionic-build-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:16-bionic-build"
+      ]
+    },
+    "qemux86-ubuntu-node-16-19-1-bionic-run": {
+      "context": "node/qemux86/ubuntu/bionic/16.19.1/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19.1-bionic-run-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19.1-bionic-run",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19.1-bionic-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19.1-bionic",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19-bionic-run-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19-bionic-run",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19-bionic-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19-bionic",
+        "docker.io/balenalib/qemux86-ubuntu-node:16-bionic-run-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:16-bionic-run",
+        "docker.io/balenalib/qemux86-ubuntu-node:16-bionic-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:16-bionic"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19.1-bionic-run-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19.1-bionic-run",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19.1-bionic-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19.1-bionic",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19-bionic-run-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19-bionic-run",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19-bionic-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:16.19-bionic",
+        "docker.io/balenalib/qemux86-ubuntu-node:16-bionic-run-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:16-bionic-run",
+        "docker.io/balenalib/qemux86-ubuntu-node:16-bionic-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:16-bionic"
+      ]
+    },
+    "qemux86-ubuntu-node-14-21-3-bionic-build": {
+      "context": "node/qemux86/ubuntu/bionic/14.21.3/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21.3-bionic-build-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21.3-bionic-build",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21-bionic-build-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21-bionic-build",
+        "docker.io/balenalib/qemux86-ubuntu-node:14-bionic-build-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:14-bionic-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21.3-bionic-build-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21.3-bionic-build",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21-bionic-build-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21-bionic-build",
+        "docker.io/balenalib/qemux86-ubuntu-node:14-bionic-build-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:14-bionic-build"
+      ]
+    },
+    "qemux86-ubuntu-node-14-21-3-bionic-run": {
+      "context": "node/qemux86/ubuntu/bionic/14.21.3/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21.3-bionic-run-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21.3-bionic-run",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21.3-bionic-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21.3-bionic",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21-bionic-run-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21-bionic-run",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21-bionic-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21-bionic",
+        "docker.io/balenalib/qemux86-ubuntu-node:14-bionic-run-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:14-bionic-run",
+        "docker.io/balenalib/qemux86-ubuntu-node:14-bionic-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:14-bionic"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21.3-bionic-run-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21.3-bionic-run",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21.3-bionic-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21.3-bionic",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21-bionic-run-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21-bionic-run",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21-bionic-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:14.21-bionic",
+        "docker.io/balenalib/qemux86-ubuntu-node:14-bionic-run-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:14-bionic-run",
+        "docker.io/balenalib/qemux86-ubuntu-node:14-bionic-20230911",
+        "docker.io/balenalib/qemux86-ubuntu-node:14-bionic"
+      ]
+    }
+  }
+}

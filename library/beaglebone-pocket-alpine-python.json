@@ -1,0 +1,2368 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "beaglebone-pocket-alpine-python-3-11-2-edge-build",
+        "beaglebone-pocket-alpine-python-3-11-2-edge-run",
+        "beaglebone-pocket-alpine-python-3-10-10-edge-build",
+        "beaglebone-pocket-alpine-python-3-10-10-edge-run",
+        "beaglebone-pocket-alpine-python-3-9-16-edge-build",
+        "beaglebone-pocket-alpine-python-3-9-16-edge-run",
+        "beaglebone-pocket-alpine-python-3-8-16-edge-build",
+        "beaglebone-pocket-alpine-python-3-8-16-edge-run",
+        "beaglebone-pocket-alpine-python-3-7-16-edge-build",
+        "beaglebone-pocket-alpine-python-3-7-16-edge-run",
+        "beaglebone-pocket-alpine-python-3-11-2-3-14-build",
+        "beaglebone-pocket-alpine-python-3-11-2-3-14-run",
+        "beaglebone-pocket-alpine-python-3-10-10-3-14-build",
+        "beaglebone-pocket-alpine-python-3-10-10-3-14-run",
+        "beaglebone-pocket-alpine-python-3-9-16-3-14-build",
+        "beaglebone-pocket-alpine-python-3-9-16-3-14-run",
+        "beaglebone-pocket-alpine-python-3-8-16-3-14-build",
+        "beaglebone-pocket-alpine-python-3-8-16-3-14-run",
+        "beaglebone-pocket-alpine-python-3-7-16-3-14-build",
+        "beaglebone-pocket-alpine-python-3-7-16-3-14-run",
+        "beaglebone-pocket-alpine-python-3-11-2-3-16-build",
+        "beaglebone-pocket-alpine-python-3-11-2-3-16-run",
+        "beaglebone-pocket-alpine-python-3-10-10-3-16-build",
+        "beaglebone-pocket-alpine-python-3-10-10-3-16-run",
+        "beaglebone-pocket-alpine-python-3-9-16-3-16-build",
+        "beaglebone-pocket-alpine-python-3-9-16-3-16-run",
+        "beaglebone-pocket-alpine-python-3-8-16-3-16-build",
+        "beaglebone-pocket-alpine-python-3-8-16-3-16-run",
+        "beaglebone-pocket-alpine-python-3-7-16-3-16-build",
+        "beaglebone-pocket-alpine-python-3-7-16-3-16-run",
+        "beaglebone-pocket-alpine-python-3-11-2-3-17-build",
+        "beaglebone-pocket-alpine-python-3-11-2-3-17-run",
+        "beaglebone-pocket-alpine-python-3-10-10-3-17-build",
+        "beaglebone-pocket-alpine-python-3-10-10-3-17-run",
+        "beaglebone-pocket-alpine-python-3-9-16-3-17-build",
+        "beaglebone-pocket-alpine-python-3-9-16-3-17-run",
+        "beaglebone-pocket-alpine-python-3-8-16-3-17-build",
+        "beaglebone-pocket-alpine-python-3-8-16-3-17-run",
+        "beaglebone-pocket-alpine-python-3-7-16-3-17-build",
+        "beaglebone-pocket-alpine-python-3-7-16-3-17-run",
+        "beaglebone-pocket-alpine-python-3-11-2-3-18-build",
+        "beaglebone-pocket-alpine-python-3-11-2-3-18-run",
+        "beaglebone-pocket-alpine-python-3-10-10-3-18-build",
+        "beaglebone-pocket-alpine-python-3-10-10-3-18-run",
+        "beaglebone-pocket-alpine-python-3-9-16-3-18-build",
+        "beaglebone-pocket-alpine-python-3-9-16-3-18-run",
+        "beaglebone-pocket-alpine-python-3-8-16-3-18-build",
+        "beaglebone-pocket-alpine-python-3-8-16-3-18-run",
+        "beaglebone-pocket-alpine-python-3-7-16-3-18-build",
+        "beaglebone-pocket-alpine-python-3-7-16-3-18-run",
+        "beaglebone-pocket-alpine-python-3-11-2-3-13-build",
+        "beaglebone-pocket-alpine-python-3-11-2-3-13-run",
+        "beaglebone-pocket-alpine-python-3-10-10-3-13-build",
+        "beaglebone-pocket-alpine-python-3-10-10-3-13-run",
+        "beaglebone-pocket-alpine-python-3-9-16-3-13-build",
+        "beaglebone-pocket-alpine-python-3-9-16-3-13-run",
+        "beaglebone-pocket-alpine-python-3-8-16-3-13-build",
+        "beaglebone-pocket-alpine-python-3-8-16-3-13-run",
+        "beaglebone-pocket-alpine-python-3-7-16-3-13-build",
+        "beaglebone-pocket-alpine-python-3-7-16-3-13-run",
+        "beaglebone-pocket-alpine-python-3-11-2-3-12-build",
+        "beaglebone-pocket-alpine-python-3-11-2-3-12-run",
+        "beaglebone-pocket-alpine-python-3-10-10-3-12-build",
+        "beaglebone-pocket-alpine-python-3-10-10-3-12-run",
+        "beaglebone-pocket-alpine-python-3-9-16-3-12-build",
+        "beaglebone-pocket-alpine-python-3-9-16-3-12-run",
+        "beaglebone-pocket-alpine-python-3-8-16-3-12-build",
+        "beaglebone-pocket-alpine-python-3-8-16-3-12-run",
+        "beaglebone-pocket-alpine-python-3-7-16-3-12-build",
+        "beaglebone-pocket-alpine-python-3-7-16-3-12-run",
+        "beaglebone-pocket-alpine-python-3-11-2-3-15-build",
+        "beaglebone-pocket-alpine-python-3-11-2-3-15-run",
+        "beaglebone-pocket-alpine-python-3-10-10-3-15-build",
+        "beaglebone-pocket-alpine-python-3-10-10-3-15-run",
+        "beaglebone-pocket-alpine-python-3-9-16-3-15-build",
+        "beaglebone-pocket-alpine-python-3-9-16-3-15-run",
+        "beaglebone-pocket-alpine-python-3-8-16-3-15-build",
+        "beaglebone-pocket-alpine-python-3-8-16-3-15-run",
+        "beaglebone-pocket-alpine-python-3-7-16-3-15-build",
+        "beaglebone-pocket-alpine-python-3-7-16-3-15-run"
+      ]
+    }
+  },
+  "target": {
+    "beaglebone-pocket-alpine-python-3-11-2-edge-build": {
+      "context": "python/beaglebone-pocket/alpine/edge/3.11.2/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-edge-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-edge-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-edge-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-edge-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-edge-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-edge-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-edge-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-edge-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:edge-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:edge-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-edge-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-edge-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-edge-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-edge-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-edge-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-edge-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-edge-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-edge-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:edge-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:edge-build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-11-2-edge-run": {
+      "context": "python/beaglebone-pocket/alpine/edge/3.11.2/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-edge-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-edge-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-edge-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-edge",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-edge-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-edge-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-edge-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-edge",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-edge-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-edge-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-edge-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-edge",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-edge-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-edge-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-edge-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-edge",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:edge-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:edge-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:edge-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:edge"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-edge-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-edge-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-edge-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-edge",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-edge-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-edge-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-edge-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-edge",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-edge-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-edge-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-edge-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-edge",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-edge-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-edge-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-edge-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-edge",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:edge-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:edge-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:edge-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:edge"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-10-10-edge-build": {
+      "context": "python/beaglebone-pocket/alpine/edge/3.10.10/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-edge-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-edge-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-edge-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-edge-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-edge-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-edge-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-edge-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-edge-build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-10-10-edge-run": {
+      "context": "python/beaglebone-pocket/alpine/edge/3.10.10/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-edge-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-edge-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-edge-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-edge",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-edge-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-edge-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-edge-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-edge"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-edge-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-edge-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-edge-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-edge",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-edge-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-edge-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-edge-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-edge"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-9-16-edge-build": {
+      "context": "python/beaglebone-pocket/alpine/edge/3.9.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-edge-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-edge-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-edge-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-edge-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-edge-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-edge-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-edge-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-edge-build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-9-16-edge-run": {
+      "context": "python/beaglebone-pocket/alpine/edge/3.9.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-edge-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-edge-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-edge-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-edge",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-edge-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-edge-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-edge-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-edge"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-edge-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-edge-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-edge-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-edge",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-edge-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-edge-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-edge-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-edge"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-8-16-edge-build": {
+      "context": "python/beaglebone-pocket/alpine/edge/3.8.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-edge-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-edge-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-edge-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-edge-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-edge-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-edge-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-edge-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-edge-build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-8-16-edge-run": {
+      "context": "python/beaglebone-pocket/alpine/edge/3.8.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-edge-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-edge-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-edge-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-edge",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-edge-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-edge-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-edge-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-edge"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-edge-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-edge-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-edge-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-edge",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-edge-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-edge-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-edge-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-edge"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-7-16-edge-build": {
+      "context": "python/beaglebone-pocket/alpine/edge/3.7.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-edge-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-edge-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-edge-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-edge-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-edge-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-edge-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-edge-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-edge-build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-7-16-edge-run": {
+      "context": "python/beaglebone-pocket/alpine/edge/3.7.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-edge-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-edge-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-edge-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-edge",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-edge-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-edge-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-edge-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-edge"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-edge-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-edge-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-edge-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-edge",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-edge-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-edge-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-edge-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-edge"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-11-2-3-14-build": {
+      "context": "python/beaglebone-pocket/alpine/3.14/3.11.2/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.14-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.14-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.14-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.14-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.14-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.14-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.14-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.14-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.14-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.14-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.14-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.14-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.14-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.14-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.14-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.14-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.14-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.14-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.14-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.14-build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-11-2-3-14-run": {
+      "context": "python/beaglebone-pocket/alpine/3.14/3.11.2/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.14-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.14-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.14-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.14",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.14-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.14-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.14-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.14",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.14-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.14-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.14-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.14",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.14-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.14-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.14-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.14",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.14-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.14-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.14-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.14"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.14-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.14-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.14-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.14",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.14-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.14-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.14-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.14",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.14-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.14-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.14-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.14",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.14-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.14-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.14-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.14",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.14-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.14-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.14-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.14"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-10-10-3-14-build": {
+      "context": "python/beaglebone-pocket/alpine/3.14/3.10.10/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.14-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.14-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.14-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.14-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.14-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.14-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.14-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.14-build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-10-10-3-14-run": {
+      "context": "python/beaglebone-pocket/alpine/3.14/3.10.10/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.14-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.14-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.14-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.14",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.14-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.14-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.14-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.14"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.14-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.14-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.14-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.14",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.14-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.14-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.14-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.14"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-9-16-3-14-build": {
+      "context": "python/beaglebone-pocket/alpine/3.14/3.9.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.14-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.14-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.14-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.14-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.14-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.14-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.14-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.14-build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-9-16-3-14-run": {
+      "context": "python/beaglebone-pocket/alpine/3.14/3.9.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.14-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.14-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.14-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.14",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.14-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.14-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.14-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.14"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.14-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.14-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.14-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.14",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.14-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.14-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.14-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.14"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-8-16-3-14-build": {
+      "context": "python/beaglebone-pocket/alpine/3.14/3.8.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.14-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.14-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.14-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.14-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.14-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.14-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.14-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.14-build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-8-16-3-14-run": {
+      "context": "python/beaglebone-pocket/alpine/3.14/3.8.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.14-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.14-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.14-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.14",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.14-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.14-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.14-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.14"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.14-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.14-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.14-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.14",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.14-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.14-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.14-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.14"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-7-16-3-14-build": {
+      "context": "python/beaglebone-pocket/alpine/3.14/3.7.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.14-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.14-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.14-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.14-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.14-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.14-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.14-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.14-build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-7-16-3-14-run": {
+      "context": "python/beaglebone-pocket/alpine/3.14/3.7.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.14-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.14-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.14-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.14",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.14-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.14-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.14-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.14"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.14-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.14-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.14-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.14",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.14-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.14-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.14-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.14"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-11-2-3-16-build": {
+      "context": "python/beaglebone-pocket/alpine/3.16/3.11.2/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.16-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.16-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.16-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.16-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.16-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.16-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.16-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.16-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.16-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.16-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.16-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.16-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.16-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.16-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.16-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.16-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.16-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.16-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.16-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.16-build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-11-2-3-16-run": {
+      "context": "python/beaglebone-pocket/alpine/3.16/3.11.2/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.16-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.16-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.16-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.16",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.16-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.16-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.16-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.16",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.16-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.16-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.16-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.16",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.16-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.16-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.16-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.16",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.16-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.16-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.16-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.16"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.16-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.16-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.16-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.16",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.16-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.16-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.16-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.16",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.16-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.16-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.16-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.16",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.16-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.16-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.16-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.16",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.16-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.16-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.16-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.16"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-10-10-3-16-build": {
+      "context": "python/beaglebone-pocket/alpine/3.16/3.10.10/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.16-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.16-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.16-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.16-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.16-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.16-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.16-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.16-build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-10-10-3-16-run": {
+      "context": "python/beaglebone-pocket/alpine/3.16/3.10.10/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.16-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.16-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.16-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.16",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.16-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.16-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.16-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.16"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.16-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.16-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.16-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.16",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.16-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.16-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.16-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.16"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-9-16-3-16-build": {
+      "context": "python/beaglebone-pocket/alpine/3.16/3.9.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.16-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.16-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.16-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.16-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.16-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.16-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.16-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.16-build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-9-16-3-16-run": {
+      "context": "python/beaglebone-pocket/alpine/3.16/3.9.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.16-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.16-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.16-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.16",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.16-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.16-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.16-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.16"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.16-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.16-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.16-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.16",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.16-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.16-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.16-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.16"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-8-16-3-16-build": {
+      "context": "python/beaglebone-pocket/alpine/3.16/3.8.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.16-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.16-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.16-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.16-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.16-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.16-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.16-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.16-build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-8-16-3-16-run": {
+      "context": "python/beaglebone-pocket/alpine/3.16/3.8.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.16-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.16-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.16-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.16",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.16-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.16-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.16-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.16"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.16-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.16-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.16-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.16",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.16-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.16-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.16-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.16"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-7-16-3-16-build": {
+      "context": "python/beaglebone-pocket/alpine/3.16/3.7.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.16-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.16-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.16-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.16-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.16-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.16-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.16-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.16-build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-7-16-3-16-run": {
+      "context": "python/beaglebone-pocket/alpine/3.16/3.7.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.16-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.16-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.16-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.16",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.16-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.16-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.16-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.16"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.16-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.16-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.16-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.16",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.16-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.16-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.16-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.16"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-11-2-3-17-build": {
+      "context": "python/beaglebone-pocket/alpine/3.17/3.11.2/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.17-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.17-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.17-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.17-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.17-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.17-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.17-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.17-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.17-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.17-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.17-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.17-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.17-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.17-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.17-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.17-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.17-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.17-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.17-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.17-build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-11-2-3-17-run": {
+      "context": "python/beaglebone-pocket/alpine/3.17/3.11.2/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.17-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.17-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.17-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.17",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.17-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.17-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.17-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.17",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.17-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.17-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.17-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.17",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.17-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.17-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.17-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.17",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.17-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.17-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.17-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.17"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.17-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.17-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.17-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.17",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.17-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.17-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.17-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.17",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.17-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.17-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.17-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.17",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.17-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.17-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.17-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.17",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.17-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.17-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.17-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.17"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-10-10-3-17-build": {
+      "context": "python/beaglebone-pocket/alpine/3.17/3.10.10/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.17-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.17-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.17-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.17-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.17-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.17-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.17-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.17-build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-10-10-3-17-run": {
+      "context": "python/beaglebone-pocket/alpine/3.17/3.10.10/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.17-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.17-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.17-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.17",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.17-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.17-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.17-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.17"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.17-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.17-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.17-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.17",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.17-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.17-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.17-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.17"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-9-16-3-17-build": {
+      "context": "python/beaglebone-pocket/alpine/3.17/3.9.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.17-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.17-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.17-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.17-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.17-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.17-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.17-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.17-build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-9-16-3-17-run": {
+      "context": "python/beaglebone-pocket/alpine/3.17/3.9.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.17-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.17-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.17-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.17",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.17-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.17-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.17-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.17"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.17-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.17-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.17-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.17",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.17-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.17-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.17-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.17"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-8-16-3-17-build": {
+      "context": "python/beaglebone-pocket/alpine/3.17/3.8.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.17-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.17-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.17-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.17-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.17-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.17-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.17-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.17-build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-8-16-3-17-run": {
+      "context": "python/beaglebone-pocket/alpine/3.17/3.8.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.17-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.17-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.17-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.17",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.17-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.17-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.17-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.17"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.17-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.17-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.17-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.17",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.17-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.17-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.17-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.17"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-7-16-3-17-build": {
+      "context": "python/beaglebone-pocket/alpine/3.17/3.7.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.17-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.17-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.17-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.17-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.17-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.17-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.17-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.17-build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-7-16-3-17-run": {
+      "context": "python/beaglebone-pocket/alpine/3.17/3.7.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.17-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.17-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.17-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.17",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.17-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.17-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.17-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.17"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.17-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.17-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.17-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.17",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.17-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.17-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.17-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.17"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-11-2-3-18-build": {
+      "context": "python/beaglebone-pocket/alpine/3.18/3.11.2/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.18-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.18-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-latest-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-latest-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.18-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.18-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-latest-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-latest-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.18-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.18-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-latest-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-latest-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.18-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.18-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-latest-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-latest-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.18-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.18-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.18-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.18-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-latest-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-latest-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.18-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.18-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-latest-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-latest-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.18-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.18-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-latest-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-latest-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.18-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.18-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-latest-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-latest-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.18-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.18-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-11-2-3-18-run": {
+      "context": "python/beaglebone-pocket/alpine/3.18/3.11.2/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.18-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.18-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.18-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.18",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-latest-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-latest-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-latest-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-latest",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.18-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.18-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.18-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.18",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-latest-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-latest-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-latest-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-latest",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.18-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.18-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.18-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.18",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-latest-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-latest-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-latest-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-latest",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.18-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.18-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.18-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.18",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-latest-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-latest-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-latest-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-latest",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.18-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.18-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.18-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.18",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.18-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.18-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.18-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.18",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-latest-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-latest-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-latest-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-latest",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.18-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.18-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.18-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.18",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-latest-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-latest-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-latest-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-latest",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.18-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.18-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.18-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.18",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-latest-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-latest-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-latest-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-latest",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.18-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.18-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.18-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.18",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-latest-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-latest-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-latest-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-latest",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.18-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.18-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.18-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.18",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:20230911"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-10-10-3-18-build": {
+      "context": "python/beaglebone-pocket/alpine/3.18/3.10.10/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.18-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.18-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-latest-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-latest-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.18-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.18-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-latest-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-latest-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.18-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.18-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-latest-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-latest-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.18-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.18-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-latest-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-latest-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-10-10-3-18-run": {
+      "context": "python/beaglebone-pocket/alpine/3.18/3.10.10/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.18-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.18-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.18-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.18",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-latest-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-latest-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-latest-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-latest",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.18-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.18-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.18-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.18",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-latest-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-latest-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-latest-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-latest",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.18-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.18-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.18-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.18",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-latest-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-latest-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-latest-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-latest",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.18-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.18-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.18-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.18",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-latest-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-latest-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-latest-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-latest",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-9-16-3-18-build": {
+      "context": "python/beaglebone-pocket/alpine/3.18/3.9.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.18-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.18-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-latest-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-latest-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.18-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.18-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-latest-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-latest-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.18-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.18-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-latest-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-latest-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.18-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.18-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-latest-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-latest-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-9-16-3-18-run": {
+      "context": "python/beaglebone-pocket/alpine/3.18/3.9.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.18-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.18-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.18-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.18",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-latest-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-latest-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-latest-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-latest",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.18-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.18-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.18-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.18",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-latest-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-latest-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-latest-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-latest",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.18-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.18-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.18-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.18",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-latest-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-latest-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-latest-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-latest",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.18-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.18-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.18-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.18",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-latest-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-latest-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-latest-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-latest",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-8-16-3-18-build": {
+      "context": "python/beaglebone-pocket/alpine/3.18/3.8.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.18-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.18-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-latest-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-latest-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.18-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.18-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-latest-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-latest-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.18-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.18-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-latest-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-latest-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.18-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.18-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-latest-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-latest-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-8-16-3-18-run": {
+      "context": "python/beaglebone-pocket/alpine/3.18/3.8.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.18-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.18-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.18-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.18",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-latest-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-latest-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-latest-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-latest",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.18-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.18-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.18-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.18",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-latest-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-latest-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-latest-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-latest",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.18-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.18-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.18-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.18",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-latest-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-latest-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-latest-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-latest",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.18-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.18-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.18-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.18",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-latest-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-latest-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-latest-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-latest",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-7-16-3-18-build": {
+      "context": "python/beaglebone-pocket/alpine/3.18/3.7.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.18-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.18-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-latest-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-latest-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.18-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.18-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-latest-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-latest-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.18-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.18-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-latest-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-latest-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.18-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.18-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-latest-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-latest-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-7-16-3-18-run": {
+      "context": "python/beaglebone-pocket/alpine/3.18/3.7.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.18-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.18-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.18-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.18",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-latest-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-latest-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-latest-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-latest",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.18-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.18-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.18-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.18",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-latest-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-latest-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-latest-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-latest",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.18-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.18-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.18-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.18",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-latest-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-latest-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-latest-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-latest",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.18-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.18-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.18-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.18",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-latest-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-latest-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-latest-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-latest",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-11-2-3-13-build": {
+      "context": "python/beaglebone-pocket/alpine/3.13/3.11.2/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.13-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.13-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.13-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.13-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.13-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.13-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.13-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.13-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.13-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.13-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.13-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.13-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.13-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.13-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.13-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.13-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.13-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.13-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.13-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.13-build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-11-2-3-13-run": {
+      "context": "python/beaglebone-pocket/alpine/3.13/3.11.2/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.13-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.13-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.13-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.13",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.13-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.13-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.13-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.13",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.13-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.13-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.13-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.13",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.13-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.13-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.13-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.13",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.13-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.13-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.13-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.13"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.13-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.13-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.13-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.13",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.13-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.13-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.13-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.13",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.13-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.13-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.13-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.13",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.13-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.13-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.13-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.13",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.13-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.13-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.13-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.13"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-10-10-3-13-build": {
+      "context": "python/beaglebone-pocket/alpine/3.13/3.10.10/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.13-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.13-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.13-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.13-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.13-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.13-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.13-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.13-build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-10-10-3-13-run": {
+      "context": "python/beaglebone-pocket/alpine/3.13/3.10.10/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.13-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.13-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.13-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.13",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.13-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.13-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.13-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.13"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.13-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.13-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.13-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.13",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.13-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.13-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.13-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.13"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-9-16-3-13-build": {
+      "context": "python/beaglebone-pocket/alpine/3.13/3.9.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.13-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.13-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.13-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.13-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.13-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.13-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.13-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.13-build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-9-16-3-13-run": {
+      "context": "python/beaglebone-pocket/alpine/3.13/3.9.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.13-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.13-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.13-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.13",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.13-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.13-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.13-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.13"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.13-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.13-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.13-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.13",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.13-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.13-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.13-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.13"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-8-16-3-13-build": {
+      "context": "python/beaglebone-pocket/alpine/3.13/3.8.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.13-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.13-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.13-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.13-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.13-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.13-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.13-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.13-build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-8-16-3-13-run": {
+      "context": "python/beaglebone-pocket/alpine/3.13/3.8.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.13-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.13-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.13-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.13",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.13-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.13-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.13-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.13"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.13-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.13-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.13-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.13",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.13-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.13-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.13-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.13"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-7-16-3-13-build": {
+      "context": "python/beaglebone-pocket/alpine/3.13/3.7.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.13-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.13-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.13-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.13-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.13-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.13-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.13-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.13-build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-7-16-3-13-run": {
+      "context": "python/beaglebone-pocket/alpine/3.13/3.7.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.13-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.13-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.13-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.13",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.13-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.13-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.13-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.13"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.13-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.13-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.13-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.13",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.13-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.13-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.13-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.13"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-11-2-3-12-build": {
+      "context": "python/beaglebone-pocket/alpine/3.12/3.11.2/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.12-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.12-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.12-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.12-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.12-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.12-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.12-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.12-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.12-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.12-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.12-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.12-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.12-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.12-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.12-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.12-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.12-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.12-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.12-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.12-build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-11-2-3-12-run": {
+      "context": "python/beaglebone-pocket/alpine/3.12/3.11.2/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.12-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.12-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.12-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.12",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.12-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.12-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.12-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.12",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.12-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.12-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.12-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.12",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.12-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.12-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.12-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.12",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.12-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.12-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.12-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.12"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.12-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.12-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.12-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.12",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.12-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.12-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.12-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.12",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.12-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.12-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.12-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.12",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.12-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.12-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.12-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.12",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.12-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.12-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.12-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.12"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-10-10-3-12-build": {
+      "context": "python/beaglebone-pocket/alpine/3.12/3.10.10/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.12-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.12-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.12-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.12-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.12-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.12-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.12-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.12-build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-10-10-3-12-run": {
+      "context": "python/beaglebone-pocket/alpine/3.12/3.10.10/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.12-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.12-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.12-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.12",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.12-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.12-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.12-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.12"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.12-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.12-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.12-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.12",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.12-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.12-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.12-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.12"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-9-16-3-12-build": {
+      "context": "python/beaglebone-pocket/alpine/3.12/3.9.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.12-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.12-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.12-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.12-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.12-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.12-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.12-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.12-build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-9-16-3-12-run": {
+      "context": "python/beaglebone-pocket/alpine/3.12/3.9.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.12-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.12-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.12-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.12",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.12-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.12-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.12-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.12"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.12-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.12-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.12-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.12",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.12-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.12-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.12-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.12"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-8-16-3-12-build": {
+      "context": "python/beaglebone-pocket/alpine/3.12/3.8.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.12-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.12-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.12-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.12-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.12-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.12-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.12-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.12-build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-8-16-3-12-run": {
+      "context": "python/beaglebone-pocket/alpine/3.12/3.8.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.12-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.12-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.12-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.12",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.12-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.12-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.12-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.12"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.12-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.12-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.12-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.12",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.12-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.12-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.12-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.12"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-7-16-3-12-build": {
+      "context": "python/beaglebone-pocket/alpine/3.12/3.7.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.12-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.12-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.12-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.12-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.12-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.12-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.12-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.12-build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-7-16-3-12-run": {
+      "context": "python/beaglebone-pocket/alpine/3.12/3.7.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.12-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.12-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.12-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.12",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.12-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.12-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.12-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.12"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.12-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.12-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.12-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.12",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.12-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.12-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.12-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.12"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-11-2-3-15-build": {
+      "context": "python/beaglebone-pocket/alpine/3.15/3.11.2/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.15-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.15-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.15-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.15-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.15-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.15-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.15-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.15-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.15-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.15-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.15-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.15-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.15-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.15-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.15-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.15-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.15-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.15-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.15-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.15-build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-11-2-3-15-run": {
+      "context": "python/beaglebone-pocket/alpine/3.15/3.11.2/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.15-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.15-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.15-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.15",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.15-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.15-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.15-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.15",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.15-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.15-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.15-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.15",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.15-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.15-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.15-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.15",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.15-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.15-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.15-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.15"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.15-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.15-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.15-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11.2-3.15",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.15-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.15-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.15-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.11-3.15",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.15-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.15-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.15-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3-3.15",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.15-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.15-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.15-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:latest-3.15",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.15-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.15-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.15-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.15"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-10-10-3-15-build": {
+      "context": "python/beaglebone-pocket/alpine/3.15/3.10.10/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.15-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.15-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.15-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.15-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.15-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.15-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.15-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.15-build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-10-10-3-15-run": {
+      "context": "python/beaglebone-pocket/alpine/3.15/3.10.10/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.15-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.15-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.15-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.15",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.15-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.15-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.15-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.15"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.15-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.15-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.15-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10.10-3.15",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.15-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.15-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.15-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.10-3.15"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-9-16-3-15-build": {
+      "context": "python/beaglebone-pocket/alpine/3.15/3.9.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.15-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.15-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.15-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.15-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.15-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.15-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.15-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.15-build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-9-16-3-15-run": {
+      "context": "python/beaglebone-pocket/alpine/3.15/3.9.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.15-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.15-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.15-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.15",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.15-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.15-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.15-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.15"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.15-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.15-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.15-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9.16-3.15",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.15-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.15-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.15-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.9-3.15"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-8-16-3-15-build": {
+      "context": "python/beaglebone-pocket/alpine/3.15/3.8.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.15-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.15-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.15-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.15-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.15-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.15-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.15-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.15-build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-8-16-3-15-run": {
+      "context": "python/beaglebone-pocket/alpine/3.15/3.8.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.15-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.15-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.15-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.15",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.15-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.15-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.15-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.15"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.15-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.15-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.15-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8.16-3.15",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.15-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.15-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.15-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.8-3.15"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-7-16-3-15-build": {
+      "context": "python/beaglebone-pocket/alpine/3.15/3.7.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.15-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.15-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.15-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.15-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.15-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.15-build",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.15-build-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.15-build"
+      ]
+    },
+    "beaglebone-pocket-alpine-python-3-7-16-3-15-run": {
+      "context": "python/beaglebone-pocket/alpine/3.15/3.7.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.15-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.15-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.15-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.15",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.15-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.15-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.15-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.15"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.15-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.15-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.15-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7.16-3.15",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.15-run-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.15-run",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.15-20230911",
+        "docker.io/balenalib/beaglebone-pocket-alpine-python:3.7-3.15"
+      ]
+    }
+  }
+}

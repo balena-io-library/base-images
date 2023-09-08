@@ -1,0 +1,230 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "ccimx8x-sbc-pro-debian-buster-build",
+        "ccimx8x-sbc-pro-debian-buster-run",
+        "ccimx8x-sbc-pro-debian-bullseye-build",
+        "ccimx8x-sbc-pro-debian-bullseye-run",
+        "ccimx8x-sbc-pro-debian-bookworm-build",
+        "ccimx8x-sbc-pro-debian-bookworm-run",
+        "ccimx8x-sbc-pro-debian-sid-build",
+        "ccimx8x-sbc-pro-debian-sid-run"
+      ]
+    }
+  },
+  "target": {
+    "ccimx8x-sbc-pro-debian-buster-build": {
+      "context": "device-base/ccimx8x-sbc-pro/debian/buster/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:buster-build-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:buster-build",
+        "docker.io/balenalib/ccimx8x-sbc-pro:buster-build-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro:buster-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:buster-build-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:buster-build",
+        "docker.io/balenalib/ccimx8x-sbc-pro:buster-build-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro:buster-build"
+      ]
+    },
+    "ccimx8x-sbc-pro-debian-buster-run": {
+      "context": "device-base/ccimx8x-sbc-pro/debian/buster/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:buster-run-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:buster-run",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:buster-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:buster",
+        "docker.io/balenalib/ccimx8x-sbc-pro:buster-run-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro:buster-run",
+        "docker.io/balenalib/ccimx8x-sbc-pro:buster-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro:buster"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:buster-run-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:buster-run",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:buster-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:buster",
+        "docker.io/balenalib/ccimx8x-sbc-pro:buster-run-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro:buster-run",
+        "docker.io/balenalib/ccimx8x-sbc-pro:buster-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro:buster"
+      ]
+    },
+    "ccimx8x-sbc-pro-debian-bullseye-build": {
+      "context": "device-base/ccimx8x-sbc-pro/debian/bullseye/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:bullseye-build-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:bullseye-build",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:latest-build-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:latest-build",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:build-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:build",
+        "docker.io/balenalib/ccimx8x-sbc-pro:bullseye-build-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro:bullseye-build",
+        "docker.io/balenalib/ccimx8x-sbc-pro:latest-build-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro:latest-build",
+        "docker.io/balenalib/ccimx8x-sbc-pro:build-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:bullseye-build-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:bullseye-build",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:latest-build-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:latest-build",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:build-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:build",
+        "docker.io/balenalib/ccimx8x-sbc-pro:bullseye-build-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro:bullseye-build",
+        "docker.io/balenalib/ccimx8x-sbc-pro:latest-build-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro:latest-build",
+        "docker.io/balenalib/ccimx8x-sbc-pro:build-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro:build"
+      ]
+    },
+    "ccimx8x-sbc-pro-debian-bullseye-run": {
+      "context": "device-base/ccimx8x-sbc-pro/debian/bullseye/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:bullseye-run-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:bullseye-run",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:bullseye-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:bullseye",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:latest-run-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:latest-run",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:latest-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:latest",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:run-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:run",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro:bullseye-run-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro:bullseye-run",
+        "docker.io/balenalib/ccimx8x-sbc-pro:bullseye-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro:bullseye",
+        "docker.io/balenalib/ccimx8x-sbc-pro:latest-run-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro:latest-run",
+        "docker.io/balenalib/ccimx8x-sbc-pro:latest-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro:latest",
+        "docker.io/balenalib/ccimx8x-sbc-pro:run-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro:run",
+        "docker.io/balenalib/ccimx8x-sbc-pro:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:bullseye-run-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:bullseye-run",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:bullseye-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:bullseye",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:latest-run-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:latest-run",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:latest-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:latest",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:run-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:run",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro:bullseye-run-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro:bullseye-run",
+        "docker.io/balenalib/ccimx8x-sbc-pro:bullseye-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro:bullseye",
+        "docker.io/balenalib/ccimx8x-sbc-pro:latest-run-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro:latest-run",
+        "docker.io/balenalib/ccimx8x-sbc-pro:latest-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro:latest",
+        "docker.io/balenalib/ccimx8x-sbc-pro:run-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro:run",
+        "docker.io/balenalib/ccimx8x-sbc-pro:20230911"
+      ]
+    },
+    "ccimx8x-sbc-pro-debian-bookworm-build": {
+      "context": "device-base/ccimx8x-sbc-pro/debian/bookworm/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:bookworm-build-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:bookworm-build",
+        "docker.io/balenalib/ccimx8x-sbc-pro:bookworm-build-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro:bookworm-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:bookworm-build-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:bookworm-build",
+        "docker.io/balenalib/ccimx8x-sbc-pro:bookworm-build-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro:bookworm-build"
+      ]
+    },
+    "ccimx8x-sbc-pro-debian-bookworm-run": {
+      "context": "device-base/ccimx8x-sbc-pro/debian/bookworm/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:bookworm-run-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:bookworm-run",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:bookworm-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:bookworm",
+        "docker.io/balenalib/ccimx8x-sbc-pro:bookworm-run-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro:bookworm-run",
+        "docker.io/balenalib/ccimx8x-sbc-pro:bookworm-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro:bookworm"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:bookworm-run-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:bookworm-run",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:bookworm-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:bookworm",
+        "docker.io/balenalib/ccimx8x-sbc-pro:bookworm-run-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro:bookworm-run",
+        "docker.io/balenalib/ccimx8x-sbc-pro:bookworm-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro:bookworm"
+      ]
+    },
+    "ccimx8x-sbc-pro-debian-sid-build": {
+      "context": "device-base/ccimx8x-sbc-pro/debian/sid/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:sid-build-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:sid-build",
+        "docker.io/balenalib/ccimx8x-sbc-pro:sid-build-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro:sid-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:sid-build-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:sid-build",
+        "docker.io/balenalib/ccimx8x-sbc-pro:sid-build-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro:sid-build"
+      ]
+    },
+    "ccimx8x-sbc-pro-debian-sid-run": {
+      "context": "device-base/ccimx8x-sbc-pro/debian/sid/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:sid-run-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:sid-run",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:sid-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:sid",
+        "docker.io/balenalib/ccimx8x-sbc-pro:sid-run-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro:sid-run",
+        "docker.io/balenalib/ccimx8x-sbc-pro:sid-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro:sid"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:sid-run-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:sid-run",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:sid-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro-debian:sid",
+        "docker.io/balenalib/ccimx8x-sbc-pro:sid-run-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro:sid-run",
+        "docker.io/balenalib/ccimx8x-sbc-pro:sid-20230911",
+        "docker.io/balenalib/ccimx8x-sbc-pro:sid"
+      ]
+    }
+  }
+}
