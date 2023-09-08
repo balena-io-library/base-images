@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.7.2 - 2023-09-08
+
+* Update tibdex/github-app-token action to v1.9.0 [Self-hosted Renovate Bot]
+
 ## 2.7.1 - 2023-09-07
 
 * Revert "Autogenerate workflow files on pre-commit" [Kyle Harding]
