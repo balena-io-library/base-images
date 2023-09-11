@@ -1,19 +1,33 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>balena-io-library/.github:renovate-config"],
-  "ignorePaths": [
-    "**/node_modules/**",
-    "**/bower_components/**",
-    "**/vendor/**",
-    "**/examples/**",
-    "**/__tests__/**",
-    "**/test/**",
-    "**/tests//**",
-    "**/__fixtures__/**",
-    "**/balena-base-images/**",
-    ".github/workflows/bake-*.yml"
-  ],
-  "github-actions": {
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"extends": ["github>balena-io-library/.github:renovate-config"],
+	"ignorePaths": [
+		"**/node_modules/**",
+		"**/bower_components/**",
+		"**/vendor/**",
+		"**/examples/**",
+		"**/__tests__/**",
+		"**/test/**",
+		"**/tests//**",
+		"**/__fixtures__/**",
+		"**/balena-base-images/**",
+		".github/workflows/bake-*.yml"
+	],
+	"github-actions": {
 		"fileMatch": ["scripts/workflows/*.yml"]
-	}
+	},
+	"packageRules": [
+		{
+			"matchPackagePatterns": ["*"],
+			"postUpgradeTasks": {
+				"commands": ["npm ci", "npm run all", "npm run all-lib"],
+				"fileFilters": [
+					"balena-base-images/*",
+					"library/*",
+					".github/workflows/*"
+				],
+				"executionMode": "update"
+			}
+		}
+	]
 }
