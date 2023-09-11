@@ -1,10 +1,5 @@
 name: bake-beaglebone-pocket-fedora-openjdk
 'on':
-  workflow_run:
-    workflows:
-      - bake-beaglebone-pocket-fedora
-    types:
-      - completed
   workflow_dispatch:
     inputs:
       no-push:
@@ -12,6 +7,11 @@ name: bake-beaglebone-pocket-fedora-openjdk
         required: false
         type: boolean
         default: false
+  workflow_run:
+    workflows:
+      - bake-beaglebone-pocket-fedora
+    types:
+      - completed
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true

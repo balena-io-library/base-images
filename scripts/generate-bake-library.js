@@ -195,7 +195,10 @@ function generateWorkflowFile(library, needs = []) {
 	}
 
 	if (needs.length > 0) {
-		workflow.on.workflow_run.workflows = needs;
+		workflow.on.workflow_run = {
+			workflows: needs,
+			types: ['completed'],
+		};
 		delete workflow.on.schedule;
 		delete workflow.on.pull_request;
 	} else {

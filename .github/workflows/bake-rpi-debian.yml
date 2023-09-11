@@ -1,9 +1,5 @@
 name: bake-rpi-debian
 'on':
-  pull_request:
-    branches:
-      - main
-      - master
   workflow_dispatch:
     inputs:
       no-push:
@@ -12,7 +8,7 @@ name: bake-rpi-debian
         type: boolean
         default: false
   schedule:
-    - cron: 34 17 5 * *
+    - cron: 13 13 1 * *
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true

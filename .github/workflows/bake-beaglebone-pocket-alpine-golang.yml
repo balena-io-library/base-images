@@ -1,10 +1,5 @@
 name: bake-beaglebone-pocket-alpine-golang
 'on':
-  workflow_run:
-    workflows:
-      - bake-beaglebone-pocket-alpine
-    types:
-      - completed
   workflow_dispatch:
     inputs:
       no-push:
@@ -12,6 +7,11 @@ name: bake-beaglebone-pocket-alpine-golang
         required: false
         type: boolean
         default: false
+  workflow_run:
+    workflows:
+      - bake-beaglebone-pocket-alpine
+    types:
+      - completed
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true

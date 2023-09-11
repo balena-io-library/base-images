@@ -1,10 +1,5 @@
 name: bake-imx8mm-var-dart-debian-node
 'on':
-  workflow_run:
-    workflows:
-      - bake-imx8mm-var-dart-debian
-    types:
-      - completed
   workflow_dispatch:
     inputs:
       no-push:
@@ -12,6 +7,11 @@ name: bake-imx8mm-var-dart-debian-node
         required: false
         type: boolean
         default: false
+  workflow_run:
+    workflows:
+      - bake-imx8mm-var-dart-debian
+    types:
+      - completed
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true

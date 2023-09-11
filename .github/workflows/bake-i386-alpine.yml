@@ -1,9 +1,5 @@
 name: bake-i386-alpine
 'on':
-  pull_request:
-    branches:
-      - main
-      - master
   workflow_dispatch:
     inputs:
       no-push:
@@ -12,7 +8,7 @@ name: bake-i386-alpine
         type: boolean
         default: false
   schedule:
-    - cron: 3 15 6 * *
+    - cron: 36 23 2 * *
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true

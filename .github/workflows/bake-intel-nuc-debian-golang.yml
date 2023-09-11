@@ -1,10 +1,5 @@
 name: bake-intel-nuc-debian-golang
 'on':
-  workflow_run:
-    workflows:
-      - bake-intel-nuc-debian
-    types:
-      - completed
   workflow_dispatch:
     inputs:
       no-push:
@@ -12,6 +7,11 @@ name: bake-intel-nuc-debian-golang
         required: false
         type: boolean
         default: false
+  workflow_run:
+    workflows:
+      - bake-intel-nuc-debian
+    types:
+      - completed
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true
