@@ -4,8 +4,6 @@ name: bake-armv7hf-alpine
     branches:
       - main
       - master
-  schedule:
-    - cron: 45 3 * * 6
   workflow_dispatch:
     inputs:
       no-push:
@@ -13,6 +11,8 @@ name: bake-armv7hf-alpine
         required: false
         type: boolean
         default: false
+  schedule:
+    - cron: 20 12 5 * *
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true

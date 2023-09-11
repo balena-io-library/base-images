@@ -5,8 +5,6 @@ name: bake
     branches:
       - main
       - master
-  schedule:
-    - cron: 45 3 * * 6
   workflow_run:
     workflows: []
     types:

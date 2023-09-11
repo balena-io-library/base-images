@@ -188,12 +188,25 @@ function generateWorkflowFile(library, needs = []) {
 
 	const workflow = JSON.parse(JSON.stringify(workflowTemplate));
 
+	function getRandomInt(min, max) {
+		min = Math.ceil(min);
+		max = Math.floor(max);
+		return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+
 	if (needs.length > 0) {
 		workflow.on.workflow_run.workflows = needs;
 		delete workflow.on.schedule;
 		delete workflow.on.pull_request;
 	} else {
 		delete workflow.on.workflow_run;
+		// generate a random cron definition to avoid ~3k workflows / ~40k jobs queued at once
+		// 0-59 minutes, 0-23 hours, 1-7 days of the month (first week)
+		const cronDefinition = `${getRandomInt(0, 59)} ${getRandomInt(
+			0,
+			23,
+		)} ${getRandomInt(1, 7)} * *`;
+		workflow.on.schedule = [{ cron: cronDefinition }];
 	}
 
 	workflow.name = `bake-${library}`;

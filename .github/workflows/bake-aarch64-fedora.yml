@@ -4,8 +4,6 @@ name: bake-aarch64-fedora
     branches:
       - main
       - master
-  schedule:
-    - cron: 45 3 * * 6
   workflow_dispatch:
     inputs:
       no-push:
@@ -13,6 +11,8 @@ name: bake-aarch64-fedora
         required: false
         type: boolean
         default: false
+  schedule:
+    - cron: 16 13 4 * *
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true
