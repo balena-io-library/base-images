@@ -1,0 +1,192 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "var-som-mx6-ubuntu-lunar-build",
+        "var-som-mx6-ubuntu-lunar-run",
+        "var-som-mx6-ubuntu-jammy-build",
+        "var-som-mx6-ubuntu-jammy-run",
+        "var-som-mx6-ubuntu-focal-build",
+        "var-som-mx6-ubuntu-focal-run",
+        "var-som-mx6-ubuntu-xenial-build",
+        "var-som-mx6-ubuntu-xenial-run",
+        "var-som-mx6-ubuntu-bionic-build",
+        "var-som-mx6-ubuntu-bionic-run"
+      ]
+    }
+  },
+  "target": {
+    "var-som-mx6-ubuntu-lunar-build": {
+      "context": "device-base/var-som-mx6/ubuntu/lunar/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/var-som-mx6-ubuntu:lunar-build-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:lunar-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/var-som-mx6-ubuntu:lunar-build-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:lunar-build"
+      ]
+    },
+    "var-som-mx6-ubuntu-lunar-run": {
+      "context": "device-base/var-som-mx6/ubuntu/lunar/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/var-som-mx6-ubuntu:lunar-run-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:lunar-run",
+        "docker.io/balenalib/var-som-mx6-ubuntu:lunar-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:lunar"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/var-som-mx6-ubuntu:lunar-run-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:lunar-run",
+        "docker.io/balenalib/var-som-mx6-ubuntu:lunar-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:lunar"
+      ]
+    },
+    "var-som-mx6-ubuntu-jammy-build": {
+      "context": "device-base/var-som-mx6/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/var-som-mx6-ubuntu:jammy-build-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:jammy-build",
+        "docker.io/balenalib/var-som-mx6-ubuntu:latest-build-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:latest-build",
+        "docker.io/balenalib/var-som-mx6-ubuntu:build-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/var-som-mx6-ubuntu:jammy-build-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:jammy-build",
+        "docker.io/balenalib/var-som-mx6-ubuntu:latest-build-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:latest-build",
+        "docker.io/balenalib/var-som-mx6-ubuntu:build-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:build"
+      ]
+    },
+    "var-som-mx6-ubuntu-jammy-run": {
+      "context": "device-base/var-som-mx6/ubuntu/jammy/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/var-som-mx6-ubuntu:jammy-run-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:jammy-run",
+        "docker.io/balenalib/var-som-mx6-ubuntu:jammy-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:jammy",
+        "docker.io/balenalib/var-som-mx6-ubuntu:latest-run-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:latest-run",
+        "docker.io/balenalib/var-som-mx6-ubuntu:latest-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:latest",
+        "docker.io/balenalib/var-som-mx6-ubuntu:run-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:run",
+        "docker.io/balenalib/var-som-mx6-ubuntu:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/var-som-mx6-ubuntu:jammy-run-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:jammy-run",
+        "docker.io/balenalib/var-som-mx6-ubuntu:jammy-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:jammy",
+        "docker.io/balenalib/var-som-mx6-ubuntu:latest-run-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:latest-run",
+        "docker.io/balenalib/var-som-mx6-ubuntu:latest-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:latest",
+        "docker.io/balenalib/var-som-mx6-ubuntu:run-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:run",
+        "docker.io/balenalib/var-som-mx6-ubuntu:20230911"
+      ]
+    },
+    "var-som-mx6-ubuntu-focal-build": {
+      "context": "device-base/var-som-mx6/ubuntu/focal/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/var-som-mx6-ubuntu:focal-build-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:focal-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/var-som-mx6-ubuntu:focal-build-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:focal-build"
+      ]
+    },
+    "var-som-mx6-ubuntu-focal-run": {
+      "context": "device-base/var-som-mx6/ubuntu/focal/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/var-som-mx6-ubuntu:focal-run-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:focal-run",
+        "docker.io/balenalib/var-som-mx6-ubuntu:focal-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:focal"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/var-som-mx6-ubuntu:focal-run-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:focal-run",
+        "docker.io/balenalib/var-som-mx6-ubuntu:focal-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:focal"
+      ]
+    },
+    "var-som-mx6-ubuntu-xenial-build": {
+      "context": "device-base/var-som-mx6/ubuntu/xenial/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/var-som-mx6-ubuntu:xenial-build-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:xenial-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/var-som-mx6-ubuntu:xenial-build-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:xenial-build"
+      ]
+    },
+    "var-som-mx6-ubuntu-xenial-run": {
+      "context": "device-base/var-som-mx6/ubuntu/xenial/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/var-som-mx6-ubuntu:xenial-run-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:xenial-run",
+        "docker.io/balenalib/var-som-mx6-ubuntu:xenial-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:xenial"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/var-som-mx6-ubuntu:xenial-run-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:xenial-run",
+        "docker.io/balenalib/var-som-mx6-ubuntu:xenial-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:xenial"
+      ]
+    },
+    "var-som-mx6-ubuntu-bionic-build": {
+      "context": "device-base/var-som-mx6/ubuntu/bionic/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/var-som-mx6-ubuntu:bionic-build-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:bionic-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/var-som-mx6-ubuntu:bionic-build-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:bionic-build"
+      ]
+    },
+    "var-som-mx6-ubuntu-bionic-run": {
+      "context": "device-base/var-som-mx6/ubuntu/bionic/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/var-som-mx6-ubuntu:bionic-run-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:bionic-run",
+        "docker.io/balenalib/var-som-mx6-ubuntu:bionic-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:bionic"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/var-som-mx6-ubuntu:bionic-run-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:bionic-run",
+        "docker.io/balenalib/var-som-mx6-ubuntu:bionic-20230911",
+        "docker.io/balenalib/var-som-mx6-ubuntu:bionic"
+      ]
+    }
+  }
+}

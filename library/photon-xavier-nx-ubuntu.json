@@ -1,0 +1,192 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "photon-xavier-nx-ubuntu-lunar-build",
+        "photon-xavier-nx-ubuntu-lunar-run",
+        "photon-xavier-nx-ubuntu-jammy-build",
+        "photon-xavier-nx-ubuntu-jammy-run",
+        "photon-xavier-nx-ubuntu-focal-build",
+        "photon-xavier-nx-ubuntu-focal-run",
+        "photon-xavier-nx-ubuntu-xenial-build",
+        "photon-xavier-nx-ubuntu-xenial-run",
+        "photon-xavier-nx-ubuntu-bionic-build",
+        "photon-xavier-nx-ubuntu-bionic-run"
+      ]
+    }
+  },
+  "target": {
+    "photon-xavier-nx-ubuntu-lunar-build": {
+      "context": "device-base/photon-xavier-nx/ubuntu/lunar/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:lunar-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:lunar-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:lunar-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:lunar-build"
+      ]
+    },
+    "photon-xavier-nx-ubuntu-lunar-run": {
+      "context": "device-base/photon-xavier-nx/ubuntu/lunar/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:lunar-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:lunar-run",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:lunar-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:lunar"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:lunar-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:lunar-run",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:lunar-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:lunar"
+      ]
+    },
+    "photon-xavier-nx-ubuntu-jammy-build": {
+      "context": "device-base/photon-xavier-nx/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:jammy-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:jammy-build",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:latest-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:latest-build",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:build-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:jammy-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:jammy-build",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:latest-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:latest-build",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:build-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:build"
+      ]
+    },
+    "photon-xavier-nx-ubuntu-jammy-run": {
+      "context": "device-base/photon-xavier-nx/ubuntu/jammy/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:jammy-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:jammy-run",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:jammy-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:jammy",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:latest-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:latest-run",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:latest-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:latest",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:run-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:run",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:jammy-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:jammy-run",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:jammy-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:jammy",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:latest-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:latest-run",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:latest-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:latest",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:run-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:run",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:20230911"
+      ]
+    },
+    "photon-xavier-nx-ubuntu-focal-build": {
+      "context": "device-base/photon-xavier-nx/ubuntu/focal/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:focal-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:focal-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:focal-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:focal-build"
+      ]
+    },
+    "photon-xavier-nx-ubuntu-focal-run": {
+      "context": "device-base/photon-xavier-nx/ubuntu/focal/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:focal-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:focal-run",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:focal-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:focal"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:focal-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:focal-run",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:focal-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:focal"
+      ]
+    },
+    "photon-xavier-nx-ubuntu-xenial-build": {
+      "context": "device-base/photon-xavier-nx/ubuntu/xenial/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:xenial-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:xenial-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:xenial-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:xenial-build"
+      ]
+    },
+    "photon-xavier-nx-ubuntu-xenial-run": {
+      "context": "device-base/photon-xavier-nx/ubuntu/xenial/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:xenial-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:xenial-run",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:xenial-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:xenial"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:xenial-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:xenial-run",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:xenial-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:xenial"
+      ]
+    },
+    "photon-xavier-nx-ubuntu-bionic-build": {
+      "context": "device-base/photon-xavier-nx/ubuntu/bionic/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:bionic-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:bionic-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:bionic-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:bionic-build"
+      ]
+    },
+    "photon-xavier-nx-ubuntu-bionic-run": {
+      "context": "device-base/photon-xavier-nx/ubuntu/bionic/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:bionic-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:bionic-run",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:bionic-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:bionic"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:bionic-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:bionic-run",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:bionic-20230911",
+        "docker.io/balenalib/photon-xavier-nx-ubuntu:bionic"
+      ]
+    }
+  }
+}

@@ -1,0 +1,230 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "nanopi-neo-air-debian-buster-build",
+        "nanopi-neo-air-debian-buster-run",
+        "nanopi-neo-air-debian-bullseye-build",
+        "nanopi-neo-air-debian-bullseye-run",
+        "nanopi-neo-air-debian-bookworm-build",
+        "nanopi-neo-air-debian-bookworm-run",
+        "nanopi-neo-air-debian-sid-build",
+        "nanopi-neo-air-debian-sid-run"
+      ]
+    }
+  },
+  "target": {
+    "nanopi-neo-air-debian-buster-build": {
+      "context": "device-base/nanopi-neo-air/debian/buster/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/nanopi-neo-air-debian:buster-build-20230911",
+        "docker.io/balenalib/nanopi-neo-air-debian:buster-build",
+        "docker.io/balenalib/nanopi-neo-air:buster-build-20230911",
+        "docker.io/balenalib/nanopi-neo-air:buster-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopi-neo-air-debian:buster-build-20230911",
+        "docker.io/balenalib/nanopi-neo-air-debian:buster-build",
+        "docker.io/balenalib/nanopi-neo-air:buster-build-20230911",
+        "docker.io/balenalib/nanopi-neo-air:buster-build"
+      ]
+    },
+    "nanopi-neo-air-debian-buster-run": {
+      "context": "device-base/nanopi-neo-air/debian/buster/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/nanopi-neo-air-debian:buster-run-20230911",
+        "docker.io/balenalib/nanopi-neo-air-debian:buster-run",
+        "docker.io/balenalib/nanopi-neo-air-debian:buster-20230911",
+        "docker.io/balenalib/nanopi-neo-air-debian:buster",
+        "docker.io/balenalib/nanopi-neo-air:buster-run-20230911",
+        "docker.io/balenalib/nanopi-neo-air:buster-run",
+        "docker.io/balenalib/nanopi-neo-air:buster-20230911",
+        "docker.io/balenalib/nanopi-neo-air:buster"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopi-neo-air-debian:buster-run-20230911",
+        "docker.io/balenalib/nanopi-neo-air-debian:buster-run",
+        "docker.io/balenalib/nanopi-neo-air-debian:buster-20230911",
+        "docker.io/balenalib/nanopi-neo-air-debian:buster",
+        "docker.io/balenalib/nanopi-neo-air:buster-run-20230911",
+        "docker.io/balenalib/nanopi-neo-air:buster-run",
+        "docker.io/balenalib/nanopi-neo-air:buster-20230911",
+        "docker.io/balenalib/nanopi-neo-air:buster"
+      ]
+    },
+    "nanopi-neo-air-debian-bullseye-build": {
+      "context": "device-base/nanopi-neo-air/debian/bullseye/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/nanopi-neo-air-debian:bullseye-build-20230911",
+        "docker.io/balenalib/nanopi-neo-air-debian:bullseye-build",
+        "docker.io/balenalib/nanopi-neo-air-debian:latest-build-20230911",
+        "docker.io/balenalib/nanopi-neo-air-debian:latest-build",
+        "docker.io/balenalib/nanopi-neo-air-debian:build-20230911",
+        "docker.io/balenalib/nanopi-neo-air-debian:build",
+        "docker.io/balenalib/nanopi-neo-air:bullseye-build-20230911",
+        "docker.io/balenalib/nanopi-neo-air:bullseye-build",
+        "docker.io/balenalib/nanopi-neo-air:latest-build-20230911",
+        "docker.io/balenalib/nanopi-neo-air:latest-build",
+        "docker.io/balenalib/nanopi-neo-air:build-20230911",
+        "docker.io/balenalib/nanopi-neo-air:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopi-neo-air-debian:bullseye-build-20230911",
+        "docker.io/balenalib/nanopi-neo-air-debian:bullseye-build",
+        "docker.io/balenalib/nanopi-neo-air-debian:latest-build-20230911",
+        "docker.io/balenalib/nanopi-neo-air-debian:latest-build",
+        "docker.io/balenalib/nanopi-neo-air-debian:build-20230911",
+        "docker.io/balenalib/nanopi-neo-air-debian:build",
+        "docker.io/balenalib/nanopi-neo-air:bullseye-build-20230911",
+        "docker.io/balenalib/nanopi-neo-air:bullseye-build",
+        "docker.io/balenalib/nanopi-neo-air:latest-build-20230911",
+        "docker.io/balenalib/nanopi-neo-air:latest-build",
+        "docker.io/balenalib/nanopi-neo-air:build-20230911",
+        "docker.io/balenalib/nanopi-neo-air:build"
+      ]
+    },
+    "nanopi-neo-air-debian-bullseye-run": {
+      "context": "device-base/nanopi-neo-air/debian/bullseye/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/nanopi-neo-air-debian:bullseye-run-20230911",
+        "docker.io/balenalib/nanopi-neo-air-debian:bullseye-run",
+        "docker.io/balenalib/nanopi-neo-air-debian:bullseye-20230911",
+        "docker.io/balenalib/nanopi-neo-air-debian:bullseye",
+        "docker.io/balenalib/nanopi-neo-air-debian:latest-run-20230911",
+        "docker.io/balenalib/nanopi-neo-air-debian:latest-run",
+        "docker.io/balenalib/nanopi-neo-air-debian:latest-20230911",
+        "docker.io/balenalib/nanopi-neo-air-debian:latest",
+        "docker.io/balenalib/nanopi-neo-air-debian:run-20230911",
+        "docker.io/balenalib/nanopi-neo-air-debian:run",
+        "docker.io/balenalib/nanopi-neo-air-debian:20230911",
+        "docker.io/balenalib/nanopi-neo-air:bullseye-run-20230911",
+        "docker.io/balenalib/nanopi-neo-air:bullseye-run",
+        "docker.io/balenalib/nanopi-neo-air:bullseye-20230911",
+        "docker.io/balenalib/nanopi-neo-air:bullseye",
+        "docker.io/balenalib/nanopi-neo-air:latest-run-20230911",
+        "docker.io/balenalib/nanopi-neo-air:latest-run",
+        "docker.io/balenalib/nanopi-neo-air:latest-20230911",
+        "docker.io/balenalib/nanopi-neo-air:latest",
+        "docker.io/balenalib/nanopi-neo-air:run-20230911",
+        "docker.io/balenalib/nanopi-neo-air:run",
+        "docker.io/balenalib/nanopi-neo-air:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopi-neo-air-debian:bullseye-run-20230911",
+        "docker.io/balenalib/nanopi-neo-air-debian:bullseye-run",
+        "docker.io/balenalib/nanopi-neo-air-debian:bullseye-20230911",
+        "docker.io/balenalib/nanopi-neo-air-debian:bullseye",
+        "docker.io/balenalib/nanopi-neo-air-debian:latest-run-20230911",
+        "docker.io/balenalib/nanopi-neo-air-debian:latest-run",
+        "docker.io/balenalib/nanopi-neo-air-debian:latest-20230911",
+        "docker.io/balenalib/nanopi-neo-air-debian:latest",
+        "docker.io/balenalib/nanopi-neo-air-debian:run-20230911",
+        "docker.io/balenalib/nanopi-neo-air-debian:run",
+        "docker.io/balenalib/nanopi-neo-air-debian:20230911",
+        "docker.io/balenalib/nanopi-neo-air:bullseye-run-20230911",
+        "docker.io/balenalib/nanopi-neo-air:bullseye-run",
+        "docker.io/balenalib/nanopi-neo-air:bullseye-20230911",
+        "docker.io/balenalib/nanopi-neo-air:bullseye",
+        "docker.io/balenalib/nanopi-neo-air:latest-run-20230911",
+        "docker.io/balenalib/nanopi-neo-air:latest-run",
+        "docker.io/balenalib/nanopi-neo-air:latest-20230911",
+        "docker.io/balenalib/nanopi-neo-air:latest",
+        "docker.io/balenalib/nanopi-neo-air:run-20230911",
+        "docker.io/balenalib/nanopi-neo-air:run",
+        "docker.io/balenalib/nanopi-neo-air:20230911"
+      ]
+    },
+    "nanopi-neo-air-debian-bookworm-build": {
+      "context": "device-base/nanopi-neo-air/debian/bookworm/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/nanopi-neo-air-debian:bookworm-build-20230911",
+        "docker.io/balenalib/nanopi-neo-air-debian:bookworm-build",
+        "docker.io/balenalib/nanopi-neo-air:bookworm-build-20230911",
+        "docker.io/balenalib/nanopi-neo-air:bookworm-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopi-neo-air-debian:bookworm-build-20230911",
+        "docker.io/balenalib/nanopi-neo-air-debian:bookworm-build",
+        "docker.io/balenalib/nanopi-neo-air:bookworm-build-20230911",
+        "docker.io/balenalib/nanopi-neo-air:bookworm-build"
+      ]
+    },
+    "nanopi-neo-air-debian-bookworm-run": {
+      "context": "device-base/nanopi-neo-air/debian/bookworm/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/nanopi-neo-air-debian:bookworm-run-20230911",
+        "docker.io/balenalib/nanopi-neo-air-debian:bookworm-run",
+        "docker.io/balenalib/nanopi-neo-air-debian:bookworm-20230911",
+        "docker.io/balenalib/nanopi-neo-air-debian:bookworm",
+        "docker.io/balenalib/nanopi-neo-air:bookworm-run-20230911",
+        "docker.io/balenalib/nanopi-neo-air:bookworm-run",
+        "docker.io/balenalib/nanopi-neo-air:bookworm-20230911",
+        "docker.io/balenalib/nanopi-neo-air:bookworm"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopi-neo-air-debian:bookworm-run-20230911",
+        "docker.io/balenalib/nanopi-neo-air-debian:bookworm-run",
+        "docker.io/balenalib/nanopi-neo-air-debian:bookworm-20230911",
+        "docker.io/balenalib/nanopi-neo-air-debian:bookworm",
+        "docker.io/balenalib/nanopi-neo-air:bookworm-run-20230911",
+        "docker.io/balenalib/nanopi-neo-air:bookworm-run",
+        "docker.io/balenalib/nanopi-neo-air:bookworm-20230911",
+        "docker.io/balenalib/nanopi-neo-air:bookworm"
+      ]
+    },
+    "nanopi-neo-air-debian-sid-build": {
+      "context": "device-base/nanopi-neo-air/debian/sid/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/nanopi-neo-air-debian:sid-build-20230911",
+        "docker.io/balenalib/nanopi-neo-air-debian:sid-build",
+        "docker.io/balenalib/nanopi-neo-air:sid-build-20230911",
+        "docker.io/balenalib/nanopi-neo-air:sid-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopi-neo-air-debian:sid-build-20230911",
+        "docker.io/balenalib/nanopi-neo-air-debian:sid-build",
+        "docker.io/balenalib/nanopi-neo-air:sid-build-20230911",
+        "docker.io/balenalib/nanopi-neo-air:sid-build"
+      ]
+    },
+    "nanopi-neo-air-debian-sid-run": {
+      "context": "device-base/nanopi-neo-air/debian/sid/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/nanopi-neo-air-debian:sid-run-20230911",
+        "docker.io/balenalib/nanopi-neo-air-debian:sid-run",
+        "docker.io/balenalib/nanopi-neo-air-debian:sid-20230911",
+        "docker.io/balenalib/nanopi-neo-air-debian:sid",
+        "docker.io/balenalib/nanopi-neo-air:sid-run-20230911",
+        "docker.io/balenalib/nanopi-neo-air:sid-run",
+        "docker.io/balenalib/nanopi-neo-air:sid-20230911",
+        "docker.io/balenalib/nanopi-neo-air:sid"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopi-neo-air-debian:sid-run-20230911",
+        "docker.io/balenalib/nanopi-neo-air-debian:sid-run",
+        "docker.io/balenalib/nanopi-neo-air-debian:sid-20230911",
+        "docker.io/balenalib/nanopi-neo-air-debian:sid",
+        "docker.io/balenalib/nanopi-neo-air:sid-run-20230911",
+        "docker.io/balenalib/nanopi-neo-air:sid-run",
+        "docker.io/balenalib/nanopi-neo-air:sid-20230911",
+        "docker.io/balenalib/nanopi-neo-air:sid"
+      ]
+    }
+  }
+}

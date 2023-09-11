@@ -1,0 +1,128 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "nanopi-r2c-fedora-36-build",
+        "nanopi-r2c-fedora-36-run",
+        "nanopi-r2c-fedora-37-build",
+        "nanopi-r2c-fedora-37-run",
+        "nanopi-r2c-fedora-38-build",
+        "nanopi-r2c-fedora-38-run"
+      ]
+    }
+  },
+  "target": {
+    "nanopi-r2c-fedora-36-build": {
+      "context": "device-base/nanopi-r2c/fedora/36/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopi-r2c-fedora:36-build-20230911",
+        "docker.io/balenalib/nanopi-r2c-fedora:36-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopi-r2c-fedora:36-build-20230911",
+        "docker.io/balenalib/nanopi-r2c-fedora:36-build"
+      ]
+    },
+    "nanopi-r2c-fedora-36-run": {
+      "context": "device-base/nanopi-r2c/fedora/36/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopi-r2c-fedora:36-run-20230911",
+        "docker.io/balenalib/nanopi-r2c-fedora:36-run",
+        "docker.io/balenalib/nanopi-r2c-fedora:36-20230911",
+        "docker.io/balenalib/nanopi-r2c-fedora:36"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopi-r2c-fedora:36-run-20230911",
+        "docker.io/balenalib/nanopi-r2c-fedora:36-run",
+        "docker.io/balenalib/nanopi-r2c-fedora:36-20230911",
+        "docker.io/balenalib/nanopi-r2c-fedora:36"
+      ]
+    },
+    "nanopi-r2c-fedora-37-build": {
+      "context": "device-base/nanopi-r2c/fedora/37/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopi-r2c-fedora:37-build-20230911",
+        "docker.io/balenalib/nanopi-r2c-fedora:37-build",
+        "docker.io/balenalib/nanopi-r2c-fedora:latest-build-20230911",
+        "docker.io/balenalib/nanopi-r2c-fedora:latest-build",
+        "docker.io/balenalib/nanopi-r2c-fedora:build-20230911",
+        "docker.io/balenalib/nanopi-r2c-fedora:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopi-r2c-fedora:37-build-20230911",
+        "docker.io/balenalib/nanopi-r2c-fedora:37-build",
+        "docker.io/balenalib/nanopi-r2c-fedora:latest-build-20230911",
+        "docker.io/balenalib/nanopi-r2c-fedora:latest-build",
+        "docker.io/balenalib/nanopi-r2c-fedora:build-20230911",
+        "docker.io/balenalib/nanopi-r2c-fedora:build"
+      ]
+    },
+    "nanopi-r2c-fedora-37-run": {
+      "context": "device-base/nanopi-r2c/fedora/37/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopi-r2c-fedora:37-run-20230911",
+        "docker.io/balenalib/nanopi-r2c-fedora:37-run",
+        "docker.io/balenalib/nanopi-r2c-fedora:37-20230911",
+        "docker.io/balenalib/nanopi-r2c-fedora:37",
+        "docker.io/balenalib/nanopi-r2c-fedora:latest-run-20230911",
+        "docker.io/balenalib/nanopi-r2c-fedora:latest-run",
+        "docker.io/balenalib/nanopi-r2c-fedora:latest-20230911",
+        "docker.io/balenalib/nanopi-r2c-fedora:latest",
+        "docker.io/balenalib/nanopi-r2c-fedora:run-20230911",
+        "docker.io/balenalib/nanopi-r2c-fedora:run",
+        "docker.io/balenalib/nanopi-r2c-fedora:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopi-r2c-fedora:37-run-20230911",
+        "docker.io/balenalib/nanopi-r2c-fedora:37-run",
+        "docker.io/balenalib/nanopi-r2c-fedora:37-20230911",
+        "docker.io/balenalib/nanopi-r2c-fedora:37",
+        "docker.io/balenalib/nanopi-r2c-fedora:latest-run-20230911",
+        "docker.io/balenalib/nanopi-r2c-fedora:latest-run",
+        "docker.io/balenalib/nanopi-r2c-fedora:latest-20230911",
+        "docker.io/balenalib/nanopi-r2c-fedora:latest",
+        "docker.io/balenalib/nanopi-r2c-fedora:run-20230911",
+        "docker.io/balenalib/nanopi-r2c-fedora:run",
+        "docker.io/balenalib/nanopi-r2c-fedora:20230911"
+      ]
+    },
+    "nanopi-r2c-fedora-38-build": {
+      "context": "device-base/nanopi-r2c/fedora/38/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopi-r2c-fedora:38-build-20230911",
+        "docker.io/balenalib/nanopi-r2c-fedora:38-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopi-r2c-fedora:38-build-20230911",
+        "docker.io/balenalib/nanopi-r2c-fedora:38-build"
+      ]
+    },
+    "nanopi-r2c-fedora-38-run": {
+      "context": "device-base/nanopi-r2c/fedora/38/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopi-r2c-fedora:38-run-20230911",
+        "docker.io/balenalib/nanopi-r2c-fedora:38-run",
+        "docker.io/balenalib/nanopi-r2c-fedora:38-20230911",
+        "docker.io/balenalib/nanopi-r2c-fedora:38"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopi-r2c-fedora:38-run-20230911",
+        "docker.io/balenalib/nanopi-r2c-fedora:38-run",
+        "docker.io/balenalib/nanopi-r2c-fedora:38-20230911",
+        "docker.io/balenalib/nanopi-r2c-fedora:38"
+      ]
+    }
+  }
+}

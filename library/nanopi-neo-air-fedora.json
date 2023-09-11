@@ -1,0 +1,42 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "nanopi-neo-air-fedora-36-build",
+        "nanopi-neo-air-fedora-36-run"
+      ]
+    }
+  },
+  "target": {
+    "nanopi-neo-air-fedora-36-build": {
+      "context": "device-base/nanopi-neo-air/fedora/36/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/nanopi-neo-air-fedora:36-build-20230911",
+        "docker.io/balenalib/nanopi-neo-air-fedora:36-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopi-neo-air-fedora:36-build-20230911",
+        "docker.io/balenalib/nanopi-neo-air-fedora:36-build"
+      ]
+    },
+    "nanopi-neo-air-fedora-36-run": {
+      "context": "device-base/nanopi-neo-air/fedora/36/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/nanopi-neo-air-fedora:36-run-20230911",
+        "docker.io/balenalib/nanopi-neo-air-fedora:36-run",
+        "docker.io/balenalib/nanopi-neo-air-fedora:36-20230911",
+        "docker.io/balenalib/nanopi-neo-air-fedora:36"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopi-neo-air-fedora:36-run-20230911",
+        "docker.io/balenalib/nanopi-neo-air-fedora:36-run",
+        "docker.io/balenalib/nanopi-neo-air-fedora:36-20230911",
+        "docker.io/balenalib/nanopi-neo-air-fedora:36"
+      ]
+    }
+  }
+}

@@ -1,0 +1,230 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "etcher-pro-debian-buster-build",
+        "etcher-pro-debian-buster-run",
+        "etcher-pro-debian-bullseye-build",
+        "etcher-pro-debian-bullseye-run",
+        "etcher-pro-debian-bookworm-build",
+        "etcher-pro-debian-bookworm-run",
+        "etcher-pro-debian-sid-build",
+        "etcher-pro-debian-sid-run"
+      ]
+    }
+  },
+  "target": {
+    "etcher-pro-debian-buster-build": {
+      "context": "device-base/etcher-pro/debian/buster/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/etcher-pro-debian:buster-build-20230911",
+        "docker.io/balenalib/etcher-pro-debian:buster-build",
+        "docker.io/balenalib/etcher-pro:buster-build-20230911",
+        "docker.io/balenalib/etcher-pro:buster-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/etcher-pro-debian:buster-build-20230911",
+        "docker.io/balenalib/etcher-pro-debian:buster-build",
+        "docker.io/balenalib/etcher-pro:buster-build-20230911",
+        "docker.io/balenalib/etcher-pro:buster-build"
+      ]
+    },
+    "etcher-pro-debian-buster-run": {
+      "context": "device-base/etcher-pro/debian/buster/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/etcher-pro-debian:buster-run-20230911",
+        "docker.io/balenalib/etcher-pro-debian:buster-run",
+        "docker.io/balenalib/etcher-pro-debian:buster-20230911",
+        "docker.io/balenalib/etcher-pro-debian:buster",
+        "docker.io/balenalib/etcher-pro:buster-run-20230911",
+        "docker.io/balenalib/etcher-pro:buster-run",
+        "docker.io/balenalib/etcher-pro:buster-20230911",
+        "docker.io/balenalib/etcher-pro:buster"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/etcher-pro-debian:buster-run-20230911",
+        "docker.io/balenalib/etcher-pro-debian:buster-run",
+        "docker.io/balenalib/etcher-pro-debian:buster-20230911",
+        "docker.io/balenalib/etcher-pro-debian:buster",
+        "docker.io/balenalib/etcher-pro:buster-run-20230911",
+        "docker.io/balenalib/etcher-pro:buster-run",
+        "docker.io/balenalib/etcher-pro:buster-20230911",
+        "docker.io/balenalib/etcher-pro:buster"
+      ]
+    },
+    "etcher-pro-debian-bullseye-build": {
+      "context": "device-base/etcher-pro/debian/bullseye/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/etcher-pro-debian:bullseye-build-20230911",
+        "docker.io/balenalib/etcher-pro-debian:bullseye-build",
+        "docker.io/balenalib/etcher-pro-debian:latest-build-20230911",
+        "docker.io/balenalib/etcher-pro-debian:latest-build",
+        "docker.io/balenalib/etcher-pro-debian:build-20230911",
+        "docker.io/balenalib/etcher-pro-debian:build",
+        "docker.io/balenalib/etcher-pro:bullseye-build-20230911",
+        "docker.io/balenalib/etcher-pro:bullseye-build",
+        "docker.io/balenalib/etcher-pro:latest-build-20230911",
+        "docker.io/balenalib/etcher-pro:latest-build",
+        "docker.io/balenalib/etcher-pro:build-20230911",
+        "docker.io/balenalib/etcher-pro:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/etcher-pro-debian:bullseye-build-20230911",
+        "docker.io/balenalib/etcher-pro-debian:bullseye-build",
+        "docker.io/balenalib/etcher-pro-debian:latest-build-20230911",
+        "docker.io/balenalib/etcher-pro-debian:latest-build",
+        "docker.io/balenalib/etcher-pro-debian:build-20230911",
+        "docker.io/balenalib/etcher-pro-debian:build",
+        "docker.io/balenalib/etcher-pro:bullseye-build-20230911",
+        "docker.io/balenalib/etcher-pro:bullseye-build",
+        "docker.io/balenalib/etcher-pro:latest-build-20230911",
+        "docker.io/balenalib/etcher-pro:latest-build",
+        "docker.io/balenalib/etcher-pro:build-20230911",
+        "docker.io/balenalib/etcher-pro:build"
+      ]
+    },
+    "etcher-pro-debian-bullseye-run": {
+      "context": "device-base/etcher-pro/debian/bullseye/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/etcher-pro-debian:bullseye-run-20230911",
+        "docker.io/balenalib/etcher-pro-debian:bullseye-run",
+        "docker.io/balenalib/etcher-pro-debian:bullseye-20230911",
+        "docker.io/balenalib/etcher-pro-debian:bullseye",
+        "docker.io/balenalib/etcher-pro-debian:latest-run-20230911",
+        "docker.io/balenalib/etcher-pro-debian:latest-run",
+        "docker.io/balenalib/etcher-pro-debian:latest-20230911",
+        "docker.io/balenalib/etcher-pro-debian:latest",
+        "docker.io/balenalib/etcher-pro-debian:run-20230911",
+        "docker.io/balenalib/etcher-pro-debian:run",
+        "docker.io/balenalib/etcher-pro-debian:20230911",
+        "docker.io/balenalib/etcher-pro:bullseye-run-20230911",
+        "docker.io/balenalib/etcher-pro:bullseye-run",
+        "docker.io/balenalib/etcher-pro:bullseye-20230911",
+        "docker.io/balenalib/etcher-pro:bullseye",
+        "docker.io/balenalib/etcher-pro:latest-run-20230911",
+        "docker.io/balenalib/etcher-pro:latest-run",
+        "docker.io/balenalib/etcher-pro:latest-20230911",
+        "docker.io/balenalib/etcher-pro:latest",
+        "docker.io/balenalib/etcher-pro:run-20230911",
+        "docker.io/balenalib/etcher-pro:run",
+        "docker.io/balenalib/etcher-pro:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/etcher-pro-debian:bullseye-run-20230911",
+        "docker.io/balenalib/etcher-pro-debian:bullseye-run",
+        "docker.io/balenalib/etcher-pro-debian:bullseye-20230911",
+        "docker.io/balenalib/etcher-pro-debian:bullseye",
+        "docker.io/balenalib/etcher-pro-debian:latest-run-20230911",
+        "docker.io/balenalib/etcher-pro-debian:latest-run",
+        "docker.io/balenalib/etcher-pro-debian:latest-20230911",
+        "docker.io/balenalib/etcher-pro-debian:latest",
+        "docker.io/balenalib/etcher-pro-debian:run-20230911",
+        "docker.io/balenalib/etcher-pro-debian:run",
+        "docker.io/balenalib/etcher-pro-debian:20230911",
+        "docker.io/balenalib/etcher-pro:bullseye-run-20230911",
+        "docker.io/balenalib/etcher-pro:bullseye-run",
+        "docker.io/balenalib/etcher-pro:bullseye-20230911",
+        "docker.io/balenalib/etcher-pro:bullseye",
+        "docker.io/balenalib/etcher-pro:latest-run-20230911",
+        "docker.io/balenalib/etcher-pro:latest-run",
+        "docker.io/balenalib/etcher-pro:latest-20230911",
+        "docker.io/balenalib/etcher-pro:latest",
+        "docker.io/balenalib/etcher-pro:run-20230911",
+        "docker.io/balenalib/etcher-pro:run",
+        "docker.io/balenalib/etcher-pro:20230911"
+      ]
+    },
+    "etcher-pro-debian-bookworm-build": {
+      "context": "device-base/etcher-pro/debian/bookworm/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/etcher-pro-debian:bookworm-build-20230911",
+        "docker.io/balenalib/etcher-pro-debian:bookworm-build",
+        "docker.io/balenalib/etcher-pro:bookworm-build-20230911",
+        "docker.io/balenalib/etcher-pro:bookworm-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/etcher-pro-debian:bookworm-build-20230911",
+        "docker.io/balenalib/etcher-pro-debian:bookworm-build",
+        "docker.io/balenalib/etcher-pro:bookworm-build-20230911",
+        "docker.io/balenalib/etcher-pro:bookworm-build"
+      ]
+    },
+    "etcher-pro-debian-bookworm-run": {
+      "context": "device-base/etcher-pro/debian/bookworm/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/etcher-pro-debian:bookworm-run-20230911",
+        "docker.io/balenalib/etcher-pro-debian:bookworm-run",
+        "docker.io/balenalib/etcher-pro-debian:bookworm-20230911",
+        "docker.io/balenalib/etcher-pro-debian:bookworm",
+        "docker.io/balenalib/etcher-pro:bookworm-run-20230911",
+        "docker.io/balenalib/etcher-pro:bookworm-run",
+        "docker.io/balenalib/etcher-pro:bookworm-20230911",
+        "docker.io/balenalib/etcher-pro:bookworm"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/etcher-pro-debian:bookworm-run-20230911",
+        "docker.io/balenalib/etcher-pro-debian:bookworm-run",
+        "docker.io/balenalib/etcher-pro-debian:bookworm-20230911",
+        "docker.io/balenalib/etcher-pro-debian:bookworm",
+        "docker.io/balenalib/etcher-pro:bookworm-run-20230911",
+        "docker.io/balenalib/etcher-pro:bookworm-run",
+        "docker.io/balenalib/etcher-pro:bookworm-20230911",
+        "docker.io/balenalib/etcher-pro:bookworm"
+      ]
+    },
+    "etcher-pro-debian-sid-build": {
+      "context": "device-base/etcher-pro/debian/sid/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/etcher-pro-debian:sid-build-20230911",
+        "docker.io/balenalib/etcher-pro-debian:sid-build",
+        "docker.io/balenalib/etcher-pro:sid-build-20230911",
+        "docker.io/balenalib/etcher-pro:sid-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/etcher-pro-debian:sid-build-20230911",
+        "docker.io/balenalib/etcher-pro-debian:sid-build",
+        "docker.io/balenalib/etcher-pro:sid-build-20230911",
+        "docker.io/balenalib/etcher-pro:sid-build"
+      ]
+    },
+    "etcher-pro-debian-sid-run": {
+      "context": "device-base/etcher-pro/debian/sid/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/etcher-pro-debian:sid-run-20230911",
+        "docker.io/balenalib/etcher-pro-debian:sid-run",
+        "docker.io/balenalib/etcher-pro-debian:sid-20230911",
+        "docker.io/balenalib/etcher-pro-debian:sid",
+        "docker.io/balenalib/etcher-pro:sid-run-20230911",
+        "docker.io/balenalib/etcher-pro:sid-run",
+        "docker.io/balenalib/etcher-pro:sid-20230911",
+        "docker.io/balenalib/etcher-pro:sid"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/etcher-pro-debian:sid-run-20230911",
+        "docker.io/balenalib/etcher-pro-debian:sid-run",
+        "docker.io/balenalib/etcher-pro-debian:sid-20230911",
+        "docker.io/balenalib/etcher-pro-debian:sid",
+        "docker.io/balenalib/etcher-pro:sid-run-20230911",
+        "docker.io/balenalib/etcher-pro:sid-run",
+        "docker.io/balenalib/etcher-pro:sid-20230911",
+        "docker.io/balenalib/etcher-pro:sid"
+      ]
+    }
+  }
+}

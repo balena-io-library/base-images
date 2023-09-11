@@ -1,0 +1,230 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "var-som-mx6-debian-buster-build",
+        "var-som-mx6-debian-buster-run",
+        "var-som-mx6-debian-bullseye-build",
+        "var-som-mx6-debian-bullseye-run",
+        "var-som-mx6-debian-bookworm-build",
+        "var-som-mx6-debian-bookworm-run",
+        "var-som-mx6-debian-sid-build",
+        "var-som-mx6-debian-sid-run"
+      ]
+    }
+  },
+  "target": {
+    "var-som-mx6-debian-buster-build": {
+      "context": "device-base/var-som-mx6/debian/buster/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/var-som-mx6-debian:buster-build-20230911",
+        "docker.io/balenalib/var-som-mx6-debian:buster-build",
+        "docker.io/balenalib/var-som-mx6:buster-build-20230911",
+        "docker.io/balenalib/var-som-mx6:buster-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/var-som-mx6-debian:buster-build-20230911",
+        "docker.io/balenalib/var-som-mx6-debian:buster-build",
+        "docker.io/balenalib/var-som-mx6:buster-build-20230911",
+        "docker.io/balenalib/var-som-mx6:buster-build"
+      ]
+    },
+    "var-som-mx6-debian-buster-run": {
+      "context": "device-base/var-som-mx6/debian/buster/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/var-som-mx6-debian:buster-run-20230911",
+        "docker.io/balenalib/var-som-mx6-debian:buster-run",
+        "docker.io/balenalib/var-som-mx6-debian:buster-20230911",
+        "docker.io/balenalib/var-som-mx6-debian:buster",
+        "docker.io/balenalib/var-som-mx6:buster-run-20230911",
+        "docker.io/balenalib/var-som-mx6:buster-run",
+        "docker.io/balenalib/var-som-mx6:buster-20230911",
+        "docker.io/balenalib/var-som-mx6:buster"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/var-som-mx6-debian:buster-run-20230911",
+        "docker.io/balenalib/var-som-mx6-debian:buster-run",
+        "docker.io/balenalib/var-som-mx6-debian:buster-20230911",
+        "docker.io/balenalib/var-som-mx6-debian:buster",
+        "docker.io/balenalib/var-som-mx6:buster-run-20230911",
+        "docker.io/balenalib/var-som-mx6:buster-run",
+        "docker.io/balenalib/var-som-mx6:buster-20230911",
+        "docker.io/balenalib/var-som-mx6:buster"
+      ]
+    },
+    "var-som-mx6-debian-bullseye-build": {
+      "context": "device-base/var-som-mx6/debian/bullseye/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/var-som-mx6-debian:bullseye-build-20230911",
+        "docker.io/balenalib/var-som-mx6-debian:bullseye-build",
+        "docker.io/balenalib/var-som-mx6-debian:latest-build-20230911",
+        "docker.io/balenalib/var-som-mx6-debian:latest-build",
+        "docker.io/balenalib/var-som-mx6-debian:build-20230911",
+        "docker.io/balenalib/var-som-mx6-debian:build",
+        "docker.io/balenalib/var-som-mx6:bullseye-build-20230911",
+        "docker.io/balenalib/var-som-mx6:bullseye-build",
+        "docker.io/balenalib/var-som-mx6:latest-build-20230911",
+        "docker.io/balenalib/var-som-mx6:latest-build",
+        "docker.io/balenalib/var-som-mx6:build-20230911",
+        "docker.io/balenalib/var-som-mx6:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/var-som-mx6-debian:bullseye-build-20230911",
+        "docker.io/balenalib/var-som-mx6-debian:bullseye-build",
+        "docker.io/balenalib/var-som-mx6-debian:latest-build-20230911",
+        "docker.io/balenalib/var-som-mx6-debian:latest-build",
+        "docker.io/balenalib/var-som-mx6-debian:build-20230911",
+        "docker.io/balenalib/var-som-mx6-debian:build",
+        "docker.io/balenalib/var-som-mx6:bullseye-build-20230911",
+        "docker.io/balenalib/var-som-mx6:bullseye-build",
+        "docker.io/balenalib/var-som-mx6:latest-build-20230911",
+        "docker.io/balenalib/var-som-mx6:latest-build",
+        "docker.io/balenalib/var-som-mx6:build-20230911",
+        "docker.io/balenalib/var-som-mx6:build"
+      ]
+    },
+    "var-som-mx6-debian-bullseye-run": {
+      "context": "device-base/var-som-mx6/debian/bullseye/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/var-som-mx6-debian:bullseye-run-20230911",
+        "docker.io/balenalib/var-som-mx6-debian:bullseye-run",
+        "docker.io/balenalib/var-som-mx6-debian:bullseye-20230911",
+        "docker.io/balenalib/var-som-mx6-debian:bullseye",
+        "docker.io/balenalib/var-som-mx6-debian:latest-run-20230911",
+        "docker.io/balenalib/var-som-mx6-debian:latest-run",
+        "docker.io/balenalib/var-som-mx6-debian:latest-20230911",
+        "docker.io/balenalib/var-som-mx6-debian:latest",
+        "docker.io/balenalib/var-som-mx6-debian:run-20230911",
+        "docker.io/balenalib/var-som-mx6-debian:run",
+        "docker.io/balenalib/var-som-mx6-debian:20230911",
+        "docker.io/balenalib/var-som-mx6:bullseye-run-20230911",
+        "docker.io/balenalib/var-som-mx6:bullseye-run",
+        "docker.io/balenalib/var-som-mx6:bullseye-20230911",
+        "docker.io/balenalib/var-som-mx6:bullseye",
+        "docker.io/balenalib/var-som-mx6:latest-run-20230911",
+        "docker.io/balenalib/var-som-mx6:latest-run",
+        "docker.io/balenalib/var-som-mx6:latest-20230911",
+        "docker.io/balenalib/var-som-mx6:latest",
+        "docker.io/balenalib/var-som-mx6:run-20230911",
+        "docker.io/balenalib/var-som-mx6:run",
+        "docker.io/balenalib/var-som-mx6:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/var-som-mx6-debian:bullseye-run-20230911",
+        "docker.io/balenalib/var-som-mx6-debian:bullseye-run",
+        "docker.io/balenalib/var-som-mx6-debian:bullseye-20230911",
+        "docker.io/balenalib/var-som-mx6-debian:bullseye",
+        "docker.io/balenalib/var-som-mx6-debian:latest-run-20230911",
+        "docker.io/balenalib/var-som-mx6-debian:latest-run",
+        "docker.io/balenalib/var-som-mx6-debian:latest-20230911",
+        "docker.io/balenalib/var-som-mx6-debian:latest",
+        "docker.io/balenalib/var-som-mx6-debian:run-20230911",
+        "docker.io/balenalib/var-som-mx6-debian:run",
+        "docker.io/balenalib/var-som-mx6-debian:20230911",
+        "docker.io/balenalib/var-som-mx6:bullseye-run-20230911",
+        "docker.io/balenalib/var-som-mx6:bullseye-run",
+        "docker.io/balenalib/var-som-mx6:bullseye-20230911",
+        "docker.io/balenalib/var-som-mx6:bullseye",
+        "docker.io/balenalib/var-som-mx6:latest-run-20230911",
+        "docker.io/balenalib/var-som-mx6:latest-run",
+        "docker.io/balenalib/var-som-mx6:latest-20230911",
+        "docker.io/balenalib/var-som-mx6:latest",
+        "docker.io/balenalib/var-som-mx6:run-20230911",
+        "docker.io/balenalib/var-som-mx6:run",
+        "docker.io/balenalib/var-som-mx6:20230911"
+      ]
+    },
+    "var-som-mx6-debian-bookworm-build": {
+      "context": "device-base/var-som-mx6/debian/bookworm/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/var-som-mx6-debian:bookworm-build-20230911",
+        "docker.io/balenalib/var-som-mx6-debian:bookworm-build",
+        "docker.io/balenalib/var-som-mx6:bookworm-build-20230911",
+        "docker.io/balenalib/var-som-mx6:bookworm-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/var-som-mx6-debian:bookworm-build-20230911",
+        "docker.io/balenalib/var-som-mx6-debian:bookworm-build",
+        "docker.io/balenalib/var-som-mx6:bookworm-build-20230911",
+        "docker.io/balenalib/var-som-mx6:bookworm-build"
+      ]
+    },
+    "var-som-mx6-debian-bookworm-run": {
+      "context": "device-base/var-som-mx6/debian/bookworm/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/var-som-mx6-debian:bookworm-run-20230911",
+        "docker.io/balenalib/var-som-mx6-debian:bookworm-run",
+        "docker.io/balenalib/var-som-mx6-debian:bookworm-20230911",
+        "docker.io/balenalib/var-som-mx6-debian:bookworm",
+        "docker.io/balenalib/var-som-mx6:bookworm-run-20230911",
+        "docker.io/balenalib/var-som-mx6:bookworm-run",
+        "docker.io/balenalib/var-som-mx6:bookworm-20230911",
+        "docker.io/balenalib/var-som-mx6:bookworm"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/var-som-mx6-debian:bookworm-run-20230911",
+        "docker.io/balenalib/var-som-mx6-debian:bookworm-run",
+        "docker.io/balenalib/var-som-mx6-debian:bookworm-20230911",
+        "docker.io/balenalib/var-som-mx6-debian:bookworm",
+        "docker.io/balenalib/var-som-mx6:bookworm-run-20230911",
+        "docker.io/balenalib/var-som-mx6:bookworm-run",
+        "docker.io/balenalib/var-som-mx6:bookworm-20230911",
+        "docker.io/balenalib/var-som-mx6:bookworm"
+      ]
+    },
+    "var-som-mx6-debian-sid-build": {
+      "context": "device-base/var-som-mx6/debian/sid/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/var-som-mx6-debian:sid-build-20230911",
+        "docker.io/balenalib/var-som-mx6-debian:sid-build",
+        "docker.io/balenalib/var-som-mx6:sid-build-20230911",
+        "docker.io/balenalib/var-som-mx6:sid-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/var-som-mx6-debian:sid-build-20230911",
+        "docker.io/balenalib/var-som-mx6-debian:sid-build",
+        "docker.io/balenalib/var-som-mx6:sid-build-20230911",
+        "docker.io/balenalib/var-som-mx6:sid-build"
+      ]
+    },
+    "var-som-mx6-debian-sid-run": {
+      "context": "device-base/var-som-mx6/debian/sid/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/var-som-mx6-debian:sid-run-20230911",
+        "docker.io/balenalib/var-som-mx6-debian:sid-run",
+        "docker.io/balenalib/var-som-mx6-debian:sid-20230911",
+        "docker.io/balenalib/var-som-mx6-debian:sid",
+        "docker.io/balenalib/var-som-mx6:sid-run-20230911",
+        "docker.io/balenalib/var-som-mx6:sid-run",
+        "docker.io/balenalib/var-som-mx6:sid-20230911",
+        "docker.io/balenalib/var-som-mx6:sid"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/var-som-mx6-debian:sid-run-20230911",
+        "docker.io/balenalib/var-som-mx6-debian:sid-run",
+        "docker.io/balenalib/var-som-mx6-debian:sid-20230911",
+        "docker.io/balenalib/var-som-mx6-debian:sid",
+        "docker.io/balenalib/var-som-mx6:sid-run-20230911",
+        "docker.io/balenalib/var-som-mx6:sid-run",
+        "docker.io/balenalib/var-som-mx6:sid-20230911",
+        "docker.io/balenalib/var-som-mx6:sid"
+      ]
+    }
+  }
+}

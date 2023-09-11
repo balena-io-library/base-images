@@ -1,0 +1,230 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "owa5x-debian-buster-build",
+        "owa5x-debian-buster-run",
+        "owa5x-debian-bullseye-build",
+        "owa5x-debian-bullseye-run",
+        "owa5x-debian-bookworm-build",
+        "owa5x-debian-bookworm-run",
+        "owa5x-debian-sid-build",
+        "owa5x-debian-sid-run"
+      ]
+    }
+  },
+  "target": {
+    "owa5x-debian-buster-build": {
+      "context": "device-base/owa5x/debian/buster/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/owa5x-debian:buster-build-20230911",
+        "docker.io/balenalib/owa5x-debian:buster-build",
+        "docker.io/balenalib/owa5x:buster-build-20230911",
+        "docker.io/balenalib/owa5x:buster-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/owa5x-debian:buster-build-20230911",
+        "docker.io/balenalib/owa5x-debian:buster-build",
+        "docker.io/balenalib/owa5x:buster-build-20230911",
+        "docker.io/balenalib/owa5x:buster-build"
+      ]
+    },
+    "owa5x-debian-buster-run": {
+      "context": "device-base/owa5x/debian/buster/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/owa5x-debian:buster-run-20230911",
+        "docker.io/balenalib/owa5x-debian:buster-run",
+        "docker.io/balenalib/owa5x-debian:buster-20230911",
+        "docker.io/balenalib/owa5x-debian:buster",
+        "docker.io/balenalib/owa5x:buster-run-20230911",
+        "docker.io/balenalib/owa5x:buster-run",
+        "docker.io/balenalib/owa5x:buster-20230911",
+        "docker.io/balenalib/owa5x:buster"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/owa5x-debian:buster-run-20230911",
+        "docker.io/balenalib/owa5x-debian:buster-run",
+        "docker.io/balenalib/owa5x-debian:buster-20230911",
+        "docker.io/balenalib/owa5x-debian:buster",
+        "docker.io/balenalib/owa5x:buster-run-20230911",
+        "docker.io/balenalib/owa5x:buster-run",
+        "docker.io/balenalib/owa5x:buster-20230911",
+        "docker.io/balenalib/owa5x:buster"
+      ]
+    },
+    "owa5x-debian-bullseye-build": {
+      "context": "device-base/owa5x/debian/bullseye/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/owa5x-debian:bullseye-build-20230911",
+        "docker.io/balenalib/owa5x-debian:bullseye-build",
+        "docker.io/balenalib/owa5x-debian:latest-build-20230911",
+        "docker.io/balenalib/owa5x-debian:latest-build",
+        "docker.io/balenalib/owa5x-debian:build-20230911",
+        "docker.io/balenalib/owa5x-debian:build",
+        "docker.io/balenalib/owa5x:bullseye-build-20230911",
+        "docker.io/balenalib/owa5x:bullseye-build",
+        "docker.io/balenalib/owa5x:latest-build-20230911",
+        "docker.io/balenalib/owa5x:latest-build",
+        "docker.io/balenalib/owa5x:build-20230911",
+        "docker.io/balenalib/owa5x:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/owa5x-debian:bullseye-build-20230911",
+        "docker.io/balenalib/owa5x-debian:bullseye-build",
+        "docker.io/balenalib/owa5x-debian:latest-build-20230911",
+        "docker.io/balenalib/owa5x-debian:latest-build",
+        "docker.io/balenalib/owa5x-debian:build-20230911",
+        "docker.io/balenalib/owa5x-debian:build",
+        "docker.io/balenalib/owa5x:bullseye-build-20230911",
+        "docker.io/balenalib/owa5x:bullseye-build",
+        "docker.io/balenalib/owa5x:latest-build-20230911",
+        "docker.io/balenalib/owa5x:latest-build",
+        "docker.io/balenalib/owa5x:build-20230911",
+        "docker.io/balenalib/owa5x:build"
+      ]
+    },
+    "owa5x-debian-bullseye-run": {
+      "context": "device-base/owa5x/debian/bullseye/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/owa5x-debian:bullseye-run-20230911",
+        "docker.io/balenalib/owa5x-debian:bullseye-run",
+        "docker.io/balenalib/owa5x-debian:bullseye-20230911",
+        "docker.io/balenalib/owa5x-debian:bullseye",
+        "docker.io/balenalib/owa5x-debian:latest-run-20230911",
+        "docker.io/balenalib/owa5x-debian:latest-run",
+        "docker.io/balenalib/owa5x-debian:latest-20230911",
+        "docker.io/balenalib/owa5x-debian:latest",
+        "docker.io/balenalib/owa5x-debian:run-20230911",
+        "docker.io/balenalib/owa5x-debian:run",
+        "docker.io/balenalib/owa5x-debian:20230911",
+        "docker.io/balenalib/owa5x:bullseye-run-20230911",
+        "docker.io/balenalib/owa5x:bullseye-run",
+        "docker.io/balenalib/owa5x:bullseye-20230911",
+        "docker.io/balenalib/owa5x:bullseye",
+        "docker.io/balenalib/owa5x:latest-run-20230911",
+        "docker.io/balenalib/owa5x:latest-run",
+        "docker.io/balenalib/owa5x:latest-20230911",
+        "docker.io/balenalib/owa5x:latest",
+        "docker.io/balenalib/owa5x:run-20230911",
+        "docker.io/balenalib/owa5x:run",
+        "docker.io/balenalib/owa5x:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/owa5x-debian:bullseye-run-20230911",
+        "docker.io/balenalib/owa5x-debian:bullseye-run",
+        "docker.io/balenalib/owa5x-debian:bullseye-20230911",
+        "docker.io/balenalib/owa5x-debian:bullseye",
+        "docker.io/balenalib/owa5x-debian:latest-run-20230911",
+        "docker.io/balenalib/owa5x-debian:latest-run",
+        "docker.io/balenalib/owa5x-debian:latest-20230911",
+        "docker.io/balenalib/owa5x-debian:latest",
+        "docker.io/balenalib/owa5x-debian:run-20230911",
+        "docker.io/balenalib/owa5x-debian:run",
+        "docker.io/balenalib/owa5x-debian:20230911",
+        "docker.io/balenalib/owa5x:bullseye-run-20230911",
+        "docker.io/balenalib/owa5x:bullseye-run",
+        "docker.io/balenalib/owa5x:bullseye-20230911",
+        "docker.io/balenalib/owa5x:bullseye",
+        "docker.io/balenalib/owa5x:latest-run-20230911",
+        "docker.io/balenalib/owa5x:latest-run",
+        "docker.io/balenalib/owa5x:latest-20230911",
+        "docker.io/balenalib/owa5x:latest",
+        "docker.io/balenalib/owa5x:run-20230911",
+        "docker.io/balenalib/owa5x:run",
+        "docker.io/balenalib/owa5x:20230911"
+      ]
+    },
+    "owa5x-debian-bookworm-build": {
+      "context": "device-base/owa5x/debian/bookworm/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/owa5x-debian:bookworm-build-20230911",
+        "docker.io/balenalib/owa5x-debian:bookworm-build",
+        "docker.io/balenalib/owa5x:bookworm-build-20230911",
+        "docker.io/balenalib/owa5x:bookworm-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/owa5x-debian:bookworm-build-20230911",
+        "docker.io/balenalib/owa5x-debian:bookworm-build",
+        "docker.io/balenalib/owa5x:bookworm-build-20230911",
+        "docker.io/balenalib/owa5x:bookworm-build"
+      ]
+    },
+    "owa5x-debian-bookworm-run": {
+      "context": "device-base/owa5x/debian/bookworm/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/owa5x-debian:bookworm-run-20230911",
+        "docker.io/balenalib/owa5x-debian:bookworm-run",
+        "docker.io/balenalib/owa5x-debian:bookworm-20230911",
+        "docker.io/balenalib/owa5x-debian:bookworm",
+        "docker.io/balenalib/owa5x:bookworm-run-20230911",
+        "docker.io/balenalib/owa5x:bookworm-run",
+        "docker.io/balenalib/owa5x:bookworm-20230911",
+        "docker.io/balenalib/owa5x:bookworm"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/owa5x-debian:bookworm-run-20230911",
+        "docker.io/balenalib/owa5x-debian:bookworm-run",
+        "docker.io/balenalib/owa5x-debian:bookworm-20230911",
+        "docker.io/balenalib/owa5x-debian:bookworm",
+        "docker.io/balenalib/owa5x:bookworm-run-20230911",
+        "docker.io/balenalib/owa5x:bookworm-run",
+        "docker.io/balenalib/owa5x:bookworm-20230911",
+        "docker.io/balenalib/owa5x:bookworm"
+      ]
+    },
+    "owa5x-debian-sid-build": {
+      "context": "device-base/owa5x/debian/sid/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/owa5x-debian:sid-build-20230911",
+        "docker.io/balenalib/owa5x-debian:sid-build",
+        "docker.io/balenalib/owa5x:sid-build-20230911",
+        "docker.io/balenalib/owa5x:sid-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/owa5x-debian:sid-build-20230911",
+        "docker.io/balenalib/owa5x-debian:sid-build",
+        "docker.io/balenalib/owa5x:sid-build-20230911",
+        "docker.io/balenalib/owa5x:sid-build"
+      ]
+    },
+    "owa5x-debian-sid-run": {
+      "context": "device-base/owa5x/debian/sid/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/owa5x-debian:sid-run-20230911",
+        "docker.io/balenalib/owa5x-debian:sid-run",
+        "docker.io/balenalib/owa5x-debian:sid-20230911",
+        "docker.io/balenalib/owa5x-debian:sid",
+        "docker.io/balenalib/owa5x:sid-run-20230911",
+        "docker.io/balenalib/owa5x:sid-run",
+        "docker.io/balenalib/owa5x:sid-20230911",
+        "docker.io/balenalib/owa5x:sid"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/owa5x-debian:sid-run-20230911",
+        "docker.io/balenalib/owa5x-debian:sid-run",
+        "docker.io/balenalib/owa5x-debian:sid-20230911",
+        "docker.io/balenalib/owa5x-debian:sid",
+        "docker.io/balenalib/owa5x:sid-run-20230911",
+        "docker.io/balenalib/owa5x:sid-run",
+        "docker.io/balenalib/owa5x:sid-20230911",
+        "docker.io/balenalib/owa5x:sid"
+      ]
+    }
+  }
+}

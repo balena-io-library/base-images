@@ -1,0 +1,230 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "armv7hf-debian-buster-build",
+        "armv7hf-debian-buster-run",
+        "armv7hf-debian-bullseye-build",
+        "armv7hf-debian-bullseye-run",
+        "armv7hf-debian-bookworm-build",
+        "armv7hf-debian-bookworm-run",
+        "armv7hf-debian-sid-build",
+        "armv7hf-debian-sid-run"
+      ]
+    }
+  },
+  "target": {
+    "armv7hf-debian-buster-build": {
+      "context": "armv7hf/debian/buster/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/armv7hf-debian:buster-build-20230911",
+        "docker.io/balenalib/armv7hf-debian:buster-build",
+        "docker.io/balenalib/armv7hf:buster-build-20230911",
+        "docker.io/balenalib/armv7hf:buster-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/armv7hf-debian:buster-build-20230911",
+        "docker.io/balenalib/armv7hf-debian:buster-build",
+        "docker.io/balenalib/armv7hf:buster-build-20230911",
+        "docker.io/balenalib/armv7hf:buster-build"
+      ]
+    },
+    "armv7hf-debian-buster-run": {
+      "context": "armv7hf/debian/buster/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/armv7hf-debian:buster-run-20230911",
+        "docker.io/balenalib/armv7hf-debian:buster-run",
+        "docker.io/balenalib/armv7hf-debian:buster-20230911",
+        "docker.io/balenalib/armv7hf-debian:buster",
+        "docker.io/balenalib/armv7hf:buster-run-20230911",
+        "docker.io/balenalib/armv7hf:buster-run",
+        "docker.io/balenalib/armv7hf:buster-20230911",
+        "docker.io/balenalib/armv7hf:buster"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/armv7hf-debian:buster-run-20230911",
+        "docker.io/balenalib/armv7hf-debian:buster-run",
+        "docker.io/balenalib/armv7hf-debian:buster-20230911",
+        "docker.io/balenalib/armv7hf-debian:buster",
+        "docker.io/balenalib/armv7hf:buster-run-20230911",
+        "docker.io/balenalib/armv7hf:buster-run",
+        "docker.io/balenalib/armv7hf:buster-20230911",
+        "docker.io/balenalib/armv7hf:buster"
+      ]
+    },
+    "armv7hf-debian-bullseye-build": {
+      "context": "armv7hf/debian/bullseye/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/armv7hf-debian:bullseye-build-20230911",
+        "docker.io/balenalib/armv7hf-debian:bullseye-build",
+        "docker.io/balenalib/armv7hf-debian:latest-build-20230911",
+        "docker.io/balenalib/armv7hf-debian:latest-build",
+        "docker.io/balenalib/armv7hf-debian:build-20230911",
+        "docker.io/balenalib/armv7hf-debian:build",
+        "docker.io/balenalib/armv7hf:bullseye-build-20230911",
+        "docker.io/balenalib/armv7hf:bullseye-build",
+        "docker.io/balenalib/armv7hf:latest-build-20230911",
+        "docker.io/balenalib/armv7hf:latest-build",
+        "docker.io/balenalib/armv7hf:build-20230911",
+        "docker.io/balenalib/armv7hf:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/armv7hf-debian:bullseye-build-20230911",
+        "docker.io/balenalib/armv7hf-debian:bullseye-build",
+        "docker.io/balenalib/armv7hf-debian:latest-build-20230911",
+        "docker.io/balenalib/armv7hf-debian:latest-build",
+        "docker.io/balenalib/armv7hf-debian:build-20230911",
+        "docker.io/balenalib/armv7hf-debian:build",
+        "docker.io/balenalib/armv7hf:bullseye-build-20230911",
+        "docker.io/balenalib/armv7hf:bullseye-build",
+        "docker.io/balenalib/armv7hf:latest-build-20230911",
+        "docker.io/balenalib/armv7hf:latest-build",
+        "docker.io/balenalib/armv7hf:build-20230911",
+        "docker.io/balenalib/armv7hf:build"
+      ]
+    },
+    "armv7hf-debian-bullseye-run": {
+      "context": "armv7hf/debian/bullseye/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/armv7hf-debian:bullseye-run-20230911",
+        "docker.io/balenalib/armv7hf-debian:bullseye-run",
+        "docker.io/balenalib/armv7hf-debian:bullseye-20230911",
+        "docker.io/balenalib/armv7hf-debian:bullseye",
+        "docker.io/balenalib/armv7hf-debian:latest-run-20230911",
+        "docker.io/balenalib/armv7hf-debian:latest-run",
+        "docker.io/balenalib/armv7hf-debian:latest-20230911",
+        "docker.io/balenalib/armv7hf-debian:latest",
+        "docker.io/balenalib/armv7hf-debian:run-20230911",
+        "docker.io/balenalib/armv7hf-debian:run",
+        "docker.io/balenalib/armv7hf-debian:20230911",
+        "docker.io/balenalib/armv7hf:bullseye-run-20230911",
+        "docker.io/balenalib/armv7hf:bullseye-run",
+        "docker.io/balenalib/armv7hf:bullseye-20230911",
+        "docker.io/balenalib/armv7hf:bullseye",
+        "docker.io/balenalib/armv7hf:latest-run-20230911",
+        "docker.io/balenalib/armv7hf:latest-run",
+        "docker.io/balenalib/armv7hf:latest-20230911",
+        "docker.io/balenalib/armv7hf:latest",
+        "docker.io/balenalib/armv7hf:run-20230911",
+        "docker.io/balenalib/armv7hf:run",
+        "docker.io/balenalib/armv7hf:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/armv7hf-debian:bullseye-run-20230911",
+        "docker.io/balenalib/armv7hf-debian:bullseye-run",
+        "docker.io/balenalib/armv7hf-debian:bullseye-20230911",
+        "docker.io/balenalib/armv7hf-debian:bullseye",
+        "docker.io/balenalib/armv7hf-debian:latest-run-20230911",
+        "docker.io/balenalib/armv7hf-debian:latest-run",
+        "docker.io/balenalib/armv7hf-debian:latest-20230911",
+        "docker.io/balenalib/armv7hf-debian:latest",
+        "docker.io/balenalib/armv7hf-debian:run-20230911",
+        "docker.io/balenalib/armv7hf-debian:run",
+        "docker.io/balenalib/armv7hf-debian:20230911",
+        "docker.io/balenalib/armv7hf:bullseye-run-20230911",
+        "docker.io/balenalib/armv7hf:bullseye-run",
+        "docker.io/balenalib/armv7hf:bullseye-20230911",
+        "docker.io/balenalib/armv7hf:bullseye",
+        "docker.io/balenalib/armv7hf:latest-run-20230911",
+        "docker.io/balenalib/armv7hf:latest-run",
+        "docker.io/balenalib/armv7hf:latest-20230911",
+        "docker.io/balenalib/armv7hf:latest",
+        "docker.io/balenalib/armv7hf:run-20230911",
+        "docker.io/balenalib/armv7hf:run",
+        "docker.io/balenalib/armv7hf:20230911"
+      ]
+    },
+    "armv7hf-debian-bookworm-build": {
+      "context": "armv7hf/debian/bookworm/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/armv7hf-debian:bookworm-build-20230911",
+        "docker.io/balenalib/armv7hf-debian:bookworm-build",
+        "docker.io/balenalib/armv7hf:bookworm-build-20230911",
+        "docker.io/balenalib/armv7hf:bookworm-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/armv7hf-debian:bookworm-build-20230911",
+        "docker.io/balenalib/armv7hf-debian:bookworm-build",
+        "docker.io/balenalib/armv7hf:bookworm-build-20230911",
+        "docker.io/balenalib/armv7hf:bookworm-build"
+      ]
+    },
+    "armv7hf-debian-bookworm-run": {
+      "context": "armv7hf/debian/bookworm/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/armv7hf-debian:bookworm-run-20230911",
+        "docker.io/balenalib/armv7hf-debian:bookworm-run",
+        "docker.io/balenalib/armv7hf-debian:bookworm-20230911",
+        "docker.io/balenalib/armv7hf-debian:bookworm",
+        "docker.io/balenalib/armv7hf:bookworm-run-20230911",
+        "docker.io/balenalib/armv7hf:bookworm-run",
+        "docker.io/balenalib/armv7hf:bookworm-20230911",
+        "docker.io/balenalib/armv7hf:bookworm"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/armv7hf-debian:bookworm-run-20230911",
+        "docker.io/balenalib/armv7hf-debian:bookworm-run",
+        "docker.io/balenalib/armv7hf-debian:bookworm-20230911",
+        "docker.io/balenalib/armv7hf-debian:bookworm",
+        "docker.io/balenalib/armv7hf:bookworm-run-20230911",
+        "docker.io/balenalib/armv7hf:bookworm-run",
+        "docker.io/balenalib/armv7hf:bookworm-20230911",
+        "docker.io/balenalib/armv7hf:bookworm"
+      ]
+    },
+    "armv7hf-debian-sid-build": {
+      "context": "armv7hf/debian/sid/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/armv7hf-debian:sid-build-20230911",
+        "docker.io/balenalib/armv7hf-debian:sid-build",
+        "docker.io/balenalib/armv7hf:sid-build-20230911",
+        "docker.io/balenalib/armv7hf:sid-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/armv7hf-debian:sid-build-20230911",
+        "docker.io/balenalib/armv7hf-debian:sid-build",
+        "docker.io/balenalib/armv7hf:sid-build-20230911",
+        "docker.io/balenalib/armv7hf:sid-build"
+      ]
+    },
+    "armv7hf-debian-sid-run": {
+      "context": "armv7hf/debian/sid/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/armv7hf-debian:sid-run-20230911",
+        "docker.io/balenalib/armv7hf-debian:sid-run",
+        "docker.io/balenalib/armv7hf-debian:sid-20230911",
+        "docker.io/balenalib/armv7hf-debian:sid",
+        "docker.io/balenalib/armv7hf:sid-run-20230911",
+        "docker.io/balenalib/armv7hf:sid-run",
+        "docker.io/balenalib/armv7hf:sid-20230911",
+        "docker.io/balenalib/armv7hf:sid"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/armv7hf-debian:sid-run-20230911",
+        "docker.io/balenalib/armv7hf-debian:sid-run",
+        "docker.io/balenalib/armv7hf-debian:sid-20230911",
+        "docker.io/balenalib/armv7hf-debian:sid",
+        "docker.io/balenalib/armv7hf:sid-run-20230911",
+        "docker.io/balenalib/armv7hf:sid-run",
+        "docker.io/balenalib/armv7hf:sid-20230911",
+        "docker.io/balenalib/armv7hf:sid"
+      ]
+    }
+  }
+}

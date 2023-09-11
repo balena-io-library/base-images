@@ -1,0 +1,230 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "odyssey-x86-debian-buster-build",
+        "odyssey-x86-debian-buster-run",
+        "odyssey-x86-debian-bullseye-build",
+        "odyssey-x86-debian-bullseye-run",
+        "odyssey-x86-debian-bookworm-build",
+        "odyssey-x86-debian-bookworm-run",
+        "odyssey-x86-debian-sid-build",
+        "odyssey-x86-debian-sid-run"
+      ]
+    }
+  },
+  "target": {
+    "odyssey-x86-debian-buster-build": {
+      "context": "device-base/odyssey-x86/debian/buster/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/odyssey-x86-debian:buster-build-20230911",
+        "docker.io/balenalib/odyssey-x86-debian:buster-build",
+        "docker.io/balenalib/odyssey-x86:buster-build-20230911",
+        "docker.io/balenalib/odyssey-x86:buster-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/odyssey-x86-debian:buster-build-20230911",
+        "docker.io/balenalib/odyssey-x86-debian:buster-build",
+        "docker.io/balenalib/odyssey-x86:buster-build-20230911",
+        "docker.io/balenalib/odyssey-x86:buster-build"
+      ]
+    },
+    "odyssey-x86-debian-buster-run": {
+      "context": "device-base/odyssey-x86/debian/buster/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/odyssey-x86-debian:buster-run-20230911",
+        "docker.io/balenalib/odyssey-x86-debian:buster-run",
+        "docker.io/balenalib/odyssey-x86-debian:buster-20230911",
+        "docker.io/balenalib/odyssey-x86-debian:buster",
+        "docker.io/balenalib/odyssey-x86:buster-run-20230911",
+        "docker.io/balenalib/odyssey-x86:buster-run",
+        "docker.io/balenalib/odyssey-x86:buster-20230911",
+        "docker.io/balenalib/odyssey-x86:buster"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/odyssey-x86-debian:buster-run-20230911",
+        "docker.io/balenalib/odyssey-x86-debian:buster-run",
+        "docker.io/balenalib/odyssey-x86-debian:buster-20230911",
+        "docker.io/balenalib/odyssey-x86-debian:buster",
+        "docker.io/balenalib/odyssey-x86:buster-run-20230911",
+        "docker.io/balenalib/odyssey-x86:buster-run",
+        "docker.io/balenalib/odyssey-x86:buster-20230911",
+        "docker.io/balenalib/odyssey-x86:buster"
+      ]
+    },
+    "odyssey-x86-debian-bullseye-build": {
+      "context": "device-base/odyssey-x86/debian/bullseye/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/odyssey-x86-debian:bullseye-build-20230911",
+        "docker.io/balenalib/odyssey-x86-debian:bullseye-build",
+        "docker.io/balenalib/odyssey-x86-debian:latest-build-20230911",
+        "docker.io/balenalib/odyssey-x86-debian:latest-build",
+        "docker.io/balenalib/odyssey-x86-debian:build-20230911",
+        "docker.io/balenalib/odyssey-x86-debian:build",
+        "docker.io/balenalib/odyssey-x86:bullseye-build-20230911",
+        "docker.io/balenalib/odyssey-x86:bullseye-build",
+        "docker.io/balenalib/odyssey-x86:latest-build-20230911",
+        "docker.io/balenalib/odyssey-x86:latest-build",
+        "docker.io/balenalib/odyssey-x86:build-20230911",
+        "docker.io/balenalib/odyssey-x86:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/odyssey-x86-debian:bullseye-build-20230911",
+        "docker.io/balenalib/odyssey-x86-debian:bullseye-build",
+        "docker.io/balenalib/odyssey-x86-debian:latest-build-20230911",
+        "docker.io/balenalib/odyssey-x86-debian:latest-build",
+        "docker.io/balenalib/odyssey-x86-debian:build-20230911",
+        "docker.io/balenalib/odyssey-x86-debian:build",
+        "docker.io/balenalib/odyssey-x86:bullseye-build-20230911",
+        "docker.io/balenalib/odyssey-x86:bullseye-build",
+        "docker.io/balenalib/odyssey-x86:latest-build-20230911",
+        "docker.io/balenalib/odyssey-x86:latest-build",
+        "docker.io/balenalib/odyssey-x86:build-20230911",
+        "docker.io/balenalib/odyssey-x86:build"
+      ]
+    },
+    "odyssey-x86-debian-bullseye-run": {
+      "context": "device-base/odyssey-x86/debian/bullseye/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/odyssey-x86-debian:bullseye-run-20230911",
+        "docker.io/balenalib/odyssey-x86-debian:bullseye-run",
+        "docker.io/balenalib/odyssey-x86-debian:bullseye-20230911",
+        "docker.io/balenalib/odyssey-x86-debian:bullseye",
+        "docker.io/balenalib/odyssey-x86-debian:latest-run-20230911",
+        "docker.io/balenalib/odyssey-x86-debian:latest-run",
+        "docker.io/balenalib/odyssey-x86-debian:latest-20230911",
+        "docker.io/balenalib/odyssey-x86-debian:latest",
+        "docker.io/balenalib/odyssey-x86-debian:run-20230911",
+        "docker.io/balenalib/odyssey-x86-debian:run",
+        "docker.io/balenalib/odyssey-x86-debian:20230911",
+        "docker.io/balenalib/odyssey-x86:bullseye-run-20230911",
+        "docker.io/balenalib/odyssey-x86:bullseye-run",
+        "docker.io/balenalib/odyssey-x86:bullseye-20230911",
+        "docker.io/balenalib/odyssey-x86:bullseye",
+        "docker.io/balenalib/odyssey-x86:latest-run-20230911",
+        "docker.io/balenalib/odyssey-x86:latest-run",
+        "docker.io/balenalib/odyssey-x86:latest-20230911",
+        "docker.io/balenalib/odyssey-x86:latest",
+        "docker.io/balenalib/odyssey-x86:run-20230911",
+        "docker.io/balenalib/odyssey-x86:run",
+        "docker.io/balenalib/odyssey-x86:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/odyssey-x86-debian:bullseye-run-20230911",
+        "docker.io/balenalib/odyssey-x86-debian:bullseye-run",
+        "docker.io/balenalib/odyssey-x86-debian:bullseye-20230911",
+        "docker.io/balenalib/odyssey-x86-debian:bullseye",
+        "docker.io/balenalib/odyssey-x86-debian:latest-run-20230911",
+        "docker.io/balenalib/odyssey-x86-debian:latest-run",
+        "docker.io/balenalib/odyssey-x86-debian:latest-20230911",
+        "docker.io/balenalib/odyssey-x86-debian:latest",
+        "docker.io/balenalib/odyssey-x86-debian:run-20230911",
+        "docker.io/balenalib/odyssey-x86-debian:run",
+        "docker.io/balenalib/odyssey-x86-debian:20230911",
+        "docker.io/balenalib/odyssey-x86:bullseye-run-20230911",
+        "docker.io/balenalib/odyssey-x86:bullseye-run",
+        "docker.io/balenalib/odyssey-x86:bullseye-20230911",
+        "docker.io/balenalib/odyssey-x86:bullseye",
+        "docker.io/balenalib/odyssey-x86:latest-run-20230911",
+        "docker.io/balenalib/odyssey-x86:latest-run",
+        "docker.io/balenalib/odyssey-x86:latest-20230911",
+        "docker.io/balenalib/odyssey-x86:latest",
+        "docker.io/balenalib/odyssey-x86:run-20230911",
+        "docker.io/balenalib/odyssey-x86:run",
+        "docker.io/balenalib/odyssey-x86:20230911"
+      ]
+    },
+    "odyssey-x86-debian-bookworm-build": {
+      "context": "device-base/odyssey-x86/debian/bookworm/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/odyssey-x86-debian:bookworm-build-20230911",
+        "docker.io/balenalib/odyssey-x86-debian:bookworm-build",
+        "docker.io/balenalib/odyssey-x86:bookworm-build-20230911",
+        "docker.io/balenalib/odyssey-x86:bookworm-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/odyssey-x86-debian:bookworm-build-20230911",
+        "docker.io/balenalib/odyssey-x86-debian:bookworm-build",
+        "docker.io/balenalib/odyssey-x86:bookworm-build-20230911",
+        "docker.io/balenalib/odyssey-x86:bookworm-build"
+      ]
+    },
+    "odyssey-x86-debian-bookworm-run": {
+      "context": "device-base/odyssey-x86/debian/bookworm/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/odyssey-x86-debian:bookworm-run-20230911",
+        "docker.io/balenalib/odyssey-x86-debian:bookworm-run",
+        "docker.io/balenalib/odyssey-x86-debian:bookworm-20230911",
+        "docker.io/balenalib/odyssey-x86-debian:bookworm",
+        "docker.io/balenalib/odyssey-x86:bookworm-run-20230911",
+        "docker.io/balenalib/odyssey-x86:bookworm-run",
+        "docker.io/balenalib/odyssey-x86:bookworm-20230911",
+        "docker.io/balenalib/odyssey-x86:bookworm"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/odyssey-x86-debian:bookworm-run-20230911",
+        "docker.io/balenalib/odyssey-x86-debian:bookworm-run",
+        "docker.io/balenalib/odyssey-x86-debian:bookworm-20230911",
+        "docker.io/balenalib/odyssey-x86-debian:bookworm",
+        "docker.io/balenalib/odyssey-x86:bookworm-run-20230911",
+        "docker.io/balenalib/odyssey-x86:bookworm-run",
+        "docker.io/balenalib/odyssey-x86:bookworm-20230911",
+        "docker.io/balenalib/odyssey-x86:bookworm"
+      ]
+    },
+    "odyssey-x86-debian-sid-build": {
+      "context": "device-base/odyssey-x86/debian/sid/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/odyssey-x86-debian:sid-build-20230911",
+        "docker.io/balenalib/odyssey-x86-debian:sid-build",
+        "docker.io/balenalib/odyssey-x86:sid-build-20230911",
+        "docker.io/balenalib/odyssey-x86:sid-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/odyssey-x86-debian:sid-build-20230911",
+        "docker.io/balenalib/odyssey-x86-debian:sid-build",
+        "docker.io/balenalib/odyssey-x86:sid-build-20230911",
+        "docker.io/balenalib/odyssey-x86:sid-build"
+      ]
+    },
+    "odyssey-x86-debian-sid-run": {
+      "context": "device-base/odyssey-x86/debian/sid/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/odyssey-x86-debian:sid-run-20230911",
+        "docker.io/balenalib/odyssey-x86-debian:sid-run",
+        "docker.io/balenalib/odyssey-x86-debian:sid-20230911",
+        "docker.io/balenalib/odyssey-x86-debian:sid",
+        "docker.io/balenalib/odyssey-x86:sid-run-20230911",
+        "docker.io/balenalib/odyssey-x86:sid-run",
+        "docker.io/balenalib/odyssey-x86:sid-20230911",
+        "docker.io/balenalib/odyssey-x86:sid"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/odyssey-x86-debian:sid-run-20230911",
+        "docker.io/balenalib/odyssey-x86-debian:sid-run",
+        "docker.io/balenalib/odyssey-x86-debian:sid-20230911",
+        "docker.io/balenalib/odyssey-x86-debian:sid",
+        "docker.io/balenalib/odyssey-x86:sid-run-20230911",
+        "docker.io/balenalib/odyssey-x86:sid-run",
+        "docker.io/balenalib/odyssey-x86:sid-20230911",
+        "docker.io/balenalib/odyssey-x86:sid"
+      ]
+    }
+  }
+}

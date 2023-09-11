@@ -1,0 +1,230 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "orange-pi-zero-debian-buster-build",
+        "orange-pi-zero-debian-buster-run",
+        "orange-pi-zero-debian-bullseye-build",
+        "orange-pi-zero-debian-bullseye-run",
+        "orange-pi-zero-debian-bookworm-build",
+        "orange-pi-zero-debian-bookworm-run",
+        "orange-pi-zero-debian-sid-build",
+        "orange-pi-zero-debian-sid-run"
+      ]
+    }
+  },
+  "target": {
+    "orange-pi-zero-debian-buster-build": {
+      "context": "device-base/orange-pi-zero/debian/buster/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/orange-pi-zero-debian:buster-build-20230911",
+        "docker.io/balenalib/orange-pi-zero-debian:buster-build",
+        "docker.io/balenalib/orange-pi-zero:buster-build-20230911",
+        "docker.io/balenalib/orange-pi-zero:buster-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/orange-pi-zero-debian:buster-build-20230911",
+        "docker.io/balenalib/orange-pi-zero-debian:buster-build",
+        "docker.io/balenalib/orange-pi-zero:buster-build-20230911",
+        "docker.io/balenalib/orange-pi-zero:buster-build"
+      ]
+    },
+    "orange-pi-zero-debian-buster-run": {
+      "context": "device-base/orange-pi-zero/debian/buster/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/orange-pi-zero-debian:buster-run-20230911",
+        "docker.io/balenalib/orange-pi-zero-debian:buster-run",
+        "docker.io/balenalib/orange-pi-zero-debian:buster-20230911",
+        "docker.io/balenalib/orange-pi-zero-debian:buster",
+        "docker.io/balenalib/orange-pi-zero:buster-run-20230911",
+        "docker.io/balenalib/orange-pi-zero:buster-run",
+        "docker.io/balenalib/orange-pi-zero:buster-20230911",
+        "docker.io/balenalib/orange-pi-zero:buster"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/orange-pi-zero-debian:buster-run-20230911",
+        "docker.io/balenalib/orange-pi-zero-debian:buster-run",
+        "docker.io/balenalib/orange-pi-zero-debian:buster-20230911",
+        "docker.io/balenalib/orange-pi-zero-debian:buster",
+        "docker.io/balenalib/orange-pi-zero:buster-run-20230911",
+        "docker.io/balenalib/orange-pi-zero:buster-run",
+        "docker.io/balenalib/orange-pi-zero:buster-20230911",
+        "docker.io/balenalib/orange-pi-zero:buster"
+      ]
+    },
+    "orange-pi-zero-debian-bullseye-build": {
+      "context": "device-base/orange-pi-zero/debian/bullseye/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/orange-pi-zero-debian:bullseye-build-20230911",
+        "docker.io/balenalib/orange-pi-zero-debian:bullseye-build",
+        "docker.io/balenalib/orange-pi-zero-debian:latest-build-20230911",
+        "docker.io/balenalib/orange-pi-zero-debian:latest-build",
+        "docker.io/balenalib/orange-pi-zero-debian:build-20230911",
+        "docker.io/balenalib/orange-pi-zero-debian:build",
+        "docker.io/balenalib/orange-pi-zero:bullseye-build-20230911",
+        "docker.io/balenalib/orange-pi-zero:bullseye-build",
+        "docker.io/balenalib/orange-pi-zero:latest-build-20230911",
+        "docker.io/balenalib/orange-pi-zero:latest-build",
+        "docker.io/balenalib/orange-pi-zero:build-20230911",
+        "docker.io/balenalib/orange-pi-zero:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/orange-pi-zero-debian:bullseye-build-20230911",
+        "docker.io/balenalib/orange-pi-zero-debian:bullseye-build",
+        "docker.io/balenalib/orange-pi-zero-debian:latest-build-20230911",
+        "docker.io/balenalib/orange-pi-zero-debian:latest-build",
+        "docker.io/balenalib/orange-pi-zero-debian:build-20230911",
+        "docker.io/balenalib/orange-pi-zero-debian:build",
+        "docker.io/balenalib/orange-pi-zero:bullseye-build-20230911",
+        "docker.io/balenalib/orange-pi-zero:bullseye-build",
+        "docker.io/balenalib/orange-pi-zero:latest-build-20230911",
+        "docker.io/balenalib/orange-pi-zero:latest-build",
+        "docker.io/balenalib/orange-pi-zero:build-20230911",
+        "docker.io/balenalib/orange-pi-zero:build"
+      ]
+    },
+    "orange-pi-zero-debian-bullseye-run": {
+      "context": "device-base/orange-pi-zero/debian/bullseye/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/orange-pi-zero-debian:bullseye-run-20230911",
+        "docker.io/balenalib/orange-pi-zero-debian:bullseye-run",
+        "docker.io/balenalib/orange-pi-zero-debian:bullseye-20230911",
+        "docker.io/balenalib/orange-pi-zero-debian:bullseye",
+        "docker.io/balenalib/orange-pi-zero-debian:latest-run-20230911",
+        "docker.io/balenalib/orange-pi-zero-debian:latest-run",
+        "docker.io/balenalib/orange-pi-zero-debian:latest-20230911",
+        "docker.io/balenalib/orange-pi-zero-debian:latest",
+        "docker.io/balenalib/orange-pi-zero-debian:run-20230911",
+        "docker.io/balenalib/orange-pi-zero-debian:run",
+        "docker.io/balenalib/orange-pi-zero-debian:20230911",
+        "docker.io/balenalib/orange-pi-zero:bullseye-run-20230911",
+        "docker.io/balenalib/orange-pi-zero:bullseye-run",
+        "docker.io/balenalib/orange-pi-zero:bullseye-20230911",
+        "docker.io/balenalib/orange-pi-zero:bullseye",
+        "docker.io/balenalib/orange-pi-zero:latest-run-20230911",
+        "docker.io/balenalib/orange-pi-zero:latest-run",
+        "docker.io/balenalib/orange-pi-zero:latest-20230911",
+        "docker.io/balenalib/orange-pi-zero:latest",
+        "docker.io/balenalib/orange-pi-zero:run-20230911",
+        "docker.io/balenalib/orange-pi-zero:run",
+        "docker.io/balenalib/orange-pi-zero:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/orange-pi-zero-debian:bullseye-run-20230911",
+        "docker.io/balenalib/orange-pi-zero-debian:bullseye-run",
+        "docker.io/balenalib/orange-pi-zero-debian:bullseye-20230911",
+        "docker.io/balenalib/orange-pi-zero-debian:bullseye",
+        "docker.io/balenalib/orange-pi-zero-debian:latest-run-20230911",
+        "docker.io/balenalib/orange-pi-zero-debian:latest-run",
+        "docker.io/balenalib/orange-pi-zero-debian:latest-20230911",
+        "docker.io/balenalib/orange-pi-zero-debian:latest",
+        "docker.io/balenalib/orange-pi-zero-debian:run-20230911",
+        "docker.io/balenalib/orange-pi-zero-debian:run",
+        "docker.io/balenalib/orange-pi-zero-debian:20230911",
+        "docker.io/balenalib/orange-pi-zero:bullseye-run-20230911",
+        "docker.io/balenalib/orange-pi-zero:bullseye-run",
+        "docker.io/balenalib/orange-pi-zero:bullseye-20230911",
+        "docker.io/balenalib/orange-pi-zero:bullseye",
+        "docker.io/balenalib/orange-pi-zero:latest-run-20230911",
+        "docker.io/balenalib/orange-pi-zero:latest-run",
+        "docker.io/balenalib/orange-pi-zero:latest-20230911",
+        "docker.io/balenalib/orange-pi-zero:latest",
+        "docker.io/balenalib/orange-pi-zero:run-20230911",
+        "docker.io/balenalib/orange-pi-zero:run",
+        "docker.io/balenalib/orange-pi-zero:20230911"
+      ]
+    },
+    "orange-pi-zero-debian-bookworm-build": {
+      "context": "device-base/orange-pi-zero/debian/bookworm/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/orange-pi-zero-debian:bookworm-build-20230911",
+        "docker.io/balenalib/orange-pi-zero-debian:bookworm-build",
+        "docker.io/balenalib/orange-pi-zero:bookworm-build-20230911",
+        "docker.io/balenalib/orange-pi-zero:bookworm-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/orange-pi-zero-debian:bookworm-build-20230911",
+        "docker.io/balenalib/orange-pi-zero-debian:bookworm-build",
+        "docker.io/balenalib/orange-pi-zero:bookworm-build-20230911",
+        "docker.io/balenalib/orange-pi-zero:bookworm-build"
+      ]
+    },
+    "orange-pi-zero-debian-bookworm-run": {
+      "context": "device-base/orange-pi-zero/debian/bookworm/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/orange-pi-zero-debian:bookworm-run-20230911",
+        "docker.io/balenalib/orange-pi-zero-debian:bookworm-run",
+        "docker.io/balenalib/orange-pi-zero-debian:bookworm-20230911",
+        "docker.io/balenalib/orange-pi-zero-debian:bookworm",
+        "docker.io/balenalib/orange-pi-zero:bookworm-run-20230911",
+        "docker.io/balenalib/orange-pi-zero:bookworm-run",
+        "docker.io/balenalib/orange-pi-zero:bookworm-20230911",
+        "docker.io/balenalib/orange-pi-zero:bookworm"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/orange-pi-zero-debian:bookworm-run-20230911",
+        "docker.io/balenalib/orange-pi-zero-debian:bookworm-run",
+        "docker.io/balenalib/orange-pi-zero-debian:bookworm-20230911",
+        "docker.io/balenalib/orange-pi-zero-debian:bookworm",
+        "docker.io/balenalib/orange-pi-zero:bookworm-run-20230911",
+        "docker.io/balenalib/orange-pi-zero:bookworm-run",
+        "docker.io/balenalib/orange-pi-zero:bookworm-20230911",
+        "docker.io/balenalib/orange-pi-zero:bookworm"
+      ]
+    },
+    "orange-pi-zero-debian-sid-build": {
+      "context": "device-base/orange-pi-zero/debian/sid/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/orange-pi-zero-debian:sid-build-20230911",
+        "docker.io/balenalib/orange-pi-zero-debian:sid-build",
+        "docker.io/balenalib/orange-pi-zero:sid-build-20230911",
+        "docker.io/balenalib/orange-pi-zero:sid-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/orange-pi-zero-debian:sid-build-20230911",
+        "docker.io/balenalib/orange-pi-zero-debian:sid-build",
+        "docker.io/balenalib/orange-pi-zero:sid-build-20230911",
+        "docker.io/balenalib/orange-pi-zero:sid-build"
+      ]
+    },
+    "orange-pi-zero-debian-sid-run": {
+      "context": "device-base/orange-pi-zero/debian/sid/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/orange-pi-zero-debian:sid-run-20230911",
+        "docker.io/balenalib/orange-pi-zero-debian:sid-run",
+        "docker.io/balenalib/orange-pi-zero-debian:sid-20230911",
+        "docker.io/balenalib/orange-pi-zero-debian:sid",
+        "docker.io/balenalib/orange-pi-zero:sid-run-20230911",
+        "docker.io/balenalib/orange-pi-zero:sid-run",
+        "docker.io/balenalib/orange-pi-zero:sid-20230911",
+        "docker.io/balenalib/orange-pi-zero:sid"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/orange-pi-zero-debian:sid-run-20230911",
+        "docker.io/balenalib/orange-pi-zero-debian:sid-run",
+        "docker.io/balenalib/orange-pi-zero-debian:sid-20230911",
+        "docker.io/balenalib/orange-pi-zero-debian:sid",
+        "docker.io/balenalib/orange-pi-zero:sid-run-20230911",
+        "docker.io/balenalib/orange-pi-zero:sid-run",
+        "docker.io/balenalib/orange-pi-zero:sid-20230911",
+        "docker.io/balenalib/orange-pi-zero:sid"
+      ]
+    }
+  }
+}

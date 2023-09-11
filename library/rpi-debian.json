@@ -1,0 +1,186 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "rpi-debian-bullseye-build",
+        "rpi-debian-bullseye-run",
+        "rpi-debian-bookworm-build",
+        "rpi-debian-bookworm-run",
+        "rpi-debian-buster-build",
+        "rpi-debian-buster-run"
+      ]
+    }
+  },
+  "target": {
+    "rpi-debian-bullseye-build": {
+      "context": "rpi/debian/bullseye/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v5",
+      "tags": [
+        "docker.io/balenalib/rpi-debian:bullseye-build-20230911",
+        "docker.io/balenalib/rpi-debian:bullseye-build",
+        "docker.io/balenalib/rpi-debian:latest-build-20230911",
+        "docker.io/balenalib/rpi-debian:latest-build",
+        "docker.io/balenalib/rpi-debian:build-20230911",
+        "docker.io/balenalib/rpi-debian:build",
+        "docker.io/balenalib/rpi:bullseye-build-20230911",
+        "docker.io/balenalib/rpi:bullseye-build",
+        "docker.io/balenalib/rpi:latest-build-20230911",
+        "docker.io/balenalib/rpi:latest-build",
+        "docker.io/balenalib/rpi:build-20230911",
+        "docker.io/balenalib/rpi:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/rpi-debian:bullseye-build-20230911",
+        "docker.io/balenalib/rpi-debian:bullseye-build",
+        "docker.io/balenalib/rpi-debian:latest-build-20230911",
+        "docker.io/balenalib/rpi-debian:latest-build",
+        "docker.io/balenalib/rpi-debian:build-20230911",
+        "docker.io/balenalib/rpi-debian:build",
+        "docker.io/balenalib/rpi:bullseye-build-20230911",
+        "docker.io/balenalib/rpi:bullseye-build",
+        "docker.io/balenalib/rpi:latest-build-20230911",
+        "docker.io/balenalib/rpi:latest-build",
+        "docker.io/balenalib/rpi:build-20230911",
+        "docker.io/balenalib/rpi:build"
+      ]
+    },
+    "rpi-debian-bullseye-run": {
+      "context": "rpi/debian/bullseye/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v5",
+      "tags": [
+        "docker.io/balenalib/rpi-debian:bullseye-run-20230911",
+        "docker.io/balenalib/rpi-debian:bullseye-run",
+        "docker.io/balenalib/rpi-debian:bullseye-20230911",
+        "docker.io/balenalib/rpi-debian:bullseye",
+        "docker.io/balenalib/rpi-debian:latest-run-20230911",
+        "docker.io/balenalib/rpi-debian:latest-run",
+        "docker.io/balenalib/rpi-debian:latest-20230911",
+        "docker.io/balenalib/rpi-debian:latest",
+        "docker.io/balenalib/rpi-debian:run-20230911",
+        "docker.io/balenalib/rpi-debian:run",
+        "docker.io/balenalib/rpi-debian:20230911",
+        "docker.io/balenalib/rpi:bullseye-run-20230911",
+        "docker.io/balenalib/rpi:bullseye-run",
+        "docker.io/balenalib/rpi:bullseye-20230911",
+        "docker.io/balenalib/rpi:bullseye",
+        "docker.io/balenalib/rpi:latest-run-20230911",
+        "docker.io/balenalib/rpi:latest-run",
+        "docker.io/balenalib/rpi:latest-20230911",
+        "docker.io/balenalib/rpi:latest",
+        "docker.io/balenalib/rpi:run-20230911",
+        "docker.io/balenalib/rpi:run",
+        "docker.io/balenalib/rpi:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/rpi-debian:bullseye-run-20230911",
+        "docker.io/balenalib/rpi-debian:bullseye-run",
+        "docker.io/balenalib/rpi-debian:bullseye-20230911",
+        "docker.io/balenalib/rpi-debian:bullseye",
+        "docker.io/balenalib/rpi-debian:latest-run-20230911",
+        "docker.io/balenalib/rpi-debian:latest-run",
+        "docker.io/balenalib/rpi-debian:latest-20230911",
+        "docker.io/balenalib/rpi-debian:latest",
+        "docker.io/balenalib/rpi-debian:run-20230911",
+        "docker.io/balenalib/rpi-debian:run",
+        "docker.io/balenalib/rpi-debian:20230911",
+        "docker.io/balenalib/rpi:bullseye-run-20230911",
+        "docker.io/balenalib/rpi:bullseye-run",
+        "docker.io/balenalib/rpi:bullseye-20230911",
+        "docker.io/balenalib/rpi:bullseye",
+        "docker.io/balenalib/rpi:latest-run-20230911",
+        "docker.io/balenalib/rpi:latest-run",
+        "docker.io/balenalib/rpi:latest-20230911",
+        "docker.io/balenalib/rpi:latest",
+        "docker.io/balenalib/rpi:run-20230911",
+        "docker.io/balenalib/rpi:run",
+        "docker.io/balenalib/rpi:20230911"
+      ]
+    },
+    "rpi-debian-bookworm-build": {
+      "context": "rpi/debian/bookworm/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v5",
+      "tags": [
+        "docker.io/balenalib/rpi-debian:bookworm-build-20230911",
+        "docker.io/balenalib/rpi-debian:bookworm-build",
+        "docker.io/balenalib/rpi:bookworm-build-20230911",
+        "docker.io/balenalib/rpi:bookworm-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/rpi-debian:bookworm-build-20230911",
+        "docker.io/balenalib/rpi-debian:bookworm-build",
+        "docker.io/balenalib/rpi:bookworm-build-20230911",
+        "docker.io/balenalib/rpi:bookworm-build"
+      ]
+    },
+    "rpi-debian-bookworm-run": {
+      "context": "rpi/debian/bookworm/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v5",
+      "tags": [
+        "docker.io/balenalib/rpi-debian:bookworm-run-20230911",
+        "docker.io/balenalib/rpi-debian:bookworm-run",
+        "docker.io/balenalib/rpi-debian:bookworm-20230911",
+        "docker.io/balenalib/rpi-debian:bookworm",
+        "docker.io/balenalib/rpi:bookworm-run-20230911",
+        "docker.io/balenalib/rpi:bookworm-run",
+        "docker.io/balenalib/rpi:bookworm-20230911",
+        "docker.io/balenalib/rpi:bookworm"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/rpi-debian:bookworm-run-20230911",
+        "docker.io/balenalib/rpi-debian:bookworm-run",
+        "docker.io/balenalib/rpi-debian:bookworm-20230911",
+        "docker.io/balenalib/rpi-debian:bookworm",
+        "docker.io/balenalib/rpi:bookworm-run-20230911",
+        "docker.io/balenalib/rpi:bookworm-run",
+        "docker.io/balenalib/rpi:bookworm-20230911",
+        "docker.io/balenalib/rpi:bookworm"
+      ]
+    },
+    "rpi-debian-buster-build": {
+      "context": "rpi/debian/buster/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v5",
+      "tags": [
+        "docker.io/balenalib/rpi-debian:buster-build-20230911",
+        "docker.io/balenalib/rpi-debian:buster-build",
+        "docker.io/balenalib/rpi:buster-build-20230911",
+        "docker.io/balenalib/rpi:buster-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/rpi-debian:buster-build-20230911",
+        "docker.io/balenalib/rpi-debian:buster-build",
+        "docker.io/balenalib/rpi:buster-build-20230911",
+        "docker.io/balenalib/rpi:buster-build"
+      ]
+    },
+    "rpi-debian-buster-run": {
+      "context": "rpi/debian/buster/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v5",
+      "tags": [
+        "docker.io/balenalib/rpi-debian:buster-run-20230911",
+        "docker.io/balenalib/rpi-debian:buster-run",
+        "docker.io/balenalib/rpi-debian:buster-20230911",
+        "docker.io/balenalib/rpi-debian:buster",
+        "docker.io/balenalib/rpi:buster-run-20230911",
+        "docker.io/balenalib/rpi:buster-run",
+        "docker.io/balenalib/rpi:buster-20230911",
+        "docker.io/balenalib/rpi:buster"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/rpi-debian:buster-run-20230911",
+        "docker.io/balenalib/rpi-debian:buster-run",
+        "docker.io/balenalib/rpi-debian:buster-20230911",
+        "docker.io/balenalib/rpi-debian:buster",
+        "docker.io/balenalib/rpi:buster-run-20230911",
+        "docker.io/balenalib/rpi:buster-run",
+        "docker.io/balenalib/rpi:buster-20230911",
+        "docker.io/balenalib/rpi:buster"
+      ]
+    }
+  }
+}

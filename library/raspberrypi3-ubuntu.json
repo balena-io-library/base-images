@@ -1,0 +1,192 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "raspberrypi3-ubuntu-lunar-build",
+        "raspberrypi3-ubuntu-lunar-run",
+        "raspberrypi3-ubuntu-jammy-build",
+        "raspberrypi3-ubuntu-jammy-run",
+        "raspberrypi3-ubuntu-focal-build",
+        "raspberrypi3-ubuntu-focal-run",
+        "raspberrypi3-ubuntu-xenial-build",
+        "raspberrypi3-ubuntu-xenial-run",
+        "raspberrypi3-ubuntu-bionic-build",
+        "raspberrypi3-ubuntu-bionic-run"
+      ]
+    }
+  },
+  "target": {
+    "raspberrypi3-ubuntu-lunar-build": {
+      "context": "device-base/raspberrypi3/ubuntu/lunar/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/raspberrypi3-ubuntu:lunar-build-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:lunar-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypi3-ubuntu:lunar-build-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:lunar-build"
+      ]
+    },
+    "raspberrypi3-ubuntu-lunar-run": {
+      "context": "device-base/raspberrypi3/ubuntu/lunar/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/raspberrypi3-ubuntu:lunar-run-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:lunar-run",
+        "docker.io/balenalib/raspberrypi3-ubuntu:lunar-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:lunar"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypi3-ubuntu:lunar-run-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:lunar-run",
+        "docker.io/balenalib/raspberrypi3-ubuntu:lunar-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:lunar"
+      ]
+    },
+    "raspberrypi3-ubuntu-jammy-build": {
+      "context": "device-base/raspberrypi3/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/raspberrypi3-ubuntu:jammy-build-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:jammy-build",
+        "docker.io/balenalib/raspberrypi3-ubuntu:latest-build-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:latest-build",
+        "docker.io/balenalib/raspberrypi3-ubuntu:build-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypi3-ubuntu:jammy-build-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:jammy-build",
+        "docker.io/balenalib/raspberrypi3-ubuntu:latest-build-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:latest-build",
+        "docker.io/balenalib/raspberrypi3-ubuntu:build-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:build"
+      ]
+    },
+    "raspberrypi3-ubuntu-jammy-run": {
+      "context": "device-base/raspberrypi3/ubuntu/jammy/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/raspberrypi3-ubuntu:jammy-run-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:jammy-run",
+        "docker.io/balenalib/raspberrypi3-ubuntu:jammy-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:jammy",
+        "docker.io/balenalib/raspberrypi3-ubuntu:latest-run-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:latest-run",
+        "docker.io/balenalib/raspberrypi3-ubuntu:latest-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:latest",
+        "docker.io/balenalib/raspberrypi3-ubuntu:run-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:run",
+        "docker.io/balenalib/raspberrypi3-ubuntu:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypi3-ubuntu:jammy-run-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:jammy-run",
+        "docker.io/balenalib/raspberrypi3-ubuntu:jammy-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:jammy",
+        "docker.io/balenalib/raspberrypi3-ubuntu:latest-run-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:latest-run",
+        "docker.io/balenalib/raspberrypi3-ubuntu:latest-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:latest",
+        "docker.io/balenalib/raspberrypi3-ubuntu:run-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:run",
+        "docker.io/balenalib/raspberrypi3-ubuntu:20230911"
+      ]
+    },
+    "raspberrypi3-ubuntu-focal-build": {
+      "context": "device-base/raspberrypi3/ubuntu/focal/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/raspberrypi3-ubuntu:focal-build-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:focal-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypi3-ubuntu:focal-build-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:focal-build"
+      ]
+    },
+    "raspberrypi3-ubuntu-focal-run": {
+      "context": "device-base/raspberrypi3/ubuntu/focal/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/raspberrypi3-ubuntu:focal-run-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:focal-run",
+        "docker.io/balenalib/raspberrypi3-ubuntu:focal-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:focal"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypi3-ubuntu:focal-run-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:focal-run",
+        "docker.io/balenalib/raspberrypi3-ubuntu:focal-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:focal"
+      ]
+    },
+    "raspberrypi3-ubuntu-xenial-build": {
+      "context": "device-base/raspberrypi3/ubuntu/xenial/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/raspberrypi3-ubuntu:xenial-build-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:xenial-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypi3-ubuntu:xenial-build-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:xenial-build"
+      ]
+    },
+    "raspberrypi3-ubuntu-xenial-run": {
+      "context": "device-base/raspberrypi3/ubuntu/xenial/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/raspberrypi3-ubuntu:xenial-run-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:xenial-run",
+        "docker.io/balenalib/raspberrypi3-ubuntu:xenial-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:xenial"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypi3-ubuntu:xenial-run-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:xenial-run",
+        "docker.io/balenalib/raspberrypi3-ubuntu:xenial-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:xenial"
+      ]
+    },
+    "raspberrypi3-ubuntu-bionic-build": {
+      "context": "device-base/raspberrypi3/ubuntu/bionic/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/raspberrypi3-ubuntu:bionic-build-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:bionic-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypi3-ubuntu:bionic-build-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:bionic-build"
+      ]
+    },
+    "raspberrypi3-ubuntu-bionic-run": {
+      "context": "device-base/raspberrypi3/ubuntu/bionic/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/raspberrypi3-ubuntu:bionic-run-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:bionic-run",
+        "docker.io/balenalib/raspberrypi3-ubuntu:bionic-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:bionic"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypi3-ubuntu:bionic-run-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:bionic-run",
+        "docker.io/balenalib/raspberrypi3-ubuntu:bionic-20230911",
+        "docker.io/balenalib/raspberrypi3-ubuntu:bionic"
+      ]
+    }
+  }
+}

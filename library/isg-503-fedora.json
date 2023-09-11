@@ -1,0 +1,128 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "isg-503-fedora-36-build",
+        "isg-503-fedora-36-run",
+        "isg-503-fedora-37-build",
+        "isg-503-fedora-37-run",
+        "isg-503-fedora-38-build",
+        "isg-503-fedora-38-run"
+      ]
+    }
+  },
+  "target": {
+    "isg-503-fedora-36-build": {
+      "context": "device-base/isg-503/fedora/36/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/isg-503-fedora:36-build-20230911",
+        "docker.io/balenalib/isg-503-fedora:36-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/isg-503-fedora:36-build-20230911",
+        "docker.io/balenalib/isg-503-fedora:36-build"
+      ]
+    },
+    "isg-503-fedora-36-run": {
+      "context": "device-base/isg-503/fedora/36/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/isg-503-fedora:36-run-20230911",
+        "docker.io/balenalib/isg-503-fedora:36-run",
+        "docker.io/balenalib/isg-503-fedora:36-20230911",
+        "docker.io/balenalib/isg-503-fedora:36"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/isg-503-fedora:36-run-20230911",
+        "docker.io/balenalib/isg-503-fedora:36-run",
+        "docker.io/balenalib/isg-503-fedora:36-20230911",
+        "docker.io/balenalib/isg-503-fedora:36"
+      ]
+    },
+    "isg-503-fedora-37-build": {
+      "context": "device-base/isg-503/fedora/37/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/isg-503-fedora:37-build-20230911",
+        "docker.io/balenalib/isg-503-fedora:37-build",
+        "docker.io/balenalib/isg-503-fedora:latest-build-20230911",
+        "docker.io/balenalib/isg-503-fedora:latest-build",
+        "docker.io/balenalib/isg-503-fedora:build-20230911",
+        "docker.io/balenalib/isg-503-fedora:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/isg-503-fedora:37-build-20230911",
+        "docker.io/balenalib/isg-503-fedora:37-build",
+        "docker.io/balenalib/isg-503-fedora:latest-build-20230911",
+        "docker.io/balenalib/isg-503-fedora:latest-build",
+        "docker.io/balenalib/isg-503-fedora:build-20230911",
+        "docker.io/balenalib/isg-503-fedora:build"
+      ]
+    },
+    "isg-503-fedora-37-run": {
+      "context": "device-base/isg-503/fedora/37/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/isg-503-fedora:37-run-20230911",
+        "docker.io/balenalib/isg-503-fedora:37-run",
+        "docker.io/balenalib/isg-503-fedora:37-20230911",
+        "docker.io/balenalib/isg-503-fedora:37",
+        "docker.io/balenalib/isg-503-fedora:latest-run-20230911",
+        "docker.io/balenalib/isg-503-fedora:latest-run",
+        "docker.io/balenalib/isg-503-fedora:latest-20230911",
+        "docker.io/balenalib/isg-503-fedora:latest",
+        "docker.io/balenalib/isg-503-fedora:run-20230911",
+        "docker.io/balenalib/isg-503-fedora:run",
+        "docker.io/balenalib/isg-503-fedora:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/isg-503-fedora:37-run-20230911",
+        "docker.io/balenalib/isg-503-fedora:37-run",
+        "docker.io/balenalib/isg-503-fedora:37-20230911",
+        "docker.io/balenalib/isg-503-fedora:37",
+        "docker.io/balenalib/isg-503-fedora:latest-run-20230911",
+        "docker.io/balenalib/isg-503-fedora:latest-run",
+        "docker.io/balenalib/isg-503-fedora:latest-20230911",
+        "docker.io/balenalib/isg-503-fedora:latest",
+        "docker.io/balenalib/isg-503-fedora:run-20230911",
+        "docker.io/balenalib/isg-503-fedora:run",
+        "docker.io/balenalib/isg-503-fedora:20230911"
+      ]
+    },
+    "isg-503-fedora-38-build": {
+      "context": "device-base/isg-503/fedora/38/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/isg-503-fedora:38-build-20230911",
+        "docker.io/balenalib/isg-503-fedora:38-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/isg-503-fedora:38-build-20230911",
+        "docker.io/balenalib/isg-503-fedora:38-build"
+      ]
+    },
+    "isg-503-fedora-38-run": {
+      "context": "device-base/isg-503/fedora/38/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/isg-503-fedora:38-run-20230911",
+        "docker.io/balenalib/isg-503-fedora:38-run",
+        "docker.io/balenalib/isg-503-fedora:38-20230911",
+        "docker.io/balenalib/isg-503-fedora:38"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/isg-503-fedora:38-run-20230911",
+        "docker.io/balenalib/isg-503-fedora:38-run",
+        "docker.io/balenalib/isg-503-fedora:38-20230911",
+        "docker.io/balenalib/isg-503-fedora:38"
+      ]
+    }
+  }
+}

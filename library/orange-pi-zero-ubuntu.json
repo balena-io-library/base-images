@@ -1,0 +1,192 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "orange-pi-zero-ubuntu-lunar-build",
+        "orange-pi-zero-ubuntu-lunar-run",
+        "orange-pi-zero-ubuntu-jammy-build",
+        "orange-pi-zero-ubuntu-jammy-run",
+        "orange-pi-zero-ubuntu-focal-build",
+        "orange-pi-zero-ubuntu-focal-run",
+        "orange-pi-zero-ubuntu-xenial-build",
+        "orange-pi-zero-ubuntu-xenial-run",
+        "orange-pi-zero-ubuntu-bionic-build",
+        "orange-pi-zero-ubuntu-bionic-run"
+      ]
+    }
+  },
+  "target": {
+    "orange-pi-zero-ubuntu-lunar-build": {
+      "context": "device-base/orange-pi-zero/ubuntu/lunar/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/orange-pi-zero-ubuntu:lunar-build-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:lunar-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/orange-pi-zero-ubuntu:lunar-build-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:lunar-build"
+      ]
+    },
+    "orange-pi-zero-ubuntu-lunar-run": {
+      "context": "device-base/orange-pi-zero/ubuntu/lunar/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/orange-pi-zero-ubuntu:lunar-run-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:lunar-run",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:lunar-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:lunar"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/orange-pi-zero-ubuntu:lunar-run-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:lunar-run",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:lunar-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:lunar"
+      ]
+    },
+    "orange-pi-zero-ubuntu-jammy-build": {
+      "context": "device-base/orange-pi-zero/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/orange-pi-zero-ubuntu:jammy-build-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:jammy-build",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:latest-build-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:latest-build",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:build-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/orange-pi-zero-ubuntu:jammy-build-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:jammy-build",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:latest-build-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:latest-build",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:build-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:build"
+      ]
+    },
+    "orange-pi-zero-ubuntu-jammy-run": {
+      "context": "device-base/orange-pi-zero/ubuntu/jammy/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/orange-pi-zero-ubuntu:jammy-run-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:jammy-run",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:jammy-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:jammy",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:latest-run-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:latest-run",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:latest-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:latest",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:run-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:run",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/orange-pi-zero-ubuntu:jammy-run-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:jammy-run",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:jammy-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:jammy",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:latest-run-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:latest-run",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:latest-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:latest",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:run-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:run",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:20230911"
+      ]
+    },
+    "orange-pi-zero-ubuntu-focal-build": {
+      "context": "device-base/orange-pi-zero/ubuntu/focal/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/orange-pi-zero-ubuntu:focal-build-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:focal-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/orange-pi-zero-ubuntu:focal-build-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:focal-build"
+      ]
+    },
+    "orange-pi-zero-ubuntu-focal-run": {
+      "context": "device-base/orange-pi-zero/ubuntu/focal/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/orange-pi-zero-ubuntu:focal-run-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:focal-run",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:focal-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:focal"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/orange-pi-zero-ubuntu:focal-run-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:focal-run",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:focal-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:focal"
+      ]
+    },
+    "orange-pi-zero-ubuntu-xenial-build": {
+      "context": "device-base/orange-pi-zero/ubuntu/xenial/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/orange-pi-zero-ubuntu:xenial-build-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:xenial-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/orange-pi-zero-ubuntu:xenial-build-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:xenial-build"
+      ]
+    },
+    "orange-pi-zero-ubuntu-xenial-run": {
+      "context": "device-base/orange-pi-zero/ubuntu/xenial/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/orange-pi-zero-ubuntu:xenial-run-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:xenial-run",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:xenial-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:xenial"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/orange-pi-zero-ubuntu:xenial-run-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:xenial-run",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:xenial-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:xenial"
+      ]
+    },
+    "orange-pi-zero-ubuntu-bionic-build": {
+      "context": "device-base/orange-pi-zero/ubuntu/bionic/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/orange-pi-zero-ubuntu:bionic-build-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:bionic-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/orange-pi-zero-ubuntu:bionic-build-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:bionic-build"
+      ]
+    },
+    "orange-pi-zero-ubuntu-bionic-run": {
+      "context": "device-base/orange-pi-zero/ubuntu/bionic/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/orange-pi-zero-ubuntu:bionic-run-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:bionic-run",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:bionic-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:bionic"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/orange-pi-zero-ubuntu:bionic-run-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:bionic-run",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:bionic-20230911",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:bionic"
+      ]
+    }
+  }
+}

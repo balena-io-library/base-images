@@ -1,0 +1,230 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "i386-debian-buster-build",
+        "i386-debian-buster-run",
+        "i386-debian-bullseye-build",
+        "i386-debian-bullseye-run",
+        "i386-debian-bookworm-build",
+        "i386-debian-bookworm-run",
+        "i386-debian-sid-build",
+        "i386-debian-sid-run"
+      ]
+    }
+  },
+  "target": {
+    "i386-debian-buster-build": {
+      "context": "i386/debian/buster/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/i386-debian:buster-build-20230911",
+        "docker.io/balenalib/i386-debian:buster-build",
+        "docker.io/balenalib/i386:buster-build-20230911",
+        "docker.io/balenalib/i386:buster-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/i386-debian:buster-build-20230911",
+        "docker.io/balenalib/i386-debian:buster-build",
+        "docker.io/balenalib/i386:buster-build-20230911",
+        "docker.io/balenalib/i386:buster-build"
+      ]
+    },
+    "i386-debian-buster-run": {
+      "context": "i386/debian/buster/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/i386-debian:buster-run-20230911",
+        "docker.io/balenalib/i386-debian:buster-run",
+        "docker.io/balenalib/i386-debian:buster-20230911",
+        "docker.io/balenalib/i386-debian:buster",
+        "docker.io/balenalib/i386:buster-run-20230911",
+        "docker.io/balenalib/i386:buster-run",
+        "docker.io/balenalib/i386:buster-20230911",
+        "docker.io/balenalib/i386:buster"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/i386-debian:buster-run-20230911",
+        "docker.io/balenalib/i386-debian:buster-run",
+        "docker.io/balenalib/i386-debian:buster-20230911",
+        "docker.io/balenalib/i386-debian:buster",
+        "docker.io/balenalib/i386:buster-run-20230911",
+        "docker.io/balenalib/i386:buster-run",
+        "docker.io/balenalib/i386:buster-20230911",
+        "docker.io/balenalib/i386:buster"
+      ]
+    },
+    "i386-debian-bullseye-build": {
+      "context": "i386/debian/bullseye/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/i386-debian:bullseye-build-20230911",
+        "docker.io/balenalib/i386-debian:bullseye-build",
+        "docker.io/balenalib/i386-debian:latest-build-20230911",
+        "docker.io/balenalib/i386-debian:latest-build",
+        "docker.io/balenalib/i386-debian:build-20230911",
+        "docker.io/balenalib/i386-debian:build",
+        "docker.io/balenalib/i386:bullseye-build-20230911",
+        "docker.io/balenalib/i386:bullseye-build",
+        "docker.io/balenalib/i386:latest-build-20230911",
+        "docker.io/balenalib/i386:latest-build",
+        "docker.io/balenalib/i386:build-20230911",
+        "docker.io/balenalib/i386:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/i386-debian:bullseye-build-20230911",
+        "docker.io/balenalib/i386-debian:bullseye-build",
+        "docker.io/balenalib/i386-debian:latest-build-20230911",
+        "docker.io/balenalib/i386-debian:latest-build",
+        "docker.io/balenalib/i386-debian:build-20230911",
+        "docker.io/balenalib/i386-debian:build",
+        "docker.io/balenalib/i386:bullseye-build-20230911",
+        "docker.io/balenalib/i386:bullseye-build",
+        "docker.io/balenalib/i386:latest-build-20230911",
+        "docker.io/balenalib/i386:latest-build",
+        "docker.io/balenalib/i386:build-20230911",
+        "docker.io/balenalib/i386:build"
+      ]
+    },
+    "i386-debian-bullseye-run": {
+      "context": "i386/debian/bullseye/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/i386-debian:bullseye-run-20230911",
+        "docker.io/balenalib/i386-debian:bullseye-run",
+        "docker.io/balenalib/i386-debian:bullseye-20230911",
+        "docker.io/balenalib/i386-debian:bullseye",
+        "docker.io/balenalib/i386-debian:latest-run-20230911",
+        "docker.io/balenalib/i386-debian:latest-run",
+        "docker.io/balenalib/i386-debian:latest-20230911",
+        "docker.io/balenalib/i386-debian:latest",
+        "docker.io/balenalib/i386-debian:run-20230911",
+        "docker.io/balenalib/i386-debian:run",
+        "docker.io/balenalib/i386-debian:20230911",
+        "docker.io/balenalib/i386:bullseye-run-20230911",
+        "docker.io/balenalib/i386:bullseye-run",
+        "docker.io/balenalib/i386:bullseye-20230911",
+        "docker.io/balenalib/i386:bullseye",
+        "docker.io/balenalib/i386:latest-run-20230911",
+        "docker.io/balenalib/i386:latest-run",
+        "docker.io/balenalib/i386:latest-20230911",
+        "docker.io/balenalib/i386:latest",
+        "docker.io/balenalib/i386:run-20230911",
+        "docker.io/balenalib/i386:run",
+        "docker.io/balenalib/i386:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/i386-debian:bullseye-run-20230911",
+        "docker.io/balenalib/i386-debian:bullseye-run",
+        "docker.io/balenalib/i386-debian:bullseye-20230911",
+        "docker.io/balenalib/i386-debian:bullseye",
+        "docker.io/balenalib/i386-debian:latest-run-20230911",
+        "docker.io/balenalib/i386-debian:latest-run",
+        "docker.io/balenalib/i386-debian:latest-20230911",
+        "docker.io/balenalib/i386-debian:latest",
+        "docker.io/balenalib/i386-debian:run-20230911",
+        "docker.io/balenalib/i386-debian:run",
+        "docker.io/balenalib/i386-debian:20230911",
+        "docker.io/balenalib/i386:bullseye-run-20230911",
+        "docker.io/balenalib/i386:bullseye-run",
+        "docker.io/balenalib/i386:bullseye-20230911",
+        "docker.io/balenalib/i386:bullseye",
+        "docker.io/balenalib/i386:latest-run-20230911",
+        "docker.io/balenalib/i386:latest-run",
+        "docker.io/balenalib/i386:latest-20230911",
+        "docker.io/balenalib/i386:latest",
+        "docker.io/balenalib/i386:run-20230911",
+        "docker.io/balenalib/i386:run",
+        "docker.io/balenalib/i386:20230911"
+      ]
+    },
+    "i386-debian-bookworm-build": {
+      "context": "i386/debian/bookworm/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/i386-debian:bookworm-build-20230911",
+        "docker.io/balenalib/i386-debian:bookworm-build",
+        "docker.io/balenalib/i386:bookworm-build-20230911",
+        "docker.io/balenalib/i386:bookworm-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/i386-debian:bookworm-build-20230911",
+        "docker.io/balenalib/i386-debian:bookworm-build",
+        "docker.io/balenalib/i386:bookworm-build-20230911",
+        "docker.io/balenalib/i386:bookworm-build"
+      ]
+    },
+    "i386-debian-bookworm-run": {
+      "context": "i386/debian/bookworm/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/i386-debian:bookworm-run-20230911",
+        "docker.io/balenalib/i386-debian:bookworm-run",
+        "docker.io/balenalib/i386-debian:bookworm-20230911",
+        "docker.io/balenalib/i386-debian:bookworm",
+        "docker.io/balenalib/i386:bookworm-run-20230911",
+        "docker.io/balenalib/i386:bookworm-run",
+        "docker.io/balenalib/i386:bookworm-20230911",
+        "docker.io/balenalib/i386:bookworm"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/i386-debian:bookworm-run-20230911",
+        "docker.io/balenalib/i386-debian:bookworm-run",
+        "docker.io/balenalib/i386-debian:bookworm-20230911",
+        "docker.io/balenalib/i386-debian:bookworm",
+        "docker.io/balenalib/i386:bookworm-run-20230911",
+        "docker.io/balenalib/i386:bookworm-run",
+        "docker.io/balenalib/i386:bookworm-20230911",
+        "docker.io/balenalib/i386:bookworm"
+      ]
+    },
+    "i386-debian-sid-build": {
+      "context": "i386/debian/sid/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/i386-debian:sid-build-20230911",
+        "docker.io/balenalib/i386-debian:sid-build",
+        "docker.io/balenalib/i386:sid-build-20230911",
+        "docker.io/balenalib/i386:sid-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/i386-debian:sid-build-20230911",
+        "docker.io/balenalib/i386-debian:sid-build",
+        "docker.io/balenalib/i386:sid-build-20230911",
+        "docker.io/balenalib/i386:sid-build"
+      ]
+    },
+    "i386-debian-sid-run": {
+      "context": "i386/debian/sid/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/i386-debian:sid-run-20230911",
+        "docker.io/balenalib/i386-debian:sid-run",
+        "docker.io/balenalib/i386-debian:sid-20230911",
+        "docker.io/balenalib/i386-debian:sid",
+        "docker.io/balenalib/i386:sid-run-20230911",
+        "docker.io/balenalib/i386:sid-run",
+        "docker.io/balenalib/i386:sid-20230911",
+        "docker.io/balenalib/i386:sid"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/i386-debian:sid-run-20230911",
+        "docker.io/balenalib/i386-debian:sid-run",
+        "docker.io/balenalib/i386-debian:sid-20230911",
+        "docker.io/balenalib/i386-debian:sid",
+        "docker.io/balenalib/i386:sid-run-20230911",
+        "docker.io/balenalib/i386:sid-run",
+        "docker.io/balenalib/i386:sid-20230911",
+        "docker.io/balenalib/i386:sid"
+      ]
+    }
+  }
+}

@@ -1,0 +1,230 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "bananapi-m1-plus-debian-buster-build",
+        "bananapi-m1-plus-debian-buster-run",
+        "bananapi-m1-plus-debian-bullseye-build",
+        "bananapi-m1-plus-debian-bullseye-run",
+        "bananapi-m1-plus-debian-bookworm-build",
+        "bananapi-m1-plus-debian-bookworm-run",
+        "bananapi-m1-plus-debian-sid-build",
+        "bananapi-m1-plus-debian-sid-run"
+      ]
+    }
+  },
+  "target": {
+    "bananapi-m1-plus-debian-buster-build": {
+      "context": "device-base/bananapi-m1-plus/debian/buster/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/bananapi-m1-plus-debian:buster-build-20230911",
+        "docker.io/balenalib/bananapi-m1-plus-debian:buster-build",
+        "docker.io/balenalib/bananapi-m1-plus:buster-build-20230911",
+        "docker.io/balenalib/bananapi-m1-plus:buster-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bananapi-m1-plus-debian:buster-build-20230911",
+        "docker.io/balenalib/bananapi-m1-plus-debian:buster-build",
+        "docker.io/balenalib/bananapi-m1-plus:buster-build-20230911",
+        "docker.io/balenalib/bananapi-m1-plus:buster-build"
+      ]
+    },
+    "bananapi-m1-plus-debian-buster-run": {
+      "context": "device-base/bananapi-m1-plus/debian/buster/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/bananapi-m1-plus-debian:buster-run-20230911",
+        "docker.io/balenalib/bananapi-m1-plus-debian:buster-run",
+        "docker.io/balenalib/bananapi-m1-plus-debian:buster-20230911",
+        "docker.io/balenalib/bananapi-m1-plus-debian:buster",
+        "docker.io/balenalib/bananapi-m1-plus:buster-run-20230911",
+        "docker.io/balenalib/bananapi-m1-plus:buster-run",
+        "docker.io/balenalib/bananapi-m1-plus:buster-20230911",
+        "docker.io/balenalib/bananapi-m1-plus:buster"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bananapi-m1-plus-debian:buster-run-20230911",
+        "docker.io/balenalib/bananapi-m1-plus-debian:buster-run",
+        "docker.io/balenalib/bananapi-m1-plus-debian:buster-20230911",
+        "docker.io/balenalib/bananapi-m1-plus-debian:buster",
+        "docker.io/balenalib/bananapi-m1-plus:buster-run-20230911",
+        "docker.io/balenalib/bananapi-m1-plus:buster-run",
+        "docker.io/balenalib/bananapi-m1-plus:buster-20230911",
+        "docker.io/balenalib/bananapi-m1-plus:buster"
+      ]
+    },
+    "bananapi-m1-plus-debian-bullseye-build": {
+      "context": "device-base/bananapi-m1-plus/debian/bullseye/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/bananapi-m1-plus-debian:bullseye-build-20230911",
+        "docker.io/balenalib/bananapi-m1-plus-debian:bullseye-build",
+        "docker.io/balenalib/bananapi-m1-plus-debian:latest-build-20230911",
+        "docker.io/balenalib/bananapi-m1-plus-debian:latest-build",
+        "docker.io/balenalib/bananapi-m1-plus-debian:build-20230911",
+        "docker.io/balenalib/bananapi-m1-plus-debian:build",
+        "docker.io/balenalib/bananapi-m1-plus:bullseye-build-20230911",
+        "docker.io/balenalib/bananapi-m1-plus:bullseye-build",
+        "docker.io/balenalib/bananapi-m1-plus:latest-build-20230911",
+        "docker.io/balenalib/bananapi-m1-plus:latest-build",
+        "docker.io/balenalib/bananapi-m1-plus:build-20230911",
+        "docker.io/balenalib/bananapi-m1-plus:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bananapi-m1-plus-debian:bullseye-build-20230911",
+        "docker.io/balenalib/bananapi-m1-plus-debian:bullseye-build",
+        "docker.io/balenalib/bananapi-m1-plus-debian:latest-build-20230911",
+        "docker.io/balenalib/bananapi-m1-plus-debian:latest-build",
+        "docker.io/balenalib/bananapi-m1-plus-debian:build-20230911",
+        "docker.io/balenalib/bananapi-m1-plus-debian:build",
+        "docker.io/balenalib/bananapi-m1-plus:bullseye-build-20230911",
+        "docker.io/balenalib/bananapi-m1-plus:bullseye-build",
+        "docker.io/balenalib/bananapi-m1-plus:latest-build-20230911",
+        "docker.io/balenalib/bananapi-m1-plus:latest-build",
+        "docker.io/balenalib/bananapi-m1-plus:build-20230911",
+        "docker.io/balenalib/bananapi-m1-plus:build"
+      ]
+    },
+    "bananapi-m1-plus-debian-bullseye-run": {
+      "context": "device-base/bananapi-m1-plus/debian/bullseye/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/bananapi-m1-plus-debian:bullseye-run-20230911",
+        "docker.io/balenalib/bananapi-m1-plus-debian:bullseye-run",
+        "docker.io/balenalib/bananapi-m1-plus-debian:bullseye-20230911",
+        "docker.io/balenalib/bananapi-m1-plus-debian:bullseye",
+        "docker.io/balenalib/bananapi-m1-plus-debian:latest-run-20230911",
+        "docker.io/balenalib/bananapi-m1-plus-debian:latest-run",
+        "docker.io/balenalib/bananapi-m1-plus-debian:latest-20230911",
+        "docker.io/balenalib/bananapi-m1-plus-debian:latest",
+        "docker.io/balenalib/bananapi-m1-plus-debian:run-20230911",
+        "docker.io/balenalib/bananapi-m1-plus-debian:run",
+        "docker.io/balenalib/bananapi-m1-plus-debian:20230911",
+        "docker.io/balenalib/bananapi-m1-plus:bullseye-run-20230911",
+        "docker.io/balenalib/bananapi-m1-plus:bullseye-run",
+        "docker.io/balenalib/bananapi-m1-plus:bullseye-20230911",
+        "docker.io/balenalib/bananapi-m1-plus:bullseye",
+        "docker.io/balenalib/bananapi-m1-plus:latest-run-20230911",
+        "docker.io/balenalib/bananapi-m1-plus:latest-run",
+        "docker.io/balenalib/bananapi-m1-plus:latest-20230911",
+        "docker.io/balenalib/bananapi-m1-plus:latest",
+        "docker.io/balenalib/bananapi-m1-plus:run-20230911",
+        "docker.io/balenalib/bananapi-m1-plus:run",
+        "docker.io/balenalib/bananapi-m1-plus:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bananapi-m1-plus-debian:bullseye-run-20230911",
+        "docker.io/balenalib/bananapi-m1-plus-debian:bullseye-run",
+        "docker.io/balenalib/bananapi-m1-plus-debian:bullseye-20230911",
+        "docker.io/balenalib/bananapi-m1-plus-debian:bullseye",
+        "docker.io/balenalib/bananapi-m1-plus-debian:latest-run-20230911",
+        "docker.io/balenalib/bananapi-m1-plus-debian:latest-run",
+        "docker.io/balenalib/bananapi-m1-plus-debian:latest-20230911",
+        "docker.io/balenalib/bananapi-m1-plus-debian:latest",
+        "docker.io/balenalib/bananapi-m1-plus-debian:run-20230911",
+        "docker.io/balenalib/bananapi-m1-plus-debian:run",
+        "docker.io/balenalib/bananapi-m1-plus-debian:20230911",
+        "docker.io/balenalib/bananapi-m1-plus:bullseye-run-20230911",
+        "docker.io/balenalib/bananapi-m1-plus:bullseye-run",
+        "docker.io/balenalib/bananapi-m1-plus:bullseye-20230911",
+        "docker.io/balenalib/bananapi-m1-plus:bullseye",
+        "docker.io/balenalib/bananapi-m1-plus:latest-run-20230911",
+        "docker.io/balenalib/bananapi-m1-plus:latest-run",
+        "docker.io/balenalib/bananapi-m1-plus:latest-20230911",
+        "docker.io/balenalib/bananapi-m1-plus:latest",
+        "docker.io/balenalib/bananapi-m1-plus:run-20230911",
+        "docker.io/balenalib/bananapi-m1-plus:run",
+        "docker.io/balenalib/bananapi-m1-plus:20230911"
+      ]
+    },
+    "bananapi-m1-plus-debian-bookworm-build": {
+      "context": "device-base/bananapi-m1-plus/debian/bookworm/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/bananapi-m1-plus-debian:bookworm-build-20230911",
+        "docker.io/balenalib/bananapi-m1-plus-debian:bookworm-build",
+        "docker.io/balenalib/bananapi-m1-plus:bookworm-build-20230911",
+        "docker.io/balenalib/bananapi-m1-plus:bookworm-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bananapi-m1-plus-debian:bookworm-build-20230911",
+        "docker.io/balenalib/bananapi-m1-plus-debian:bookworm-build",
+        "docker.io/balenalib/bananapi-m1-plus:bookworm-build-20230911",
+        "docker.io/balenalib/bananapi-m1-plus:bookworm-build"
+      ]
+    },
+    "bananapi-m1-plus-debian-bookworm-run": {
+      "context": "device-base/bananapi-m1-plus/debian/bookworm/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/bananapi-m1-plus-debian:bookworm-run-20230911",
+        "docker.io/balenalib/bananapi-m1-plus-debian:bookworm-run",
+        "docker.io/balenalib/bananapi-m1-plus-debian:bookworm-20230911",
+        "docker.io/balenalib/bananapi-m1-plus-debian:bookworm",
+        "docker.io/balenalib/bananapi-m1-plus:bookworm-run-20230911",
+        "docker.io/balenalib/bananapi-m1-plus:bookworm-run",
+        "docker.io/balenalib/bananapi-m1-plus:bookworm-20230911",
+        "docker.io/balenalib/bananapi-m1-plus:bookworm"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bananapi-m1-plus-debian:bookworm-run-20230911",
+        "docker.io/balenalib/bananapi-m1-plus-debian:bookworm-run",
+        "docker.io/balenalib/bananapi-m1-plus-debian:bookworm-20230911",
+        "docker.io/balenalib/bananapi-m1-plus-debian:bookworm",
+        "docker.io/balenalib/bananapi-m1-plus:bookworm-run-20230911",
+        "docker.io/balenalib/bananapi-m1-plus:bookworm-run",
+        "docker.io/balenalib/bananapi-m1-plus:bookworm-20230911",
+        "docker.io/balenalib/bananapi-m1-plus:bookworm"
+      ]
+    },
+    "bananapi-m1-plus-debian-sid-build": {
+      "context": "device-base/bananapi-m1-plus/debian/sid/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/bananapi-m1-plus-debian:sid-build-20230911",
+        "docker.io/balenalib/bananapi-m1-plus-debian:sid-build",
+        "docker.io/balenalib/bananapi-m1-plus:sid-build-20230911",
+        "docker.io/balenalib/bananapi-m1-plus:sid-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bananapi-m1-plus-debian:sid-build-20230911",
+        "docker.io/balenalib/bananapi-m1-plus-debian:sid-build",
+        "docker.io/balenalib/bananapi-m1-plus:sid-build-20230911",
+        "docker.io/balenalib/bananapi-m1-plus:sid-build"
+      ]
+    },
+    "bananapi-m1-plus-debian-sid-run": {
+      "context": "device-base/bananapi-m1-plus/debian/sid/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/bananapi-m1-plus-debian:sid-run-20230911",
+        "docker.io/balenalib/bananapi-m1-plus-debian:sid-run",
+        "docker.io/balenalib/bananapi-m1-plus-debian:sid-20230911",
+        "docker.io/balenalib/bananapi-m1-plus-debian:sid",
+        "docker.io/balenalib/bananapi-m1-plus:sid-run-20230911",
+        "docker.io/balenalib/bananapi-m1-plus:sid-run",
+        "docker.io/balenalib/bananapi-m1-plus:sid-20230911",
+        "docker.io/balenalib/bananapi-m1-plus:sid"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bananapi-m1-plus-debian:sid-run-20230911",
+        "docker.io/balenalib/bananapi-m1-plus-debian:sid-run",
+        "docker.io/balenalib/bananapi-m1-plus-debian:sid-20230911",
+        "docker.io/balenalib/bananapi-m1-plus-debian:sid",
+        "docker.io/balenalib/bananapi-m1-plus:sid-run-20230911",
+        "docker.io/balenalib/bananapi-m1-plus:sid-run",
+        "docker.io/balenalib/bananapi-m1-plus:sid-20230911",
+        "docker.io/balenalib/bananapi-m1-plus:sid"
+      ]
+    }
+  }
+}

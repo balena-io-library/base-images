@@ -1,0 +1,192 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "intel-nuc-ubuntu-lunar-build",
+        "intel-nuc-ubuntu-lunar-run",
+        "intel-nuc-ubuntu-jammy-build",
+        "intel-nuc-ubuntu-jammy-run",
+        "intel-nuc-ubuntu-focal-build",
+        "intel-nuc-ubuntu-focal-run",
+        "intel-nuc-ubuntu-xenial-build",
+        "intel-nuc-ubuntu-xenial-run",
+        "intel-nuc-ubuntu-bionic-build",
+        "intel-nuc-ubuntu-bionic-run"
+      ]
+    }
+  },
+  "target": {
+    "intel-nuc-ubuntu-lunar-build": {
+      "context": "device-base/intel-nuc/ubuntu/lunar/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/intel-nuc-ubuntu:lunar-build-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:lunar-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/intel-nuc-ubuntu:lunar-build-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:lunar-build"
+      ]
+    },
+    "intel-nuc-ubuntu-lunar-run": {
+      "context": "device-base/intel-nuc/ubuntu/lunar/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/intel-nuc-ubuntu:lunar-run-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:lunar-run",
+        "docker.io/balenalib/intel-nuc-ubuntu:lunar-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:lunar"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/intel-nuc-ubuntu:lunar-run-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:lunar-run",
+        "docker.io/balenalib/intel-nuc-ubuntu:lunar-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:lunar"
+      ]
+    },
+    "intel-nuc-ubuntu-jammy-build": {
+      "context": "device-base/intel-nuc/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/intel-nuc-ubuntu:jammy-build-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:jammy-build",
+        "docker.io/balenalib/intel-nuc-ubuntu:latest-build-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:latest-build",
+        "docker.io/balenalib/intel-nuc-ubuntu:build-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/intel-nuc-ubuntu:jammy-build-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:jammy-build",
+        "docker.io/balenalib/intel-nuc-ubuntu:latest-build-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:latest-build",
+        "docker.io/balenalib/intel-nuc-ubuntu:build-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:build"
+      ]
+    },
+    "intel-nuc-ubuntu-jammy-run": {
+      "context": "device-base/intel-nuc/ubuntu/jammy/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/intel-nuc-ubuntu:jammy-run-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:jammy-run",
+        "docker.io/balenalib/intel-nuc-ubuntu:jammy-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:jammy",
+        "docker.io/balenalib/intel-nuc-ubuntu:latest-run-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:latest-run",
+        "docker.io/balenalib/intel-nuc-ubuntu:latest-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:latest",
+        "docker.io/balenalib/intel-nuc-ubuntu:run-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:run",
+        "docker.io/balenalib/intel-nuc-ubuntu:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/intel-nuc-ubuntu:jammy-run-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:jammy-run",
+        "docker.io/balenalib/intel-nuc-ubuntu:jammy-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:jammy",
+        "docker.io/balenalib/intel-nuc-ubuntu:latest-run-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:latest-run",
+        "docker.io/balenalib/intel-nuc-ubuntu:latest-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:latest",
+        "docker.io/balenalib/intel-nuc-ubuntu:run-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:run",
+        "docker.io/balenalib/intel-nuc-ubuntu:20230911"
+      ]
+    },
+    "intel-nuc-ubuntu-focal-build": {
+      "context": "device-base/intel-nuc/ubuntu/focal/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/intel-nuc-ubuntu:focal-build-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:focal-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/intel-nuc-ubuntu:focal-build-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:focal-build"
+      ]
+    },
+    "intel-nuc-ubuntu-focal-run": {
+      "context": "device-base/intel-nuc/ubuntu/focal/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/intel-nuc-ubuntu:focal-run-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:focal-run",
+        "docker.io/balenalib/intel-nuc-ubuntu:focal-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:focal"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/intel-nuc-ubuntu:focal-run-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:focal-run",
+        "docker.io/balenalib/intel-nuc-ubuntu:focal-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:focal"
+      ]
+    },
+    "intel-nuc-ubuntu-xenial-build": {
+      "context": "device-base/intel-nuc/ubuntu/xenial/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/intel-nuc-ubuntu:xenial-build-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:xenial-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/intel-nuc-ubuntu:xenial-build-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:xenial-build"
+      ]
+    },
+    "intel-nuc-ubuntu-xenial-run": {
+      "context": "device-base/intel-nuc/ubuntu/xenial/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/intel-nuc-ubuntu:xenial-run-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:xenial-run",
+        "docker.io/balenalib/intel-nuc-ubuntu:xenial-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:xenial"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/intel-nuc-ubuntu:xenial-run-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:xenial-run",
+        "docker.io/balenalib/intel-nuc-ubuntu:xenial-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:xenial"
+      ]
+    },
+    "intel-nuc-ubuntu-bionic-build": {
+      "context": "device-base/intel-nuc/ubuntu/bionic/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/intel-nuc-ubuntu:bionic-build-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:bionic-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/intel-nuc-ubuntu:bionic-build-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:bionic-build"
+      ]
+    },
+    "intel-nuc-ubuntu-bionic-run": {
+      "context": "device-base/intel-nuc/ubuntu/bionic/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/intel-nuc-ubuntu:bionic-run-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:bionic-run",
+        "docker.io/balenalib/intel-nuc-ubuntu:bionic-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:bionic"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/intel-nuc-ubuntu:bionic-run-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:bionic-run",
+        "docker.io/balenalib/intel-nuc-ubuntu:bionic-20230911",
+        "docker.io/balenalib/intel-nuc-ubuntu:bionic"
+      ]
+    }
+  }
+}

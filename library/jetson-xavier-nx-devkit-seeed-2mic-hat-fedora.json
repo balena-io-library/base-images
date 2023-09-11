@@ -1,0 +1,128 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "jetson-xavier-nx-devkit-seeed-2mic-hat-fedora-36-build",
+        "jetson-xavier-nx-devkit-seeed-2mic-hat-fedora-36-run",
+        "jetson-xavier-nx-devkit-seeed-2mic-hat-fedora-37-build",
+        "jetson-xavier-nx-devkit-seeed-2mic-hat-fedora-37-run",
+        "jetson-xavier-nx-devkit-seeed-2mic-hat-fedora-38-build",
+        "jetson-xavier-nx-devkit-seeed-2mic-hat-fedora-38-run"
+      ]
+    }
+  },
+  "target": {
+    "jetson-xavier-nx-devkit-seeed-2mic-hat-fedora-36-build": {
+      "context": "device-base/jetson-xavier-nx-devkit-seeed-2mic-hat/fedora/36/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:36-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:36-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:36-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:36-build"
+      ]
+    },
+    "jetson-xavier-nx-devkit-seeed-2mic-hat-fedora-36-run": {
+      "context": "device-base/jetson-xavier-nx-devkit-seeed-2mic-hat/fedora/36/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:36-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:36-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:36-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:36"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:36-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:36-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:36-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:36"
+      ]
+    },
+    "jetson-xavier-nx-devkit-seeed-2mic-hat-fedora-37-build": {
+      "context": "device-base/jetson-xavier-nx-devkit-seeed-2mic-hat/fedora/37/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:37-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:37-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:latest-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:latest-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:37-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:37-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:latest-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:latest-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:build"
+      ]
+    },
+    "jetson-xavier-nx-devkit-seeed-2mic-hat-fedora-37-run": {
+      "context": "device-base/jetson-xavier-nx-devkit-seeed-2mic-hat/fedora/37/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:37-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:37-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:37-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:37",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:latest-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:latest-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:latest-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:latest",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:37-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:37-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:37-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:37",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:latest-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:latest-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:latest-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:latest",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:20230911"
+      ]
+    },
+    "jetson-xavier-nx-devkit-seeed-2mic-hat-fedora-38-build": {
+      "context": "device-base/jetson-xavier-nx-devkit-seeed-2mic-hat/fedora/38/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:38-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:38-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:38-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:38-build"
+      ]
+    },
+    "jetson-xavier-nx-devkit-seeed-2mic-hat-fedora-38-run": {
+      "context": "device-base/jetson-xavier-nx-devkit-seeed-2mic-hat/fedora/38/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:38-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:38-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:38-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:38"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:38-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:38-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:38-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-fedora:38"
+      ]
+    }
+  }
+}

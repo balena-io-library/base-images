@@ -1,0 +1,230 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "jetson-xavier-nx-devkit-emmc-debian-buster-build",
+        "jetson-xavier-nx-devkit-emmc-debian-buster-run",
+        "jetson-xavier-nx-devkit-emmc-debian-bullseye-build",
+        "jetson-xavier-nx-devkit-emmc-debian-bullseye-run",
+        "jetson-xavier-nx-devkit-emmc-debian-bookworm-build",
+        "jetson-xavier-nx-devkit-emmc-debian-bookworm-run",
+        "jetson-xavier-nx-devkit-emmc-debian-sid-build",
+        "jetson-xavier-nx-devkit-emmc-debian-sid-run"
+      ]
+    }
+  },
+  "target": {
+    "jetson-xavier-nx-devkit-emmc-debian-buster-build": {
+      "context": "device-base/jetson-xavier-nx-devkit-emmc/debian/buster/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:buster-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:buster-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:buster-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:buster-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:buster-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:buster-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:buster-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:buster-build"
+      ]
+    },
+    "jetson-xavier-nx-devkit-emmc-debian-buster-run": {
+      "context": "device-base/jetson-xavier-nx-devkit-emmc/debian/buster/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:buster-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:buster-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:buster-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:buster",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:buster-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:buster-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:buster-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:buster"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:buster-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:buster-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:buster-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:buster",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:buster-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:buster-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:buster-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:buster"
+      ]
+    },
+    "jetson-xavier-nx-devkit-emmc-debian-bullseye-build": {
+      "context": "device-base/jetson-xavier-nx-devkit-emmc/debian/bullseye/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bullseye-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bullseye-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:latest-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:latest-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bullseye-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bullseye-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:latest-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:latest-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bullseye-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bullseye-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:latest-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:latest-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bullseye-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bullseye-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:latest-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:latest-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:build"
+      ]
+    },
+    "jetson-xavier-nx-devkit-emmc-debian-bullseye-run": {
+      "context": "device-base/jetson-xavier-nx-devkit-emmc/debian/bullseye/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bullseye-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bullseye-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bullseye-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bullseye",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:latest-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:latest-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:latest-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:latest",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bullseye-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bullseye-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bullseye-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bullseye",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:latest-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:latest-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:latest-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:latest",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bullseye-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bullseye-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bullseye-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bullseye",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:latest-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:latest-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:latest-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:latest",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bullseye-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bullseye-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bullseye-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bullseye",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:latest-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:latest-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:latest-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:latest",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:20230911"
+      ]
+    },
+    "jetson-xavier-nx-devkit-emmc-debian-bookworm-build": {
+      "context": "device-base/jetson-xavier-nx-devkit-emmc/debian/bookworm/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bookworm-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bookworm-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bookworm-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bookworm-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bookworm-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bookworm-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bookworm-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bookworm-build"
+      ]
+    },
+    "jetson-xavier-nx-devkit-emmc-debian-bookworm-run": {
+      "context": "device-base/jetson-xavier-nx-devkit-emmc/debian/bookworm/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bookworm-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bookworm-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bookworm-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bookworm",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bookworm-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bookworm-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bookworm-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bookworm"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bookworm-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bookworm-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bookworm-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bookworm",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bookworm-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bookworm-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bookworm-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bookworm"
+      ]
+    },
+    "jetson-xavier-nx-devkit-emmc-debian-sid-build": {
+      "context": "device-base/jetson-xavier-nx-devkit-emmc/debian/sid/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:sid-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:sid-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:sid-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:sid-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:sid-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:sid-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:sid-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:sid-build"
+      ]
+    },
+    "jetson-xavier-nx-devkit-emmc-debian-sid-run": {
+      "context": "device-base/jetson-xavier-nx-devkit-emmc/debian/sid/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:sid-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:sid-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:sid-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:sid",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:sid-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:sid-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:sid-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:sid"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:sid-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:sid-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:sid-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:sid",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:sid-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:sid-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:sid-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:sid"
+      ]
+    }
+  }
+}

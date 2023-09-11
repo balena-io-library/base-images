@@ -1,0 +1,230 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "nanopi-r2c-debian-buster-build",
+        "nanopi-r2c-debian-buster-run",
+        "nanopi-r2c-debian-bullseye-build",
+        "nanopi-r2c-debian-bullseye-run",
+        "nanopi-r2c-debian-bookworm-build",
+        "nanopi-r2c-debian-bookworm-run",
+        "nanopi-r2c-debian-sid-build",
+        "nanopi-r2c-debian-sid-run"
+      ]
+    }
+  },
+  "target": {
+    "nanopi-r2c-debian-buster-build": {
+      "context": "device-base/nanopi-r2c/debian/buster/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopi-r2c-debian:buster-build-20230911",
+        "docker.io/balenalib/nanopi-r2c-debian:buster-build",
+        "docker.io/balenalib/nanopi-r2c:buster-build-20230911",
+        "docker.io/balenalib/nanopi-r2c:buster-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopi-r2c-debian:buster-build-20230911",
+        "docker.io/balenalib/nanopi-r2c-debian:buster-build",
+        "docker.io/balenalib/nanopi-r2c:buster-build-20230911",
+        "docker.io/balenalib/nanopi-r2c:buster-build"
+      ]
+    },
+    "nanopi-r2c-debian-buster-run": {
+      "context": "device-base/nanopi-r2c/debian/buster/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopi-r2c-debian:buster-run-20230911",
+        "docker.io/balenalib/nanopi-r2c-debian:buster-run",
+        "docker.io/balenalib/nanopi-r2c-debian:buster-20230911",
+        "docker.io/balenalib/nanopi-r2c-debian:buster",
+        "docker.io/balenalib/nanopi-r2c:buster-run-20230911",
+        "docker.io/balenalib/nanopi-r2c:buster-run",
+        "docker.io/balenalib/nanopi-r2c:buster-20230911",
+        "docker.io/balenalib/nanopi-r2c:buster"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopi-r2c-debian:buster-run-20230911",
+        "docker.io/balenalib/nanopi-r2c-debian:buster-run",
+        "docker.io/balenalib/nanopi-r2c-debian:buster-20230911",
+        "docker.io/balenalib/nanopi-r2c-debian:buster",
+        "docker.io/balenalib/nanopi-r2c:buster-run-20230911",
+        "docker.io/balenalib/nanopi-r2c:buster-run",
+        "docker.io/balenalib/nanopi-r2c:buster-20230911",
+        "docker.io/balenalib/nanopi-r2c:buster"
+      ]
+    },
+    "nanopi-r2c-debian-bullseye-build": {
+      "context": "device-base/nanopi-r2c/debian/bullseye/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopi-r2c-debian:bullseye-build-20230911",
+        "docker.io/balenalib/nanopi-r2c-debian:bullseye-build",
+        "docker.io/balenalib/nanopi-r2c-debian:latest-build-20230911",
+        "docker.io/balenalib/nanopi-r2c-debian:latest-build",
+        "docker.io/balenalib/nanopi-r2c-debian:build-20230911",
+        "docker.io/balenalib/nanopi-r2c-debian:build",
+        "docker.io/balenalib/nanopi-r2c:bullseye-build-20230911",
+        "docker.io/balenalib/nanopi-r2c:bullseye-build",
+        "docker.io/balenalib/nanopi-r2c:latest-build-20230911",
+        "docker.io/balenalib/nanopi-r2c:latest-build",
+        "docker.io/balenalib/nanopi-r2c:build-20230911",
+        "docker.io/balenalib/nanopi-r2c:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopi-r2c-debian:bullseye-build-20230911",
+        "docker.io/balenalib/nanopi-r2c-debian:bullseye-build",
+        "docker.io/balenalib/nanopi-r2c-debian:latest-build-20230911",
+        "docker.io/balenalib/nanopi-r2c-debian:latest-build",
+        "docker.io/balenalib/nanopi-r2c-debian:build-20230911",
+        "docker.io/balenalib/nanopi-r2c-debian:build",
+        "docker.io/balenalib/nanopi-r2c:bullseye-build-20230911",
+        "docker.io/balenalib/nanopi-r2c:bullseye-build",
+        "docker.io/balenalib/nanopi-r2c:latest-build-20230911",
+        "docker.io/balenalib/nanopi-r2c:latest-build",
+        "docker.io/balenalib/nanopi-r2c:build-20230911",
+        "docker.io/balenalib/nanopi-r2c:build"
+      ]
+    },
+    "nanopi-r2c-debian-bullseye-run": {
+      "context": "device-base/nanopi-r2c/debian/bullseye/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopi-r2c-debian:bullseye-run-20230911",
+        "docker.io/balenalib/nanopi-r2c-debian:bullseye-run",
+        "docker.io/balenalib/nanopi-r2c-debian:bullseye-20230911",
+        "docker.io/balenalib/nanopi-r2c-debian:bullseye",
+        "docker.io/balenalib/nanopi-r2c-debian:latest-run-20230911",
+        "docker.io/balenalib/nanopi-r2c-debian:latest-run",
+        "docker.io/balenalib/nanopi-r2c-debian:latest-20230911",
+        "docker.io/balenalib/nanopi-r2c-debian:latest",
+        "docker.io/balenalib/nanopi-r2c-debian:run-20230911",
+        "docker.io/balenalib/nanopi-r2c-debian:run",
+        "docker.io/balenalib/nanopi-r2c-debian:20230911",
+        "docker.io/balenalib/nanopi-r2c:bullseye-run-20230911",
+        "docker.io/balenalib/nanopi-r2c:bullseye-run",
+        "docker.io/balenalib/nanopi-r2c:bullseye-20230911",
+        "docker.io/balenalib/nanopi-r2c:bullseye",
+        "docker.io/balenalib/nanopi-r2c:latest-run-20230911",
+        "docker.io/balenalib/nanopi-r2c:latest-run",
+        "docker.io/balenalib/nanopi-r2c:latest-20230911",
+        "docker.io/balenalib/nanopi-r2c:latest",
+        "docker.io/balenalib/nanopi-r2c:run-20230911",
+        "docker.io/balenalib/nanopi-r2c:run",
+        "docker.io/balenalib/nanopi-r2c:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopi-r2c-debian:bullseye-run-20230911",
+        "docker.io/balenalib/nanopi-r2c-debian:bullseye-run",
+        "docker.io/balenalib/nanopi-r2c-debian:bullseye-20230911",
+        "docker.io/balenalib/nanopi-r2c-debian:bullseye",
+        "docker.io/balenalib/nanopi-r2c-debian:latest-run-20230911",
+        "docker.io/balenalib/nanopi-r2c-debian:latest-run",
+        "docker.io/balenalib/nanopi-r2c-debian:latest-20230911",
+        "docker.io/balenalib/nanopi-r2c-debian:latest",
+        "docker.io/balenalib/nanopi-r2c-debian:run-20230911",
+        "docker.io/balenalib/nanopi-r2c-debian:run",
+        "docker.io/balenalib/nanopi-r2c-debian:20230911",
+        "docker.io/balenalib/nanopi-r2c:bullseye-run-20230911",
+        "docker.io/balenalib/nanopi-r2c:bullseye-run",
+        "docker.io/balenalib/nanopi-r2c:bullseye-20230911",
+        "docker.io/balenalib/nanopi-r2c:bullseye",
+        "docker.io/balenalib/nanopi-r2c:latest-run-20230911",
+        "docker.io/balenalib/nanopi-r2c:latest-run",
+        "docker.io/balenalib/nanopi-r2c:latest-20230911",
+        "docker.io/balenalib/nanopi-r2c:latest",
+        "docker.io/balenalib/nanopi-r2c:run-20230911",
+        "docker.io/balenalib/nanopi-r2c:run",
+        "docker.io/balenalib/nanopi-r2c:20230911"
+      ]
+    },
+    "nanopi-r2c-debian-bookworm-build": {
+      "context": "device-base/nanopi-r2c/debian/bookworm/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopi-r2c-debian:bookworm-build-20230911",
+        "docker.io/balenalib/nanopi-r2c-debian:bookworm-build",
+        "docker.io/balenalib/nanopi-r2c:bookworm-build-20230911",
+        "docker.io/balenalib/nanopi-r2c:bookworm-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopi-r2c-debian:bookworm-build-20230911",
+        "docker.io/balenalib/nanopi-r2c-debian:bookworm-build",
+        "docker.io/balenalib/nanopi-r2c:bookworm-build-20230911",
+        "docker.io/balenalib/nanopi-r2c:bookworm-build"
+      ]
+    },
+    "nanopi-r2c-debian-bookworm-run": {
+      "context": "device-base/nanopi-r2c/debian/bookworm/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopi-r2c-debian:bookworm-run-20230911",
+        "docker.io/balenalib/nanopi-r2c-debian:bookworm-run",
+        "docker.io/balenalib/nanopi-r2c-debian:bookworm-20230911",
+        "docker.io/balenalib/nanopi-r2c-debian:bookworm",
+        "docker.io/balenalib/nanopi-r2c:bookworm-run-20230911",
+        "docker.io/balenalib/nanopi-r2c:bookworm-run",
+        "docker.io/balenalib/nanopi-r2c:bookworm-20230911",
+        "docker.io/balenalib/nanopi-r2c:bookworm"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopi-r2c-debian:bookworm-run-20230911",
+        "docker.io/balenalib/nanopi-r2c-debian:bookworm-run",
+        "docker.io/balenalib/nanopi-r2c-debian:bookworm-20230911",
+        "docker.io/balenalib/nanopi-r2c-debian:bookworm",
+        "docker.io/balenalib/nanopi-r2c:bookworm-run-20230911",
+        "docker.io/balenalib/nanopi-r2c:bookworm-run",
+        "docker.io/balenalib/nanopi-r2c:bookworm-20230911",
+        "docker.io/balenalib/nanopi-r2c:bookworm"
+      ]
+    },
+    "nanopi-r2c-debian-sid-build": {
+      "context": "device-base/nanopi-r2c/debian/sid/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopi-r2c-debian:sid-build-20230911",
+        "docker.io/balenalib/nanopi-r2c-debian:sid-build",
+        "docker.io/balenalib/nanopi-r2c:sid-build-20230911",
+        "docker.io/balenalib/nanopi-r2c:sid-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopi-r2c-debian:sid-build-20230911",
+        "docker.io/balenalib/nanopi-r2c-debian:sid-build",
+        "docker.io/balenalib/nanopi-r2c:sid-build-20230911",
+        "docker.io/balenalib/nanopi-r2c:sid-build"
+      ]
+    },
+    "nanopi-r2c-debian-sid-run": {
+      "context": "device-base/nanopi-r2c/debian/sid/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopi-r2c-debian:sid-run-20230911",
+        "docker.io/balenalib/nanopi-r2c-debian:sid-run",
+        "docker.io/balenalib/nanopi-r2c-debian:sid-20230911",
+        "docker.io/balenalib/nanopi-r2c-debian:sid",
+        "docker.io/balenalib/nanopi-r2c:sid-run-20230911",
+        "docker.io/balenalib/nanopi-r2c:sid-run",
+        "docker.io/balenalib/nanopi-r2c:sid-20230911",
+        "docker.io/balenalib/nanopi-r2c:sid"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopi-r2c-debian:sid-run-20230911",
+        "docker.io/balenalib/nanopi-r2c-debian:sid-run",
+        "docker.io/balenalib/nanopi-r2c-debian:sid-20230911",
+        "docker.io/balenalib/nanopi-r2c-debian:sid",
+        "docker.io/balenalib/nanopi-r2c:sid-run-20230911",
+        "docker.io/balenalib/nanopi-r2c:sid-run",
+        "docker.io/balenalib/nanopi-r2c:sid-20230911",
+        "docker.io/balenalib/nanopi-r2c:sid"
+      ]
+    }
+  }
+}

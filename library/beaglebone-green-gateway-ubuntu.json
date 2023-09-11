@@ -1,0 +1,192 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "beaglebone-green-gateway-ubuntu-lunar-build",
+        "beaglebone-green-gateway-ubuntu-lunar-run",
+        "beaglebone-green-gateway-ubuntu-jammy-build",
+        "beaglebone-green-gateway-ubuntu-jammy-run",
+        "beaglebone-green-gateway-ubuntu-focal-build",
+        "beaglebone-green-gateway-ubuntu-focal-run",
+        "beaglebone-green-gateway-ubuntu-xenial-build",
+        "beaglebone-green-gateway-ubuntu-xenial-run",
+        "beaglebone-green-gateway-ubuntu-bionic-build",
+        "beaglebone-green-gateway-ubuntu-bionic-run"
+      ]
+    }
+  },
+  "target": {
+    "beaglebone-green-gateway-ubuntu-lunar-build": {
+      "context": "device-base/beaglebone-green-gateway/ubuntu/lunar/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:lunar-build-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:lunar-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:lunar-build-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:lunar-build"
+      ]
+    },
+    "beaglebone-green-gateway-ubuntu-lunar-run": {
+      "context": "device-base/beaglebone-green-gateway/ubuntu/lunar/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:lunar-run-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:lunar-run",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:lunar-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:lunar"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:lunar-run-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:lunar-run",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:lunar-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:lunar"
+      ]
+    },
+    "beaglebone-green-gateway-ubuntu-jammy-build": {
+      "context": "device-base/beaglebone-green-gateway/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:jammy-build-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:jammy-build",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:latest-build-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:latest-build",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:build-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:jammy-build-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:jammy-build",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:latest-build-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:latest-build",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:build-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:build"
+      ]
+    },
+    "beaglebone-green-gateway-ubuntu-jammy-run": {
+      "context": "device-base/beaglebone-green-gateway/ubuntu/jammy/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:jammy-run-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:jammy-run",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:jammy-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:jammy",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:latest-run-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:latest-run",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:latest-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:latest",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:run-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:run",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:jammy-run-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:jammy-run",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:jammy-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:jammy",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:latest-run-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:latest-run",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:latest-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:latest",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:run-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:run",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:20230911"
+      ]
+    },
+    "beaglebone-green-gateway-ubuntu-focal-build": {
+      "context": "device-base/beaglebone-green-gateway/ubuntu/focal/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:focal-build-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:focal-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:focal-build-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:focal-build"
+      ]
+    },
+    "beaglebone-green-gateway-ubuntu-focal-run": {
+      "context": "device-base/beaglebone-green-gateway/ubuntu/focal/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:focal-run-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:focal-run",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:focal-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:focal"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:focal-run-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:focal-run",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:focal-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:focal"
+      ]
+    },
+    "beaglebone-green-gateway-ubuntu-xenial-build": {
+      "context": "device-base/beaglebone-green-gateway/ubuntu/xenial/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:xenial-build-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:xenial-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:xenial-build-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:xenial-build"
+      ]
+    },
+    "beaglebone-green-gateway-ubuntu-xenial-run": {
+      "context": "device-base/beaglebone-green-gateway/ubuntu/xenial/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:xenial-run-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:xenial-run",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:xenial-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:xenial"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:xenial-run-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:xenial-run",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:xenial-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:xenial"
+      ]
+    },
+    "beaglebone-green-gateway-ubuntu-bionic-build": {
+      "context": "device-base/beaglebone-green-gateway/ubuntu/bionic/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:bionic-build-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:bionic-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:bionic-build-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:bionic-build"
+      ]
+    },
+    "beaglebone-green-gateway-ubuntu-bionic-run": {
+      "context": "device-base/beaglebone-green-gateway/ubuntu/bionic/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:bionic-run-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:bionic-run",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:bionic-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:bionic"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:bionic-run-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:bionic-run",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:bionic-20230911",
+        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:bionic"
+      ]
+    }
+  }
+}

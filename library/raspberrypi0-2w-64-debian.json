@@ -1,0 +1,230 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "raspberrypi0-2w-64-debian-buster-build",
+        "raspberrypi0-2w-64-debian-buster-run",
+        "raspberrypi0-2w-64-debian-bullseye-build",
+        "raspberrypi0-2w-64-debian-bullseye-run",
+        "raspberrypi0-2w-64-debian-bookworm-build",
+        "raspberrypi0-2w-64-debian-bookworm-run",
+        "raspberrypi0-2w-64-debian-sid-build",
+        "raspberrypi0-2w-64-debian-sid-run"
+      ]
+    }
+  },
+  "target": {
+    "raspberrypi0-2w-64-debian-buster-build": {
+      "context": "device-base/raspberrypi0-2w-64/debian/buster/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:buster-build-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:buster-build",
+        "docker.io/balenalib/raspberrypi0-2w-64:buster-build-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64:buster-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:buster-build-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:buster-build",
+        "docker.io/balenalib/raspberrypi0-2w-64:buster-build-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64:buster-build"
+      ]
+    },
+    "raspberrypi0-2w-64-debian-buster-run": {
+      "context": "device-base/raspberrypi0-2w-64/debian/buster/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:buster-run-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:buster-run",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:buster-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:buster",
+        "docker.io/balenalib/raspberrypi0-2w-64:buster-run-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64:buster-run",
+        "docker.io/balenalib/raspberrypi0-2w-64:buster-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64:buster"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:buster-run-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:buster-run",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:buster-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:buster",
+        "docker.io/balenalib/raspberrypi0-2w-64:buster-run-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64:buster-run",
+        "docker.io/balenalib/raspberrypi0-2w-64:buster-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64:buster"
+      ]
+    },
+    "raspberrypi0-2w-64-debian-bullseye-build": {
+      "context": "device-base/raspberrypi0-2w-64/debian/bullseye/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:bullseye-build-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:bullseye-build",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:latest-build-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:latest-build",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:build-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:build",
+        "docker.io/balenalib/raspberrypi0-2w-64:bullseye-build-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64:bullseye-build",
+        "docker.io/balenalib/raspberrypi0-2w-64:latest-build-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64:latest-build",
+        "docker.io/balenalib/raspberrypi0-2w-64:build-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:bullseye-build-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:bullseye-build",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:latest-build-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:latest-build",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:build-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:build",
+        "docker.io/balenalib/raspberrypi0-2w-64:bullseye-build-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64:bullseye-build",
+        "docker.io/balenalib/raspberrypi0-2w-64:latest-build-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64:latest-build",
+        "docker.io/balenalib/raspberrypi0-2w-64:build-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64:build"
+      ]
+    },
+    "raspberrypi0-2w-64-debian-bullseye-run": {
+      "context": "device-base/raspberrypi0-2w-64/debian/bullseye/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:bullseye-run-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:bullseye-run",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:bullseye-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:bullseye",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:latest-run-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:latest-run",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:latest-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:latest",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:run-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:run",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64:bullseye-run-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64:bullseye-run",
+        "docker.io/balenalib/raspberrypi0-2w-64:bullseye-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64:bullseye",
+        "docker.io/balenalib/raspberrypi0-2w-64:latest-run-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64:latest-run",
+        "docker.io/balenalib/raspberrypi0-2w-64:latest-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64:latest",
+        "docker.io/balenalib/raspberrypi0-2w-64:run-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64:run",
+        "docker.io/balenalib/raspberrypi0-2w-64:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:bullseye-run-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:bullseye-run",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:bullseye-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:bullseye",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:latest-run-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:latest-run",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:latest-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:latest",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:run-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:run",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64:bullseye-run-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64:bullseye-run",
+        "docker.io/balenalib/raspberrypi0-2w-64:bullseye-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64:bullseye",
+        "docker.io/balenalib/raspberrypi0-2w-64:latest-run-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64:latest-run",
+        "docker.io/balenalib/raspberrypi0-2w-64:latest-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64:latest",
+        "docker.io/balenalib/raspberrypi0-2w-64:run-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64:run",
+        "docker.io/balenalib/raspberrypi0-2w-64:20230911"
+      ]
+    },
+    "raspberrypi0-2w-64-debian-bookworm-build": {
+      "context": "device-base/raspberrypi0-2w-64/debian/bookworm/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:bookworm-build-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:bookworm-build",
+        "docker.io/balenalib/raspberrypi0-2w-64:bookworm-build-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64:bookworm-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:bookworm-build-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:bookworm-build",
+        "docker.io/balenalib/raspberrypi0-2w-64:bookworm-build-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64:bookworm-build"
+      ]
+    },
+    "raspberrypi0-2w-64-debian-bookworm-run": {
+      "context": "device-base/raspberrypi0-2w-64/debian/bookworm/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:bookworm-run-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:bookworm-run",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:bookworm-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:bookworm",
+        "docker.io/balenalib/raspberrypi0-2w-64:bookworm-run-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64:bookworm-run",
+        "docker.io/balenalib/raspberrypi0-2w-64:bookworm-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64:bookworm"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:bookworm-run-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:bookworm-run",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:bookworm-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:bookworm",
+        "docker.io/balenalib/raspberrypi0-2w-64:bookworm-run-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64:bookworm-run",
+        "docker.io/balenalib/raspberrypi0-2w-64:bookworm-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64:bookworm"
+      ]
+    },
+    "raspberrypi0-2w-64-debian-sid-build": {
+      "context": "device-base/raspberrypi0-2w-64/debian/sid/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:sid-build-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:sid-build",
+        "docker.io/balenalib/raspberrypi0-2w-64:sid-build-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64:sid-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:sid-build-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:sid-build",
+        "docker.io/balenalib/raspberrypi0-2w-64:sid-build-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64:sid-build"
+      ]
+    },
+    "raspberrypi0-2w-64-debian-sid-run": {
+      "context": "device-base/raspberrypi0-2w-64/debian/sid/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:sid-run-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:sid-run",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:sid-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:sid",
+        "docker.io/balenalib/raspberrypi0-2w-64:sid-run-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64:sid-run",
+        "docker.io/balenalib/raspberrypi0-2w-64:sid-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64:sid"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:sid-run-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:sid-run",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:sid-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64-debian:sid",
+        "docker.io/balenalib/raspberrypi0-2w-64:sid-run-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64:sid-run",
+        "docker.io/balenalib/raspberrypi0-2w-64:sid-20230911",
+        "docker.io/balenalib/raspberrypi0-2w-64:sid"
+      ]
+    }
+  }
+}

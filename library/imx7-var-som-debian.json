@@ -1,0 +1,230 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "imx7-var-som-debian-buster-build",
+        "imx7-var-som-debian-buster-run",
+        "imx7-var-som-debian-bullseye-build",
+        "imx7-var-som-debian-bullseye-run",
+        "imx7-var-som-debian-bookworm-build",
+        "imx7-var-som-debian-bookworm-run",
+        "imx7-var-som-debian-sid-build",
+        "imx7-var-som-debian-sid-run"
+      ]
+    }
+  },
+  "target": {
+    "imx7-var-som-debian-buster-build": {
+      "context": "device-base/imx7-var-som/debian/buster/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/imx7-var-som-debian:buster-build-20230911",
+        "docker.io/balenalib/imx7-var-som-debian:buster-build",
+        "docker.io/balenalib/imx7-var-som:buster-build-20230911",
+        "docker.io/balenalib/imx7-var-som:buster-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/imx7-var-som-debian:buster-build-20230911",
+        "docker.io/balenalib/imx7-var-som-debian:buster-build",
+        "docker.io/balenalib/imx7-var-som:buster-build-20230911",
+        "docker.io/balenalib/imx7-var-som:buster-build"
+      ]
+    },
+    "imx7-var-som-debian-buster-run": {
+      "context": "device-base/imx7-var-som/debian/buster/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/imx7-var-som-debian:buster-run-20230911",
+        "docker.io/balenalib/imx7-var-som-debian:buster-run",
+        "docker.io/balenalib/imx7-var-som-debian:buster-20230911",
+        "docker.io/balenalib/imx7-var-som-debian:buster",
+        "docker.io/balenalib/imx7-var-som:buster-run-20230911",
+        "docker.io/balenalib/imx7-var-som:buster-run",
+        "docker.io/balenalib/imx7-var-som:buster-20230911",
+        "docker.io/balenalib/imx7-var-som:buster"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/imx7-var-som-debian:buster-run-20230911",
+        "docker.io/balenalib/imx7-var-som-debian:buster-run",
+        "docker.io/balenalib/imx7-var-som-debian:buster-20230911",
+        "docker.io/balenalib/imx7-var-som-debian:buster",
+        "docker.io/balenalib/imx7-var-som:buster-run-20230911",
+        "docker.io/balenalib/imx7-var-som:buster-run",
+        "docker.io/balenalib/imx7-var-som:buster-20230911",
+        "docker.io/balenalib/imx7-var-som:buster"
+      ]
+    },
+    "imx7-var-som-debian-bullseye-build": {
+      "context": "device-base/imx7-var-som/debian/bullseye/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/imx7-var-som-debian:bullseye-build-20230911",
+        "docker.io/balenalib/imx7-var-som-debian:bullseye-build",
+        "docker.io/balenalib/imx7-var-som-debian:latest-build-20230911",
+        "docker.io/balenalib/imx7-var-som-debian:latest-build",
+        "docker.io/balenalib/imx7-var-som-debian:build-20230911",
+        "docker.io/balenalib/imx7-var-som-debian:build",
+        "docker.io/balenalib/imx7-var-som:bullseye-build-20230911",
+        "docker.io/balenalib/imx7-var-som:bullseye-build",
+        "docker.io/balenalib/imx7-var-som:latest-build-20230911",
+        "docker.io/balenalib/imx7-var-som:latest-build",
+        "docker.io/balenalib/imx7-var-som:build-20230911",
+        "docker.io/balenalib/imx7-var-som:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/imx7-var-som-debian:bullseye-build-20230911",
+        "docker.io/balenalib/imx7-var-som-debian:bullseye-build",
+        "docker.io/balenalib/imx7-var-som-debian:latest-build-20230911",
+        "docker.io/balenalib/imx7-var-som-debian:latest-build",
+        "docker.io/balenalib/imx7-var-som-debian:build-20230911",
+        "docker.io/balenalib/imx7-var-som-debian:build",
+        "docker.io/balenalib/imx7-var-som:bullseye-build-20230911",
+        "docker.io/balenalib/imx7-var-som:bullseye-build",
+        "docker.io/balenalib/imx7-var-som:latest-build-20230911",
+        "docker.io/balenalib/imx7-var-som:latest-build",
+        "docker.io/balenalib/imx7-var-som:build-20230911",
+        "docker.io/balenalib/imx7-var-som:build"
+      ]
+    },
+    "imx7-var-som-debian-bullseye-run": {
+      "context": "device-base/imx7-var-som/debian/bullseye/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/imx7-var-som-debian:bullseye-run-20230911",
+        "docker.io/balenalib/imx7-var-som-debian:bullseye-run",
+        "docker.io/balenalib/imx7-var-som-debian:bullseye-20230911",
+        "docker.io/balenalib/imx7-var-som-debian:bullseye",
+        "docker.io/balenalib/imx7-var-som-debian:latest-run-20230911",
+        "docker.io/balenalib/imx7-var-som-debian:latest-run",
+        "docker.io/balenalib/imx7-var-som-debian:latest-20230911",
+        "docker.io/balenalib/imx7-var-som-debian:latest",
+        "docker.io/balenalib/imx7-var-som-debian:run-20230911",
+        "docker.io/balenalib/imx7-var-som-debian:run",
+        "docker.io/balenalib/imx7-var-som-debian:20230911",
+        "docker.io/balenalib/imx7-var-som:bullseye-run-20230911",
+        "docker.io/balenalib/imx7-var-som:bullseye-run",
+        "docker.io/balenalib/imx7-var-som:bullseye-20230911",
+        "docker.io/balenalib/imx7-var-som:bullseye",
+        "docker.io/balenalib/imx7-var-som:latest-run-20230911",
+        "docker.io/balenalib/imx7-var-som:latest-run",
+        "docker.io/balenalib/imx7-var-som:latest-20230911",
+        "docker.io/balenalib/imx7-var-som:latest",
+        "docker.io/balenalib/imx7-var-som:run-20230911",
+        "docker.io/balenalib/imx7-var-som:run",
+        "docker.io/balenalib/imx7-var-som:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/imx7-var-som-debian:bullseye-run-20230911",
+        "docker.io/balenalib/imx7-var-som-debian:bullseye-run",
+        "docker.io/balenalib/imx7-var-som-debian:bullseye-20230911",
+        "docker.io/balenalib/imx7-var-som-debian:bullseye",
+        "docker.io/balenalib/imx7-var-som-debian:latest-run-20230911",
+        "docker.io/balenalib/imx7-var-som-debian:latest-run",
+        "docker.io/balenalib/imx7-var-som-debian:latest-20230911",
+        "docker.io/balenalib/imx7-var-som-debian:latest",
+        "docker.io/balenalib/imx7-var-som-debian:run-20230911",
+        "docker.io/balenalib/imx7-var-som-debian:run",
+        "docker.io/balenalib/imx7-var-som-debian:20230911",
+        "docker.io/balenalib/imx7-var-som:bullseye-run-20230911",
+        "docker.io/balenalib/imx7-var-som:bullseye-run",
+        "docker.io/balenalib/imx7-var-som:bullseye-20230911",
+        "docker.io/balenalib/imx7-var-som:bullseye",
+        "docker.io/balenalib/imx7-var-som:latest-run-20230911",
+        "docker.io/balenalib/imx7-var-som:latest-run",
+        "docker.io/balenalib/imx7-var-som:latest-20230911",
+        "docker.io/balenalib/imx7-var-som:latest",
+        "docker.io/balenalib/imx7-var-som:run-20230911",
+        "docker.io/balenalib/imx7-var-som:run",
+        "docker.io/balenalib/imx7-var-som:20230911"
+      ]
+    },
+    "imx7-var-som-debian-bookworm-build": {
+      "context": "device-base/imx7-var-som/debian/bookworm/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/imx7-var-som-debian:bookworm-build-20230911",
+        "docker.io/balenalib/imx7-var-som-debian:bookworm-build",
+        "docker.io/balenalib/imx7-var-som:bookworm-build-20230911",
+        "docker.io/balenalib/imx7-var-som:bookworm-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/imx7-var-som-debian:bookworm-build-20230911",
+        "docker.io/balenalib/imx7-var-som-debian:bookworm-build",
+        "docker.io/balenalib/imx7-var-som:bookworm-build-20230911",
+        "docker.io/balenalib/imx7-var-som:bookworm-build"
+      ]
+    },
+    "imx7-var-som-debian-bookworm-run": {
+      "context": "device-base/imx7-var-som/debian/bookworm/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/imx7-var-som-debian:bookworm-run-20230911",
+        "docker.io/balenalib/imx7-var-som-debian:bookworm-run",
+        "docker.io/balenalib/imx7-var-som-debian:bookworm-20230911",
+        "docker.io/balenalib/imx7-var-som-debian:bookworm",
+        "docker.io/balenalib/imx7-var-som:bookworm-run-20230911",
+        "docker.io/balenalib/imx7-var-som:bookworm-run",
+        "docker.io/balenalib/imx7-var-som:bookworm-20230911",
+        "docker.io/balenalib/imx7-var-som:bookworm"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/imx7-var-som-debian:bookworm-run-20230911",
+        "docker.io/balenalib/imx7-var-som-debian:bookworm-run",
+        "docker.io/balenalib/imx7-var-som-debian:bookworm-20230911",
+        "docker.io/balenalib/imx7-var-som-debian:bookworm",
+        "docker.io/balenalib/imx7-var-som:bookworm-run-20230911",
+        "docker.io/balenalib/imx7-var-som:bookworm-run",
+        "docker.io/balenalib/imx7-var-som:bookworm-20230911",
+        "docker.io/balenalib/imx7-var-som:bookworm"
+      ]
+    },
+    "imx7-var-som-debian-sid-build": {
+      "context": "device-base/imx7-var-som/debian/sid/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/imx7-var-som-debian:sid-build-20230911",
+        "docker.io/balenalib/imx7-var-som-debian:sid-build",
+        "docker.io/balenalib/imx7-var-som:sid-build-20230911",
+        "docker.io/balenalib/imx7-var-som:sid-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/imx7-var-som-debian:sid-build-20230911",
+        "docker.io/balenalib/imx7-var-som-debian:sid-build",
+        "docker.io/balenalib/imx7-var-som:sid-build-20230911",
+        "docker.io/balenalib/imx7-var-som:sid-build"
+      ]
+    },
+    "imx7-var-som-debian-sid-run": {
+      "context": "device-base/imx7-var-som/debian/sid/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/imx7-var-som-debian:sid-run-20230911",
+        "docker.io/balenalib/imx7-var-som-debian:sid-run",
+        "docker.io/balenalib/imx7-var-som-debian:sid-20230911",
+        "docker.io/balenalib/imx7-var-som-debian:sid",
+        "docker.io/balenalib/imx7-var-som:sid-run-20230911",
+        "docker.io/balenalib/imx7-var-som:sid-run",
+        "docker.io/balenalib/imx7-var-som:sid-20230911",
+        "docker.io/balenalib/imx7-var-som:sid"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/imx7-var-som-debian:sid-run-20230911",
+        "docker.io/balenalib/imx7-var-som-debian:sid-run",
+        "docker.io/balenalib/imx7-var-som-debian:sid-20230911",
+        "docker.io/balenalib/imx7-var-som-debian:sid",
+        "docker.io/balenalib/imx7-var-som:sid-run-20230911",
+        "docker.io/balenalib/imx7-var-som:sid-run",
+        "docker.io/balenalib/imx7-var-som:sid-20230911",
+        "docker.io/balenalib/imx7-var-som:sid"
+      ]
+    }
+  }
+}

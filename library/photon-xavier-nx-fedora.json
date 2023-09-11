@@ -1,0 +1,128 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "photon-xavier-nx-fedora-36-build",
+        "photon-xavier-nx-fedora-36-run",
+        "photon-xavier-nx-fedora-37-build",
+        "photon-xavier-nx-fedora-37-run",
+        "photon-xavier-nx-fedora-38-build",
+        "photon-xavier-nx-fedora-38-run"
+      ]
+    }
+  },
+  "target": {
+    "photon-xavier-nx-fedora-36-build": {
+      "context": "device-base/photon-xavier-nx/fedora/36/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/photon-xavier-nx-fedora:36-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx-fedora:36-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/photon-xavier-nx-fedora:36-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx-fedora:36-build"
+      ]
+    },
+    "photon-xavier-nx-fedora-36-run": {
+      "context": "device-base/photon-xavier-nx/fedora/36/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/photon-xavier-nx-fedora:36-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx-fedora:36-run",
+        "docker.io/balenalib/photon-xavier-nx-fedora:36-20230911",
+        "docker.io/balenalib/photon-xavier-nx-fedora:36"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/photon-xavier-nx-fedora:36-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx-fedora:36-run",
+        "docker.io/balenalib/photon-xavier-nx-fedora:36-20230911",
+        "docker.io/balenalib/photon-xavier-nx-fedora:36"
+      ]
+    },
+    "photon-xavier-nx-fedora-37-build": {
+      "context": "device-base/photon-xavier-nx/fedora/37/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/photon-xavier-nx-fedora:37-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx-fedora:37-build",
+        "docker.io/balenalib/photon-xavier-nx-fedora:latest-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx-fedora:latest-build",
+        "docker.io/balenalib/photon-xavier-nx-fedora:build-20230911",
+        "docker.io/balenalib/photon-xavier-nx-fedora:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/photon-xavier-nx-fedora:37-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx-fedora:37-build",
+        "docker.io/balenalib/photon-xavier-nx-fedora:latest-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx-fedora:latest-build",
+        "docker.io/balenalib/photon-xavier-nx-fedora:build-20230911",
+        "docker.io/balenalib/photon-xavier-nx-fedora:build"
+      ]
+    },
+    "photon-xavier-nx-fedora-37-run": {
+      "context": "device-base/photon-xavier-nx/fedora/37/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/photon-xavier-nx-fedora:37-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx-fedora:37-run",
+        "docker.io/balenalib/photon-xavier-nx-fedora:37-20230911",
+        "docker.io/balenalib/photon-xavier-nx-fedora:37",
+        "docker.io/balenalib/photon-xavier-nx-fedora:latest-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx-fedora:latest-run",
+        "docker.io/balenalib/photon-xavier-nx-fedora:latest-20230911",
+        "docker.io/balenalib/photon-xavier-nx-fedora:latest",
+        "docker.io/balenalib/photon-xavier-nx-fedora:run-20230911",
+        "docker.io/balenalib/photon-xavier-nx-fedora:run",
+        "docker.io/balenalib/photon-xavier-nx-fedora:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/photon-xavier-nx-fedora:37-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx-fedora:37-run",
+        "docker.io/balenalib/photon-xavier-nx-fedora:37-20230911",
+        "docker.io/balenalib/photon-xavier-nx-fedora:37",
+        "docker.io/balenalib/photon-xavier-nx-fedora:latest-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx-fedora:latest-run",
+        "docker.io/balenalib/photon-xavier-nx-fedora:latest-20230911",
+        "docker.io/balenalib/photon-xavier-nx-fedora:latest",
+        "docker.io/balenalib/photon-xavier-nx-fedora:run-20230911",
+        "docker.io/balenalib/photon-xavier-nx-fedora:run",
+        "docker.io/balenalib/photon-xavier-nx-fedora:20230911"
+      ]
+    },
+    "photon-xavier-nx-fedora-38-build": {
+      "context": "device-base/photon-xavier-nx/fedora/38/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/photon-xavier-nx-fedora:38-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx-fedora:38-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/photon-xavier-nx-fedora:38-build-20230911",
+        "docker.io/balenalib/photon-xavier-nx-fedora:38-build"
+      ]
+    },
+    "photon-xavier-nx-fedora-38-run": {
+      "context": "device-base/photon-xavier-nx/fedora/38/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/photon-xavier-nx-fedora:38-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx-fedora:38-run",
+        "docker.io/balenalib/photon-xavier-nx-fedora:38-20230911",
+        "docker.io/balenalib/photon-xavier-nx-fedora:38"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/photon-xavier-nx-fedora:38-run-20230911",
+        "docker.io/balenalib/photon-xavier-nx-fedora:38-run",
+        "docker.io/balenalib/photon-xavier-nx-fedora:38-20230911",
+        "docker.io/balenalib/photon-xavier-nx-fedora:38"
+      ]
+    }
+  }
+}

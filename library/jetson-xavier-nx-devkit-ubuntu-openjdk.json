@@ -1,0 +1,506 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "jetson-xavier-nx-devkit-ubuntu-openjdk-8-jdk-xenial-build",
+        "jetson-xavier-nx-devkit-ubuntu-openjdk-8-jdk-xenial-run",
+        "jetson-xavier-nx-devkit-ubuntu-openjdk-8-jre-xenial-build",
+        "jetson-xavier-nx-devkit-ubuntu-openjdk-8-jre-xenial-run",
+        "jetson-xavier-nx-devkit-ubuntu-openjdk-11-jdk-xenial-build",
+        "jetson-xavier-nx-devkit-ubuntu-openjdk-11-jdk-xenial-run",
+        "jetson-xavier-nx-devkit-ubuntu-openjdk-11-jre-xenial-build",
+        "jetson-xavier-nx-devkit-ubuntu-openjdk-11-jre-xenial-run",
+        "jetson-xavier-nx-devkit-ubuntu-openjdk-8-jdk-bionic-build",
+        "jetson-xavier-nx-devkit-ubuntu-openjdk-8-jdk-bionic-run",
+        "jetson-xavier-nx-devkit-ubuntu-openjdk-8-jre-bionic-build",
+        "jetson-xavier-nx-devkit-ubuntu-openjdk-8-jre-bionic-run",
+        "jetson-xavier-nx-devkit-ubuntu-openjdk-11-jdk-bionic-build",
+        "jetson-xavier-nx-devkit-ubuntu-openjdk-11-jdk-bionic-run",
+        "jetson-xavier-nx-devkit-ubuntu-openjdk-11-jre-bionic-build",
+        "jetson-xavier-nx-devkit-ubuntu-openjdk-11-jre-bionic-run"
+      ]
+    }
+  },
+  "target": {
+    "jetson-xavier-nx-devkit-ubuntu-openjdk-8-jdk-xenial-build": {
+      "context": "openjdk/jetson-xavier-nx-devkit/ubuntu/xenial/8-jdk/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jdk-xenial-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jdk-xenial-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--xenial-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--xenial-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-xenial-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-xenial-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jdk-xenial-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jdk-xenial-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--xenial-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--xenial-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-xenial-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-xenial-build"
+      ]
+    },
+    "jetson-xavier-nx-devkit-ubuntu-openjdk-8-jdk-xenial-run": {
+      "context": "openjdk/jetson-xavier-nx-devkit/ubuntu/xenial/8-jdk/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jdk-xenial-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jdk-xenial-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jdk-xenial-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jdk-xenial",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--xenial-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--xenial-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--xenial-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--xenial",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-xenial-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-xenial-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-xenial-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-xenial"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jdk-xenial-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jdk-xenial-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jdk-xenial-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jdk-xenial",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--xenial-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--xenial-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--xenial-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--xenial",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-xenial-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-xenial-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-xenial-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-xenial"
+      ]
+    },
+    "jetson-xavier-nx-devkit-ubuntu-openjdk-8-jre-xenial-build": {
+      "context": "openjdk/jetson-xavier-nx-devkit/ubuntu/xenial/8-jre/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jre-xenial-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jre-xenial-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--xenial-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--xenial-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-xenial-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-xenial-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jre-xenial-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jre-xenial-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--xenial-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--xenial-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-xenial-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-xenial-build"
+      ]
+    },
+    "jetson-xavier-nx-devkit-ubuntu-openjdk-8-jre-xenial-run": {
+      "context": "openjdk/jetson-xavier-nx-devkit/ubuntu/xenial/8-jre/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jre-xenial-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jre-xenial-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jre-xenial-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jre-xenial",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--xenial-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--xenial-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--xenial-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--xenial",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-xenial-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-xenial-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-xenial-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-xenial"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jre-xenial-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jre-xenial-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jre-xenial-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jre-xenial",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--xenial-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--xenial-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--xenial-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--xenial",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-xenial-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-xenial-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-xenial-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-xenial"
+      ]
+    },
+    "jetson-xavier-nx-devkit-ubuntu-openjdk-11-jdk-xenial-build": {
+      "context": "openjdk/jetson-xavier-nx-devkit/ubuntu/xenial/11-jdk/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jdk-xenial-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jdk-xenial-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--xenial-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--xenial-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-xenial-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-xenial-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:latest-xenial-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:latest-xenial-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:xenial-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:xenial-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jdk-xenial-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jdk-xenial-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--xenial-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--xenial-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-xenial-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-xenial-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:latest-xenial-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:latest-xenial-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:xenial-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:xenial-build"
+      ]
+    },
+    "jetson-xavier-nx-devkit-ubuntu-openjdk-11-jdk-xenial-run": {
+      "context": "openjdk/jetson-xavier-nx-devkit/ubuntu/xenial/11-jdk/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jdk-xenial-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jdk-xenial-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jdk-xenial-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jdk-xenial",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--xenial-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--xenial-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--xenial-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--xenial",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-xenial-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-xenial-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-xenial-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-xenial",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:latest-xenial-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:latest-xenial-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:latest-xenial-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:latest-xenial",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:xenial-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:xenial-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:xenial-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:xenial"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jdk-xenial-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jdk-xenial-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jdk-xenial-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jdk-xenial",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--xenial-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--xenial-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--xenial-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--xenial",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-xenial-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-xenial-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-xenial-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-xenial",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:latest-xenial-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:latest-xenial-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:latest-xenial-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:latest-xenial",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:xenial-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:xenial-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:xenial-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:xenial"
+      ]
+    },
+    "jetson-xavier-nx-devkit-ubuntu-openjdk-11-jre-xenial-build": {
+      "context": "openjdk/jetson-xavier-nx-devkit/ubuntu/xenial/11-jre/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jre-xenial-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jre-xenial-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--xenial-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--xenial-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-xenial-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-xenial-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jre-xenial-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jre-xenial-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--xenial-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--xenial-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-xenial-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-xenial-build"
+      ]
+    },
+    "jetson-xavier-nx-devkit-ubuntu-openjdk-11-jre-xenial-run": {
+      "context": "openjdk/jetson-xavier-nx-devkit/ubuntu/xenial/11-jre/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jre-xenial-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jre-xenial-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jre-xenial-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jre-xenial",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--xenial-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--xenial-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--xenial-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--xenial",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-xenial-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-xenial-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-xenial-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-xenial"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jre-xenial-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jre-xenial-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jre-xenial-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jre-xenial",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--xenial-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--xenial-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--xenial-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--xenial",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-xenial-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-xenial-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-xenial-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-xenial"
+      ]
+    },
+    "jetson-xavier-nx-devkit-ubuntu-openjdk-8-jdk-bionic-build": {
+      "context": "openjdk/jetson-xavier-nx-devkit/ubuntu/bionic/8-jdk/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jdk-bionic-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jdk-bionic-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--bionic-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--bionic-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-bionic-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-bionic-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jdk-bionic-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jdk-bionic-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--bionic-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--bionic-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-bionic-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-bionic-build"
+      ]
+    },
+    "jetson-xavier-nx-devkit-ubuntu-openjdk-8-jdk-bionic-run": {
+      "context": "openjdk/jetson-xavier-nx-devkit/ubuntu/bionic/8-jdk/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jdk-bionic-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jdk-bionic-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jdk-bionic-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jdk-bionic",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--bionic-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--bionic-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--bionic-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--bionic",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-bionic-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-bionic-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-bionic-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-bionic"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jdk-bionic-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jdk-bionic-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jdk-bionic-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jdk-bionic",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--bionic-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--bionic-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--bionic-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--bionic",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-bionic-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-bionic-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-bionic-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-bionic"
+      ]
+    },
+    "jetson-xavier-nx-devkit-ubuntu-openjdk-8-jre-bionic-build": {
+      "context": "openjdk/jetson-xavier-nx-devkit/ubuntu/bionic/8-jre/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jre-bionic-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jre-bionic-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--bionic-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--bionic-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-bionic-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-bionic-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jre-bionic-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jre-bionic-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--bionic-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--bionic-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-bionic-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-bionic-build"
+      ]
+    },
+    "jetson-xavier-nx-devkit-ubuntu-openjdk-8-jre-bionic-run": {
+      "context": "openjdk/jetson-xavier-nx-devkit/ubuntu/bionic/8-jre/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jre-bionic-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jre-bionic-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jre-bionic-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jre-bionic",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--bionic-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--bionic-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--bionic-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--bionic",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-bionic-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-bionic-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-bionic-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-bionic"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jre-bionic-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jre-bionic-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jre-bionic-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-jre-bionic",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--bionic-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--bionic-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--bionic-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8--bionic",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-bionic-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-bionic-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-bionic-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:8-bionic"
+      ]
+    },
+    "jetson-xavier-nx-devkit-ubuntu-openjdk-11-jdk-bionic-build": {
+      "context": "openjdk/jetson-xavier-nx-devkit/ubuntu/bionic/11-jdk/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jdk-bionic-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jdk-bionic-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--bionic-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--bionic-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-bionic-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-bionic-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:latest-bionic-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:latest-bionic-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:bionic-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:bionic-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jdk-bionic-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jdk-bionic-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--bionic-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--bionic-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-bionic-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-bionic-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:latest-bionic-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:latest-bionic-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:bionic-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:bionic-build"
+      ]
+    },
+    "jetson-xavier-nx-devkit-ubuntu-openjdk-11-jdk-bionic-run": {
+      "context": "openjdk/jetson-xavier-nx-devkit/ubuntu/bionic/11-jdk/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jdk-bionic-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jdk-bionic-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jdk-bionic-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jdk-bionic",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--bionic-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--bionic-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--bionic-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--bionic",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-bionic-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-bionic-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-bionic-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-bionic",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:latest-bionic-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:latest-bionic-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:latest-bionic-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:latest-bionic",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:bionic-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:bionic-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:bionic-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:bionic"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jdk-bionic-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jdk-bionic-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jdk-bionic-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jdk-bionic",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--bionic-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--bionic-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--bionic-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--bionic",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-bionic-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-bionic-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-bionic-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-bionic",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:latest-bionic-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:latest-bionic-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:latest-bionic-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:latest-bionic",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:bionic-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:bionic-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:bionic-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:bionic"
+      ]
+    },
+    "jetson-xavier-nx-devkit-ubuntu-openjdk-11-jre-bionic-build": {
+      "context": "openjdk/jetson-xavier-nx-devkit/ubuntu/bionic/11-jre/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jre-bionic-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jre-bionic-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--bionic-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--bionic-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-bionic-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-bionic-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jre-bionic-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jre-bionic-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--bionic-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--bionic-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-bionic-build-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-bionic-build"
+      ]
+    },
+    "jetson-xavier-nx-devkit-ubuntu-openjdk-11-jre-bionic-run": {
+      "context": "openjdk/jetson-xavier-nx-devkit/ubuntu/bionic/11-jre/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jre-bionic-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jre-bionic-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jre-bionic-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jre-bionic",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--bionic-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--bionic-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--bionic-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--bionic",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-bionic-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-bionic-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-bionic-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-bionic"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jre-bionic-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jre-bionic-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jre-bionic-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-jre-bionic",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--bionic-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--bionic-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--bionic-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11--bionic",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-bionic-run-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-bionic-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-bionic-20230911",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-ubuntu-openjdk:11-bionic"
+      ]
+    }
+  }
+}

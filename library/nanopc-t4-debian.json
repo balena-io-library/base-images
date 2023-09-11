@@ -1,0 +1,230 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "nanopc-t4-debian-buster-build",
+        "nanopc-t4-debian-buster-run",
+        "nanopc-t4-debian-bullseye-build",
+        "nanopc-t4-debian-bullseye-run",
+        "nanopc-t4-debian-bookworm-build",
+        "nanopc-t4-debian-bookworm-run",
+        "nanopc-t4-debian-sid-build",
+        "nanopc-t4-debian-sid-run"
+      ]
+    }
+  },
+  "target": {
+    "nanopc-t4-debian-buster-build": {
+      "context": "device-base/nanopc-t4/debian/buster/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopc-t4-debian:buster-build-20230911",
+        "docker.io/balenalib/nanopc-t4-debian:buster-build",
+        "docker.io/balenalib/nanopc-t4:buster-build-20230911",
+        "docker.io/balenalib/nanopc-t4:buster-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopc-t4-debian:buster-build-20230911",
+        "docker.io/balenalib/nanopc-t4-debian:buster-build",
+        "docker.io/balenalib/nanopc-t4:buster-build-20230911",
+        "docker.io/balenalib/nanopc-t4:buster-build"
+      ]
+    },
+    "nanopc-t4-debian-buster-run": {
+      "context": "device-base/nanopc-t4/debian/buster/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopc-t4-debian:buster-run-20230911",
+        "docker.io/balenalib/nanopc-t4-debian:buster-run",
+        "docker.io/balenalib/nanopc-t4-debian:buster-20230911",
+        "docker.io/balenalib/nanopc-t4-debian:buster",
+        "docker.io/balenalib/nanopc-t4:buster-run-20230911",
+        "docker.io/balenalib/nanopc-t4:buster-run",
+        "docker.io/balenalib/nanopc-t4:buster-20230911",
+        "docker.io/balenalib/nanopc-t4:buster"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopc-t4-debian:buster-run-20230911",
+        "docker.io/balenalib/nanopc-t4-debian:buster-run",
+        "docker.io/balenalib/nanopc-t4-debian:buster-20230911",
+        "docker.io/balenalib/nanopc-t4-debian:buster",
+        "docker.io/balenalib/nanopc-t4:buster-run-20230911",
+        "docker.io/balenalib/nanopc-t4:buster-run",
+        "docker.io/balenalib/nanopc-t4:buster-20230911",
+        "docker.io/balenalib/nanopc-t4:buster"
+      ]
+    },
+    "nanopc-t4-debian-bullseye-build": {
+      "context": "device-base/nanopc-t4/debian/bullseye/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopc-t4-debian:bullseye-build-20230911",
+        "docker.io/balenalib/nanopc-t4-debian:bullseye-build",
+        "docker.io/balenalib/nanopc-t4-debian:latest-build-20230911",
+        "docker.io/balenalib/nanopc-t4-debian:latest-build",
+        "docker.io/balenalib/nanopc-t4-debian:build-20230911",
+        "docker.io/balenalib/nanopc-t4-debian:build",
+        "docker.io/balenalib/nanopc-t4:bullseye-build-20230911",
+        "docker.io/balenalib/nanopc-t4:bullseye-build",
+        "docker.io/balenalib/nanopc-t4:latest-build-20230911",
+        "docker.io/balenalib/nanopc-t4:latest-build",
+        "docker.io/balenalib/nanopc-t4:build-20230911",
+        "docker.io/balenalib/nanopc-t4:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopc-t4-debian:bullseye-build-20230911",
+        "docker.io/balenalib/nanopc-t4-debian:bullseye-build",
+        "docker.io/balenalib/nanopc-t4-debian:latest-build-20230911",
+        "docker.io/balenalib/nanopc-t4-debian:latest-build",
+        "docker.io/balenalib/nanopc-t4-debian:build-20230911",
+        "docker.io/balenalib/nanopc-t4-debian:build",
+        "docker.io/balenalib/nanopc-t4:bullseye-build-20230911",
+        "docker.io/balenalib/nanopc-t4:bullseye-build",
+        "docker.io/balenalib/nanopc-t4:latest-build-20230911",
+        "docker.io/balenalib/nanopc-t4:latest-build",
+        "docker.io/balenalib/nanopc-t4:build-20230911",
+        "docker.io/balenalib/nanopc-t4:build"
+      ]
+    },
+    "nanopc-t4-debian-bullseye-run": {
+      "context": "device-base/nanopc-t4/debian/bullseye/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopc-t4-debian:bullseye-run-20230911",
+        "docker.io/balenalib/nanopc-t4-debian:bullseye-run",
+        "docker.io/balenalib/nanopc-t4-debian:bullseye-20230911",
+        "docker.io/balenalib/nanopc-t4-debian:bullseye",
+        "docker.io/balenalib/nanopc-t4-debian:latest-run-20230911",
+        "docker.io/balenalib/nanopc-t4-debian:latest-run",
+        "docker.io/balenalib/nanopc-t4-debian:latest-20230911",
+        "docker.io/balenalib/nanopc-t4-debian:latest",
+        "docker.io/balenalib/nanopc-t4-debian:run-20230911",
+        "docker.io/balenalib/nanopc-t4-debian:run",
+        "docker.io/balenalib/nanopc-t4-debian:20230911",
+        "docker.io/balenalib/nanopc-t4:bullseye-run-20230911",
+        "docker.io/balenalib/nanopc-t4:bullseye-run",
+        "docker.io/balenalib/nanopc-t4:bullseye-20230911",
+        "docker.io/balenalib/nanopc-t4:bullseye",
+        "docker.io/balenalib/nanopc-t4:latest-run-20230911",
+        "docker.io/balenalib/nanopc-t4:latest-run",
+        "docker.io/balenalib/nanopc-t4:latest-20230911",
+        "docker.io/balenalib/nanopc-t4:latest",
+        "docker.io/balenalib/nanopc-t4:run-20230911",
+        "docker.io/balenalib/nanopc-t4:run",
+        "docker.io/balenalib/nanopc-t4:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopc-t4-debian:bullseye-run-20230911",
+        "docker.io/balenalib/nanopc-t4-debian:bullseye-run",
+        "docker.io/balenalib/nanopc-t4-debian:bullseye-20230911",
+        "docker.io/balenalib/nanopc-t4-debian:bullseye",
+        "docker.io/balenalib/nanopc-t4-debian:latest-run-20230911",
+        "docker.io/balenalib/nanopc-t4-debian:latest-run",
+        "docker.io/balenalib/nanopc-t4-debian:latest-20230911",
+        "docker.io/balenalib/nanopc-t4-debian:latest",
+        "docker.io/balenalib/nanopc-t4-debian:run-20230911",
+        "docker.io/balenalib/nanopc-t4-debian:run",
+        "docker.io/balenalib/nanopc-t4-debian:20230911",
+        "docker.io/balenalib/nanopc-t4:bullseye-run-20230911",
+        "docker.io/balenalib/nanopc-t4:bullseye-run",
+        "docker.io/balenalib/nanopc-t4:bullseye-20230911",
+        "docker.io/balenalib/nanopc-t4:bullseye",
+        "docker.io/balenalib/nanopc-t4:latest-run-20230911",
+        "docker.io/balenalib/nanopc-t4:latest-run",
+        "docker.io/balenalib/nanopc-t4:latest-20230911",
+        "docker.io/balenalib/nanopc-t4:latest",
+        "docker.io/balenalib/nanopc-t4:run-20230911",
+        "docker.io/balenalib/nanopc-t4:run",
+        "docker.io/balenalib/nanopc-t4:20230911"
+      ]
+    },
+    "nanopc-t4-debian-bookworm-build": {
+      "context": "device-base/nanopc-t4/debian/bookworm/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopc-t4-debian:bookworm-build-20230911",
+        "docker.io/balenalib/nanopc-t4-debian:bookworm-build",
+        "docker.io/balenalib/nanopc-t4:bookworm-build-20230911",
+        "docker.io/balenalib/nanopc-t4:bookworm-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopc-t4-debian:bookworm-build-20230911",
+        "docker.io/balenalib/nanopc-t4-debian:bookworm-build",
+        "docker.io/balenalib/nanopc-t4:bookworm-build-20230911",
+        "docker.io/balenalib/nanopc-t4:bookworm-build"
+      ]
+    },
+    "nanopc-t4-debian-bookworm-run": {
+      "context": "device-base/nanopc-t4/debian/bookworm/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopc-t4-debian:bookworm-run-20230911",
+        "docker.io/balenalib/nanopc-t4-debian:bookworm-run",
+        "docker.io/balenalib/nanopc-t4-debian:bookworm-20230911",
+        "docker.io/balenalib/nanopc-t4-debian:bookworm",
+        "docker.io/balenalib/nanopc-t4:bookworm-run-20230911",
+        "docker.io/balenalib/nanopc-t4:bookworm-run",
+        "docker.io/balenalib/nanopc-t4:bookworm-20230911",
+        "docker.io/balenalib/nanopc-t4:bookworm"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopc-t4-debian:bookworm-run-20230911",
+        "docker.io/balenalib/nanopc-t4-debian:bookworm-run",
+        "docker.io/balenalib/nanopc-t4-debian:bookworm-20230911",
+        "docker.io/balenalib/nanopc-t4-debian:bookworm",
+        "docker.io/balenalib/nanopc-t4:bookworm-run-20230911",
+        "docker.io/balenalib/nanopc-t4:bookworm-run",
+        "docker.io/balenalib/nanopc-t4:bookworm-20230911",
+        "docker.io/balenalib/nanopc-t4:bookworm"
+      ]
+    },
+    "nanopc-t4-debian-sid-build": {
+      "context": "device-base/nanopc-t4/debian/sid/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopc-t4-debian:sid-build-20230911",
+        "docker.io/balenalib/nanopc-t4-debian:sid-build",
+        "docker.io/balenalib/nanopc-t4:sid-build-20230911",
+        "docker.io/balenalib/nanopc-t4:sid-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopc-t4-debian:sid-build-20230911",
+        "docker.io/balenalib/nanopc-t4-debian:sid-build",
+        "docker.io/balenalib/nanopc-t4:sid-build-20230911",
+        "docker.io/balenalib/nanopc-t4:sid-build"
+      ]
+    },
+    "nanopc-t4-debian-sid-run": {
+      "context": "device-base/nanopc-t4/debian/sid/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopc-t4-debian:sid-run-20230911",
+        "docker.io/balenalib/nanopc-t4-debian:sid-run",
+        "docker.io/balenalib/nanopc-t4-debian:sid-20230911",
+        "docker.io/balenalib/nanopc-t4-debian:sid",
+        "docker.io/balenalib/nanopc-t4:sid-run-20230911",
+        "docker.io/balenalib/nanopc-t4:sid-run",
+        "docker.io/balenalib/nanopc-t4:sid-20230911",
+        "docker.io/balenalib/nanopc-t4:sid"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopc-t4-debian:sid-run-20230911",
+        "docker.io/balenalib/nanopc-t4-debian:sid-run",
+        "docker.io/balenalib/nanopc-t4-debian:sid-20230911",
+        "docker.io/balenalib/nanopc-t4-debian:sid",
+        "docker.io/balenalib/nanopc-t4:sid-run-20230911",
+        "docker.io/balenalib/nanopc-t4:sid-run",
+        "docker.io/balenalib/nanopc-t4:sid-20230911",
+        "docker.io/balenalib/nanopc-t4:sid"
+      ]
+    }
+  }
+}

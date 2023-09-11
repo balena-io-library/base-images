@@ -1,0 +1,230 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "jn30b-nano-debian-buster-build",
+        "jn30b-nano-debian-buster-run",
+        "jn30b-nano-debian-bullseye-build",
+        "jn30b-nano-debian-bullseye-run",
+        "jn30b-nano-debian-bookworm-build",
+        "jn30b-nano-debian-bookworm-run",
+        "jn30b-nano-debian-sid-build",
+        "jn30b-nano-debian-sid-run"
+      ]
+    }
+  },
+  "target": {
+    "jn30b-nano-debian-buster-build": {
+      "context": "device-base/jn30b-nano/debian/buster/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jn30b-nano-debian:buster-build-20230911",
+        "docker.io/balenalib/jn30b-nano-debian:buster-build",
+        "docker.io/balenalib/jn30b-nano:buster-build-20230911",
+        "docker.io/balenalib/jn30b-nano:buster-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jn30b-nano-debian:buster-build-20230911",
+        "docker.io/balenalib/jn30b-nano-debian:buster-build",
+        "docker.io/balenalib/jn30b-nano:buster-build-20230911",
+        "docker.io/balenalib/jn30b-nano:buster-build"
+      ]
+    },
+    "jn30b-nano-debian-buster-run": {
+      "context": "device-base/jn30b-nano/debian/buster/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jn30b-nano-debian:buster-run-20230911",
+        "docker.io/balenalib/jn30b-nano-debian:buster-run",
+        "docker.io/balenalib/jn30b-nano-debian:buster-20230911",
+        "docker.io/balenalib/jn30b-nano-debian:buster",
+        "docker.io/balenalib/jn30b-nano:buster-run-20230911",
+        "docker.io/balenalib/jn30b-nano:buster-run",
+        "docker.io/balenalib/jn30b-nano:buster-20230911",
+        "docker.io/balenalib/jn30b-nano:buster"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jn30b-nano-debian:buster-run-20230911",
+        "docker.io/balenalib/jn30b-nano-debian:buster-run",
+        "docker.io/balenalib/jn30b-nano-debian:buster-20230911",
+        "docker.io/balenalib/jn30b-nano-debian:buster",
+        "docker.io/balenalib/jn30b-nano:buster-run-20230911",
+        "docker.io/balenalib/jn30b-nano:buster-run",
+        "docker.io/balenalib/jn30b-nano:buster-20230911",
+        "docker.io/balenalib/jn30b-nano:buster"
+      ]
+    },
+    "jn30b-nano-debian-bullseye-build": {
+      "context": "device-base/jn30b-nano/debian/bullseye/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jn30b-nano-debian:bullseye-build-20230911",
+        "docker.io/balenalib/jn30b-nano-debian:bullseye-build",
+        "docker.io/balenalib/jn30b-nano-debian:latest-build-20230911",
+        "docker.io/balenalib/jn30b-nano-debian:latest-build",
+        "docker.io/balenalib/jn30b-nano-debian:build-20230911",
+        "docker.io/balenalib/jn30b-nano-debian:build",
+        "docker.io/balenalib/jn30b-nano:bullseye-build-20230911",
+        "docker.io/balenalib/jn30b-nano:bullseye-build",
+        "docker.io/balenalib/jn30b-nano:latest-build-20230911",
+        "docker.io/balenalib/jn30b-nano:latest-build",
+        "docker.io/balenalib/jn30b-nano:build-20230911",
+        "docker.io/balenalib/jn30b-nano:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jn30b-nano-debian:bullseye-build-20230911",
+        "docker.io/balenalib/jn30b-nano-debian:bullseye-build",
+        "docker.io/balenalib/jn30b-nano-debian:latest-build-20230911",
+        "docker.io/balenalib/jn30b-nano-debian:latest-build",
+        "docker.io/balenalib/jn30b-nano-debian:build-20230911",
+        "docker.io/balenalib/jn30b-nano-debian:build",
+        "docker.io/balenalib/jn30b-nano:bullseye-build-20230911",
+        "docker.io/balenalib/jn30b-nano:bullseye-build",
+        "docker.io/balenalib/jn30b-nano:latest-build-20230911",
+        "docker.io/balenalib/jn30b-nano:latest-build",
+        "docker.io/balenalib/jn30b-nano:build-20230911",
+        "docker.io/balenalib/jn30b-nano:build"
+      ]
+    },
+    "jn30b-nano-debian-bullseye-run": {
+      "context": "device-base/jn30b-nano/debian/bullseye/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jn30b-nano-debian:bullseye-run-20230911",
+        "docker.io/balenalib/jn30b-nano-debian:bullseye-run",
+        "docker.io/balenalib/jn30b-nano-debian:bullseye-20230911",
+        "docker.io/balenalib/jn30b-nano-debian:bullseye",
+        "docker.io/balenalib/jn30b-nano-debian:latest-run-20230911",
+        "docker.io/balenalib/jn30b-nano-debian:latest-run",
+        "docker.io/balenalib/jn30b-nano-debian:latest-20230911",
+        "docker.io/balenalib/jn30b-nano-debian:latest",
+        "docker.io/balenalib/jn30b-nano-debian:run-20230911",
+        "docker.io/balenalib/jn30b-nano-debian:run",
+        "docker.io/balenalib/jn30b-nano-debian:20230911",
+        "docker.io/balenalib/jn30b-nano:bullseye-run-20230911",
+        "docker.io/balenalib/jn30b-nano:bullseye-run",
+        "docker.io/balenalib/jn30b-nano:bullseye-20230911",
+        "docker.io/balenalib/jn30b-nano:bullseye",
+        "docker.io/balenalib/jn30b-nano:latest-run-20230911",
+        "docker.io/balenalib/jn30b-nano:latest-run",
+        "docker.io/balenalib/jn30b-nano:latest-20230911",
+        "docker.io/balenalib/jn30b-nano:latest",
+        "docker.io/balenalib/jn30b-nano:run-20230911",
+        "docker.io/balenalib/jn30b-nano:run",
+        "docker.io/balenalib/jn30b-nano:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jn30b-nano-debian:bullseye-run-20230911",
+        "docker.io/balenalib/jn30b-nano-debian:bullseye-run",
+        "docker.io/balenalib/jn30b-nano-debian:bullseye-20230911",
+        "docker.io/balenalib/jn30b-nano-debian:bullseye",
+        "docker.io/balenalib/jn30b-nano-debian:latest-run-20230911",
+        "docker.io/balenalib/jn30b-nano-debian:latest-run",
+        "docker.io/balenalib/jn30b-nano-debian:latest-20230911",
+        "docker.io/balenalib/jn30b-nano-debian:latest",
+        "docker.io/balenalib/jn30b-nano-debian:run-20230911",
+        "docker.io/balenalib/jn30b-nano-debian:run",
+        "docker.io/balenalib/jn30b-nano-debian:20230911",
+        "docker.io/balenalib/jn30b-nano:bullseye-run-20230911",
+        "docker.io/balenalib/jn30b-nano:bullseye-run",
+        "docker.io/balenalib/jn30b-nano:bullseye-20230911",
+        "docker.io/balenalib/jn30b-nano:bullseye",
+        "docker.io/balenalib/jn30b-nano:latest-run-20230911",
+        "docker.io/balenalib/jn30b-nano:latest-run",
+        "docker.io/balenalib/jn30b-nano:latest-20230911",
+        "docker.io/balenalib/jn30b-nano:latest",
+        "docker.io/balenalib/jn30b-nano:run-20230911",
+        "docker.io/balenalib/jn30b-nano:run",
+        "docker.io/balenalib/jn30b-nano:20230911"
+      ]
+    },
+    "jn30b-nano-debian-bookworm-build": {
+      "context": "device-base/jn30b-nano/debian/bookworm/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jn30b-nano-debian:bookworm-build-20230911",
+        "docker.io/balenalib/jn30b-nano-debian:bookworm-build",
+        "docker.io/balenalib/jn30b-nano:bookworm-build-20230911",
+        "docker.io/balenalib/jn30b-nano:bookworm-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jn30b-nano-debian:bookworm-build-20230911",
+        "docker.io/balenalib/jn30b-nano-debian:bookworm-build",
+        "docker.io/balenalib/jn30b-nano:bookworm-build-20230911",
+        "docker.io/balenalib/jn30b-nano:bookworm-build"
+      ]
+    },
+    "jn30b-nano-debian-bookworm-run": {
+      "context": "device-base/jn30b-nano/debian/bookworm/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jn30b-nano-debian:bookworm-run-20230911",
+        "docker.io/balenalib/jn30b-nano-debian:bookworm-run",
+        "docker.io/balenalib/jn30b-nano-debian:bookworm-20230911",
+        "docker.io/balenalib/jn30b-nano-debian:bookworm",
+        "docker.io/balenalib/jn30b-nano:bookworm-run-20230911",
+        "docker.io/balenalib/jn30b-nano:bookworm-run",
+        "docker.io/balenalib/jn30b-nano:bookworm-20230911",
+        "docker.io/balenalib/jn30b-nano:bookworm"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jn30b-nano-debian:bookworm-run-20230911",
+        "docker.io/balenalib/jn30b-nano-debian:bookworm-run",
+        "docker.io/balenalib/jn30b-nano-debian:bookworm-20230911",
+        "docker.io/balenalib/jn30b-nano-debian:bookworm",
+        "docker.io/balenalib/jn30b-nano:bookworm-run-20230911",
+        "docker.io/balenalib/jn30b-nano:bookworm-run",
+        "docker.io/balenalib/jn30b-nano:bookworm-20230911",
+        "docker.io/balenalib/jn30b-nano:bookworm"
+      ]
+    },
+    "jn30b-nano-debian-sid-build": {
+      "context": "device-base/jn30b-nano/debian/sid/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jn30b-nano-debian:sid-build-20230911",
+        "docker.io/balenalib/jn30b-nano-debian:sid-build",
+        "docker.io/balenalib/jn30b-nano:sid-build-20230911",
+        "docker.io/balenalib/jn30b-nano:sid-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jn30b-nano-debian:sid-build-20230911",
+        "docker.io/balenalib/jn30b-nano-debian:sid-build",
+        "docker.io/balenalib/jn30b-nano:sid-build-20230911",
+        "docker.io/balenalib/jn30b-nano:sid-build"
+      ]
+    },
+    "jn30b-nano-debian-sid-run": {
+      "context": "device-base/jn30b-nano/debian/sid/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jn30b-nano-debian:sid-run-20230911",
+        "docker.io/balenalib/jn30b-nano-debian:sid-run",
+        "docker.io/balenalib/jn30b-nano-debian:sid-20230911",
+        "docker.io/balenalib/jn30b-nano-debian:sid",
+        "docker.io/balenalib/jn30b-nano:sid-run-20230911",
+        "docker.io/balenalib/jn30b-nano:sid-run",
+        "docker.io/balenalib/jn30b-nano:sid-20230911",
+        "docker.io/balenalib/jn30b-nano:sid"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jn30b-nano-debian:sid-run-20230911",
+        "docker.io/balenalib/jn30b-nano-debian:sid-run",
+        "docker.io/balenalib/jn30b-nano-debian:sid-20230911",
+        "docker.io/balenalib/jn30b-nano-debian:sid",
+        "docker.io/balenalib/jn30b-nano:sid-run-20230911",
+        "docker.io/balenalib/jn30b-nano:sid-run",
+        "docker.io/balenalib/jn30b-nano:sid-20230911",
+        "docker.io/balenalib/jn30b-nano:sid"
+      ]
+    }
+  }
+}

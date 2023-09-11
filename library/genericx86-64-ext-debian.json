@@ -1,0 +1,230 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "genericx86-64-ext-debian-buster-build",
+        "genericx86-64-ext-debian-buster-run",
+        "genericx86-64-ext-debian-bullseye-build",
+        "genericx86-64-ext-debian-bullseye-run",
+        "genericx86-64-ext-debian-bookworm-build",
+        "genericx86-64-ext-debian-bookworm-run",
+        "genericx86-64-ext-debian-sid-build",
+        "genericx86-64-ext-debian-sid-run"
+      ]
+    }
+  },
+  "target": {
+    "genericx86-64-ext-debian-buster-build": {
+      "context": "device-base/genericx86-64-ext/debian/buster/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/genericx86-64-ext-debian:buster-build-20230911",
+        "docker.io/balenalib/genericx86-64-ext-debian:buster-build",
+        "docker.io/balenalib/genericx86-64-ext:buster-build-20230911",
+        "docker.io/balenalib/genericx86-64-ext:buster-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/genericx86-64-ext-debian:buster-build-20230911",
+        "docker.io/balenalib/genericx86-64-ext-debian:buster-build",
+        "docker.io/balenalib/genericx86-64-ext:buster-build-20230911",
+        "docker.io/balenalib/genericx86-64-ext:buster-build"
+      ]
+    },
+    "genericx86-64-ext-debian-buster-run": {
+      "context": "device-base/genericx86-64-ext/debian/buster/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/genericx86-64-ext-debian:buster-run-20230911",
+        "docker.io/balenalib/genericx86-64-ext-debian:buster-run",
+        "docker.io/balenalib/genericx86-64-ext-debian:buster-20230911",
+        "docker.io/balenalib/genericx86-64-ext-debian:buster",
+        "docker.io/balenalib/genericx86-64-ext:buster-run-20230911",
+        "docker.io/balenalib/genericx86-64-ext:buster-run",
+        "docker.io/balenalib/genericx86-64-ext:buster-20230911",
+        "docker.io/balenalib/genericx86-64-ext:buster"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/genericx86-64-ext-debian:buster-run-20230911",
+        "docker.io/balenalib/genericx86-64-ext-debian:buster-run",
+        "docker.io/balenalib/genericx86-64-ext-debian:buster-20230911",
+        "docker.io/balenalib/genericx86-64-ext-debian:buster",
+        "docker.io/balenalib/genericx86-64-ext:buster-run-20230911",
+        "docker.io/balenalib/genericx86-64-ext:buster-run",
+        "docker.io/balenalib/genericx86-64-ext:buster-20230911",
+        "docker.io/balenalib/genericx86-64-ext:buster"
+      ]
+    },
+    "genericx86-64-ext-debian-bullseye-build": {
+      "context": "device-base/genericx86-64-ext/debian/bullseye/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/genericx86-64-ext-debian:bullseye-build-20230911",
+        "docker.io/balenalib/genericx86-64-ext-debian:bullseye-build",
+        "docker.io/balenalib/genericx86-64-ext-debian:latest-build-20230911",
+        "docker.io/balenalib/genericx86-64-ext-debian:latest-build",
+        "docker.io/balenalib/genericx86-64-ext-debian:build-20230911",
+        "docker.io/balenalib/genericx86-64-ext-debian:build",
+        "docker.io/balenalib/genericx86-64-ext:bullseye-build-20230911",
+        "docker.io/balenalib/genericx86-64-ext:bullseye-build",
+        "docker.io/balenalib/genericx86-64-ext:latest-build-20230911",
+        "docker.io/balenalib/genericx86-64-ext:latest-build",
+        "docker.io/balenalib/genericx86-64-ext:build-20230911",
+        "docker.io/balenalib/genericx86-64-ext:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/genericx86-64-ext-debian:bullseye-build-20230911",
+        "docker.io/balenalib/genericx86-64-ext-debian:bullseye-build",
+        "docker.io/balenalib/genericx86-64-ext-debian:latest-build-20230911",
+        "docker.io/balenalib/genericx86-64-ext-debian:latest-build",
+        "docker.io/balenalib/genericx86-64-ext-debian:build-20230911",
+        "docker.io/balenalib/genericx86-64-ext-debian:build",
+        "docker.io/balenalib/genericx86-64-ext:bullseye-build-20230911",
+        "docker.io/balenalib/genericx86-64-ext:bullseye-build",
+        "docker.io/balenalib/genericx86-64-ext:latest-build-20230911",
+        "docker.io/balenalib/genericx86-64-ext:latest-build",
+        "docker.io/balenalib/genericx86-64-ext:build-20230911",
+        "docker.io/balenalib/genericx86-64-ext:build"
+      ]
+    },
+    "genericx86-64-ext-debian-bullseye-run": {
+      "context": "device-base/genericx86-64-ext/debian/bullseye/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/genericx86-64-ext-debian:bullseye-run-20230911",
+        "docker.io/balenalib/genericx86-64-ext-debian:bullseye-run",
+        "docker.io/balenalib/genericx86-64-ext-debian:bullseye-20230911",
+        "docker.io/balenalib/genericx86-64-ext-debian:bullseye",
+        "docker.io/balenalib/genericx86-64-ext-debian:latest-run-20230911",
+        "docker.io/balenalib/genericx86-64-ext-debian:latest-run",
+        "docker.io/balenalib/genericx86-64-ext-debian:latest-20230911",
+        "docker.io/balenalib/genericx86-64-ext-debian:latest",
+        "docker.io/balenalib/genericx86-64-ext-debian:run-20230911",
+        "docker.io/balenalib/genericx86-64-ext-debian:run",
+        "docker.io/balenalib/genericx86-64-ext-debian:20230911",
+        "docker.io/balenalib/genericx86-64-ext:bullseye-run-20230911",
+        "docker.io/balenalib/genericx86-64-ext:bullseye-run",
+        "docker.io/balenalib/genericx86-64-ext:bullseye-20230911",
+        "docker.io/balenalib/genericx86-64-ext:bullseye",
+        "docker.io/balenalib/genericx86-64-ext:latest-run-20230911",
+        "docker.io/balenalib/genericx86-64-ext:latest-run",
+        "docker.io/balenalib/genericx86-64-ext:latest-20230911",
+        "docker.io/balenalib/genericx86-64-ext:latest",
+        "docker.io/balenalib/genericx86-64-ext:run-20230911",
+        "docker.io/balenalib/genericx86-64-ext:run",
+        "docker.io/balenalib/genericx86-64-ext:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/genericx86-64-ext-debian:bullseye-run-20230911",
+        "docker.io/balenalib/genericx86-64-ext-debian:bullseye-run",
+        "docker.io/balenalib/genericx86-64-ext-debian:bullseye-20230911",
+        "docker.io/balenalib/genericx86-64-ext-debian:bullseye",
+        "docker.io/balenalib/genericx86-64-ext-debian:latest-run-20230911",
+        "docker.io/balenalib/genericx86-64-ext-debian:latest-run",
+        "docker.io/balenalib/genericx86-64-ext-debian:latest-20230911",
+        "docker.io/balenalib/genericx86-64-ext-debian:latest",
+        "docker.io/balenalib/genericx86-64-ext-debian:run-20230911",
+        "docker.io/balenalib/genericx86-64-ext-debian:run",
+        "docker.io/balenalib/genericx86-64-ext-debian:20230911",
+        "docker.io/balenalib/genericx86-64-ext:bullseye-run-20230911",
+        "docker.io/balenalib/genericx86-64-ext:bullseye-run",
+        "docker.io/balenalib/genericx86-64-ext:bullseye-20230911",
+        "docker.io/balenalib/genericx86-64-ext:bullseye",
+        "docker.io/balenalib/genericx86-64-ext:latest-run-20230911",
+        "docker.io/balenalib/genericx86-64-ext:latest-run",
+        "docker.io/balenalib/genericx86-64-ext:latest-20230911",
+        "docker.io/balenalib/genericx86-64-ext:latest",
+        "docker.io/balenalib/genericx86-64-ext:run-20230911",
+        "docker.io/balenalib/genericx86-64-ext:run",
+        "docker.io/balenalib/genericx86-64-ext:20230911"
+      ]
+    },
+    "genericx86-64-ext-debian-bookworm-build": {
+      "context": "device-base/genericx86-64-ext/debian/bookworm/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/genericx86-64-ext-debian:bookworm-build-20230911",
+        "docker.io/balenalib/genericx86-64-ext-debian:bookworm-build",
+        "docker.io/balenalib/genericx86-64-ext:bookworm-build-20230911",
+        "docker.io/balenalib/genericx86-64-ext:bookworm-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/genericx86-64-ext-debian:bookworm-build-20230911",
+        "docker.io/balenalib/genericx86-64-ext-debian:bookworm-build",
+        "docker.io/balenalib/genericx86-64-ext:bookworm-build-20230911",
+        "docker.io/balenalib/genericx86-64-ext:bookworm-build"
+      ]
+    },
+    "genericx86-64-ext-debian-bookworm-run": {
+      "context": "device-base/genericx86-64-ext/debian/bookworm/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/genericx86-64-ext-debian:bookworm-run-20230911",
+        "docker.io/balenalib/genericx86-64-ext-debian:bookworm-run",
+        "docker.io/balenalib/genericx86-64-ext-debian:bookworm-20230911",
+        "docker.io/balenalib/genericx86-64-ext-debian:bookworm",
+        "docker.io/balenalib/genericx86-64-ext:bookworm-run-20230911",
+        "docker.io/balenalib/genericx86-64-ext:bookworm-run",
+        "docker.io/balenalib/genericx86-64-ext:bookworm-20230911",
+        "docker.io/balenalib/genericx86-64-ext:bookworm"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/genericx86-64-ext-debian:bookworm-run-20230911",
+        "docker.io/balenalib/genericx86-64-ext-debian:bookworm-run",
+        "docker.io/balenalib/genericx86-64-ext-debian:bookworm-20230911",
+        "docker.io/balenalib/genericx86-64-ext-debian:bookworm",
+        "docker.io/balenalib/genericx86-64-ext:bookworm-run-20230911",
+        "docker.io/balenalib/genericx86-64-ext:bookworm-run",
+        "docker.io/balenalib/genericx86-64-ext:bookworm-20230911",
+        "docker.io/balenalib/genericx86-64-ext:bookworm"
+      ]
+    },
+    "genericx86-64-ext-debian-sid-build": {
+      "context": "device-base/genericx86-64-ext/debian/sid/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/genericx86-64-ext-debian:sid-build-20230911",
+        "docker.io/balenalib/genericx86-64-ext-debian:sid-build",
+        "docker.io/balenalib/genericx86-64-ext:sid-build-20230911",
+        "docker.io/balenalib/genericx86-64-ext:sid-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/genericx86-64-ext-debian:sid-build-20230911",
+        "docker.io/balenalib/genericx86-64-ext-debian:sid-build",
+        "docker.io/balenalib/genericx86-64-ext:sid-build-20230911",
+        "docker.io/balenalib/genericx86-64-ext:sid-build"
+      ]
+    },
+    "genericx86-64-ext-debian-sid-run": {
+      "context": "device-base/genericx86-64-ext/debian/sid/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/genericx86-64-ext-debian:sid-run-20230911",
+        "docker.io/balenalib/genericx86-64-ext-debian:sid-run",
+        "docker.io/balenalib/genericx86-64-ext-debian:sid-20230911",
+        "docker.io/balenalib/genericx86-64-ext-debian:sid",
+        "docker.io/balenalib/genericx86-64-ext:sid-run-20230911",
+        "docker.io/balenalib/genericx86-64-ext:sid-run",
+        "docker.io/balenalib/genericx86-64-ext:sid-20230911",
+        "docker.io/balenalib/genericx86-64-ext:sid"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/genericx86-64-ext-debian:sid-run-20230911",
+        "docker.io/balenalib/genericx86-64-ext-debian:sid-run",
+        "docker.io/balenalib/genericx86-64-ext-debian:sid-20230911",
+        "docker.io/balenalib/genericx86-64-ext-debian:sid",
+        "docker.io/balenalib/genericx86-64-ext:sid-run-20230911",
+        "docker.io/balenalib/genericx86-64-ext:sid-run",
+        "docker.io/balenalib/genericx86-64-ext:sid-20230911",
+        "docker.io/balenalib/genericx86-64-ext:sid"
+      ]
+    }
+  }
+}

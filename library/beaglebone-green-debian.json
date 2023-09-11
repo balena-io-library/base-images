@@ -1,0 +1,230 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "beaglebone-green-debian-buster-build",
+        "beaglebone-green-debian-buster-run",
+        "beaglebone-green-debian-bullseye-build",
+        "beaglebone-green-debian-bullseye-run",
+        "beaglebone-green-debian-bookworm-build",
+        "beaglebone-green-debian-bookworm-run",
+        "beaglebone-green-debian-sid-build",
+        "beaglebone-green-debian-sid-run"
+      ]
+    }
+  },
+  "target": {
+    "beaglebone-green-debian-buster-build": {
+      "context": "device-base/beaglebone-green/debian/buster/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-debian:buster-build-20230911",
+        "docker.io/balenalib/beaglebone-green-debian:buster-build",
+        "docker.io/balenalib/beaglebone-green:buster-build-20230911",
+        "docker.io/balenalib/beaglebone-green:buster-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-debian:buster-build-20230911",
+        "docker.io/balenalib/beaglebone-green-debian:buster-build",
+        "docker.io/balenalib/beaglebone-green:buster-build-20230911",
+        "docker.io/balenalib/beaglebone-green:buster-build"
+      ]
+    },
+    "beaglebone-green-debian-buster-run": {
+      "context": "device-base/beaglebone-green/debian/buster/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-debian:buster-run-20230911",
+        "docker.io/balenalib/beaglebone-green-debian:buster-run",
+        "docker.io/balenalib/beaglebone-green-debian:buster-20230911",
+        "docker.io/balenalib/beaglebone-green-debian:buster",
+        "docker.io/balenalib/beaglebone-green:buster-run-20230911",
+        "docker.io/balenalib/beaglebone-green:buster-run",
+        "docker.io/balenalib/beaglebone-green:buster-20230911",
+        "docker.io/balenalib/beaglebone-green:buster"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-debian:buster-run-20230911",
+        "docker.io/balenalib/beaglebone-green-debian:buster-run",
+        "docker.io/balenalib/beaglebone-green-debian:buster-20230911",
+        "docker.io/balenalib/beaglebone-green-debian:buster",
+        "docker.io/balenalib/beaglebone-green:buster-run-20230911",
+        "docker.io/balenalib/beaglebone-green:buster-run",
+        "docker.io/balenalib/beaglebone-green:buster-20230911",
+        "docker.io/balenalib/beaglebone-green:buster"
+      ]
+    },
+    "beaglebone-green-debian-bullseye-build": {
+      "context": "device-base/beaglebone-green/debian/bullseye/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-debian:bullseye-build-20230911",
+        "docker.io/balenalib/beaglebone-green-debian:bullseye-build",
+        "docker.io/balenalib/beaglebone-green-debian:latest-build-20230911",
+        "docker.io/balenalib/beaglebone-green-debian:latest-build",
+        "docker.io/balenalib/beaglebone-green-debian:build-20230911",
+        "docker.io/balenalib/beaglebone-green-debian:build",
+        "docker.io/balenalib/beaglebone-green:bullseye-build-20230911",
+        "docker.io/balenalib/beaglebone-green:bullseye-build",
+        "docker.io/balenalib/beaglebone-green:latest-build-20230911",
+        "docker.io/balenalib/beaglebone-green:latest-build",
+        "docker.io/balenalib/beaglebone-green:build-20230911",
+        "docker.io/balenalib/beaglebone-green:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-debian:bullseye-build-20230911",
+        "docker.io/balenalib/beaglebone-green-debian:bullseye-build",
+        "docker.io/balenalib/beaglebone-green-debian:latest-build-20230911",
+        "docker.io/balenalib/beaglebone-green-debian:latest-build",
+        "docker.io/balenalib/beaglebone-green-debian:build-20230911",
+        "docker.io/balenalib/beaglebone-green-debian:build",
+        "docker.io/balenalib/beaglebone-green:bullseye-build-20230911",
+        "docker.io/balenalib/beaglebone-green:bullseye-build",
+        "docker.io/balenalib/beaglebone-green:latest-build-20230911",
+        "docker.io/balenalib/beaglebone-green:latest-build",
+        "docker.io/balenalib/beaglebone-green:build-20230911",
+        "docker.io/balenalib/beaglebone-green:build"
+      ]
+    },
+    "beaglebone-green-debian-bullseye-run": {
+      "context": "device-base/beaglebone-green/debian/bullseye/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-debian:bullseye-run-20230911",
+        "docker.io/balenalib/beaglebone-green-debian:bullseye-run",
+        "docker.io/balenalib/beaglebone-green-debian:bullseye-20230911",
+        "docker.io/balenalib/beaglebone-green-debian:bullseye",
+        "docker.io/balenalib/beaglebone-green-debian:latest-run-20230911",
+        "docker.io/balenalib/beaglebone-green-debian:latest-run",
+        "docker.io/balenalib/beaglebone-green-debian:latest-20230911",
+        "docker.io/balenalib/beaglebone-green-debian:latest",
+        "docker.io/balenalib/beaglebone-green-debian:run-20230911",
+        "docker.io/balenalib/beaglebone-green-debian:run",
+        "docker.io/balenalib/beaglebone-green-debian:20230911",
+        "docker.io/balenalib/beaglebone-green:bullseye-run-20230911",
+        "docker.io/balenalib/beaglebone-green:bullseye-run",
+        "docker.io/balenalib/beaglebone-green:bullseye-20230911",
+        "docker.io/balenalib/beaglebone-green:bullseye",
+        "docker.io/balenalib/beaglebone-green:latest-run-20230911",
+        "docker.io/balenalib/beaglebone-green:latest-run",
+        "docker.io/balenalib/beaglebone-green:latest-20230911",
+        "docker.io/balenalib/beaglebone-green:latest",
+        "docker.io/balenalib/beaglebone-green:run-20230911",
+        "docker.io/balenalib/beaglebone-green:run",
+        "docker.io/balenalib/beaglebone-green:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-debian:bullseye-run-20230911",
+        "docker.io/balenalib/beaglebone-green-debian:bullseye-run",
+        "docker.io/balenalib/beaglebone-green-debian:bullseye-20230911",
+        "docker.io/balenalib/beaglebone-green-debian:bullseye",
+        "docker.io/balenalib/beaglebone-green-debian:latest-run-20230911",
+        "docker.io/balenalib/beaglebone-green-debian:latest-run",
+        "docker.io/balenalib/beaglebone-green-debian:latest-20230911",
+        "docker.io/balenalib/beaglebone-green-debian:latest",
+        "docker.io/balenalib/beaglebone-green-debian:run-20230911",
+        "docker.io/balenalib/beaglebone-green-debian:run",
+        "docker.io/balenalib/beaglebone-green-debian:20230911",
+        "docker.io/balenalib/beaglebone-green:bullseye-run-20230911",
+        "docker.io/balenalib/beaglebone-green:bullseye-run",
+        "docker.io/balenalib/beaglebone-green:bullseye-20230911",
+        "docker.io/balenalib/beaglebone-green:bullseye",
+        "docker.io/balenalib/beaglebone-green:latest-run-20230911",
+        "docker.io/balenalib/beaglebone-green:latest-run",
+        "docker.io/balenalib/beaglebone-green:latest-20230911",
+        "docker.io/balenalib/beaglebone-green:latest",
+        "docker.io/balenalib/beaglebone-green:run-20230911",
+        "docker.io/balenalib/beaglebone-green:run",
+        "docker.io/balenalib/beaglebone-green:20230911"
+      ]
+    },
+    "beaglebone-green-debian-bookworm-build": {
+      "context": "device-base/beaglebone-green/debian/bookworm/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-debian:bookworm-build-20230911",
+        "docker.io/balenalib/beaglebone-green-debian:bookworm-build",
+        "docker.io/balenalib/beaglebone-green:bookworm-build-20230911",
+        "docker.io/balenalib/beaglebone-green:bookworm-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-debian:bookworm-build-20230911",
+        "docker.io/balenalib/beaglebone-green-debian:bookworm-build",
+        "docker.io/balenalib/beaglebone-green:bookworm-build-20230911",
+        "docker.io/balenalib/beaglebone-green:bookworm-build"
+      ]
+    },
+    "beaglebone-green-debian-bookworm-run": {
+      "context": "device-base/beaglebone-green/debian/bookworm/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-debian:bookworm-run-20230911",
+        "docker.io/balenalib/beaglebone-green-debian:bookworm-run",
+        "docker.io/balenalib/beaglebone-green-debian:bookworm-20230911",
+        "docker.io/balenalib/beaglebone-green-debian:bookworm",
+        "docker.io/balenalib/beaglebone-green:bookworm-run-20230911",
+        "docker.io/balenalib/beaglebone-green:bookworm-run",
+        "docker.io/balenalib/beaglebone-green:bookworm-20230911",
+        "docker.io/balenalib/beaglebone-green:bookworm"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-debian:bookworm-run-20230911",
+        "docker.io/balenalib/beaglebone-green-debian:bookworm-run",
+        "docker.io/balenalib/beaglebone-green-debian:bookworm-20230911",
+        "docker.io/balenalib/beaglebone-green-debian:bookworm",
+        "docker.io/balenalib/beaglebone-green:bookworm-run-20230911",
+        "docker.io/balenalib/beaglebone-green:bookworm-run",
+        "docker.io/balenalib/beaglebone-green:bookworm-20230911",
+        "docker.io/balenalib/beaglebone-green:bookworm"
+      ]
+    },
+    "beaglebone-green-debian-sid-build": {
+      "context": "device-base/beaglebone-green/debian/sid/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-debian:sid-build-20230911",
+        "docker.io/balenalib/beaglebone-green-debian:sid-build",
+        "docker.io/balenalib/beaglebone-green:sid-build-20230911",
+        "docker.io/balenalib/beaglebone-green:sid-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-debian:sid-build-20230911",
+        "docker.io/balenalib/beaglebone-green-debian:sid-build",
+        "docker.io/balenalib/beaglebone-green:sid-build-20230911",
+        "docker.io/balenalib/beaglebone-green:sid-build"
+      ]
+    },
+    "beaglebone-green-debian-sid-run": {
+      "context": "device-base/beaglebone-green/debian/sid/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-debian:sid-run-20230911",
+        "docker.io/balenalib/beaglebone-green-debian:sid-run",
+        "docker.io/balenalib/beaglebone-green-debian:sid-20230911",
+        "docker.io/balenalib/beaglebone-green-debian:sid",
+        "docker.io/balenalib/beaglebone-green:sid-run-20230911",
+        "docker.io/balenalib/beaglebone-green:sid-run",
+        "docker.io/balenalib/beaglebone-green:sid-20230911",
+        "docker.io/balenalib/beaglebone-green:sid"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-debian:sid-run-20230911",
+        "docker.io/balenalib/beaglebone-green-debian:sid-run",
+        "docker.io/balenalib/beaglebone-green-debian:sid-20230911",
+        "docker.io/balenalib/beaglebone-green-debian:sid",
+        "docker.io/balenalib/beaglebone-green:sid-run-20230911",
+        "docker.io/balenalib/beaglebone-green:sid-run",
+        "docker.io/balenalib/beaglebone-green:sid-20230911",
+        "docker.io/balenalib/beaglebone-green:sid"
+      ]
+    }
+  }
+}

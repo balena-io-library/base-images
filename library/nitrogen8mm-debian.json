@@ -1,0 +1,230 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "nitrogen8mm-debian-buster-build",
+        "nitrogen8mm-debian-buster-run",
+        "nitrogen8mm-debian-bullseye-build",
+        "nitrogen8mm-debian-bullseye-run",
+        "nitrogen8mm-debian-bookworm-build",
+        "nitrogen8mm-debian-bookworm-run",
+        "nitrogen8mm-debian-sid-build",
+        "nitrogen8mm-debian-sid-run"
+      ]
+    }
+  },
+  "target": {
+    "nitrogen8mm-debian-buster-build": {
+      "context": "device-base/nitrogen8mm/debian/buster/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nitrogen8mm-debian:buster-build-20230911",
+        "docker.io/balenalib/nitrogen8mm-debian:buster-build",
+        "docker.io/balenalib/nitrogen8mm:buster-build-20230911",
+        "docker.io/balenalib/nitrogen8mm:buster-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nitrogen8mm-debian:buster-build-20230911",
+        "docker.io/balenalib/nitrogen8mm-debian:buster-build",
+        "docker.io/balenalib/nitrogen8mm:buster-build-20230911",
+        "docker.io/balenalib/nitrogen8mm:buster-build"
+      ]
+    },
+    "nitrogen8mm-debian-buster-run": {
+      "context": "device-base/nitrogen8mm/debian/buster/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nitrogen8mm-debian:buster-run-20230911",
+        "docker.io/balenalib/nitrogen8mm-debian:buster-run",
+        "docker.io/balenalib/nitrogen8mm-debian:buster-20230911",
+        "docker.io/balenalib/nitrogen8mm-debian:buster",
+        "docker.io/balenalib/nitrogen8mm:buster-run-20230911",
+        "docker.io/balenalib/nitrogen8mm:buster-run",
+        "docker.io/balenalib/nitrogen8mm:buster-20230911",
+        "docker.io/balenalib/nitrogen8mm:buster"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nitrogen8mm-debian:buster-run-20230911",
+        "docker.io/balenalib/nitrogen8mm-debian:buster-run",
+        "docker.io/balenalib/nitrogen8mm-debian:buster-20230911",
+        "docker.io/balenalib/nitrogen8mm-debian:buster",
+        "docker.io/balenalib/nitrogen8mm:buster-run-20230911",
+        "docker.io/balenalib/nitrogen8mm:buster-run",
+        "docker.io/balenalib/nitrogen8mm:buster-20230911",
+        "docker.io/balenalib/nitrogen8mm:buster"
+      ]
+    },
+    "nitrogen8mm-debian-bullseye-build": {
+      "context": "device-base/nitrogen8mm/debian/bullseye/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nitrogen8mm-debian:bullseye-build-20230911",
+        "docker.io/balenalib/nitrogen8mm-debian:bullseye-build",
+        "docker.io/balenalib/nitrogen8mm-debian:latest-build-20230911",
+        "docker.io/balenalib/nitrogen8mm-debian:latest-build",
+        "docker.io/balenalib/nitrogen8mm-debian:build-20230911",
+        "docker.io/balenalib/nitrogen8mm-debian:build",
+        "docker.io/balenalib/nitrogen8mm:bullseye-build-20230911",
+        "docker.io/balenalib/nitrogen8mm:bullseye-build",
+        "docker.io/balenalib/nitrogen8mm:latest-build-20230911",
+        "docker.io/balenalib/nitrogen8mm:latest-build",
+        "docker.io/balenalib/nitrogen8mm:build-20230911",
+        "docker.io/balenalib/nitrogen8mm:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nitrogen8mm-debian:bullseye-build-20230911",
+        "docker.io/balenalib/nitrogen8mm-debian:bullseye-build",
+        "docker.io/balenalib/nitrogen8mm-debian:latest-build-20230911",
+        "docker.io/balenalib/nitrogen8mm-debian:latest-build",
+        "docker.io/balenalib/nitrogen8mm-debian:build-20230911",
+        "docker.io/balenalib/nitrogen8mm-debian:build",
+        "docker.io/balenalib/nitrogen8mm:bullseye-build-20230911",
+        "docker.io/balenalib/nitrogen8mm:bullseye-build",
+        "docker.io/balenalib/nitrogen8mm:latest-build-20230911",
+        "docker.io/balenalib/nitrogen8mm:latest-build",
+        "docker.io/balenalib/nitrogen8mm:build-20230911",
+        "docker.io/balenalib/nitrogen8mm:build"
+      ]
+    },
+    "nitrogen8mm-debian-bullseye-run": {
+      "context": "device-base/nitrogen8mm/debian/bullseye/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nitrogen8mm-debian:bullseye-run-20230911",
+        "docker.io/balenalib/nitrogen8mm-debian:bullseye-run",
+        "docker.io/balenalib/nitrogen8mm-debian:bullseye-20230911",
+        "docker.io/balenalib/nitrogen8mm-debian:bullseye",
+        "docker.io/balenalib/nitrogen8mm-debian:latest-run-20230911",
+        "docker.io/balenalib/nitrogen8mm-debian:latest-run",
+        "docker.io/balenalib/nitrogen8mm-debian:latest-20230911",
+        "docker.io/balenalib/nitrogen8mm-debian:latest",
+        "docker.io/balenalib/nitrogen8mm-debian:run-20230911",
+        "docker.io/balenalib/nitrogen8mm-debian:run",
+        "docker.io/balenalib/nitrogen8mm-debian:20230911",
+        "docker.io/balenalib/nitrogen8mm:bullseye-run-20230911",
+        "docker.io/balenalib/nitrogen8mm:bullseye-run",
+        "docker.io/balenalib/nitrogen8mm:bullseye-20230911",
+        "docker.io/balenalib/nitrogen8mm:bullseye",
+        "docker.io/balenalib/nitrogen8mm:latest-run-20230911",
+        "docker.io/balenalib/nitrogen8mm:latest-run",
+        "docker.io/balenalib/nitrogen8mm:latest-20230911",
+        "docker.io/balenalib/nitrogen8mm:latest",
+        "docker.io/balenalib/nitrogen8mm:run-20230911",
+        "docker.io/balenalib/nitrogen8mm:run",
+        "docker.io/balenalib/nitrogen8mm:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nitrogen8mm-debian:bullseye-run-20230911",
+        "docker.io/balenalib/nitrogen8mm-debian:bullseye-run",
+        "docker.io/balenalib/nitrogen8mm-debian:bullseye-20230911",
+        "docker.io/balenalib/nitrogen8mm-debian:bullseye",
+        "docker.io/balenalib/nitrogen8mm-debian:latest-run-20230911",
+        "docker.io/balenalib/nitrogen8mm-debian:latest-run",
+        "docker.io/balenalib/nitrogen8mm-debian:latest-20230911",
+        "docker.io/balenalib/nitrogen8mm-debian:latest",
+        "docker.io/balenalib/nitrogen8mm-debian:run-20230911",
+        "docker.io/balenalib/nitrogen8mm-debian:run",
+        "docker.io/balenalib/nitrogen8mm-debian:20230911",
+        "docker.io/balenalib/nitrogen8mm:bullseye-run-20230911",
+        "docker.io/balenalib/nitrogen8mm:bullseye-run",
+        "docker.io/balenalib/nitrogen8mm:bullseye-20230911",
+        "docker.io/balenalib/nitrogen8mm:bullseye",
+        "docker.io/balenalib/nitrogen8mm:latest-run-20230911",
+        "docker.io/balenalib/nitrogen8mm:latest-run",
+        "docker.io/balenalib/nitrogen8mm:latest-20230911",
+        "docker.io/balenalib/nitrogen8mm:latest",
+        "docker.io/balenalib/nitrogen8mm:run-20230911",
+        "docker.io/balenalib/nitrogen8mm:run",
+        "docker.io/balenalib/nitrogen8mm:20230911"
+      ]
+    },
+    "nitrogen8mm-debian-bookworm-build": {
+      "context": "device-base/nitrogen8mm/debian/bookworm/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nitrogen8mm-debian:bookworm-build-20230911",
+        "docker.io/balenalib/nitrogen8mm-debian:bookworm-build",
+        "docker.io/balenalib/nitrogen8mm:bookworm-build-20230911",
+        "docker.io/balenalib/nitrogen8mm:bookworm-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nitrogen8mm-debian:bookworm-build-20230911",
+        "docker.io/balenalib/nitrogen8mm-debian:bookworm-build",
+        "docker.io/balenalib/nitrogen8mm:bookworm-build-20230911",
+        "docker.io/balenalib/nitrogen8mm:bookworm-build"
+      ]
+    },
+    "nitrogen8mm-debian-bookworm-run": {
+      "context": "device-base/nitrogen8mm/debian/bookworm/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nitrogen8mm-debian:bookworm-run-20230911",
+        "docker.io/balenalib/nitrogen8mm-debian:bookworm-run",
+        "docker.io/balenalib/nitrogen8mm-debian:bookworm-20230911",
+        "docker.io/balenalib/nitrogen8mm-debian:bookworm",
+        "docker.io/balenalib/nitrogen8mm:bookworm-run-20230911",
+        "docker.io/balenalib/nitrogen8mm:bookworm-run",
+        "docker.io/balenalib/nitrogen8mm:bookworm-20230911",
+        "docker.io/balenalib/nitrogen8mm:bookworm"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nitrogen8mm-debian:bookworm-run-20230911",
+        "docker.io/balenalib/nitrogen8mm-debian:bookworm-run",
+        "docker.io/balenalib/nitrogen8mm-debian:bookworm-20230911",
+        "docker.io/balenalib/nitrogen8mm-debian:bookworm",
+        "docker.io/balenalib/nitrogen8mm:bookworm-run-20230911",
+        "docker.io/balenalib/nitrogen8mm:bookworm-run",
+        "docker.io/balenalib/nitrogen8mm:bookworm-20230911",
+        "docker.io/balenalib/nitrogen8mm:bookworm"
+      ]
+    },
+    "nitrogen8mm-debian-sid-build": {
+      "context": "device-base/nitrogen8mm/debian/sid/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nitrogen8mm-debian:sid-build-20230911",
+        "docker.io/balenalib/nitrogen8mm-debian:sid-build",
+        "docker.io/balenalib/nitrogen8mm:sid-build-20230911",
+        "docker.io/balenalib/nitrogen8mm:sid-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nitrogen8mm-debian:sid-build-20230911",
+        "docker.io/balenalib/nitrogen8mm-debian:sid-build",
+        "docker.io/balenalib/nitrogen8mm:sid-build-20230911",
+        "docker.io/balenalib/nitrogen8mm:sid-build"
+      ]
+    },
+    "nitrogen8mm-debian-sid-run": {
+      "context": "device-base/nitrogen8mm/debian/sid/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nitrogen8mm-debian:sid-run-20230911",
+        "docker.io/balenalib/nitrogen8mm-debian:sid-run",
+        "docker.io/balenalib/nitrogen8mm-debian:sid-20230911",
+        "docker.io/balenalib/nitrogen8mm-debian:sid",
+        "docker.io/balenalib/nitrogen8mm:sid-run-20230911",
+        "docker.io/balenalib/nitrogen8mm:sid-run",
+        "docker.io/balenalib/nitrogen8mm:sid-20230911",
+        "docker.io/balenalib/nitrogen8mm:sid"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nitrogen8mm-debian:sid-run-20230911",
+        "docker.io/balenalib/nitrogen8mm-debian:sid-run",
+        "docker.io/balenalib/nitrogen8mm-debian:sid-20230911",
+        "docker.io/balenalib/nitrogen8mm-debian:sid",
+        "docker.io/balenalib/nitrogen8mm:sid-run-20230911",
+        "docker.io/balenalib/nitrogen8mm:sid-run",
+        "docker.io/balenalib/nitrogen8mm:sid-20230911",
+        "docker.io/balenalib/nitrogen8mm:sid"
+      ]
+    }
+  }
+}

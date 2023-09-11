@@ -1,0 +1,230 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "asus-tinker-edge-t-debian-buster-build",
+        "asus-tinker-edge-t-debian-buster-run",
+        "asus-tinker-edge-t-debian-bullseye-build",
+        "asus-tinker-edge-t-debian-bullseye-run",
+        "asus-tinker-edge-t-debian-bookworm-build",
+        "asus-tinker-edge-t-debian-bookworm-run",
+        "asus-tinker-edge-t-debian-sid-build",
+        "asus-tinker-edge-t-debian-sid-run"
+      ]
+    }
+  },
+  "target": {
+    "asus-tinker-edge-t-debian-buster-build": {
+      "context": "device-base/asus-tinker-edge-t/debian/buster/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/asus-tinker-edge-t-debian:buster-build-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:buster-build",
+        "docker.io/balenalib/asus-tinker-edge-t:buster-build-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t:buster-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/asus-tinker-edge-t-debian:buster-build-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:buster-build",
+        "docker.io/balenalib/asus-tinker-edge-t:buster-build-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t:buster-build"
+      ]
+    },
+    "asus-tinker-edge-t-debian-buster-run": {
+      "context": "device-base/asus-tinker-edge-t/debian/buster/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/asus-tinker-edge-t-debian:buster-run-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:buster-run",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:buster-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:buster",
+        "docker.io/balenalib/asus-tinker-edge-t:buster-run-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t:buster-run",
+        "docker.io/balenalib/asus-tinker-edge-t:buster-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t:buster"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/asus-tinker-edge-t-debian:buster-run-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:buster-run",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:buster-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:buster",
+        "docker.io/balenalib/asus-tinker-edge-t:buster-run-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t:buster-run",
+        "docker.io/balenalib/asus-tinker-edge-t:buster-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t:buster"
+      ]
+    },
+    "asus-tinker-edge-t-debian-bullseye-build": {
+      "context": "device-base/asus-tinker-edge-t/debian/bullseye/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/asus-tinker-edge-t-debian:bullseye-build-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:bullseye-build",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:latest-build-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:latest-build",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:build-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:build",
+        "docker.io/balenalib/asus-tinker-edge-t:bullseye-build-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t:bullseye-build",
+        "docker.io/balenalib/asus-tinker-edge-t:latest-build-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t:latest-build",
+        "docker.io/balenalib/asus-tinker-edge-t:build-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/asus-tinker-edge-t-debian:bullseye-build-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:bullseye-build",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:latest-build-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:latest-build",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:build-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:build",
+        "docker.io/balenalib/asus-tinker-edge-t:bullseye-build-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t:bullseye-build",
+        "docker.io/balenalib/asus-tinker-edge-t:latest-build-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t:latest-build",
+        "docker.io/balenalib/asus-tinker-edge-t:build-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t:build"
+      ]
+    },
+    "asus-tinker-edge-t-debian-bullseye-run": {
+      "context": "device-base/asus-tinker-edge-t/debian/bullseye/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/asus-tinker-edge-t-debian:bullseye-run-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:bullseye-run",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:bullseye-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:bullseye",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:latest-run-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:latest-run",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:latest-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:latest",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:run-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:run",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:20230911",
+        "docker.io/balenalib/asus-tinker-edge-t:bullseye-run-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t:bullseye-run",
+        "docker.io/balenalib/asus-tinker-edge-t:bullseye-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t:bullseye",
+        "docker.io/balenalib/asus-tinker-edge-t:latest-run-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t:latest-run",
+        "docker.io/balenalib/asus-tinker-edge-t:latest-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t:latest",
+        "docker.io/balenalib/asus-tinker-edge-t:run-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t:run",
+        "docker.io/balenalib/asus-tinker-edge-t:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/asus-tinker-edge-t-debian:bullseye-run-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:bullseye-run",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:bullseye-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:bullseye",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:latest-run-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:latest-run",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:latest-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:latest",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:run-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:run",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:20230911",
+        "docker.io/balenalib/asus-tinker-edge-t:bullseye-run-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t:bullseye-run",
+        "docker.io/balenalib/asus-tinker-edge-t:bullseye-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t:bullseye",
+        "docker.io/balenalib/asus-tinker-edge-t:latest-run-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t:latest-run",
+        "docker.io/balenalib/asus-tinker-edge-t:latest-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t:latest",
+        "docker.io/balenalib/asus-tinker-edge-t:run-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t:run",
+        "docker.io/balenalib/asus-tinker-edge-t:20230911"
+      ]
+    },
+    "asus-tinker-edge-t-debian-bookworm-build": {
+      "context": "device-base/asus-tinker-edge-t/debian/bookworm/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/asus-tinker-edge-t-debian:bookworm-build-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:bookworm-build",
+        "docker.io/balenalib/asus-tinker-edge-t:bookworm-build-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t:bookworm-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/asus-tinker-edge-t-debian:bookworm-build-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:bookworm-build",
+        "docker.io/balenalib/asus-tinker-edge-t:bookworm-build-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t:bookworm-build"
+      ]
+    },
+    "asus-tinker-edge-t-debian-bookworm-run": {
+      "context": "device-base/asus-tinker-edge-t/debian/bookworm/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/asus-tinker-edge-t-debian:bookworm-run-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:bookworm-run",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:bookworm-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:bookworm",
+        "docker.io/balenalib/asus-tinker-edge-t:bookworm-run-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t:bookworm-run",
+        "docker.io/balenalib/asus-tinker-edge-t:bookworm-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t:bookworm"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/asus-tinker-edge-t-debian:bookworm-run-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:bookworm-run",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:bookworm-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:bookworm",
+        "docker.io/balenalib/asus-tinker-edge-t:bookworm-run-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t:bookworm-run",
+        "docker.io/balenalib/asus-tinker-edge-t:bookworm-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t:bookworm"
+      ]
+    },
+    "asus-tinker-edge-t-debian-sid-build": {
+      "context": "device-base/asus-tinker-edge-t/debian/sid/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/asus-tinker-edge-t-debian:sid-build-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:sid-build",
+        "docker.io/balenalib/asus-tinker-edge-t:sid-build-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t:sid-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/asus-tinker-edge-t-debian:sid-build-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:sid-build",
+        "docker.io/balenalib/asus-tinker-edge-t:sid-build-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t:sid-build"
+      ]
+    },
+    "asus-tinker-edge-t-debian-sid-run": {
+      "context": "device-base/asus-tinker-edge-t/debian/sid/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/asus-tinker-edge-t-debian:sid-run-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:sid-run",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:sid-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:sid",
+        "docker.io/balenalib/asus-tinker-edge-t:sid-run-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t:sid-run",
+        "docker.io/balenalib/asus-tinker-edge-t:sid-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t:sid"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/asus-tinker-edge-t-debian:sid-run-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:sid-run",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:sid-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:sid",
+        "docker.io/balenalib/asus-tinker-edge-t:sid-run-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t:sid-run",
+        "docker.io/balenalib/asus-tinker-edge-t:sid-20230911",
+        "docker.io/balenalib/asus-tinker-edge-t:sid"
+      ]
+    }
+  }
+}

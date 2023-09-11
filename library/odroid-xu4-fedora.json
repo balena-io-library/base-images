@@ -1,0 +1,42 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "odroid-xu4-fedora-36-build",
+        "odroid-xu4-fedora-36-run"
+      ]
+    }
+  },
+  "target": {
+    "odroid-xu4-fedora-36-build": {
+      "context": "device-base/odroid-xu4/fedora/36/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/odroid-xu4-fedora:36-build-20230911",
+        "docker.io/balenalib/odroid-xu4-fedora:36-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/odroid-xu4-fedora:36-build-20230911",
+        "docker.io/balenalib/odroid-xu4-fedora:36-build"
+      ]
+    },
+    "odroid-xu4-fedora-36-run": {
+      "context": "device-base/odroid-xu4/fedora/36/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/odroid-xu4-fedora:36-run-20230911",
+        "docker.io/balenalib/odroid-xu4-fedora:36-run",
+        "docker.io/balenalib/odroid-xu4-fedora:36-20230911",
+        "docker.io/balenalib/odroid-xu4-fedora:36"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/odroid-xu4-fedora:36-run-20230911",
+        "docker.io/balenalib/odroid-xu4-fedora:36-run",
+        "docker.io/balenalib/odroid-xu4-fedora:36-20230911",
+        "docker.io/balenalib/odroid-xu4-fedora:36"
+      ]
+    }
+  }
+}

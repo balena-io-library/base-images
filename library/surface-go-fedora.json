@@ -1,0 +1,128 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "surface-go-fedora-36-build",
+        "surface-go-fedora-36-run",
+        "surface-go-fedora-37-build",
+        "surface-go-fedora-37-run",
+        "surface-go-fedora-38-build",
+        "surface-go-fedora-38-run"
+      ]
+    }
+  },
+  "target": {
+    "surface-go-fedora-36-build": {
+      "context": "device-base/surface-go/fedora/36/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-fedora:36-build-20230911",
+        "docker.io/balenalib/surface-go-fedora:36-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-fedora:36-build-20230911",
+        "docker.io/balenalib/surface-go-fedora:36-build"
+      ]
+    },
+    "surface-go-fedora-36-run": {
+      "context": "device-base/surface-go/fedora/36/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-fedora:36-run-20230911",
+        "docker.io/balenalib/surface-go-fedora:36-run",
+        "docker.io/balenalib/surface-go-fedora:36-20230911",
+        "docker.io/balenalib/surface-go-fedora:36"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-fedora:36-run-20230911",
+        "docker.io/balenalib/surface-go-fedora:36-run",
+        "docker.io/balenalib/surface-go-fedora:36-20230911",
+        "docker.io/balenalib/surface-go-fedora:36"
+      ]
+    },
+    "surface-go-fedora-37-build": {
+      "context": "device-base/surface-go/fedora/37/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-fedora:37-build-20230911",
+        "docker.io/balenalib/surface-go-fedora:37-build",
+        "docker.io/balenalib/surface-go-fedora:latest-build-20230911",
+        "docker.io/balenalib/surface-go-fedora:latest-build",
+        "docker.io/balenalib/surface-go-fedora:build-20230911",
+        "docker.io/balenalib/surface-go-fedora:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-fedora:37-build-20230911",
+        "docker.io/balenalib/surface-go-fedora:37-build",
+        "docker.io/balenalib/surface-go-fedora:latest-build-20230911",
+        "docker.io/balenalib/surface-go-fedora:latest-build",
+        "docker.io/balenalib/surface-go-fedora:build-20230911",
+        "docker.io/balenalib/surface-go-fedora:build"
+      ]
+    },
+    "surface-go-fedora-37-run": {
+      "context": "device-base/surface-go/fedora/37/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-fedora:37-run-20230911",
+        "docker.io/balenalib/surface-go-fedora:37-run",
+        "docker.io/balenalib/surface-go-fedora:37-20230911",
+        "docker.io/balenalib/surface-go-fedora:37",
+        "docker.io/balenalib/surface-go-fedora:latest-run-20230911",
+        "docker.io/balenalib/surface-go-fedora:latest-run",
+        "docker.io/balenalib/surface-go-fedora:latest-20230911",
+        "docker.io/balenalib/surface-go-fedora:latest",
+        "docker.io/balenalib/surface-go-fedora:run-20230911",
+        "docker.io/balenalib/surface-go-fedora:run",
+        "docker.io/balenalib/surface-go-fedora:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-fedora:37-run-20230911",
+        "docker.io/balenalib/surface-go-fedora:37-run",
+        "docker.io/balenalib/surface-go-fedora:37-20230911",
+        "docker.io/balenalib/surface-go-fedora:37",
+        "docker.io/balenalib/surface-go-fedora:latest-run-20230911",
+        "docker.io/balenalib/surface-go-fedora:latest-run",
+        "docker.io/balenalib/surface-go-fedora:latest-20230911",
+        "docker.io/balenalib/surface-go-fedora:latest",
+        "docker.io/balenalib/surface-go-fedora:run-20230911",
+        "docker.io/balenalib/surface-go-fedora:run",
+        "docker.io/balenalib/surface-go-fedora:20230911"
+      ]
+    },
+    "surface-go-fedora-38-build": {
+      "context": "device-base/surface-go/fedora/38/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-fedora:38-build-20230911",
+        "docker.io/balenalib/surface-go-fedora:38-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-fedora:38-build-20230911",
+        "docker.io/balenalib/surface-go-fedora:38-build"
+      ]
+    },
+    "surface-go-fedora-38-run": {
+      "context": "device-base/surface-go/fedora/38/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-fedora:38-run-20230911",
+        "docker.io/balenalib/surface-go-fedora:38-run",
+        "docker.io/balenalib/surface-go-fedora:38-20230911",
+        "docker.io/balenalib/surface-go-fedora:38"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-fedora:38-run-20230911",
+        "docker.io/balenalib/surface-go-fedora:38-run",
+        "docker.io/balenalib/surface-go-fedora:38-20230911",
+        "docker.io/balenalib/surface-go-fedora:38"
+      ]
+    }
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "imx7-var-som-fedora-golang-1-20-1-36-build",
+        "imx7-var-som-fedora-golang-1-20-1-36-run",
+        "imx7-var-som-fedora-golang-1-19-6-36-build",
+        "imx7-var-som-fedora-golang-1-19-6-36-run",
+        "imx7-var-som-fedora-golang-1-18-10-36-build",
+        "imx7-var-som-fedora-golang-1-18-10-36-run"
+      ]
+    }
+  },
+  "target": {
+    "imx7-var-som-fedora-golang-1-20-1-36-build": {
+      "context": "golang/imx7-var-som/fedora/36/1.20.1/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.20.1-36-build-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.20.1-36-build",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.20-36-build-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.20-36-build",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1-36-build-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1-36-build",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:latest-36-build-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:latest-36-build",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:36-build-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:36-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.20.1-36-build-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.20.1-36-build",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.20-36-build-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.20-36-build",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1-36-build-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1-36-build",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:latest-36-build-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:latest-36-build",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:36-build-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:36-build"
+      ]
+    },
+    "imx7-var-som-fedora-golang-1-20-1-36-run": {
+      "context": "golang/imx7-var-som/fedora/36/1.20.1/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.20.1-36-run-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.20.1-36-run",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.20.1-36-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.20.1-36",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.20-36-run-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.20-36-run",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.20-36-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.20-36",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1-36-run-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1-36-run",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1-36-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1-36",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:latest-36-run-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:latest-36-run",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:latest-36-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:latest-36",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:36-run-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:36-run",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:36-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:36"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.20.1-36-run-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.20.1-36-run",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.20.1-36-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.20.1-36",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.20-36-run-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.20-36-run",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.20-36-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.20-36",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1-36-run-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1-36-run",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1-36-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1-36",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:latest-36-run-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:latest-36-run",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:latest-36-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:latest-36",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:36-run-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:36-run",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:36-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:36"
+      ]
+    },
+    "imx7-var-som-fedora-golang-1-19-6-36-build": {
+      "context": "golang/imx7-var-som/fedora/36/1.19.6/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.19.6-36-build-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.19.6-36-build",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.19-36-build-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.19-36-build",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1-36-build-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1-36-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.19.6-36-build-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.19.6-36-build",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.19-36-build-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.19-36-build",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1-36-build-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1-36-build"
+      ]
+    },
+    "imx7-var-som-fedora-golang-1-19-6-36-run": {
+      "context": "golang/imx7-var-som/fedora/36/1.19.6/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.19.6-36-run-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.19.6-36-run",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.19.6-36-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.19.6-36",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.19-36-run-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.19-36-run",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.19-36-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.19-36",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1-36-run-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1-36-run",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1-36-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1-36"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.19.6-36-run-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.19.6-36-run",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.19.6-36-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.19.6-36",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.19-36-run-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.19-36-run",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.19-36-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.19-36",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1-36-run-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1-36-run",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1-36-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1-36"
+      ]
+    },
+    "imx7-var-som-fedora-golang-1-18-10-36-build": {
+      "context": "golang/imx7-var-som/fedora/36/1.18.10/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.18.10-36-build-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.18.10-36-build",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.18-36-build-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.18-36-build",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1-36-build-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1-36-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.18.10-36-build-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.18.10-36-build",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.18-36-build-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.18-36-build",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1-36-build-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1-36-build"
+      ]
+    },
+    "imx7-var-som-fedora-golang-1-18-10-36-run": {
+      "context": "golang/imx7-var-som/fedora/36/1.18.10/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.18.10-36-run-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.18.10-36-run",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.18.10-36-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.18.10-36",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.18-36-run-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.18-36-run",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.18-36-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.18-36",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1-36-run-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1-36-run",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1-36-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1-36"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.18.10-36-run-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.18.10-36-run",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.18.10-36-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.18.10-36",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.18-36-run-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.18-36-run",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.18-36-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1.18-36",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1-36-run-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1-36-run",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1-36-20230911",
+        "docker.io/balenalib/imx7-var-som-fedora-golang:1-36"
+      ]
+    }
+  }
+}

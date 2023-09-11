@@ -1,0 +1,288 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "asus-tinker-board-alpine-edge-build",
+        "asus-tinker-board-alpine-edge-run",
+        "asus-tinker-board-alpine-3-14-build",
+        "asus-tinker-board-alpine-3-14-run",
+        "asus-tinker-board-alpine-3-16-build",
+        "asus-tinker-board-alpine-3-16-run",
+        "asus-tinker-board-alpine-3-17-build",
+        "asus-tinker-board-alpine-3-17-run",
+        "asus-tinker-board-alpine-3-18-build",
+        "asus-tinker-board-alpine-3-18-run",
+        "asus-tinker-board-alpine-3-13-build",
+        "asus-tinker-board-alpine-3-13-run",
+        "asus-tinker-board-alpine-3-12-build",
+        "asus-tinker-board-alpine-3-12-run",
+        "asus-tinker-board-alpine-3-15-build",
+        "asus-tinker-board-alpine-3-15-run"
+      ]
+    }
+  },
+  "target": {
+    "asus-tinker-board-alpine-edge-build": {
+      "context": "device-base/asus-tinker-board/alpine/edge/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/asus-tinker-board-alpine:edge-build-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:edge-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/asus-tinker-board-alpine:edge-build-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:edge-build"
+      ]
+    },
+    "asus-tinker-board-alpine-edge-run": {
+      "context": "device-base/asus-tinker-board/alpine/edge/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/asus-tinker-board-alpine:edge-run-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:edge-run",
+        "docker.io/balenalib/asus-tinker-board-alpine:edge-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:edge"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/asus-tinker-board-alpine:edge-run-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:edge-run",
+        "docker.io/balenalib/asus-tinker-board-alpine:edge-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:edge"
+      ]
+    },
+    "asus-tinker-board-alpine-3-14-build": {
+      "context": "device-base/asus-tinker-board/alpine/3.14/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/asus-tinker-board-alpine:3.14-build-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.14-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/asus-tinker-board-alpine:3.14-build-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.14-build"
+      ]
+    },
+    "asus-tinker-board-alpine-3-14-run": {
+      "context": "device-base/asus-tinker-board/alpine/3.14/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/asus-tinker-board-alpine:3.14-run-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.14-run",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.14-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.14"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/asus-tinker-board-alpine:3.14-run-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.14-run",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.14-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.14"
+      ]
+    },
+    "asus-tinker-board-alpine-3-16-build": {
+      "context": "device-base/asus-tinker-board/alpine/3.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/asus-tinker-board-alpine:3.16-build-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.16-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/asus-tinker-board-alpine:3.16-build-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.16-build"
+      ]
+    },
+    "asus-tinker-board-alpine-3-16-run": {
+      "context": "device-base/asus-tinker-board/alpine/3.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/asus-tinker-board-alpine:3.16-run-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.16-run",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.16-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.16"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/asus-tinker-board-alpine:3.16-run-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.16-run",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.16-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.16"
+      ]
+    },
+    "asus-tinker-board-alpine-3-17-build": {
+      "context": "device-base/asus-tinker-board/alpine/3.17/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/asus-tinker-board-alpine:3.17-build-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.17-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/asus-tinker-board-alpine:3.17-build-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.17-build"
+      ]
+    },
+    "asus-tinker-board-alpine-3-17-run": {
+      "context": "device-base/asus-tinker-board/alpine/3.17/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/asus-tinker-board-alpine:3.17-run-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.17-run",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.17-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.17"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/asus-tinker-board-alpine:3.17-run-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.17-run",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.17-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.17"
+      ]
+    },
+    "asus-tinker-board-alpine-3-18-build": {
+      "context": "device-base/asus-tinker-board/alpine/3.18/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/asus-tinker-board-alpine:3.18-build-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.18-build",
+        "docker.io/balenalib/asus-tinker-board-alpine:latest-build-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:latest-build",
+        "docker.io/balenalib/asus-tinker-board-alpine:build-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/asus-tinker-board-alpine:3.18-build-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.18-build",
+        "docker.io/balenalib/asus-tinker-board-alpine:latest-build-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:latest-build",
+        "docker.io/balenalib/asus-tinker-board-alpine:build-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:build"
+      ]
+    },
+    "asus-tinker-board-alpine-3-18-run": {
+      "context": "device-base/asus-tinker-board/alpine/3.18/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/asus-tinker-board-alpine:3.18-run-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.18-run",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.18-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.18",
+        "docker.io/balenalib/asus-tinker-board-alpine:latest-run-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:latest-run",
+        "docker.io/balenalib/asus-tinker-board-alpine:latest-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:latest",
+        "docker.io/balenalib/asus-tinker-board-alpine:run-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:run",
+        "docker.io/balenalib/asus-tinker-board-alpine:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/asus-tinker-board-alpine:3.18-run-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.18-run",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.18-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.18",
+        "docker.io/balenalib/asus-tinker-board-alpine:latest-run-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:latest-run",
+        "docker.io/balenalib/asus-tinker-board-alpine:latest-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:latest",
+        "docker.io/balenalib/asus-tinker-board-alpine:run-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:run",
+        "docker.io/balenalib/asus-tinker-board-alpine:20230911"
+      ]
+    },
+    "asus-tinker-board-alpine-3-13-build": {
+      "context": "device-base/asus-tinker-board/alpine/3.13/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/asus-tinker-board-alpine:3.13-build-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.13-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/asus-tinker-board-alpine:3.13-build-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.13-build"
+      ]
+    },
+    "asus-tinker-board-alpine-3-13-run": {
+      "context": "device-base/asus-tinker-board/alpine/3.13/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/asus-tinker-board-alpine:3.13-run-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.13-run",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.13-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.13"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/asus-tinker-board-alpine:3.13-run-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.13-run",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.13-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.13"
+      ]
+    },
+    "asus-tinker-board-alpine-3-12-build": {
+      "context": "device-base/asus-tinker-board/alpine/3.12/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/asus-tinker-board-alpine:3.12-build-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.12-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/asus-tinker-board-alpine:3.12-build-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.12-build"
+      ]
+    },
+    "asus-tinker-board-alpine-3-12-run": {
+      "context": "device-base/asus-tinker-board/alpine/3.12/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/asus-tinker-board-alpine:3.12-run-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.12-run",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.12-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.12"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/asus-tinker-board-alpine:3.12-run-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.12-run",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.12-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.12"
+      ]
+    },
+    "asus-tinker-board-alpine-3-15-build": {
+      "context": "device-base/asus-tinker-board/alpine/3.15/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/asus-tinker-board-alpine:3.15-build-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.15-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/asus-tinker-board-alpine:3.15-build-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.15-build"
+      ]
+    },
+    "asus-tinker-board-alpine-3-15-run": {
+      "context": "device-base/asus-tinker-board/alpine/3.15/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/asus-tinker-board-alpine:3.15-run-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.15-run",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.15-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.15"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/asus-tinker-board-alpine:3.15-run-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.15-run",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.15-20230911",
+        "docker.io/balenalib/asus-tinker-board-alpine:3.15"
+      ]
+    }
+  }
+}

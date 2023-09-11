@@ -1,0 +1,192 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "nanopc-t4-ubuntu-lunar-build",
+        "nanopc-t4-ubuntu-lunar-run",
+        "nanopc-t4-ubuntu-jammy-build",
+        "nanopc-t4-ubuntu-jammy-run",
+        "nanopc-t4-ubuntu-focal-build",
+        "nanopc-t4-ubuntu-focal-run",
+        "nanopc-t4-ubuntu-xenial-build",
+        "nanopc-t4-ubuntu-xenial-run",
+        "nanopc-t4-ubuntu-bionic-build",
+        "nanopc-t4-ubuntu-bionic-run"
+      ]
+    }
+  },
+  "target": {
+    "nanopc-t4-ubuntu-lunar-build": {
+      "context": "device-base/nanopc-t4/ubuntu/lunar/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopc-t4-ubuntu:lunar-build-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:lunar-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopc-t4-ubuntu:lunar-build-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:lunar-build"
+      ]
+    },
+    "nanopc-t4-ubuntu-lunar-run": {
+      "context": "device-base/nanopc-t4/ubuntu/lunar/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopc-t4-ubuntu:lunar-run-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:lunar-run",
+        "docker.io/balenalib/nanopc-t4-ubuntu:lunar-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:lunar"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopc-t4-ubuntu:lunar-run-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:lunar-run",
+        "docker.io/balenalib/nanopc-t4-ubuntu:lunar-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:lunar"
+      ]
+    },
+    "nanopc-t4-ubuntu-jammy-build": {
+      "context": "device-base/nanopc-t4/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopc-t4-ubuntu:jammy-build-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:jammy-build",
+        "docker.io/balenalib/nanopc-t4-ubuntu:latest-build-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:latest-build",
+        "docker.io/balenalib/nanopc-t4-ubuntu:build-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopc-t4-ubuntu:jammy-build-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:jammy-build",
+        "docker.io/balenalib/nanopc-t4-ubuntu:latest-build-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:latest-build",
+        "docker.io/balenalib/nanopc-t4-ubuntu:build-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:build"
+      ]
+    },
+    "nanopc-t4-ubuntu-jammy-run": {
+      "context": "device-base/nanopc-t4/ubuntu/jammy/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopc-t4-ubuntu:jammy-run-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:jammy-run",
+        "docker.io/balenalib/nanopc-t4-ubuntu:jammy-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:jammy",
+        "docker.io/balenalib/nanopc-t4-ubuntu:latest-run-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:latest-run",
+        "docker.io/balenalib/nanopc-t4-ubuntu:latest-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:latest",
+        "docker.io/balenalib/nanopc-t4-ubuntu:run-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:run",
+        "docker.io/balenalib/nanopc-t4-ubuntu:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopc-t4-ubuntu:jammy-run-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:jammy-run",
+        "docker.io/balenalib/nanopc-t4-ubuntu:jammy-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:jammy",
+        "docker.io/balenalib/nanopc-t4-ubuntu:latest-run-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:latest-run",
+        "docker.io/balenalib/nanopc-t4-ubuntu:latest-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:latest",
+        "docker.io/balenalib/nanopc-t4-ubuntu:run-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:run",
+        "docker.io/balenalib/nanopc-t4-ubuntu:20230911"
+      ]
+    },
+    "nanopc-t4-ubuntu-focal-build": {
+      "context": "device-base/nanopc-t4/ubuntu/focal/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopc-t4-ubuntu:focal-build-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:focal-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopc-t4-ubuntu:focal-build-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:focal-build"
+      ]
+    },
+    "nanopc-t4-ubuntu-focal-run": {
+      "context": "device-base/nanopc-t4/ubuntu/focal/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopc-t4-ubuntu:focal-run-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:focal-run",
+        "docker.io/balenalib/nanopc-t4-ubuntu:focal-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:focal"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopc-t4-ubuntu:focal-run-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:focal-run",
+        "docker.io/balenalib/nanopc-t4-ubuntu:focal-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:focal"
+      ]
+    },
+    "nanopc-t4-ubuntu-xenial-build": {
+      "context": "device-base/nanopc-t4/ubuntu/xenial/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopc-t4-ubuntu:xenial-build-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:xenial-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopc-t4-ubuntu:xenial-build-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:xenial-build"
+      ]
+    },
+    "nanopc-t4-ubuntu-xenial-run": {
+      "context": "device-base/nanopc-t4/ubuntu/xenial/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopc-t4-ubuntu:xenial-run-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:xenial-run",
+        "docker.io/balenalib/nanopc-t4-ubuntu:xenial-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:xenial"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopc-t4-ubuntu:xenial-run-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:xenial-run",
+        "docker.io/balenalib/nanopc-t4-ubuntu:xenial-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:xenial"
+      ]
+    },
+    "nanopc-t4-ubuntu-bionic-build": {
+      "context": "device-base/nanopc-t4/ubuntu/bionic/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopc-t4-ubuntu:bionic-build-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:bionic-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopc-t4-ubuntu:bionic-build-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:bionic-build"
+      ]
+    },
+    "nanopc-t4-ubuntu-bionic-run": {
+      "context": "device-base/nanopc-t4/ubuntu/bionic/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopc-t4-ubuntu:bionic-run-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:bionic-run",
+        "docker.io/balenalib/nanopc-t4-ubuntu:bionic-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:bionic"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopc-t4-ubuntu:bionic-run-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:bionic-run",
+        "docker.io/balenalib/nanopc-t4-ubuntu:bionic-20230911",
+        "docker.io/balenalib/nanopc-t4-ubuntu:bionic"
+      ]
+    }
+  }
+}

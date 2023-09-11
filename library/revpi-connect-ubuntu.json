@@ -1,0 +1,192 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "revpi-connect-ubuntu-lunar-build",
+        "revpi-connect-ubuntu-lunar-run",
+        "revpi-connect-ubuntu-jammy-build",
+        "revpi-connect-ubuntu-jammy-run",
+        "revpi-connect-ubuntu-focal-build",
+        "revpi-connect-ubuntu-focal-run",
+        "revpi-connect-ubuntu-xenial-build",
+        "revpi-connect-ubuntu-xenial-run",
+        "revpi-connect-ubuntu-bionic-build",
+        "revpi-connect-ubuntu-bionic-run"
+      ]
+    }
+  },
+  "target": {
+    "revpi-connect-ubuntu-lunar-build": {
+      "context": "device-base/revpi-connect/ubuntu/lunar/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/revpi-connect-ubuntu:lunar-build-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:lunar-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/revpi-connect-ubuntu:lunar-build-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:lunar-build"
+      ]
+    },
+    "revpi-connect-ubuntu-lunar-run": {
+      "context": "device-base/revpi-connect/ubuntu/lunar/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/revpi-connect-ubuntu:lunar-run-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:lunar-run",
+        "docker.io/balenalib/revpi-connect-ubuntu:lunar-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:lunar"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/revpi-connect-ubuntu:lunar-run-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:lunar-run",
+        "docker.io/balenalib/revpi-connect-ubuntu:lunar-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:lunar"
+      ]
+    },
+    "revpi-connect-ubuntu-jammy-build": {
+      "context": "device-base/revpi-connect/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/revpi-connect-ubuntu:jammy-build-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:jammy-build",
+        "docker.io/balenalib/revpi-connect-ubuntu:latest-build-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:latest-build",
+        "docker.io/balenalib/revpi-connect-ubuntu:build-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/revpi-connect-ubuntu:jammy-build-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:jammy-build",
+        "docker.io/balenalib/revpi-connect-ubuntu:latest-build-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:latest-build",
+        "docker.io/balenalib/revpi-connect-ubuntu:build-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:build"
+      ]
+    },
+    "revpi-connect-ubuntu-jammy-run": {
+      "context": "device-base/revpi-connect/ubuntu/jammy/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/revpi-connect-ubuntu:jammy-run-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:jammy-run",
+        "docker.io/balenalib/revpi-connect-ubuntu:jammy-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:jammy",
+        "docker.io/balenalib/revpi-connect-ubuntu:latest-run-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:latest-run",
+        "docker.io/balenalib/revpi-connect-ubuntu:latest-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:latest",
+        "docker.io/balenalib/revpi-connect-ubuntu:run-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:run",
+        "docker.io/balenalib/revpi-connect-ubuntu:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/revpi-connect-ubuntu:jammy-run-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:jammy-run",
+        "docker.io/balenalib/revpi-connect-ubuntu:jammy-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:jammy",
+        "docker.io/balenalib/revpi-connect-ubuntu:latest-run-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:latest-run",
+        "docker.io/balenalib/revpi-connect-ubuntu:latest-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:latest",
+        "docker.io/balenalib/revpi-connect-ubuntu:run-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:run",
+        "docker.io/balenalib/revpi-connect-ubuntu:20230911"
+      ]
+    },
+    "revpi-connect-ubuntu-focal-build": {
+      "context": "device-base/revpi-connect/ubuntu/focal/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/revpi-connect-ubuntu:focal-build-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:focal-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/revpi-connect-ubuntu:focal-build-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:focal-build"
+      ]
+    },
+    "revpi-connect-ubuntu-focal-run": {
+      "context": "device-base/revpi-connect/ubuntu/focal/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/revpi-connect-ubuntu:focal-run-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:focal-run",
+        "docker.io/balenalib/revpi-connect-ubuntu:focal-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:focal"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/revpi-connect-ubuntu:focal-run-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:focal-run",
+        "docker.io/balenalib/revpi-connect-ubuntu:focal-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:focal"
+      ]
+    },
+    "revpi-connect-ubuntu-xenial-build": {
+      "context": "device-base/revpi-connect/ubuntu/xenial/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/revpi-connect-ubuntu:xenial-build-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:xenial-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/revpi-connect-ubuntu:xenial-build-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:xenial-build"
+      ]
+    },
+    "revpi-connect-ubuntu-xenial-run": {
+      "context": "device-base/revpi-connect/ubuntu/xenial/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/revpi-connect-ubuntu:xenial-run-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:xenial-run",
+        "docker.io/balenalib/revpi-connect-ubuntu:xenial-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:xenial"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/revpi-connect-ubuntu:xenial-run-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:xenial-run",
+        "docker.io/balenalib/revpi-connect-ubuntu:xenial-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:xenial"
+      ]
+    },
+    "revpi-connect-ubuntu-bionic-build": {
+      "context": "device-base/revpi-connect/ubuntu/bionic/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/revpi-connect-ubuntu:bionic-build-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:bionic-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/revpi-connect-ubuntu:bionic-build-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:bionic-build"
+      ]
+    },
+    "revpi-connect-ubuntu-bionic-run": {
+      "context": "device-base/revpi-connect/ubuntu/bionic/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/revpi-connect-ubuntu:bionic-run-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:bionic-run",
+        "docker.io/balenalib/revpi-connect-ubuntu:bionic-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:bionic"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/revpi-connect-ubuntu:bionic-run-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:bionic-run",
+        "docker.io/balenalib/revpi-connect-ubuntu:bionic-20230911",
+        "docker.io/balenalib/revpi-connect-ubuntu:bionic"
+      ]
+    }
+  }
+}

@@ -1,0 +1,230 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "photon-nano-debian-buster-build",
+        "photon-nano-debian-buster-run",
+        "photon-nano-debian-bullseye-build",
+        "photon-nano-debian-bullseye-run",
+        "photon-nano-debian-bookworm-build",
+        "photon-nano-debian-bookworm-run",
+        "photon-nano-debian-sid-build",
+        "photon-nano-debian-sid-run"
+      ]
+    }
+  },
+  "target": {
+    "photon-nano-debian-buster-build": {
+      "context": "device-base/photon-nano/debian/buster/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/photon-nano-debian:buster-build-20230911",
+        "docker.io/balenalib/photon-nano-debian:buster-build",
+        "docker.io/balenalib/photon-nano:buster-build-20230911",
+        "docker.io/balenalib/photon-nano:buster-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/photon-nano-debian:buster-build-20230911",
+        "docker.io/balenalib/photon-nano-debian:buster-build",
+        "docker.io/balenalib/photon-nano:buster-build-20230911",
+        "docker.io/balenalib/photon-nano:buster-build"
+      ]
+    },
+    "photon-nano-debian-buster-run": {
+      "context": "device-base/photon-nano/debian/buster/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/photon-nano-debian:buster-run-20230911",
+        "docker.io/balenalib/photon-nano-debian:buster-run",
+        "docker.io/balenalib/photon-nano-debian:buster-20230911",
+        "docker.io/balenalib/photon-nano-debian:buster",
+        "docker.io/balenalib/photon-nano:buster-run-20230911",
+        "docker.io/balenalib/photon-nano:buster-run",
+        "docker.io/balenalib/photon-nano:buster-20230911",
+        "docker.io/balenalib/photon-nano:buster"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/photon-nano-debian:buster-run-20230911",
+        "docker.io/balenalib/photon-nano-debian:buster-run",
+        "docker.io/balenalib/photon-nano-debian:buster-20230911",
+        "docker.io/balenalib/photon-nano-debian:buster",
+        "docker.io/balenalib/photon-nano:buster-run-20230911",
+        "docker.io/balenalib/photon-nano:buster-run",
+        "docker.io/balenalib/photon-nano:buster-20230911",
+        "docker.io/balenalib/photon-nano:buster"
+      ]
+    },
+    "photon-nano-debian-bullseye-build": {
+      "context": "device-base/photon-nano/debian/bullseye/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/photon-nano-debian:bullseye-build-20230911",
+        "docker.io/balenalib/photon-nano-debian:bullseye-build",
+        "docker.io/balenalib/photon-nano-debian:latest-build-20230911",
+        "docker.io/balenalib/photon-nano-debian:latest-build",
+        "docker.io/balenalib/photon-nano-debian:build-20230911",
+        "docker.io/balenalib/photon-nano-debian:build",
+        "docker.io/balenalib/photon-nano:bullseye-build-20230911",
+        "docker.io/balenalib/photon-nano:bullseye-build",
+        "docker.io/balenalib/photon-nano:latest-build-20230911",
+        "docker.io/balenalib/photon-nano:latest-build",
+        "docker.io/balenalib/photon-nano:build-20230911",
+        "docker.io/balenalib/photon-nano:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/photon-nano-debian:bullseye-build-20230911",
+        "docker.io/balenalib/photon-nano-debian:bullseye-build",
+        "docker.io/balenalib/photon-nano-debian:latest-build-20230911",
+        "docker.io/balenalib/photon-nano-debian:latest-build",
+        "docker.io/balenalib/photon-nano-debian:build-20230911",
+        "docker.io/balenalib/photon-nano-debian:build",
+        "docker.io/balenalib/photon-nano:bullseye-build-20230911",
+        "docker.io/balenalib/photon-nano:bullseye-build",
+        "docker.io/balenalib/photon-nano:latest-build-20230911",
+        "docker.io/balenalib/photon-nano:latest-build",
+        "docker.io/balenalib/photon-nano:build-20230911",
+        "docker.io/balenalib/photon-nano:build"
+      ]
+    },
+    "photon-nano-debian-bullseye-run": {
+      "context": "device-base/photon-nano/debian/bullseye/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/photon-nano-debian:bullseye-run-20230911",
+        "docker.io/balenalib/photon-nano-debian:bullseye-run",
+        "docker.io/balenalib/photon-nano-debian:bullseye-20230911",
+        "docker.io/balenalib/photon-nano-debian:bullseye",
+        "docker.io/balenalib/photon-nano-debian:latest-run-20230911",
+        "docker.io/balenalib/photon-nano-debian:latest-run",
+        "docker.io/balenalib/photon-nano-debian:latest-20230911",
+        "docker.io/balenalib/photon-nano-debian:latest",
+        "docker.io/balenalib/photon-nano-debian:run-20230911",
+        "docker.io/balenalib/photon-nano-debian:run",
+        "docker.io/balenalib/photon-nano-debian:20230911",
+        "docker.io/balenalib/photon-nano:bullseye-run-20230911",
+        "docker.io/balenalib/photon-nano:bullseye-run",
+        "docker.io/balenalib/photon-nano:bullseye-20230911",
+        "docker.io/balenalib/photon-nano:bullseye",
+        "docker.io/balenalib/photon-nano:latest-run-20230911",
+        "docker.io/balenalib/photon-nano:latest-run",
+        "docker.io/balenalib/photon-nano:latest-20230911",
+        "docker.io/balenalib/photon-nano:latest",
+        "docker.io/balenalib/photon-nano:run-20230911",
+        "docker.io/balenalib/photon-nano:run",
+        "docker.io/balenalib/photon-nano:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/photon-nano-debian:bullseye-run-20230911",
+        "docker.io/balenalib/photon-nano-debian:bullseye-run",
+        "docker.io/balenalib/photon-nano-debian:bullseye-20230911",
+        "docker.io/balenalib/photon-nano-debian:bullseye",
+        "docker.io/balenalib/photon-nano-debian:latest-run-20230911",
+        "docker.io/balenalib/photon-nano-debian:latest-run",
+        "docker.io/balenalib/photon-nano-debian:latest-20230911",
+        "docker.io/balenalib/photon-nano-debian:latest",
+        "docker.io/balenalib/photon-nano-debian:run-20230911",
+        "docker.io/balenalib/photon-nano-debian:run",
+        "docker.io/balenalib/photon-nano-debian:20230911",
+        "docker.io/balenalib/photon-nano:bullseye-run-20230911",
+        "docker.io/balenalib/photon-nano:bullseye-run",
+        "docker.io/balenalib/photon-nano:bullseye-20230911",
+        "docker.io/balenalib/photon-nano:bullseye",
+        "docker.io/balenalib/photon-nano:latest-run-20230911",
+        "docker.io/balenalib/photon-nano:latest-run",
+        "docker.io/balenalib/photon-nano:latest-20230911",
+        "docker.io/balenalib/photon-nano:latest",
+        "docker.io/balenalib/photon-nano:run-20230911",
+        "docker.io/balenalib/photon-nano:run",
+        "docker.io/balenalib/photon-nano:20230911"
+      ]
+    },
+    "photon-nano-debian-bookworm-build": {
+      "context": "device-base/photon-nano/debian/bookworm/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/photon-nano-debian:bookworm-build-20230911",
+        "docker.io/balenalib/photon-nano-debian:bookworm-build",
+        "docker.io/balenalib/photon-nano:bookworm-build-20230911",
+        "docker.io/balenalib/photon-nano:bookworm-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/photon-nano-debian:bookworm-build-20230911",
+        "docker.io/balenalib/photon-nano-debian:bookworm-build",
+        "docker.io/balenalib/photon-nano:bookworm-build-20230911",
+        "docker.io/balenalib/photon-nano:bookworm-build"
+      ]
+    },
+    "photon-nano-debian-bookworm-run": {
+      "context": "device-base/photon-nano/debian/bookworm/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/photon-nano-debian:bookworm-run-20230911",
+        "docker.io/balenalib/photon-nano-debian:bookworm-run",
+        "docker.io/balenalib/photon-nano-debian:bookworm-20230911",
+        "docker.io/balenalib/photon-nano-debian:bookworm",
+        "docker.io/balenalib/photon-nano:bookworm-run-20230911",
+        "docker.io/balenalib/photon-nano:bookworm-run",
+        "docker.io/balenalib/photon-nano:bookworm-20230911",
+        "docker.io/balenalib/photon-nano:bookworm"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/photon-nano-debian:bookworm-run-20230911",
+        "docker.io/balenalib/photon-nano-debian:bookworm-run",
+        "docker.io/balenalib/photon-nano-debian:bookworm-20230911",
+        "docker.io/balenalib/photon-nano-debian:bookworm",
+        "docker.io/balenalib/photon-nano:bookworm-run-20230911",
+        "docker.io/balenalib/photon-nano:bookworm-run",
+        "docker.io/balenalib/photon-nano:bookworm-20230911",
+        "docker.io/balenalib/photon-nano:bookworm"
+      ]
+    },
+    "photon-nano-debian-sid-build": {
+      "context": "device-base/photon-nano/debian/sid/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/photon-nano-debian:sid-build-20230911",
+        "docker.io/balenalib/photon-nano-debian:sid-build",
+        "docker.io/balenalib/photon-nano:sid-build-20230911",
+        "docker.io/balenalib/photon-nano:sid-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/photon-nano-debian:sid-build-20230911",
+        "docker.io/balenalib/photon-nano-debian:sid-build",
+        "docker.io/balenalib/photon-nano:sid-build-20230911",
+        "docker.io/balenalib/photon-nano:sid-build"
+      ]
+    },
+    "photon-nano-debian-sid-run": {
+      "context": "device-base/photon-nano/debian/sid/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/photon-nano-debian:sid-run-20230911",
+        "docker.io/balenalib/photon-nano-debian:sid-run",
+        "docker.io/balenalib/photon-nano-debian:sid-20230911",
+        "docker.io/balenalib/photon-nano-debian:sid",
+        "docker.io/balenalib/photon-nano:sid-run-20230911",
+        "docker.io/balenalib/photon-nano:sid-run",
+        "docker.io/balenalib/photon-nano:sid-20230911",
+        "docker.io/balenalib/photon-nano:sid"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/photon-nano-debian:sid-run-20230911",
+        "docker.io/balenalib/photon-nano-debian:sid-run",
+        "docker.io/balenalib/photon-nano-debian:sid-20230911",
+        "docker.io/balenalib/photon-nano-debian:sid",
+        "docker.io/balenalib/photon-nano:sid-run-20230911",
+        "docker.io/balenalib/photon-nano:sid-run",
+        "docker.io/balenalib/photon-nano:sid-20230911",
+        "docker.io/balenalib/photon-nano:sid"
+      ]
+    }
+  }
+}

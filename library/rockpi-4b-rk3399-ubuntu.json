@@ -1,0 +1,192 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "rockpi-4b-rk3399-ubuntu-lunar-build",
+        "rockpi-4b-rk3399-ubuntu-lunar-run",
+        "rockpi-4b-rk3399-ubuntu-jammy-build",
+        "rockpi-4b-rk3399-ubuntu-jammy-run",
+        "rockpi-4b-rk3399-ubuntu-focal-build",
+        "rockpi-4b-rk3399-ubuntu-focal-run",
+        "rockpi-4b-rk3399-ubuntu-xenial-build",
+        "rockpi-4b-rk3399-ubuntu-xenial-run",
+        "rockpi-4b-rk3399-ubuntu-bionic-build",
+        "rockpi-4b-rk3399-ubuntu-bionic-run"
+      ]
+    }
+  },
+  "target": {
+    "rockpi-4b-rk3399-ubuntu-lunar-build": {
+      "context": "device-base/rockpi-4b-rk3399/ubuntu/lunar/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:lunar-build-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:lunar-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:lunar-build-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:lunar-build"
+      ]
+    },
+    "rockpi-4b-rk3399-ubuntu-lunar-run": {
+      "context": "device-base/rockpi-4b-rk3399/ubuntu/lunar/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:lunar-run-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:lunar-run",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:lunar-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:lunar"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:lunar-run-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:lunar-run",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:lunar-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:lunar"
+      ]
+    },
+    "rockpi-4b-rk3399-ubuntu-jammy-build": {
+      "context": "device-base/rockpi-4b-rk3399/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:jammy-build-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:jammy-build",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:latest-build-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:latest-build",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:build-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:jammy-build-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:jammy-build",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:latest-build-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:latest-build",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:build-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:build"
+      ]
+    },
+    "rockpi-4b-rk3399-ubuntu-jammy-run": {
+      "context": "device-base/rockpi-4b-rk3399/ubuntu/jammy/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:jammy-run-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:jammy-run",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:jammy-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:jammy",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:latest-run-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:latest-run",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:latest-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:latest",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:run-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:run",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:20230911"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:jammy-run-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:jammy-run",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:jammy-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:jammy",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:latest-run-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:latest-run",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:latest-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:latest",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:run-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:run",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:20230911"
+      ]
+    },
+    "rockpi-4b-rk3399-ubuntu-focal-build": {
+      "context": "device-base/rockpi-4b-rk3399/ubuntu/focal/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:focal-build-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:focal-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:focal-build-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:focal-build"
+      ]
+    },
+    "rockpi-4b-rk3399-ubuntu-focal-run": {
+      "context": "device-base/rockpi-4b-rk3399/ubuntu/focal/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:focal-run-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:focal-run",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:focal-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:focal"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:focal-run-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:focal-run",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:focal-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:focal"
+      ]
+    },
+    "rockpi-4b-rk3399-ubuntu-xenial-build": {
+      "context": "device-base/rockpi-4b-rk3399/ubuntu/xenial/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:xenial-build-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:xenial-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:xenial-build-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:xenial-build"
+      ]
+    },
+    "rockpi-4b-rk3399-ubuntu-xenial-run": {
+      "context": "device-base/rockpi-4b-rk3399/ubuntu/xenial/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:xenial-run-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:xenial-run",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:xenial-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:xenial"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:xenial-run-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:xenial-run",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:xenial-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:xenial"
+      ]
+    },
+    "rockpi-4b-rk3399-ubuntu-bionic-build": {
+      "context": "device-base/rockpi-4b-rk3399/ubuntu/bionic/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:bionic-build-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:bionic-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:bionic-build-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:bionic-build"
+      ]
+    },
+    "rockpi-4b-rk3399-ubuntu-bionic-run": {
+      "context": "device-base/rockpi-4b-rk3399/ubuntu/bionic/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:bionic-run-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:bionic-run",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:bionic-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:bionic"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:bionic-run-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:bionic-run",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:bionic-20230911",
+        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:bionic"
+      ]
+    }
+  }
+}
