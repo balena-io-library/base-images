@@ -1,9 +1,5 @@
 name: bake-aarch64-alpine
 'on':
-  pull_request:
-    branches:
-      - main
-      - master
   workflow_dispatch:
     inputs:
       no-push:
@@ -12,7 +8,7 @@ name: bake-aarch64-alpine
         type: boolean
         default: false
   schedule:
-    - cron: 29 14 5 * *
+    - cron: 31 10 6 * *
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true

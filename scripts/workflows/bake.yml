@@ -1,14 +1,6 @@
 name: bake
 
 "on":
-  pull_request:
-    branches:
-      - main
-      - master
-  workflow_run:
-    workflows: []
-    types:
-      - completed
   workflow_dispatch:
     inputs:
       no-push:

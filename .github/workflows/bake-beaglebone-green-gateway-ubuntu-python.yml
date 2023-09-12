@@ -1,10 +1,5 @@
 name: bake-beaglebone-green-gateway-ubuntu-python
 'on':
-  workflow_run:
-    workflows:
-      - bake-beaglebone-green-gateway-ubuntu
-    types:
-      - completed
   workflow_dispatch:
     inputs:
       no-push:
@@ -12,6 +7,11 @@ name: bake-beaglebone-green-gateway-ubuntu-python
         required: false
         type: boolean
         default: false
+  workflow_run:
+    workflows:
+      - bake-beaglebone-green-gateway-ubuntu
+    types:
+      - completed
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true

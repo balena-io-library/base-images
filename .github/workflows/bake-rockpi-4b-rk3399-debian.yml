@@ -1,10 +1,5 @@
 name: bake-rockpi-4b-rk3399-debian
 'on':
-  workflow_run:
-    workflows:
-      - bake-aarch64-debian
-    types:
-      - completed
   workflow_dispatch:
     inputs:
       no-push:
@@ -12,6 +7,11 @@ name: bake-rockpi-4b-rk3399-debian
         required: false
         type: boolean
         default: false
+  workflow_run:
+    workflows:
+      - bake-aarch64-debian
+    types:
+      - completed
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true

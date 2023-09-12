@@ -1,10 +1,5 @@
 name: bake-raspberrypi4-unipi-neuron-debian-node
 'on':
-  workflow_run:
-    workflows:
-      - bake-raspberrypi4-unipi-neuron-debian
-    types:
-      - completed
   workflow_dispatch:
     inputs:
       no-push:
@@ -12,6 +7,11 @@ name: bake-raspberrypi4-unipi-neuron-debian-node
         required: false
         type: boolean
         default: false
+  workflow_run:
+    workflows:
+      - bake-raspberrypi4-unipi-neuron-debian
+    types:
+      - completed
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true

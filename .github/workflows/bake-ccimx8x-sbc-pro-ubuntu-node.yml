@@ -1,10 +1,5 @@
 name: bake-ccimx8x-sbc-pro-ubuntu-node
 'on':
-  workflow_run:
-    workflows:
-      - bake-ccimx8x-sbc-pro-ubuntu
-    types:
-      - completed
   workflow_dispatch:
     inputs:
       no-push:
@@ -12,6 +7,11 @@ name: bake-ccimx8x-sbc-pro-ubuntu-node
         required: false
         type: boolean
         default: false
+  workflow_run:
+    workflows:
+      - bake-ccimx8x-sbc-pro-ubuntu
+    types:
+      - completed
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true

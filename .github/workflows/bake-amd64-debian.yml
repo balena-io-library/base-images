@@ -1,9 +1,5 @@
 name: bake-amd64-debian
 'on':
-  pull_request:
-    branches:
-      - main
-      - master
   workflow_dispatch:
     inputs:
       no-push:
@@ -12,7 +8,7 @@ name: bake-amd64-debian
         type: boolean
         default: false
   schedule:
-    - cron: 24 20 5 * *
+    - cron: 24 4 2 * *
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true
