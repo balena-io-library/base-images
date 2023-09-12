@@ -14,7 +14,7 @@
 		".github/workflows/bake-*.yml"
 	],
 	"github-actions": {
-		"fileMatch": ["scripts/workflows/*.yml"]
+		"fileMatch": ["^scripts/workflows/.*\\.yml"]
 	},
 	"packageRules": [
 		{
