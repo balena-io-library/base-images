@@ -10,24 +10,11 @@
 		"**/test/**",
 		"**/tests//**",
 		"**/__fixtures__/**",
-		"**/balena-base-images/**",
+		"balena-base-images/**",
+    "library/**",
 		".github/workflows/bake-*.yml"
 	],
 	"github-actions": {
 		"fileMatch": ["^scripts/workflows/.*\\.yml"]
-	},
-	"packageRules": [
-		{
-			"matchPackagePatterns": ["*"],
-			"postUpgradeTasks": {
-				"commands": ["npm ci", "npm run all", "npm run all-lib"],
-				"fileFilters": [
-					"balena-base-images/*",
-					"library/*",
-					".github/workflows/*"
-				],
-				"executionMode": "update"
-			}
-		}
-	]
+	}
 }
