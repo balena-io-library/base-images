@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.1 - 2023-09-13
+
+* Pin ad-m/github-push-action action to 40bf560 [Self-hosted Renovate Bot]
+
 ## 2.8.0 - 2023-09-13
 
 * Revert to publish - finalize workflow on PRs [Kyle Harding]
