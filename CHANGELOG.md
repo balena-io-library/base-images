@@ -5,6 +5,17 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.0 - 2023-09-13
+
+* Revert to publish - finalize workflow on PRs [Kyle Harding]
+* Pin dependencies [Self-hosted Renovate Bot]
+* Remove the renovate post upgrade cmds as they take too long [Kyle Harding]
+* Update renovate github actions filematch [Kyle Harding]
+* Generate all dockerfile and libraries on Renovate PRs [Kyle Harding]
+* Disable bake jobs on PRs [Kyle Harding]
+* Delete docs/balenalib-base-images-reference.md [Kyle Harding]
+* Generate docker bake files instead of bashbrew libraries [Kyle Harding]
+
 ## 2.7.2 - 2023-09-08
 
 * Update tibdex/github-app-token action to v1.9.0 [Self-hosted Renovate Bot]

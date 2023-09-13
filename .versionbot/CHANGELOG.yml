@@ -1,4 +1,100 @@
 - commits:
+    - subject: Revert to publish - finalize workflow on PRs
+      hash: e25f4d5d37d870c987f87a571ac74636da46df7b
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Kyle Harding <kyle@balena.io>
+        signed-off-by: Kyle Harding <kyle@balena.io>
+      author: Kyle Harding
+      nested: []
+    - subject: Pin dependencies
+      hash: 35ea50b97d2c179cc7b48acb34078337aa5fe1d2
+      body: |
+        Update actions/checkout
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested: []
+    - subject: Remove the renovate post upgrade cmds as they take too long
+      hash: 25ed6911e9635bb9f65c4e741b87b57536199b29
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Kyle Harding <kyle@balena.io>
+        signed-off-by: Kyle Harding <kyle@balena.io>
+      author: Kyle Harding
+      nested: []
+    - subject: Update renovate github actions filematch
+      hash: 344df89dc0fdd77f100e199d7552557b7fe2761f
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Kyle Harding <kyle@balena.io>
+        signed-off-by: Kyle Harding <kyle@balena.io>
+      author: Kyle Harding
+      nested: []
+    - subject: Generate all dockerfile and libraries on Renovate PRs
+      hash: e14400cd8a193d411914ad424ebc060b26288602
+      body: |
+        Renovate is one of the few apps with permissions to update
+        workflow files, so it is best suited to generate all workflows
+        as a postUpgradeCommand.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Kyle Harding <kyle@balena.io>
+        signed-off-by: Kyle Harding <kyle@balena.io>
+      author: Kyle Harding
+      nested: []
+    - subject: Disable bake jobs on PRs
+      hash: 6614ee523383754057dd5516d438ae16a69b91a0
+      body: |
+        These jobs were only added to PRs for testing, but it tends
+        to overwhelm the github actions queue.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Kyle Harding <kyle@balena.io>
+        signed-off-by: Kyle Harding <kyle@balena.io>
+      author: Kyle Harding
+      nested: []
+    - subject: Delete docs/balenalib-base-images-reference.md
+      hash: 5842c4b851c567b3f1d6c83ac99dc39abcea68fd
+      body: |
+        This file is 4 years out-of-date and the current docs are
+        auto-generated via the SDK.
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Kyle Harding
+      nested: []
+    - subject: Generate docker bake files instead of bashbrew libraries
+      hash: 22b3d2406abc4432c077c63899260f4549e4d400
+      body: |
+        GitHub actions build matrices are limited to 256 jobs
+        so we can't have over 2k jobs in one workflow.
+
+        Instead, create a new github workflow for every base library
+        and create a matrix for each active tag variant.
+
+        This should allow infinite scaling of devices rather
+        than single workflows that are limited in length, and matrix size.
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Kyle Harding <kyle@balena.io>
+        signed-off-by: Kyle Harding <kyle@balena.io>
+      author: Kyle Harding
+      nested: []
+  version: 2.8.0
+  title: ""
+  date: 2023-09-13T16:10:35.359Z
+- commits:
     - subject: Update tibdex/github-app-token action to v1.9.0
       hash: 603d41c4436e56ce33ddcc0aa2d8840b9b0af084
       body: |
