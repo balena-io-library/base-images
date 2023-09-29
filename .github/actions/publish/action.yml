@@ -46,15 +46,20 @@ runs:
       shell: bash
       run: npm run all
 
-    - name: Generate libraries
-      if: steps.should_publish.outputs.result == 'true'
-      shell: bash
-      run: npm run all-lib
-
     - name: Generate docs
       if: steps.should_publish.outputs.result == 'true'
       shell: bash
       run: npm run all-dockerhub
+
+    - name: Generate bakefiles
+      if: steps.should_publish.outputs.result == 'true'
+      shell: bash
+      run: npm run all-lib
+
+    - name: Generate workflows
+      if: steps.should_publish.outputs.result == 'true'
+      shell: bash
+      run: npm run all-workflows
 
     - name: Commit and create patch
       if: steps.should_publish.outputs.result == 'true'
