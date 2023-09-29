@@ -4,13 +4,13 @@ selector:
   arch.sw: 1
   sw.stack-variant: 1
 output:
-  filename: "bake-{{this.children.hw.device-type.slug}}.yml"
+  filename: "bake-{{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}.yml"
   imageName: "{{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}"
   type: os-device
   slug: "{{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}:{{this.children.sw.os.version}}"
   path: ""
   workflow:
-    name: Bake {{this.children.hw.device-type.slug}}
+    name: Bake {{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}
     "on":
       workflow_run:
         workflows:

@@ -3,16 +3,16 @@ selector:
   arch.sw: 1
   sw.stack-variant: 1
 output:
-  filename: "bake-{{this.children.arch.sw.slug}}.yml"
+  filename: "bake-{{this.children.arch.sw.slug}}-{{this.children.sw.os.slug}}.yml"
   imageName: "{{this.children.arch.sw.slug}}-{{this.children.sw.os.slug}}"
   type: os-arch
   slug: "{{this.children.arch.sw.slug}}-{{this.children.sw.os.slug}}:{{this.children.sw.os.version}}"
   path: ""
   workflow:
-    name: Bake {{this.children.arch.sw.slug}}
+    name: Bake {{this.children.arch.sw.slug}}-{{this.children.sw.os.slug}}
     "on":
       schedule:
-        - cron: "11 2 2 * *"
+        - cron: "1 2 3 * *"
     jobs:
       prepare:
         name: Prepare {{this.children.arch.sw.slug}}-{{this.children.sw.os.slug}}

@@ -4,7 +4,7 @@ selector:
   sw.stack-variant: 1
   arch.sw: 1
 output:
-  filename: "bake-{{this.children.arch.sw.slug}}.yml"
+  filename: "bake-{{this.children.arch.sw.slug}}-{{this.children.sw.os.slug}}.yml"
   imageName: "{{this.children.arch.sw.slug}}-{{this.children.sw.os.slug}}-{{this.children.sw.stack.slug}}"
   type: stack-arch
   slug: "{{this.children.arch.sw.slug}}-{{this.children.sw.os.slug}}-{{this.children.sw.stack.slug}}:{{this.children.sw.stack.version}}-{{this.children.sw.os.version}}"
