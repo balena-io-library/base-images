@@ -13,9 +13,6 @@ concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true
 
-env:
-  LIBRARY: ""
-
 jobs:
   prepare:
     name: Prepare matrix
@@ -50,7 +47,7 @@ jobs:
       # max-parallel: 20
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.*.outputs.bake-targets) }}
 
     steps:
 
@@ -78,7 +75,7 @@ jobs:
       # https://github.com/docker/login-action
       - name: Login to DockerHub
         uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc # v2
-        if: ${{ inputs.no-push != true && github.event_name != 'pull_request' }}
+        if: inputs.no-push != true
         with:
           registry: docker.io
           username: ${{ secrets.BALENAIMAGES_USER }}
@@ -92,5 +89,5 @@ jobs:
           workdir: balena-base-images
           files: ${{ github.workspace }}/${{ env.LIBRARY }}
           targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true && github.event_name != 'pull_request' }}
+          push: ${{ inputs.no-push != true }}
           provenance: false

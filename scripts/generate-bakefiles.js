@@ -179,48 +179,6 @@ function generateBakeFile(context, tags) {
 	fs.writeFileSync(destination, JSON.stringify(mergedData, null, 2));
 }
 
-const workflowFileCreated = [];
-function generateWorkflowFile(library, needs = []) {
-	// bail out if workflow was already created for this library on this run
-	if (workflowFileCreated.indexOf(library) > -1) {
-		return;
-	}
-
-	const workflow = JSON.parse(JSON.stringify(workflowTemplate));
-
-	function getRandomInt(min, max) {
-		min = Math.ceil(min);
-		max = Math.floor(max);
-		return Math.floor(Math.random() * (max - min + 1)) + min;
-	}
-
-	if (needs.length > 0) {
-		workflow.on.workflow_run = {
-			workflows: needs,
-			types: ['completed'],
-		};
-		delete workflow.on.schedule;
-		delete workflow.on.pull_request;
-	} else {
-		delete workflow.on.workflow_run;
-		// generate a random cron definition to avoid ~3k workflows / ~40k jobs queued at once
-		// 0-59 minutes, 0-23 hours, 1-7 days of the month (first week)
-		const cronDefinition = `${getRandomInt(0, 59)} ${getRandomInt(
-			0,
-			23,
-		)} ${getRandomInt(1, 7)} * *`;
-		workflow.on.schedule = [{ cron: cronDefinition }];
-	}
-
-	workflow.name = `bake-${library}`;
-	workflow.env.LIBRARY = path.join('library', library + '.json');
-
-	const destination = path.join(WORKFLOWS_PATH, `bake-${library}.yml`);
-
-	fs.writeFileSync(destination, yaml.dump(workflow));
-	workflowFileCreated.push(library);
-}
-
 async function generateOsArchLibrary(context) {
 	const osVersions = [context.children.sw.os.version];
 	if (context.children.sw.os.version === context.children.sw.os.data.latest) {
@@ -327,12 +285,6 @@ const BLUEPRINT_PATHS = {
 	'stack-arch': path.join(__dirname, 'blueprints/stack-arch.yaml'),
 };
 const CONTRACTS_PATH = path.join(__dirname, 'contracts/contracts');
-const WORKFLOWS_PATH = path.join(__dirname, '../.github/workflows');
-
-const workflowTemplateFile = path.join(__dirname, 'workflows', 'bake.yml');
-const workflowTemplate = yaml.load(
-	fs.readFileSync(workflowTemplateFile, 'utf8'),
-);
 
 // Find and build all contracts from the contracts/ directory
 const allContracts = require('require-all')({
@@ -454,28 +406,6 @@ if (types.indexOf('all') > -1) {
 				if (type === 'stack-device' || type === 'stack-arch') {
 					await generateStackLibrary(json);
 				}
-
-				const needsLibrary = [];
-
-				if (type === 'os-device' || type === 'stack-arch') {
-					needsLibrary.push(
-						['bake', json.children.arch.sw.slug, json.children.sw.os.slug].join(
-							'-',
-						),
-					);
-				}
-
-				if (type === 'stack-device') {
-					needsLibrary.push(
-						[
-							'bake',
-							json.children.hw['device-type'].slug,
-							json.children.sw.os.slug,
-						].join('-'),
-					);
-				}
-
-				generateWorkflowFile(json.imageName, needsLibrary);
 
 				count++;
 			});

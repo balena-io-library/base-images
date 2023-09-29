@@ -1,0 +1,30 @@
+selector:
+  sw.os: 1
+  hw.device-type: 1
+  arch.sw: 1
+  sw.stack-variant: 1
+output:
+  filename: "bake-{{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}.yml"
+  imageName: "{{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}"
+  type: os-device
+  slug: "{{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}:{{this.children.sw.os.version}}"
+  path: ""
+  workflow:
+    name: Bake {{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}
+    "on":
+      workflow_run:
+        workflows:
+          - Bake {{this.children.arch.sw.slug}}
+        types:
+          - completed
+    jobs:
+      prepare:
+        name: Prepare {{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}
+        env:
+          LIBRARY: library/{{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}.json
+      bake:
+        name: Bake {{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}
+        needs:
+          - prepare-{{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}
+        env:
+          LIBRARY: library/{{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}.json
