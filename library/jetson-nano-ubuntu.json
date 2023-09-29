@@ -21,11 +21,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-nano-ubuntu:lunar-build-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:lunar-build-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:lunar-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-nano-ubuntu:lunar-build-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:lunar-build-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:lunar-build"
       ]
     },
@@ -34,15 +34,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-nano-ubuntu:lunar-run-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:lunar-run-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:lunar-run",
-        "docker.io/balenalib/jetson-nano-ubuntu:lunar-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:lunar-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:lunar"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-nano-ubuntu:lunar-run-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:lunar-run-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:lunar-run",
-        "docker.io/balenalib/jetson-nano-ubuntu:lunar-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:lunar-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:lunar"
       ]
     },
@@ -51,19 +51,19 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-nano-ubuntu:jammy-build-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:jammy-build-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:jammy-build",
-        "docker.io/balenalib/jetson-nano-ubuntu:latest-build-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:latest-build-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:latest-build",
-        "docker.io/balenalib/jetson-nano-ubuntu:build-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:build-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-nano-ubuntu:jammy-build-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:jammy-build-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:jammy-build",
-        "docker.io/balenalib/jetson-nano-ubuntu:latest-build-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:latest-build-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:latest-build",
-        "docker.io/balenalib/jetson-nano-ubuntu:build-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:build-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:build"
       ]
     },
@@ -72,30 +72,30 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-nano-ubuntu:jammy-run-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:jammy-run-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:jammy-run",
-        "docker.io/balenalib/jetson-nano-ubuntu:jammy-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:jammy-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:jammy",
-        "docker.io/balenalib/jetson-nano-ubuntu:latest-run-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:latest-run-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:latest-run",
-        "docker.io/balenalib/jetson-nano-ubuntu:latest-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:latest-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:latest",
-        "docker.io/balenalib/jetson-nano-ubuntu:run-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:run-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:run",
-        "docker.io/balenalib/jetson-nano-ubuntu:20230911"
+        "docker.io/balenalib/jetson-nano-ubuntu:20230929"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-nano-ubuntu:jammy-run-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:jammy-run-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:jammy-run",
-        "docker.io/balenalib/jetson-nano-ubuntu:jammy-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:jammy-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:jammy",
-        "docker.io/balenalib/jetson-nano-ubuntu:latest-run-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:latest-run-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:latest-run",
-        "docker.io/balenalib/jetson-nano-ubuntu:latest-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:latest-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:latest",
-        "docker.io/balenalib/jetson-nano-ubuntu:run-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:run-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:run",
-        "docker.io/balenalib/jetson-nano-ubuntu:20230911"
+        "docker.io/balenalib/jetson-nano-ubuntu:20230929"
       ]
     },
     "jetson-nano-ubuntu-focal-build": {
@@ -103,11 +103,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-nano-ubuntu:focal-build-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:focal-build-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:focal-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-nano-ubuntu:focal-build-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:focal-build-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:focal-build"
       ]
     },
@@ -116,15 +116,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-nano-ubuntu:focal-run-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:focal-run-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:focal-run",
-        "docker.io/balenalib/jetson-nano-ubuntu:focal-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:focal-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:focal"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-nano-ubuntu:focal-run-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:focal-run-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:focal-run",
-        "docker.io/balenalib/jetson-nano-ubuntu:focal-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:focal-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:focal"
       ]
     },
@@ -133,11 +133,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-nano-ubuntu:xenial-build-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:xenial-build-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:xenial-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-nano-ubuntu:xenial-build-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:xenial-build-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:xenial-build"
       ]
     },
@@ -146,15 +146,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-nano-ubuntu:xenial-run-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:xenial-run-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:xenial-run",
-        "docker.io/balenalib/jetson-nano-ubuntu:xenial-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:xenial-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:xenial"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-nano-ubuntu:xenial-run-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:xenial-run-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:xenial-run",
-        "docker.io/balenalib/jetson-nano-ubuntu:xenial-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:xenial-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:xenial"
       ]
     },
@@ -163,11 +163,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-nano-ubuntu:bionic-build-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:bionic-build-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:bionic-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-nano-ubuntu:bionic-build-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:bionic-build-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:bionic-build"
       ]
     },
@@ -176,15 +176,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-nano-ubuntu:bionic-run-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:bionic-run-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:bionic-run",
-        "docker.io/balenalib/jetson-nano-ubuntu:bionic-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:bionic-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:bionic"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-nano-ubuntu:bionic-run-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:bionic-run-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:bionic-run",
-        "docker.io/balenalib/jetson-nano-ubuntu:bionic-20230911",
+        "docker.io/balenalib/jetson-nano-ubuntu:bionic-20230929",
         "docker.io/balenalib/jetson-nano-ubuntu:bionic"
       ]
     }
