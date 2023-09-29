@@ -22,7 +22,7 @@ runs:
         GH_REPO: "${{ github.repository }}"
         GH_TOKEN: "${{ fromJSON(inputs.secrets).GITHUB_TOKEN }}"
       run: |
-        if [[ $(gh pr diff ${{ github.event.pull_request.number }} --name-only) =~ ^scripts\/ ]]
+        if [[ $(gh pr diff ${{ github.event.pull_request.number }} --name-only) =~ scripts\/ ]]
         then
           echo "result=true" >> $GITHUB_OUTPUT 
         else
