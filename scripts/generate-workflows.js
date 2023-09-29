@@ -29,14 +29,10 @@ const balena = getSdk({
 	dataDirectory: false,
 });
 
-const workflowFileCreated = [];
-function generateWorkflowFile(library, needs = []) {
-	// bail out if workflow was already created for this library on this run
-	if (workflowFileCreated.indexOf(library) > -1) {
-		return;
-	}
-
-	const workflow = JSON.parse(JSON.stringify(workflowTemplate));
+const workflows = {};
+function addToWorkflow(dest, context) {
+	const template = JSON.parse(JSON.stringify(workflowTemplate));
+	const workflow = _.merge(workflows[dest] || template, context.workflow);
 
 	function getRandomInt(min, max) {
 		min = Math.ceil(min);
@@ -44,16 +40,8 @@ function generateWorkflowFile(library, needs = []) {
 		return Math.floor(Math.random() * (max - min + 1)) + min;
 	}
 
-	if (needs.length > 0) {
-		workflow.on.workflow_run = {
-			workflows: needs,
-			types: ['completed'],
-		};
-		delete workflow.on.schedule;
-		delete workflow.on.pull_request;
-	} else {
-		delete workflow.on.workflow_run;
-		// generate a random cron definition to avoid ~3k workflows / ~40k jobs queued at once
+	if (workflow.on.schedule) {
+		// generate a random cron definition to avoid 1000s of jobs queued at once
 		// 0-59 minutes, 0-23 hours, 1-7 days of the month (first week)
 		const cronDefinition = `${getRandomInt(0, 59)} ${getRandomInt(
 			0,
@@ -62,20 +50,34 @@ function generateWorkflowFile(library, needs = []) {
 		workflow.on.schedule = [{ cron: cronDefinition }];
 	}
 
-	workflow.name = `bake-${library}`;
-	workflow.env.LIBRARY = path.join('library', library + '.json');
+	const prepareJobSlug = `prepare-${context.imageName}`;
+	const bakeJobSlug = `bake-${context.imageName}`;
 
-	const destination = path.join(DEST_DIR, `bake-${library}.yml`);
+	if (context.workflow.jobs?.prepare) {
+		workflow.jobs[prepareJobSlug] = _.merge(
+			template.jobs.prepare,
+			context.workflow.jobs.prepare,
+		);
+	}
 
-	fs.writeFileSync(destination, yaml.dump(workflow));
-	workflowFileCreated.push(library);
+	if (context.workflow.jobs?.bake) {
+		workflow.jobs[bakeJobSlug] = _.merge(
+			template.jobs.bake,
+			context.workflow.jobs.bake,
+		);
+	}
+
+	workflows[dest] = workflow;
 }
 
 const BLUEPRINT_PATHS = {
-	'os-arch': path.join(__dirname, 'blueprints/os-arch.yaml'),
-	'os-device': path.join(__dirname, 'blueprints/os-device.yaml'),
-	'stack-device': path.join(__dirname, 'blueprints/stack-device.yaml'),
-	'stack-arch': path.join(__dirname, 'blueprints/stack-arch.yaml'),
+	'os-arch': path.join(__dirname, 'blueprints/workflows/os-arch.yaml'),
+	'os-device': path.join(__dirname, 'blueprints/workflows/os-device.yaml'),
+	'stack-device': path.join(
+		__dirname,
+		'blueprints/workflows/stack-device.yaml',
+	),
+	'stack-arch': path.join(__dirname, 'blueprints/workflows/stack-arch.yaml'),
 };
 const CONTRACTS_PATH = path.join(__dirname, 'contracts/contracts');
 const DEST_DIR = path.join(__dirname, '../.github/workflows');
@@ -198,27 +200,9 @@ if (types.indexOf('all') > -1) {
 
 				console.log(`Generating ${json.slug}`);
 
-				const needsLibrary = [];
+				const destination = path.join(DEST_DIR, json.path, json.filename);
 
-				if (type === 'os-device' || type === 'stack-arch') {
-					needsLibrary.push(
-						['bake', json.children.arch.sw.slug, json.children.sw.os.slug].join(
-							'-',
-						),
-					);
-				}
-
-				if (type === 'stack-device') {
-					needsLibrary.push(
-						[
-							'bake',
-							json.children.hw['device-type'].slug,
-							json.children.sw.os.slug,
-						].join('-'),
-					);
-				}
-
-				generateWorkflowFile(json.imageName, needsLibrary);
+				addToWorkflow(destination, json);
 
 				count++;
 			});
@@ -231,4 +215,18 @@ if (types.indexOf('all') > -1) {
 			console.log(`Adding generated ${count} contracts back to the universe`);
 		}),
 	);
+
+	const yamlOptions = {
+		noRefs: true, // Avoids creating anchors
+		lineWidth: 10000, // Set to a very large value to avoid wrapping lines
+	};
+
+	// Write workflows to disk
+	console.log('Writing workflows to disk');
+	for (const [dest, workflow] of Object.entries(workflows)) {
+		// delete the template jobs before writing to disk
+		delete workflow.jobs.prepare;
+		delete workflow.jobs.bake;
+		fs.writeFileSync(dest, yaml.dump(workflow, yamlOptions));
+	}
 })();

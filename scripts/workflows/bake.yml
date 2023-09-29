@@ -13,9 +13,6 @@ concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true
 
-env:
-  LIBRARY: ""
-
 jobs:
   prepare:
     name: Prepare matrix
@@ -50,7 +47,7 @@ jobs:
       # max-parallel: 20
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.*.outputs.bake-targets) }}
 
     steps:
 
