@@ -1,4 +1,4 @@
-name: bake-amd64-ubuntu
+name: Bake amd64-ubuntu
 'on':
   workflow_dispatch:
     inputs:
@@ -8,21 +8,19 @@ name: bake-amd64-ubuntu
         type: boolean
         default: false
   schedule:
-    - cron: 24 16 2 * *
+    - cron: 58 0 2 * *
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true
-env:
-  LIBRARY: library/amd64-ubuntu.json
 jobs:
-  prepare:
-    name: Prepare matrix
+  prepare-amd64-ubuntu:
+    name: Prepare amd64-ubuntu
     runs-on: ubuntu-latest
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
         with:
           fetch-depth: 1
       - name: Set matrix
@@ -31,18 +29,20 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake:
-    name: Bake images
+    env:
+      LIBRARY: library/amd64-ubuntu.json
+  bake-amd64-ubuntu:
+    name: Bake amd64-ubuntu
     runs-on: ubuntu-latest
     needs:
-      - prepare
+      - prepare-amd64-ubuntu
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.*.outputs.bake-targets) }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
         with:
           fetch-depth: 1
       - name: Setup QEMU
@@ -56,8 +56,8 @@ jobs:
           driver-opts: network=host
           install: true
       - name: Login to DockerHub
-        uses: docker/login-action@v2
-        if: ${{ inputs.no-push != true && github.event_name != 'pull_request' }}
+        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc
+        if: inputs.no-push != true
         with:
           registry: docker.io
           username: ${{ secrets.BALENAIMAGES_USER }}
@@ -69,5 +69,317 @@ jobs:
           workdir: balena-base-images
           files: ${{ github.workspace }}/${{ env.LIBRARY }}
           targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true && github.event_name != 'pull_request' }}
+          push: ${{ inputs.no-push != true }}
           provenance: false
+    env:
+      LIBRARY: library/amd64-ubuntu.json
+  prepare-amd64-ubuntu-dotnet:
+    name: Prepare amd64-ubuntu-dotnet
+    runs-on: ubuntu-latest
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        with:
+          fetch-depth: 1
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+    needs:
+      - bake-amd64-ubuntu
+    env:
+      LIBRARY: library/amd64-ubuntu-dotnet.json
+  bake-amd64-ubuntu-dotnet:
+    name: Bake amd64-ubuntu-dotnet
+    runs-on: ubuntu-latest
+    needs:
+      - prepare-amd64-ubuntu-dotnet
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.*.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        with:
+          fetch-depth: 1
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v6.2.0
+      - name: Setup buildx
+        uses: docker/setup-buildx-action@885d1462b80bc1c1c7f0b00334ad271f09369c55
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Login to DockerHub
+        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Docker bake
+        id: docker_bake
+        uses: docker/bake-action@f32f8b8d70bc284af19f8148dd14ad1d2fbc6c28
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+    env:
+      LIBRARY: library/amd64-ubuntu-dotnet.json
+  prepare-amd64-ubuntu-golang:
+    name: Prepare amd64-ubuntu-golang
+    runs-on: ubuntu-latest
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        with:
+          fetch-depth: 1
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+    needs:
+      - bake-amd64-ubuntu
+    env:
+      LIBRARY: library/amd64-ubuntu-golang.json
+  bake-amd64-ubuntu-golang:
+    name: Bake amd64-ubuntu-golang
+    runs-on: ubuntu-latest
+    needs:
+      - prepare-amd64-ubuntu-golang
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.*.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        with:
+          fetch-depth: 1
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v6.2.0
+      - name: Setup buildx
+        uses: docker/setup-buildx-action@885d1462b80bc1c1c7f0b00334ad271f09369c55
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Login to DockerHub
+        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Docker bake
+        id: docker_bake
+        uses: docker/bake-action@f32f8b8d70bc284af19f8148dd14ad1d2fbc6c28
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+    env:
+      LIBRARY: library/amd64-ubuntu-golang.json
+  prepare-amd64-ubuntu-node:
+    name: Prepare amd64-ubuntu-node
+    runs-on: ubuntu-latest
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        with:
+          fetch-depth: 1
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+    needs:
+      - bake-amd64-ubuntu
+    env:
+      LIBRARY: library/amd64-ubuntu-node.json
+  bake-amd64-ubuntu-node:
+    name: Bake amd64-ubuntu-node
+    runs-on: ubuntu-latest
+    needs:
+      - prepare-amd64-ubuntu-node
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.*.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        with:
+          fetch-depth: 1
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v6.2.0
+      - name: Setup buildx
+        uses: docker/setup-buildx-action@885d1462b80bc1c1c7f0b00334ad271f09369c55
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Login to DockerHub
+        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Docker bake
+        id: docker_bake
+        uses: docker/bake-action@f32f8b8d70bc284af19f8148dd14ad1d2fbc6c28
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+    env:
+      LIBRARY: library/amd64-ubuntu-node.json
+  prepare-amd64-ubuntu-python:
+    name: Prepare amd64-ubuntu-python
+    runs-on: ubuntu-latest
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        with:
+          fetch-depth: 1
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+    needs:
+      - bake-amd64-ubuntu
+    env:
+      LIBRARY: library/amd64-ubuntu-python.json
+  bake-amd64-ubuntu-python:
+    name: Bake amd64-ubuntu-python
+    runs-on: ubuntu-latest
+    needs:
+      - prepare-amd64-ubuntu-python
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.*.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        with:
+          fetch-depth: 1
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v6.2.0
+      - name: Setup buildx
+        uses: docker/setup-buildx-action@885d1462b80bc1c1c7f0b00334ad271f09369c55
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Login to DockerHub
+        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Docker bake
+        id: docker_bake
+        uses: docker/bake-action@f32f8b8d70bc284af19f8148dd14ad1d2fbc6c28
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+    env:
+      LIBRARY: library/amd64-ubuntu-python.json
+  prepare-amd64-ubuntu-openjdk:
+    name: Prepare amd64-ubuntu-openjdk
+    runs-on: ubuntu-latest
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        with:
+          fetch-depth: 1
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+    needs:
+      - bake-amd64-ubuntu
+    env:
+      LIBRARY: library/amd64-ubuntu-openjdk.json
+  bake-amd64-ubuntu-openjdk:
+    name: Bake amd64-ubuntu-openjdk
+    runs-on: ubuntu-latest
+    needs:
+      - prepare-amd64-ubuntu-openjdk
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.*.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        with:
+          fetch-depth: 1
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v6.2.0
+      - name: Setup buildx
+        uses: docker/setup-buildx-action@885d1462b80bc1c1c7f0b00334ad271f09369c55
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Login to DockerHub
+        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Docker bake
+        id: docker_bake
+        uses: docker/bake-action@f32f8b8d70bc284af19f8148dd14ad1d2fbc6c28
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+    env:
+      LIBRARY: library/amd64-ubuntu-openjdk.json

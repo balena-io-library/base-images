@@ -1,4 +1,4 @@
-name: bake-armv7hf-fedora
+name: Bake armv7hf-fedora
 'on':
   workflow_dispatch:
     inputs:
@@ -8,21 +8,19 @@ name: bake-armv7hf-fedora
         type: boolean
         default: false
   schedule:
-    - cron: 13 8 6 * *
+    - cron: 11 12 7 * *
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true
-env:
-  LIBRARY: library/armv7hf-fedora.json
 jobs:
-  prepare:
-    name: Prepare matrix
+  prepare-armv7hf-fedora:
+    name: Prepare armv7hf-fedora
     runs-on: ubuntu-latest
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
         with:
           fetch-depth: 1
       - name: Set matrix
@@ -31,18 +29,20 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake:
-    name: Bake images
+    env:
+      LIBRARY: library/armv7hf-fedora.json
+  bake-armv7hf-fedora:
+    name: Bake armv7hf-fedora
     runs-on: ubuntu-latest
     needs:
-      - prepare
+      - prepare-armv7hf-fedora
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.*.outputs.bake-targets) }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
         with:
           fetch-depth: 1
       - name: Setup QEMU
@@ -56,8 +56,8 @@ jobs:
           driver-opts: network=host
           install: true
       - name: Login to DockerHub
-        uses: docker/login-action@v2
-        if: ${{ inputs.no-push != true && github.event_name != 'pull_request' }}
+        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc
+        if: inputs.no-push != true
         with:
           registry: docker.io
           username: ${{ secrets.BALENAIMAGES_USER }}
@@ -69,5 +69,255 @@ jobs:
           workdir: balena-base-images
           files: ${{ github.workspace }}/${{ env.LIBRARY }}
           targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true && github.event_name != 'pull_request' }}
+          push: ${{ inputs.no-push != true }}
           provenance: false
+    env:
+      LIBRARY: library/armv7hf-fedora.json
+  prepare-armv7hf-fedora-golang:
+    name: Prepare armv7hf-fedora-golang
+    runs-on: ubuntu-latest
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        with:
+          fetch-depth: 1
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+    needs:
+      - bake-armv7hf-fedora
+    env:
+      LIBRARY: library/armv7hf-fedora-golang.json
+  bake-armv7hf-fedora-golang:
+    name: Bake armv7hf-fedora-golang
+    runs-on: ubuntu-latest
+    needs:
+      - prepare-armv7hf-fedora-golang
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.*.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        with:
+          fetch-depth: 1
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v6.2.0
+      - name: Setup buildx
+        uses: docker/setup-buildx-action@885d1462b80bc1c1c7f0b00334ad271f09369c55
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Login to DockerHub
+        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Docker bake
+        id: docker_bake
+        uses: docker/bake-action@f32f8b8d70bc284af19f8148dd14ad1d2fbc6c28
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+    env:
+      LIBRARY: library/armv7hf-fedora-golang.json
+  prepare-armv7hf-fedora-node:
+    name: Prepare armv7hf-fedora-node
+    runs-on: ubuntu-latest
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        with:
+          fetch-depth: 1
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+    needs:
+      - bake-armv7hf-fedora
+    env:
+      LIBRARY: library/armv7hf-fedora-node.json
+  bake-armv7hf-fedora-node:
+    name: Bake armv7hf-fedora-node
+    runs-on: ubuntu-latest
+    needs:
+      - prepare-armv7hf-fedora-node
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.*.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        with:
+          fetch-depth: 1
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v6.2.0
+      - name: Setup buildx
+        uses: docker/setup-buildx-action@885d1462b80bc1c1c7f0b00334ad271f09369c55
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Login to DockerHub
+        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Docker bake
+        id: docker_bake
+        uses: docker/bake-action@f32f8b8d70bc284af19f8148dd14ad1d2fbc6c28
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+    env:
+      LIBRARY: library/armv7hf-fedora-node.json
+  prepare-armv7hf-fedora-openjdk:
+    name: Prepare armv7hf-fedora-openjdk
+    runs-on: ubuntu-latest
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        with:
+          fetch-depth: 1
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+    needs:
+      - bake-armv7hf-fedora
+    env:
+      LIBRARY: library/armv7hf-fedora-openjdk.json
+  bake-armv7hf-fedora-openjdk:
+    name: Bake armv7hf-fedora-openjdk
+    runs-on: ubuntu-latest
+    needs:
+      - prepare-armv7hf-fedora-openjdk
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.*.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        with:
+          fetch-depth: 1
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v6.2.0
+      - name: Setup buildx
+        uses: docker/setup-buildx-action@885d1462b80bc1c1c7f0b00334ad271f09369c55
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Login to DockerHub
+        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Docker bake
+        id: docker_bake
+        uses: docker/bake-action@f32f8b8d70bc284af19f8148dd14ad1d2fbc6c28
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+    env:
+      LIBRARY: library/armv7hf-fedora-openjdk.json
+  prepare-armv7hf-fedora-python:
+    name: Prepare armv7hf-fedora-python
+    runs-on: ubuntu-latest
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        with:
+          fetch-depth: 1
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+    needs:
+      - bake-armv7hf-fedora
+    env:
+      LIBRARY: library/armv7hf-fedora-python.json
+  bake-armv7hf-fedora-python:
+    name: Bake armv7hf-fedora-python
+    runs-on: ubuntu-latest
+    needs:
+      - prepare-armv7hf-fedora-python
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.*.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        with:
+          fetch-depth: 1
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v6.2.0
+      - name: Setup buildx
+        uses: docker/setup-buildx-action@885d1462b80bc1c1c7f0b00334ad271f09369c55
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Login to DockerHub
+        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Docker bake
+        id: docker_bake
+        uses: docker/bake-action@f32f8b8d70bc284af19f8148dd14ad1d2fbc6c28
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+    env:
+      LIBRARY: library/armv7hf-fedora-python.json
