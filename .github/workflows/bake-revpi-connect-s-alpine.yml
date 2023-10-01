@@ -42,7 +42,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.*.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-revpi-connect-s-alpine.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
@@ -104,7 +104,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.*.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-revpi-connect-s-alpine-golang.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
@@ -166,7 +166,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.*.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-revpi-connect-s-alpine-node.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
@@ -228,7 +228,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.*.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-revpi-connect-s-alpine-openjdk.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
@@ -290,7 +290,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.*.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-revpi-connect-s-alpine-python.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
