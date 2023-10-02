@@ -42,7 +42,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.*.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-jetson-xavier-nx-devkit-seeed-2mic-hat-alpine.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
@@ -104,7 +104,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.*.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-jetson-xavier-nx-devkit-seeed-2mic-hat-alpine-golang.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
@@ -166,7 +166,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.*.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-jetson-xavier-nx-devkit-seeed-2mic-hat-alpine-node.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
@@ -228,7 +228,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.*.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-jetson-xavier-nx-devkit-seeed-2mic-hat-alpine-openjdk.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
@@ -290,7 +290,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.*.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-jetson-xavier-nx-devkit-seeed-2mic-hat-alpine-python.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608

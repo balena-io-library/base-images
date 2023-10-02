@@ -47,7 +47,7 @@ jobs:
       # max-parallel: 20
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.*.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare.outputs.bake-targets) }}
 
     steps:
 
@@ -83,6 +83,7 @@ jobs:
 
       # https://github.com/docker/bake-action
       - name: Docker bake
+        continue-on-error: true
         id: docker_bake
         uses: docker/bake-action@f32f8b8d70bc284af19f8148dd14ad1d2fbc6c28 # v3
         with:

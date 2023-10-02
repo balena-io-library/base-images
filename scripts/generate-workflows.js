@@ -65,6 +65,9 @@ function addToWorkflow(dest, context) {
 			template.jobs.bake,
 			context.workflow.jobs.bake,
 		);
+		workflow.jobs[
+			bakeJobSlug
+		].strategy.matrix.target = `\${{ fromJSON(needs.${prepareJobSlug}.outputs.bake-targets) }}`;
 	}
 
 	workflows[dest] = workflow;
