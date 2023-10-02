@@ -5,6 +5,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.4 - 2023-10-02
+
+* Enable continue on error for the bake step [Kyle Harding]
+* Fix parsing of targets matrix [Kyle Harding]
+
 ## 2.8.3 - 2023-10-02
 
 
