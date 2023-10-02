@@ -10,9 +10,21 @@ inputs:
   variables:
     description: "JSON stringified object containing all the variables from the calling workflow"
     required: true
+
 runs:
   using: "composite"
   steps:
+    # https://github.com/tibdex/github-app-token
+    - name: Generate GitHub App installation token
+      uses: tibdex/github-app-token@0914d50df753bbc42180d982a6550f195390069f # v2.0.0
+      id: gh_app_token
+      with:
+        app_id: ${{ vars.BALENALIB_BOT_APP_ID || '400994' }}
+        installation_retrieval_mode: organization
+        installation_retrieval_payload: ${{ github.event.repository.owner.login }}
+        private_key: ${{ secrets.BALENALIB_BOT_PRIVATE_KEY }}
+        repositories: >
+          ["${{ github.event.repository.name }}"]
 
     # https://github.com/dawidd6/action-download-artifact
     - name: Download patches from PR workflow
@@ -30,10 +42,12 @@ runs:
       if: steps.download_patches.outcome == 'success'
       shell: bash
       env:
-        GIT_AUTHOR_NAME: github-actions[bot]
-        GIT_AUTHOR_EMAIL: github-actions[bot]@users.noreply.github.com
-        GIT_COMMITTER_NAME: github-actions[bot]
-        GIT_COMMITTER_EMAIL: github-actions[bot]@users.noreply.github.com
+        # get the user id of the GitHub App
+        # gh api /users/balenalib-workflows%5Bbot%5D
+        GIT_AUTHOR_NAME: balenalib-workflows[bot]
+        GIT_AUTHOR_EMAIL: 146760701+balenalib-workflows[bot]@users.noreply.github.com
+        GIT_COMMITTER_NAME: balenalib-workflows[bot]
+        GIT_COMMITTER_EMAIL: 146760701+balenalib-workflows[bot]@users.noreply.github.com
       run: |
         git am -q ${{ runner.temp }}/patches/*.patch
 
@@ -42,6 +56,5 @@ runs:
       uses: ad-m/github-push-action@40bf560936a8022e68a3c00e7d2abefaf01305a6 # v0.6.0
       if: steps.download_patches.outcome == 'success'
       with:
-        # automatic github actions token should have permission to modify workflow files
-        github_token: ${{ fromJSON(inputs.secrets).GITHUB_TOKEN }}
+        github_token: ${{ steps.gh_app_token.outputs.token }}
         branch: ${{ github.ref }}
