@@ -26,7 +26,7 @@ runs:
         then
           echo "result=true" >> $GITHUB_OUTPUT 
         else
-          echo "result=false" >> $GITHUB_OUTPUT
+          echo "result=true" >> $GITHUB_OUTPUT
         fi
 
     # https://github.com/actions/setup-node
