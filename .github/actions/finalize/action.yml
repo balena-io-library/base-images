@@ -50,11 +50,13 @@ runs:
       with:
         fetch-depth: 1
         token: ${{ steps.gh_app_token.outputs.token }}
-        ref: ${{ github.ref }}
+        ref: ${{ github.head_ref }}
         persist-credentials: false
+        path: ${{ github.head_ref }}
 
     - name: Apply patches
       if: steps.download_patches.outcome == 'success'
+      working-directory: ${{ github.head_ref }}
       shell: bash
       env:
         # get the user id of the GitHub App
@@ -72,5 +74,6 @@ runs:
       if: steps.download_patches.outcome == 'success'
       with:
         github_token: ${{ steps.gh_app_token.outputs.token }}
-        branch: ${{ github.ref }}
-        force: true
+        branch: ${{ github.head_ref }}
+        directory: ${{ github.head_ref }}
+        force_with_lease: true
