@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.15 - 2023-10-03
+
+* Do not persist credentials when checking out master [Kyle Harding]
+
 ## 2.8.14 - 2023-10-03
 
 * Update docker/login-action action to v3 [Self-hosted Renovate Bot]
