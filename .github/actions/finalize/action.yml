@@ -51,6 +51,7 @@ runs:
         fetch-depth: 1
         token: ${{ steps.gh_app_token.outputs.token }}
         ref: ${{ github.ref }}
+        persist-credentials: false
 
     - name: Apply patches
       if: steps.download_patches.outcome == 'success'
