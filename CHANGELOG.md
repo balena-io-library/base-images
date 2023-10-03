@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.16 - 2023-10-03
+
+* Update docker/bake-action action to v4 [Self-hosted Renovate Bot]
+
 ## 2.8.15 - 2023-10-03
 
 * Do not persist credentials when checking out master [Kyle Harding]
