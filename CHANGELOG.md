@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.14 - 2023-10-03
+
+* Update docker/login-action action to v3 [Self-hosted Renovate Bot]
+
 ## 2.8.13 - 2023-10-03
 
 * Enable force push on finalize [Kyle Harding]
