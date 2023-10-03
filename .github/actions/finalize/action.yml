@@ -72,3 +72,4 @@ runs:
       with:
         github_token: ${{ steps.gh_app_token.outputs.token }}
         branch: ${{ github.ref }}
+        force: true
