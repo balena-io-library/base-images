@@ -14,18 +14,6 @@ inputs:
 runs:
   using: "composite"
   steps:
-    # https://github.com/tibdex/github-app-token
-    - name: Generate GitHub App installation token
-      uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a # v2.1.0
-      id: gh_app_token
-      with:
-        app_id: '400994'
-        installation_retrieval_mode: organization
-        installation_retrieval_payload: ${{ github.event.repository.owner.login }}
-        private_key: ${{ fromJSON(inputs.secrets).BALENALIB_BOT_PRIVATE_KEY }}
-        repositories: >
-          ["${{ github.event.repository.name }}"]
-
     # https://github.com/dawidd6/action-download-artifact
     - name: Download patches from PR workflow
       id: download_patches
@@ -37,6 +25,31 @@ runs:
         path: ${{ runner.temp }}/patches
         workflow_conclusion: success
         name: patches-${{ github.event.pull_request.head.sha }}
+
+    # We need a token with contents:write and workflows:write permissions
+    # so the automatic GITHUB_TOKEN won't work
+    # https://github.com/tibdex/github-app-token
+    - name: Generate GitHub App installation token
+      if: steps.download_patches.outcome == 'success'
+      uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a # v2.1.0
+      id: gh_app_token
+      with:
+        app_id: "400994"
+        installation_retrieval_mode: organization
+        installation_retrieval_payload: ${{ github.event.repository.owner.login }}
+        private_key: ${{ fromJSON(inputs.secrets).BALENALIB_BOT_PRIVATE_KEY }}
+        repositories: >
+          ["${{ github.event.repository.name }}"]
+
+    # The cached credentials in the existing checkout don't have
+    # the permissions we need to push to the repo
+    # https://github.com/actions/checkout
+    - name: Checkout code
+      if: steps.download_patches.outcome == 'success'
+      uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4
+      with:
+        fetch-depth: 1
+        token: ${{ steps.gh_app_token.outputs.token }}
 
     - name: Apply patches
       if: steps.download_patches.outcome == 'success'
