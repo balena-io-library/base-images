@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.18 - 2023-10-03
+
+* Use github.ref for checkout of master [Kyle Harding]
+
 ## 2.8.17 - 2023-10-03
 
 * Force push with lease in a new subdirectory clone [Kyle Harding]
