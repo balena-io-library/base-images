@@ -1,4 +1,30 @@
 - commits:
+    - subject: Update scripts/contracts digest to a06c0cc
+      hash: 713cde5da2ca8f07af26a87d2b349036701164a7
+      body: |
+        Update scripts/contracts
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: "hw.device-type: Add bluechiptechnology-tm3"
+              hash: 68790a8618f57524be7ea70b7502d65917de91ad
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Chris Richardson <crichardson@bluechiptechnology.com>
+                signed-off-by: Chris Richardson <crichardson@bluechiptechnology.com>
+              author: crichardson
+          version: contracts-2.0.77
+          title: ""
+          date: 2023-10-09T06:33:17.864Z
+  version: 2.8.19
+  title: ""
+  date: 2023-10-09T07:32:39.662Z
+- commits:
     - subject: Use github.ref for checkout of master
       hash: 17715b923d508de898cb159dbf73dd5a371a7ebf
       body: ""
