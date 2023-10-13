@@ -1,0 +1,288 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "lcbzu9-alpine-edge-build",
+        "lcbzu9-alpine-edge-run",
+        "lcbzu9-alpine-3-14-build",
+        "lcbzu9-alpine-3-14-run",
+        "lcbzu9-alpine-3-16-build",
+        "lcbzu9-alpine-3-16-run",
+        "lcbzu9-alpine-3-17-build",
+        "lcbzu9-alpine-3-17-run",
+        "lcbzu9-alpine-3-18-build",
+        "lcbzu9-alpine-3-18-run",
+        "lcbzu9-alpine-3-13-build",
+        "lcbzu9-alpine-3-13-run",
+        "lcbzu9-alpine-3-12-build",
+        "lcbzu9-alpine-3-12-run",
+        "lcbzu9-alpine-3-15-build",
+        "lcbzu9-alpine-3-15-run"
+      ]
+    }
+  },
+  "target": {
+    "lcbzu9-alpine-edge-build": {
+      "context": "device-base/lcbzu9/alpine/edge/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/lcbzu9-alpine:edge-build-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:edge-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/lcbzu9-alpine:edge-build-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:edge-build"
+      ]
+    },
+    "lcbzu9-alpine-edge-run": {
+      "context": "device-base/lcbzu9/alpine/edge/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/lcbzu9-alpine:edge-run-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:edge-run",
+        "docker.io/balenalib/lcbzu9-alpine:edge-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:edge"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/lcbzu9-alpine:edge-run-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:edge-run",
+        "docker.io/balenalib/lcbzu9-alpine:edge-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:edge"
+      ]
+    },
+    "lcbzu9-alpine-3-14-build": {
+      "context": "device-base/lcbzu9/alpine/3.14/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/lcbzu9-alpine:3.14-build-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.14-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/lcbzu9-alpine:3.14-build-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.14-build"
+      ]
+    },
+    "lcbzu9-alpine-3-14-run": {
+      "context": "device-base/lcbzu9/alpine/3.14/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/lcbzu9-alpine:3.14-run-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.14-run",
+        "docker.io/balenalib/lcbzu9-alpine:3.14-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.14"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/lcbzu9-alpine:3.14-run-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.14-run",
+        "docker.io/balenalib/lcbzu9-alpine:3.14-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.14"
+      ]
+    },
+    "lcbzu9-alpine-3-16-build": {
+      "context": "device-base/lcbzu9/alpine/3.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/lcbzu9-alpine:3.16-build-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.16-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/lcbzu9-alpine:3.16-build-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.16-build"
+      ]
+    },
+    "lcbzu9-alpine-3-16-run": {
+      "context": "device-base/lcbzu9/alpine/3.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/lcbzu9-alpine:3.16-run-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.16-run",
+        "docker.io/balenalib/lcbzu9-alpine:3.16-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.16"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/lcbzu9-alpine:3.16-run-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.16-run",
+        "docker.io/balenalib/lcbzu9-alpine:3.16-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.16"
+      ]
+    },
+    "lcbzu9-alpine-3-17-build": {
+      "context": "device-base/lcbzu9/alpine/3.17/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/lcbzu9-alpine:3.17-build-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.17-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/lcbzu9-alpine:3.17-build-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.17-build"
+      ]
+    },
+    "lcbzu9-alpine-3-17-run": {
+      "context": "device-base/lcbzu9/alpine/3.17/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/lcbzu9-alpine:3.17-run-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.17-run",
+        "docker.io/balenalib/lcbzu9-alpine:3.17-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.17"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/lcbzu9-alpine:3.17-run-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.17-run",
+        "docker.io/balenalib/lcbzu9-alpine:3.17-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.17"
+      ]
+    },
+    "lcbzu9-alpine-3-18-build": {
+      "context": "device-base/lcbzu9/alpine/3.18/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/lcbzu9-alpine:3.18-build-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.18-build",
+        "docker.io/balenalib/lcbzu9-alpine:latest-build-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:latest-build",
+        "docker.io/balenalib/lcbzu9-alpine:build-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/lcbzu9-alpine:3.18-build-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.18-build",
+        "docker.io/balenalib/lcbzu9-alpine:latest-build-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:latest-build",
+        "docker.io/balenalib/lcbzu9-alpine:build-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:build"
+      ]
+    },
+    "lcbzu9-alpine-3-18-run": {
+      "context": "device-base/lcbzu9/alpine/3.18/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/lcbzu9-alpine:3.18-run-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.18-run",
+        "docker.io/balenalib/lcbzu9-alpine:3.18-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.18",
+        "docker.io/balenalib/lcbzu9-alpine:latest-run-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:latest-run",
+        "docker.io/balenalib/lcbzu9-alpine:latest-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:latest",
+        "docker.io/balenalib/lcbzu9-alpine:run-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:run",
+        "docker.io/balenalib/lcbzu9-alpine:20231013"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/lcbzu9-alpine:3.18-run-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.18-run",
+        "docker.io/balenalib/lcbzu9-alpine:3.18-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.18",
+        "docker.io/balenalib/lcbzu9-alpine:latest-run-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:latest-run",
+        "docker.io/balenalib/lcbzu9-alpine:latest-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:latest",
+        "docker.io/balenalib/lcbzu9-alpine:run-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:run",
+        "docker.io/balenalib/lcbzu9-alpine:20231013"
+      ]
+    },
+    "lcbzu9-alpine-3-13-build": {
+      "context": "device-base/lcbzu9/alpine/3.13/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/lcbzu9-alpine:3.13-build-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.13-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/lcbzu9-alpine:3.13-build-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.13-build"
+      ]
+    },
+    "lcbzu9-alpine-3-13-run": {
+      "context": "device-base/lcbzu9/alpine/3.13/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/lcbzu9-alpine:3.13-run-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.13-run",
+        "docker.io/balenalib/lcbzu9-alpine:3.13-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.13"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/lcbzu9-alpine:3.13-run-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.13-run",
+        "docker.io/balenalib/lcbzu9-alpine:3.13-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.13"
+      ]
+    },
+    "lcbzu9-alpine-3-12-build": {
+      "context": "device-base/lcbzu9/alpine/3.12/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/lcbzu9-alpine:3.12-build-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.12-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/lcbzu9-alpine:3.12-build-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.12-build"
+      ]
+    },
+    "lcbzu9-alpine-3-12-run": {
+      "context": "device-base/lcbzu9/alpine/3.12/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/lcbzu9-alpine:3.12-run-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.12-run",
+        "docker.io/balenalib/lcbzu9-alpine:3.12-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.12"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/lcbzu9-alpine:3.12-run-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.12-run",
+        "docker.io/balenalib/lcbzu9-alpine:3.12-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.12"
+      ]
+    },
+    "lcbzu9-alpine-3-15-build": {
+      "context": "device-base/lcbzu9/alpine/3.15/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/lcbzu9-alpine:3.15-build-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.15-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/lcbzu9-alpine:3.15-build-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.15-build"
+      ]
+    },
+    "lcbzu9-alpine-3-15-run": {
+      "context": "device-base/lcbzu9/alpine/3.15/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/lcbzu9-alpine:3.15-run-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.15-run",
+        "docker.io/balenalib/lcbzu9-alpine:3.15-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.15"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/lcbzu9-alpine:3.15-run-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.15-run",
+        "docker.io/balenalib/lcbzu9-alpine:3.15-20231013",
+        "docker.io/balenalib/lcbzu9-alpine:3.15"
+      ]
+    }
+  }
+}

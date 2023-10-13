@@ -8,11 +8,72 @@ name: Bake i386-alpine
         type: boolean
         default: false
   schedule:
-    - cron: 43 14 5 * *
+    - cron: 28 19 4 * *
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true
 jobs:
+  prepare-i386-alpine:
+    name: Prepare i386-alpine
+    runs-on: ubuntu-latest
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        with:
+          fetch-depth: 1
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+    env:
+      LIBRARY: library/i386-alpine.json
+  bake-i386-alpine:
+    name: Bake i386-alpine
+    runs-on: ubuntu-latest
+    needs:
+      - prepare-i386-alpine
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-i386-alpine.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        with:
+          fetch-depth: 1
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v6.2.0
+      - name: Setup buildx
+        uses: docker/setup-buildx-action@f95db51fddba0c2d1ec667646a06c2ce06100226
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Login to DockerHub
+        uses: docker/login-action@343f7c4344506bcbf9b4de18042ae17996df046d
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Docker bake
+        continue-on-error: true
+        id: docker_bake
+        uses: docker/bake-action@511fde2517761e303af548ec9e0ea74a8a100112
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+    env:
+      LIBRARY: library/i386-alpine.json
   prepare-i386-alpine-golang:
     name: Prepare i386-alpine-golang
     runs-on: ubuntu-latest
@@ -48,25 +109,26 @@ jobs:
         with:
           fetch-depth: 1
       - name: Setup QEMU
-        uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7
+        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
         with:
           platforms: all
           image: tonistiigi/binfmt:qemu-v6.2.0
       - name: Setup buildx
-        uses: docker/setup-buildx-action@885d1462b80bc1c1c7f0b00334ad271f09369c55
+        uses: docker/setup-buildx-action@f95db51fddba0c2d1ec667646a06c2ce06100226
         with:
           driver-opts: network=host
           install: true
       - name: Login to DockerHub
-        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc
+        uses: docker/login-action@343f7c4344506bcbf9b4de18042ae17996df046d
         if: inputs.no-push != true
         with:
           registry: docker.io
           username: ${{ secrets.BALENAIMAGES_USER }}
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Docker bake
+        continue-on-error: true
         id: docker_bake
-        uses: docker/bake-action@f32f8b8d70bc284af19f8148dd14ad1d2fbc6c28
+        uses: docker/bake-action@511fde2517761e303af548ec9e0ea74a8a100112
         with:
           workdir: balena-base-images
           files: ${{ github.workspace }}/${{ env.LIBRARY }}
@@ -110,25 +172,26 @@ jobs:
         with:
           fetch-depth: 1
       - name: Setup QEMU
-        uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7
+        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
         with:
           platforms: all
           image: tonistiigi/binfmt:qemu-v6.2.0
       - name: Setup buildx
-        uses: docker/setup-buildx-action@885d1462b80bc1c1c7f0b00334ad271f09369c55
+        uses: docker/setup-buildx-action@f95db51fddba0c2d1ec667646a06c2ce06100226
         with:
           driver-opts: network=host
           install: true
       - name: Login to DockerHub
-        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc
+        uses: docker/login-action@343f7c4344506bcbf9b4de18042ae17996df046d
         if: inputs.no-push != true
         with:
           registry: docker.io
           username: ${{ secrets.BALENAIMAGES_USER }}
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Docker bake
+        continue-on-error: true
         id: docker_bake
-        uses: docker/bake-action@f32f8b8d70bc284af19f8148dd14ad1d2fbc6c28
+        uses: docker/bake-action@511fde2517761e303af548ec9e0ea74a8a100112
         with:
           workdir: balena-base-images
           files: ${{ github.workspace }}/${{ env.LIBRARY }}
@@ -172,25 +235,26 @@ jobs:
         with:
           fetch-depth: 1
       - name: Setup QEMU
-        uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7
+        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
         with:
           platforms: all
           image: tonistiigi/binfmt:qemu-v6.2.0
       - name: Setup buildx
-        uses: docker/setup-buildx-action@885d1462b80bc1c1c7f0b00334ad271f09369c55
+        uses: docker/setup-buildx-action@f95db51fddba0c2d1ec667646a06c2ce06100226
         with:
           driver-opts: network=host
           install: true
       - name: Login to DockerHub
-        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc
+        uses: docker/login-action@343f7c4344506bcbf9b4de18042ae17996df046d
         if: inputs.no-push != true
         with:
           registry: docker.io
           username: ${{ secrets.BALENAIMAGES_USER }}
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Docker bake
+        continue-on-error: true
         id: docker_bake
-        uses: docker/bake-action@f32f8b8d70bc284af19f8148dd14ad1d2fbc6c28
+        uses: docker/bake-action@511fde2517761e303af548ec9e0ea74a8a100112
         with:
           workdir: balena-base-images
           files: ${{ github.workspace }}/${{ env.LIBRARY }}
@@ -234,25 +298,26 @@ jobs:
         with:
           fetch-depth: 1
       - name: Setup QEMU
-        uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7
+        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
         with:
           platforms: all
           image: tonistiigi/binfmt:qemu-v6.2.0
       - name: Setup buildx
-        uses: docker/setup-buildx-action@885d1462b80bc1c1c7f0b00334ad271f09369c55
+        uses: docker/setup-buildx-action@f95db51fddba0c2d1ec667646a06c2ce06100226
         with:
           driver-opts: network=host
           install: true
       - name: Login to DockerHub
-        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc
+        uses: docker/login-action@343f7c4344506bcbf9b4de18042ae17996df046d
         if: inputs.no-push != true
         with:
           registry: docker.io
           username: ${{ secrets.BALENAIMAGES_USER }}
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Docker bake
+        continue-on-error: true
         id: docker_bake
-        uses: docker/bake-action@f32f8b8d70bc284af19f8148dd14ad1d2fbc6c28
+        uses: docker/bake-action@511fde2517761e303af548ec9e0ea74a8a100112
         with:
           workdir: balena-base-images
           files: ${{ github.workspace }}/${{ env.LIBRARY }}
@@ -261,63 +326,3 @@ jobs:
           provenance: false
     env:
       LIBRARY: library/i386-alpine-python.json
-  prepare-i386-alpine:
-    name: Prepare i386-alpine
-    runs-on: ubuntu-latest
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
-        with:
-          fetch-depth: 1
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-    env:
-      LIBRARY: library/i386-alpine.json
-  bake-i386-alpine:
-    name: Bake i386-alpine
-    runs-on: ubuntu-latest
-    needs:
-      - prepare-i386-alpine
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-i386-alpine.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
-        with:
-          fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
-      - name: Setup buildx
-        uses: docker/setup-buildx-action@885d1462b80bc1c1c7f0b00334ad271f09369c55
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Login to DockerHub
-        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Docker bake
-        id: docker_bake
-        uses: docker/bake-action@f32f8b8d70bc284af19f8148dd14ad1d2fbc6c28
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
-    env:
-      LIBRARY: library/i386-alpine.json
