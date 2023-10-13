@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.21 - 2023-10-13
+
+* Fix branch name on push to master [Kyle Harding]
+
 ## 2.8.20 - 2023-10-13
 
 * Call git push directly and use cached credentials [Kyle Harding]
