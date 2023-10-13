@@ -67,4 +67,4 @@ runs:
         GIT_COMMITTER_EMAIL: 146760701+balenalib-workflows[bot]@users.noreply.github.com
       run: |
         git am -q ${{ runner.temp }}/patches/*.patch
-        git push --force-with-lease origin HEAD:refs/heads/${{ github.ref }}
+        git push --force-with-lease origin HEAD:${{ github.ref }}
