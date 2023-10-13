@@ -48,11 +48,11 @@ runs:
       if: steps.download_patches.outcome == 'success'
       uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4
       with:
-        fetch-depth: 1
+        # fetch-depth: 1
         token: ${{ steps.gh_app_token.outputs.token }}
         ref: ${{ github.ref }}
-        persist-credentials: false
         path: ${{ github.ref }}
+        persist-credentials: true
 
     - name: Apply patches
       if: steps.download_patches.outcome == 'success'
@@ -67,13 +67,4 @@ runs:
         GIT_COMMITTER_EMAIL: 146760701+balenalib-workflows[bot]@users.noreply.github.com
       run: |
         git am -q ${{ runner.temp }}/patches/*.patch
-
-    # https://github.com/ad-m/github-push-action
-    - name: Push changes
-      uses: ad-m/github-push-action@40bf560936a8022e68a3c00e7d2abefaf01305a6 # v0.6.0
-      if: steps.download_patches.outcome == 'success'
-      with:
-        github_token: ${{ steps.gh_app_token.outputs.token }}
-        branch: ${{ github.ref }}
-        directory: ${{ github.ref }}
-        force_with_lease: true
+        git push --force-with-lease origin HEAD:refs/heads/${{ github.ref }}
