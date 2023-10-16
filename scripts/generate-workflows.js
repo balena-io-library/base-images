@@ -34,22 +34,6 @@ function addToWorkflow(dest, context) {
 	const template = JSON.parse(JSON.stringify(workflowTemplate));
 	const workflow = _.merge(workflows[dest] || template, context.workflow);
 
-	function getRandomInt(min, max) {
-		min = Math.ceil(min);
-		max = Math.floor(max);
-		return Math.floor(Math.random() * (max - min + 1)) + min;
-	}
-
-	if (workflow.on.schedule) {
-		// generate a random cron definition to avoid 1000s of jobs queued at once
-		// 0-59 minutes, 0-23 hours, 1-7 days of the month (first week)
-		const cronDefinition = `${getRandomInt(0, 59)} ${getRandomInt(
-			0,
-			23,
-		)} ${getRandomInt(1, 7)} * *`;
-		workflow.on.schedule = [{ cron: cronDefinition }];
-	}
-
 	const prepareJobSlug = `prepare-${context.imageName}`;
 	const bakeJobSlug = `bake-${context.imageName}`;
 

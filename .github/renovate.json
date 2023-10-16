@@ -11,10 +11,15 @@
 		"**/tests//**",
 		"**/__fixtures__/**",
 		"balena-base-images/**",
-    "library/**",
+		"library/**",
 		".github/workflows/bake-*.yml"
 	],
 	"github-actions": {
 		"fileMatch": ["^scripts/workflows/.*\\.yml"]
-	}
+	},
+	"gitIgnoredAuthors": [
+		"34882892+balena-ci@users.noreply.github.com",
+		"renovate@whitesourcesoftware.com",
+		"146760701+balenalib-workflows[bot]@users.noreply.github.com"
+	]
 }
