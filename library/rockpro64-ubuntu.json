@@ -21,11 +21,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/rockpro64-ubuntu:lunar-build-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:lunar-build-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:lunar-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/rockpro64-ubuntu:lunar-build-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:lunar-build-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:lunar-build"
       ]
     },
@@ -34,15 +34,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/rockpro64-ubuntu:lunar-run-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:lunar-run-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:lunar-run",
-        "docker.io/balenalib/rockpro64-ubuntu:lunar-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:lunar-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:lunar"
       ],
       "cache_from": [
-        "docker.io/balenalib/rockpro64-ubuntu:lunar-run-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:lunar-run-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:lunar-run",
-        "docker.io/balenalib/rockpro64-ubuntu:lunar-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:lunar-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:lunar"
       ]
     },
@@ -51,19 +51,19 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/rockpro64-ubuntu:jammy-build-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:jammy-build-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:jammy-build",
-        "docker.io/balenalib/rockpro64-ubuntu:latest-build-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:latest-build-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:latest-build",
-        "docker.io/balenalib/rockpro64-ubuntu:build-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:build-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/rockpro64-ubuntu:jammy-build-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:jammy-build-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:jammy-build",
-        "docker.io/balenalib/rockpro64-ubuntu:latest-build-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:latest-build-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:latest-build",
-        "docker.io/balenalib/rockpro64-ubuntu:build-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:build-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:build"
       ]
     },
@@ -72,30 +72,30 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/rockpro64-ubuntu:jammy-run-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:jammy-run-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:jammy-run",
-        "docker.io/balenalib/rockpro64-ubuntu:jammy-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:jammy-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:jammy",
-        "docker.io/balenalib/rockpro64-ubuntu:latest-run-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:latest-run-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:latest-run",
-        "docker.io/balenalib/rockpro64-ubuntu:latest-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:latest-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:latest",
-        "docker.io/balenalib/rockpro64-ubuntu:run-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:run-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:run",
-        "docker.io/balenalib/rockpro64-ubuntu:20231013"
+        "docker.io/balenalib/rockpro64-ubuntu:20231017"
       ],
       "cache_from": [
-        "docker.io/balenalib/rockpro64-ubuntu:jammy-run-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:jammy-run-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:jammy-run",
-        "docker.io/balenalib/rockpro64-ubuntu:jammy-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:jammy-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:jammy",
-        "docker.io/balenalib/rockpro64-ubuntu:latest-run-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:latest-run-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:latest-run",
-        "docker.io/balenalib/rockpro64-ubuntu:latest-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:latest-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:latest",
-        "docker.io/balenalib/rockpro64-ubuntu:run-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:run-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:run",
-        "docker.io/balenalib/rockpro64-ubuntu:20231013"
+        "docker.io/balenalib/rockpro64-ubuntu:20231017"
       ]
     },
     "rockpro64-ubuntu-focal-build": {
@@ -103,11 +103,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/rockpro64-ubuntu:focal-build-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:focal-build-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:focal-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/rockpro64-ubuntu:focal-build-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:focal-build-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:focal-build"
       ]
     },
@@ -116,15 +116,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/rockpro64-ubuntu:focal-run-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:focal-run-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:focal-run",
-        "docker.io/balenalib/rockpro64-ubuntu:focal-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:focal-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:focal"
       ],
       "cache_from": [
-        "docker.io/balenalib/rockpro64-ubuntu:focal-run-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:focal-run-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:focal-run",
-        "docker.io/balenalib/rockpro64-ubuntu:focal-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:focal-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:focal"
       ]
     },
@@ -133,11 +133,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/rockpro64-ubuntu:xenial-build-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:xenial-build-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:xenial-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/rockpro64-ubuntu:xenial-build-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:xenial-build-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:xenial-build"
       ]
     },
@@ -146,15 +146,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/rockpro64-ubuntu:xenial-run-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:xenial-run-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:xenial-run",
-        "docker.io/balenalib/rockpro64-ubuntu:xenial-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:xenial-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:xenial"
       ],
       "cache_from": [
-        "docker.io/balenalib/rockpro64-ubuntu:xenial-run-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:xenial-run-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:xenial-run",
-        "docker.io/balenalib/rockpro64-ubuntu:xenial-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:xenial-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:xenial"
       ]
     },
@@ -163,11 +163,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/rockpro64-ubuntu:bionic-build-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:bionic-build-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:bionic-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/rockpro64-ubuntu:bionic-build-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:bionic-build-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:bionic-build"
       ]
     },
@@ -176,15 +176,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/rockpro64-ubuntu:bionic-run-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:bionic-run-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:bionic-run",
-        "docker.io/balenalib/rockpro64-ubuntu:bionic-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:bionic-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:bionic"
       ],
       "cache_from": [
-        "docker.io/balenalib/rockpro64-ubuntu:bionic-run-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:bionic-run-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:bionic-run",
-        "docker.io/balenalib/rockpro64-ubuntu:bionic-20231013",
+        "docker.io/balenalib/rockpro64-ubuntu:bionic-20231017",
         "docker.io/balenalib/rockpro64-ubuntu:bionic"
       ]
     }

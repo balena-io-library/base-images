@@ -1,0 +1,288 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "bluechiptechnology-tm3-alpine-edge-build",
+        "bluechiptechnology-tm3-alpine-edge-run",
+        "bluechiptechnology-tm3-alpine-3-14-build",
+        "bluechiptechnology-tm3-alpine-3-14-run",
+        "bluechiptechnology-tm3-alpine-3-16-build",
+        "bluechiptechnology-tm3-alpine-3-16-run",
+        "bluechiptechnology-tm3-alpine-3-17-build",
+        "bluechiptechnology-tm3-alpine-3-17-run",
+        "bluechiptechnology-tm3-alpine-3-18-build",
+        "bluechiptechnology-tm3-alpine-3-18-run",
+        "bluechiptechnology-tm3-alpine-3-13-build",
+        "bluechiptechnology-tm3-alpine-3-13-run",
+        "bluechiptechnology-tm3-alpine-3-12-build",
+        "bluechiptechnology-tm3-alpine-3-12-run",
+        "bluechiptechnology-tm3-alpine-3-15-build",
+        "bluechiptechnology-tm3-alpine-3-15-run"
+      ]
+    }
+  },
+  "target": {
+    "bluechiptechnology-tm3-alpine-edge-build": {
+      "context": "device-base/bluechiptechnology-tm3/alpine/edge/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:edge-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:edge-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:edge-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:edge-build"
+      ]
+    },
+    "bluechiptechnology-tm3-alpine-edge-run": {
+      "context": "device-base/bluechiptechnology-tm3/alpine/edge/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:edge-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:edge-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:edge-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:edge"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:edge-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:edge-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:edge-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:edge"
+      ]
+    },
+    "bluechiptechnology-tm3-alpine-3-14-build": {
+      "context": "device-base/bluechiptechnology-tm3/alpine/3.14/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.14-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.14-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.14-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.14-build"
+      ]
+    },
+    "bluechiptechnology-tm3-alpine-3-14-run": {
+      "context": "device-base/bluechiptechnology-tm3/alpine/3.14/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.14-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.14-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.14-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.14"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.14-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.14-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.14-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.14"
+      ]
+    },
+    "bluechiptechnology-tm3-alpine-3-16-build": {
+      "context": "device-base/bluechiptechnology-tm3/alpine/3.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.16-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.16-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.16-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.16-build"
+      ]
+    },
+    "bluechiptechnology-tm3-alpine-3-16-run": {
+      "context": "device-base/bluechiptechnology-tm3/alpine/3.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.16-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.16-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.16-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.16"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.16-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.16-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.16-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.16"
+      ]
+    },
+    "bluechiptechnology-tm3-alpine-3-17-build": {
+      "context": "device-base/bluechiptechnology-tm3/alpine/3.17/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.17-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.17-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.17-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.17-build"
+      ]
+    },
+    "bluechiptechnology-tm3-alpine-3-17-run": {
+      "context": "device-base/bluechiptechnology-tm3/alpine/3.17/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.17-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.17-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.17-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.17"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.17-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.17-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.17-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.17"
+      ]
+    },
+    "bluechiptechnology-tm3-alpine-3-18-build": {
+      "context": "device-base/bluechiptechnology-tm3/alpine/3.18/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.18-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.18-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:latest-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:latest-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.18-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.18-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:latest-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:latest-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:build"
+      ]
+    },
+    "bluechiptechnology-tm3-alpine-3-18-run": {
+      "context": "device-base/bluechiptechnology-tm3/alpine/3.18/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.18-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.18-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.18-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.18",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:latest-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:latest-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:latest-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:latest",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:run",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:20231017"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.18-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.18-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.18-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.18",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:latest-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:latest-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:latest-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:latest",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:run",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:20231017"
+      ]
+    },
+    "bluechiptechnology-tm3-alpine-3-13-build": {
+      "context": "device-base/bluechiptechnology-tm3/alpine/3.13/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.13-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.13-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.13-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.13-build"
+      ]
+    },
+    "bluechiptechnology-tm3-alpine-3-13-run": {
+      "context": "device-base/bluechiptechnology-tm3/alpine/3.13/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.13-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.13-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.13-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.13"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.13-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.13-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.13-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.13"
+      ]
+    },
+    "bluechiptechnology-tm3-alpine-3-12-build": {
+      "context": "device-base/bluechiptechnology-tm3/alpine/3.12/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.12-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.12-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.12-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.12-build"
+      ]
+    },
+    "bluechiptechnology-tm3-alpine-3-12-run": {
+      "context": "device-base/bluechiptechnology-tm3/alpine/3.12/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.12-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.12-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.12-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.12"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.12-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.12-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.12-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.12"
+      ]
+    },
+    "bluechiptechnology-tm3-alpine-3-15-build": {
+      "context": "device-base/bluechiptechnology-tm3/alpine/3.15/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.15-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.15-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.15-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.15-build"
+      ]
+    },
+    "bluechiptechnology-tm3-alpine-3-15-run": {
+      "context": "device-base/bluechiptechnology-tm3/alpine/3.15/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.15-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.15-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.15-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.15"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.15-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.15-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.15-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-alpine:3.15"
+      ]
+    }
+  }
+}

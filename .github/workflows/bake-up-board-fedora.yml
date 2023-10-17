@@ -23,7 +23,7 @@ jobs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
         with:
           fetch-depth: 1
       - name: Set matrix
@@ -47,7 +47,7 @@ jobs:
         target: ${{ fromJSON(needs.prepare-up-board-fedora-golang.outputs.bake-targets) }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
         with:
           fetch-depth: 1
       - name: Setup QEMU
@@ -86,7 +86,7 @@ jobs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
         with:
           fetch-depth: 1
       - name: Set matrix
@@ -110,7 +110,7 @@ jobs:
         target: ${{ fromJSON(needs.prepare-up-board-fedora-node.outputs.bake-targets) }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
         with:
           fetch-depth: 1
       - name: Setup QEMU
@@ -149,7 +149,7 @@ jobs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
         with:
           fetch-depth: 1
       - name: Set matrix
@@ -173,7 +173,7 @@ jobs:
         target: ${{ fromJSON(needs.prepare-up-board-fedora-openjdk.outputs.bake-targets) }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
         with:
           fetch-depth: 1
       - name: Setup QEMU
@@ -212,7 +212,7 @@ jobs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
         with:
           fetch-depth: 1
       - name: Set matrix
@@ -236,7 +236,7 @@ jobs:
         target: ${{ fromJSON(needs.prepare-up-board-fedora-python.outputs.bake-targets) }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
         with:
           fetch-depth: 1
       - name: Setup QEMU
@@ -275,7 +275,7 @@ jobs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
         with:
           fetch-depth: 1
       - name: Set matrix
@@ -297,7 +297,7 @@ jobs:
         target: ${{ fromJSON(needs.prepare-up-board-fedora.outputs.bake-targets) }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
         with:
           fetch-depth: 1
       - name: Setup QEMU

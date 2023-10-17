@@ -1,0 +1,506 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "bluechiptechnology-tm3-ubuntu-openjdk-8-jdk-xenial-build",
+        "bluechiptechnology-tm3-ubuntu-openjdk-8-jdk-xenial-run",
+        "bluechiptechnology-tm3-ubuntu-openjdk-8-jre-xenial-build",
+        "bluechiptechnology-tm3-ubuntu-openjdk-8-jre-xenial-run",
+        "bluechiptechnology-tm3-ubuntu-openjdk-11-jdk-xenial-build",
+        "bluechiptechnology-tm3-ubuntu-openjdk-11-jdk-xenial-run",
+        "bluechiptechnology-tm3-ubuntu-openjdk-11-jre-xenial-build",
+        "bluechiptechnology-tm3-ubuntu-openjdk-11-jre-xenial-run",
+        "bluechiptechnology-tm3-ubuntu-openjdk-8-jdk-bionic-build",
+        "bluechiptechnology-tm3-ubuntu-openjdk-8-jdk-bionic-run",
+        "bluechiptechnology-tm3-ubuntu-openjdk-8-jre-bionic-build",
+        "bluechiptechnology-tm3-ubuntu-openjdk-8-jre-bionic-run",
+        "bluechiptechnology-tm3-ubuntu-openjdk-11-jdk-bionic-build",
+        "bluechiptechnology-tm3-ubuntu-openjdk-11-jdk-bionic-run",
+        "bluechiptechnology-tm3-ubuntu-openjdk-11-jre-bionic-build",
+        "bluechiptechnology-tm3-ubuntu-openjdk-11-jre-bionic-run"
+      ]
+    }
+  },
+  "target": {
+    "bluechiptechnology-tm3-ubuntu-openjdk-8-jdk-xenial-build": {
+      "context": "openjdk/bluechiptechnology-tm3/ubuntu/xenial/8-jdk/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jdk-xenial-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jdk-xenial-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--xenial-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--xenial-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-xenial-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-xenial-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jdk-xenial-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jdk-xenial-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--xenial-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--xenial-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-xenial-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-xenial-build"
+      ]
+    },
+    "bluechiptechnology-tm3-ubuntu-openjdk-8-jdk-xenial-run": {
+      "context": "openjdk/bluechiptechnology-tm3/ubuntu/xenial/8-jdk/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jdk-xenial-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jdk-xenial-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jdk-xenial-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jdk-xenial",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--xenial-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--xenial-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--xenial-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--xenial",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-xenial-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-xenial-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-xenial-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-xenial"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jdk-xenial-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jdk-xenial-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jdk-xenial-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jdk-xenial",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--xenial-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--xenial-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--xenial-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--xenial",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-xenial-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-xenial-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-xenial-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-xenial"
+      ]
+    },
+    "bluechiptechnology-tm3-ubuntu-openjdk-8-jre-xenial-build": {
+      "context": "openjdk/bluechiptechnology-tm3/ubuntu/xenial/8-jre/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jre-xenial-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jre-xenial-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--xenial-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--xenial-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-xenial-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-xenial-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jre-xenial-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jre-xenial-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--xenial-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--xenial-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-xenial-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-xenial-build"
+      ]
+    },
+    "bluechiptechnology-tm3-ubuntu-openjdk-8-jre-xenial-run": {
+      "context": "openjdk/bluechiptechnology-tm3/ubuntu/xenial/8-jre/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jre-xenial-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jre-xenial-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jre-xenial-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jre-xenial",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--xenial-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--xenial-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--xenial-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--xenial",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-xenial-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-xenial-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-xenial-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-xenial"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jre-xenial-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jre-xenial-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jre-xenial-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jre-xenial",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--xenial-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--xenial-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--xenial-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--xenial",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-xenial-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-xenial-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-xenial-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-xenial"
+      ]
+    },
+    "bluechiptechnology-tm3-ubuntu-openjdk-11-jdk-xenial-build": {
+      "context": "openjdk/bluechiptechnology-tm3/ubuntu/xenial/11-jdk/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jdk-xenial-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jdk-xenial-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--xenial-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--xenial-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-xenial-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-xenial-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:latest-xenial-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:latest-xenial-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:xenial-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:xenial-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jdk-xenial-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jdk-xenial-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--xenial-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--xenial-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-xenial-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-xenial-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:latest-xenial-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:latest-xenial-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:xenial-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:xenial-build"
+      ]
+    },
+    "bluechiptechnology-tm3-ubuntu-openjdk-11-jdk-xenial-run": {
+      "context": "openjdk/bluechiptechnology-tm3/ubuntu/xenial/11-jdk/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jdk-xenial-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jdk-xenial-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jdk-xenial-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jdk-xenial",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--xenial-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--xenial-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--xenial-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--xenial",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-xenial-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-xenial-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-xenial-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-xenial",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:latest-xenial-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:latest-xenial-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:latest-xenial-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:latest-xenial",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:xenial-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:xenial-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:xenial-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:xenial"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jdk-xenial-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jdk-xenial-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jdk-xenial-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jdk-xenial",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--xenial-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--xenial-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--xenial-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--xenial",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-xenial-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-xenial-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-xenial-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-xenial",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:latest-xenial-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:latest-xenial-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:latest-xenial-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:latest-xenial",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:xenial-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:xenial-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:xenial-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:xenial"
+      ]
+    },
+    "bluechiptechnology-tm3-ubuntu-openjdk-11-jre-xenial-build": {
+      "context": "openjdk/bluechiptechnology-tm3/ubuntu/xenial/11-jre/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jre-xenial-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jre-xenial-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--xenial-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--xenial-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-xenial-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-xenial-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jre-xenial-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jre-xenial-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--xenial-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--xenial-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-xenial-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-xenial-build"
+      ]
+    },
+    "bluechiptechnology-tm3-ubuntu-openjdk-11-jre-xenial-run": {
+      "context": "openjdk/bluechiptechnology-tm3/ubuntu/xenial/11-jre/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jre-xenial-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jre-xenial-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jre-xenial-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jre-xenial",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--xenial-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--xenial-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--xenial-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--xenial",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-xenial-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-xenial-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-xenial-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-xenial"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jre-xenial-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jre-xenial-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jre-xenial-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jre-xenial",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--xenial-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--xenial-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--xenial-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--xenial",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-xenial-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-xenial-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-xenial-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-xenial"
+      ]
+    },
+    "bluechiptechnology-tm3-ubuntu-openjdk-8-jdk-bionic-build": {
+      "context": "openjdk/bluechiptechnology-tm3/ubuntu/bionic/8-jdk/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jdk-bionic-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jdk-bionic-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--bionic-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--bionic-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-bionic-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-bionic-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jdk-bionic-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jdk-bionic-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--bionic-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--bionic-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-bionic-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-bionic-build"
+      ]
+    },
+    "bluechiptechnology-tm3-ubuntu-openjdk-8-jdk-bionic-run": {
+      "context": "openjdk/bluechiptechnology-tm3/ubuntu/bionic/8-jdk/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jdk-bionic-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jdk-bionic-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jdk-bionic-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jdk-bionic",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--bionic-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--bionic-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--bionic-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--bionic",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-bionic-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-bionic-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-bionic-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-bionic"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jdk-bionic-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jdk-bionic-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jdk-bionic-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jdk-bionic",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--bionic-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--bionic-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--bionic-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--bionic",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-bionic-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-bionic-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-bionic-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-bionic"
+      ]
+    },
+    "bluechiptechnology-tm3-ubuntu-openjdk-8-jre-bionic-build": {
+      "context": "openjdk/bluechiptechnology-tm3/ubuntu/bionic/8-jre/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jre-bionic-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jre-bionic-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--bionic-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--bionic-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-bionic-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-bionic-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jre-bionic-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jre-bionic-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--bionic-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--bionic-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-bionic-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-bionic-build"
+      ]
+    },
+    "bluechiptechnology-tm3-ubuntu-openjdk-8-jre-bionic-run": {
+      "context": "openjdk/bluechiptechnology-tm3/ubuntu/bionic/8-jre/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jre-bionic-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jre-bionic-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jre-bionic-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jre-bionic",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--bionic-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--bionic-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--bionic-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--bionic",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-bionic-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-bionic-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-bionic-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-bionic"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jre-bionic-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jre-bionic-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jre-bionic-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-jre-bionic",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--bionic-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--bionic-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--bionic-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8--bionic",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-bionic-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-bionic-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-bionic-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:8-bionic"
+      ]
+    },
+    "bluechiptechnology-tm3-ubuntu-openjdk-11-jdk-bionic-build": {
+      "context": "openjdk/bluechiptechnology-tm3/ubuntu/bionic/11-jdk/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jdk-bionic-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jdk-bionic-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--bionic-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--bionic-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-bionic-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-bionic-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:latest-bionic-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:latest-bionic-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:bionic-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:bionic-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jdk-bionic-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jdk-bionic-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--bionic-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--bionic-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-bionic-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-bionic-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:latest-bionic-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:latest-bionic-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:bionic-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:bionic-build"
+      ]
+    },
+    "bluechiptechnology-tm3-ubuntu-openjdk-11-jdk-bionic-run": {
+      "context": "openjdk/bluechiptechnology-tm3/ubuntu/bionic/11-jdk/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jdk-bionic-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jdk-bionic-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jdk-bionic-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jdk-bionic",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--bionic-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--bionic-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--bionic-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--bionic",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-bionic-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-bionic-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-bionic-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-bionic",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:latest-bionic-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:latest-bionic-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:latest-bionic-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:latest-bionic",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:bionic-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:bionic-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:bionic-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:bionic"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jdk-bionic-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jdk-bionic-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jdk-bionic-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jdk-bionic",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--bionic-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--bionic-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--bionic-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--bionic",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-bionic-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-bionic-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-bionic-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-bionic",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:latest-bionic-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:latest-bionic-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:latest-bionic-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:latest-bionic",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:bionic-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:bionic-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:bionic-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:bionic"
+      ]
+    },
+    "bluechiptechnology-tm3-ubuntu-openjdk-11-jre-bionic-build": {
+      "context": "openjdk/bluechiptechnology-tm3/ubuntu/bionic/11-jre/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jre-bionic-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jre-bionic-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--bionic-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--bionic-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-bionic-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-bionic-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jre-bionic-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jre-bionic-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--bionic-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--bionic-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-bionic-build-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-bionic-build"
+      ]
+    },
+    "bluechiptechnology-tm3-ubuntu-openjdk-11-jre-bionic-run": {
+      "context": "openjdk/bluechiptechnology-tm3/ubuntu/bionic/11-jre/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jre-bionic-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jre-bionic-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jre-bionic-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jre-bionic",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--bionic-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--bionic-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--bionic-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--bionic",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-bionic-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-bionic-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-bionic-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-bionic"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jre-bionic-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jre-bionic-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jre-bionic-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-jre-bionic",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--bionic-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--bionic-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--bionic-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11--bionic",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-bionic-run-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-bionic-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-bionic-20231017",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu-openjdk:11-bionic"
+      ]
+    }
+  }
+}

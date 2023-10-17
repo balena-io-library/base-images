@@ -8,7 +8,7 @@ name: Bake armv7hf-alpine
         type: boolean
         default: false
   schedule:
-    - cron: 16 4 5 * *
+    - cron: 47 13 6 * *
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true
@@ -20,7 +20,7 @@ jobs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
         with:
           fetch-depth: 1
       - name: Set matrix
@@ -42,7 +42,7 @@ jobs:
         target: ${{ fromJSON(needs.prepare-armv7hf-alpine.outputs.bake-targets) }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
         with:
           fetch-depth: 1
       - name: Setup QEMU
@@ -81,7 +81,7 @@ jobs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
         with:
           fetch-depth: 1
       - name: Set matrix
@@ -105,7 +105,7 @@ jobs:
         target: ${{ fromJSON(needs.prepare-armv7hf-alpine-golang.outputs.bake-targets) }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
         with:
           fetch-depth: 1
       - name: Setup QEMU
@@ -144,7 +144,7 @@ jobs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
         with:
           fetch-depth: 1
       - name: Set matrix
@@ -168,7 +168,7 @@ jobs:
         target: ${{ fromJSON(needs.prepare-armv7hf-alpine-node.outputs.bake-targets) }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
         with:
           fetch-depth: 1
       - name: Setup QEMU
@@ -207,7 +207,7 @@ jobs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
         with:
           fetch-depth: 1
       - name: Set matrix
@@ -231,7 +231,7 @@ jobs:
         target: ${{ fromJSON(needs.prepare-armv7hf-alpine-openjdk.outputs.bake-targets) }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
         with:
           fetch-depth: 1
       - name: Setup QEMU
@@ -270,7 +270,7 @@ jobs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
         with:
           fetch-depth: 1
       - name: Set matrix
@@ -294,7 +294,7 @@ jobs:
         target: ${{ fromJSON(needs.prepare-armv7hf-alpine-python.outputs.bake-targets) }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
         with:
           fetch-depth: 1
       - name: Setup QEMU
