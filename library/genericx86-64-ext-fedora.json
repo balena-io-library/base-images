@@ -17,11 +17,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/amd64",
       "tags": [
-        "docker.io/balenalib/genericx86-64-ext-fedora:36-build-20231017",
+        "docker.io/balenalib/genericx86-64-ext-fedora:36-build-20231019",
         "docker.io/balenalib/genericx86-64-ext-fedora:36-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/genericx86-64-ext-fedora:36-build-20231017",
+        "docker.io/balenalib/genericx86-64-ext-fedora:36-build-20231019",
         "docker.io/balenalib/genericx86-64-ext-fedora:36-build"
       ]
     },
@@ -30,15 +30,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/amd64",
       "tags": [
-        "docker.io/balenalib/genericx86-64-ext-fedora:36-run-20231017",
+        "docker.io/balenalib/genericx86-64-ext-fedora:36-run-20231019",
         "docker.io/balenalib/genericx86-64-ext-fedora:36-run",
-        "docker.io/balenalib/genericx86-64-ext-fedora:36-20231017",
+        "docker.io/balenalib/genericx86-64-ext-fedora:36-20231019",
         "docker.io/balenalib/genericx86-64-ext-fedora:36"
       ],
       "cache_from": [
-        "docker.io/balenalib/genericx86-64-ext-fedora:36-run-20231017",
+        "docker.io/balenalib/genericx86-64-ext-fedora:36-run-20231019",
         "docker.io/balenalib/genericx86-64-ext-fedora:36-run",
-        "docker.io/balenalib/genericx86-64-ext-fedora:36-20231017",
+        "docker.io/balenalib/genericx86-64-ext-fedora:36-20231019",
         "docker.io/balenalib/genericx86-64-ext-fedora:36"
       ]
     },
@@ -47,19 +47,19 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/amd64",
       "tags": [
-        "docker.io/balenalib/genericx86-64-ext-fedora:37-build-20231017",
+        "docker.io/balenalib/genericx86-64-ext-fedora:37-build-20231019",
         "docker.io/balenalib/genericx86-64-ext-fedora:37-build",
-        "docker.io/balenalib/genericx86-64-ext-fedora:latest-build-20231017",
+        "docker.io/balenalib/genericx86-64-ext-fedora:latest-build-20231019",
         "docker.io/balenalib/genericx86-64-ext-fedora:latest-build",
-        "docker.io/balenalib/genericx86-64-ext-fedora:build-20231017",
+        "docker.io/balenalib/genericx86-64-ext-fedora:build-20231019",
         "docker.io/balenalib/genericx86-64-ext-fedora:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/genericx86-64-ext-fedora:37-build-20231017",
+        "docker.io/balenalib/genericx86-64-ext-fedora:37-build-20231019",
         "docker.io/balenalib/genericx86-64-ext-fedora:37-build",
-        "docker.io/balenalib/genericx86-64-ext-fedora:latest-build-20231017",
+        "docker.io/balenalib/genericx86-64-ext-fedora:latest-build-20231019",
         "docker.io/balenalib/genericx86-64-ext-fedora:latest-build",
-        "docker.io/balenalib/genericx86-64-ext-fedora:build-20231017",
+        "docker.io/balenalib/genericx86-64-ext-fedora:build-20231019",
         "docker.io/balenalib/genericx86-64-ext-fedora:build"
       ]
     },
@@ -68,30 +68,30 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/amd64",
       "tags": [
-        "docker.io/balenalib/genericx86-64-ext-fedora:37-run-20231017",
+        "docker.io/balenalib/genericx86-64-ext-fedora:37-run-20231019",
         "docker.io/balenalib/genericx86-64-ext-fedora:37-run",
-        "docker.io/balenalib/genericx86-64-ext-fedora:37-20231017",
+        "docker.io/balenalib/genericx86-64-ext-fedora:37-20231019",
         "docker.io/balenalib/genericx86-64-ext-fedora:37",
-        "docker.io/balenalib/genericx86-64-ext-fedora:latest-run-20231017",
+        "docker.io/balenalib/genericx86-64-ext-fedora:latest-run-20231019",
         "docker.io/balenalib/genericx86-64-ext-fedora:latest-run",
-        "docker.io/balenalib/genericx86-64-ext-fedora:latest-20231017",
+        "docker.io/balenalib/genericx86-64-ext-fedora:latest-20231019",
         "docker.io/balenalib/genericx86-64-ext-fedora:latest",
-        "docker.io/balenalib/genericx86-64-ext-fedora:run-20231017",
+        "docker.io/balenalib/genericx86-64-ext-fedora:run-20231019",
         "docker.io/balenalib/genericx86-64-ext-fedora:run",
-        "docker.io/balenalib/genericx86-64-ext-fedora:20231017"
+        "docker.io/balenalib/genericx86-64-ext-fedora:20231019"
       ],
       "cache_from": [
-        "docker.io/balenalib/genericx86-64-ext-fedora:37-run-20231017",
+        "docker.io/balenalib/genericx86-64-ext-fedora:37-run-20231019",
         "docker.io/balenalib/genericx86-64-ext-fedora:37-run",
-        "docker.io/balenalib/genericx86-64-ext-fedora:37-20231017",
+        "docker.io/balenalib/genericx86-64-ext-fedora:37-20231019",
         "docker.io/balenalib/genericx86-64-ext-fedora:37",
-        "docker.io/balenalib/genericx86-64-ext-fedora:latest-run-20231017",
+        "docker.io/balenalib/genericx86-64-ext-fedora:latest-run-20231019",
         "docker.io/balenalib/genericx86-64-ext-fedora:latest-run",
-        "docker.io/balenalib/genericx86-64-ext-fedora:latest-20231017",
+        "docker.io/balenalib/genericx86-64-ext-fedora:latest-20231019",
         "docker.io/balenalib/genericx86-64-ext-fedora:latest",
-        "docker.io/balenalib/genericx86-64-ext-fedora:run-20231017",
+        "docker.io/balenalib/genericx86-64-ext-fedora:run-20231019",
         "docker.io/balenalib/genericx86-64-ext-fedora:run",
-        "docker.io/balenalib/genericx86-64-ext-fedora:20231017"
+        "docker.io/balenalib/genericx86-64-ext-fedora:20231019"
       ]
     },
     "genericx86-64-ext-fedora-38-build": {
@@ -99,11 +99,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/amd64",
       "tags": [
-        "docker.io/balenalib/genericx86-64-ext-fedora:38-build-20231017",
+        "docker.io/balenalib/genericx86-64-ext-fedora:38-build-20231019",
         "docker.io/balenalib/genericx86-64-ext-fedora:38-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/genericx86-64-ext-fedora:38-build-20231017",
+        "docker.io/balenalib/genericx86-64-ext-fedora:38-build-20231019",
         "docker.io/balenalib/genericx86-64-ext-fedora:38-build"
       ]
     },
@@ -112,15 +112,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/amd64",
       "tags": [
-        "docker.io/balenalib/genericx86-64-ext-fedora:38-run-20231017",
+        "docker.io/balenalib/genericx86-64-ext-fedora:38-run-20231019",
         "docker.io/balenalib/genericx86-64-ext-fedora:38-run",
-        "docker.io/balenalib/genericx86-64-ext-fedora:38-20231017",
+        "docker.io/balenalib/genericx86-64-ext-fedora:38-20231019",
         "docker.io/balenalib/genericx86-64-ext-fedora:38"
       ],
       "cache_from": [
-        "docker.io/balenalib/genericx86-64-ext-fedora:38-run-20231017",
+        "docker.io/balenalib/genericx86-64-ext-fedora:38-run-20231019",
         "docker.io/balenalib/genericx86-64-ext-fedora:38-run",
-        "docker.io/balenalib/genericx86-64-ext-fedora:38-20231017",
+        "docker.io/balenalib/genericx86-64-ext-fedora:38-20231019",
         "docker.io/balenalib/genericx86-64-ext-fedora:38"
       ]
     }
