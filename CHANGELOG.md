@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.24 - 2023-10-19
+
+
+<details>
+<summary> Update scripts/contracts digest to 2d44c9c [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.79 - 2023-10-19
+> 
+> * device: Add Compulab UCM-iMX93 [Alexandru Costache]
+> 
+
+</details>
+
 ## 2.8.23 - 2023-10-19
 
 
