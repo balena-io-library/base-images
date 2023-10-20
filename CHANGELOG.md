@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.25 - 2023-10-20
+
+
+<details>
+<summary> Update scripts/contracts digest to 42e712d [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.80 - 2023-10-20
+> 
+> * hw.device-type: Modify bluechiptechnology-tm3 [crichardson]
+> 
+
+</details>
+
 ## 2.8.24 - 2023-10-19
 
 
