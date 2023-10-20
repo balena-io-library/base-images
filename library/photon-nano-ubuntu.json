@@ -21,11 +21,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/photon-nano-ubuntu:lunar-build-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:lunar-build-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:lunar-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/photon-nano-ubuntu:lunar-build-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:lunar-build-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:lunar-build"
       ]
     },
@@ -34,15 +34,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/photon-nano-ubuntu:lunar-run-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:lunar-run-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:lunar-run",
-        "docker.io/balenalib/photon-nano-ubuntu:lunar-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:lunar-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:lunar"
       ],
       "cache_from": [
-        "docker.io/balenalib/photon-nano-ubuntu:lunar-run-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:lunar-run-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:lunar-run",
-        "docker.io/balenalib/photon-nano-ubuntu:lunar-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:lunar-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:lunar"
       ]
     },
@@ -51,19 +51,19 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/photon-nano-ubuntu:jammy-build-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:jammy-build-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:jammy-build",
-        "docker.io/balenalib/photon-nano-ubuntu:latest-build-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:latest-build-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:latest-build",
-        "docker.io/balenalib/photon-nano-ubuntu:build-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:build-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/photon-nano-ubuntu:jammy-build-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:jammy-build-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:jammy-build",
-        "docker.io/balenalib/photon-nano-ubuntu:latest-build-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:latest-build-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:latest-build",
-        "docker.io/balenalib/photon-nano-ubuntu:build-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:build-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:build"
       ]
     },
@@ -72,30 +72,30 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/photon-nano-ubuntu:jammy-run-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:jammy-run-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:jammy-run",
-        "docker.io/balenalib/photon-nano-ubuntu:jammy-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:jammy-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:jammy",
-        "docker.io/balenalib/photon-nano-ubuntu:latest-run-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:latest-run-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:latest-run",
-        "docker.io/balenalib/photon-nano-ubuntu:latest-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:latest-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:latest",
-        "docker.io/balenalib/photon-nano-ubuntu:run-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:run-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:run",
-        "docker.io/balenalib/photon-nano-ubuntu:20231019"
+        "docker.io/balenalib/photon-nano-ubuntu:20231020"
       ],
       "cache_from": [
-        "docker.io/balenalib/photon-nano-ubuntu:jammy-run-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:jammy-run-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:jammy-run",
-        "docker.io/balenalib/photon-nano-ubuntu:jammy-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:jammy-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:jammy",
-        "docker.io/balenalib/photon-nano-ubuntu:latest-run-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:latest-run-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:latest-run",
-        "docker.io/balenalib/photon-nano-ubuntu:latest-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:latest-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:latest",
-        "docker.io/balenalib/photon-nano-ubuntu:run-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:run-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:run",
-        "docker.io/balenalib/photon-nano-ubuntu:20231019"
+        "docker.io/balenalib/photon-nano-ubuntu:20231020"
       ]
     },
     "photon-nano-ubuntu-focal-build": {
@@ -103,11 +103,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/photon-nano-ubuntu:focal-build-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:focal-build-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:focal-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/photon-nano-ubuntu:focal-build-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:focal-build-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:focal-build"
       ]
     },
@@ -116,15 +116,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/photon-nano-ubuntu:focal-run-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:focal-run-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:focal-run",
-        "docker.io/balenalib/photon-nano-ubuntu:focal-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:focal-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:focal"
       ],
       "cache_from": [
-        "docker.io/balenalib/photon-nano-ubuntu:focal-run-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:focal-run-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:focal-run",
-        "docker.io/balenalib/photon-nano-ubuntu:focal-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:focal-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:focal"
       ]
     },
@@ -133,11 +133,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/photon-nano-ubuntu:xenial-build-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:xenial-build-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:xenial-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/photon-nano-ubuntu:xenial-build-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:xenial-build-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:xenial-build"
       ]
     },
@@ -146,15 +146,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/photon-nano-ubuntu:xenial-run-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:xenial-run-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:xenial-run",
-        "docker.io/balenalib/photon-nano-ubuntu:xenial-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:xenial-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:xenial"
       ],
       "cache_from": [
-        "docker.io/balenalib/photon-nano-ubuntu:xenial-run-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:xenial-run-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:xenial-run",
-        "docker.io/balenalib/photon-nano-ubuntu:xenial-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:xenial-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:xenial"
       ]
     },
@@ -163,11 +163,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/photon-nano-ubuntu:bionic-build-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:bionic-build-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:bionic-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/photon-nano-ubuntu:bionic-build-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:bionic-build-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:bionic-build"
       ]
     },
@@ -176,15 +176,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/photon-nano-ubuntu:bionic-run-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:bionic-run-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:bionic-run",
-        "docker.io/balenalib/photon-nano-ubuntu:bionic-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:bionic-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:bionic"
       ],
       "cache_from": [
-        "docker.io/balenalib/photon-nano-ubuntu:bionic-run-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:bionic-run-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:bionic-run",
-        "docker.io/balenalib/photon-nano-ubuntu:bionic-20231019",
+        "docker.io/balenalib/photon-nano-ubuntu:bionic-20231020",
         "docker.io/balenalib/photon-nano-ubuntu:bionic"
       ]
     }
