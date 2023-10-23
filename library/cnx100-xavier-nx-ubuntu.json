@@ -21,11 +21,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:lunar-build-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:lunar-build-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:lunar-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:lunar-build-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:lunar-build-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:lunar-build"
       ]
     },
@@ -34,15 +34,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:lunar-run-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:lunar-run-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:lunar-run",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:lunar-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:lunar-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:lunar"
       ],
       "cache_from": [
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:lunar-run-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:lunar-run-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:lunar-run",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:lunar-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:lunar-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:lunar"
       ]
     },
@@ -51,19 +51,19 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:jammy-build-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:jammy-build-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:jammy-build",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:latest-build-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:latest-build-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:latest-build",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:build-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:build-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:jammy-build-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:jammy-build-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:jammy-build",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:latest-build-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:latest-build-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:latest-build",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:build-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:build-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:build"
       ]
     },
@@ -72,30 +72,30 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:jammy-run-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:jammy-run-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:jammy-run",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:jammy-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:jammy-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:jammy",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:latest-run-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:latest-run-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:latest-run",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:latest-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:latest-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:latest",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:run-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:run-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:run",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:20231020"
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:20231023"
       ],
       "cache_from": [
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:jammy-run-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:jammy-run-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:jammy-run",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:jammy-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:jammy-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:jammy",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:latest-run-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:latest-run-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:latest-run",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:latest-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:latest-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:latest",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:run-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:run-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:run",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:20231020"
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:20231023"
       ]
     },
     "cnx100-xavier-nx-ubuntu-focal-build": {
@@ -103,11 +103,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:focal-build-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:focal-build-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:focal-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:focal-build-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:focal-build-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:focal-build"
       ]
     },
@@ -116,15 +116,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:focal-run-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:focal-run-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:focal-run",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:focal-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:focal-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:focal"
       ],
       "cache_from": [
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:focal-run-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:focal-run-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:focal-run",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:focal-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:focal-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:focal"
       ]
     },
@@ -133,11 +133,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:xenial-build-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:xenial-build-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:xenial-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:xenial-build-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:xenial-build-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:xenial-build"
       ]
     },
@@ -146,15 +146,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:xenial-run-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:xenial-run-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:xenial-run",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:xenial-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:xenial-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:xenial"
       ],
       "cache_from": [
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:xenial-run-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:xenial-run-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:xenial-run",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:xenial-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:xenial-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:xenial"
       ]
     },
@@ -163,11 +163,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:bionic-build-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:bionic-build-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:bionic-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:bionic-build-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:bionic-build-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:bionic-build"
       ]
     },
@@ -176,15 +176,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:bionic-run-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:bionic-run-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:bionic-run",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:bionic-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:bionic-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:bionic"
       ],
       "cache_from": [
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:bionic-run-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:bionic-run-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:bionic-run",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:bionic-20231020",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:bionic-20231023",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:bionic"
       ]
     }

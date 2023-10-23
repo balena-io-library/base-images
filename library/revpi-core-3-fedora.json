@@ -13,11 +13,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/revpi-core-3-fedora:36-build-20231020",
+        "docker.io/balenalib/revpi-core-3-fedora:36-build-20231023",
         "docker.io/balenalib/revpi-core-3-fedora:36-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/revpi-core-3-fedora:36-build-20231020",
+        "docker.io/balenalib/revpi-core-3-fedora:36-build-20231023",
         "docker.io/balenalib/revpi-core-3-fedora:36-build"
       ]
     },
@@ -26,15 +26,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/revpi-core-3-fedora:36-run-20231020",
+        "docker.io/balenalib/revpi-core-3-fedora:36-run-20231023",
         "docker.io/balenalib/revpi-core-3-fedora:36-run",
-        "docker.io/balenalib/revpi-core-3-fedora:36-20231020",
+        "docker.io/balenalib/revpi-core-3-fedora:36-20231023",
         "docker.io/balenalib/revpi-core-3-fedora:36"
       ],
       "cache_from": [
-        "docker.io/balenalib/revpi-core-3-fedora:36-run-20231020",
+        "docker.io/balenalib/revpi-core-3-fedora:36-run-20231023",
         "docker.io/balenalib/revpi-core-3-fedora:36-run",
-        "docker.io/balenalib/revpi-core-3-fedora:36-20231020",
+        "docker.io/balenalib/revpi-core-3-fedora:36-20231023",
         "docker.io/balenalib/revpi-core-3-fedora:36"
       ]
     }
