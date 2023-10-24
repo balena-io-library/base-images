@@ -21,11 +21,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/owa5x-ubuntu:lunar-build-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:lunar-build-20231024",
         "docker.io/balenalib/owa5x-ubuntu:lunar-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/owa5x-ubuntu:lunar-build-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:lunar-build-20231024",
         "docker.io/balenalib/owa5x-ubuntu:lunar-build"
       ]
     },
@@ -34,15 +34,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/owa5x-ubuntu:lunar-run-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:lunar-run-20231024",
         "docker.io/balenalib/owa5x-ubuntu:lunar-run",
-        "docker.io/balenalib/owa5x-ubuntu:lunar-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:lunar-20231024",
         "docker.io/balenalib/owa5x-ubuntu:lunar"
       ],
       "cache_from": [
-        "docker.io/balenalib/owa5x-ubuntu:lunar-run-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:lunar-run-20231024",
         "docker.io/balenalib/owa5x-ubuntu:lunar-run",
-        "docker.io/balenalib/owa5x-ubuntu:lunar-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:lunar-20231024",
         "docker.io/balenalib/owa5x-ubuntu:lunar"
       ]
     },
@@ -51,19 +51,19 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/owa5x-ubuntu:jammy-build-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:jammy-build-20231024",
         "docker.io/balenalib/owa5x-ubuntu:jammy-build",
-        "docker.io/balenalib/owa5x-ubuntu:latest-build-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:latest-build-20231024",
         "docker.io/balenalib/owa5x-ubuntu:latest-build",
-        "docker.io/balenalib/owa5x-ubuntu:build-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:build-20231024",
         "docker.io/balenalib/owa5x-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/owa5x-ubuntu:jammy-build-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:jammy-build-20231024",
         "docker.io/balenalib/owa5x-ubuntu:jammy-build",
-        "docker.io/balenalib/owa5x-ubuntu:latest-build-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:latest-build-20231024",
         "docker.io/balenalib/owa5x-ubuntu:latest-build",
-        "docker.io/balenalib/owa5x-ubuntu:build-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:build-20231024",
         "docker.io/balenalib/owa5x-ubuntu:build"
       ]
     },
@@ -72,30 +72,30 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/owa5x-ubuntu:jammy-run-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:jammy-run-20231024",
         "docker.io/balenalib/owa5x-ubuntu:jammy-run",
-        "docker.io/balenalib/owa5x-ubuntu:jammy-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:jammy-20231024",
         "docker.io/balenalib/owa5x-ubuntu:jammy",
-        "docker.io/balenalib/owa5x-ubuntu:latest-run-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:latest-run-20231024",
         "docker.io/balenalib/owa5x-ubuntu:latest-run",
-        "docker.io/balenalib/owa5x-ubuntu:latest-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:latest-20231024",
         "docker.io/balenalib/owa5x-ubuntu:latest",
-        "docker.io/balenalib/owa5x-ubuntu:run-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:run-20231024",
         "docker.io/balenalib/owa5x-ubuntu:run",
-        "docker.io/balenalib/owa5x-ubuntu:20231023"
+        "docker.io/balenalib/owa5x-ubuntu:20231024"
       ],
       "cache_from": [
-        "docker.io/balenalib/owa5x-ubuntu:jammy-run-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:jammy-run-20231024",
         "docker.io/balenalib/owa5x-ubuntu:jammy-run",
-        "docker.io/balenalib/owa5x-ubuntu:jammy-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:jammy-20231024",
         "docker.io/balenalib/owa5x-ubuntu:jammy",
-        "docker.io/balenalib/owa5x-ubuntu:latest-run-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:latest-run-20231024",
         "docker.io/balenalib/owa5x-ubuntu:latest-run",
-        "docker.io/balenalib/owa5x-ubuntu:latest-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:latest-20231024",
         "docker.io/balenalib/owa5x-ubuntu:latest",
-        "docker.io/balenalib/owa5x-ubuntu:run-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:run-20231024",
         "docker.io/balenalib/owa5x-ubuntu:run",
-        "docker.io/balenalib/owa5x-ubuntu:20231023"
+        "docker.io/balenalib/owa5x-ubuntu:20231024"
       ]
     },
     "owa5x-ubuntu-focal-build": {
@@ -103,11 +103,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/owa5x-ubuntu:focal-build-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:focal-build-20231024",
         "docker.io/balenalib/owa5x-ubuntu:focal-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/owa5x-ubuntu:focal-build-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:focal-build-20231024",
         "docker.io/balenalib/owa5x-ubuntu:focal-build"
       ]
     },
@@ -116,15 +116,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/owa5x-ubuntu:focal-run-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:focal-run-20231024",
         "docker.io/balenalib/owa5x-ubuntu:focal-run",
-        "docker.io/balenalib/owa5x-ubuntu:focal-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:focal-20231024",
         "docker.io/balenalib/owa5x-ubuntu:focal"
       ],
       "cache_from": [
-        "docker.io/balenalib/owa5x-ubuntu:focal-run-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:focal-run-20231024",
         "docker.io/balenalib/owa5x-ubuntu:focal-run",
-        "docker.io/balenalib/owa5x-ubuntu:focal-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:focal-20231024",
         "docker.io/balenalib/owa5x-ubuntu:focal"
       ]
     },
@@ -133,11 +133,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/owa5x-ubuntu:xenial-build-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:xenial-build-20231024",
         "docker.io/balenalib/owa5x-ubuntu:xenial-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/owa5x-ubuntu:xenial-build-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:xenial-build-20231024",
         "docker.io/balenalib/owa5x-ubuntu:xenial-build"
       ]
     },
@@ -146,15 +146,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/owa5x-ubuntu:xenial-run-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:xenial-run-20231024",
         "docker.io/balenalib/owa5x-ubuntu:xenial-run",
-        "docker.io/balenalib/owa5x-ubuntu:xenial-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:xenial-20231024",
         "docker.io/balenalib/owa5x-ubuntu:xenial"
       ],
       "cache_from": [
-        "docker.io/balenalib/owa5x-ubuntu:xenial-run-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:xenial-run-20231024",
         "docker.io/balenalib/owa5x-ubuntu:xenial-run",
-        "docker.io/balenalib/owa5x-ubuntu:xenial-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:xenial-20231024",
         "docker.io/balenalib/owa5x-ubuntu:xenial"
       ]
     },
@@ -163,11 +163,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/owa5x-ubuntu:bionic-build-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:bionic-build-20231024",
         "docker.io/balenalib/owa5x-ubuntu:bionic-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/owa5x-ubuntu:bionic-build-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:bionic-build-20231024",
         "docker.io/balenalib/owa5x-ubuntu:bionic-build"
       ]
     },
@@ -176,15 +176,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/owa5x-ubuntu:bionic-run-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:bionic-run-20231024",
         "docker.io/balenalib/owa5x-ubuntu:bionic-run",
-        "docker.io/balenalib/owa5x-ubuntu:bionic-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:bionic-20231024",
         "docker.io/balenalib/owa5x-ubuntu:bionic"
       ],
       "cache_from": [
-        "docker.io/balenalib/owa5x-ubuntu:bionic-run-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:bionic-run-20231024",
         "docker.io/balenalib/owa5x-ubuntu:bionic-run",
-        "docker.io/balenalib/owa5x-ubuntu:bionic-20231023",
+        "docker.io/balenalib/owa5x-ubuntu:bionic-20231024",
         "docker.io/balenalib/owa5x-ubuntu:bionic"
       ]
     }

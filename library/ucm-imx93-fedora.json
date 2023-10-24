@@ -1,0 +1,128 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "ucm-imx93-fedora-36-build",
+        "ucm-imx93-fedora-36-run",
+        "ucm-imx93-fedora-37-build",
+        "ucm-imx93-fedora-37-run",
+        "ucm-imx93-fedora-38-build",
+        "ucm-imx93-fedora-38-run"
+      ]
+    }
+  },
+  "target": {
+    "ucm-imx93-fedora-36-build": {
+      "context": "device-base/ucm-imx93/fedora/36/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/ucm-imx93-fedora:36-build-20231024",
+        "docker.io/balenalib/ucm-imx93-fedora:36-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/ucm-imx93-fedora:36-build-20231024",
+        "docker.io/balenalib/ucm-imx93-fedora:36-build"
+      ]
+    },
+    "ucm-imx93-fedora-36-run": {
+      "context": "device-base/ucm-imx93/fedora/36/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/ucm-imx93-fedora:36-run-20231024",
+        "docker.io/balenalib/ucm-imx93-fedora:36-run",
+        "docker.io/balenalib/ucm-imx93-fedora:36-20231024",
+        "docker.io/balenalib/ucm-imx93-fedora:36"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/ucm-imx93-fedora:36-run-20231024",
+        "docker.io/balenalib/ucm-imx93-fedora:36-run",
+        "docker.io/balenalib/ucm-imx93-fedora:36-20231024",
+        "docker.io/balenalib/ucm-imx93-fedora:36"
+      ]
+    },
+    "ucm-imx93-fedora-37-build": {
+      "context": "device-base/ucm-imx93/fedora/37/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/ucm-imx93-fedora:37-build-20231024",
+        "docker.io/balenalib/ucm-imx93-fedora:37-build",
+        "docker.io/balenalib/ucm-imx93-fedora:latest-build-20231024",
+        "docker.io/balenalib/ucm-imx93-fedora:latest-build",
+        "docker.io/balenalib/ucm-imx93-fedora:build-20231024",
+        "docker.io/balenalib/ucm-imx93-fedora:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/ucm-imx93-fedora:37-build-20231024",
+        "docker.io/balenalib/ucm-imx93-fedora:37-build",
+        "docker.io/balenalib/ucm-imx93-fedora:latest-build-20231024",
+        "docker.io/balenalib/ucm-imx93-fedora:latest-build",
+        "docker.io/balenalib/ucm-imx93-fedora:build-20231024",
+        "docker.io/balenalib/ucm-imx93-fedora:build"
+      ]
+    },
+    "ucm-imx93-fedora-37-run": {
+      "context": "device-base/ucm-imx93/fedora/37/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/ucm-imx93-fedora:37-run-20231024",
+        "docker.io/balenalib/ucm-imx93-fedora:37-run",
+        "docker.io/balenalib/ucm-imx93-fedora:37-20231024",
+        "docker.io/balenalib/ucm-imx93-fedora:37",
+        "docker.io/balenalib/ucm-imx93-fedora:latest-run-20231024",
+        "docker.io/balenalib/ucm-imx93-fedora:latest-run",
+        "docker.io/balenalib/ucm-imx93-fedora:latest-20231024",
+        "docker.io/balenalib/ucm-imx93-fedora:latest",
+        "docker.io/balenalib/ucm-imx93-fedora:run-20231024",
+        "docker.io/balenalib/ucm-imx93-fedora:run",
+        "docker.io/balenalib/ucm-imx93-fedora:20231024"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/ucm-imx93-fedora:37-run-20231024",
+        "docker.io/balenalib/ucm-imx93-fedora:37-run",
+        "docker.io/balenalib/ucm-imx93-fedora:37-20231024",
+        "docker.io/balenalib/ucm-imx93-fedora:37",
+        "docker.io/balenalib/ucm-imx93-fedora:latest-run-20231024",
+        "docker.io/balenalib/ucm-imx93-fedora:latest-run",
+        "docker.io/balenalib/ucm-imx93-fedora:latest-20231024",
+        "docker.io/balenalib/ucm-imx93-fedora:latest",
+        "docker.io/balenalib/ucm-imx93-fedora:run-20231024",
+        "docker.io/balenalib/ucm-imx93-fedora:run",
+        "docker.io/balenalib/ucm-imx93-fedora:20231024"
+      ]
+    },
+    "ucm-imx93-fedora-38-build": {
+      "context": "device-base/ucm-imx93/fedora/38/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/ucm-imx93-fedora:38-build-20231024",
+        "docker.io/balenalib/ucm-imx93-fedora:38-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/ucm-imx93-fedora:38-build-20231024",
+        "docker.io/balenalib/ucm-imx93-fedora:38-build"
+      ]
+    },
+    "ucm-imx93-fedora-38-run": {
+      "context": "device-base/ucm-imx93/fedora/38/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/ucm-imx93-fedora:38-run-20231024",
+        "docker.io/balenalib/ucm-imx93-fedora:38-run",
+        "docker.io/balenalib/ucm-imx93-fedora:38-20231024",
+        "docker.io/balenalib/ucm-imx93-fedora:38"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/ucm-imx93-fedora:38-run-20231024",
+        "docker.io/balenalib/ucm-imx93-fedora:38-run",
+        "docker.io/balenalib/ucm-imx93-fedora:38-20231024",
+        "docker.io/balenalib/ucm-imx93-fedora:38"
+      ]
+    }
+  }
+}

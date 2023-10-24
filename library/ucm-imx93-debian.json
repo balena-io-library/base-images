@@ -1,0 +1,230 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "ucm-imx93-debian-buster-build",
+        "ucm-imx93-debian-buster-run",
+        "ucm-imx93-debian-bullseye-build",
+        "ucm-imx93-debian-bullseye-run",
+        "ucm-imx93-debian-bookworm-build",
+        "ucm-imx93-debian-bookworm-run",
+        "ucm-imx93-debian-sid-build",
+        "ucm-imx93-debian-sid-run"
+      ]
+    }
+  },
+  "target": {
+    "ucm-imx93-debian-buster-build": {
+      "context": "device-base/ucm-imx93/debian/buster/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/ucm-imx93-debian:buster-build-20231024",
+        "docker.io/balenalib/ucm-imx93-debian:buster-build",
+        "docker.io/balenalib/ucm-imx93:buster-build-20231024",
+        "docker.io/balenalib/ucm-imx93:buster-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/ucm-imx93-debian:buster-build-20231024",
+        "docker.io/balenalib/ucm-imx93-debian:buster-build",
+        "docker.io/balenalib/ucm-imx93:buster-build-20231024",
+        "docker.io/balenalib/ucm-imx93:buster-build"
+      ]
+    },
+    "ucm-imx93-debian-buster-run": {
+      "context": "device-base/ucm-imx93/debian/buster/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/ucm-imx93-debian:buster-run-20231024",
+        "docker.io/balenalib/ucm-imx93-debian:buster-run",
+        "docker.io/balenalib/ucm-imx93-debian:buster-20231024",
+        "docker.io/balenalib/ucm-imx93-debian:buster",
+        "docker.io/balenalib/ucm-imx93:buster-run-20231024",
+        "docker.io/balenalib/ucm-imx93:buster-run",
+        "docker.io/balenalib/ucm-imx93:buster-20231024",
+        "docker.io/balenalib/ucm-imx93:buster"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/ucm-imx93-debian:buster-run-20231024",
+        "docker.io/balenalib/ucm-imx93-debian:buster-run",
+        "docker.io/balenalib/ucm-imx93-debian:buster-20231024",
+        "docker.io/balenalib/ucm-imx93-debian:buster",
+        "docker.io/balenalib/ucm-imx93:buster-run-20231024",
+        "docker.io/balenalib/ucm-imx93:buster-run",
+        "docker.io/balenalib/ucm-imx93:buster-20231024",
+        "docker.io/balenalib/ucm-imx93:buster"
+      ]
+    },
+    "ucm-imx93-debian-bullseye-build": {
+      "context": "device-base/ucm-imx93/debian/bullseye/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/ucm-imx93-debian:bullseye-build-20231024",
+        "docker.io/balenalib/ucm-imx93-debian:bullseye-build",
+        "docker.io/balenalib/ucm-imx93-debian:latest-build-20231024",
+        "docker.io/balenalib/ucm-imx93-debian:latest-build",
+        "docker.io/balenalib/ucm-imx93-debian:build-20231024",
+        "docker.io/balenalib/ucm-imx93-debian:build",
+        "docker.io/balenalib/ucm-imx93:bullseye-build-20231024",
+        "docker.io/balenalib/ucm-imx93:bullseye-build",
+        "docker.io/balenalib/ucm-imx93:latest-build-20231024",
+        "docker.io/balenalib/ucm-imx93:latest-build",
+        "docker.io/balenalib/ucm-imx93:build-20231024",
+        "docker.io/balenalib/ucm-imx93:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/ucm-imx93-debian:bullseye-build-20231024",
+        "docker.io/balenalib/ucm-imx93-debian:bullseye-build",
+        "docker.io/balenalib/ucm-imx93-debian:latest-build-20231024",
+        "docker.io/balenalib/ucm-imx93-debian:latest-build",
+        "docker.io/balenalib/ucm-imx93-debian:build-20231024",
+        "docker.io/balenalib/ucm-imx93-debian:build",
+        "docker.io/balenalib/ucm-imx93:bullseye-build-20231024",
+        "docker.io/balenalib/ucm-imx93:bullseye-build",
+        "docker.io/balenalib/ucm-imx93:latest-build-20231024",
+        "docker.io/balenalib/ucm-imx93:latest-build",
+        "docker.io/balenalib/ucm-imx93:build-20231024",
+        "docker.io/balenalib/ucm-imx93:build"
+      ]
+    },
+    "ucm-imx93-debian-bullseye-run": {
+      "context": "device-base/ucm-imx93/debian/bullseye/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/ucm-imx93-debian:bullseye-run-20231024",
+        "docker.io/balenalib/ucm-imx93-debian:bullseye-run",
+        "docker.io/balenalib/ucm-imx93-debian:bullseye-20231024",
+        "docker.io/balenalib/ucm-imx93-debian:bullseye",
+        "docker.io/balenalib/ucm-imx93-debian:latest-run-20231024",
+        "docker.io/balenalib/ucm-imx93-debian:latest-run",
+        "docker.io/balenalib/ucm-imx93-debian:latest-20231024",
+        "docker.io/balenalib/ucm-imx93-debian:latest",
+        "docker.io/balenalib/ucm-imx93-debian:run-20231024",
+        "docker.io/balenalib/ucm-imx93-debian:run",
+        "docker.io/balenalib/ucm-imx93-debian:20231024",
+        "docker.io/balenalib/ucm-imx93:bullseye-run-20231024",
+        "docker.io/balenalib/ucm-imx93:bullseye-run",
+        "docker.io/balenalib/ucm-imx93:bullseye-20231024",
+        "docker.io/balenalib/ucm-imx93:bullseye",
+        "docker.io/balenalib/ucm-imx93:latest-run-20231024",
+        "docker.io/balenalib/ucm-imx93:latest-run",
+        "docker.io/balenalib/ucm-imx93:latest-20231024",
+        "docker.io/balenalib/ucm-imx93:latest",
+        "docker.io/balenalib/ucm-imx93:run-20231024",
+        "docker.io/balenalib/ucm-imx93:run",
+        "docker.io/balenalib/ucm-imx93:20231024"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/ucm-imx93-debian:bullseye-run-20231024",
+        "docker.io/balenalib/ucm-imx93-debian:bullseye-run",
+        "docker.io/balenalib/ucm-imx93-debian:bullseye-20231024",
+        "docker.io/balenalib/ucm-imx93-debian:bullseye",
+        "docker.io/balenalib/ucm-imx93-debian:latest-run-20231024",
+        "docker.io/balenalib/ucm-imx93-debian:latest-run",
+        "docker.io/balenalib/ucm-imx93-debian:latest-20231024",
+        "docker.io/balenalib/ucm-imx93-debian:latest",
+        "docker.io/balenalib/ucm-imx93-debian:run-20231024",
+        "docker.io/balenalib/ucm-imx93-debian:run",
+        "docker.io/balenalib/ucm-imx93-debian:20231024",
+        "docker.io/balenalib/ucm-imx93:bullseye-run-20231024",
+        "docker.io/balenalib/ucm-imx93:bullseye-run",
+        "docker.io/balenalib/ucm-imx93:bullseye-20231024",
+        "docker.io/balenalib/ucm-imx93:bullseye",
+        "docker.io/balenalib/ucm-imx93:latest-run-20231024",
+        "docker.io/balenalib/ucm-imx93:latest-run",
+        "docker.io/balenalib/ucm-imx93:latest-20231024",
+        "docker.io/balenalib/ucm-imx93:latest",
+        "docker.io/balenalib/ucm-imx93:run-20231024",
+        "docker.io/balenalib/ucm-imx93:run",
+        "docker.io/balenalib/ucm-imx93:20231024"
+      ]
+    },
+    "ucm-imx93-debian-bookworm-build": {
+      "context": "device-base/ucm-imx93/debian/bookworm/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/ucm-imx93-debian:bookworm-build-20231024",
+        "docker.io/balenalib/ucm-imx93-debian:bookworm-build",
+        "docker.io/balenalib/ucm-imx93:bookworm-build-20231024",
+        "docker.io/balenalib/ucm-imx93:bookworm-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/ucm-imx93-debian:bookworm-build-20231024",
+        "docker.io/balenalib/ucm-imx93-debian:bookworm-build",
+        "docker.io/balenalib/ucm-imx93:bookworm-build-20231024",
+        "docker.io/balenalib/ucm-imx93:bookworm-build"
+      ]
+    },
+    "ucm-imx93-debian-bookworm-run": {
+      "context": "device-base/ucm-imx93/debian/bookworm/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/ucm-imx93-debian:bookworm-run-20231024",
+        "docker.io/balenalib/ucm-imx93-debian:bookworm-run",
+        "docker.io/balenalib/ucm-imx93-debian:bookworm-20231024",
+        "docker.io/balenalib/ucm-imx93-debian:bookworm",
+        "docker.io/balenalib/ucm-imx93:bookworm-run-20231024",
+        "docker.io/balenalib/ucm-imx93:bookworm-run",
+        "docker.io/balenalib/ucm-imx93:bookworm-20231024",
+        "docker.io/balenalib/ucm-imx93:bookworm"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/ucm-imx93-debian:bookworm-run-20231024",
+        "docker.io/balenalib/ucm-imx93-debian:bookworm-run",
+        "docker.io/balenalib/ucm-imx93-debian:bookworm-20231024",
+        "docker.io/balenalib/ucm-imx93-debian:bookworm",
+        "docker.io/balenalib/ucm-imx93:bookworm-run-20231024",
+        "docker.io/balenalib/ucm-imx93:bookworm-run",
+        "docker.io/balenalib/ucm-imx93:bookworm-20231024",
+        "docker.io/balenalib/ucm-imx93:bookworm"
+      ]
+    },
+    "ucm-imx93-debian-sid-build": {
+      "context": "device-base/ucm-imx93/debian/sid/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/ucm-imx93-debian:sid-build-20231024",
+        "docker.io/balenalib/ucm-imx93-debian:sid-build",
+        "docker.io/balenalib/ucm-imx93:sid-build-20231024",
+        "docker.io/balenalib/ucm-imx93:sid-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/ucm-imx93-debian:sid-build-20231024",
+        "docker.io/balenalib/ucm-imx93-debian:sid-build",
+        "docker.io/balenalib/ucm-imx93:sid-build-20231024",
+        "docker.io/balenalib/ucm-imx93:sid-build"
+      ]
+    },
+    "ucm-imx93-debian-sid-run": {
+      "context": "device-base/ucm-imx93/debian/sid/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/ucm-imx93-debian:sid-run-20231024",
+        "docker.io/balenalib/ucm-imx93-debian:sid-run",
+        "docker.io/balenalib/ucm-imx93-debian:sid-20231024",
+        "docker.io/balenalib/ucm-imx93-debian:sid",
+        "docker.io/balenalib/ucm-imx93:sid-run-20231024",
+        "docker.io/balenalib/ucm-imx93:sid-run",
+        "docker.io/balenalib/ucm-imx93:sid-20231024",
+        "docker.io/balenalib/ucm-imx93:sid"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/ucm-imx93-debian:sid-run-20231024",
+        "docker.io/balenalib/ucm-imx93-debian:sid-run",
+        "docker.io/balenalib/ucm-imx93-debian:sid-20231024",
+        "docker.io/balenalib/ucm-imx93-debian:sid",
+        "docker.io/balenalib/ucm-imx93:sid-run-20231024",
+        "docker.io/balenalib/ucm-imx93:sid-run",
+        "docker.io/balenalib/ucm-imx93:sid-20231024",
+        "docker.io/balenalib/ucm-imx93:sid"
+      ]
+    }
+  }
+}
