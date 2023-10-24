@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.28 - 2023-10-24
+
+* Fix on workflow trigger for os-device workflows [Kyle Harding]
+
 ## 2.8.27 - 2023-10-23
 
 * Update actions/setup-node action to v3.8.2 [Self-hosted Renovate Bot]
