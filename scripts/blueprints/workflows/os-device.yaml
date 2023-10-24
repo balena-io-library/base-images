@@ -14,7 +14,7 @@ output:
     "on":
       workflow_run:
         workflows:
-          - Bake {{this.children.arch.sw.slug}}
+          - Bake {{this.children.arch.sw.slug}}-{{this.children.sw.os.slug}}
         types:
           - completed
     jobs:
