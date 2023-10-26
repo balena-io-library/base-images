@@ -1,0 +1,171 @@
+name: Triage workflows
+
+# https://cli.github.com/manual/gh_issue_create
+# https://cli.github.com/manual/gh_issue_edit
+# https://cli.github.com/manual/gh_issue_close
+# https://cli.github.com/manual/gh_issue_comment
+
+"on":
+  schedule:
+    # At 04:00, only on Sunday
+    - cron: "0 4 * * 0"
+  workflow_dispatch:
+    inputs:
+      dry-run:
+        description: Do not create any issues or comments
+        required: false
+        type: boolean
+        default: true
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+env:
+  # environment variables used by gh CLI
+  # https://cli.github.com/manual/gh_help_environment
+  GH_DEBUG: "true"
+  GH_PAGER: "cat"
+  GH_PROMPT_DISABLED: "true"
+  GH_REPO: "${{ github.repository }}"
+  GH_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+
+jobs:
+  prepare:
+    name: Prepare matrix
+    runs-on: ubuntu-latest
+
+    outputs:
+      active_workflows: ${{ steps.active_workflows.outputs.matrix }}
+
+    steps:
+      # https://cli.github.com/manual/gh_workflow_list
+      - name: Get active workflows
+        id: active_workflows
+        run: |
+          echo matrix="$(gh workflow list -L 0 | awk -F'\t' 'NR>1 {print $1}' | jq -R -s -c 'split("\n")[:-1]')" >> $GITHUB_OUTPUT
+
+  triage:
+    name: Triage
+    runs-on: ubuntu-latest
+    # timeout-minutes: 480
+    needs:
+      - prepare
+
+    strategy:
+      # try to avoid rate limiting
+      max-parallel: 1
+      fail-fast: false
+      matrix:
+        workflow: ${{ fromJSON(needs.prepare.outputs.active_workflows) }}
+
+    env:
+      ISSUE_TITLE: "Workflow failed: ${{ matrix.workflow }}"
+
+    steps:
+      # https://cli.github.com/manual/gh_run_list
+      - name: Find last run
+        id: last_run
+        run: |
+          json="$(gh run list --workflow "${{ matrix.workflow }}" --limit 1 --json databaseId,conclusion --jq '.[0]')"
+          echo databaseId="$(jq -r '.databaseId' <<<"${json}")" >> $GITHUB_OUTPUT
+          echo conclusion="$(jq -r '.conclusion' <<<"${json}")" >> $GITHUB_OUTPUT
+
+      # https://cli.github.com/manual/gh_run_view
+      - name: Process last run output
+        run: |
+          gh run view ${{ steps.last_run.outputs.databaseId }} | awk '
+          BEGIN { 
+              print "# GitHub Actions Run\n"; 
+          }
+          /^✓/ {
+              gsub("✓", "-");
+              print $0 "\n";
+          }
+          /^X / {
+              gsub("X", "-");
+              print "```\n" $0 "\n```\n";
+          }
+          /^ANNOTATIONS/ {
+              print "## " $0 "\n";
+          }
+          /^JOBS/ {
+              print "## " $0 "\n";
+          }
+          /^For more information about a job/ {
+              next;  # skip this line
+          }
+          /^View this run on GitHub:/ {
+              print $0 "\n";
+          }
+          ' > ./output.md
+          cat ./output.md
+
+      # https://cli.github.com/manual/gh_search_issues
+      - name: Find issue
+        id: find_issue
+        run: |
+          echo number="$(gh search issues --state=open --json "number,title" \
+            --jq '.[] | select(.title == "${{ env.ISSUE_TITLE }}").number')" >> $GITHUB_OUTPUT
+
+      # # https://github.com/peter-evans/find-comment
+      # - name: Find Comment
+      #   if: steps.find_issue.outputs.number != '' && steps.last_run.outputs.conclusion == 'failure'
+      #   uses: peter-evans/find-comment@v2.4.0
+      #   id: find_comment
+      #   with:
+      #     issue-number: ${{ steps.find_issue.outputs.number }}
+      #     comment-author: 'github-actions[bot]'
+      #     body-includes: This comment was written by a bot!
+
+      # https://github.com/peter-evans/create-issue-from-file
+      - name: Create Issue
+        if: |
+          steps.find_issue.outputs.number == '' && 
+          steps.last_run.outputs.conclusion == 'failure' && 
+          github.event.inputs.dry-run != 'true' &&
+          github.event_name != 'pull_request'
+        uses: peter-evans/create-issue-from-file@v4.0.1
+        id: create_issue
+        with:
+          title: ${{ env.ISSUE_TITLE }}
+          content-filepath: ./output.md
+          labels: |
+            report
+            automated issue
+
+      # # https://github.com/peter-evans/create-or-update-comment
+      # - name: Create comment
+      #   if: |
+      #     steps.find_comment.outputs.comment-id == '' &&
+      #     steps.last_run.outputs.conclusion == 'failure' &&
+      #     github.event.inputs.dry-run != 'true' &&
+      #     github.event_name != 'pull_request'
+      #   uses: peter-evans/create-or-update-comment@v3.1.0
+      #   with:
+      #     issue-number: ${{ steps.find_issue.outputs.number }}
+      #     body-path: ./output.md
+      #     reactions: rocket
+
+      # # https://github.com/peter-evans/create-or-update-comment
+      # - name: Update comment
+      #   if: |
+      #     steps.find_comment.outputs.comment-id != '' &&
+      #     steps.last_run.outputs.conclusion == 'failure' &&
+      #     github.event.inputs.dry-run != 'true' &&
+      #     github.event_name != 'pull_request'
+      #   uses: peter-evans/create-or-update-comment@v3.1.0
+      #   with:
+      #     comment-id: ${{ steps.find_comment.outputs.comment-id }}
+      #     body-path: ./output.md
+      #     reactions: hooray
+
+      # https://cli.github.com/manual/gh_issue_close
+      - name: Close issue
+        if: |
+          steps.find_issue.outputs.number != '' && 
+          steps.last_run.outputs.conclusion == 'success' && 
+          github.event.inputs.dry-run != 'true' &&
+          github.event_name != 'pull_request'
+        run: |
+          gh issue close ${{ steps.find_issue.outputs.number }} -c "$(<./output.md)"
