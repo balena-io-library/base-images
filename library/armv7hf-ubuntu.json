@@ -21,11 +21,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/armv7hf-ubuntu:lunar-build-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:lunar-build-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:lunar-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/armv7hf-ubuntu:lunar-build-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:lunar-build-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:lunar-build"
       ]
     },
@@ -34,15 +34,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/armv7hf-ubuntu:lunar-run-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:lunar-run-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:lunar-run",
-        "docker.io/balenalib/armv7hf-ubuntu:lunar-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:lunar-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:lunar"
       ],
       "cache_from": [
-        "docker.io/balenalib/armv7hf-ubuntu:lunar-run-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:lunar-run-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:lunar-run",
-        "docker.io/balenalib/armv7hf-ubuntu:lunar-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:lunar-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:lunar"
       ]
     },
@@ -51,19 +51,19 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/armv7hf-ubuntu:jammy-build-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:jammy-build-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:jammy-build",
-        "docker.io/balenalib/armv7hf-ubuntu:latest-build-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:latest-build-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:latest-build",
-        "docker.io/balenalib/armv7hf-ubuntu:build-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:build-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/armv7hf-ubuntu:jammy-build-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:jammy-build-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:jammy-build",
-        "docker.io/balenalib/armv7hf-ubuntu:latest-build-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:latest-build-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:latest-build",
-        "docker.io/balenalib/armv7hf-ubuntu:build-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:build-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:build"
       ]
     },
@@ -72,30 +72,30 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/armv7hf-ubuntu:jammy-run-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:jammy-run-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:jammy-run",
-        "docker.io/balenalib/armv7hf-ubuntu:jammy-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:jammy-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:jammy",
-        "docker.io/balenalib/armv7hf-ubuntu:latest-run-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:latest-run-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:latest-run",
-        "docker.io/balenalib/armv7hf-ubuntu:latest-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:latest-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:latest",
-        "docker.io/balenalib/armv7hf-ubuntu:run-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:run-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:run",
-        "docker.io/balenalib/armv7hf-ubuntu:20231025"
+        "docker.io/balenalib/armv7hf-ubuntu:20231026"
       ],
       "cache_from": [
-        "docker.io/balenalib/armv7hf-ubuntu:jammy-run-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:jammy-run-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:jammy-run",
-        "docker.io/balenalib/armv7hf-ubuntu:jammy-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:jammy-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:jammy",
-        "docker.io/balenalib/armv7hf-ubuntu:latest-run-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:latest-run-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:latest-run",
-        "docker.io/balenalib/armv7hf-ubuntu:latest-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:latest-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:latest",
-        "docker.io/balenalib/armv7hf-ubuntu:run-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:run-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:run",
-        "docker.io/balenalib/armv7hf-ubuntu:20231025"
+        "docker.io/balenalib/armv7hf-ubuntu:20231026"
       ]
     },
     "armv7hf-ubuntu-focal-build": {
@@ -103,11 +103,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/armv7hf-ubuntu:focal-build-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:focal-build-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:focal-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/armv7hf-ubuntu:focal-build-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:focal-build-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:focal-build"
       ]
     },
@@ -116,15 +116,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/armv7hf-ubuntu:focal-run-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:focal-run-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:focal-run",
-        "docker.io/balenalib/armv7hf-ubuntu:focal-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:focal-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:focal"
       ],
       "cache_from": [
-        "docker.io/balenalib/armv7hf-ubuntu:focal-run-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:focal-run-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:focal-run",
-        "docker.io/balenalib/armv7hf-ubuntu:focal-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:focal-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:focal"
       ]
     },
@@ -133,11 +133,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/armv7hf-ubuntu:xenial-build-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:xenial-build-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:xenial-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/armv7hf-ubuntu:xenial-build-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:xenial-build-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:xenial-build"
       ]
     },
@@ -146,15 +146,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/armv7hf-ubuntu:xenial-run-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:xenial-run-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:xenial-run",
-        "docker.io/balenalib/armv7hf-ubuntu:xenial-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:xenial-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:xenial"
       ],
       "cache_from": [
-        "docker.io/balenalib/armv7hf-ubuntu:xenial-run-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:xenial-run-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:xenial-run",
-        "docker.io/balenalib/armv7hf-ubuntu:xenial-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:xenial-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:xenial"
       ]
     },
@@ -163,11 +163,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/armv7hf-ubuntu:bionic-build-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:bionic-build-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:bionic-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/armv7hf-ubuntu:bionic-build-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:bionic-build-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:bionic-build"
       ]
     },
@@ -176,15 +176,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/armv7hf-ubuntu:bionic-run-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:bionic-run-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:bionic-run",
-        "docker.io/balenalib/armv7hf-ubuntu:bionic-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:bionic-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:bionic"
       ],
       "cache_from": [
-        "docker.io/balenalib/armv7hf-ubuntu:bionic-run-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:bionic-run-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:bionic-run",
-        "docker.io/balenalib/armv7hf-ubuntu:bionic-20231025",
+        "docker.io/balenalib/armv7hf-ubuntu:bionic-20231026",
         "docker.io/balenalib/armv7hf-ubuntu:bionic"
       ]
     }
