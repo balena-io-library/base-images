@@ -68,7 +68,7 @@ jobs:
           username: ${{ secrets.BALENAIMAGES_USER }}
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Docker bake
-        continue-on-error: true
+        continue-on-error: false
         id: docker_bake
         uses: docker/bake-action@511fde2517761e303af548ec9e0ea74a8a100112
         with:
@@ -131,7 +131,7 @@ jobs:
           username: ${{ secrets.BALENAIMAGES_USER }}
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Docker bake
-        continue-on-error: true
+        continue-on-error: false
         id: docker_bake
         uses: docker/bake-action@511fde2517761e303af548ec9e0ea74a8a100112
         with:
@@ -194,7 +194,7 @@ jobs:
           username: ${{ secrets.BALENAIMAGES_USER }}
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Docker bake
-        continue-on-error: true
+        continue-on-error: false
         id: docker_bake
         uses: docker/bake-action@511fde2517761e303af548ec9e0ea74a8a100112
         with:
@@ -257,7 +257,7 @@ jobs:
           username: ${{ secrets.BALENAIMAGES_USER }}
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Docker bake
-        continue-on-error: true
+        continue-on-error: false
         id: docker_bake
         uses: docker/bake-action@511fde2517761e303af548ec9e0ea74a8a100112
         with:
@@ -318,7 +318,7 @@ jobs:
           username: ${{ secrets.BALENAIMAGES_USER }}
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Docker bake
-        continue-on-error: true
+        continue-on-error: false
         id: docker_bake
         uses: docker/bake-action@511fde2517761e303af548ec9e0ea74a8a100112
         with:
