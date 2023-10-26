@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.31 - 2023-10-26
+
+
+<details>
+<summary> Update scripts/contracts digest to 1091793 [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.81 - 2023-10-26
+> 
+> * hw.device-type: Add imx8mm-lpddr4-evk device [Alex J Lennon]
+> 
+
+</details>
+
 ## 2.8.30 - 2023-10-25
 
 * Update dependency balena-sdk to v19 [Self-hosted Renovate Bot]
