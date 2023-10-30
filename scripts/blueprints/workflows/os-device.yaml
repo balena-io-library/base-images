@@ -22,6 +22,8 @@ output:
         name: Prepare {{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}
         env:
           LIBRARY: library/{{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}.json
+          NAMESPACE: balenalib
+          REPOSITORY: "{{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}"
       bake:
         name: Bake {{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}
         needs:

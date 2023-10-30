@@ -18,6 +18,8 @@ output:
           - bake-{{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}
         env:
           LIBRARY: library/{{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}-{{this.children.sw.stack.slug}}.json
+          NAMESPACE: balenalib
+          REPOSITORY_SLUG: "{{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}-{{this.children.sw.stack.slug}}"
       bake:
         name: Bake {{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}-{{this.children.sw.stack.slug}}
         needs:

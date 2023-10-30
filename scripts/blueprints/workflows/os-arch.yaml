@@ -18,6 +18,8 @@ output:
         name: Prepare {{this.children.arch.sw.slug}}-{{this.children.sw.os.slug}}
         env:
           LIBRARY: library/{{this.children.arch.sw.slug}}-{{this.children.sw.os.slug}}.json
+          NAMESPACE: balenalib
+          REPOSITORY: "{{this.children.arch.sw.slug}}-{{this.children.sw.os.slug}}"
       bake:
         name: Bake {{this.children.arch.sw.slug}}-{{this.children.sw.os.slug}}
         needs:

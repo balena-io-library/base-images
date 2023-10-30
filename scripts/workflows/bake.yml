@@ -36,6 +36,30 @@ jobs:
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
 
+      - name: Create repository if required
+        if: inputs.no-push != true
+        env:
+          DOCKER_USERNAME: ${{ secrets.BALENAIMAGES_USER }}
+          DOCKER_PASSWORD: ${{ secrets.BALENAIMAGES_TOKEN }}
+        run: |
+          token=$(curl -s -X POST -H "Content-Type: application/json" \
+            -d '{"username": "'${DOCKER_USERNAME}'", "password": "'${DOCKER_PASSWORD}'"}' \
+            https://hub.docker.com/v2/users/login/ | jq -r .token)
+
+          exists=$(curl -s -H "Authorization: JWT ${token}" \
+            https://hub.docker.com/v2/repositories/${NAMESPACE}/${REPOSITORY}/ | jq -r '.name')
+
+          if [ "${exists}" == "${REPOSITORY}" ]; then
+              echo "Repository ${NAMESPACE}/${REPOSITORY} exists!"
+          else
+              curl -s -X POST \
+                -H "Content-Type: application/json" \
+                -H "Authorization: JWT ${token}" \
+                -d '{"namespace": "'${NAMESPACE}'", "name": "'${REPOSITORY}'"}' \
+                https://hub.docker.com/v2/repositories/
+              echo  "::warning::Created new repository ${NAMESPACE}/${REPOSITORY} on DockerHub"
+          fi
+
   bake:
     name: Bake images
     runs-on: ubuntu-latest

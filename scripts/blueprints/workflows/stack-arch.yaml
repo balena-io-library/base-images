@@ -17,6 +17,8 @@ output:
           - "bake-{{this.children.arch.sw.slug}}-{{this.children.sw.os.slug}}"
         env:
           LIBRARY: library/{{this.children.arch.sw.slug}}-{{this.children.sw.os.slug}}-{{this.children.sw.stack.slug}}.json
+          NAMESPACE: balenalib
+          REPOSITORY: "{{this.children.arch.sw.slug}}-{{this.children.sw.os.slug}}-{{this.children.sw.stack.slug}}"
       bake:
         name: Bake {{this.children.arch.sw.slug}}-{{this.children.sw.os.slug}}-{{this.children.sw.stack.slug}}
         needs:
