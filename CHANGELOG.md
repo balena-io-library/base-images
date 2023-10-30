@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.33 - 2023-10-30
+
+* Lock file maintenance [Self-hosted Renovate Bot]
+
 ## 2.8.32 - 2023-10-26
 
 * Disable continue on error so we can easily triage workflows [Kyle Harding]
