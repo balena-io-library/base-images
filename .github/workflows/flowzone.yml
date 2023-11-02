@@ -33,7 +33,8 @@ jobs:
           ["self-hosted","X64"]
         ]
       custom_publish_matrix:
-        all,
-        all-lib,
+        all-dockerfiles,
+        all-bakefiles,
         all-workflows,
-        all-dockerhub
+        all-descriptions,
+        missing-repositories
