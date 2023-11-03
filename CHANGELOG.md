@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.37 - 2023-11-03
+
+* Update dependency lint-staged to v15 [Self-hosted Renovate Bot]
+
 ## 2.8.36 - 2023-11-03
 
 * Update Node.js to v20 [Self-hosted Renovate Bot]
