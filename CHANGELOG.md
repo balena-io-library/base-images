@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.34 - 2023-11-03
+
+* Run custom publish steps in parallel to reduce build time [Kyle Harding]
+
 ## 2.8.33 - 2023-10-30
 
 * Lock file maintenance [Self-hosted Renovate Bot]
