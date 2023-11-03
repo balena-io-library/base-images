@@ -27,7 +27,7 @@ runs:
       id: generate
       shell: bash
       run: |
-        npm run ${{ env.matrix_value }}
+        npm run ${{ env.matrix_value }} 2> >(tee -a $GITHUB_STEP_SUMMARY)
         if [ -n "$(git status --porcelain)" ]; then
           echo "files_changed=true" >> $GITHUB_OUTPUT
         fi

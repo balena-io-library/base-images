@@ -6,6 +6,7 @@ output:
   imageName: "{{this.children.arch.sw.slug}}-{{this.children.sw.os.slug}}"
   slug: "{{this.children.arch.sw.slug}}-{{this.children.sw.os.slug}}:{{this.children.sw.os.version}}"
   path: "docs/dockerhub"
+  namespace: "balenalib"
   requires:
     - type: arch.sw
       arch: "{{this.children.arch.sw.slug}}"
