@@ -32,3 +32,8 @@ jobs:
         [
           ["self-hosted","X64"]
         ]
+      custom_publish_matrix:
+        all,
+        all-lib,
+        all-workflows,
+        all-dockerhub
