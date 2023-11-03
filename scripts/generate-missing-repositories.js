@@ -57,7 +57,7 @@ const allContracts = require('require-all')({
 	resolve: (json) => {
 		// We only want to process the
 		// canonical version of the contract and no variants
-		const { aliases, variants, ...obj } = json;
+		const { aliases, ...obj } = json;
 		return contrato.Contract.build(obj);
 	},
 });
@@ -127,6 +127,7 @@ if (types.indexOf('all') > -1) {
 		},
 	};
 
+	const checkedRepositories = [];
 	const missingRepositories = [];
 
 	await Promise.all(
@@ -198,12 +199,15 @@ if (types.indexOf('all') > -1) {
 				}
 			}
 
-			await concurrentForEach(result, 2, async (context) => {
+			await concurrentForEach(result, 1, async (context) => {
 				const json = context.toJSON();
 				let repository = path.join(json.namespace, json.imageName);
 
-				if (!(await checkDockerHubRepo(repository))) {
-					missingRepositories.push(repository);
+				if (!checkedRepositories.includes(repository)) {
+					if (!(await checkDockerHubRepo(repository))) {
+						missingRepositories.push(repository);
+					}
+					checkedRepositories.push(repository);
 				}
 
 				// for debian projects check imageNames without the os suffix
@@ -212,8 +216,11 @@ if (types.indexOf('all') > -1) {
 						json.namespace,
 						json.imageName.replace('-debian', ''),
 					);
-					if (!(await checkDockerHubRepo(repository))) {
-						missingRepositories.push(repository);
+					if (!checkedRepositories.includes(repository)) {
+						if (!(await checkDockerHubRepo(repository))) {
+							missingRepositories.push(repository);
+						}
+						checkedRepositories.push(repository);
 					}
 				}
 			});
