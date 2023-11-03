@@ -21,11 +21,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/imx7-var-som-ubuntu:lunar-build-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:lunar-build-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:lunar-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/imx7-var-som-ubuntu:lunar-build-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:lunar-build-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:lunar-build"
       ]
     },
@@ -34,15 +34,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/imx7-var-som-ubuntu:lunar-run-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:lunar-run-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:lunar-run",
-        "docker.io/balenalib/imx7-var-som-ubuntu:lunar-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:lunar-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:lunar"
       ],
       "cache_from": [
-        "docker.io/balenalib/imx7-var-som-ubuntu:lunar-run-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:lunar-run-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:lunar-run",
-        "docker.io/balenalib/imx7-var-som-ubuntu:lunar-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:lunar-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:lunar"
       ]
     },
@@ -51,19 +51,19 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/imx7-var-som-ubuntu:jammy-build-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:jammy-build-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:jammy-build",
-        "docker.io/balenalib/imx7-var-som-ubuntu:latest-build-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:latest-build-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:latest-build",
-        "docker.io/balenalib/imx7-var-som-ubuntu:build-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:build-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/imx7-var-som-ubuntu:jammy-build-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:jammy-build-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:jammy-build",
-        "docker.io/balenalib/imx7-var-som-ubuntu:latest-build-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:latest-build-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:latest-build",
-        "docker.io/balenalib/imx7-var-som-ubuntu:build-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:build-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:build"
       ]
     },
@@ -72,30 +72,30 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/imx7-var-som-ubuntu:jammy-run-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:jammy-run-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:jammy-run",
-        "docker.io/balenalib/imx7-var-som-ubuntu:jammy-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:jammy-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:jammy",
-        "docker.io/balenalib/imx7-var-som-ubuntu:latest-run-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:latest-run-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:latest-run",
-        "docker.io/balenalib/imx7-var-som-ubuntu:latest-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:latest-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:latest",
-        "docker.io/balenalib/imx7-var-som-ubuntu:run-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:run-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:run",
-        "docker.io/balenalib/imx7-var-som-ubuntu:20231026"
+        "docker.io/balenalib/imx7-var-som-ubuntu:20231103"
       ],
       "cache_from": [
-        "docker.io/balenalib/imx7-var-som-ubuntu:jammy-run-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:jammy-run-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:jammy-run",
-        "docker.io/balenalib/imx7-var-som-ubuntu:jammy-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:jammy-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:jammy",
-        "docker.io/balenalib/imx7-var-som-ubuntu:latest-run-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:latest-run-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:latest-run",
-        "docker.io/balenalib/imx7-var-som-ubuntu:latest-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:latest-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:latest",
-        "docker.io/balenalib/imx7-var-som-ubuntu:run-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:run-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:run",
-        "docker.io/balenalib/imx7-var-som-ubuntu:20231026"
+        "docker.io/balenalib/imx7-var-som-ubuntu:20231103"
       ]
     },
     "imx7-var-som-ubuntu-focal-build": {
@@ -103,11 +103,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/imx7-var-som-ubuntu:focal-build-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:focal-build-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:focal-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/imx7-var-som-ubuntu:focal-build-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:focal-build-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:focal-build"
       ]
     },
@@ -116,15 +116,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/imx7-var-som-ubuntu:focal-run-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:focal-run-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:focal-run",
-        "docker.io/balenalib/imx7-var-som-ubuntu:focal-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:focal-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:focal"
       ],
       "cache_from": [
-        "docker.io/balenalib/imx7-var-som-ubuntu:focal-run-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:focal-run-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:focal-run",
-        "docker.io/balenalib/imx7-var-som-ubuntu:focal-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:focal-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:focal"
       ]
     },
@@ -133,11 +133,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/imx7-var-som-ubuntu:xenial-build-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:xenial-build-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:xenial-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/imx7-var-som-ubuntu:xenial-build-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:xenial-build-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:xenial-build"
       ]
     },
@@ -146,15 +146,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/imx7-var-som-ubuntu:xenial-run-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:xenial-run-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:xenial-run",
-        "docker.io/balenalib/imx7-var-som-ubuntu:xenial-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:xenial-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:xenial"
       ],
       "cache_from": [
-        "docker.io/balenalib/imx7-var-som-ubuntu:xenial-run-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:xenial-run-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:xenial-run",
-        "docker.io/balenalib/imx7-var-som-ubuntu:xenial-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:xenial-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:xenial"
       ]
     },
@@ -163,11 +163,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/imx7-var-som-ubuntu:bionic-build-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:bionic-build-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:bionic-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/imx7-var-som-ubuntu:bionic-build-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:bionic-build-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:bionic-build"
       ]
     },
@@ -176,15 +176,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/imx7-var-som-ubuntu:bionic-run-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:bionic-run-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:bionic-run",
-        "docker.io/balenalib/imx7-var-som-ubuntu:bionic-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:bionic-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:bionic"
       ],
       "cache_from": [
-        "docker.io/balenalib/imx7-var-som-ubuntu:bionic-run-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:bionic-run-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:bionic-run",
-        "docker.io/balenalib/imx7-var-som-ubuntu:bionic-20231026",
+        "docker.io/balenalib/imx7-var-som-ubuntu:bionic-20231103",
         "docker.io/balenalib/imx7-var-som-ubuntu:bionic"
       ]
     }
