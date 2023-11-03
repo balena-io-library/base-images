@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.35 - 2023-11-03
+
+* Update npm to v10 [Self-hosted Renovate Bot]
+
 ## 2.8.34 - 2023-11-03
 
 * Run custom publish steps in parallel to reduce build time [Kyle Harding]
