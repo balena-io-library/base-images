@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.39 - 2023-11-06
+
+* Lock file maintenance [Self-hosted Renovate Bot]
+
 ## 2.8.38 - 2023-11-03
 
 * Record missing DockerHub repositories [Kyle Harding]
