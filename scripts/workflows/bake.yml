@@ -85,7 +85,7 @@ jobs:
       - name: Docker bake
         continue-on-error: false
         id: docker_bake
-        uses: docker/bake-action@511fde2517761e303af548ec9e0ea74a8a100112 # v4
+        uses: docker/bake-action@849707117b03d39aba7924c50a10376a69e88d7d # v4
         with:
           workdir: balena-base-images
           files: ${{ github.workspace }}/${{ env.LIBRARY }}
