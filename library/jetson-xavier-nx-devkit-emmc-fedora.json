@@ -17,11 +17,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:36-build-20231106",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:36-build-20231117",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:36-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:36-build-20231106",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:36-build-20231117",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:36-build"
       ]
     },
@@ -30,15 +30,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:36-run-20231106",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:36-run-20231117",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:36-run",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:36-20231106",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:36-20231117",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:36"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:36-run-20231106",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:36-run-20231117",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:36-run",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:36-20231106",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:36-20231117",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:36"
       ]
     },
@@ -47,19 +47,19 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:37-build-20231106",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:37-build-20231117",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:37-build",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:latest-build-20231106",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:latest-build-20231117",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:latest-build",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:build-20231106",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:build-20231117",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:37-build-20231106",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:37-build-20231117",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:37-build",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:latest-build-20231106",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:latest-build-20231117",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:latest-build",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:build-20231106",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:build-20231117",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:build"
       ]
     },
@@ -68,30 +68,30 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:37-run-20231106",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:37-run-20231117",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:37-run",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:37-20231106",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:37-20231117",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:37",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:latest-run-20231106",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:latest-run-20231117",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:latest-run",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:latest-20231106",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:latest-20231117",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:latest",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:run-20231106",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:run-20231117",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:run",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:20231106"
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:20231117"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:37-run-20231106",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:37-run-20231117",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:37-run",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:37-20231106",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:37-20231117",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:37",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:latest-run-20231106",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:latest-run-20231117",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:latest-run",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:latest-20231106",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:latest-20231117",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:latest",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:run-20231106",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:run-20231117",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:run",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:20231106"
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:20231117"
       ]
     },
     "jetson-xavier-nx-devkit-emmc-fedora-38-build": {
@@ -99,11 +99,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:38-build-20231106",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:38-build-20231117",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:38-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:38-build-20231106",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:38-build-20231117",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:38-build"
       ]
     },
@@ -112,15 +112,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:38-run-20231106",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:38-run-20231117",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:38-run",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:38-20231106",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:38-20231117",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:38"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:38-run-20231106",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:38-run-20231117",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:38-run",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:38-20231106",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:38-20231117",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-fedora:38"
       ]
     }

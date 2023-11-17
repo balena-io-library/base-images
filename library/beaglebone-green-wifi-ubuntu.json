@@ -21,11 +21,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:lunar-build-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:lunar-build-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:lunar-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:lunar-build-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:lunar-build-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:lunar-build"
       ]
     },
@@ -34,15 +34,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:lunar-run-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:lunar-run-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:lunar-run",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:lunar-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:lunar-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:lunar"
       ],
       "cache_from": [
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:lunar-run-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:lunar-run-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:lunar-run",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:lunar-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:lunar-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:lunar"
       ]
     },
@@ -51,19 +51,19 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:jammy-build-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:jammy-build-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:jammy-build",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:latest-build-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:latest-build-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:latest-build",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:build-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:build-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:jammy-build-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:jammy-build-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:jammy-build",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:latest-build-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:latest-build-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:latest-build",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:build-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:build-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:build"
       ]
     },
@@ -72,30 +72,30 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:jammy-run-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:jammy-run-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:jammy-run",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:jammy-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:jammy-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:jammy",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:latest-run-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:latest-run-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:latest-run",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:latest-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:latest-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:latest",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:run-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:run-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:run",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:20231106"
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:20231117"
       ],
       "cache_from": [
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:jammy-run-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:jammy-run-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:jammy-run",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:jammy-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:jammy-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:jammy",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:latest-run-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:latest-run-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:latest-run",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:latest-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:latest-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:latest",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:run-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:run-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:run",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:20231106"
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:20231117"
       ]
     },
     "beaglebone-green-wifi-ubuntu-focal-build": {
@@ -103,11 +103,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:focal-build-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:focal-build-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:focal-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:focal-build-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:focal-build-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:focal-build"
       ]
     },
@@ -116,15 +116,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:focal-run-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:focal-run-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:focal-run",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:focal-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:focal-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:focal"
       ],
       "cache_from": [
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:focal-run-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:focal-run-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:focal-run",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:focal-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:focal-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:focal"
       ]
     },
@@ -133,11 +133,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:xenial-build-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:xenial-build-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:xenial-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:xenial-build-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:xenial-build-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:xenial-build"
       ]
     },
@@ -146,15 +146,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:xenial-run-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:xenial-run-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:xenial-run",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:xenial-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:xenial-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:xenial"
       ],
       "cache_from": [
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:xenial-run-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:xenial-run-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:xenial-run",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:xenial-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:xenial-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:xenial"
       ]
     },
@@ -163,11 +163,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:bionic-build-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:bionic-build-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:bionic-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:bionic-build-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:bionic-build-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:bionic-build"
       ]
     },
@@ -176,15 +176,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:bionic-run-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:bionic-run-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:bionic-run",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:bionic-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:bionic-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:bionic"
       ],
       "cache_from": [
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:bionic-run-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:bionic-run-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:bionic-run",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:bionic-20231106",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:bionic-20231117",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:bionic"
       ]
     }
