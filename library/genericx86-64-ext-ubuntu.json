@@ -21,11 +21,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/amd64",
       "tags": [
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:lunar-build-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:lunar-build-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:lunar-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:lunar-build-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:lunar-build-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:lunar-build"
       ]
     },
@@ -34,15 +34,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/amd64",
       "tags": [
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:lunar-run-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:lunar-run-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:lunar-run",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:lunar-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:lunar-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:lunar"
       ],
       "cache_from": [
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:lunar-run-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:lunar-run-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:lunar-run",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:lunar-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:lunar-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:lunar"
       ]
     },
@@ -51,19 +51,19 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/amd64",
       "tags": [
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:jammy-build-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:jammy-build-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:jammy-build",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:latest-build-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:latest-build-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:latest-build",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:build-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:build-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:jammy-build-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:jammy-build-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:jammy-build",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:latest-build-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:latest-build-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:latest-build",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:build-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:build-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:build"
       ]
     },
@@ -72,30 +72,30 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/amd64",
       "tags": [
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:jammy-run-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:jammy-run-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:jammy-run",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:jammy-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:jammy-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:jammy",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:latest-run-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:latest-run-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:latest-run",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:latest-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:latest-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:latest",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:run-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:run-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:run",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:20231117"
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:20231120"
       ],
       "cache_from": [
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:jammy-run-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:jammy-run-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:jammy-run",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:jammy-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:jammy-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:jammy",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:latest-run-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:latest-run-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:latest-run",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:latest-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:latest-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:latest",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:run-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:run-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:run",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:20231117"
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:20231120"
       ]
     },
     "genericx86-64-ext-ubuntu-focal-build": {
@@ -103,11 +103,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/amd64",
       "tags": [
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:focal-build-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:focal-build-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:focal-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:focal-build-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:focal-build-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:focal-build"
       ]
     },
@@ -116,15 +116,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/amd64",
       "tags": [
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:focal-run-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:focal-run-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:focal-run",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:focal-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:focal-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:focal"
       ],
       "cache_from": [
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:focal-run-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:focal-run-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:focal-run",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:focal-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:focal-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:focal"
       ]
     },
@@ -133,11 +133,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/amd64",
       "tags": [
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:xenial-build-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:xenial-build-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:xenial-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:xenial-build-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:xenial-build-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:xenial-build"
       ]
     },
@@ -146,15 +146,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/amd64",
       "tags": [
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:xenial-run-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:xenial-run-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:xenial-run",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:xenial-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:xenial-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:xenial"
       ],
       "cache_from": [
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:xenial-run-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:xenial-run-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:xenial-run",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:xenial-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:xenial-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:xenial"
       ]
     },
@@ -163,11 +163,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/amd64",
       "tags": [
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:bionic-build-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:bionic-build-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:bionic-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:bionic-build-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:bionic-build-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:bionic-build"
       ]
     },
@@ -176,15 +176,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/amd64",
       "tags": [
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:bionic-run-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:bionic-run-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:bionic-run",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:bionic-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:bionic-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:bionic"
       ],
       "cache_from": [
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:bionic-run-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:bionic-run-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:bionic-run",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:bionic-20231117",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:bionic-20231120",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:bionic"
       ]
     }

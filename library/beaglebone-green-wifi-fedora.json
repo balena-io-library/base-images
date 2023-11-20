@@ -13,11 +13,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/beaglebone-green-wifi-fedora:36-build-20231117",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora:36-build-20231120",
         "docker.io/balenalib/beaglebone-green-wifi-fedora:36-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/beaglebone-green-wifi-fedora:36-build-20231117",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora:36-build-20231120",
         "docker.io/balenalib/beaglebone-green-wifi-fedora:36-build"
       ]
     },
@@ -26,15 +26,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/beaglebone-green-wifi-fedora:36-run-20231117",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora:36-run-20231120",
         "docker.io/balenalib/beaglebone-green-wifi-fedora:36-run",
-        "docker.io/balenalib/beaglebone-green-wifi-fedora:36-20231117",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora:36-20231120",
         "docker.io/balenalib/beaglebone-green-wifi-fedora:36"
       ],
       "cache_from": [
-        "docker.io/balenalib/beaglebone-green-wifi-fedora:36-run-20231117",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora:36-run-20231120",
         "docker.io/balenalib/beaglebone-green-wifi-fedora:36-run",
-        "docker.io/balenalib/beaglebone-green-wifi-fedora:36-20231117",
+        "docker.io/balenalib/beaglebone-green-wifi-fedora:36-20231120",
         "docker.io/balenalib/beaglebone-green-wifi-fedora:36"
       ]
     }
