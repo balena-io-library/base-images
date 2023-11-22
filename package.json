@@ -29,7 +29,7 @@
     "clean-descriptions": "rimraf balena-base-images/docs",
     "clean-workflows": "rimraf .github/workflows/bake-*.yml",
     "missing-repositories": "node scripts/generate-missing-repositories.js all",
-    "test": "time -p npm run os-arch && time -p npm run os-arch-lib"
+    "test": "npm run lint && time -p npm run os-arch && time -p npm run os-arch-lib"
   },
   "author": "Balena Ltd. <hello@balena.io>",
   "license": "Apache-2.0",
