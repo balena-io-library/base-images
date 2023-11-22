@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.44 - 2023-11-22
+
+* Add npm lint to tests [Kyle Harding]
+
 ## 2.8.43 - 2023-11-22
 
 
