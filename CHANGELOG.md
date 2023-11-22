@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.43 - 2023-11-22
+
+
+<details>
+<summary> Update scripts/contracts digest to c45079c [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.82 - 2023-11-22
+> 
+> * lcbzu9: boot from internal storage [Francois Loubser]
+> 
+
+</details>
+
 ## 2.8.42 - 2023-11-20
 
 * Lock file maintenance [Self-hosted Renovate Bot]

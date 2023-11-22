@@ -1,4 +1,32 @@
 - commits:
+    - subject: Update scripts/contracts digest to c45079c
+      hash: 0bd2c9c0af23fe842f193d35f829841ae0d38414
+      body: |
+        Update scripts/contracts
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: "lcbzu9: boot from internal storage"
+              hash: d9b9fbc53be0f7dbf92107681540685db703821f
+              body: >
+                Make flasher image available for download to boot lcbzu9 from
+                eMMC
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Francois Loubser <francois.loubser@topic.nl>
+                signed-off-by: Francois Loubser <francois.loubser@topic.nl>
+              author: Francois Loubser
+          version: contracts-2.0.82
+          title: ""
+          date: 2023-11-22T09:57:10.502Z
+  version: 2.8.43
+  title: ""
+  date: 2023-11-22T11:09:27.423Z
+- commits:
     - subject: Lock file maintenance
       hash: 2b49ab5b0ddb297536dac4930c75d30b31c5276b
       body: |
