@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.45 - 2023-11-24
+
+
+<details>
+<summary> Update scripts/contracts digest to 9a88055 [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.83 - 2023-11-24
+> 
+> * revpi-connect-4: Added contract files for revpi-connect-4 [Waqar Rashid]
+> 
+
+</details>
+
 ## 2.8.44 - 2023-11-22
 
 * Add npm lint to tests [Kyle Harding]
