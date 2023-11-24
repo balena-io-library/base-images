@@ -16,6 +16,7 @@
 
 'use strict';
 
+/* eslint-disable @typescript-eslint/no-var-requires */
 const _ = require('lodash');
 const fs = require('fs-extra');
 const path = require('path');
@@ -23,6 +24,8 @@ const contrato = require('@balena/contrato');
 const yaml = require('js-yaml');
 const { concurrentForEach } = require('./utils');
 const { getSdk } = require('balena-sdk');
+const requireAll = require('require-all');
+/* eslint-enable @typescript-eslint/no-var-requires */
 
 const balena = getSdk({
 	apiUrl: 'https://api.balena-cloud.com/',
@@ -65,9 +68,8 @@ function addToWorkflow(dest, context) {
 			template.jobs.bake,
 			context.workflow.jobs.bake,
 		);
-		workflow.jobs[
-			bakeJobSlug
-		].strategy.matrix.target = `\${{ fromJSON(needs.${prepareJobSlug}.outputs.bake-targets) }}`;
+		workflow.jobs[bakeJobSlug].strategy.matrix.target =
+			`\${{ fromJSON(needs.${prepareJobSlug}.outputs.bake-targets) }}`;
 	}
 
 	workflows[dest] = workflow;
@@ -91,7 +93,7 @@ const workflowTemplate = yaml.load(
 );
 
 // Find and build all contracts from the contracts/ directory
-const allContracts = require('require-all')({
+const allContracts = requireAll({
 	dirname: CONTRACTS_PATH,
 	filter: /.json$/,
 	recursive: true,
@@ -153,7 +155,7 @@ if (types.indexOf('all') > -1) {
 	blueprints = Object.keys(BLUEPRINT_PATHS);
 }
 
-(async () => {
+void (async () => {
 	const supportedDeviceTypes = await balena.models.deviceType.getAllSupported({
 		$select: ['name', 'slug'],
 	});
