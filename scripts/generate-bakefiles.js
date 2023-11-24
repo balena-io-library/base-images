@@ -16,6 +16,7 @@
 
 'use strict';
 
+/* eslint-disable @typescript-eslint/no-var-requires */
 const _ = require('lodash');
 const fs = require('fs-extra');
 const path = require('path');
@@ -23,6 +24,8 @@ const contrato = require('@balena/contrato');
 const yaml = require('js-yaml');
 const { concurrentForEach } = require('./utils');
 const { getSdk } = require('balena-sdk');
+const requireAll = require('require-all');
+/* eslint-enable @typescript-eslint/no-var-requires */
 
 const balena = getSdk({
 	apiUrl: 'https://api.balena-cloud.com/',
@@ -30,10 +33,10 @@ const balena = getSdk({
 });
 
 function yyyymmdd() {
-	var now = new Date();
-	var y = now.getFullYear();
-	var m = now.getMonth() + 1;
-	var d = now.getDate();
+	const now = new Date();
+	const y = now.getFullYear();
+	const m = now.getMonth() + 1;
+	const d = now.getDate();
 	return '' + y + (m < 10 ? '0' : '') + m + (d < 10 ? '0' : '') + d;
 }
 
@@ -73,18 +76,19 @@ function generateCombinations(arr) {
 	// keep track index in each of the n arrays
 	const indices = new Array(n).fill(0);
 
+	// eslint-disable-next-line no-constant-condition
 	while (true) {
-		let tmp = [];
+		const tmp = [];
 
 		// store current combination
-		for (var i = 0; i < n; i++) {
+		for (let i = 0; i < n; i++) {
 			tmp.push(arr[i][indices[i]]);
 		}
 
 		combinations.push(tmp.filter((c) => c).join('-'));
 
 		// find the rightmost array that has more element left after the current element
-		var next = n - 1;
+		let next = n - 1;
 		while (next >= 0 && indices[next] + 1 >= arr[next].length) {
 			next--;
 		}
@@ -96,7 +100,7 @@ function generateCombinations(arr) {
 
 		// if next element is found then set the indices for next combination
 		indices[next]++;
-		for (i = next + 1; i < n; i++) {
+		for (let i = next + 1; i < n; i++) {
 			indices[i] = 0;
 		}
 	}
@@ -191,8 +195,8 @@ async function generateOsArchLibrary(context) {
 		variants.push(null);
 	}
 
-	let repo = [[NAMESPACE, context.imageName].join('/')];
-	let tags = generateCombinations([osVersions, variants, [yyyymmdd(), null]]);
+	let repo = [NAMESPACE, context.imageName].join('/');
+	const tags = generateCombinations([osVersions, variants, [yyyymmdd(), null]]);
 
 	// loop over all tags and append the repo as a prefix
 	let repoTags = tags.map((tag) => {
@@ -249,7 +253,7 @@ async function generateStackLibrary(context) {
 	}
 
 	let repo = [NAMESPACE, context.imageName].join('/');
-	let tags = generateCombinations([
+	const tags = generateCombinations([
 		stackVersions,
 		osVersions,
 		variants,
@@ -287,7 +291,7 @@ const BLUEPRINT_PATHS = {
 const CONTRACTS_PATH = path.join(__dirname, 'contracts/contracts');
 
 // Find and build all contracts from the contracts/ directory
-const allContracts = require('require-all')({
+const allContracts = requireAll({
 	dirname: CONTRACTS_PATH,
 	filter: /.json$/,
 	recursive: true,
@@ -349,7 +353,7 @@ if (types.indexOf('all') > -1) {
 	blueprints = Object.keys(BLUEPRINT_PATHS);
 }
 
-(async () => {
+void (async () => {
 	const supportedDeviceTypes = await balena.models.deviceType.getAllSupported({
 		$select: ['name', 'slug'],
 	});

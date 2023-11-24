@@ -16,6 +16,7 @@
 
 'use strict';
 
+/* eslint-disable @typescript-eslint/no-var-requires */
 const _ = require('lodash');
 const fs = require('fs-extra');
 const path = require('path');
@@ -23,6 +24,8 @@ const contrato = require('@balena/contrato');
 const yaml = require('js-yaml');
 const { concurrentForEach } = require('./utils');
 const { getSdk } = require('balena-sdk');
+const requireAll = require('require-all');
+/* eslint-enable @typescript-eslint/no-var-requires */
 
 const balena = getSdk({
 	apiUrl: 'https://api.balena-cloud.com/',
@@ -51,7 +54,7 @@ const BLUEPRINT_PATHS = {
 const CONTRACTS_PATH = path.join(__dirname, 'contracts/contracts');
 
 // Find and build all contracts from the contracts/ directory
-const allContracts = require('require-all')({
+const allContracts = requireAll({
 	dirname: CONTRACTS_PATH,
 	filter: /.json$/,
 	recursive: true,
@@ -113,7 +116,7 @@ if (types.indexOf('all') > -1) {
 	blueprints = Object.keys(BLUEPRINT_PATHS);
 }
 
-(async () => {
+void (async () => {
 	const supportedDeviceTypes = await balena.models.deviceType.getAllSupported({
 		$select: ['name', 'slug'],
 	});
