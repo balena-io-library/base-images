@@ -21,11 +21,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/tdpzu9-ubuntu:lunar-build-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:lunar-build-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:lunar-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/tdpzu9-ubuntu:lunar-build-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:lunar-build-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:lunar-build"
       ]
     },
@@ -34,15 +34,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/tdpzu9-ubuntu:lunar-run-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:lunar-run-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:lunar-run",
-        "docker.io/balenalib/tdpzu9-ubuntu:lunar-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:lunar-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:lunar"
       ],
       "cache_from": [
-        "docker.io/balenalib/tdpzu9-ubuntu:lunar-run-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:lunar-run-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:lunar-run",
-        "docker.io/balenalib/tdpzu9-ubuntu:lunar-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:lunar-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:lunar"
       ]
     },
@@ -51,19 +51,19 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/tdpzu9-ubuntu:jammy-build-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:jammy-build-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:jammy-build",
-        "docker.io/balenalib/tdpzu9-ubuntu:latest-build-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:latest-build-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:latest-build",
-        "docker.io/balenalib/tdpzu9-ubuntu:build-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:build-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/tdpzu9-ubuntu:jammy-build-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:jammy-build-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:jammy-build",
-        "docker.io/balenalib/tdpzu9-ubuntu:latest-build-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:latest-build-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:latest-build",
-        "docker.io/balenalib/tdpzu9-ubuntu:build-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:build-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:build"
       ]
     },
@@ -72,30 +72,30 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/tdpzu9-ubuntu:jammy-run-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:jammy-run-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:jammy-run",
-        "docker.io/balenalib/tdpzu9-ubuntu:jammy-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:jammy-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:jammy",
-        "docker.io/balenalib/tdpzu9-ubuntu:latest-run-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:latest-run-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:latest-run",
-        "docker.io/balenalib/tdpzu9-ubuntu:latest-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:latest-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:latest",
-        "docker.io/balenalib/tdpzu9-ubuntu:run-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:run-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:run",
-        "docker.io/balenalib/tdpzu9-ubuntu:20231124"
+        "docker.io/balenalib/tdpzu9-ubuntu:20231127"
       ],
       "cache_from": [
-        "docker.io/balenalib/tdpzu9-ubuntu:jammy-run-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:jammy-run-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:jammy-run",
-        "docker.io/balenalib/tdpzu9-ubuntu:jammy-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:jammy-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:jammy",
-        "docker.io/balenalib/tdpzu9-ubuntu:latest-run-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:latest-run-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:latest-run",
-        "docker.io/balenalib/tdpzu9-ubuntu:latest-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:latest-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:latest",
-        "docker.io/balenalib/tdpzu9-ubuntu:run-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:run-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:run",
-        "docker.io/balenalib/tdpzu9-ubuntu:20231124"
+        "docker.io/balenalib/tdpzu9-ubuntu:20231127"
       ]
     },
     "tdpzu9-ubuntu-focal-build": {
@@ -103,11 +103,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/tdpzu9-ubuntu:focal-build-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:focal-build-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:focal-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/tdpzu9-ubuntu:focal-build-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:focal-build-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:focal-build"
       ]
     },
@@ -116,15 +116,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/tdpzu9-ubuntu:focal-run-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:focal-run-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:focal-run",
-        "docker.io/balenalib/tdpzu9-ubuntu:focal-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:focal-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:focal"
       ],
       "cache_from": [
-        "docker.io/balenalib/tdpzu9-ubuntu:focal-run-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:focal-run-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:focal-run",
-        "docker.io/balenalib/tdpzu9-ubuntu:focal-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:focal-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:focal"
       ]
     },
@@ -133,11 +133,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/tdpzu9-ubuntu:xenial-build-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:xenial-build-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:xenial-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/tdpzu9-ubuntu:xenial-build-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:xenial-build-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:xenial-build"
       ]
     },
@@ -146,15 +146,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/tdpzu9-ubuntu:xenial-run-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:xenial-run-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:xenial-run",
-        "docker.io/balenalib/tdpzu9-ubuntu:xenial-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:xenial-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:xenial"
       ],
       "cache_from": [
-        "docker.io/balenalib/tdpzu9-ubuntu:xenial-run-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:xenial-run-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:xenial-run",
-        "docker.io/balenalib/tdpzu9-ubuntu:xenial-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:xenial-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:xenial"
       ]
     },
@@ -163,11 +163,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/tdpzu9-ubuntu:bionic-build-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:bionic-build-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:bionic-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/tdpzu9-ubuntu:bionic-build-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:bionic-build-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:bionic-build"
       ]
     },
@@ -176,15 +176,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/tdpzu9-ubuntu:bionic-run-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:bionic-run-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:bionic-run",
-        "docker.io/balenalib/tdpzu9-ubuntu:bionic-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:bionic-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:bionic"
       ],
       "cache_from": [
-        "docker.io/balenalib/tdpzu9-ubuntu:bionic-run-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:bionic-run-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:bionic-run",
-        "docker.io/balenalib/tdpzu9-ubuntu:bionic-20231124",
+        "docker.io/balenalib/tdpzu9-ubuntu:bionic-20231127",
         "docker.io/balenalib/tdpzu9-ubuntu:bionic"
       ]
     }
