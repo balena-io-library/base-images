@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.47 - 2023-11-27
+
+* Lock file maintenance [Self-hosted Renovate Bot]
+
 ## 2.8.46 - 2023-11-24
 
 * Update dependency @balena/lint to v7 [Self-hosted Renovate Bot]
