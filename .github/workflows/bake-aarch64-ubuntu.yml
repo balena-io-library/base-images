@@ -8,7 +8,7 @@ name: Bake aarch64-ubuntu
         type: boolean
         default: false
   schedule:
-    - cron: 23 5 3 * *
+    - cron: 44 9 3 * *
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true
