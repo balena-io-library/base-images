@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.51 - 2023-12-13
+
+
+<details>
+<summary> Update scripts/contracts digest to 591fda9 [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.84 - 2023-12-13
+> 
+> * iot-gate-imx8plus: Update flashing instructions and name [Alexandru Costache]
+> 
+
+</details>
+
 ## 2.8.50 - 2023-12-12
 
 * Update dawidd6/action-download-artifact action to v2.28.1 [Self-hosted Renovate Bot]

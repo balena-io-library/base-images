@@ -1,4 +1,32 @@
 - commits:
+    - subject: Update scripts/contracts digest to 591fda9
+      hash: 06bdf60da24f908756fc007fd545c62b54405293
+      body: |
+        Update scripts/contracts
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: "iot-gate-imx8plus: Update flashing instructions and name"
+              hash: e390406c50b2ec6bb6ea631fcfaf817ceab69736
+              body: |
+                to reflect that this image can be used for both 2G and 4G DRAM
+                boards.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+          version: contracts-2.0.84
+          title: ""
+          date: 2023-12-13T15:46:08.530Z
+  version: 2.8.51
+  title: ""
+  date: 2023-12-13T17:11:09.855Z
+- commits:
     - subject: Update dawidd6/action-download-artifact action to v2.28.1
       hash: 7d8745fd97b3fd33ea3fece04b5e421029a2d938
       body: |
