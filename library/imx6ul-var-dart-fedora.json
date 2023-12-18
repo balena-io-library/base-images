@@ -13,11 +13,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/imx6ul-var-dart-fedora:36-build-20231213",
+        "docker.io/balenalib/imx6ul-var-dart-fedora:36-build-20231218",
         "docker.io/balenalib/imx6ul-var-dart-fedora:36-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/imx6ul-var-dart-fedora:36-build-20231213",
+        "docker.io/balenalib/imx6ul-var-dart-fedora:36-build-20231218",
         "docker.io/balenalib/imx6ul-var-dart-fedora:36-build"
       ]
     },
@@ -26,15 +26,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/imx6ul-var-dart-fedora:36-run-20231213",
+        "docker.io/balenalib/imx6ul-var-dart-fedora:36-run-20231218",
         "docker.io/balenalib/imx6ul-var-dart-fedora:36-run",
-        "docker.io/balenalib/imx6ul-var-dart-fedora:36-20231213",
+        "docker.io/balenalib/imx6ul-var-dart-fedora:36-20231218",
         "docker.io/balenalib/imx6ul-var-dart-fedora:36"
       ],
       "cache_from": [
-        "docker.io/balenalib/imx6ul-var-dart-fedora:36-run-20231213",
+        "docker.io/balenalib/imx6ul-var-dart-fedora:36-run-20231218",
         "docker.io/balenalib/imx6ul-var-dart-fedora:36-run",
-        "docker.io/balenalib/imx6ul-var-dart-fedora:36-20231213",
+        "docker.io/balenalib/imx6ul-var-dart-fedora:36-20231218",
         "docker.io/balenalib/imx6ul-var-dart-fedora:36"
       ]
     }
