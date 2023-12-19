@@ -1,6 +1,5 @@
 # .github/workflows/flowzone.yml
 name: Flowzone
-
 on:
   pull_request:
     types: [opened, synchronize, closed]
@@ -9,7 +8,6 @@ on:
   pull_request_target:
     types: [opened, synchronize, closed]
     branches: [main, master]
-
 jobs:
   flowzone:
     name: Flowzone
@@ -25,16 +23,10 @@ jobs:
       )
     secrets: inherit
     with:
-      repo_config: true
-      repo_description: "Balena base images"
-      repo_homepage: https://docs.balena.io/reference/base-images/base-images/#balena-base-images
       custom_runs_on: >
         [
+
           ["self-hosted","X64"]
         ]
-      custom_publish_matrix:
-        all-dockerfiles,
-        all-bakefiles,
-        all-workflows,
-        all-descriptions,
-        missing-repositories
+
+      custom_publish_matrix: all-dockerfiles, all-bakefiles, all-workflows, all-descriptions, missing-repositories
