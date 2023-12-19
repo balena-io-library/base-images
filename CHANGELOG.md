@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.54 - 2023-12-19
+
+* Remove repo config from flowzone.yml [Kyle Harding]
+
 ## 2.8.53 - 2023-12-18
 
 * Update actions/setup-node action to v4.0.1 [Self-hosted Renovate Bot]
