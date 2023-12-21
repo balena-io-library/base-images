@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.55 - 2023-12-21
+
+
+<details>
+<summary> Update scripts/contracts digest to 31188f5 [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.85 - 2023-12-21
+> 
+> * patch: Remove wiki link reference to flash Tinker Board [Vipul Gupta (@vipulgupta2048)]
+> 
+
+</details>
+
 ## 2.8.54 - 2023-12-19
 
 * Remove repo config from flowzone.yml [Kyle Harding]
