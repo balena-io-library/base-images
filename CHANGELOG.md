@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.57 - 2023-12-28
+
+
+<details>
+<summary> Update scripts/contracts digest to b0c1495 [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.86 - 2023-12-28
+> 
+> * hw.device-type: Add Variscite DART-MX8M-PLUS [Florin Sarbu]
+> 
+
+</details>
+
 ## 2.8.56 - 2023-12-25
 
 * Lock file maintenance [Self-hosted Renovate Bot]
