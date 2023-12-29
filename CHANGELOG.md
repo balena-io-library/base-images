@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.58 - 2023-12-29
+
+
+<details>
+<summary> Update scripts/contracts digest to dd3614e [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.87 - 2023-12-29
+> 
+> * hw.device-type: Fix device type is_private flag for imx8mp-var-dart [Florin Sarbu]
+> 
+
+</details>
+
 ## 2.8.57 - 2023-12-28
 
 
