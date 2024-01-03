@@ -1,4 +1,32 @@
 - commits:
+    - subject: Update scripts/contracts digest to 802e95f
+      hash: b34dd2ccfed98fdbf5dec5694334fcd9099af871
+      body: |
+        Update scripts/contracts
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: "jetson-orin-nx-seeed-j4012: Add Seeed J4012 device-type"
+              hash: 2f35889ca436bcb17cb8fba3e9192676b9872042
+              body: |
+                This is the initial commit, necessary to create the DT
+                in the API. The icon will need to be updated.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+          version: contracts-2.0.88
+          title: ""
+          date: 2024-01-03T13:26:42.845Z
+  version: 2.8.60
+  title: ""
+  date: 2024-01-03T14:03:21.353Z
+- commits:
     - subject: Lock file maintenance
       hash: db535cffac69d2ec3e3e3c058f20bf8f265d10b2
       body: |

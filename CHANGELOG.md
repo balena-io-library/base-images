@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.60 - 2024-01-03
+
+
+<details>
+<summary> Update scripts/contracts digest to 802e95f [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.88 - 2024-01-03
+> 
+> * jetson-orin-nx-seeed-j4012: Add Seeed J4012 device-type [Alexandru Costache]
+> 
+
+</details>
+
 ## 2.8.59 - 2024-01-01
 
 * Lock file maintenance [Self-hosted Renovate Bot]
