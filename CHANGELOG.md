@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.61 - 2024-01-05
+
+
+<details>
+<summary> Update scripts/contracts digest to b469f31 [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.89 - 2024-01-05
+> 
+> * hw.device-type: Fix hyperlinks in provisioning instructions [Alexandru Costache]
+> 
+
+</details>
+
 ## 2.8.60 - 2024-01-03
 
 

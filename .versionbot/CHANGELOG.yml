@@ -1,4 +1,33 @@
 - commits:
+    - subject: Update scripts/contracts digest to b469f31
+      hash: 3b7fd8ff79c88ed2ec017cb69117dae5420f7b52
+      body: |
+        Update scripts/contracts
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: "hw.device-type: Fix hyperlinks in provisioning instructions"
+              hash: 7ba9c9e03fe93110b2c8f3c866fbd4a3d7c8248b
+              body: |
+                If hyperlinks are unquoted, a target=blank is added and entire
+                link is broken in the dashboard. This doesn't happen for devices
+                which use quoted links, like for example the CM4.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+          version: contracts-2.0.89
+          title: ""
+          date: 2024-01-05T11:04:31.513Z
+  version: 2.8.61
+  title: ""
+  date: 2024-01-05T12:20:49.633Z
+- commits:
     - subject: Update scripts/contracts digest to 802e95f
       hash: b34dd2ccfed98fdbf5dec5694334fcd9099af871
       body: |
