@@ -13,11 +13,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/asus-tinker-board-fedora:36-build-20240103",
+        "docker.io/balenalib/asus-tinker-board-fedora:36-build-20240105",
         "docker.io/balenalib/asus-tinker-board-fedora:36-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/asus-tinker-board-fedora:36-build-20240103",
+        "docker.io/balenalib/asus-tinker-board-fedora:36-build-20240105",
         "docker.io/balenalib/asus-tinker-board-fedora:36-build"
       ]
     },
@@ -26,15 +26,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/asus-tinker-board-fedora:36-run-20240103",
+        "docker.io/balenalib/asus-tinker-board-fedora:36-run-20240105",
         "docker.io/balenalib/asus-tinker-board-fedora:36-run",
-        "docker.io/balenalib/asus-tinker-board-fedora:36-20240103",
+        "docker.io/balenalib/asus-tinker-board-fedora:36-20240105",
         "docker.io/balenalib/asus-tinker-board-fedora:36"
       ],
       "cache_from": [
-        "docker.io/balenalib/asus-tinker-board-fedora:36-run-20240103",
+        "docker.io/balenalib/asus-tinker-board-fedora:36-run-20240105",
         "docker.io/balenalib/asus-tinker-board-fedora:36-run",
-        "docker.io/balenalib/asus-tinker-board-fedora:36-20240103",
+        "docker.io/balenalib/asus-tinker-board-fedora:36-20240105",
         "docker.io/balenalib/asus-tinker-board-fedora:36"
       ]
     }
