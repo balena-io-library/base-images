@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.64 - 2024-01-10
+
+
+<details>
+<summary> Update scripts/contracts digest to 14a10d9 [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.90 - 2024-01-10
+> 
+> * hw.device-type: Update svg icon for seeed-j4012 [Alexandru Costache]
+> 
+
+</details>
+
 ## 2.8.63 - 2024-01-08
 
 * Lock file maintenance [Self-hosted Renovate Bot]
