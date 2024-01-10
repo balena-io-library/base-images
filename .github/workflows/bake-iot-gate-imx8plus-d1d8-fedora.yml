@@ -1,4 +1,4 @@
-name: Bake aarch64-debian
+name: Bake iot-gate-imx8plus-d1d8-fedora
 'on':
   workflow_dispatch:
     inputs:
@@ -7,14 +7,17 @@ name: Bake aarch64-debian
         required: false
         type: boolean
         default: false
-  schedule:
-    - cron: 42 2 7 * *
+  workflow_run:
+    workflows:
+      - Bake aarch64-fedora
+    types:
+      - completed
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true
 jobs:
-  prepare-aarch64-debian:
-    name: Prepare aarch64-debian
+  prepare-iot-gate-imx8plus-d1d8-fedora-golang:
+    name: Prepare iot-gate-imx8plus-d1d8-fedora-golang
     runs-on: ubuntu-latest
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -29,17 +32,19 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
+    needs:
+      - bake-iot-gate-imx8plus-d1d8-fedora
     env:
-      LIBRARY: library/aarch64-debian.json
-  bake-aarch64-debian:
-    name: Bake aarch64-debian
+      LIBRARY: library/iot-gate-imx8plus-d1d8-fedora-golang.json
+  bake-iot-gate-imx8plus-d1d8-fedora-golang:
+    name: Bake iot-gate-imx8plus-d1d8-fedora-golang
     runs-on: ubuntu-latest
     needs:
-      - prepare-aarch64-debian
+      - prepare-iot-gate-imx8plus-d1d8-fedora-golang
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-aarch64-debian.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-iot-gate-imx8plus-d1d8-fedora-golang.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
@@ -73,9 +78,9 @@ jobs:
           push: ${{ inputs.no-push != true }}
           provenance: false
     env:
-      LIBRARY: library/aarch64-debian.json
-  prepare-aarch64-debian-golang:
-    name: Prepare aarch64-debian-golang
+      LIBRARY: library/iot-gate-imx8plus-d1d8-fedora-golang.json
+  prepare-iot-gate-imx8plus-d1d8-fedora-node:
+    name: Prepare iot-gate-imx8plus-d1d8-fedora-node
     runs-on: ubuntu-latest
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -91,18 +96,18 @@ jobs:
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
     needs:
-      - bake-aarch64-debian
+      - bake-iot-gate-imx8plus-d1d8-fedora
     env:
-      LIBRARY: library/aarch64-debian-golang.json
-  bake-aarch64-debian-golang:
-    name: Bake aarch64-debian-golang
+      LIBRARY: library/iot-gate-imx8plus-d1d8-fedora-node.json
+  bake-iot-gate-imx8plus-d1d8-fedora-node:
+    name: Bake iot-gate-imx8plus-d1d8-fedora-node
     runs-on: ubuntu-latest
     needs:
-      - prepare-aarch64-debian-golang
+      - prepare-iot-gate-imx8plus-d1d8-fedora-node
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-aarch64-debian-golang.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-iot-gate-imx8plus-d1d8-fedora-node.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
@@ -136,9 +141,9 @@ jobs:
           push: ${{ inputs.no-push != true }}
           provenance: false
     env:
-      LIBRARY: library/aarch64-debian-golang.json
-  prepare-aarch64-debian-node:
-    name: Prepare aarch64-debian-node
+      LIBRARY: library/iot-gate-imx8plus-d1d8-fedora-node.json
+  prepare-iot-gate-imx8plus-d1d8-fedora-openjdk:
+    name: Prepare iot-gate-imx8plus-d1d8-fedora-openjdk
     runs-on: ubuntu-latest
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -154,18 +159,18 @@ jobs:
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
     needs:
-      - bake-aarch64-debian
+      - bake-iot-gate-imx8plus-d1d8-fedora
     env:
-      LIBRARY: library/aarch64-debian-node.json
-  bake-aarch64-debian-node:
-    name: Bake aarch64-debian-node
+      LIBRARY: library/iot-gate-imx8plus-d1d8-fedora-openjdk.json
+  bake-iot-gate-imx8plus-d1d8-fedora-openjdk:
+    name: Bake iot-gate-imx8plus-d1d8-fedora-openjdk
     runs-on: ubuntu-latest
     needs:
-      - prepare-aarch64-debian-node
+      - prepare-iot-gate-imx8plus-d1d8-fedora-openjdk
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-aarch64-debian-node.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-iot-gate-imx8plus-d1d8-fedora-openjdk.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
@@ -199,9 +204,9 @@ jobs:
           push: ${{ inputs.no-push != true }}
           provenance: false
     env:
-      LIBRARY: library/aarch64-debian-node.json
-  prepare-aarch64-debian-openjdk:
-    name: Prepare aarch64-debian-openjdk
+      LIBRARY: library/iot-gate-imx8plus-d1d8-fedora-openjdk.json
+  prepare-iot-gate-imx8plus-d1d8-fedora-python:
+    name: Prepare iot-gate-imx8plus-d1d8-fedora-python
     runs-on: ubuntu-latest
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -217,18 +222,18 @@ jobs:
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
     needs:
-      - bake-aarch64-debian
+      - bake-iot-gate-imx8plus-d1d8-fedora
     env:
-      LIBRARY: library/aarch64-debian-openjdk.json
-  bake-aarch64-debian-openjdk:
-    name: Bake aarch64-debian-openjdk
+      LIBRARY: library/iot-gate-imx8plus-d1d8-fedora-python.json
+  bake-iot-gate-imx8plus-d1d8-fedora-python:
+    name: Bake iot-gate-imx8plus-d1d8-fedora-python
     runs-on: ubuntu-latest
     needs:
-      - prepare-aarch64-debian-openjdk
+      - prepare-iot-gate-imx8plus-d1d8-fedora-python
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-aarch64-debian-openjdk.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-iot-gate-imx8plus-d1d8-fedora-python.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
@@ -262,9 +267,9 @@ jobs:
           push: ${{ inputs.no-push != true }}
           provenance: false
     env:
-      LIBRARY: library/aarch64-debian-openjdk.json
-  prepare-aarch64-debian-python:
-    name: Prepare aarch64-debian-python
+      LIBRARY: library/iot-gate-imx8plus-d1d8-fedora-python.json
+  prepare-iot-gate-imx8plus-d1d8-fedora:
+    name: Prepare iot-gate-imx8plus-d1d8-fedora
     runs-on: ubuntu-latest
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -279,19 +284,17 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-    needs:
-      - bake-aarch64-debian
     env:
-      LIBRARY: library/aarch64-debian-python.json
-  bake-aarch64-debian-python:
-    name: Bake aarch64-debian-python
+      LIBRARY: library/iot-gate-imx8plus-d1d8-fedora.json
+  bake-iot-gate-imx8plus-d1d8-fedora:
+    name: Bake iot-gate-imx8plus-d1d8-fedora
     runs-on: ubuntu-latest
     needs:
-      - prepare-aarch64-debian-python
+      - prepare-iot-gate-imx8plus-d1d8-fedora
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-aarch64-debian-python.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-iot-gate-imx8plus-d1d8-fedora.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
@@ -325,4 +328,4 @@ jobs:
           push: ${{ inputs.no-push != true }}
           provenance: false
     env:
-      LIBRARY: library/aarch64-debian-python.json
+      LIBRARY: library/iot-gate-imx8plus-d1d8-fedora.json
