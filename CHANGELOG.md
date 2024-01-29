@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.68 - 2024-01-29
+
+* Lock file maintenance [Self-hosted Renovate Bot]
+
 ## 2.8.67 - 2024-01-26
 
 * Update dawidd6/action-download-artifact action to v3 [Self-hosted Renovate Bot]
