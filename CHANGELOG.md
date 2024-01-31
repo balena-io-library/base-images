@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.69 - 2024-01-31
+
+
+<details>
+<summary> Update scripts/contracts digest to 8dfe06b [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.91 - 2024-02-01
+> 
+> * Remove generic-amd64-fde device type [Michal Toman]
+> 
+
+</details>
+
 ## 2.8.68 - 2024-01-29
 
 * Lock file maintenance [Self-hosted Renovate Bot]
