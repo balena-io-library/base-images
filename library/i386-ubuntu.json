@@ -15,11 +15,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/386",
       "tags": [
-        "docker.io/balenalib/i386-ubuntu:xenial-build-20240131",
+        "docker.io/balenalib/i386-ubuntu:xenial-build-20240201",
         "docker.io/balenalib/i386-ubuntu:xenial-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/i386-ubuntu:xenial-build-20240131",
+        "docker.io/balenalib/i386-ubuntu:xenial-build-20240201",
         "docker.io/balenalib/i386-ubuntu:xenial-build"
       ]
     },
@@ -28,15 +28,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/386",
       "tags": [
-        "docker.io/balenalib/i386-ubuntu:xenial-run-20240131",
+        "docker.io/balenalib/i386-ubuntu:xenial-run-20240201",
         "docker.io/balenalib/i386-ubuntu:xenial-run",
-        "docker.io/balenalib/i386-ubuntu:xenial-20240131",
+        "docker.io/balenalib/i386-ubuntu:xenial-20240201",
         "docker.io/balenalib/i386-ubuntu:xenial"
       ],
       "cache_from": [
-        "docker.io/balenalib/i386-ubuntu:xenial-run-20240131",
+        "docker.io/balenalib/i386-ubuntu:xenial-run-20240201",
         "docker.io/balenalib/i386-ubuntu:xenial-run",
-        "docker.io/balenalib/i386-ubuntu:xenial-20240131",
+        "docker.io/balenalib/i386-ubuntu:xenial-20240201",
         "docker.io/balenalib/i386-ubuntu:xenial"
       ]
     },
@@ -45,11 +45,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/386",
       "tags": [
-        "docker.io/balenalib/i386-ubuntu:bionic-build-20240131",
+        "docker.io/balenalib/i386-ubuntu:bionic-build-20240201",
         "docker.io/balenalib/i386-ubuntu:bionic-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/i386-ubuntu:bionic-build-20240131",
+        "docker.io/balenalib/i386-ubuntu:bionic-build-20240201",
         "docker.io/balenalib/i386-ubuntu:bionic-build"
       ]
     },
@@ -58,15 +58,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/386",
       "tags": [
-        "docker.io/balenalib/i386-ubuntu:bionic-run-20240131",
+        "docker.io/balenalib/i386-ubuntu:bionic-run-20240201",
         "docker.io/balenalib/i386-ubuntu:bionic-run",
-        "docker.io/balenalib/i386-ubuntu:bionic-20240131",
+        "docker.io/balenalib/i386-ubuntu:bionic-20240201",
         "docker.io/balenalib/i386-ubuntu:bionic"
       ],
       "cache_from": [
-        "docker.io/balenalib/i386-ubuntu:bionic-run-20240131",
+        "docker.io/balenalib/i386-ubuntu:bionic-run-20240201",
         "docker.io/balenalib/i386-ubuntu:bionic-run",
-        "docker.io/balenalib/i386-ubuntu:bionic-20240131",
+        "docker.io/balenalib/i386-ubuntu:bionic-20240201",
         "docker.io/balenalib/i386-ubuntu:bionic"
       ]
     }
