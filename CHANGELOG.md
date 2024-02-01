@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.70 - 2024-02-01
+
+
+<details>
+<summary> Update scripts/contracts digest to 75a9764 [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.92 - 2024-02-01
+> 
+> * hw.device-type: Add phyboard-lyra-am62xx-2 device [Atanas Bunchev]
+> 
+
+</details>
+
 ## 2.8.69 - 2024-01-31
 
 
