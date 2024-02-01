@@ -8,7 +8,7 @@ name: Bake amd64-alpine
         type: boolean
         default: false
   schedule:
-    - cron: 29 0 3 * *
+    - cron: 56 5 5 * *
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true
