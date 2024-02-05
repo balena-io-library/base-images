@@ -21,11 +21,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/asus-tinker-board-ubuntu:lunar-build-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:lunar-build-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:lunar-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/asus-tinker-board-ubuntu:lunar-build-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:lunar-build-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:lunar-build"
       ]
     },
@@ -34,15 +34,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/asus-tinker-board-ubuntu:lunar-run-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:lunar-run-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:lunar-run",
-        "docker.io/balenalib/asus-tinker-board-ubuntu:lunar-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:lunar-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:lunar"
       ],
       "cache_from": [
-        "docker.io/balenalib/asus-tinker-board-ubuntu:lunar-run-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:lunar-run-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:lunar-run",
-        "docker.io/balenalib/asus-tinker-board-ubuntu:lunar-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:lunar-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:lunar"
       ]
     },
@@ -51,19 +51,19 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/asus-tinker-board-ubuntu:jammy-build-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:jammy-build-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:jammy-build",
-        "docker.io/balenalib/asus-tinker-board-ubuntu:latest-build-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:latest-build-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:latest-build",
-        "docker.io/balenalib/asus-tinker-board-ubuntu:build-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:build-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/asus-tinker-board-ubuntu:jammy-build-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:jammy-build-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:jammy-build",
-        "docker.io/balenalib/asus-tinker-board-ubuntu:latest-build-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:latest-build-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:latest-build",
-        "docker.io/balenalib/asus-tinker-board-ubuntu:build-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:build-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:build"
       ]
     },
@@ -72,30 +72,30 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/asus-tinker-board-ubuntu:jammy-run-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:jammy-run-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:jammy-run",
-        "docker.io/balenalib/asus-tinker-board-ubuntu:jammy-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:jammy-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:jammy",
-        "docker.io/balenalib/asus-tinker-board-ubuntu:latest-run-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:latest-run-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:latest-run",
-        "docker.io/balenalib/asus-tinker-board-ubuntu:latest-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:latest-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:latest",
-        "docker.io/balenalib/asus-tinker-board-ubuntu:run-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:run-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:run",
-        "docker.io/balenalib/asus-tinker-board-ubuntu:20240201"
+        "docker.io/balenalib/asus-tinker-board-ubuntu:20240205"
       ],
       "cache_from": [
-        "docker.io/balenalib/asus-tinker-board-ubuntu:jammy-run-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:jammy-run-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:jammy-run",
-        "docker.io/balenalib/asus-tinker-board-ubuntu:jammy-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:jammy-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:jammy",
-        "docker.io/balenalib/asus-tinker-board-ubuntu:latest-run-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:latest-run-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:latest-run",
-        "docker.io/balenalib/asus-tinker-board-ubuntu:latest-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:latest-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:latest",
-        "docker.io/balenalib/asus-tinker-board-ubuntu:run-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:run-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:run",
-        "docker.io/balenalib/asus-tinker-board-ubuntu:20240201"
+        "docker.io/balenalib/asus-tinker-board-ubuntu:20240205"
       ]
     },
     "asus-tinker-board-ubuntu-focal-build": {
@@ -103,11 +103,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/asus-tinker-board-ubuntu:focal-build-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:focal-build-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:focal-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/asus-tinker-board-ubuntu:focal-build-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:focal-build-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:focal-build"
       ]
     },
@@ -116,15 +116,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/asus-tinker-board-ubuntu:focal-run-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:focal-run-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:focal-run",
-        "docker.io/balenalib/asus-tinker-board-ubuntu:focal-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:focal-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:focal"
       ],
       "cache_from": [
-        "docker.io/balenalib/asus-tinker-board-ubuntu:focal-run-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:focal-run-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:focal-run",
-        "docker.io/balenalib/asus-tinker-board-ubuntu:focal-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:focal-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:focal"
       ]
     },
@@ -133,11 +133,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/asus-tinker-board-ubuntu:xenial-build-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:xenial-build-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:xenial-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/asus-tinker-board-ubuntu:xenial-build-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:xenial-build-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:xenial-build"
       ]
     },
@@ -146,15 +146,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/asus-tinker-board-ubuntu:xenial-run-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:xenial-run-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:xenial-run",
-        "docker.io/balenalib/asus-tinker-board-ubuntu:xenial-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:xenial-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:xenial"
       ],
       "cache_from": [
-        "docker.io/balenalib/asus-tinker-board-ubuntu:xenial-run-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:xenial-run-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:xenial-run",
-        "docker.io/balenalib/asus-tinker-board-ubuntu:xenial-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:xenial-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:xenial"
       ]
     },
@@ -163,11 +163,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/asus-tinker-board-ubuntu:bionic-build-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:bionic-build-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:bionic-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/asus-tinker-board-ubuntu:bionic-build-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:bionic-build-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:bionic-build"
       ]
     },
@@ -176,15 +176,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/asus-tinker-board-ubuntu:bionic-run-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:bionic-run-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:bionic-run",
-        "docker.io/balenalib/asus-tinker-board-ubuntu:bionic-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:bionic-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:bionic"
       ],
       "cache_from": [
-        "docker.io/balenalib/asus-tinker-board-ubuntu:bionic-run-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:bionic-run-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:bionic-run",
-        "docker.io/balenalib/asus-tinker-board-ubuntu:bionic-20240201",
+        "docker.io/balenalib/asus-tinker-board-ubuntu:bionic-20240205",
         "docker.io/balenalib/asus-tinker-board-ubuntu:bionic"
       ]
     }
