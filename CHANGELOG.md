@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.73 - 2024-02-08
+
+
+<details>
+<summary> Update scripts/contracts digest to 4f7dba1 [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.93 - 2024-02-08
+> 
+> * hw.device-type: Add Kontron i.MX8M Mini device [joris-bright]
+> 
+
+</details>
+
 ## 2.8.72 - 2024-02-07
 
 * Update actions/setup-node action to v4.0.2 [Self-hosted Renovate Bot]
