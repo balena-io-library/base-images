@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.75 - 2024-02-14
+
+
+<details>
+<summary> Update scripts/contracts digest to 0c54ce2 [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.94 - 2024-02-14
+> 
+> * odyssey-x86: Update icon to latest revision [Alexandru Costache]
+> 
+
+</details>
+
 ## 2.8.74 - 2024-02-12
 
 * Lock file maintenance [Self-hosted Renovate Bot]
