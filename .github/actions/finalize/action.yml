@@ -41,7 +41,7 @@ runs:
     # https://github.com/dawidd6/action-download-artifact
     - name: Download patches from PR workflow
       id: download
-      uses: dawidd6/action-download-artifact@e7466d1a7587ed14867642c2ca74b5bcc1e19a2d # v3.0.0
+      uses: dawidd6/action-download-artifact@f6b0bace624032e30a85a8fd9c1a7f8f611f5737 # v3.1.0
       with:
         github_token: ${{ fromJSON(inputs.secrets).GITHUB_TOKEN }}
         commit: ${{ github.event.pull_request.head.sha || github.event.head_commit.id }}
