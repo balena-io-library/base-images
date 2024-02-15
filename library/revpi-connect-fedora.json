@@ -13,11 +13,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/revpi-connect-fedora:36-build-20240214",
+        "docker.io/balenalib/revpi-connect-fedora:36-build-20240215",
         "docker.io/balenalib/revpi-connect-fedora:36-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/revpi-connect-fedora:36-build-20240214",
+        "docker.io/balenalib/revpi-connect-fedora:36-build-20240215",
         "docker.io/balenalib/revpi-connect-fedora:36-build"
       ]
     },
@@ -26,15 +26,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/revpi-connect-fedora:36-run-20240214",
+        "docker.io/balenalib/revpi-connect-fedora:36-run-20240215",
         "docker.io/balenalib/revpi-connect-fedora:36-run",
-        "docker.io/balenalib/revpi-connect-fedora:36-20240214",
+        "docker.io/balenalib/revpi-connect-fedora:36-20240215",
         "docker.io/balenalib/revpi-connect-fedora:36"
       ],
       "cache_from": [
-        "docker.io/balenalib/revpi-connect-fedora:36-run-20240214",
+        "docker.io/balenalib/revpi-connect-fedora:36-run-20240215",
         "docker.io/balenalib/revpi-connect-fedora:36-run",
-        "docker.io/balenalib/revpi-connect-fedora:36-20240214",
+        "docker.io/balenalib/revpi-connect-fedora:36-20240215",
         "docker.io/balenalib/revpi-connect-fedora:36"
       ]
     }
