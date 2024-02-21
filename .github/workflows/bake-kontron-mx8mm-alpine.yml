@@ -1,4 +1,4 @@
-name: Bake aarch64-alpine
+name: Bake kontron-mx8mm-alpine
 'on':
   workflow_dispatch:
     inputs:
@@ -7,14 +7,17 @@ name: Bake aarch64-alpine
         required: false
         type: boolean
         default: false
-  schedule:
-    - cron: 32 6 5 * *
+  workflow_run:
+    workflows:
+      - Bake aarch64-alpine
+    types:
+      - completed
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true
 jobs:
-  prepare-aarch64-alpine:
-    name: Prepare aarch64-alpine
+  prepare-kontron-mx8mm-alpine:
+    name: Prepare kontron-mx8mm-alpine
     runs-on: ubuntu-latest
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -30,16 +33,16 @@ jobs:
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
     env:
-      LIBRARY: library/aarch64-alpine.json
-  bake-aarch64-alpine:
-    name: Bake aarch64-alpine
+      LIBRARY: library/kontron-mx8mm-alpine.json
+  bake-kontron-mx8mm-alpine:
+    name: Bake kontron-mx8mm-alpine
     runs-on: ubuntu-latest
     needs:
-      - prepare-aarch64-alpine
+      - prepare-kontron-mx8mm-alpine
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-aarch64-alpine.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-kontron-mx8mm-alpine.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
@@ -73,9 +76,9 @@ jobs:
           push: ${{ inputs.no-push != true }}
           provenance: false
     env:
-      LIBRARY: library/aarch64-alpine.json
-  prepare-aarch64-alpine-golang:
-    name: Prepare aarch64-alpine-golang
+      LIBRARY: library/kontron-mx8mm-alpine.json
+  prepare-kontron-mx8mm-alpine-golang:
+    name: Prepare kontron-mx8mm-alpine-golang
     runs-on: ubuntu-latest
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -91,18 +94,18 @@ jobs:
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
     needs:
-      - bake-aarch64-alpine
+      - bake-kontron-mx8mm-alpine
     env:
-      LIBRARY: library/aarch64-alpine-golang.json
-  bake-aarch64-alpine-golang:
-    name: Bake aarch64-alpine-golang
+      LIBRARY: library/kontron-mx8mm-alpine-golang.json
+  bake-kontron-mx8mm-alpine-golang:
+    name: Bake kontron-mx8mm-alpine-golang
     runs-on: ubuntu-latest
     needs:
-      - prepare-aarch64-alpine-golang
+      - prepare-kontron-mx8mm-alpine-golang
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-aarch64-alpine-golang.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-kontron-mx8mm-alpine-golang.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
@@ -136,9 +139,9 @@ jobs:
           push: ${{ inputs.no-push != true }}
           provenance: false
     env:
-      LIBRARY: library/aarch64-alpine-golang.json
-  prepare-aarch64-alpine-node:
-    name: Prepare aarch64-alpine-node
+      LIBRARY: library/kontron-mx8mm-alpine-golang.json
+  prepare-kontron-mx8mm-alpine-node:
+    name: Prepare kontron-mx8mm-alpine-node
     runs-on: ubuntu-latest
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -154,18 +157,18 @@ jobs:
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
     needs:
-      - bake-aarch64-alpine
+      - bake-kontron-mx8mm-alpine
     env:
-      LIBRARY: library/aarch64-alpine-node.json
-  bake-aarch64-alpine-node:
-    name: Bake aarch64-alpine-node
+      LIBRARY: library/kontron-mx8mm-alpine-node.json
+  bake-kontron-mx8mm-alpine-node:
+    name: Bake kontron-mx8mm-alpine-node
     runs-on: ubuntu-latest
     needs:
-      - prepare-aarch64-alpine-node
+      - prepare-kontron-mx8mm-alpine-node
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-aarch64-alpine-node.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-kontron-mx8mm-alpine-node.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
@@ -199,9 +202,9 @@ jobs:
           push: ${{ inputs.no-push != true }}
           provenance: false
     env:
-      LIBRARY: library/aarch64-alpine-node.json
-  prepare-aarch64-alpine-openjdk:
-    name: Prepare aarch64-alpine-openjdk
+      LIBRARY: library/kontron-mx8mm-alpine-node.json
+  prepare-kontron-mx8mm-alpine-openjdk:
+    name: Prepare kontron-mx8mm-alpine-openjdk
     runs-on: ubuntu-latest
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -217,18 +220,18 @@ jobs:
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
     needs:
-      - bake-aarch64-alpine
+      - bake-kontron-mx8mm-alpine
     env:
-      LIBRARY: library/aarch64-alpine-openjdk.json
-  bake-aarch64-alpine-openjdk:
-    name: Bake aarch64-alpine-openjdk
+      LIBRARY: library/kontron-mx8mm-alpine-openjdk.json
+  bake-kontron-mx8mm-alpine-openjdk:
+    name: Bake kontron-mx8mm-alpine-openjdk
     runs-on: ubuntu-latest
     needs:
-      - prepare-aarch64-alpine-openjdk
+      - prepare-kontron-mx8mm-alpine-openjdk
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-aarch64-alpine-openjdk.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-kontron-mx8mm-alpine-openjdk.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
@@ -262,9 +265,9 @@ jobs:
           push: ${{ inputs.no-push != true }}
           provenance: false
     env:
-      LIBRARY: library/aarch64-alpine-openjdk.json
-  prepare-aarch64-alpine-python:
-    name: Prepare aarch64-alpine-python
+      LIBRARY: library/kontron-mx8mm-alpine-openjdk.json
+  prepare-kontron-mx8mm-alpine-python:
+    name: Prepare kontron-mx8mm-alpine-python
     runs-on: ubuntu-latest
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -280,18 +283,18 @@ jobs:
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
     needs:
-      - bake-aarch64-alpine
+      - bake-kontron-mx8mm-alpine
     env:
-      LIBRARY: library/aarch64-alpine-python.json
-  bake-aarch64-alpine-python:
-    name: Bake aarch64-alpine-python
+      LIBRARY: library/kontron-mx8mm-alpine-python.json
+  bake-kontron-mx8mm-alpine-python:
+    name: Bake kontron-mx8mm-alpine-python
     runs-on: ubuntu-latest
     needs:
-      - prepare-aarch64-alpine-python
+      - prepare-kontron-mx8mm-alpine-python
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-aarch64-alpine-python.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-kontron-mx8mm-alpine-python.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
@@ -325,4 +328,4 @@ jobs:
           push: ${{ inputs.no-push != true }}
           provenance: false
     env:
-      LIBRARY: library/aarch64-alpine-python.json
+      LIBRARY: library/kontron-mx8mm-alpine-python.json
