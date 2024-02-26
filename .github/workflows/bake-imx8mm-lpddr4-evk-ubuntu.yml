@@ -1,4 +1,4 @@
-name: Bake rpi-alpine
+name: Bake imx8mm-lpddr4-evk-ubuntu
 'on':
   workflow_dispatch:
     inputs:
@@ -7,14 +7,17 @@ name: Bake rpi-alpine
         required: false
         type: boolean
         default: false
-  schedule:
-    - cron: 56 6 7 * *
+  workflow_run:
+    workflows:
+      - Bake aarch64-ubuntu
+    types:
+      - completed
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true
 jobs:
-  prepare-rpi-alpine:
-    name: Prepare rpi-alpine
+  prepare-imx8mm-lpddr4-evk-ubuntu:
+    name: Prepare imx8mm-lpddr4-evk-ubuntu
     runs-on: ubuntu-latest
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -30,16 +33,16 @@ jobs:
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
     env:
-      LIBRARY: library/rpi-alpine.json
-  bake-rpi-alpine:
-    name: Bake rpi-alpine
+      LIBRARY: library/imx8mm-lpddr4-evk-ubuntu.json
+  bake-imx8mm-lpddr4-evk-ubuntu:
+    name: Bake imx8mm-lpddr4-evk-ubuntu
     runs-on: ubuntu-latest
     needs:
-      - prepare-rpi-alpine
+      - prepare-imx8mm-lpddr4-evk-ubuntu
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-rpi-alpine.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-imx8mm-lpddr4-evk-ubuntu.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
@@ -73,9 +76,9 @@ jobs:
           push: ${{ inputs.no-push != true }}
           provenance: false
     env:
-      LIBRARY: library/rpi-alpine.json
-  prepare-rpi-alpine-golang:
-    name: Prepare rpi-alpine-golang
+      LIBRARY: library/imx8mm-lpddr4-evk-ubuntu.json
+  prepare-imx8mm-lpddr4-evk-ubuntu-golang:
+    name: Prepare imx8mm-lpddr4-evk-ubuntu-golang
     runs-on: ubuntu-latest
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -91,18 +94,18 @@ jobs:
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
     needs:
-      - bake-rpi-alpine
+      - bake-imx8mm-lpddr4-evk-ubuntu
     env:
-      LIBRARY: library/rpi-alpine-golang.json
-  bake-rpi-alpine-golang:
-    name: Bake rpi-alpine-golang
+      LIBRARY: library/imx8mm-lpddr4-evk-ubuntu-golang.json
+  bake-imx8mm-lpddr4-evk-ubuntu-golang:
+    name: Bake imx8mm-lpddr4-evk-ubuntu-golang
     runs-on: ubuntu-latest
     needs:
-      - prepare-rpi-alpine-golang
+      - prepare-imx8mm-lpddr4-evk-ubuntu-golang
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-rpi-alpine-golang.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-imx8mm-lpddr4-evk-ubuntu-golang.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
@@ -136,9 +139,9 @@ jobs:
           push: ${{ inputs.no-push != true }}
           provenance: false
     env:
-      LIBRARY: library/rpi-alpine-golang.json
-  prepare-rpi-alpine-node:
-    name: Prepare rpi-alpine-node
+      LIBRARY: library/imx8mm-lpddr4-evk-ubuntu-golang.json
+  prepare-imx8mm-lpddr4-evk-ubuntu-node:
+    name: Prepare imx8mm-lpddr4-evk-ubuntu-node
     runs-on: ubuntu-latest
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -154,18 +157,18 @@ jobs:
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
     needs:
-      - bake-rpi-alpine
+      - bake-imx8mm-lpddr4-evk-ubuntu
     env:
-      LIBRARY: library/rpi-alpine-node.json
-  bake-rpi-alpine-node:
-    name: Bake rpi-alpine-node
+      LIBRARY: library/imx8mm-lpddr4-evk-ubuntu-node.json
+  bake-imx8mm-lpddr4-evk-ubuntu-node:
+    name: Bake imx8mm-lpddr4-evk-ubuntu-node
     runs-on: ubuntu-latest
     needs:
-      - prepare-rpi-alpine-node
+      - prepare-imx8mm-lpddr4-evk-ubuntu-node
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-rpi-alpine-node.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-imx8mm-lpddr4-evk-ubuntu-node.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
@@ -199,9 +202,9 @@ jobs:
           push: ${{ inputs.no-push != true }}
           provenance: false
     env:
-      LIBRARY: library/rpi-alpine-node.json
-  prepare-rpi-alpine-openjdk:
-    name: Prepare rpi-alpine-openjdk
+      LIBRARY: library/imx8mm-lpddr4-evk-ubuntu-node.json
+  prepare-imx8mm-lpddr4-evk-ubuntu-python:
+    name: Prepare imx8mm-lpddr4-evk-ubuntu-python
     runs-on: ubuntu-latest
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -217,18 +220,18 @@ jobs:
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
     needs:
-      - bake-rpi-alpine
+      - bake-imx8mm-lpddr4-evk-ubuntu
     env:
-      LIBRARY: library/rpi-alpine-openjdk.json
-  bake-rpi-alpine-openjdk:
-    name: Bake rpi-alpine-openjdk
+      LIBRARY: library/imx8mm-lpddr4-evk-ubuntu-python.json
+  bake-imx8mm-lpddr4-evk-ubuntu-python:
+    name: Bake imx8mm-lpddr4-evk-ubuntu-python
     runs-on: ubuntu-latest
     needs:
-      - prepare-rpi-alpine-openjdk
+      - prepare-imx8mm-lpddr4-evk-ubuntu-python
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-rpi-alpine-openjdk.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-imx8mm-lpddr4-evk-ubuntu-python.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
@@ -262,9 +265,9 @@ jobs:
           push: ${{ inputs.no-push != true }}
           provenance: false
     env:
-      LIBRARY: library/rpi-alpine-openjdk.json
-  prepare-rpi-alpine-python:
-    name: Prepare rpi-alpine-python
+      LIBRARY: library/imx8mm-lpddr4-evk-ubuntu-python.json
+  prepare-imx8mm-lpddr4-evk-ubuntu-openjdk:
+    name: Prepare imx8mm-lpddr4-evk-ubuntu-openjdk
     runs-on: ubuntu-latest
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -280,18 +283,18 @@ jobs:
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
     needs:
-      - bake-rpi-alpine
+      - bake-imx8mm-lpddr4-evk-ubuntu
     env:
-      LIBRARY: library/rpi-alpine-python.json
-  bake-rpi-alpine-python:
-    name: Bake rpi-alpine-python
+      LIBRARY: library/imx8mm-lpddr4-evk-ubuntu-openjdk.json
+  bake-imx8mm-lpddr4-evk-ubuntu-openjdk:
+    name: Bake imx8mm-lpddr4-evk-ubuntu-openjdk
     runs-on: ubuntu-latest
     needs:
-      - prepare-rpi-alpine-python
+      - prepare-imx8mm-lpddr4-evk-ubuntu-openjdk
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-rpi-alpine-python.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-imx8mm-lpddr4-evk-ubuntu-openjdk.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
@@ -325,4 +328,4 @@ jobs:
           push: ${{ inputs.no-push != true }}
           provenance: false
     env:
-      LIBRARY: library/rpi-alpine-python.json
+      LIBRARY: library/imx8mm-lpddr4-evk-ubuntu-openjdk.json
