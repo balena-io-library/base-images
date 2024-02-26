@@ -21,11 +21,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:lunar-build-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:lunar-build-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:lunar-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:lunar-build-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:lunar-build-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:lunar-build"
       ]
     },
@@ -34,15 +34,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:lunar-run-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:lunar-run-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:lunar-run",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:lunar-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:lunar-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:lunar"
       ],
       "cache_from": [
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:lunar-run-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:lunar-run-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:lunar-run",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:lunar-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:lunar-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:lunar"
       ]
     },
@@ -51,19 +51,19 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:jammy-build-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:jammy-build-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:jammy-build",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:latest-build-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:latest-build-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:latest-build",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:build-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:build-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:jammy-build-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:jammy-build-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:jammy-build",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:latest-build-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:latest-build-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:latest-build",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:build-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:build-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:build"
       ]
     },
@@ -72,30 +72,30 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:jammy-run-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:jammy-run-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:jammy-run",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:jammy-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:jammy-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:jammy",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:latest-run-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:latest-run-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:latest-run",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:latest-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:latest-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:latest",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:run-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:run-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:run",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:20240221"
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:20240226"
       ],
       "cache_from": [
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:jammy-run-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:jammy-run-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:jammy-run",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:jammy-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:jammy-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:jammy",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:latest-run-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:latest-run-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:latest-run",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:latest-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:latest-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:latest",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:run-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:run-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:run",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:20240221"
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:20240226"
       ]
     },
     "raspberrypi4-unipi-neuron-ubuntu-focal-build": {
@@ -103,11 +103,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:focal-build-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:focal-build-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:focal-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:focal-build-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:focal-build-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:focal-build"
       ]
     },
@@ -116,15 +116,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:focal-run-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:focal-run-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:focal-run",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:focal-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:focal-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:focal"
       ],
       "cache_from": [
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:focal-run-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:focal-run-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:focal-run",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:focal-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:focal-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:focal"
       ]
     },
@@ -133,11 +133,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:xenial-build-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:xenial-build-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:xenial-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:xenial-build-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:xenial-build-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:xenial-build"
       ]
     },
@@ -146,15 +146,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:xenial-run-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:xenial-run-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:xenial-run",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:xenial-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:xenial-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:xenial"
       ],
       "cache_from": [
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:xenial-run-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:xenial-run-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:xenial-run",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:xenial-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:xenial-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:xenial"
       ]
     },
@@ -163,11 +163,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:bionic-build-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:bionic-build-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:bionic-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:bionic-build-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:bionic-build-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:bionic-build"
       ]
     },
@@ -176,15 +176,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:bionic-run-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:bionic-run-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:bionic-run",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:bionic-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:bionic-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:bionic"
       ],
       "cache_from": [
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:bionic-run-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:bionic-run-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:bionic-run",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:bionic-20240221",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:bionic-20240226",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:bionic"
       ]
     }
