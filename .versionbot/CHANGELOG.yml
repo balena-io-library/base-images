@@ -1,4 +1,39 @@
 - commits:
+    - subject: Update scripts/contracts digest to f3ba2ee
+      hash: 3cfe469ee629ea953a2da3026c21b9f0e526a90d
+      body: |
+        Update scripts/contracts
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: "sw.os+hw.device-type: Update Jetson Orin repositories"
+              hash: 1e715e7850a856ce6fef42588d40a0e66d417081
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+            - subject: "jetson-orin-nx-seeed-j4012: Add ubuntu and debian distro tpl files"
+              hash: 3a10086228aa29364d2679d12eb6f8be680a925e
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+          version: contracts-2.0.95
+          title: ""
+          date: 2024-02-26T15:04:54.874Z
+  version: 2.8.83
+  title: ""
+  date: 2024-02-26T16:05:51.768Z
+- commits:
     - subject: Lock file maintenance
       hash: be50e2abdf2ade1d0da18b00a79fb9a72a75985b
       body: |

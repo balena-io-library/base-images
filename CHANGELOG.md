@@ -5,6 +5,20 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.83 - 2024-02-26
+
+
+<details>
+<summary> Update scripts/contracts digest to f3ba2ee [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.95 - 2024-02-26
+> 
+> * sw.os+hw.device-type: Update Jetson Orin repositories [Alexandru Costache]
+> * jetson-orin-nx-seeed-j4012: Add ubuntu and debian distro tpl files [Alexandru Costache]
+> 
+
+</details>
+
 ## 2.8.82 - 2024-02-26
 
 * Lock file maintenance [Self-hosted Renovate Bot]
