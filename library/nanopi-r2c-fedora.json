@@ -17,11 +17,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/nanopi-r2c-fedora:36-build-20240226",
+        "docker.io/balenalib/nanopi-r2c-fedora:36-build-20240227",
         "docker.io/balenalib/nanopi-r2c-fedora:36-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/nanopi-r2c-fedora:36-build-20240226",
+        "docker.io/balenalib/nanopi-r2c-fedora:36-build-20240227",
         "docker.io/balenalib/nanopi-r2c-fedora:36-build"
       ]
     },
@@ -30,15 +30,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/nanopi-r2c-fedora:36-run-20240226",
+        "docker.io/balenalib/nanopi-r2c-fedora:36-run-20240227",
         "docker.io/balenalib/nanopi-r2c-fedora:36-run",
-        "docker.io/balenalib/nanopi-r2c-fedora:36-20240226",
+        "docker.io/balenalib/nanopi-r2c-fedora:36-20240227",
         "docker.io/balenalib/nanopi-r2c-fedora:36"
       ],
       "cache_from": [
-        "docker.io/balenalib/nanopi-r2c-fedora:36-run-20240226",
+        "docker.io/balenalib/nanopi-r2c-fedora:36-run-20240227",
         "docker.io/balenalib/nanopi-r2c-fedora:36-run",
-        "docker.io/balenalib/nanopi-r2c-fedora:36-20240226",
+        "docker.io/balenalib/nanopi-r2c-fedora:36-20240227",
         "docker.io/balenalib/nanopi-r2c-fedora:36"
       ]
     },
@@ -47,19 +47,19 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/nanopi-r2c-fedora:37-build-20240226",
+        "docker.io/balenalib/nanopi-r2c-fedora:37-build-20240227",
         "docker.io/balenalib/nanopi-r2c-fedora:37-build",
-        "docker.io/balenalib/nanopi-r2c-fedora:latest-build-20240226",
+        "docker.io/balenalib/nanopi-r2c-fedora:latest-build-20240227",
         "docker.io/balenalib/nanopi-r2c-fedora:latest-build",
-        "docker.io/balenalib/nanopi-r2c-fedora:build-20240226",
+        "docker.io/balenalib/nanopi-r2c-fedora:build-20240227",
         "docker.io/balenalib/nanopi-r2c-fedora:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/nanopi-r2c-fedora:37-build-20240226",
+        "docker.io/balenalib/nanopi-r2c-fedora:37-build-20240227",
         "docker.io/balenalib/nanopi-r2c-fedora:37-build",
-        "docker.io/balenalib/nanopi-r2c-fedora:latest-build-20240226",
+        "docker.io/balenalib/nanopi-r2c-fedora:latest-build-20240227",
         "docker.io/balenalib/nanopi-r2c-fedora:latest-build",
-        "docker.io/balenalib/nanopi-r2c-fedora:build-20240226",
+        "docker.io/balenalib/nanopi-r2c-fedora:build-20240227",
         "docker.io/balenalib/nanopi-r2c-fedora:build"
       ]
     },
@@ -68,30 +68,30 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/nanopi-r2c-fedora:37-run-20240226",
+        "docker.io/balenalib/nanopi-r2c-fedora:37-run-20240227",
         "docker.io/balenalib/nanopi-r2c-fedora:37-run",
-        "docker.io/balenalib/nanopi-r2c-fedora:37-20240226",
+        "docker.io/balenalib/nanopi-r2c-fedora:37-20240227",
         "docker.io/balenalib/nanopi-r2c-fedora:37",
-        "docker.io/balenalib/nanopi-r2c-fedora:latest-run-20240226",
+        "docker.io/balenalib/nanopi-r2c-fedora:latest-run-20240227",
         "docker.io/balenalib/nanopi-r2c-fedora:latest-run",
-        "docker.io/balenalib/nanopi-r2c-fedora:latest-20240226",
+        "docker.io/balenalib/nanopi-r2c-fedora:latest-20240227",
         "docker.io/balenalib/nanopi-r2c-fedora:latest",
-        "docker.io/balenalib/nanopi-r2c-fedora:run-20240226",
+        "docker.io/balenalib/nanopi-r2c-fedora:run-20240227",
         "docker.io/balenalib/nanopi-r2c-fedora:run",
-        "docker.io/balenalib/nanopi-r2c-fedora:20240226"
+        "docker.io/balenalib/nanopi-r2c-fedora:20240227"
       ],
       "cache_from": [
-        "docker.io/balenalib/nanopi-r2c-fedora:37-run-20240226",
+        "docker.io/balenalib/nanopi-r2c-fedora:37-run-20240227",
         "docker.io/balenalib/nanopi-r2c-fedora:37-run",
-        "docker.io/balenalib/nanopi-r2c-fedora:37-20240226",
+        "docker.io/balenalib/nanopi-r2c-fedora:37-20240227",
         "docker.io/balenalib/nanopi-r2c-fedora:37",
-        "docker.io/balenalib/nanopi-r2c-fedora:latest-run-20240226",
+        "docker.io/balenalib/nanopi-r2c-fedora:latest-run-20240227",
         "docker.io/balenalib/nanopi-r2c-fedora:latest-run",
-        "docker.io/balenalib/nanopi-r2c-fedora:latest-20240226",
+        "docker.io/balenalib/nanopi-r2c-fedora:latest-20240227",
         "docker.io/balenalib/nanopi-r2c-fedora:latest",
-        "docker.io/balenalib/nanopi-r2c-fedora:run-20240226",
+        "docker.io/balenalib/nanopi-r2c-fedora:run-20240227",
         "docker.io/balenalib/nanopi-r2c-fedora:run",
-        "docker.io/balenalib/nanopi-r2c-fedora:20240226"
+        "docker.io/balenalib/nanopi-r2c-fedora:20240227"
       ]
     },
     "nanopi-r2c-fedora-38-build": {
@@ -99,11 +99,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/nanopi-r2c-fedora:38-build-20240226",
+        "docker.io/balenalib/nanopi-r2c-fedora:38-build-20240227",
         "docker.io/balenalib/nanopi-r2c-fedora:38-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/nanopi-r2c-fedora:38-build-20240226",
+        "docker.io/balenalib/nanopi-r2c-fedora:38-build-20240227",
         "docker.io/balenalib/nanopi-r2c-fedora:38-build"
       ]
     },
@@ -112,15 +112,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/nanopi-r2c-fedora:38-run-20240226",
+        "docker.io/balenalib/nanopi-r2c-fedora:38-run-20240227",
         "docker.io/balenalib/nanopi-r2c-fedora:38-run",
-        "docker.io/balenalib/nanopi-r2c-fedora:38-20240226",
+        "docker.io/balenalib/nanopi-r2c-fedora:38-20240227",
         "docker.io/balenalib/nanopi-r2c-fedora:38"
       ],
       "cache_from": [
-        "docker.io/balenalib/nanopi-r2c-fedora:38-run-20240226",
+        "docker.io/balenalib/nanopi-r2c-fedora:38-run-20240227",
         "docker.io/balenalib/nanopi-r2c-fedora:38-run",
-        "docker.io/balenalib/nanopi-r2c-fedora:38-20240226",
+        "docker.io/balenalib/nanopi-r2c-fedora:38-20240227",
         "docker.io/balenalib/nanopi-r2c-fedora:38"
       ]
     }
