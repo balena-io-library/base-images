@@ -1,0 +1,288 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "phyboard-lyra-am62xx-2-alpine-edge-build",
+        "phyboard-lyra-am62xx-2-alpine-edge-run",
+        "phyboard-lyra-am62xx-2-alpine-3-14-build",
+        "phyboard-lyra-am62xx-2-alpine-3-14-run",
+        "phyboard-lyra-am62xx-2-alpine-3-16-build",
+        "phyboard-lyra-am62xx-2-alpine-3-16-run",
+        "phyboard-lyra-am62xx-2-alpine-3-17-build",
+        "phyboard-lyra-am62xx-2-alpine-3-17-run",
+        "phyboard-lyra-am62xx-2-alpine-3-18-build",
+        "phyboard-lyra-am62xx-2-alpine-3-18-run",
+        "phyboard-lyra-am62xx-2-alpine-3-13-build",
+        "phyboard-lyra-am62xx-2-alpine-3-13-run",
+        "phyboard-lyra-am62xx-2-alpine-3-12-build",
+        "phyboard-lyra-am62xx-2-alpine-3-12-run",
+        "phyboard-lyra-am62xx-2-alpine-3-15-build",
+        "phyboard-lyra-am62xx-2-alpine-3-15-run"
+      ]
+    }
+  },
+  "target": {
+    "phyboard-lyra-am62xx-2-alpine-edge-build": {
+      "context": "device-base/phyboard-lyra-am62xx-2/alpine/edge/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:edge-build-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:edge-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:edge-build-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:edge-build"
+      ]
+    },
+    "phyboard-lyra-am62xx-2-alpine-edge-run": {
+      "context": "device-base/phyboard-lyra-am62xx-2/alpine/edge/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:edge-run-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:edge-run",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:edge-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:edge"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:edge-run-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:edge-run",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:edge-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:edge"
+      ]
+    },
+    "phyboard-lyra-am62xx-2-alpine-3-14-build": {
+      "context": "device-base/phyboard-lyra-am62xx-2/alpine/3.14/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.14-build-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.14-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.14-build-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.14-build"
+      ]
+    },
+    "phyboard-lyra-am62xx-2-alpine-3-14-run": {
+      "context": "device-base/phyboard-lyra-am62xx-2/alpine/3.14/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.14-run-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.14-run",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.14-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.14"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.14-run-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.14-run",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.14-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.14"
+      ]
+    },
+    "phyboard-lyra-am62xx-2-alpine-3-16-build": {
+      "context": "device-base/phyboard-lyra-am62xx-2/alpine/3.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.16-build-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.16-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.16-build-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.16-build"
+      ]
+    },
+    "phyboard-lyra-am62xx-2-alpine-3-16-run": {
+      "context": "device-base/phyboard-lyra-am62xx-2/alpine/3.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.16-run-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.16-run",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.16-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.16"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.16-run-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.16-run",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.16-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.16"
+      ]
+    },
+    "phyboard-lyra-am62xx-2-alpine-3-17-build": {
+      "context": "device-base/phyboard-lyra-am62xx-2/alpine/3.17/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.17-build-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.17-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.17-build-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.17-build"
+      ]
+    },
+    "phyboard-lyra-am62xx-2-alpine-3-17-run": {
+      "context": "device-base/phyboard-lyra-am62xx-2/alpine/3.17/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.17-run-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.17-run",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.17-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.17"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.17-run-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.17-run",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.17-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.17"
+      ]
+    },
+    "phyboard-lyra-am62xx-2-alpine-3-18-build": {
+      "context": "device-base/phyboard-lyra-am62xx-2/alpine/3.18/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.18-build-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.18-build",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:latest-build-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:latest-build",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:build-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.18-build-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.18-build",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:latest-build-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:latest-build",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:build-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:build"
+      ]
+    },
+    "phyboard-lyra-am62xx-2-alpine-3-18-run": {
+      "context": "device-base/phyboard-lyra-am62xx-2/alpine/3.18/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.18-run-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.18-run",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.18-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.18",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:latest-run-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:latest-run",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:latest-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:latest",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:run-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:run",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:20240304"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.18-run-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.18-run",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.18-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.18",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:latest-run-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:latest-run",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:latest-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:latest",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:run-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:run",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:20240304"
+      ]
+    },
+    "phyboard-lyra-am62xx-2-alpine-3-13-build": {
+      "context": "device-base/phyboard-lyra-am62xx-2/alpine/3.13/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.13-build-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.13-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.13-build-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.13-build"
+      ]
+    },
+    "phyboard-lyra-am62xx-2-alpine-3-13-run": {
+      "context": "device-base/phyboard-lyra-am62xx-2/alpine/3.13/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.13-run-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.13-run",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.13-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.13"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.13-run-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.13-run",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.13-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.13"
+      ]
+    },
+    "phyboard-lyra-am62xx-2-alpine-3-12-build": {
+      "context": "device-base/phyboard-lyra-am62xx-2/alpine/3.12/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.12-build-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.12-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.12-build-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.12-build"
+      ]
+    },
+    "phyboard-lyra-am62xx-2-alpine-3-12-run": {
+      "context": "device-base/phyboard-lyra-am62xx-2/alpine/3.12/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.12-run-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.12-run",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.12-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.12"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.12-run-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.12-run",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.12-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.12"
+      ]
+    },
+    "phyboard-lyra-am62xx-2-alpine-3-15-build": {
+      "context": "device-base/phyboard-lyra-am62xx-2/alpine/3.15/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.15-build-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.15-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.15-build-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.15-build"
+      ]
+    },
+    "phyboard-lyra-am62xx-2-alpine-3-15-run": {
+      "context": "device-base/phyboard-lyra-am62xx-2/alpine/3.15/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.15-run-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.15-run",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.15-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.15"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.15-run-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.15-run",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.15-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-alpine:3.15"
+      ]
+    }
+  }
+}

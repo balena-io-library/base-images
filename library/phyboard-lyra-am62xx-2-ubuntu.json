@@ -1,0 +1,192 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "phyboard-lyra-am62xx-2-ubuntu-lunar-build",
+        "phyboard-lyra-am62xx-2-ubuntu-lunar-run",
+        "phyboard-lyra-am62xx-2-ubuntu-jammy-build",
+        "phyboard-lyra-am62xx-2-ubuntu-jammy-run",
+        "phyboard-lyra-am62xx-2-ubuntu-focal-build",
+        "phyboard-lyra-am62xx-2-ubuntu-focal-run",
+        "phyboard-lyra-am62xx-2-ubuntu-xenial-build",
+        "phyboard-lyra-am62xx-2-ubuntu-xenial-run",
+        "phyboard-lyra-am62xx-2-ubuntu-bionic-build",
+        "phyboard-lyra-am62xx-2-ubuntu-bionic-run"
+      ]
+    }
+  },
+  "target": {
+    "phyboard-lyra-am62xx-2-ubuntu-lunar-build": {
+      "context": "device-base/phyboard-lyra-am62xx-2/ubuntu/lunar/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:lunar-build-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:lunar-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:lunar-build-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:lunar-build"
+      ]
+    },
+    "phyboard-lyra-am62xx-2-ubuntu-lunar-run": {
+      "context": "device-base/phyboard-lyra-am62xx-2/ubuntu/lunar/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:lunar-run-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:lunar-run",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:lunar-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:lunar"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:lunar-run-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:lunar-run",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:lunar-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:lunar"
+      ]
+    },
+    "phyboard-lyra-am62xx-2-ubuntu-jammy-build": {
+      "context": "device-base/phyboard-lyra-am62xx-2/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:jammy-build-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:jammy-build",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:latest-build-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:latest-build",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:build-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:jammy-build-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:jammy-build",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:latest-build-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:latest-build",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:build-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:build"
+      ]
+    },
+    "phyboard-lyra-am62xx-2-ubuntu-jammy-run": {
+      "context": "device-base/phyboard-lyra-am62xx-2/ubuntu/jammy/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:jammy-run-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:jammy-run",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:jammy-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:jammy",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:latest-run-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:latest-run",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:latest-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:latest",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:run-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:run",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:20240304"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:jammy-run-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:jammy-run",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:jammy-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:jammy",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:latest-run-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:latest-run",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:latest-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:latest",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:run-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:run",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:20240304"
+      ]
+    },
+    "phyboard-lyra-am62xx-2-ubuntu-focal-build": {
+      "context": "device-base/phyboard-lyra-am62xx-2/ubuntu/focal/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:focal-build-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:focal-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:focal-build-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:focal-build"
+      ]
+    },
+    "phyboard-lyra-am62xx-2-ubuntu-focal-run": {
+      "context": "device-base/phyboard-lyra-am62xx-2/ubuntu/focal/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:focal-run-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:focal-run",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:focal-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:focal"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:focal-run-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:focal-run",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:focal-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:focal"
+      ]
+    },
+    "phyboard-lyra-am62xx-2-ubuntu-xenial-build": {
+      "context": "device-base/phyboard-lyra-am62xx-2/ubuntu/xenial/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:xenial-build-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:xenial-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:xenial-build-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:xenial-build"
+      ]
+    },
+    "phyboard-lyra-am62xx-2-ubuntu-xenial-run": {
+      "context": "device-base/phyboard-lyra-am62xx-2/ubuntu/xenial/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:xenial-run-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:xenial-run",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:xenial-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:xenial"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:xenial-run-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:xenial-run",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:xenial-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:xenial"
+      ]
+    },
+    "phyboard-lyra-am62xx-2-ubuntu-bionic-build": {
+      "context": "device-base/phyboard-lyra-am62xx-2/ubuntu/bionic/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:bionic-build-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:bionic-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:bionic-build-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:bionic-build"
+      ]
+    },
+    "phyboard-lyra-am62xx-2-ubuntu-bionic-run": {
+      "context": "device-base/phyboard-lyra-am62xx-2/ubuntu/bionic/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:bionic-run-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:bionic-run",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:bionic-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:bionic"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:bionic-run-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:bionic-run",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:bionic-20240304",
+        "docker.io/balenalib/phyboard-lyra-am62xx-2-ubuntu:bionic"
+      ]
+    }
+  }
+}
