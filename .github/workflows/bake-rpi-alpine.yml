@@ -8,7 +8,7 @@ name: Bake rpi-alpine
         type: boolean
         default: false
   schedule:
-    - cron: 48 2 3 * *
+    - cron: 34 7 4 * *
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true
