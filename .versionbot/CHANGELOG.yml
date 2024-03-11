@@ -1,5 +1,18 @@
 - commits:
     - subject: Lock file maintenance
+      hash: 7994e5aae90087effd70f47ffa6a78ff2b6e1962
+      body: |
+        Update
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested: []
+  version: 2.8.86
+  title: ""
+  date: 2024-03-11T01:20:57.287Z
+- commits:
+    - subject: Lock file maintenance
       hash: 73537bf602c405913c3c8d4624ba1437a1ac65d8
       body: |
         Update
@@ -2262,7 +2275,8 @@
       body: >
         We only want to generate Dockerfiles for the canonical device type
 
-        names and not their aliases. Ex. There is a `raspberry-pi2-alpine-python` image
+        names and not their aliases. Ex. There is a
+        `raspberry-pi2-alpine-python` image
 
         but not a `raspberrypi2-alpine-python` image. This removes the aliases
 
@@ -3319,7 +3333,8 @@
         Since the supervisor can bind mount the host OS /sys into the container
         if io.balena.features.sysfs is set
 
-        we need to check whether it exists or not before mounting in the base-images entryscript
+        we need to check whether it exists or not before mounting in the
+        base-images entryscript
       footer:
         Change-type: patch
         change-type: patch
@@ -5390,7 +5405,8 @@
         Since the supervisor can bind mount the host OS /sys into the container
         if io.balena.features.sysfs is set
 
-        we need to check whether it exists or not before mounting in the base-images entryscript
+        we need to check whether it exists or not before mounting in the
+        base-images entryscript
       footer:
         Change-type: patch
         change-type: patch
@@ -7269,7 +7285,8 @@
         Since the supervisor can bind mount the host OS /sys into the container
         if io.balena.features.sysfs is set
 
-        we need to check whether it exists or not before mounting in the base-images entryscript
+        we need to check whether it exists or not before mounting in the
+        base-images entryscript
       footer:
         Change-type: patch
         change-type: patch
@@ -9139,7 +9156,8 @@
         Since the supervisor can bind mount the host OS /sys into the container
         if io.balena.features.sysfs is set
 
-        we need to check whether it exists or not before mounting in the base-images entryscript
+        we need to check whether it exists or not before mounting in the
+        base-images entryscript
       footer:
         Change-type: patch
         change-type: patch
