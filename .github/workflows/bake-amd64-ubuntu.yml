@@ -8,7 +8,7 @@ name: Bake amd64-ubuntu
         type: boolean
         default: false
   schedule:
-    - cron: 35 14 1 * *
+    - cron: 58 18 3 * *
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true
@@ -65,7 +65,7 @@ jobs:
       - name: Docker bake
         continue-on-error: false
         id: docker_bake
-        uses: docker/bake-action@849707117b03d39aba7924c50a10376a69e88d7d
+        uses: docker/bake-action@7ea090ddecd360d7059e3af5d09584c6e47d59d2
         with:
           workdir: balena-base-images
           files: ${{ github.workspace }}/${{ env.LIBRARY }}
@@ -128,7 +128,7 @@ jobs:
       - name: Docker bake
         continue-on-error: false
         id: docker_bake
-        uses: docker/bake-action@849707117b03d39aba7924c50a10376a69e88d7d
+        uses: docker/bake-action@7ea090ddecd360d7059e3af5d09584c6e47d59d2
         with:
           workdir: balena-base-images
           files: ${{ github.workspace }}/${{ env.LIBRARY }}
@@ -191,7 +191,7 @@ jobs:
       - name: Docker bake
         continue-on-error: false
         id: docker_bake
-        uses: docker/bake-action@849707117b03d39aba7924c50a10376a69e88d7d
+        uses: docker/bake-action@7ea090ddecd360d7059e3af5d09584c6e47d59d2
         with:
           workdir: balena-base-images
           files: ${{ github.workspace }}/${{ env.LIBRARY }}
@@ -254,7 +254,7 @@ jobs:
       - name: Docker bake
         continue-on-error: false
         id: docker_bake
-        uses: docker/bake-action@849707117b03d39aba7924c50a10376a69e88d7d
+        uses: docker/bake-action@7ea090ddecd360d7059e3af5d09584c6e47d59d2
         with:
           workdir: balena-base-images
           files: ${{ github.workspace }}/${{ env.LIBRARY }}
@@ -317,7 +317,7 @@ jobs:
       - name: Docker bake
         continue-on-error: false
         id: docker_bake
-        uses: docker/bake-action@849707117b03d39aba7924c50a10376a69e88d7d
+        uses: docker/bake-action@7ea090ddecd360d7059e3af5d09584c6e47d59d2
         with:
           workdir: balena-base-images
           files: ${{ github.workspace }}/${{ env.LIBRARY }}
@@ -380,7 +380,7 @@ jobs:
       - name: Docker bake
         continue-on-error: false
         id: docker_bake
-        uses: docker/bake-action@849707117b03d39aba7924c50a10376a69e88d7d
+        uses: docker/bake-action@7ea090ddecd360d7059e3af5d09584c6e47d59d2
         with:
           workdir: balena-base-images
           files: ${{ github.workspace }}/${{ env.LIBRARY }}
