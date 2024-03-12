@@ -21,11 +21,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:lunar-build-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:lunar-build-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:lunar-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:lunar-build-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:lunar-build-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:lunar-build"
       ]
     },
@@ -34,15 +34,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:lunar-run-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:lunar-run-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:lunar-run",
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:lunar-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:lunar-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:lunar"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:lunar-run-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:lunar-run-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:lunar-run",
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:lunar-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:lunar-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:lunar"
       ]
     },
@@ -51,19 +51,19 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:jammy-build-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:jammy-build-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:jammy-build",
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:latest-build-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:latest-build-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:latest-build",
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:build-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:build-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:jammy-build-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:jammy-build-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:jammy-build",
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:latest-build-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:latest-build-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:latest-build",
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:build-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:build-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:build"
       ]
     },
@@ -72,30 +72,30 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:jammy-run-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:jammy-run-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:jammy-run",
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:jammy-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:jammy-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:jammy",
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:latest-run-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:latest-run-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:latest-run",
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:latest-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:latest-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:latest",
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:run-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:run-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:run",
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:20240311"
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:20240312"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:jammy-run-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:jammy-run-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:jammy-run",
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:jammy-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:jammy-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:jammy",
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:latest-run-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:latest-run-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:latest-run",
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:latest-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:latest-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:latest",
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:run-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:run-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:run",
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:20240311"
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:20240312"
       ]
     },
     "jetson-nano-2gb-devkit-ubuntu-focal-build": {
@@ -103,11 +103,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:focal-build-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:focal-build-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:focal-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:focal-build-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:focal-build-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:focal-build"
       ]
     },
@@ -116,15 +116,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:focal-run-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:focal-run-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:focal-run",
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:focal-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:focal-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:focal"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:focal-run-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:focal-run-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:focal-run",
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:focal-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:focal-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:focal"
       ]
     },
@@ -133,11 +133,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:xenial-build-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:xenial-build-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:xenial-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:xenial-build-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:xenial-build-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:xenial-build"
       ]
     },
@@ -146,15 +146,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:xenial-run-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:xenial-run-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:xenial-run",
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:xenial-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:xenial-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:xenial"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:xenial-run-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:xenial-run-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:xenial-run",
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:xenial-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:xenial-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:xenial"
       ]
     },
@@ -163,11 +163,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:bionic-build-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:bionic-build-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:bionic-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:bionic-build-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:bionic-build-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:bionic-build"
       ]
     },
@@ -176,15 +176,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:bionic-run-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:bionic-run-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:bionic-run",
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:bionic-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:bionic-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:bionic"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:bionic-run-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:bionic-run-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:bionic-run",
-        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:bionic-20240311",
+        "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:bionic-20240312",
         "docker.io/balenalib/jetson-nano-2gb-devkit-ubuntu:bionic"
       ]
     }
