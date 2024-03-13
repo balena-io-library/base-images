@@ -8,72 +8,11 @@ name: Bake amd64-debian
         type: boolean
         default: false
   schedule:
-    - cron: 48 3 6 * *
+    - cron: 5 0 6 * *
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true
 jobs:
-  prepare-amd64-debian:
-    name: Prepare amd64-debian
-    runs-on: ubuntu-latest
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633
-        with:
-          fetch-depth: 1
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-    env:
-      LIBRARY: library/amd64-debian.json
-  bake-amd64-debian:
-    name: Bake amd64-debian
-    runs-on: ubuntu-latest
-    needs:
-      - prepare-amd64-debian
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-amd64-debian.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633
-        with:
-          fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
-      - name: Setup buildx
-        uses: docker/setup-buildx-action@0d103c3126aa41d772a8362f6aa67afac040f80c
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Login to DockerHub
-        uses: docker/login-action@343f7c4344506bcbf9b4de18042ae17996df046d
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7ea090ddecd360d7059e3af5d09584c6e47d59d2
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
-    env:
-      LIBRARY: library/amd64-debian.json
   prepare-amd64-debian-dotnet:
     name: Prepare amd64-debian-dotnet
     runs-on: ubuntu-latest
@@ -119,7 +58,7 @@ jobs:
           driver-opts: network=host
           install: true
       - name: Login to DockerHub
-        uses: docker/login-action@343f7c4344506bcbf9b4de18042ae17996df046d
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
         if: inputs.no-push != true
         with:
           registry: docker.io
@@ -182,7 +121,7 @@ jobs:
           driver-opts: network=host
           install: true
       - name: Login to DockerHub
-        uses: docker/login-action@343f7c4344506bcbf9b4de18042ae17996df046d
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
         if: inputs.no-push != true
         with:
           registry: docker.io
@@ -245,7 +184,7 @@ jobs:
           driver-opts: network=host
           install: true
       - name: Login to DockerHub
-        uses: docker/login-action@343f7c4344506bcbf9b4de18042ae17996df046d
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
         if: inputs.no-push != true
         with:
           registry: docker.io
@@ -308,7 +247,7 @@ jobs:
           driver-opts: network=host
           install: true
       - name: Login to DockerHub
-        uses: docker/login-action@343f7c4344506bcbf9b4de18042ae17996df046d
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
         if: inputs.no-push != true
         with:
           registry: docker.io
@@ -371,7 +310,7 @@ jobs:
           driver-opts: network=host
           install: true
       - name: Login to DockerHub
-        uses: docker/login-action@343f7c4344506bcbf9b4de18042ae17996df046d
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
         if: inputs.no-push != true
         with:
           registry: docker.io
@@ -389,3 +328,64 @@ jobs:
           provenance: false
     env:
       LIBRARY: library/amd64-debian-python.json
+  prepare-amd64-debian:
+    name: Prepare amd64-debian
+    runs-on: ubuntu-latest
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633
+        with:
+          fetch-depth: 1
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+    env:
+      LIBRARY: library/amd64-debian.json
+  bake-amd64-debian:
+    name: Bake amd64-debian
+    runs-on: ubuntu-latest
+    needs:
+      - prepare-amd64-debian
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-amd64-debian.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633
+        with:
+          fetch-depth: 1
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v6.2.0
+      - name: Setup buildx
+        uses: docker/setup-buildx-action@0d103c3126aa41d772a8362f6aa67afac040f80c
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Docker bake
+        continue-on-error: false
+        id: docker_bake
+        uses: docker/bake-action@7ea090ddecd360d7059e3af5d09584c6e47d59d2
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+    env:
+      LIBRARY: library/amd64-debian.json
