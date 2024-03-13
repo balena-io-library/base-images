@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.89 - 2024-03-13
+
+* Update docker/login-action digest to e92390c [Self-hosted Renovate Bot]
+
 ## 2.8.88 - 2024-03-12
 
 * Update docker/bake-action digest to 7ea090d [Self-hosted Renovate Bot]
