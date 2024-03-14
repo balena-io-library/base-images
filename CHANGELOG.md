@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.92 - 2024-03-14
+
+
+<details>
+<summary> Update scripts/contracts digest to 908a50d [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.96 - 2024-03-14
+> 
+> * hw.device-type: Add beaglebone-play device [delhiryder]
+> 
+
+</details>
+
 ## 2.8.91 - 2024-03-14
 
 * Update docker/bake-action digest to 017aa05 [Self-hosted Renovate Bot]
