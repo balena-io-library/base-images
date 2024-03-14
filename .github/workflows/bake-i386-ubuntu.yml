@@ -8,7 +8,7 @@ name: Bake i386-ubuntu
         type: boolean
         default: false
   schedule:
-    - cron: 8 0 5 * *
+    - cron: 34 15 2 * *
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true
@@ -53,7 +53,7 @@ jobs:
           platforms: all
           image: tonistiigi/binfmt:qemu-v6.2.0
       - name: Setup buildx
-        uses: docker/setup-buildx-action@0d103c3126aa41d772a8362f6aa67afac040f80c
+        uses: docker/setup-buildx-action@2b51285047da1547ffb1b2203d8be4c0af6b1f20
         with:
           driver-opts: network=host
           install: true
@@ -116,7 +116,7 @@ jobs:
           platforms: all
           image: tonistiigi/binfmt:qemu-v6.2.0
       - name: Setup buildx
-        uses: docker/setup-buildx-action@0d103c3126aa41d772a8362f6aa67afac040f80c
+        uses: docker/setup-buildx-action@2b51285047da1547ffb1b2203d8be4c0af6b1f20
         with:
           driver-opts: network=host
           install: true
@@ -179,7 +179,7 @@ jobs:
           platforms: all
           image: tonistiigi/binfmt:qemu-v6.2.0
       - name: Setup buildx
-        uses: docker/setup-buildx-action@0d103c3126aa41d772a8362f6aa67afac040f80c
+        uses: docker/setup-buildx-action@2b51285047da1547ffb1b2203d8be4c0af6b1f20
         with:
           driver-opts: network=host
           install: true
@@ -242,7 +242,7 @@ jobs:
           platforms: all
           image: tonistiigi/binfmt:qemu-v6.2.0
       - name: Setup buildx
-        uses: docker/setup-buildx-action@0d103c3126aa41d772a8362f6aa67afac040f80c
+        uses: docker/setup-buildx-action@2b51285047da1547ffb1b2203d8be4c0af6b1f20
         with:
           driver-opts: network=host
           install: true
@@ -303,7 +303,7 @@ jobs:
           platforms: all
           image: tonistiigi/binfmt:qemu-v6.2.0
       - name: Setup buildx
-        uses: docker/setup-buildx-action@0d103c3126aa41d772a8362f6aa67afac040f80c
+        uses: docker/setup-buildx-action@2b51285047da1547ffb1b2203d8be4c0af6b1f20
         with:
           driver-opts: network=host
           install: true
