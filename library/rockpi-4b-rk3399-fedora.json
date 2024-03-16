@@ -17,11 +17,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/rockpi-4b-rk3399-fedora:36-build-20240314",
+        "docker.io/balenalib/rockpi-4b-rk3399-fedora:36-build-20240316",
         "docker.io/balenalib/rockpi-4b-rk3399-fedora:36-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/rockpi-4b-rk3399-fedora:36-build-20240314",
+        "docker.io/balenalib/rockpi-4b-rk3399-fedora:36-build-20240316",
         "docker.io/balenalib/rockpi-4b-rk3399-fedora:36-build"
       ]
     },
@@ -30,15 +30,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/rockpi-4b-rk3399-fedora:36-run-20240314",
+        "docker.io/balenalib/rockpi-4b-rk3399-fedora:36-run-20240316",
         "docker.io/balenalib/rockpi-4b-rk3399-fedora:36-run",
-        "docker.io/balenalib/rockpi-4b-rk3399-fedora:36-20240314",
+        "docker.io/balenalib/rockpi-4b-rk3399-fedora:36-20240316",
         "docker.io/balenalib/rockpi-4b-rk3399-fedora:36"
       ],
       "cache_from": [
-        "docker.io/balenalib/rockpi-4b-rk3399-fedora:36-run-20240314",
+        "docker.io/balenalib/rockpi-4b-rk3399-fedora:36-run-20240316",
         "docker.io/balenalib/rockpi-4b-rk3399-fedora:36-run",
-        "docker.io/balenalib/rockpi-4b-rk3399-fedora:36-20240314",
+        "docker.io/balenalib/rockpi-4b-rk3399-fedora:36-20240316",
         "docker.io/balenalib/rockpi-4b-rk3399-fedora:36"
       ]
     },
@@ -47,19 +47,19 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/rockpi-4b-rk3399-fedora:37-build-20240314",
+        "docker.io/balenalib/rockpi-4b-rk3399-fedora:37-build-20240316",
         "docker.io/balenalib/rockpi-4b-rk3399-fedora:37-build",
-        "docker.io/balenalib/rockpi-4b-rk3399-fedora:latest-build-20240314",
+        "docker.io/balenalib/rockpi-4b-rk3399-fedora:latest-build-20240316",
         "docker.io/balenalib/rockpi-4b-rk3399-fedora:latest-build",
-        "docker.io/balenalib/rockpi-4b-rk3399-fedora:build-20240314",
+        "docker.io/balenalib/rockpi-4b-rk3399-fedora:build-20240316",
         "docker.io/balenalib/rockpi-4b-rk3399-fedora:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/rockpi-4b-rk3399-fedora:37-build-20240314",
+        "docker.io/balenalib/rockpi-4b-rk3399-fedora:37-build-20240316",
         "docker.io/balenalib/rockpi-4b-rk3399-fedora:37-build",
-        "docker.io/balenalib/rockpi-4b-rk3399-fedora:latest-build-20240314",
+        "docker.io/balenalib/rockpi-4b-rk3399-fedora:latest-build-20240316",
         "docker.io/balenalib/rockpi-4b-rk3399-fedora:latest-build",
-        "docker.io/balenalib/rockpi-4b-rk3399-fedora:build-20240314",
+        "docker.io/balenalib/rockpi-4b-rk3399-fedora:build-20240316",
         "docker.io/balenalib/rockpi-4b-rk3399-fedora:build"
       ]
     },
@@ -68,30 +68,30 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/rockpi-4b-rk3399-fedora:37-run-20240314",
+        "docker.io/balenalib/rockpi-4b-rk3399-fedora:37-run-20240316",
         "docker.io/balenalib/rockpi-4b-rk3399-fedora:37-run",
-        "docker.io/balenalib/rockpi-4b-rk3399-fedora:37-20240314",
+        "docker.io/balenalib/rockpi-4b-rk3399-fedora:37-20240316",
         "docker.io/balenalib/rockpi-4b-rk3399-fedora:37",
-        "docker.io/balenalib/rockpi-4b-rk3399-fedora:latest-run-20240314",
+        "docker.io/balenalib/rockpi-4b-rk3399-fedora:latest-run-20240316",
         "docker.io/balenalib/rockpi-4b-rk3399-fedora:latest-run",
-        "docker.io/balenalib/rockpi-4b-rk3399-fedora:latest-20240314",
+        "docker.io/balenalib/rockpi-4b-rk3399-fedora:latest-20240316",
         "docker.io/balenalib/rockpi-4b-rk3399-fedora:latest",
-        "docker.io/balenalib/rockpi-4b-rk3399-fedora:run-20240314",
+        "docker.io/balenalib/rockpi-4b-rk3399-fedora:run-20240316",
         "docker.io/balenalib/rockpi-4b-rk3399-fedora:run",
-        "docker.io/balenalib/rockpi-4b-rk3399-fedora:20240314"
+        "docker.io/balenalib/rockpi-4b-rk3399-fedora:20240316"
       ],
       "cache_from": [
-        "docker.io/balenalib/rockpi-4b-rk3399-fedora:37-run-20240314",
+        "docker.io/balenalib/rockpi-4b-rk3399-fedora:37-run-20240316",
         "docker.io/balenalib/rockpi-4b-rk3399-fedora:37-run",
-        "docker.io/balenalib/rockpi-4b-rk3399-fedora:37-20240314",
+        "docker.io/balenalib/rockpi-4b-rk3399-fedora:37-20240316",
         "docker.io/balenalib/rockpi-4b-rk3399-fedora:37",
-        "docker.io/balenalib/rockpi-4b-rk3399-fedora:latest-run-20240314",
+        "docker.io/balenalib/rockpi-4b-rk3399-fedora:latest-run-20240316",
         "docker.io/balenalib/rockpi-4b-rk3399-fedora:latest-run",
-        "docker.io/balenalib/rockpi-4b-rk3399-fedora:latest-20240314",
+        "docker.io/balenalib/rockpi-4b-rk3399-fedora:latest-20240316",
         "docker.io/balenalib/rockpi-4b-rk3399-fedora:latest",
-        "docker.io/balenalib/rockpi-4b-rk3399-fedora:run-20240314",
+        "docker.io/balenalib/rockpi-4b-rk3399-fedora:run-20240316",
         "docker.io/balenalib/rockpi-4b-rk3399-fedora:run",
-        "docker.io/balenalib/rockpi-4b-rk3399-fedora:20240314"
+        "docker.io/balenalib/rockpi-4b-rk3399-fedora:20240316"
       ]
     },
     "rockpi-4b-rk3399-fedora-38-build": {
@@ -99,11 +99,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/rockpi-4b-rk3399-fedora:38-build-20240314",
+        "docker.io/balenalib/rockpi-4b-rk3399-fedora:38-build-20240316",
         "docker.io/balenalib/rockpi-4b-rk3399-fedora:38-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/rockpi-4b-rk3399-fedora:38-build-20240314",
+        "docker.io/balenalib/rockpi-4b-rk3399-fedora:38-build-20240316",
         "docker.io/balenalib/rockpi-4b-rk3399-fedora:38-build"
       ]
     },
@@ -112,15 +112,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/rockpi-4b-rk3399-fedora:38-run-20240314",
+        "docker.io/balenalib/rockpi-4b-rk3399-fedora:38-run-20240316",
         "docker.io/balenalib/rockpi-4b-rk3399-fedora:38-run",
-        "docker.io/balenalib/rockpi-4b-rk3399-fedora:38-20240314",
+        "docker.io/balenalib/rockpi-4b-rk3399-fedora:38-20240316",
         "docker.io/balenalib/rockpi-4b-rk3399-fedora:38"
       ],
       "cache_from": [
-        "docker.io/balenalib/rockpi-4b-rk3399-fedora:38-run-20240314",
+        "docker.io/balenalib/rockpi-4b-rk3399-fedora:38-run-20240316",
         "docker.io/balenalib/rockpi-4b-rk3399-fedora:38-run",
-        "docker.io/balenalib/rockpi-4b-rk3399-fedora:38-20240314",
+        "docker.io/balenalib/rockpi-4b-rk3399-fedora:38-20240316",
         "docker.io/balenalib/rockpi-4b-rk3399-fedora:38"
       ]
     }

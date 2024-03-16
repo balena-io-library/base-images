@@ -21,11 +21,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/raspberry-pi2-ubuntu:lunar-build-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:lunar-build-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:lunar-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/raspberry-pi2-ubuntu:lunar-build-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:lunar-build-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:lunar-build"
       ]
     },
@@ -34,15 +34,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/raspberry-pi2-ubuntu:lunar-run-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:lunar-run-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:lunar-run",
-        "docker.io/balenalib/raspberry-pi2-ubuntu:lunar-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:lunar-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:lunar"
       ],
       "cache_from": [
-        "docker.io/balenalib/raspberry-pi2-ubuntu:lunar-run-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:lunar-run-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:lunar-run",
-        "docker.io/balenalib/raspberry-pi2-ubuntu:lunar-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:lunar-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:lunar"
       ]
     },
@@ -51,19 +51,19 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/raspberry-pi2-ubuntu:jammy-build-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:jammy-build-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:jammy-build",
-        "docker.io/balenalib/raspberry-pi2-ubuntu:latest-build-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:latest-build-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:latest-build",
-        "docker.io/balenalib/raspberry-pi2-ubuntu:build-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:build-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/raspberry-pi2-ubuntu:jammy-build-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:jammy-build-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:jammy-build",
-        "docker.io/balenalib/raspberry-pi2-ubuntu:latest-build-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:latest-build-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:latest-build",
-        "docker.io/balenalib/raspberry-pi2-ubuntu:build-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:build-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:build"
       ]
     },
@@ -72,30 +72,30 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/raspberry-pi2-ubuntu:jammy-run-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:jammy-run-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:jammy-run",
-        "docker.io/balenalib/raspberry-pi2-ubuntu:jammy-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:jammy-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:jammy",
-        "docker.io/balenalib/raspberry-pi2-ubuntu:latest-run-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:latest-run-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:latest-run",
-        "docker.io/balenalib/raspberry-pi2-ubuntu:latest-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:latest-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:latest",
-        "docker.io/balenalib/raspberry-pi2-ubuntu:run-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:run-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:run",
-        "docker.io/balenalib/raspberry-pi2-ubuntu:20240314"
+        "docker.io/balenalib/raspberry-pi2-ubuntu:20240316"
       ],
       "cache_from": [
-        "docker.io/balenalib/raspberry-pi2-ubuntu:jammy-run-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:jammy-run-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:jammy-run",
-        "docker.io/balenalib/raspberry-pi2-ubuntu:jammy-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:jammy-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:jammy",
-        "docker.io/balenalib/raspberry-pi2-ubuntu:latest-run-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:latest-run-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:latest-run",
-        "docker.io/balenalib/raspberry-pi2-ubuntu:latest-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:latest-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:latest",
-        "docker.io/balenalib/raspberry-pi2-ubuntu:run-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:run-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:run",
-        "docker.io/balenalib/raspberry-pi2-ubuntu:20240314"
+        "docker.io/balenalib/raspberry-pi2-ubuntu:20240316"
       ]
     },
     "raspberry-pi2-ubuntu-focal-build": {
@@ -103,11 +103,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/raspberry-pi2-ubuntu:focal-build-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:focal-build-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:focal-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/raspberry-pi2-ubuntu:focal-build-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:focal-build-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:focal-build"
       ]
     },
@@ -116,15 +116,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/raspberry-pi2-ubuntu:focal-run-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:focal-run-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:focal-run",
-        "docker.io/balenalib/raspberry-pi2-ubuntu:focal-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:focal-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:focal"
       ],
       "cache_from": [
-        "docker.io/balenalib/raspberry-pi2-ubuntu:focal-run-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:focal-run-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:focal-run",
-        "docker.io/balenalib/raspberry-pi2-ubuntu:focal-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:focal-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:focal"
       ]
     },
@@ -133,11 +133,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/raspberry-pi2-ubuntu:xenial-build-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:xenial-build-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:xenial-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/raspberry-pi2-ubuntu:xenial-build-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:xenial-build-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:xenial-build"
       ]
     },
@@ -146,15 +146,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/raspberry-pi2-ubuntu:xenial-run-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:xenial-run-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:xenial-run",
-        "docker.io/balenalib/raspberry-pi2-ubuntu:xenial-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:xenial-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:xenial"
       ],
       "cache_from": [
-        "docker.io/balenalib/raspberry-pi2-ubuntu:xenial-run-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:xenial-run-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:xenial-run",
-        "docker.io/balenalib/raspberry-pi2-ubuntu:xenial-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:xenial-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:xenial"
       ]
     },
@@ -163,11 +163,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/raspberry-pi2-ubuntu:bionic-build-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:bionic-build-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:bionic-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/raspberry-pi2-ubuntu:bionic-build-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:bionic-build-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:bionic-build"
       ]
     },
@@ -176,15 +176,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/raspberry-pi2-ubuntu:bionic-run-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:bionic-run-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:bionic-run",
-        "docker.io/balenalib/raspberry-pi2-ubuntu:bionic-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:bionic-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:bionic"
       ],
       "cache_from": [
-        "docker.io/balenalib/raspberry-pi2-ubuntu:bionic-run-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:bionic-run-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:bionic-run",
-        "docker.io/balenalib/raspberry-pi2-ubuntu:bionic-20240314",
+        "docker.io/balenalib/raspberry-pi2-ubuntu:bionic-20240316",
         "docker.io/balenalib/raspberry-pi2-ubuntu:bionic"
       ]
     }
