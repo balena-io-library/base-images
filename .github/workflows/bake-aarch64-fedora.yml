@@ -8,7 +8,7 @@ name: Bake aarch64-fedora
         type: boolean
         default: false
   schedule:
-    - cron: 0 11 4 * *
+    - cron: 48 21 6 * *
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true
