@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.97 - 2024-03-21
+
+
+<details>
+<summary> Update scripts/contracts digest to 2de3526 [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.97 - 2024-03-21
+> 
+> * hw.device-type: Add beagleplay device [delhiryder]
+> 
+
+</details>
+
 ## 2.8.96 - 2024-03-18
 
 * Update dawidd6/action-download-artifact action to v3.1.4 [Self-hosted Renovate Bot]
