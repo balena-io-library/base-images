@@ -21,11 +21,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/revpi-connect-ubuntu:lunar-build-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:lunar-build-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:lunar-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/revpi-connect-ubuntu:lunar-build-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:lunar-build-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:lunar-build"
       ]
     },
@@ -34,15 +34,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/revpi-connect-ubuntu:lunar-run-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:lunar-run-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:lunar-run",
-        "docker.io/balenalib/revpi-connect-ubuntu:lunar-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:lunar-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:lunar"
       ],
       "cache_from": [
-        "docker.io/balenalib/revpi-connect-ubuntu:lunar-run-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:lunar-run-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:lunar-run",
-        "docker.io/balenalib/revpi-connect-ubuntu:lunar-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:lunar-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:lunar"
       ]
     },
@@ -51,19 +51,19 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/revpi-connect-ubuntu:jammy-build-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:jammy-build-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:jammy-build",
-        "docker.io/balenalib/revpi-connect-ubuntu:latest-build-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:latest-build-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:latest-build",
-        "docker.io/balenalib/revpi-connect-ubuntu:build-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:build-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/revpi-connect-ubuntu:jammy-build-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:jammy-build-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:jammy-build",
-        "docker.io/balenalib/revpi-connect-ubuntu:latest-build-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:latest-build-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:latest-build",
-        "docker.io/balenalib/revpi-connect-ubuntu:build-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:build-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:build"
       ]
     },
@@ -72,30 +72,30 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/revpi-connect-ubuntu:jammy-run-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:jammy-run-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:jammy-run",
-        "docker.io/balenalib/revpi-connect-ubuntu:jammy-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:jammy-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:jammy",
-        "docker.io/balenalib/revpi-connect-ubuntu:latest-run-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:latest-run-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:latest-run",
-        "docker.io/balenalib/revpi-connect-ubuntu:latest-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:latest-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:latest",
-        "docker.io/balenalib/revpi-connect-ubuntu:run-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:run-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:run",
-        "docker.io/balenalib/revpi-connect-ubuntu:20240326"
+        "docker.io/balenalib/revpi-connect-ubuntu:20240401"
       ],
       "cache_from": [
-        "docker.io/balenalib/revpi-connect-ubuntu:jammy-run-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:jammy-run-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:jammy-run",
-        "docker.io/balenalib/revpi-connect-ubuntu:jammy-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:jammy-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:jammy",
-        "docker.io/balenalib/revpi-connect-ubuntu:latest-run-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:latest-run-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:latest-run",
-        "docker.io/balenalib/revpi-connect-ubuntu:latest-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:latest-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:latest",
-        "docker.io/balenalib/revpi-connect-ubuntu:run-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:run-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:run",
-        "docker.io/balenalib/revpi-connect-ubuntu:20240326"
+        "docker.io/balenalib/revpi-connect-ubuntu:20240401"
       ]
     },
     "revpi-connect-ubuntu-focal-build": {
@@ -103,11 +103,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/revpi-connect-ubuntu:focal-build-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:focal-build-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:focal-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/revpi-connect-ubuntu:focal-build-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:focal-build-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:focal-build"
       ]
     },
@@ -116,15 +116,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/revpi-connect-ubuntu:focal-run-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:focal-run-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:focal-run",
-        "docker.io/balenalib/revpi-connect-ubuntu:focal-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:focal-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:focal"
       ],
       "cache_from": [
-        "docker.io/balenalib/revpi-connect-ubuntu:focal-run-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:focal-run-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:focal-run",
-        "docker.io/balenalib/revpi-connect-ubuntu:focal-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:focal-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:focal"
       ]
     },
@@ -133,11 +133,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/revpi-connect-ubuntu:xenial-build-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:xenial-build-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:xenial-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/revpi-connect-ubuntu:xenial-build-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:xenial-build-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:xenial-build"
       ]
     },
@@ -146,15 +146,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/revpi-connect-ubuntu:xenial-run-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:xenial-run-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:xenial-run",
-        "docker.io/balenalib/revpi-connect-ubuntu:xenial-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:xenial-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:xenial"
       ],
       "cache_from": [
-        "docker.io/balenalib/revpi-connect-ubuntu:xenial-run-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:xenial-run-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:xenial-run",
-        "docker.io/balenalib/revpi-connect-ubuntu:xenial-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:xenial-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:xenial"
       ]
     },
@@ -163,11 +163,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/revpi-connect-ubuntu:bionic-build-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:bionic-build-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:bionic-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/revpi-connect-ubuntu:bionic-build-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:bionic-build-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:bionic-build"
       ]
     },
@@ -176,15 +176,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/revpi-connect-ubuntu:bionic-run-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:bionic-run-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:bionic-run",
-        "docker.io/balenalib/revpi-connect-ubuntu:bionic-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:bionic-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:bionic"
       ],
       "cache_from": [
-        "docker.io/balenalib/revpi-connect-ubuntu:bionic-run-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:bionic-run-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:bionic-run",
-        "docker.io/balenalib/revpi-connect-ubuntu:bionic-20240326",
+        "docker.io/balenalib/revpi-connect-ubuntu:bionic-20240401",
         "docker.io/balenalib/revpi-connect-ubuntu:bionic"
       ]
     }
