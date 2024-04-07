@@ -44,7 +44,7 @@ Node.js internally uses the Google V8 JavaScript engine to execute code; a large
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;19.6.1 (latest)&#x60;, &#x60;18.14.1&#x60;, &#x60;16.19.1&#x60;, &#x60;14.21.3&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/node/imx8m-var-dart/debian/)
+[&#x60;20.12.0&#x60;, &#x60;19.6.1 (latest)&#x60;, &#x60;18.14.1&#x60;, &#x60;16.19.1&#x60;, &#x60;14.21.3&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/node/imx8m-var-dart/debian/)
 
 For more information about this image and its history, please see the [relevant manifest file (`imx8m-var-dart-debian-node`)](https://github.com/balena-io-library/official-images/blob/master/library/imx8m-var-dart-debian-node) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 
