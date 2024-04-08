@@ -5,6 +5,23 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.102 - 2024-04-08
+
+
+<details>
+<summary> Update scripts/contracts digest to cb7b222 [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.99 - 2024-04-07
+> 
+> * Add node v20.12.0 for debian [Thodoris Greasidis]
+> 
+> ### contracts-2.0.98 - 2024-03-26
+> 
+> * hw.device-type: Add bluechiptechnology-db1 [crichardson]
+> 
+
+</details>
+
 ## 2.8.101 - 2024-04-01
 
 * Lock file maintenance [Self-hosted Renovate Bot]

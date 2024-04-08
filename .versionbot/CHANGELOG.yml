@@ -1,4 +1,44 @@
 - commits:
+    - subject: Update scripts/contracts digest to cb7b222
+      hash: d228069e3dc58d947e899bfb661e7385c26917fc
+      body: |
+        Update scripts/contracts
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: Add node v20.12.0 for debian
+              hash: 69bd96b9757959ebbcdffb0e45e0811567929bb6
+              body: |
+                Planning to add alpine in a follow-up once
+                we get the jenkins job to work and will then
+                also mark 20.12.0 as the latest.
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Thodoris Greasidis
+          version: contracts-2.0.99
+          title: ""
+          date: 2024-04-07T23:28:45.593Z
+        - commits:
+            - subject: "hw.device-type: Add bluechiptechnology-db1"
+              hash: 16e6a9606a0eddf4cfcc9f3fa18d539096d64e16
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Chris Richardson <crichardson@bluechiptechnology.com>
+                signed-off-by: Chris Richardson <crichardson@bluechiptechnology.com>
+              author: crichardson
+          version: contracts-2.0.98
+          title: ""
+          date: 2024-03-26T12:30:34.277Z
+  version: 2.8.102
+  title: ""
+  date: 2024-04-08T00:07:44.896Z
+- commits:
     - subject: Lock file maintenance
       hash: 4f7046138be71034f929a1728ef4aa040098a4d9
       body: |
