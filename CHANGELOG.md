@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.104 - 2024-04-08
+
+* Update docker/setup-buildx-action digest to d70bba7 [Self-hosted Renovate Bot]
+
 ## 2.8.103 - 2024-04-08
 
 * Lock file maintenance [Self-hosted Renovate Bot]
