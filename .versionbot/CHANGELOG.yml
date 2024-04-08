@@ -1,4 +1,30 @@
 - commits:
+    - subject: Update scripts/contracts digest to 928d8e7
+      hash: d37309972e5be8f44c65a4fa25e40770300a5bc7
+      body: |
+        Update scripts/contracts
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: Add Advantech ECU1370 to hardware contract.
+              hash: 0dfe4758230bef9d6c97f533019aaba93cdc1520
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Lisandro Pérez Meyer <lpmeyer@ics.com>
+                signed-off-by: Lisandro Pérez Meyer <lpmeyer@ics.com>
+              author: Lisandro Pérez Meyer
+          version: contracts-2.0.100
+          title: ""
+          date: 2024-04-08T18:29:36.856Z
+  version: 2.8.105
+  title: ""
+  date: 2024-04-08T19:11:41.407Z
+- commits:
     - subject: Update docker/setup-buildx-action digest to d70bba7
       hash: f906c9fc6f026c1f2bf73e33799861b1e4297226
       body: |

@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.105 - 2024-04-08
+
+
+<details>
+<summary> Update scripts/contracts digest to 928d8e7 [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.100 - 2024-04-08
+> 
+> * Add Advantech ECU1370 to hardware contract. [Lisandro Pérez Meyer]
+> 
+
+</details>
+
 ## 2.8.104 - 2024-04-08
 
 * Update docker/setup-buildx-action digest to d70bba7 [Self-hosted Renovate Bot]
