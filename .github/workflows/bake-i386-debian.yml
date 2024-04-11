@@ -8,7 +8,7 @@ name: Bake i386-debian
         type: boolean
         default: false
   schedule:
-    - cron: 33 10 3 * *
+    - cron: 39 18 4 * *
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true
