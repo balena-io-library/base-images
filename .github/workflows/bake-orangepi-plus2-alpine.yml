@@ -16,6 +16,67 @@ concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true
 jobs:
+  prepare-orangepi-plus2-alpine:
+    name: Prepare orangepi-plus2-alpine
+    runs-on: ubuntu-latest
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+        with:
+          fetch-depth: 1
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+    env:
+      LIBRARY: library/orangepi-plus2-alpine.json
+  bake-orangepi-plus2-alpine:
+    name: Bake orangepi-plus2-alpine
+    runs-on: ubuntu-latest
+    needs:
+      - prepare-orangepi-plus2-alpine
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-orangepi-plus2-alpine.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+        with:
+          fetch-depth: 1
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v6.2.0
+      - name: Setup buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Docker bake
+        continue-on-error: false
+        id: docker_bake
+        uses: docker/bake-action@017aa056d6bfc9797de5a5dd354a209dc07b490e
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+    env:
+      LIBRARY: library/orangepi-plus2-alpine.json
   prepare-orangepi-plus2-alpine-golang:
     name: Prepare orangepi-plus2-alpine-golang
     runs-on: ubuntu-latest
@@ -142,69 +203,6 @@ jobs:
           provenance: false
     env:
       LIBRARY: library/orangepi-plus2-alpine-node.json
-  prepare-orangepi-plus2-alpine-openjdk:
-    name: Prepare orangepi-plus2-alpine-openjdk
-    runs-on: ubuntu-latest
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
-        with:
-          fetch-depth: 1
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-    needs:
-      - bake-orangepi-plus2-alpine
-    env:
-      LIBRARY: library/orangepi-plus2-alpine-openjdk.json
-  bake-orangepi-plus2-alpine-openjdk:
-    name: Bake orangepi-plus2-alpine-openjdk
-    runs-on: ubuntu-latest
-    needs:
-      - prepare-orangepi-plus2-alpine-openjdk
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-orangepi-plus2-alpine-openjdk.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
-        with:
-          fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
-      - name: Setup buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@017aa056d6bfc9797de5a5dd354a209dc07b490e
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
-    env:
-      LIBRARY: library/orangepi-plus2-alpine-openjdk.json
   prepare-orangepi-plus2-alpine-python:
     name: Prepare orangepi-plus2-alpine-python
     runs-on: ubuntu-latest
@@ -268,64 +266,3 @@ jobs:
           provenance: false
     env:
       LIBRARY: library/orangepi-plus2-alpine-python.json
-  prepare-orangepi-plus2-alpine:
-    name: Prepare orangepi-plus2-alpine
-    runs-on: ubuntu-latest
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
-        with:
-          fetch-depth: 1
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-    env:
-      LIBRARY: library/orangepi-plus2-alpine.json
-  bake-orangepi-plus2-alpine:
-    name: Bake orangepi-plus2-alpine
-    runs-on: ubuntu-latest
-    needs:
-      - prepare-orangepi-plus2-alpine
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-orangepi-plus2-alpine.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
-        with:
-          fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
-      - name: Setup buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@017aa056d6bfc9797de5a5dd354a209dc07b490e
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
-    env:
-      LIBRARY: library/orangepi-plus2-alpine.json
