@@ -40,7 +40,7 @@ Python is an interpreted, interactive, object-oriented, open-source programming 
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;3.11.2 (latest)&#x60;, &#x60;3.10.10&#x60;, &#x60;3.9.16&#x60;, &#x60;3.8.16&#x60;, &#x60;3.7.16&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/python/phyboard-lyra-am62xx-2/alpine/)
+[&#x60;3.11.2 (latest)&#x60;, &#x60;3.10.10&#x60;, &#x60;3.9.16&#x60;, &#x60;3.8.16&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/python/phyboard-lyra-am62xx-2/alpine/)
 
 For more information about this image and its history, please see the [relevant manifest file (`phyboard-lyra-am62xx-2-alpine-python`)](https://github.com/balena-io-library/official-images/blob/master/library/phyboard-lyra-am62xx-2-alpine-python) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 

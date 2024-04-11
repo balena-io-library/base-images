@@ -32,7 +32,7 @@ This [guide][getting-started] can help you get started with using this base imag
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;37 (latest)&#x60;, &#x60;36&#x60;, &#x60;38&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/iot-gate-imx8plus/fedora/)
+[&#x60;37 (latest)&#x60;, &#x60;38&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/iot-gate-imx8plus/fedora/)
 
 For more information about this image and its history, please see the [relevant manifest file (`iot-gate-imx8plus-fedora`)](https://github.com/balena-io-library/official-images/blob/master/library/iot-gate-imx8plus-fedora) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 
