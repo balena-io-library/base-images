@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.107 - 2024-04-11
+
+
+<details>
+<summary> Update scripts/contracts digest to d06ad25 [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.103 - 2024-04-11
+> 
+> * Remove Ubuntu Lunar 23.04 since it's EOL [Thodoris Greasidis]
+> 
+
+</details>
+
 ## 2.8.106 - 2024-04-11
 
 

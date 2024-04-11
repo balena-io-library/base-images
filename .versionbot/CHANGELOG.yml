@@ -1,4 +1,30 @@
 - commits:
+    - subject: Update scripts/contracts digest to d06ad25
+      hash: 08b02d5d0dcd6efbccf6fbbbff9b647711c4c1e7
+      body: |
+        Update scripts/contracts
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: Remove Ubuntu Lunar 23.04 since it's EOL
+              hash: cac2042866f3e93d46b16a3e62cb65aeec43fac9
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                See: https://endoflife.date/ubuntu
+                see: https://endoflife.date/ubuntu
+              author: Thodoris Greasidis
+          version: contracts-2.0.103
+          title: ""
+          date: 2024-04-11T12:22:51.474Z
+  version: 2.8.107
+  title: ""
+  date: 2024-04-11T13:16:43.525Z
+- commits:
     - subject: Update scripts/contracts digest to bdc5ec8
       hash: 830fa4cc7b02061b3c249780c38343d9523e08f3
       body: |
