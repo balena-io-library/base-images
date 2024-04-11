@@ -1,4 +1,57 @@
 - commits:
+    - subject: Update scripts/contracts digest to bdc5ec8
+      hash: 830fa4cc7b02061b3c249780c38343d9523e08f3
+      body: |
+        Update scripts/contracts
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: Remove Fedora 36 since it's EOL
+              hash: 6c404c7f3e623650beb5c74ec0a4e31e9cac9c48
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                See: https://endoflife.date/fedora
+                see: https://endoflife.date/fedora
+              author: Thodoris Greasidis
+          version: contracts-2.0.102
+          title: ""
+          date: 2024-04-11T10:44:54.487Z
+        - commits:
+            - subject: Remove outdated jdk & jre 8
+              hash: 1d3d5c74c32119bfb816e411d0d6a992e642d659
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Thodoris Greasidis
+            - subject: Remove python 3.7.16 since it's in EOL
+              hash: 0bc11dc4a257a753fd4ad7b1aba999f0c23188f4
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Thodoris Greasidis
+            - subject: Remove node v14 & v16 since they are EOL
+              hash: 96055862f317b8b54896702d46361392bd1ccaca
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                See: https://balena.zulipchat.com/#narrow/stream/345890-balena-io/topic/base.20images/near/432359439
+                see: https://balena.zulipchat.com/#narrow/stream/345890-balena-io/topic/base.20images/near/432359439
+              author: Thodoris Greasidis
+          version: contracts-2.0.101
+          title: ""
+          date: 2024-04-10T09:26:36.966Z
+  version: 2.8.106
+  title: ""
+  date: 2024-04-11T12:09:19.295Z
+- commits:
     - subject: Update scripts/contracts digest to 928d8e7
       hash: d37309972e5be8f44c65a4fa25e40770300a5bc7
       body: |

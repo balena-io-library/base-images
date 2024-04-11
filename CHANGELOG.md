@@ -5,6 +5,25 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.106 - 2024-04-11
+
+
+<details>
+<summary> Update scripts/contracts digest to bdc5ec8 [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.102 - 2024-04-11
+> 
+> * Remove Fedora 36 since it's EOL [Thodoris Greasidis]
+> 
+> ### contracts-2.0.101 - 2024-04-10
+> 
+> * Remove outdated jdk & jre 8 [Thodoris Greasidis]
+> * Remove python 3.7.16 since it's in EOL [Thodoris Greasidis]
+> * Remove node v14 & v16 since they are EOL [Thodoris Greasidis]
+> 
+
+</details>
+
 ## 2.8.105 - 2024-04-08
 
 
