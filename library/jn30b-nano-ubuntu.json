@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "jn30b-nano-ubuntu-lunar-build",
-        "jn30b-nano-ubuntu-lunar-run",
         "jn30b-nano-ubuntu-jammy-build",
         "jn30b-nano-ubuntu-jammy-run",
         "jn30b-nano-ubuntu-focal-build",
@@ -16,36 +14,6 @@
     }
   },
   "target": {
-    "jn30b-nano-ubuntu-lunar-build": {
-      "context": "device-base/jn30b-nano/ubuntu/lunar/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/jn30b-nano-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/jn30b-nano-ubuntu:lunar-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/jn30b-nano-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/jn30b-nano-ubuntu:lunar-build"
-      ]
-    },
-    "jn30b-nano-ubuntu-lunar-run": {
-      "context": "device-base/jn30b-nano/ubuntu/lunar/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/jn30b-nano-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/jn30b-nano-ubuntu:lunar-run",
-        "docker.io/balenalib/jn30b-nano-ubuntu:lunar-20240411",
-        "docker.io/balenalib/jn30b-nano-ubuntu:lunar"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/jn30b-nano-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/jn30b-nano-ubuntu:lunar-run",
-        "docker.io/balenalib/jn30b-nano-ubuntu:lunar-20240411",
-        "docker.io/balenalib/jn30b-nano-ubuntu:lunar"
-      ]
-    },
     "jn30b-nano-ubuntu-jammy-build": {
       "context": "device-base/jn30b-nano/ubuntu/jammy/build",
       "dockerfile": "Dockerfile",

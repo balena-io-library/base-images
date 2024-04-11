@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "jetson-orin-nx-xavier-nx-devkit-ubuntu-lunar-build",
-        "jetson-orin-nx-xavier-nx-devkit-ubuntu-lunar-run",
         "jetson-orin-nx-xavier-nx-devkit-ubuntu-jammy-build",
         "jetson-orin-nx-xavier-nx-devkit-ubuntu-jammy-run",
         "jetson-orin-nx-xavier-nx-devkit-ubuntu-focal-build",
@@ -16,36 +14,6 @@
     }
   },
   "target": {
-    "jetson-orin-nx-xavier-nx-devkit-ubuntu-lunar-build": {
-      "context": "device-base/jetson-orin-nx-xavier-nx-devkit/ubuntu/lunar/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-ubuntu:lunar-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-ubuntu:lunar-build"
-      ]
-    },
-    "jetson-orin-nx-xavier-nx-devkit-ubuntu-lunar-run": {
-      "context": "device-base/jetson-orin-nx-xavier-nx-devkit/ubuntu/lunar/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-ubuntu:lunar-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-ubuntu:lunar-20240411",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-ubuntu:lunar"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-ubuntu:lunar-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-ubuntu:lunar-20240411",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-ubuntu:lunar"
-      ]
-    },
     "jetson-orin-nx-xavier-nx-devkit-ubuntu-jammy-build": {
       "context": "device-base/jetson-orin-nx-xavier-nx-devkit/ubuntu/jammy/build",
       "dockerfile": "Dockerfile",

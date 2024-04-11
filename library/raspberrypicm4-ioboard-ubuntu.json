@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "raspberrypicm4-ioboard-ubuntu-lunar-build",
-        "raspberrypicm4-ioboard-ubuntu-lunar-run",
         "raspberrypicm4-ioboard-ubuntu-jammy-build",
         "raspberrypicm4-ioboard-ubuntu-jammy-run",
         "raspberrypicm4-ioboard-ubuntu-focal-build",
@@ -16,36 +14,6 @@
     }
   },
   "target": {
-    "raspberrypicm4-ioboard-ubuntu-lunar-build": {
-      "context": "device-base/raspberrypicm4-ioboard/ubuntu/lunar/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:lunar-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:lunar-build"
-      ]
-    },
-    "raspberrypicm4-ioboard-ubuntu-lunar-run": {
-      "context": "device-base/raspberrypicm4-ioboard/ubuntu/lunar/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:lunar-run",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:lunar-20240411",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:lunar"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:lunar-run",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:lunar-20240411",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:lunar"
-      ]
-    },
     "raspberrypicm4-ioboard-ubuntu-jammy-build": {
       "context": "device-base/raspberrypicm4-ioboard/ubuntu/jammy/build",
       "dockerfile": "Dockerfile",

@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "intel-nuc-ubuntu-lunar-build",
-        "intel-nuc-ubuntu-lunar-run",
         "intel-nuc-ubuntu-jammy-build",
         "intel-nuc-ubuntu-jammy-run",
         "intel-nuc-ubuntu-focal-build",
@@ -16,36 +14,6 @@
     }
   },
   "target": {
-    "intel-nuc-ubuntu-lunar-build": {
-      "context": "device-base/intel-nuc/ubuntu/lunar/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/amd64",
-      "tags": [
-        "docker.io/balenalib/intel-nuc-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/intel-nuc-ubuntu:lunar-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/intel-nuc-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/intel-nuc-ubuntu:lunar-build"
-      ]
-    },
-    "intel-nuc-ubuntu-lunar-run": {
-      "context": "device-base/intel-nuc/ubuntu/lunar/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/amd64",
-      "tags": [
-        "docker.io/balenalib/intel-nuc-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/intel-nuc-ubuntu:lunar-run",
-        "docker.io/balenalib/intel-nuc-ubuntu:lunar-20240411",
-        "docker.io/balenalib/intel-nuc-ubuntu:lunar"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/intel-nuc-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/intel-nuc-ubuntu:lunar-run",
-        "docker.io/balenalib/intel-nuc-ubuntu:lunar-20240411",
-        "docker.io/balenalib/intel-nuc-ubuntu:lunar"
-      ]
-    },
     "intel-nuc-ubuntu-jammy-build": {
       "context": "device-base/intel-nuc/ubuntu/jammy/build",
       "dockerfile": "Dockerfile",

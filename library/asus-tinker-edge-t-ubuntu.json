@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "asus-tinker-edge-t-ubuntu-lunar-build",
-        "asus-tinker-edge-t-ubuntu-lunar-run",
         "asus-tinker-edge-t-ubuntu-jammy-build",
         "asus-tinker-edge-t-ubuntu-jammy-run",
         "asus-tinker-edge-t-ubuntu-focal-build",
@@ -16,36 +14,6 @@
     }
   },
   "target": {
-    "asus-tinker-edge-t-ubuntu-lunar-build": {
-      "context": "device-base/asus-tinker-edge-t/ubuntu/lunar/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:lunar-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:lunar-build"
-      ]
-    },
-    "asus-tinker-edge-t-ubuntu-lunar-run": {
-      "context": "device-base/asus-tinker-edge-t/ubuntu/lunar/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:lunar-run",
-        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:lunar-20240411",
-        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:lunar"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:lunar-run",
-        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:lunar-20240411",
-        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:lunar"
-      ]
-    },
     "asus-tinker-edge-t-ubuntu-jammy-build": {
       "context": "device-base/asus-tinker-edge-t/ubuntu/jammy/build",
       "dockerfile": "Dockerfile",

@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "raspberrypi4-unipi-neuron-ubuntu-lunar-build",
-        "raspberrypi4-unipi-neuron-ubuntu-lunar-run",
         "raspberrypi4-unipi-neuron-ubuntu-jammy-build",
         "raspberrypi4-unipi-neuron-ubuntu-jammy-run",
         "raspberrypi4-unipi-neuron-ubuntu-focal-build",
@@ -16,36 +14,6 @@
     }
   },
   "target": {
-    "raspberrypi4-unipi-neuron-ubuntu-lunar-build": {
-      "context": "device-base/raspberrypi4-unipi-neuron/ubuntu/lunar/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:lunar-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:lunar-build"
-      ]
-    },
-    "raspberrypi4-unipi-neuron-ubuntu-lunar-run": {
-      "context": "device-base/raspberrypi4-unipi-neuron/ubuntu/lunar/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:lunar-run",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:lunar-20240411",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:lunar"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:lunar-run",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:lunar-20240411",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-ubuntu:lunar"
-      ]
-    },
     "raspberrypi4-unipi-neuron-ubuntu-jammy-build": {
       "context": "device-base/raspberrypi4-unipi-neuron/ubuntu/jammy/build",
       "dockerfile": "Dockerfile",

@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "jetson-orin-nano-devkit-nvme-ubuntu-lunar-build",
-        "jetson-orin-nano-devkit-nvme-ubuntu-lunar-run",
         "jetson-orin-nano-devkit-nvme-ubuntu-jammy-build",
         "jetson-orin-nano-devkit-nvme-ubuntu-jammy-run",
         "jetson-orin-nano-devkit-nvme-ubuntu-focal-build",
@@ -16,36 +14,6 @@
     }
   },
   "target": {
-    "jetson-orin-nano-devkit-nvme-ubuntu-lunar-build": {
-      "context": "device-base/jetson-orin-nano-devkit-nvme/ubuntu/lunar/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:lunar-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:lunar-build"
-      ]
-    },
-    "jetson-orin-nano-devkit-nvme-ubuntu-lunar-run": {
-      "context": "device-base/jetson-orin-nano-devkit-nvme/ubuntu/lunar/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:lunar-run",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:lunar-20240411",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:lunar"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:lunar-run",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:lunar-20240411",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:lunar"
-      ]
-    },
     "jetson-orin-nano-devkit-nvme-ubuntu-jammy-build": {
       "context": "device-base/jetson-orin-nano-devkit-nvme/ubuntu/jammy/build",
       "dockerfile": "Dockerfile",

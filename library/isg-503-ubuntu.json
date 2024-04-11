@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "isg-503-ubuntu-lunar-build",
-        "isg-503-ubuntu-lunar-run",
         "isg-503-ubuntu-jammy-build",
         "isg-503-ubuntu-jammy-run",
         "isg-503-ubuntu-focal-build",
@@ -16,36 +14,6 @@
     }
   },
   "target": {
-    "isg-503-ubuntu-lunar-build": {
-      "context": "device-base/isg-503/ubuntu/lunar/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/isg-503-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/isg-503-ubuntu:lunar-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/isg-503-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/isg-503-ubuntu:lunar-build"
-      ]
-    },
-    "isg-503-ubuntu-lunar-run": {
-      "context": "device-base/isg-503/ubuntu/lunar/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/isg-503-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/isg-503-ubuntu:lunar-run",
-        "docker.io/balenalib/isg-503-ubuntu:lunar-20240411",
-        "docker.io/balenalib/isg-503-ubuntu:lunar"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/isg-503-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/isg-503-ubuntu:lunar-run",
-        "docker.io/balenalib/isg-503-ubuntu:lunar-20240411",
-        "docker.io/balenalib/isg-503-ubuntu:lunar"
-      ]
-    },
     "isg-503-ubuntu-jammy-build": {
       "context": "device-base/isg-503/ubuntu/jammy/build",
       "dockerfile": "Dockerfile",

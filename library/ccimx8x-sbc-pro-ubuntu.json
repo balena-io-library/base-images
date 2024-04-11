@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "ccimx8x-sbc-pro-ubuntu-lunar-build",
-        "ccimx8x-sbc-pro-ubuntu-lunar-run",
         "ccimx8x-sbc-pro-ubuntu-jammy-build",
         "ccimx8x-sbc-pro-ubuntu-jammy-run",
         "ccimx8x-sbc-pro-ubuntu-focal-build",
@@ -16,36 +14,6 @@
     }
   },
   "target": {
-    "ccimx8x-sbc-pro-ubuntu-lunar-build": {
-      "context": "device-base/ccimx8x-sbc-pro/ubuntu/lunar/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/ccimx8x-sbc-pro-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/ccimx8x-sbc-pro-ubuntu:lunar-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/ccimx8x-sbc-pro-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/ccimx8x-sbc-pro-ubuntu:lunar-build"
-      ]
-    },
-    "ccimx8x-sbc-pro-ubuntu-lunar-run": {
-      "context": "device-base/ccimx8x-sbc-pro/ubuntu/lunar/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/ccimx8x-sbc-pro-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/ccimx8x-sbc-pro-ubuntu:lunar-run",
-        "docker.io/balenalib/ccimx8x-sbc-pro-ubuntu:lunar-20240411",
-        "docker.io/balenalib/ccimx8x-sbc-pro-ubuntu:lunar"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/ccimx8x-sbc-pro-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/ccimx8x-sbc-pro-ubuntu:lunar-run",
-        "docker.io/balenalib/ccimx8x-sbc-pro-ubuntu:lunar-20240411",
-        "docker.io/balenalib/ccimx8x-sbc-pro-ubuntu:lunar"
-      ]
-    },
     "ccimx8x-sbc-pro-ubuntu-jammy-build": {
       "context": "device-base/ccimx8x-sbc-pro/ubuntu/jammy/build",
       "dockerfile": "Dockerfile",

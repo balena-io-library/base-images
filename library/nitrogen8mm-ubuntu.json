@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "nitrogen8mm-ubuntu-lunar-build",
-        "nitrogen8mm-ubuntu-lunar-run",
         "nitrogen8mm-ubuntu-jammy-build",
         "nitrogen8mm-ubuntu-jammy-run",
         "nitrogen8mm-ubuntu-focal-build",
@@ -16,36 +14,6 @@
     }
   },
   "target": {
-    "nitrogen8mm-ubuntu-lunar-build": {
-      "context": "device-base/nitrogen8mm/ubuntu/lunar/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/nitrogen8mm-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/nitrogen8mm-ubuntu:lunar-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/nitrogen8mm-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/nitrogen8mm-ubuntu:lunar-build"
-      ]
-    },
-    "nitrogen8mm-ubuntu-lunar-run": {
-      "context": "device-base/nitrogen8mm/ubuntu/lunar/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/nitrogen8mm-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/nitrogen8mm-ubuntu:lunar-run",
-        "docker.io/balenalib/nitrogen8mm-ubuntu:lunar-20240411",
-        "docker.io/balenalib/nitrogen8mm-ubuntu:lunar"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/nitrogen8mm-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/nitrogen8mm-ubuntu:lunar-run",
-        "docker.io/balenalib/nitrogen8mm-ubuntu:lunar-20240411",
-        "docker.io/balenalib/nitrogen8mm-ubuntu:lunar"
-      ]
-    },
     "nitrogen8mm-ubuntu-jammy-build": {
       "context": "device-base/nitrogen8mm/ubuntu/jammy/build",
       "dockerfile": "Dockerfile",

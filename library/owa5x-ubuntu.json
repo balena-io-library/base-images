@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "owa5x-ubuntu-lunar-build",
-        "owa5x-ubuntu-lunar-run",
         "owa5x-ubuntu-jammy-build",
         "owa5x-ubuntu-jammy-run",
         "owa5x-ubuntu-focal-build",
@@ -16,36 +14,6 @@
     }
   },
   "target": {
-    "owa5x-ubuntu-lunar-build": {
-      "context": "device-base/owa5x/ubuntu/lunar/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/owa5x-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/owa5x-ubuntu:lunar-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/owa5x-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/owa5x-ubuntu:lunar-build"
-      ]
-    },
-    "owa5x-ubuntu-lunar-run": {
-      "context": "device-base/owa5x/ubuntu/lunar/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/owa5x-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/owa5x-ubuntu:lunar-run",
-        "docker.io/balenalib/owa5x-ubuntu:lunar-20240411",
-        "docker.io/balenalib/owa5x-ubuntu:lunar"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/owa5x-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/owa5x-ubuntu:lunar-run",
-        "docker.io/balenalib/owa5x-ubuntu:lunar-20240411",
-        "docker.io/balenalib/owa5x-ubuntu:lunar"
-      ]
-    },
     "owa5x-ubuntu-jammy-build": {
       "context": "device-base/owa5x/ubuntu/jammy/build",
       "dockerfile": "Dockerfile",

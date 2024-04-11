@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "etcher-pro-ubuntu-lunar-build",
-        "etcher-pro-ubuntu-lunar-run",
         "etcher-pro-ubuntu-jammy-build",
         "etcher-pro-ubuntu-jammy-run",
         "etcher-pro-ubuntu-focal-build",
@@ -16,36 +14,6 @@
     }
   },
   "target": {
-    "etcher-pro-ubuntu-lunar-build": {
-      "context": "device-base/etcher-pro/ubuntu/lunar/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/etcher-pro-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/etcher-pro-ubuntu:lunar-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/etcher-pro-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/etcher-pro-ubuntu:lunar-build"
-      ]
-    },
-    "etcher-pro-ubuntu-lunar-run": {
-      "context": "device-base/etcher-pro/ubuntu/lunar/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/etcher-pro-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/etcher-pro-ubuntu:lunar-run",
-        "docker.io/balenalib/etcher-pro-ubuntu:lunar-20240411",
-        "docker.io/balenalib/etcher-pro-ubuntu:lunar"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/etcher-pro-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/etcher-pro-ubuntu:lunar-run",
-        "docker.io/balenalib/etcher-pro-ubuntu:lunar-20240411",
-        "docker.io/balenalib/etcher-pro-ubuntu:lunar"
-      ]
-    },
     "etcher-pro-ubuntu-jammy-build": {
       "context": "device-base/etcher-pro/ubuntu/jammy/build",
       "dockerfile": "Dockerfile",

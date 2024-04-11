@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "odroid-xu4-ubuntu-lunar-build",
-        "odroid-xu4-ubuntu-lunar-run",
         "odroid-xu4-ubuntu-jammy-build",
         "odroid-xu4-ubuntu-jammy-run",
         "odroid-xu4-ubuntu-focal-build",
@@ -16,36 +14,6 @@
     }
   },
   "target": {
-    "odroid-xu4-ubuntu-lunar-build": {
-      "context": "device-base/odroid-xu4/ubuntu/lunar/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/odroid-xu4-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/odroid-xu4-ubuntu:lunar-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/odroid-xu4-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/odroid-xu4-ubuntu:lunar-build"
-      ]
-    },
-    "odroid-xu4-ubuntu-lunar-run": {
-      "context": "device-base/odroid-xu4/ubuntu/lunar/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/odroid-xu4-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/odroid-xu4-ubuntu:lunar-run",
-        "docker.io/balenalib/odroid-xu4-ubuntu:lunar-20240411",
-        "docker.io/balenalib/odroid-xu4-ubuntu:lunar"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/odroid-xu4-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/odroid-xu4-ubuntu:lunar-run",
-        "docker.io/balenalib/odroid-xu4-ubuntu:lunar-20240411",
-        "docker.io/balenalib/odroid-xu4-ubuntu:lunar"
-      ]
-    },
     "odroid-xu4-ubuntu-jammy-build": {
       "context": "device-base/odroid-xu4/ubuntu/jammy/build",
       "dockerfile": "Dockerfile",

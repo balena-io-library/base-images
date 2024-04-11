@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "kontron-mx8mm-ubuntu-lunar-build",
-        "kontron-mx8mm-ubuntu-lunar-run",
         "kontron-mx8mm-ubuntu-jammy-build",
         "kontron-mx8mm-ubuntu-jammy-run",
         "kontron-mx8mm-ubuntu-focal-build",
@@ -16,36 +14,6 @@
     }
   },
   "target": {
-    "kontron-mx8mm-ubuntu-lunar-build": {
-      "context": "device-base/kontron-mx8mm/ubuntu/lunar/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/kontron-mx8mm-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/kontron-mx8mm-ubuntu:lunar-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/kontron-mx8mm-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/kontron-mx8mm-ubuntu:lunar-build"
-      ]
-    },
-    "kontron-mx8mm-ubuntu-lunar-run": {
-      "context": "device-base/kontron-mx8mm/ubuntu/lunar/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/kontron-mx8mm-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/kontron-mx8mm-ubuntu:lunar-run",
-        "docker.io/balenalib/kontron-mx8mm-ubuntu:lunar-20240411",
-        "docker.io/balenalib/kontron-mx8mm-ubuntu:lunar"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/kontron-mx8mm-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/kontron-mx8mm-ubuntu:lunar-run",
-        "docker.io/balenalib/kontron-mx8mm-ubuntu:lunar-20240411",
-        "docker.io/balenalib/kontron-mx8mm-ubuntu:lunar"
-      ]
-    },
     "kontron-mx8mm-ubuntu-jammy-build": {
       "context": "device-base/kontron-mx8mm/ubuntu/jammy/build",
       "dockerfile": "Dockerfile",

@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "generic-amd64-ubuntu-lunar-build",
-        "generic-amd64-ubuntu-lunar-run",
         "generic-amd64-ubuntu-jammy-build",
         "generic-amd64-ubuntu-jammy-run",
         "generic-amd64-ubuntu-focal-build",
@@ -16,36 +14,6 @@
     }
   },
   "target": {
-    "generic-amd64-ubuntu-lunar-build": {
-      "context": "device-base/generic-amd64/ubuntu/lunar/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/amd64",
-      "tags": [
-        "docker.io/balenalib/generic-amd64-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/generic-amd64-ubuntu:lunar-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/generic-amd64-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/generic-amd64-ubuntu:lunar-build"
-      ]
-    },
-    "generic-amd64-ubuntu-lunar-run": {
-      "context": "device-base/generic-amd64/ubuntu/lunar/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/amd64",
-      "tags": [
-        "docker.io/balenalib/generic-amd64-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/generic-amd64-ubuntu:lunar-run",
-        "docker.io/balenalib/generic-amd64-ubuntu:lunar-20240411",
-        "docker.io/balenalib/generic-amd64-ubuntu:lunar"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/generic-amd64-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/generic-amd64-ubuntu:lunar-run",
-        "docker.io/balenalib/generic-amd64-ubuntu:lunar-20240411",
-        "docker.io/balenalib/generic-amd64-ubuntu:lunar"
-      ]
-    },
     "generic-amd64-ubuntu-jammy-build": {
       "context": "device-base/generic-amd64/ubuntu/jammy/build",
       "dockerfile": "Dockerfile",

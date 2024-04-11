@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "photon-xavier-nx-ubuntu-lunar-build",
-        "photon-xavier-nx-ubuntu-lunar-run",
         "photon-xavier-nx-ubuntu-jammy-build",
         "photon-xavier-nx-ubuntu-jammy-run",
         "photon-xavier-nx-ubuntu-focal-build",
@@ -16,36 +14,6 @@
     }
   },
   "target": {
-    "photon-xavier-nx-ubuntu-lunar-build": {
-      "context": "device-base/photon-xavier-nx/ubuntu/lunar/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/photon-xavier-nx-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/photon-xavier-nx-ubuntu:lunar-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/photon-xavier-nx-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/photon-xavier-nx-ubuntu:lunar-build"
-      ]
-    },
-    "photon-xavier-nx-ubuntu-lunar-run": {
-      "context": "device-base/photon-xavier-nx/ubuntu/lunar/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/photon-xavier-nx-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/photon-xavier-nx-ubuntu:lunar-run",
-        "docker.io/balenalib/photon-xavier-nx-ubuntu:lunar-20240411",
-        "docker.io/balenalib/photon-xavier-nx-ubuntu:lunar"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/photon-xavier-nx-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/photon-xavier-nx-ubuntu:lunar-run",
-        "docker.io/balenalib/photon-xavier-nx-ubuntu:lunar-20240411",
-        "docker.io/balenalib/photon-xavier-nx-ubuntu:lunar"
-      ]
-    },
     "photon-xavier-nx-ubuntu-jammy-build": {
       "context": "device-base/photon-xavier-nx/ubuntu/jammy/build",
       "dockerfile": "Dockerfile",

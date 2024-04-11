@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "nanopi-r2c-ubuntu-lunar-build",
-        "nanopi-r2c-ubuntu-lunar-run",
         "nanopi-r2c-ubuntu-jammy-build",
         "nanopi-r2c-ubuntu-jammy-run",
         "nanopi-r2c-ubuntu-focal-build",
@@ -16,36 +14,6 @@
     }
   },
   "target": {
-    "nanopi-r2c-ubuntu-lunar-build": {
-      "context": "device-base/nanopi-r2c/ubuntu/lunar/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/nanopi-r2c-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/nanopi-r2c-ubuntu:lunar-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/nanopi-r2c-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/nanopi-r2c-ubuntu:lunar-build"
-      ]
-    },
-    "nanopi-r2c-ubuntu-lunar-run": {
-      "context": "device-base/nanopi-r2c/ubuntu/lunar/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/nanopi-r2c-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/nanopi-r2c-ubuntu:lunar-run",
-        "docker.io/balenalib/nanopi-r2c-ubuntu:lunar-20240411",
-        "docker.io/balenalib/nanopi-r2c-ubuntu:lunar"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/nanopi-r2c-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/nanopi-r2c-ubuntu:lunar-run",
-        "docker.io/balenalib/nanopi-r2c-ubuntu:lunar-20240411",
-        "docker.io/balenalib/nanopi-r2c-ubuntu:lunar"
-      ]
-    },
     "nanopi-r2c-ubuntu-jammy-build": {
       "context": "device-base/nanopi-r2c/ubuntu/jammy/build",
       "dockerfile": "Dockerfile",

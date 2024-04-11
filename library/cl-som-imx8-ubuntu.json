@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "cl-som-imx8-ubuntu-lunar-build",
-        "cl-som-imx8-ubuntu-lunar-run",
         "cl-som-imx8-ubuntu-jammy-build",
         "cl-som-imx8-ubuntu-jammy-run",
         "cl-som-imx8-ubuntu-focal-build",
@@ -16,36 +14,6 @@
     }
   },
   "target": {
-    "cl-som-imx8-ubuntu-lunar-build": {
-      "context": "device-base/cl-som-imx8/ubuntu/lunar/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/cl-som-imx8-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/cl-som-imx8-ubuntu:lunar-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/cl-som-imx8-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/cl-som-imx8-ubuntu:lunar-build"
-      ]
-    },
-    "cl-som-imx8-ubuntu-lunar-run": {
-      "context": "device-base/cl-som-imx8/ubuntu/lunar/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/cl-som-imx8-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/cl-som-imx8-ubuntu:lunar-run",
-        "docker.io/balenalib/cl-som-imx8-ubuntu:lunar-20240411",
-        "docker.io/balenalib/cl-som-imx8-ubuntu:lunar"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/cl-som-imx8-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/cl-som-imx8-ubuntu:lunar-run",
-        "docker.io/balenalib/cl-som-imx8-ubuntu:lunar-20240411",
-        "docker.io/balenalib/cl-som-imx8-ubuntu:lunar"
-      ]
-    },
     "cl-som-imx8-ubuntu-jammy-build": {
       "context": "device-base/cl-som-imx8/ubuntu/jammy/build",
       "dockerfile": "Dockerfile",

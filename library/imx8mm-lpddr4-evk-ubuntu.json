@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "imx8mm-lpddr4-evk-ubuntu-lunar-build",
-        "imx8mm-lpddr4-evk-ubuntu-lunar-run",
         "imx8mm-lpddr4-evk-ubuntu-jammy-build",
         "imx8mm-lpddr4-evk-ubuntu-jammy-run",
         "imx8mm-lpddr4-evk-ubuntu-focal-build",
@@ -16,36 +14,6 @@
     }
   },
   "target": {
-    "imx8mm-lpddr4-evk-ubuntu-lunar-build": {
-      "context": "device-base/imx8mm-lpddr4-evk/ubuntu/lunar/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:lunar-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:lunar-build"
-      ]
-    },
-    "imx8mm-lpddr4-evk-ubuntu-lunar-run": {
-      "context": "device-base/imx8mm-lpddr4-evk/ubuntu/lunar/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:lunar-run",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:lunar-20240411",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:lunar"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:lunar-run",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:lunar-20240411",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:lunar"
-      ]
-    },
     "imx8mm-lpddr4-evk-ubuntu-jammy-build": {
       "context": "device-base/imx8mm-lpddr4-evk/ubuntu/jammy/build",
       "dockerfile": "Dockerfile",

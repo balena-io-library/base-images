@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "nanopi-neo-air-ubuntu-lunar-build",
-        "nanopi-neo-air-ubuntu-lunar-run",
         "nanopi-neo-air-ubuntu-jammy-build",
         "nanopi-neo-air-ubuntu-jammy-run",
         "nanopi-neo-air-ubuntu-focal-build",
@@ -16,36 +14,6 @@
     }
   },
   "target": {
-    "nanopi-neo-air-ubuntu-lunar-build": {
-      "context": "device-base/nanopi-neo-air/ubuntu/lunar/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/nanopi-neo-air-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/nanopi-neo-air-ubuntu:lunar-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/nanopi-neo-air-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/nanopi-neo-air-ubuntu:lunar-build"
-      ]
-    },
-    "nanopi-neo-air-ubuntu-lunar-run": {
-      "context": "device-base/nanopi-neo-air/ubuntu/lunar/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/nanopi-neo-air-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/nanopi-neo-air-ubuntu:lunar-run",
-        "docker.io/balenalib/nanopi-neo-air-ubuntu:lunar-20240411",
-        "docker.io/balenalib/nanopi-neo-air-ubuntu:lunar"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/nanopi-neo-air-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/nanopi-neo-air-ubuntu:lunar-run",
-        "docker.io/balenalib/nanopi-neo-air-ubuntu:lunar-20240411",
-        "docker.io/balenalib/nanopi-neo-air-ubuntu:lunar"
-      ]
-    },
     "nanopi-neo-air-ubuntu-jammy-build": {
       "context": "device-base/nanopi-neo-air/ubuntu/jammy/build",
       "dockerfile": "Dockerfile",

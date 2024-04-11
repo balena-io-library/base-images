@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "aarch64-ubuntu-lunar-build",
-        "aarch64-ubuntu-lunar-run",
         "aarch64-ubuntu-jammy-build",
         "aarch64-ubuntu-jammy-run",
         "aarch64-ubuntu-focal-build",
@@ -16,36 +14,6 @@
     }
   },
   "target": {
-    "aarch64-ubuntu-lunar-build": {
-      "context": "aarch64/ubuntu/lunar/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/aarch64-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/aarch64-ubuntu:lunar-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/aarch64-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/aarch64-ubuntu:lunar-build"
-      ]
-    },
-    "aarch64-ubuntu-lunar-run": {
-      "context": "aarch64/ubuntu/lunar/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/aarch64-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/aarch64-ubuntu:lunar-run",
-        "docker.io/balenalib/aarch64-ubuntu:lunar-20240411",
-        "docker.io/balenalib/aarch64-ubuntu:lunar"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/aarch64-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/aarch64-ubuntu:lunar-run",
-        "docker.io/balenalib/aarch64-ubuntu:lunar-20240411",
-        "docker.io/balenalib/aarch64-ubuntu:lunar"
-      ]
-    },
     "aarch64-ubuntu-jammy-build": {
       "context": "aarch64/ubuntu/jammy/build",
       "dockerfile": "Dockerfile",

@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "up-board-ubuntu-lunar-build",
-        "up-board-ubuntu-lunar-run",
         "up-board-ubuntu-jammy-build",
         "up-board-ubuntu-jammy-run",
         "up-board-ubuntu-focal-build",
@@ -16,36 +14,6 @@
     }
   },
   "target": {
-    "up-board-ubuntu-lunar-build": {
-      "context": "device-base/up-board/ubuntu/lunar/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/amd64",
-      "tags": [
-        "docker.io/balenalib/up-board-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/up-board-ubuntu:lunar-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/up-board-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/up-board-ubuntu:lunar-build"
-      ]
-    },
-    "up-board-ubuntu-lunar-run": {
-      "context": "device-base/up-board/ubuntu/lunar/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/amd64",
-      "tags": [
-        "docker.io/balenalib/up-board-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/up-board-ubuntu:lunar-run",
-        "docker.io/balenalib/up-board-ubuntu:lunar-20240411",
-        "docker.io/balenalib/up-board-ubuntu:lunar"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/up-board-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/up-board-ubuntu:lunar-run",
-        "docker.io/balenalib/up-board-ubuntu:lunar-20240411",
-        "docker.io/balenalib/up-board-ubuntu:lunar"
-      ]
-    },
     "up-board-ubuntu-jammy-build": {
       "context": "device-base/up-board/ubuntu/jammy/build",
       "dockerfile": "Dockerfile",

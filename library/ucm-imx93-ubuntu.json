@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "ucm-imx93-ubuntu-lunar-build",
-        "ucm-imx93-ubuntu-lunar-run",
         "ucm-imx93-ubuntu-jammy-build",
         "ucm-imx93-ubuntu-jammy-run",
         "ucm-imx93-ubuntu-focal-build",
@@ -16,36 +14,6 @@
     }
   },
   "target": {
-    "ucm-imx93-ubuntu-lunar-build": {
-      "context": "device-base/ucm-imx93/ubuntu/lunar/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/ucm-imx93-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/ucm-imx93-ubuntu:lunar-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/ucm-imx93-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/ucm-imx93-ubuntu:lunar-build"
-      ]
-    },
-    "ucm-imx93-ubuntu-lunar-run": {
-      "context": "device-base/ucm-imx93/ubuntu/lunar/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/ucm-imx93-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/ucm-imx93-ubuntu:lunar-run",
-        "docker.io/balenalib/ucm-imx93-ubuntu:lunar-20240411",
-        "docker.io/balenalib/ucm-imx93-ubuntu:lunar"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/ucm-imx93-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/ucm-imx93-ubuntu:lunar-run",
-        "docker.io/balenalib/ucm-imx93-ubuntu:lunar-20240411",
-        "docker.io/balenalib/ucm-imx93-ubuntu:lunar"
-      ]
-    },
     "ucm-imx93-ubuntu-jammy-build": {
       "context": "device-base/ucm-imx93/ubuntu/jammy/build",
       "dockerfile": "Dockerfile",

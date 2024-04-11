@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "spacely-tx2-ubuntu-lunar-build",
-        "spacely-tx2-ubuntu-lunar-run",
         "spacely-tx2-ubuntu-jammy-build",
         "spacely-tx2-ubuntu-jammy-run",
         "spacely-tx2-ubuntu-focal-build",
@@ -16,36 +14,6 @@
     }
   },
   "target": {
-    "spacely-tx2-ubuntu-lunar-build": {
-      "context": "device-base/spacely-tx2/ubuntu/lunar/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/spacely-tx2-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/spacely-tx2-ubuntu:lunar-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/spacely-tx2-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/spacely-tx2-ubuntu:lunar-build"
-      ]
-    },
-    "spacely-tx2-ubuntu-lunar-run": {
-      "context": "device-base/spacely-tx2/ubuntu/lunar/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/spacely-tx2-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/spacely-tx2-ubuntu:lunar-run",
-        "docker.io/balenalib/spacely-tx2-ubuntu:lunar-20240411",
-        "docker.io/balenalib/spacely-tx2-ubuntu:lunar"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/spacely-tx2-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/spacely-tx2-ubuntu:lunar-run",
-        "docker.io/balenalib/spacely-tx2-ubuntu:lunar-20240411",
-        "docker.io/balenalib/spacely-tx2-ubuntu:lunar"
-      ]
-    },
     "spacely-tx2-ubuntu-jammy-build": {
       "context": "device-base/spacely-tx2/ubuntu/jammy/build",
       "dockerfile": "Dockerfile",

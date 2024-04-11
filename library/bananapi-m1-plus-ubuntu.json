@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "bananapi-m1-plus-ubuntu-lunar-build",
-        "bananapi-m1-plus-ubuntu-lunar-run",
         "bananapi-m1-plus-ubuntu-jammy-build",
         "bananapi-m1-plus-ubuntu-jammy-run",
         "bananapi-m1-plus-ubuntu-focal-build",
@@ -16,36 +14,6 @@
     }
   },
   "target": {
-    "bananapi-m1-plus-ubuntu-lunar-build": {
-      "context": "device-base/bananapi-m1-plus/ubuntu/lunar/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:lunar-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:lunar-build"
-      ]
-    },
-    "bananapi-m1-plus-ubuntu-lunar-run": {
-      "context": "device-base/bananapi-m1-plus/ubuntu/lunar/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:lunar-run",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:lunar-20240411",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:lunar"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:lunar-run",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:lunar-20240411",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:lunar"
-      ]
-    },
     "bananapi-m1-plus-ubuntu-jammy-build": {
       "context": "device-base/bananapi-m1-plus/ubuntu/jammy/build",
       "dockerfile": "Dockerfile",

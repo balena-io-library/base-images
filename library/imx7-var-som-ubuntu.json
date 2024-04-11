@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "imx7-var-som-ubuntu-lunar-build",
-        "imx7-var-som-ubuntu-lunar-run",
         "imx7-var-som-ubuntu-jammy-build",
         "imx7-var-som-ubuntu-jammy-run",
         "imx7-var-som-ubuntu-focal-build",
@@ -16,36 +14,6 @@
     }
   },
   "target": {
-    "imx7-var-som-ubuntu-lunar-build": {
-      "context": "device-base/imx7-var-som/ubuntu/lunar/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/imx7-var-som-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/imx7-var-som-ubuntu:lunar-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/imx7-var-som-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/imx7-var-som-ubuntu:lunar-build"
-      ]
-    },
-    "imx7-var-som-ubuntu-lunar-run": {
-      "context": "device-base/imx7-var-som/ubuntu/lunar/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/imx7-var-som-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/imx7-var-som-ubuntu:lunar-run",
-        "docker.io/balenalib/imx7-var-som-ubuntu:lunar-20240411",
-        "docker.io/balenalib/imx7-var-som-ubuntu:lunar"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/imx7-var-som-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/imx7-var-som-ubuntu:lunar-run",
-        "docker.io/balenalib/imx7-var-som-ubuntu:lunar-20240411",
-        "docker.io/balenalib/imx7-var-som-ubuntu:lunar"
-      ]
-    },
     "imx7-var-som-ubuntu-jammy-build": {
       "context": "device-base/imx7-var-som/ubuntu/jammy/build",
       "dockerfile": "Dockerfile",

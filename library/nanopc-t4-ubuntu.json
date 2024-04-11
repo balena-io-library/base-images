@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "nanopc-t4-ubuntu-lunar-build",
-        "nanopc-t4-ubuntu-lunar-run",
         "nanopc-t4-ubuntu-jammy-build",
         "nanopc-t4-ubuntu-jammy-run",
         "nanopc-t4-ubuntu-focal-build",
@@ -16,36 +14,6 @@
     }
   },
   "target": {
-    "nanopc-t4-ubuntu-lunar-build": {
-      "context": "device-base/nanopc-t4/ubuntu/lunar/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/nanopc-t4-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/nanopc-t4-ubuntu:lunar-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/nanopc-t4-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/nanopc-t4-ubuntu:lunar-build"
-      ]
-    },
-    "nanopc-t4-ubuntu-lunar-run": {
-      "context": "device-base/nanopc-t4/ubuntu/lunar/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/nanopc-t4-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/nanopc-t4-ubuntu:lunar-run",
-        "docker.io/balenalib/nanopc-t4-ubuntu:lunar-20240411",
-        "docker.io/balenalib/nanopc-t4-ubuntu:lunar"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/nanopc-t4-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/nanopc-t4-ubuntu:lunar-run",
-        "docker.io/balenalib/nanopc-t4-ubuntu:lunar-20240411",
-        "docker.io/balenalib/nanopc-t4-ubuntu:lunar"
-      ]
-    },
     "nanopc-t4-ubuntu-jammy-build": {
       "context": "device-base/nanopc-t4/ubuntu/jammy/build",
       "dockerfile": "Dockerfile",

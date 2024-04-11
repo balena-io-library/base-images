@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "beaglebone-green-gateway-ubuntu-lunar-build",
-        "beaglebone-green-gateway-ubuntu-lunar-run",
         "beaglebone-green-gateway-ubuntu-jammy-build",
         "beaglebone-green-gateway-ubuntu-jammy-run",
         "beaglebone-green-gateway-ubuntu-focal-build",
@@ -16,36 +14,6 @@
     }
   },
   "target": {
-    "beaglebone-green-gateway-ubuntu-lunar-build": {
-      "context": "device-base/beaglebone-green-gateway/ubuntu/lunar/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:lunar-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:lunar-build"
-      ]
-    },
-    "beaglebone-green-gateway-ubuntu-lunar-run": {
-      "context": "device-base/beaglebone-green-gateway/ubuntu/lunar/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:lunar-run",
-        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:lunar-20240411",
-        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:lunar"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:lunar-run",
-        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:lunar-20240411",
-        "docker.io/balenalib/beaglebone-green-gateway-ubuntu:lunar"
-      ]
-    },
     "beaglebone-green-gateway-ubuntu-jammy-build": {
       "context": "device-base/beaglebone-green-gateway/ubuntu/jammy/build",
       "dockerfile": "Dockerfile",

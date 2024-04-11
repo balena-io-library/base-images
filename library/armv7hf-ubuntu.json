@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "armv7hf-ubuntu-lunar-build",
-        "armv7hf-ubuntu-lunar-run",
         "armv7hf-ubuntu-jammy-build",
         "armv7hf-ubuntu-jammy-run",
         "armv7hf-ubuntu-focal-build",
@@ -16,36 +14,6 @@
     }
   },
   "target": {
-    "armv7hf-ubuntu-lunar-build": {
-      "context": "armv7hf/ubuntu/lunar/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/armv7hf-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/armv7hf-ubuntu:lunar-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/armv7hf-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/armv7hf-ubuntu:lunar-build"
-      ]
-    },
-    "armv7hf-ubuntu-lunar-run": {
-      "context": "armv7hf/ubuntu/lunar/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/armv7hf-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/armv7hf-ubuntu:lunar-run",
-        "docker.io/balenalib/armv7hf-ubuntu:lunar-20240411",
-        "docker.io/balenalib/armv7hf-ubuntu:lunar"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/armv7hf-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/armv7hf-ubuntu:lunar-run",
-        "docker.io/balenalib/armv7hf-ubuntu:lunar-20240411",
-        "docker.io/balenalib/armv7hf-ubuntu:lunar"
-      ]
-    },
     "armv7hf-ubuntu-jammy-build": {
       "context": "armv7hf/ubuntu/jammy/build",
       "dockerfile": "Dockerfile",

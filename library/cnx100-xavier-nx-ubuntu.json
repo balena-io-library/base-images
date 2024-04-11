@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "cnx100-xavier-nx-ubuntu-lunar-build",
-        "cnx100-xavier-nx-ubuntu-lunar-run",
         "cnx100-xavier-nx-ubuntu-jammy-build",
         "cnx100-xavier-nx-ubuntu-jammy-run",
         "cnx100-xavier-nx-ubuntu-focal-build",
@@ -16,36 +14,6 @@
     }
   },
   "target": {
-    "cnx100-xavier-nx-ubuntu-lunar-build": {
-      "context": "device-base/cnx100-xavier-nx/ubuntu/lunar/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:lunar-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:lunar-build"
-      ]
-    },
-    "cnx100-xavier-nx-ubuntu-lunar-run": {
-      "context": "device-base/cnx100-xavier-nx/ubuntu/lunar/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:lunar-run",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:lunar-20240411",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:lunar"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:lunar-run",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:lunar-20240411",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:lunar"
-      ]
-    },
     "cnx100-xavier-nx-ubuntu-jammy-build": {
       "context": "device-base/cnx100-xavier-nx/ubuntu/jammy/build",
       "dockerfile": "Dockerfile",

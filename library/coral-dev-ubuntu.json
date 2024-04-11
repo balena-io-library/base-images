@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "coral-dev-ubuntu-lunar-build",
-        "coral-dev-ubuntu-lunar-run",
         "coral-dev-ubuntu-jammy-build",
         "coral-dev-ubuntu-jammy-run",
         "coral-dev-ubuntu-focal-build",
@@ -16,36 +14,6 @@
     }
   },
   "target": {
-    "coral-dev-ubuntu-lunar-build": {
-      "context": "device-base/coral-dev/ubuntu/lunar/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/coral-dev-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/coral-dev-ubuntu:lunar-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/coral-dev-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/coral-dev-ubuntu:lunar-build"
-      ]
-    },
-    "coral-dev-ubuntu-lunar-run": {
-      "context": "device-base/coral-dev/ubuntu/lunar/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/coral-dev-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/coral-dev-ubuntu:lunar-run",
-        "docker.io/balenalib/coral-dev-ubuntu:lunar-20240411",
-        "docker.io/balenalib/coral-dev-ubuntu:lunar"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/coral-dev-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/coral-dev-ubuntu:lunar-run",
-        "docker.io/balenalib/coral-dev-ubuntu:lunar-20240411",
-        "docker.io/balenalib/coral-dev-ubuntu:lunar"
-      ]
-    },
     "coral-dev-ubuntu-jammy-build": {
       "context": "device-base/coral-dev/ubuntu/jammy/build",
       "dockerfile": "Dockerfile",

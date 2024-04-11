@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "orange-pi-zero-ubuntu-lunar-build",
-        "orange-pi-zero-ubuntu-lunar-run",
         "orange-pi-zero-ubuntu-jammy-build",
         "orange-pi-zero-ubuntu-jammy-run",
         "orange-pi-zero-ubuntu-focal-build",
@@ -16,36 +14,6 @@
     }
   },
   "target": {
-    "orange-pi-zero-ubuntu-lunar-build": {
-      "context": "device-base/orange-pi-zero/ubuntu/lunar/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/orange-pi-zero-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/orange-pi-zero-ubuntu:lunar-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/orange-pi-zero-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/orange-pi-zero-ubuntu:lunar-build"
-      ]
-    },
-    "orange-pi-zero-ubuntu-lunar-run": {
-      "context": "device-base/orange-pi-zero/ubuntu/lunar/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/orange-pi-zero-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/orange-pi-zero-ubuntu:lunar-run",
-        "docker.io/balenalib/orange-pi-zero-ubuntu:lunar-20240411",
-        "docker.io/balenalib/orange-pi-zero-ubuntu:lunar"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/orange-pi-zero-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/orange-pi-zero-ubuntu:lunar-run",
-        "docker.io/balenalib/orange-pi-zero-ubuntu:lunar-20240411",
-        "docker.io/balenalib/orange-pi-zero-ubuntu:lunar"
-      ]
-    },
     "orange-pi-zero-ubuntu-jammy-build": {
       "context": "device-base/orange-pi-zero/ubuntu/jammy/build",
       "dockerfile": "Dockerfile",

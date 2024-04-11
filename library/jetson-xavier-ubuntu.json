@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "jetson-xavier-ubuntu-lunar-build",
-        "jetson-xavier-ubuntu-lunar-run",
         "jetson-xavier-ubuntu-jammy-build",
         "jetson-xavier-ubuntu-jammy-run",
         "jetson-xavier-ubuntu-focal-build",
@@ -16,36 +14,6 @@
     }
   },
   "target": {
-    "jetson-xavier-ubuntu-lunar-build": {
-      "context": "device-base/jetson-xavier/ubuntu/lunar/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/jetson-xavier-ubuntu:lunar-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/jetson-xavier-ubuntu:lunar-build"
-      ]
-    },
-    "jetson-xavier-ubuntu-lunar-run": {
-      "context": "device-base/jetson-xavier/ubuntu/lunar/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/jetson-xavier-ubuntu:lunar-run",
-        "docker.io/balenalib/jetson-xavier-ubuntu:lunar-20240411",
-        "docker.io/balenalib/jetson-xavier-ubuntu:lunar"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/jetson-xavier-ubuntu:lunar-run",
-        "docker.io/balenalib/jetson-xavier-ubuntu:lunar-20240411",
-        "docker.io/balenalib/jetson-xavier-ubuntu:lunar"
-      ]
-    },
     "jetson-xavier-ubuntu-jammy-build": {
       "context": "device-base/jetson-xavier/ubuntu/jammy/build",
       "dockerfile": "Dockerfile",

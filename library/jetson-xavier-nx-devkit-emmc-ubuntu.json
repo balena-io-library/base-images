@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "jetson-xavier-nx-devkit-emmc-ubuntu-lunar-build",
-        "jetson-xavier-nx-devkit-emmc-ubuntu-lunar-run",
         "jetson-xavier-nx-devkit-emmc-ubuntu-jammy-build",
         "jetson-xavier-nx-devkit-emmc-ubuntu-jammy-run",
         "jetson-xavier-nx-devkit-emmc-ubuntu-focal-build",
@@ -16,36 +14,6 @@
     }
   },
   "target": {
-    "jetson-xavier-nx-devkit-emmc-ubuntu-lunar-build": {
-      "context": "device-base/jetson-xavier-nx-devkit-emmc/ubuntu/lunar/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-ubuntu:lunar-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-ubuntu:lunar-build"
-      ]
-    },
-    "jetson-xavier-nx-devkit-emmc-ubuntu-lunar-run": {
-      "context": "device-base/jetson-xavier-nx-devkit-emmc/ubuntu/lunar/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-ubuntu:lunar-run",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-ubuntu:lunar-20240411",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-ubuntu:lunar"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-ubuntu:lunar-run",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-ubuntu:lunar-20240411",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-ubuntu:lunar"
-      ]
-    },
     "jetson-xavier-nx-devkit-emmc-ubuntu-jammy-build": {
       "context": "device-base/jetson-xavier-nx-devkit-emmc/ubuntu/jammy/build",
       "dockerfile": "Dockerfile",

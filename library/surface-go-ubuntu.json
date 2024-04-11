@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "surface-go-ubuntu-lunar-build",
-        "surface-go-ubuntu-lunar-run",
         "surface-go-ubuntu-jammy-build",
         "surface-go-ubuntu-jammy-run",
         "surface-go-ubuntu-focal-build",
@@ -16,36 +14,6 @@
     }
   },
   "target": {
-    "surface-go-ubuntu-lunar-build": {
-      "context": "device-base/surface-go/ubuntu/lunar/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/amd64",
-      "tags": [
-        "docker.io/balenalib/surface-go-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/surface-go-ubuntu:lunar-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/surface-go-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/surface-go-ubuntu:lunar-build"
-      ]
-    },
-    "surface-go-ubuntu-lunar-run": {
-      "context": "device-base/surface-go/ubuntu/lunar/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/amd64",
-      "tags": [
-        "docker.io/balenalib/surface-go-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/surface-go-ubuntu:lunar-run",
-        "docker.io/balenalib/surface-go-ubuntu:lunar-20240411",
-        "docker.io/balenalib/surface-go-ubuntu:lunar"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/surface-go-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/surface-go-ubuntu:lunar-run",
-        "docker.io/balenalib/surface-go-ubuntu:lunar-20240411",
-        "docker.io/balenalib/surface-go-ubuntu:lunar"
-      ]
-    },
     "surface-go-ubuntu-jammy-build": {
       "context": "device-base/surface-go/ubuntu/jammy/build",
       "dockerfile": "Dockerfile",

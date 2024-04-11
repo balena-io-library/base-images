@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "smarc-px30-ubuntu-lunar-build",
-        "smarc-px30-ubuntu-lunar-run",
         "smarc-px30-ubuntu-jammy-build",
         "smarc-px30-ubuntu-jammy-run",
         "smarc-px30-ubuntu-focal-build",
@@ -16,36 +14,6 @@
     }
   },
   "target": {
-    "smarc-px30-ubuntu-lunar-build": {
-      "context": "device-base/smarc-px30/ubuntu/lunar/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/smarc-px30-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/smarc-px30-ubuntu:lunar-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/smarc-px30-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/smarc-px30-ubuntu:lunar-build"
-      ]
-    },
-    "smarc-px30-ubuntu-lunar-run": {
-      "context": "device-base/smarc-px30/ubuntu/lunar/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/smarc-px30-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/smarc-px30-ubuntu:lunar-run",
-        "docker.io/balenalib/smarc-px30-ubuntu:lunar-20240411",
-        "docker.io/balenalib/smarc-px30-ubuntu:lunar"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/smarc-px30-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/smarc-px30-ubuntu:lunar-run",
-        "docker.io/balenalib/smarc-px30-ubuntu:lunar-20240411",
-        "docker.io/balenalib/smarc-px30-ubuntu:lunar"
-      ]
-    },
     "smarc-px30-ubuntu-jammy-build": {
       "context": "device-base/smarc-px30/ubuntu/jammy/build",
       "dockerfile": "Dockerfile",

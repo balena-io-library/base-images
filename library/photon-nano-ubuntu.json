@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "photon-nano-ubuntu-lunar-build",
-        "photon-nano-ubuntu-lunar-run",
         "photon-nano-ubuntu-jammy-build",
         "photon-nano-ubuntu-jammy-run",
         "photon-nano-ubuntu-focal-build",
@@ -16,36 +14,6 @@
     }
   },
   "target": {
-    "photon-nano-ubuntu-lunar-build": {
-      "context": "device-base/photon-nano/ubuntu/lunar/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/photon-nano-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/photon-nano-ubuntu:lunar-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/photon-nano-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/photon-nano-ubuntu:lunar-build"
-      ]
-    },
-    "photon-nano-ubuntu-lunar-run": {
-      "context": "device-base/photon-nano/ubuntu/lunar/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/photon-nano-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/photon-nano-ubuntu:lunar-run",
-        "docker.io/balenalib/photon-nano-ubuntu:lunar-20240411",
-        "docker.io/balenalib/photon-nano-ubuntu:lunar"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/photon-nano-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/photon-nano-ubuntu:lunar-run",
-        "docker.io/balenalib/photon-nano-ubuntu:lunar-20240411",
-        "docker.io/balenalib/photon-nano-ubuntu:lunar"
-      ]
-    },
     "photon-nano-ubuntu-jammy-build": {
       "context": "device-base/photon-nano/ubuntu/jammy/build",
       "dockerfile": "Dockerfile",

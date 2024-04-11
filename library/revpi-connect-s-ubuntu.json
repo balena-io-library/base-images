@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "revpi-connect-s-ubuntu-lunar-build",
-        "revpi-connect-s-ubuntu-lunar-run",
         "revpi-connect-s-ubuntu-jammy-build",
         "revpi-connect-s-ubuntu-jammy-run",
         "revpi-connect-s-ubuntu-focal-build",
@@ -16,36 +14,6 @@
     }
   },
   "target": {
-    "revpi-connect-s-ubuntu-lunar-build": {
-      "context": "device-base/revpi-connect-s/ubuntu/lunar/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/revpi-connect-s-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/revpi-connect-s-ubuntu:lunar-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/revpi-connect-s-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/revpi-connect-s-ubuntu:lunar-build"
-      ]
-    },
-    "revpi-connect-s-ubuntu-lunar-run": {
-      "context": "device-base/revpi-connect-s/ubuntu/lunar/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/revpi-connect-s-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/revpi-connect-s-ubuntu:lunar-run",
-        "docker.io/balenalib/revpi-connect-s-ubuntu:lunar-20240411",
-        "docker.io/balenalib/revpi-connect-s-ubuntu:lunar"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/revpi-connect-s-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/revpi-connect-s-ubuntu:lunar-run",
-        "docker.io/balenalib/revpi-connect-s-ubuntu:lunar-20240411",
-        "docker.io/balenalib/revpi-connect-s-ubuntu:lunar"
-      ]
-    },
     "revpi-connect-s-ubuntu-jammy-build": {
       "context": "device-base/revpi-connect-s/ubuntu/jammy/build",
       "dockerfile": "Dockerfile",

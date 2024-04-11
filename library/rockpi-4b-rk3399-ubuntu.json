@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "rockpi-4b-rk3399-ubuntu-lunar-build",
-        "rockpi-4b-rk3399-ubuntu-lunar-run",
         "rockpi-4b-rk3399-ubuntu-jammy-build",
         "rockpi-4b-rk3399-ubuntu-jammy-run",
         "rockpi-4b-rk3399-ubuntu-focal-build",
@@ -16,36 +14,6 @@
     }
   },
   "target": {
-    "rockpi-4b-rk3399-ubuntu-lunar-build": {
-      "context": "device-base/rockpi-4b-rk3399/ubuntu/lunar/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:lunar-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:lunar-build-20240411",
-        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:lunar-build"
-      ]
-    },
-    "rockpi-4b-rk3399-ubuntu-lunar-run": {
-      "context": "device-base/rockpi-4b-rk3399/ubuntu/lunar/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:lunar-run",
-        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:lunar-20240411",
-        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:lunar"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:lunar-run-20240411",
-        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:lunar-run",
-        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:lunar-20240411",
-        "docker.io/balenalib/rockpi-4b-rk3399-ubuntu:lunar"
-      ]
-    },
     "rockpi-4b-rk3399-ubuntu-jammy-build": {
       "context": "device-base/rockpi-4b-rk3399/ubuntu/jammy/build",
       "dockerfile": "Dockerfile",
