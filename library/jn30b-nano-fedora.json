@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "jn30b-nano-fedora-36-build",
-        "jn30b-nano-fedora-36-run",
         "jn30b-nano-fedora-37-build",
         "jn30b-nano-fedora-37-run",
         "jn30b-nano-fedora-38-build",
@@ -12,54 +10,24 @@
     }
   },
   "target": {
-    "jn30b-nano-fedora-36-build": {
-      "context": "device-base/jn30b-nano/fedora/36/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/jn30b-nano-fedora:36-build-20240408",
-        "docker.io/balenalib/jn30b-nano-fedora:36-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/jn30b-nano-fedora:36-build-20240408",
-        "docker.io/balenalib/jn30b-nano-fedora:36-build"
-      ]
-    },
-    "jn30b-nano-fedora-36-run": {
-      "context": "device-base/jn30b-nano/fedora/36/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/jn30b-nano-fedora:36-run-20240408",
-        "docker.io/balenalib/jn30b-nano-fedora:36-run",
-        "docker.io/balenalib/jn30b-nano-fedora:36-20240408",
-        "docker.io/balenalib/jn30b-nano-fedora:36"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/jn30b-nano-fedora:36-run-20240408",
-        "docker.io/balenalib/jn30b-nano-fedora:36-run",
-        "docker.io/balenalib/jn30b-nano-fedora:36-20240408",
-        "docker.io/balenalib/jn30b-nano-fedora:36"
-      ]
-    },
     "jn30b-nano-fedora-37-build": {
       "context": "device-base/jn30b-nano/fedora/37/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jn30b-nano-fedora:37-build-20240408",
+        "docker.io/balenalib/jn30b-nano-fedora:37-build-20240411",
         "docker.io/balenalib/jn30b-nano-fedora:37-build",
-        "docker.io/balenalib/jn30b-nano-fedora:latest-build-20240408",
+        "docker.io/balenalib/jn30b-nano-fedora:latest-build-20240411",
         "docker.io/balenalib/jn30b-nano-fedora:latest-build",
-        "docker.io/balenalib/jn30b-nano-fedora:build-20240408",
+        "docker.io/balenalib/jn30b-nano-fedora:build-20240411",
         "docker.io/balenalib/jn30b-nano-fedora:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jn30b-nano-fedora:37-build-20240408",
+        "docker.io/balenalib/jn30b-nano-fedora:37-build-20240411",
         "docker.io/balenalib/jn30b-nano-fedora:37-build",
-        "docker.io/balenalib/jn30b-nano-fedora:latest-build-20240408",
+        "docker.io/balenalib/jn30b-nano-fedora:latest-build-20240411",
         "docker.io/balenalib/jn30b-nano-fedora:latest-build",
-        "docker.io/balenalib/jn30b-nano-fedora:build-20240408",
+        "docker.io/balenalib/jn30b-nano-fedora:build-20240411",
         "docker.io/balenalib/jn30b-nano-fedora:build"
       ]
     },
@@ -68,30 +36,30 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jn30b-nano-fedora:37-run-20240408",
+        "docker.io/balenalib/jn30b-nano-fedora:37-run-20240411",
         "docker.io/balenalib/jn30b-nano-fedora:37-run",
-        "docker.io/balenalib/jn30b-nano-fedora:37-20240408",
+        "docker.io/balenalib/jn30b-nano-fedora:37-20240411",
         "docker.io/balenalib/jn30b-nano-fedora:37",
-        "docker.io/balenalib/jn30b-nano-fedora:latest-run-20240408",
+        "docker.io/balenalib/jn30b-nano-fedora:latest-run-20240411",
         "docker.io/balenalib/jn30b-nano-fedora:latest-run",
-        "docker.io/balenalib/jn30b-nano-fedora:latest-20240408",
+        "docker.io/balenalib/jn30b-nano-fedora:latest-20240411",
         "docker.io/balenalib/jn30b-nano-fedora:latest",
-        "docker.io/balenalib/jn30b-nano-fedora:run-20240408",
+        "docker.io/balenalib/jn30b-nano-fedora:run-20240411",
         "docker.io/balenalib/jn30b-nano-fedora:run",
-        "docker.io/balenalib/jn30b-nano-fedora:20240408"
+        "docker.io/balenalib/jn30b-nano-fedora:20240411"
       ],
       "cache_from": [
-        "docker.io/balenalib/jn30b-nano-fedora:37-run-20240408",
+        "docker.io/balenalib/jn30b-nano-fedora:37-run-20240411",
         "docker.io/balenalib/jn30b-nano-fedora:37-run",
-        "docker.io/balenalib/jn30b-nano-fedora:37-20240408",
+        "docker.io/balenalib/jn30b-nano-fedora:37-20240411",
         "docker.io/balenalib/jn30b-nano-fedora:37",
-        "docker.io/balenalib/jn30b-nano-fedora:latest-run-20240408",
+        "docker.io/balenalib/jn30b-nano-fedora:latest-run-20240411",
         "docker.io/balenalib/jn30b-nano-fedora:latest-run",
-        "docker.io/balenalib/jn30b-nano-fedora:latest-20240408",
+        "docker.io/balenalib/jn30b-nano-fedora:latest-20240411",
         "docker.io/balenalib/jn30b-nano-fedora:latest",
-        "docker.io/balenalib/jn30b-nano-fedora:run-20240408",
+        "docker.io/balenalib/jn30b-nano-fedora:run-20240411",
         "docker.io/balenalib/jn30b-nano-fedora:run",
-        "docker.io/balenalib/jn30b-nano-fedora:20240408"
+        "docker.io/balenalib/jn30b-nano-fedora:20240411"
       ]
     },
     "jn30b-nano-fedora-38-build": {
@@ -99,11 +67,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jn30b-nano-fedora:38-build-20240408",
+        "docker.io/balenalib/jn30b-nano-fedora:38-build-20240411",
         "docker.io/balenalib/jn30b-nano-fedora:38-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jn30b-nano-fedora:38-build-20240408",
+        "docker.io/balenalib/jn30b-nano-fedora:38-build-20240411",
         "docker.io/balenalib/jn30b-nano-fedora:38-build"
       ]
     },
@@ -112,15 +80,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jn30b-nano-fedora:38-run-20240408",
+        "docker.io/balenalib/jn30b-nano-fedora:38-run-20240411",
         "docker.io/balenalib/jn30b-nano-fedora:38-run",
-        "docker.io/balenalib/jn30b-nano-fedora:38-20240408",
+        "docker.io/balenalib/jn30b-nano-fedora:38-20240411",
         "docker.io/balenalib/jn30b-nano-fedora:38"
       ],
       "cache_from": [
-        "docker.io/balenalib/jn30b-nano-fedora:38-run-20240408",
+        "docker.io/balenalib/jn30b-nano-fedora:38-run-20240411",
         "docker.io/balenalib/jn30b-nano-fedora:38-run",
-        "docker.io/balenalib/jn30b-nano-fedora:38-20240408",
+        "docker.io/balenalib/jn30b-nano-fedora:38-20240411",
         "docker.io/balenalib/jn30b-nano-fedora:38"
       ]
     }

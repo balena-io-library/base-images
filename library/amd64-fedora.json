@@ -2,8 +2,6 @@
   "group": {
     "default": {
       "targets": [
-        "amd64-fedora-36-build",
-        "amd64-fedora-36-run",
         "amd64-fedora-37-build",
         "amd64-fedora-37-run",
         "amd64-fedora-38-build",
@@ -12,54 +10,24 @@
     }
   },
   "target": {
-    "amd64-fedora-36-build": {
-      "context": "amd64/fedora/36/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/amd64",
-      "tags": [
-        "docker.io/balenalib/amd64-fedora:36-build-20240408",
-        "docker.io/balenalib/amd64-fedora:36-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/amd64-fedora:36-build-20240408",
-        "docker.io/balenalib/amd64-fedora:36-build"
-      ]
-    },
-    "amd64-fedora-36-run": {
-      "context": "amd64/fedora/36/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/amd64",
-      "tags": [
-        "docker.io/balenalib/amd64-fedora:36-run-20240408",
-        "docker.io/balenalib/amd64-fedora:36-run",
-        "docker.io/balenalib/amd64-fedora:36-20240408",
-        "docker.io/balenalib/amd64-fedora:36"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/amd64-fedora:36-run-20240408",
-        "docker.io/balenalib/amd64-fedora:36-run",
-        "docker.io/balenalib/amd64-fedora:36-20240408",
-        "docker.io/balenalib/amd64-fedora:36"
-      ]
-    },
     "amd64-fedora-37-build": {
       "context": "amd64/fedora/37/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/amd64",
       "tags": [
-        "docker.io/balenalib/amd64-fedora:37-build-20240408",
+        "docker.io/balenalib/amd64-fedora:37-build-20240411",
         "docker.io/balenalib/amd64-fedora:37-build",
-        "docker.io/balenalib/amd64-fedora:latest-build-20240408",
+        "docker.io/balenalib/amd64-fedora:latest-build-20240411",
         "docker.io/balenalib/amd64-fedora:latest-build",
-        "docker.io/balenalib/amd64-fedora:build-20240408",
+        "docker.io/balenalib/amd64-fedora:build-20240411",
         "docker.io/balenalib/amd64-fedora:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/amd64-fedora:37-build-20240408",
+        "docker.io/balenalib/amd64-fedora:37-build-20240411",
         "docker.io/balenalib/amd64-fedora:37-build",
-        "docker.io/balenalib/amd64-fedora:latest-build-20240408",
+        "docker.io/balenalib/amd64-fedora:latest-build-20240411",
         "docker.io/balenalib/amd64-fedora:latest-build",
-        "docker.io/balenalib/amd64-fedora:build-20240408",
+        "docker.io/balenalib/amd64-fedora:build-20240411",
         "docker.io/balenalib/amd64-fedora:build"
       ]
     },
@@ -68,30 +36,30 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/amd64",
       "tags": [
-        "docker.io/balenalib/amd64-fedora:37-run-20240408",
+        "docker.io/balenalib/amd64-fedora:37-run-20240411",
         "docker.io/balenalib/amd64-fedora:37-run",
-        "docker.io/balenalib/amd64-fedora:37-20240408",
+        "docker.io/balenalib/amd64-fedora:37-20240411",
         "docker.io/balenalib/amd64-fedora:37",
-        "docker.io/balenalib/amd64-fedora:latest-run-20240408",
+        "docker.io/balenalib/amd64-fedora:latest-run-20240411",
         "docker.io/balenalib/amd64-fedora:latest-run",
-        "docker.io/balenalib/amd64-fedora:latest-20240408",
+        "docker.io/balenalib/amd64-fedora:latest-20240411",
         "docker.io/balenalib/amd64-fedora:latest",
-        "docker.io/balenalib/amd64-fedora:run-20240408",
+        "docker.io/balenalib/amd64-fedora:run-20240411",
         "docker.io/balenalib/amd64-fedora:run",
-        "docker.io/balenalib/amd64-fedora:20240408"
+        "docker.io/balenalib/amd64-fedora:20240411"
       ],
       "cache_from": [
-        "docker.io/balenalib/amd64-fedora:37-run-20240408",
+        "docker.io/balenalib/amd64-fedora:37-run-20240411",
         "docker.io/balenalib/amd64-fedora:37-run",
-        "docker.io/balenalib/amd64-fedora:37-20240408",
+        "docker.io/balenalib/amd64-fedora:37-20240411",
         "docker.io/balenalib/amd64-fedora:37",
-        "docker.io/balenalib/amd64-fedora:latest-run-20240408",
+        "docker.io/balenalib/amd64-fedora:latest-run-20240411",
         "docker.io/balenalib/amd64-fedora:latest-run",
-        "docker.io/balenalib/amd64-fedora:latest-20240408",
+        "docker.io/balenalib/amd64-fedora:latest-20240411",
         "docker.io/balenalib/amd64-fedora:latest",
-        "docker.io/balenalib/amd64-fedora:run-20240408",
+        "docker.io/balenalib/amd64-fedora:run-20240411",
         "docker.io/balenalib/amd64-fedora:run",
-        "docker.io/balenalib/amd64-fedora:20240408"
+        "docker.io/balenalib/amd64-fedora:20240411"
       ]
     },
     "amd64-fedora-38-build": {
@@ -99,11 +67,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/amd64",
       "tags": [
-        "docker.io/balenalib/amd64-fedora:38-build-20240408",
+        "docker.io/balenalib/amd64-fedora:38-build-20240411",
         "docker.io/balenalib/amd64-fedora:38-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/amd64-fedora:38-build-20240408",
+        "docker.io/balenalib/amd64-fedora:38-build-20240411",
         "docker.io/balenalib/amd64-fedora:38-build"
       ]
     },
@@ -112,15 +80,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/amd64",
       "tags": [
-        "docker.io/balenalib/amd64-fedora:38-run-20240408",
+        "docker.io/balenalib/amd64-fedora:38-run-20240411",
         "docker.io/balenalib/amd64-fedora:38-run",
-        "docker.io/balenalib/amd64-fedora:38-20240408",
+        "docker.io/balenalib/amd64-fedora:38-20240411",
         "docker.io/balenalib/amd64-fedora:38"
       ],
       "cache_from": [
-        "docker.io/balenalib/amd64-fedora:38-run-20240408",
+        "docker.io/balenalib/amd64-fedora:38-run-20240411",
         "docker.io/balenalib/amd64-fedora:38-run",
-        "docker.io/balenalib/amd64-fedora:38-20240408",
+        "docker.io/balenalib/amd64-fedora:38-20240411",
         "docker.io/balenalib/amd64-fedora:38"
       ]
     }
