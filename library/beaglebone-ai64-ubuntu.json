@@ -1,0 +1,160 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "beaglebone-ai64-ubuntu-jammy-build",
+        "beaglebone-ai64-ubuntu-jammy-run",
+        "beaglebone-ai64-ubuntu-focal-build",
+        "beaglebone-ai64-ubuntu-focal-run",
+        "beaglebone-ai64-ubuntu-xenial-build",
+        "beaglebone-ai64-ubuntu-xenial-run",
+        "beaglebone-ai64-ubuntu-bionic-build",
+        "beaglebone-ai64-ubuntu-bionic-run"
+      ]
+    }
+  },
+  "target": {
+    "beaglebone-ai64-ubuntu-jammy-build": {
+      "context": "device-base/beaglebone-ai64/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:jammy-build-20240422",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:jammy-build",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:latest-build-20240422",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:latest-build",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:build-20240422",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:jammy-build-20240422",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:jammy-build",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:latest-build-20240422",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:latest-build",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:build-20240422",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:build"
+      ]
+    },
+    "beaglebone-ai64-ubuntu-jammy-run": {
+      "context": "device-base/beaglebone-ai64/ubuntu/jammy/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:jammy-run-20240422",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:jammy-run",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:jammy-20240422",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:jammy",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:latest-run-20240422",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:latest-run",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:latest-20240422",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:latest",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:run-20240422",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:run",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:20240422"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:jammy-run-20240422",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:jammy-run",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:jammy-20240422",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:jammy",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:latest-run-20240422",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:latest-run",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:latest-20240422",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:latest",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:run-20240422",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:run",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:20240422"
+      ]
+    },
+    "beaglebone-ai64-ubuntu-focal-build": {
+      "context": "device-base/beaglebone-ai64/ubuntu/focal/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:focal-build-20240422",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:focal-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:focal-build-20240422",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:focal-build"
+      ]
+    },
+    "beaglebone-ai64-ubuntu-focal-run": {
+      "context": "device-base/beaglebone-ai64/ubuntu/focal/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:focal-run-20240422",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:focal-run",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:focal-20240422",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:focal"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:focal-run-20240422",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:focal-run",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:focal-20240422",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:focal"
+      ]
+    },
+    "beaglebone-ai64-ubuntu-xenial-build": {
+      "context": "device-base/beaglebone-ai64/ubuntu/xenial/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:xenial-build-20240422",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:xenial-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:xenial-build-20240422",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:xenial-build"
+      ]
+    },
+    "beaglebone-ai64-ubuntu-xenial-run": {
+      "context": "device-base/beaglebone-ai64/ubuntu/xenial/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:xenial-run-20240422",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:xenial-run",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:xenial-20240422",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:xenial"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:xenial-run-20240422",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:xenial-run",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:xenial-20240422",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:xenial"
+      ]
+    },
+    "beaglebone-ai64-ubuntu-bionic-build": {
+      "context": "device-base/beaglebone-ai64/ubuntu/bionic/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:bionic-build-20240422",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:bionic-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:bionic-build-20240422",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:bionic-build"
+      ]
+    },
+    "beaglebone-ai64-ubuntu-bionic-run": {
+      "context": "device-base/beaglebone-ai64/ubuntu/bionic/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:bionic-run-20240422",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:bionic-run",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:bionic-20240422",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:bionic"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:bionic-run-20240422",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:bionic-run",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:bionic-20240422",
+        "docker.io/balenalib/beaglebone-ai64-ubuntu:bionic"
+      ]
+    }
+  }
+}
