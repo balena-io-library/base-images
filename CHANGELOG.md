@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.112 - 2024-04-25
+
+* Update docker/bake-action digest to 73b0efa [Self-hosted Renovate Bot]
+
 ## 2.8.111 - 2024-04-22
 
 * Update actions/upload-artifact action to v4.3.3 [Self-hosted Renovate Bot]
