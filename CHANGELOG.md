@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.8.115 - 2024-04-29
+
+* Update docker/bake-action digest to 7a5dfed [Self-hosted Renovate Bot]
+
 ## 2.8.114 - 2024-04-29
 
 * Lock file maintenance [Self-hosted Renovate Bot]
