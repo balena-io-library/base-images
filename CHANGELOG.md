@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.9.1 - 2024-05-08
+
+* Update actions/checkout digest to 44c2b7a [Self-hosted Renovate Bot]
+
 ## 2.9.0 - 2024-05-08
 
 * Generate one workflow per device or arch [Kyle Harding]
