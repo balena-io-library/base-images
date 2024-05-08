@@ -19,19 +19,19 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/nanopi-r2s-ubuntu:jammy-build-20240429",
+        "docker.io/balenalib/nanopi-r2s-ubuntu:jammy-build-20240508",
         "docker.io/balenalib/nanopi-r2s-ubuntu:jammy-build",
-        "docker.io/balenalib/nanopi-r2s-ubuntu:latest-build-20240429",
+        "docker.io/balenalib/nanopi-r2s-ubuntu:latest-build-20240508",
         "docker.io/balenalib/nanopi-r2s-ubuntu:latest-build",
-        "docker.io/balenalib/nanopi-r2s-ubuntu:build-20240429",
+        "docker.io/balenalib/nanopi-r2s-ubuntu:build-20240508",
         "docker.io/balenalib/nanopi-r2s-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/nanopi-r2s-ubuntu:jammy-build-20240429",
+        "docker.io/balenalib/nanopi-r2s-ubuntu:jammy-build-20240508",
         "docker.io/balenalib/nanopi-r2s-ubuntu:jammy-build",
-        "docker.io/balenalib/nanopi-r2s-ubuntu:latest-build-20240429",
+        "docker.io/balenalib/nanopi-r2s-ubuntu:latest-build-20240508",
         "docker.io/balenalib/nanopi-r2s-ubuntu:latest-build",
-        "docker.io/balenalib/nanopi-r2s-ubuntu:build-20240429",
+        "docker.io/balenalib/nanopi-r2s-ubuntu:build-20240508",
         "docker.io/balenalib/nanopi-r2s-ubuntu:build"
       ]
     },
@@ -40,30 +40,30 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/nanopi-r2s-ubuntu:jammy-run-20240429",
+        "docker.io/balenalib/nanopi-r2s-ubuntu:jammy-run-20240508",
         "docker.io/balenalib/nanopi-r2s-ubuntu:jammy-run",
-        "docker.io/balenalib/nanopi-r2s-ubuntu:jammy-20240429",
+        "docker.io/balenalib/nanopi-r2s-ubuntu:jammy-20240508",
         "docker.io/balenalib/nanopi-r2s-ubuntu:jammy",
-        "docker.io/balenalib/nanopi-r2s-ubuntu:latest-run-20240429",
+        "docker.io/balenalib/nanopi-r2s-ubuntu:latest-run-20240508",
         "docker.io/balenalib/nanopi-r2s-ubuntu:latest-run",
-        "docker.io/balenalib/nanopi-r2s-ubuntu:latest-20240429",
+        "docker.io/balenalib/nanopi-r2s-ubuntu:latest-20240508",
         "docker.io/balenalib/nanopi-r2s-ubuntu:latest",
-        "docker.io/balenalib/nanopi-r2s-ubuntu:run-20240429",
+        "docker.io/balenalib/nanopi-r2s-ubuntu:run-20240508",
         "docker.io/balenalib/nanopi-r2s-ubuntu:run",
-        "docker.io/balenalib/nanopi-r2s-ubuntu:20240429"
+        "docker.io/balenalib/nanopi-r2s-ubuntu:20240508"
       ],
       "cache_from": [
-        "docker.io/balenalib/nanopi-r2s-ubuntu:jammy-run-20240429",
+        "docker.io/balenalib/nanopi-r2s-ubuntu:jammy-run-20240508",
         "docker.io/balenalib/nanopi-r2s-ubuntu:jammy-run",
-        "docker.io/balenalib/nanopi-r2s-ubuntu:jammy-20240429",
+        "docker.io/balenalib/nanopi-r2s-ubuntu:jammy-20240508",
         "docker.io/balenalib/nanopi-r2s-ubuntu:jammy",
-        "docker.io/balenalib/nanopi-r2s-ubuntu:latest-run-20240429",
+        "docker.io/balenalib/nanopi-r2s-ubuntu:latest-run-20240508",
         "docker.io/balenalib/nanopi-r2s-ubuntu:latest-run",
-        "docker.io/balenalib/nanopi-r2s-ubuntu:latest-20240429",
+        "docker.io/balenalib/nanopi-r2s-ubuntu:latest-20240508",
         "docker.io/balenalib/nanopi-r2s-ubuntu:latest",
-        "docker.io/balenalib/nanopi-r2s-ubuntu:run-20240429",
+        "docker.io/balenalib/nanopi-r2s-ubuntu:run-20240508",
         "docker.io/balenalib/nanopi-r2s-ubuntu:run",
-        "docker.io/balenalib/nanopi-r2s-ubuntu:20240429"
+        "docker.io/balenalib/nanopi-r2s-ubuntu:20240508"
       ]
     },
     "nanopi-r2s-ubuntu-focal-build": {
@@ -71,11 +71,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/nanopi-r2s-ubuntu:focal-build-20240429",
+        "docker.io/balenalib/nanopi-r2s-ubuntu:focal-build-20240508",
         "docker.io/balenalib/nanopi-r2s-ubuntu:focal-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/nanopi-r2s-ubuntu:focal-build-20240429",
+        "docker.io/balenalib/nanopi-r2s-ubuntu:focal-build-20240508",
         "docker.io/balenalib/nanopi-r2s-ubuntu:focal-build"
       ]
     },
@@ -84,15 +84,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/nanopi-r2s-ubuntu:focal-run-20240429",
+        "docker.io/balenalib/nanopi-r2s-ubuntu:focal-run-20240508",
         "docker.io/balenalib/nanopi-r2s-ubuntu:focal-run",
-        "docker.io/balenalib/nanopi-r2s-ubuntu:focal-20240429",
+        "docker.io/balenalib/nanopi-r2s-ubuntu:focal-20240508",
         "docker.io/balenalib/nanopi-r2s-ubuntu:focal"
       ],
       "cache_from": [
-        "docker.io/balenalib/nanopi-r2s-ubuntu:focal-run-20240429",
+        "docker.io/balenalib/nanopi-r2s-ubuntu:focal-run-20240508",
         "docker.io/balenalib/nanopi-r2s-ubuntu:focal-run",
-        "docker.io/balenalib/nanopi-r2s-ubuntu:focal-20240429",
+        "docker.io/balenalib/nanopi-r2s-ubuntu:focal-20240508",
         "docker.io/balenalib/nanopi-r2s-ubuntu:focal"
       ]
     },
@@ -101,11 +101,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/nanopi-r2s-ubuntu:xenial-build-20240429",
+        "docker.io/balenalib/nanopi-r2s-ubuntu:xenial-build-20240508",
         "docker.io/balenalib/nanopi-r2s-ubuntu:xenial-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/nanopi-r2s-ubuntu:xenial-build-20240429",
+        "docker.io/balenalib/nanopi-r2s-ubuntu:xenial-build-20240508",
         "docker.io/balenalib/nanopi-r2s-ubuntu:xenial-build"
       ]
     },
@@ -114,15 +114,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/nanopi-r2s-ubuntu:xenial-run-20240429",
+        "docker.io/balenalib/nanopi-r2s-ubuntu:xenial-run-20240508",
         "docker.io/balenalib/nanopi-r2s-ubuntu:xenial-run",
-        "docker.io/balenalib/nanopi-r2s-ubuntu:xenial-20240429",
+        "docker.io/balenalib/nanopi-r2s-ubuntu:xenial-20240508",
         "docker.io/balenalib/nanopi-r2s-ubuntu:xenial"
       ],
       "cache_from": [
-        "docker.io/balenalib/nanopi-r2s-ubuntu:xenial-run-20240429",
+        "docker.io/balenalib/nanopi-r2s-ubuntu:xenial-run-20240508",
         "docker.io/balenalib/nanopi-r2s-ubuntu:xenial-run",
-        "docker.io/balenalib/nanopi-r2s-ubuntu:xenial-20240429",
+        "docker.io/balenalib/nanopi-r2s-ubuntu:xenial-20240508",
         "docker.io/balenalib/nanopi-r2s-ubuntu:xenial"
       ]
     },
@@ -131,11 +131,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/nanopi-r2s-ubuntu:bionic-build-20240429",
+        "docker.io/balenalib/nanopi-r2s-ubuntu:bionic-build-20240508",
         "docker.io/balenalib/nanopi-r2s-ubuntu:bionic-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/nanopi-r2s-ubuntu:bionic-build-20240429",
+        "docker.io/balenalib/nanopi-r2s-ubuntu:bionic-build-20240508",
         "docker.io/balenalib/nanopi-r2s-ubuntu:bionic-build"
       ]
     },
@@ -144,15 +144,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/nanopi-r2s-ubuntu:bionic-run-20240429",
+        "docker.io/balenalib/nanopi-r2s-ubuntu:bionic-run-20240508",
         "docker.io/balenalib/nanopi-r2s-ubuntu:bionic-run",
-        "docker.io/balenalib/nanopi-r2s-ubuntu:bionic-20240429",
+        "docker.io/balenalib/nanopi-r2s-ubuntu:bionic-20240508",
         "docker.io/balenalib/nanopi-r2s-ubuntu:bionic"
       ],
       "cache_from": [
-        "docker.io/balenalib/nanopi-r2s-ubuntu:bionic-run-20240429",
+        "docker.io/balenalib/nanopi-r2s-ubuntu:bionic-run-20240508",
         "docker.io/balenalib/nanopi-r2s-ubuntu:bionic-run",
-        "docker.io/balenalib/nanopi-r2s-ubuntu:bionic-20240429",
+        "docker.io/balenalib/nanopi-r2s-ubuntu:bionic-20240508",
         "docker.io/balenalib/nanopi-r2s-ubuntu:bionic"
       ]
     }

@@ -1,0 +1,96 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "revpi-connect-4-fedora-37-build",
+        "revpi-connect-4-fedora-37-run",
+        "revpi-connect-4-fedora-38-build",
+        "revpi-connect-4-fedora-38-run"
+      ]
+    }
+  },
+  "target": {
+    "revpi-connect-4-fedora-37-build": {
+      "context": "device-base/revpi-connect-4/fedora/37/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/revpi-connect-4-fedora:37-build-20240508",
+        "docker.io/balenalib/revpi-connect-4-fedora:37-build",
+        "docker.io/balenalib/revpi-connect-4-fedora:latest-build-20240508",
+        "docker.io/balenalib/revpi-connect-4-fedora:latest-build",
+        "docker.io/balenalib/revpi-connect-4-fedora:build-20240508",
+        "docker.io/balenalib/revpi-connect-4-fedora:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/revpi-connect-4-fedora:37-build-20240508",
+        "docker.io/balenalib/revpi-connect-4-fedora:37-build",
+        "docker.io/balenalib/revpi-connect-4-fedora:latest-build-20240508",
+        "docker.io/balenalib/revpi-connect-4-fedora:latest-build",
+        "docker.io/balenalib/revpi-connect-4-fedora:build-20240508",
+        "docker.io/balenalib/revpi-connect-4-fedora:build"
+      ]
+    },
+    "revpi-connect-4-fedora-37-run": {
+      "context": "device-base/revpi-connect-4/fedora/37/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/revpi-connect-4-fedora:37-run-20240508",
+        "docker.io/balenalib/revpi-connect-4-fedora:37-run",
+        "docker.io/balenalib/revpi-connect-4-fedora:37-20240508",
+        "docker.io/balenalib/revpi-connect-4-fedora:37",
+        "docker.io/balenalib/revpi-connect-4-fedora:latest-run-20240508",
+        "docker.io/balenalib/revpi-connect-4-fedora:latest-run",
+        "docker.io/balenalib/revpi-connect-4-fedora:latest-20240508",
+        "docker.io/balenalib/revpi-connect-4-fedora:latest",
+        "docker.io/balenalib/revpi-connect-4-fedora:run-20240508",
+        "docker.io/balenalib/revpi-connect-4-fedora:run",
+        "docker.io/balenalib/revpi-connect-4-fedora:20240508"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/revpi-connect-4-fedora:37-run-20240508",
+        "docker.io/balenalib/revpi-connect-4-fedora:37-run",
+        "docker.io/balenalib/revpi-connect-4-fedora:37-20240508",
+        "docker.io/balenalib/revpi-connect-4-fedora:37",
+        "docker.io/balenalib/revpi-connect-4-fedora:latest-run-20240508",
+        "docker.io/balenalib/revpi-connect-4-fedora:latest-run",
+        "docker.io/balenalib/revpi-connect-4-fedora:latest-20240508",
+        "docker.io/balenalib/revpi-connect-4-fedora:latest",
+        "docker.io/balenalib/revpi-connect-4-fedora:run-20240508",
+        "docker.io/balenalib/revpi-connect-4-fedora:run",
+        "docker.io/balenalib/revpi-connect-4-fedora:20240508"
+      ]
+    },
+    "revpi-connect-4-fedora-38-build": {
+      "context": "device-base/revpi-connect-4/fedora/38/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/revpi-connect-4-fedora:38-build-20240508",
+        "docker.io/balenalib/revpi-connect-4-fedora:38-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/revpi-connect-4-fedora:38-build-20240508",
+        "docker.io/balenalib/revpi-connect-4-fedora:38-build"
+      ]
+    },
+    "revpi-connect-4-fedora-38-run": {
+      "context": "device-base/revpi-connect-4/fedora/38/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/revpi-connect-4-fedora:38-run-20240508",
+        "docker.io/balenalib/revpi-connect-4-fedora:38-run",
+        "docker.io/balenalib/revpi-connect-4-fedora:38-20240508",
+        "docker.io/balenalib/revpi-connect-4-fedora:38"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/revpi-connect-4-fedora:38-run-20240508",
+        "docker.io/balenalib/revpi-connect-4-fedora:38-run",
+        "docker.io/balenalib/revpi-connect-4-fedora:38-20240508",
+        "docker.io/balenalib/revpi-connect-4-fedora:38"
+      ]
+    }
+  }
+}

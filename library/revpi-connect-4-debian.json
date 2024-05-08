@@ -1,0 +1,230 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "revpi-connect-4-debian-buster-build",
+        "revpi-connect-4-debian-buster-run",
+        "revpi-connect-4-debian-bullseye-build",
+        "revpi-connect-4-debian-bullseye-run",
+        "revpi-connect-4-debian-bookworm-build",
+        "revpi-connect-4-debian-bookworm-run",
+        "revpi-connect-4-debian-sid-build",
+        "revpi-connect-4-debian-sid-run"
+      ]
+    }
+  },
+  "target": {
+    "revpi-connect-4-debian-buster-build": {
+      "context": "device-base/revpi-connect-4/debian/buster/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/revpi-connect-4-debian:buster-build-20240508",
+        "docker.io/balenalib/revpi-connect-4-debian:buster-build",
+        "docker.io/balenalib/revpi-connect-4:buster-build-20240508",
+        "docker.io/balenalib/revpi-connect-4:buster-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/revpi-connect-4-debian:buster-build-20240508",
+        "docker.io/balenalib/revpi-connect-4-debian:buster-build",
+        "docker.io/balenalib/revpi-connect-4:buster-build-20240508",
+        "docker.io/balenalib/revpi-connect-4:buster-build"
+      ]
+    },
+    "revpi-connect-4-debian-buster-run": {
+      "context": "device-base/revpi-connect-4/debian/buster/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/revpi-connect-4-debian:buster-run-20240508",
+        "docker.io/balenalib/revpi-connect-4-debian:buster-run",
+        "docker.io/balenalib/revpi-connect-4-debian:buster-20240508",
+        "docker.io/balenalib/revpi-connect-4-debian:buster",
+        "docker.io/balenalib/revpi-connect-4:buster-run-20240508",
+        "docker.io/balenalib/revpi-connect-4:buster-run",
+        "docker.io/balenalib/revpi-connect-4:buster-20240508",
+        "docker.io/balenalib/revpi-connect-4:buster"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/revpi-connect-4-debian:buster-run-20240508",
+        "docker.io/balenalib/revpi-connect-4-debian:buster-run",
+        "docker.io/balenalib/revpi-connect-4-debian:buster-20240508",
+        "docker.io/balenalib/revpi-connect-4-debian:buster",
+        "docker.io/balenalib/revpi-connect-4:buster-run-20240508",
+        "docker.io/balenalib/revpi-connect-4:buster-run",
+        "docker.io/balenalib/revpi-connect-4:buster-20240508",
+        "docker.io/balenalib/revpi-connect-4:buster"
+      ]
+    },
+    "revpi-connect-4-debian-bullseye-build": {
+      "context": "device-base/revpi-connect-4/debian/bullseye/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/revpi-connect-4-debian:bullseye-build-20240508",
+        "docker.io/balenalib/revpi-connect-4-debian:bullseye-build",
+        "docker.io/balenalib/revpi-connect-4-debian:latest-build-20240508",
+        "docker.io/balenalib/revpi-connect-4-debian:latest-build",
+        "docker.io/balenalib/revpi-connect-4-debian:build-20240508",
+        "docker.io/balenalib/revpi-connect-4-debian:build",
+        "docker.io/balenalib/revpi-connect-4:bullseye-build-20240508",
+        "docker.io/balenalib/revpi-connect-4:bullseye-build",
+        "docker.io/balenalib/revpi-connect-4:latest-build-20240508",
+        "docker.io/balenalib/revpi-connect-4:latest-build",
+        "docker.io/balenalib/revpi-connect-4:build-20240508",
+        "docker.io/balenalib/revpi-connect-4:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/revpi-connect-4-debian:bullseye-build-20240508",
+        "docker.io/balenalib/revpi-connect-4-debian:bullseye-build",
+        "docker.io/balenalib/revpi-connect-4-debian:latest-build-20240508",
+        "docker.io/balenalib/revpi-connect-4-debian:latest-build",
+        "docker.io/balenalib/revpi-connect-4-debian:build-20240508",
+        "docker.io/balenalib/revpi-connect-4-debian:build",
+        "docker.io/balenalib/revpi-connect-4:bullseye-build-20240508",
+        "docker.io/balenalib/revpi-connect-4:bullseye-build",
+        "docker.io/balenalib/revpi-connect-4:latest-build-20240508",
+        "docker.io/balenalib/revpi-connect-4:latest-build",
+        "docker.io/balenalib/revpi-connect-4:build-20240508",
+        "docker.io/balenalib/revpi-connect-4:build"
+      ]
+    },
+    "revpi-connect-4-debian-bullseye-run": {
+      "context": "device-base/revpi-connect-4/debian/bullseye/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/revpi-connect-4-debian:bullseye-run-20240508",
+        "docker.io/balenalib/revpi-connect-4-debian:bullseye-run",
+        "docker.io/balenalib/revpi-connect-4-debian:bullseye-20240508",
+        "docker.io/balenalib/revpi-connect-4-debian:bullseye",
+        "docker.io/balenalib/revpi-connect-4-debian:latest-run-20240508",
+        "docker.io/balenalib/revpi-connect-4-debian:latest-run",
+        "docker.io/balenalib/revpi-connect-4-debian:latest-20240508",
+        "docker.io/balenalib/revpi-connect-4-debian:latest",
+        "docker.io/balenalib/revpi-connect-4-debian:run-20240508",
+        "docker.io/balenalib/revpi-connect-4-debian:run",
+        "docker.io/balenalib/revpi-connect-4-debian:20240508",
+        "docker.io/balenalib/revpi-connect-4:bullseye-run-20240508",
+        "docker.io/balenalib/revpi-connect-4:bullseye-run",
+        "docker.io/balenalib/revpi-connect-4:bullseye-20240508",
+        "docker.io/balenalib/revpi-connect-4:bullseye",
+        "docker.io/balenalib/revpi-connect-4:latest-run-20240508",
+        "docker.io/balenalib/revpi-connect-4:latest-run",
+        "docker.io/balenalib/revpi-connect-4:latest-20240508",
+        "docker.io/balenalib/revpi-connect-4:latest",
+        "docker.io/balenalib/revpi-connect-4:run-20240508",
+        "docker.io/balenalib/revpi-connect-4:run",
+        "docker.io/balenalib/revpi-connect-4:20240508"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/revpi-connect-4-debian:bullseye-run-20240508",
+        "docker.io/balenalib/revpi-connect-4-debian:bullseye-run",
+        "docker.io/balenalib/revpi-connect-4-debian:bullseye-20240508",
+        "docker.io/balenalib/revpi-connect-4-debian:bullseye",
+        "docker.io/balenalib/revpi-connect-4-debian:latest-run-20240508",
+        "docker.io/balenalib/revpi-connect-4-debian:latest-run",
+        "docker.io/balenalib/revpi-connect-4-debian:latest-20240508",
+        "docker.io/balenalib/revpi-connect-4-debian:latest",
+        "docker.io/balenalib/revpi-connect-4-debian:run-20240508",
+        "docker.io/balenalib/revpi-connect-4-debian:run",
+        "docker.io/balenalib/revpi-connect-4-debian:20240508",
+        "docker.io/balenalib/revpi-connect-4:bullseye-run-20240508",
+        "docker.io/balenalib/revpi-connect-4:bullseye-run",
+        "docker.io/balenalib/revpi-connect-4:bullseye-20240508",
+        "docker.io/balenalib/revpi-connect-4:bullseye",
+        "docker.io/balenalib/revpi-connect-4:latest-run-20240508",
+        "docker.io/balenalib/revpi-connect-4:latest-run",
+        "docker.io/balenalib/revpi-connect-4:latest-20240508",
+        "docker.io/balenalib/revpi-connect-4:latest",
+        "docker.io/balenalib/revpi-connect-4:run-20240508",
+        "docker.io/balenalib/revpi-connect-4:run",
+        "docker.io/balenalib/revpi-connect-4:20240508"
+      ]
+    },
+    "revpi-connect-4-debian-bookworm-build": {
+      "context": "device-base/revpi-connect-4/debian/bookworm/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/revpi-connect-4-debian:bookworm-build-20240508",
+        "docker.io/balenalib/revpi-connect-4-debian:bookworm-build",
+        "docker.io/balenalib/revpi-connect-4:bookworm-build-20240508",
+        "docker.io/balenalib/revpi-connect-4:bookworm-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/revpi-connect-4-debian:bookworm-build-20240508",
+        "docker.io/balenalib/revpi-connect-4-debian:bookworm-build",
+        "docker.io/balenalib/revpi-connect-4:bookworm-build-20240508",
+        "docker.io/balenalib/revpi-connect-4:bookworm-build"
+      ]
+    },
+    "revpi-connect-4-debian-bookworm-run": {
+      "context": "device-base/revpi-connect-4/debian/bookworm/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/revpi-connect-4-debian:bookworm-run-20240508",
+        "docker.io/balenalib/revpi-connect-4-debian:bookworm-run",
+        "docker.io/balenalib/revpi-connect-4-debian:bookworm-20240508",
+        "docker.io/balenalib/revpi-connect-4-debian:bookworm",
+        "docker.io/balenalib/revpi-connect-4:bookworm-run-20240508",
+        "docker.io/balenalib/revpi-connect-4:bookworm-run",
+        "docker.io/balenalib/revpi-connect-4:bookworm-20240508",
+        "docker.io/balenalib/revpi-connect-4:bookworm"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/revpi-connect-4-debian:bookworm-run-20240508",
+        "docker.io/balenalib/revpi-connect-4-debian:bookworm-run",
+        "docker.io/balenalib/revpi-connect-4-debian:bookworm-20240508",
+        "docker.io/balenalib/revpi-connect-4-debian:bookworm",
+        "docker.io/balenalib/revpi-connect-4:bookworm-run-20240508",
+        "docker.io/balenalib/revpi-connect-4:bookworm-run",
+        "docker.io/balenalib/revpi-connect-4:bookworm-20240508",
+        "docker.io/balenalib/revpi-connect-4:bookworm"
+      ]
+    },
+    "revpi-connect-4-debian-sid-build": {
+      "context": "device-base/revpi-connect-4/debian/sid/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/revpi-connect-4-debian:sid-build-20240508",
+        "docker.io/balenalib/revpi-connect-4-debian:sid-build",
+        "docker.io/balenalib/revpi-connect-4:sid-build-20240508",
+        "docker.io/balenalib/revpi-connect-4:sid-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/revpi-connect-4-debian:sid-build-20240508",
+        "docker.io/balenalib/revpi-connect-4-debian:sid-build",
+        "docker.io/balenalib/revpi-connect-4:sid-build-20240508",
+        "docker.io/balenalib/revpi-connect-4:sid-build"
+      ]
+    },
+    "revpi-connect-4-debian-sid-run": {
+      "context": "device-base/revpi-connect-4/debian/sid/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/revpi-connect-4-debian:sid-run-20240508",
+        "docker.io/balenalib/revpi-connect-4-debian:sid-run",
+        "docker.io/balenalib/revpi-connect-4-debian:sid-20240508",
+        "docker.io/balenalib/revpi-connect-4-debian:sid",
+        "docker.io/balenalib/revpi-connect-4:sid-run-20240508",
+        "docker.io/balenalib/revpi-connect-4:sid-run",
+        "docker.io/balenalib/revpi-connect-4:sid-20240508",
+        "docker.io/balenalib/revpi-connect-4:sid"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/revpi-connect-4-debian:sid-run-20240508",
+        "docker.io/balenalib/revpi-connect-4-debian:sid-run",
+        "docker.io/balenalib/revpi-connect-4-debian:sid-20240508",
+        "docker.io/balenalib/revpi-connect-4-debian:sid",
+        "docker.io/balenalib/revpi-connect-4:sid-run-20240508",
+        "docker.io/balenalib/revpi-connect-4:sid-run",
+        "docker.io/balenalib/revpi-connect-4:sid-20240508",
+        "docker.io/balenalib/revpi-connect-4:sid"
+      ]
+    }
+  }
+}
