@@ -1,0 +1,35 @@
+name: Bake all
+'on':
+  workflow_dispatch:
+  # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
+  schedule:
+    # runs at 3:12 only on Saturdays
+    - cron: '12 3 * * 6'
+
+# Workflows below should be limited to one at a time
+# by the concurency group in the workflow templates.
+jobs:
+  bake-aarch64:
+    name: Bake aarch64
+    uses: ./.github/workflows/bake-aarch64.yml
+    secrets: inherit
+
+  bake-amd64:
+    name: Bake amd64
+    uses: ./.github/workflows/bake-amd64.yml
+    secrets: inherit
+
+  bake-armv7hf:
+    name: Bake armv7hf
+    uses: ./.github/workflows/bake-armv7hf.yml
+    secrets: inherit
+
+  bake-i386:
+    name: Bake i386
+    uses: ./.github/workflows/bake-i386.yml
+    secrets: inherit
+
+  bake-rpi:
+    name: Bake rpi
+    uses: ./.github/workflows/bake-rpi.yml
+    secrets: inherit
