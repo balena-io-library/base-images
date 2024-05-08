@@ -1,4 +1,4 @@
-name: Bake i386-debian
+name: Bake revpi-connect-4-alpine
 'on':
   workflow_dispatch:
     inputs:
@@ -7,14 +7,17 @@ name: Bake i386-debian
         required: false
         type: boolean
         default: false
-  schedule:
-    - cron: 28 17 6 * *
+  workflow_run:
+    workflows:
+      - Bake aarch64-alpine
+    types:
+      - completed
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true
 jobs:
-  prepare-i386-debian-golang:
-    name: Prepare i386-debian-golang
+  prepare-revpi-connect-4-alpine-golang:
+    name: Prepare revpi-connect-4-alpine-golang
     runs-on: ubuntu-latest
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -30,18 +33,18 @@ jobs:
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
     needs:
-      - bake-i386-debian
+      - bake-revpi-connect-4-alpine
     env:
-      LIBRARY: library/i386-debian-golang.json
-  bake-i386-debian-golang:
-    name: Bake i386-debian-golang
+      LIBRARY: library/revpi-connect-4-alpine-golang.json
+  bake-revpi-connect-4-alpine-golang:
+    name: Bake revpi-connect-4-alpine-golang
     runs-on: ubuntu-latest
     needs:
-      - prepare-i386-debian-golang
+      - prepare-revpi-connect-4-alpine-golang
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-i386-debian-golang.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-revpi-connect-4-alpine-golang.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -75,9 +78,9 @@ jobs:
           push: ${{ inputs.no-push != true }}
           provenance: false
     env:
-      LIBRARY: library/i386-debian-golang.json
-  prepare-i386-debian-openjdk:
-    name: Prepare i386-debian-openjdk
+      LIBRARY: library/revpi-connect-4-alpine-golang.json
+  prepare-revpi-connect-4-alpine-node:
+    name: Prepare revpi-connect-4-alpine-node
     runs-on: ubuntu-latest
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -93,18 +96,18 @@ jobs:
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
     needs:
-      - bake-i386-debian
+      - bake-revpi-connect-4-alpine
     env:
-      LIBRARY: library/i386-debian-openjdk.json
-  bake-i386-debian-openjdk:
-    name: Bake i386-debian-openjdk
+      LIBRARY: library/revpi-connect-4-alpine-node.json
+  bake-revpi-connect-4-alpine-node:
+    name: Bake revpi-connect-4-alpine-node
     runs-on: ubuntu-latest
     needs:
-      - prepare-i386-debian-openjdk
+      - prepare-revpi-connect-4-alpine-node
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-i386-debian-openjdk.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-revpi-connect-4-alpine-node.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -138,9 +141,9 @@ jobs:
           push: ${{ inputs.no-push != true }}
           provenance: false
     env:
-      LIBRARY: library/i386-debian-openjdk.json
-  prepare-i386-debian-python:
-    name: Prepare i386-debian-python
+      LIBRARY: library/revpi-connect-4-alpine-node.json
+  prepare-revpi-connect-4-alpine-python:
+    name: Prepare revpi-connect-4-alpine-python
     runs-on: ubuntu-latest
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -156,18 +159,18 @@ jobs:
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
     needs:
-      - bake-i386-debian
+      - bake-revpi-connect-4-alpine
     env:
-      LIBRARY: library/i386-debian-python.json
-  bake-i386-debian-python:
-    name: Bake i386-debian-python
+      LIBRARY: library/revpi-connect-4-alpine-python.json
+  bake-revpi-connect-4-alpine-python:
+    name: Bake revpi-connect-4-alpine-python
     runs-on: ubuntu-latest
     needs:
-      - prepare-i386-debian-python
+      - prepare-revpi-connect-4-alpine-python
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-i386-debian-python.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-revpi-connect-4-alpine-python.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -201,9 +204,9 @@ jobs:
           push: ${{ inputs.no-push != true }}
           provenance: false
     env:
-      LIBRARY: library/i386-debian-python.json
-  prepare-i386-debian:
-    name: Prepare i386-debian
+      LIBRARY: library/revpi-connect-4-alpine-python.json
+  prepare-revpi-connect-4-alpine:
+    name: Prepare revpi-connect-4-alpine
     runs-on: ubuntu-latest
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -219,16 +222,16 @@ jobs:
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
     env:
-      LIBRARY: library/i386-debian.json
-  bake-i386-debian:
-    name: Bake i386-debian
+      LIBRARY: library/revpi-connect-4-alpine.json
+  bake-revpi-connect-4-alpine:
+    name: Bake revpi-connect-4-alpine
     runs-on: ubuntu-latest
     needs:
-      - prepare-i386-debian
+      - prepare-revpi-connect-4-alpine
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-i386-debian.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-revpi-connect-4-alpine.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -262,4 +265,4 @@ jobs:
           push: ${{ inputs.no-push != true }}
           provenance: false
     env:
-      LIBRARY: library/i386-debian.json
+      LIBRARY: library/revpi-connect-4-alpine.json
