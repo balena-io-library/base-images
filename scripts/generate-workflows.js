@@ -34,45 +34,21 @@ const balena = getSdk({
 
 const workflows = {};
 function addToWorkflow(dest, context) {
-	const template = JSON.parse(JSON.stringify(workflowTemplate));
-	const workflow = _.merge(workflows[dest] || template, context.workflow);
+	const workflow = context.template;
 
-	function getRandomInt(min, max) {
-		min = Math.ceil(min);
-		max = Math.floor(max);
-		return Math.floor(Math.random() * (max - min + 1)) + min;
+	workflow.jobs.bake.strategy.matrix.target = `\${{ fromJSON(needs.prepare-${context.imageName}.outputs.bake-targets) }}`;
+
+	workflow.jobs[`prepare-${context.imageName}`] = workflow.jobs.prepare;
+	workflow.jobs[`bake-${context.imageName}`] = workflow.jobs.bake;
+
+	delete workflow.jobs.prepare;
+	delete workflow.jobs.bake;
+
+	if (workflows[dest]) {
+		workflows[dest] = _.merge(workflows[dest], workflow);
+	} else {
+		workflows[dest] = workflow;
 	}
-
-	if (workflow.on.schedule) {
-		// generate a random cron definition to avoid 1000s of jobs queued at once
-		// 0-59 minutes, 0-23 hours, 1-7 days of the month (first week)
-		const cronDefinition = `${getRandomInt(0, 59)} ${getRandomInt(
-			0,
-			23,
-		)} ${getRandomInt(1, 7)} * *`;
-		workflow.on.schedule = [{ cron: cronDefinition }];
-	}
-
-	const prepareJobSlug = `prepare-${context.imageName}`;
-	const bakeJobSlug = `bake-${context.imageName}`;
-
-	if (context.workflow.jobs?.prepare) {
-		workflow.jobs[prepareJobSlug] = _.merge(
-			template.jobs.prepare,
-			context.workflow.jobs.prepare,
-		);
-	}
-
-	if (context.workflow.jobs?.bake) {
-		workflow.jobs[bakeJobSlug] = _.merge(
-			template.jobs.bake,
-			context.workflow.jobs.bake,
-		);
-		workflow.jobs[bakeJobSlug].strategy.matrix.target =
-			`\${{ fromJSON(needs.${prepareJobSlug}.outputs.bake-targets) }}`;
-	}
-
-	workflows[dest] = workflow;
 }
 
 const BLUEPRINT_PATHS = {
@@ -86,11 +62,6 @@ const BLUEPRINT_PATHS = {
 };
 const CONTRACTS_PATH = path.join(__dirname, 'contracts/contracts');
 const DEST_DIR = path.join(__dirname, '../.github/workflows');
-
-const workflowTemplateFile = path.join(__dirname, 'workflows', 'bake.yml');
-const workflowTemplate = yaml.load(
-	fs.readFileSync(workflowTemplateFile, 'utf8'),
-);
 
 // Find and build all contracts from the contracts/ directory
 const allContracts = requireAll({
@@ -205,7 +176,7 @@ void (async () => {
 
 				console.log(`Generating ${json.slug}`);
 
-				const destination = path.join(DEST_DIR, json.path, json.filename);
+				const destination = path.join(DEST_DIR, json.path, json.workflow);
 
 				addToWorkflow(destination, json);
 
@@ -229,9 +200,6 @@ void (async () => {
 	// Write workflows to disk
 	console.log('Writing workflows to disk');
 	for (const [dest, workflow] of Object.entries(workflows)) {
-		// delete the template jobs before writing to disk
-		delete workflow.jobs.prepare;
-		delete workflow.jobs.bake;
 		fs.writeFileSync(dest, yaml.dump(workflow, yamlOptions));
 	}
 })();
