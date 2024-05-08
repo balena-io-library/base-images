@@ -1,4 +1,25 @@
 - commits:
+    - subject: Generate one workflow per device or arch
+      hash: 2e7bdf3826f250ea9c2298740f7b96cef3a81ff2
+      body: |
+        This creates a much more managable list of
+        workflows, at the cost of reducing the granularity
+        of dependency triggers.
+
+        In this configuration, all related os-arch and stack-arch
+        combinations will need to complete before triggering
+        any of the downstream os-device and stack-device jobs.
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Kyle Harding <kyle@balena.io>
+        signed-off-by: Kyle Harding <kyle@balena.io>
+      author: Kyle Harding
+      nested: []
+  version: 2.9.0
+  title: ""
+  date: 2024-05-08T19:12:56.181Z
+- commits:
     - subject: Lock file maintenance
       hash: 86e9a7fa007dd39bc3e1020e62397627e873abe0
       body: |

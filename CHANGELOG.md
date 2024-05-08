@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.9.0 - 2024-05-08
+
+* Generate one workflow per device or arch [Kyle Harding]
+
 ## 2.8.116 - 2024-05-08
 
 * Lock file maintenance [Self-hosted Renovate Bot]
