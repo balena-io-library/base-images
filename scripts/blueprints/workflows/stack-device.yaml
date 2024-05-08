@@ -5,22 +5,104 @@ selector:
   sw.stack-variant: 1
   arch.sw: 1
 output:
-  filename: "bake-{{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}.yml"
+  workflow: "bake-{{this.children.hw.device-type.slug}}.yml"
   imageName: "{{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}-{{this.children.sw.stack.slug}}"
   type: stack-device
   slug: "{{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}-{{this.children.sw.stack.slug}}:{{this.children.sw.stack.version}}-{{this.children.sw.os.version}}"
   path: ""
-  workflow:
+  template:
+    name: Bake {{this.children.hw.device-type.slug}}
+    "on":
+      workflow_run:
+        workflows:
+          - Bake {{this.children.arch.sw.slug}}
+        types:
+          - completed
+      workflow_call:
+        inputs:
+          no-push:
+            description: Do not push to DockerHub
+            required: false
+            type: boolean
+            default: false
+      workflow_dispatch:
+        inputs:
+          no-push:
+            description: Do not push to DockerHub
+            required: false
+            type: boolean
+            default: false
+    concurrency:
+      group: ${{ github.workflow }}
+      cancel-in-progress: true
     jobs:
       prepare:
         name: Prepare {{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}-{{this.children.sw.stack.slug}}
-        needs:
-          - bake-{{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}
+        runs-on: ubuntu-latest
+        needs: bake-{{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}
+        outputs:
+          bake-targets: ${{ steps.bake-targets.outputs.matrix }}
         env:
           LIBRARY: library/{{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}-{{this.children.sw.stack.slug}}.json
+        steps:
+          # https://github.com/actions/checkout
+          - name: Checkout code
+            uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4
+            with:
+              fetch-depth: 1
+          - name: Set matrix
+            id: bake-targets
+            run: |
+              set -x
+              targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+              echo "matrix=$targets" >> $GITHUB_OUTPUT
       bake:
         name: Bake {{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}-{{this.children.sw.stack.slug}}
-        needs:
-          - prepare-{{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}-{{this.children.sw.stack.slug}}
+        runs-on: ubuntu-latest
+        # timeout-minutes: 480
+        needs: prepare-{{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}-{{this.children.sw.stack.slug}}
         env:
           LIBRARY: library/{{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}-{{this.children.sw.stack.slug}}.json
+        strategy:
+          # max-parallel: 20
+          fail-fast: false
+          matrix:
+            target: ${{ fromJSON(needs.prepare-{{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}-{{this.children.sw.stack.slug}}.outputs.bake-targets) }}
+        steps:
+          # https://github.com/actions/checkout
+          - name: Checkout code
+            uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4
+            with:
+              fetch-depth: 1
+          # https://github.com/docker/setup-qemu-action
+          - name: Setup QEMU
+            uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3 # v3
+            with:
+              platforms: all
+              # https://hub.docker.com/r/tonistiigi/binfmt
+              image: tonistiigi/binfmt:qemu-v6.2.0
+          # https://github.com/docker/setup-buildx-action
+          - name: Setup buildx
+            uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb # v3
+            with:
+              driver-opts: network=host
+              install: true
+          # https://github.com/docker/login-action
+          - name: Login to DockerHub
+            uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20 # v3
+            if: inputs.no-push != true
+            with:
+              registry: docker.io
+              username: ${{ secrets.BALENAIMAGES_USER }}
+              password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          # https://github.com/docker/bake-action
+          - name: Docker bake
+            continue-on-error: false
+            id: docker_bake
+            uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3 # v4
+            with:
+              workdir: balena-base-images
+              files: ${{ github.workspace }}/${{ env.LIBRARY }}
+              targets: ${{ matrix.target }}
+              push: ${{ inputs.no-push != true }}
+              provenance: false
