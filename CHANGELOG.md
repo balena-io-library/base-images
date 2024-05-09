@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.9.4 - 2024-05-09
+
+* Make cancel-in-progress an opt-in feature with clear explanation [Kyle Harding]
+
 ## 2.9.3 - 2024-05-09
 
 * Allow the Bake all workflow to be triggered manually [Kyle Harding]

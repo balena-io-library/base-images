@@ -1,4 +1,20 @@
 - commits:
+    - subject: Make cancel-in-progress an opt-in feature with clear explanation
+      hash: eba5be98fba68838df7e8fbca70ee7a6bd3659fd
+      body: |
+        Make downstream workflows conditional on the triggering workflow
+        returning success or failure, not skipped or cancelled.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Kyle Harding <kyle@balena.io>
+        signed-off-by: Kyle Harding <kyle@balena.io>
+      author: Kyle Harding
+      nested: []
+  version: 2.9.4
+  title: ""
+  date: 2024-05-09T14:02:30.561Z
+- commits:
     - subject: Allow the Bake all workflow to be triggered manually
       hash: d44373db2378be5c6c0e1a8bcdfbc58e7ddae938
       body: |
