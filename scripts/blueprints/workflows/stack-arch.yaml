@@ -14,21 +14,40 @@ output:
     "on":
       workflow_call:
         inputs:
+          # FIXME: no-push is not inherited by downstream workflows
           no-push:
             description: Do not push to DockerHub
+            required: false
+            type: boolean
+            default: false
+          cancel-in-progress:
+            description: Cancel in-progress bake workflows for all device-types
             required: false
             type: boolean
             default: false
       workflow_dispatch:
         inputs:
+          # FIXME: no-push is not inherited by downstream workflows
           no-push:
             description: Do not push to DockerHub
             required: false
             type: boolean
             default: false
+          cancel-in-progress:
+            description: Cancel in-progress bake workflows for all device-types
+            required: false
+            type: boolean
+            default: false
+    # A single workflow can generate hundreds of jobs once the matrixes are
+    # expanded, so we are limiting to a single concurrent bake workflow even if
+    # they are of different architectures and device types.
+    # As such, we will never cancel in-progress workflows unless a user forces it,
+    # and instead will queue the workflows behind the current one.
+    # This also means we don't have to be fancy with scheduling, as we can trust
+    # that only one workflow will ever be running at once.
     concurrency:
-      group: ${{ github.workflow }}
-      cancel-in-progress: true
+      group: bake
+      cancel-in-progress: ${{ inputs.cancel-in-progress == true }}
     jobs:
       prepare:
         name: Prepare {{this.children.arch.sw.slug}}-{{this.children.sw.os.slug}}-{{this.children.sw.stack.slug}}
@@ -53,7 +72,7 @@ output:
       bake:
         name: Bake {{this.children.arch.sw.slug}}-{{this.children.sw.os.slug}}-{{this.children.sw.stack.slug}}
         runs-on: ubuntu-latest
-        # timeout-minutes: 480
+        timeout-minutes: 240
         needs: prepare-{{this.children.arch.sw.slug}}-{{this.children.sw.os.slug}}-{{this.children.sw.stack.slug}}
         env:
           LIBRARY: library/{{this.children.arch.sw.slug}}-{{this.children.sw.os.slug}}-{{this.children.sw.stack.slug}}.json
