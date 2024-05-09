@@ -1,4 +1,27 @@
 - commits:
+    - subject: Add a schedule to trigger os-arch and stack-arch jobs
+      hash: 1c2a72be8db84c0015ab1e0e760a1386d911ff6c
+      body: |
+        Use concurrency group settings to ensure that only
+        one bake workflow, no matter the device type or arch,
+        can be running at a single time. The rest will be queued
+        by default, with a manual option to cancel in-progress.
+
+        Since each workflow can generate 100s of jobs once
+        the matrices are expanded, we need this concurrency
+        limit to remain within the 500 concurrent runner
+        maximum allowed by our enterprise plan.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Kyle Harding <kyle@balena.io>
+        signed-off-by: Kyle Harding <kyle@balena.io>
+      author: Kyle Harding
+      nested: []
+  version: 2.9.2
+  title: ""
+  date: 2024-05-09T01:43:43.950Z
+- commits:
     - subject: Update actions/checkout digest to 44c2b7a
       hash: 0dfc8d59652c96b1debef54b8306d432d6b4c979
       body: |

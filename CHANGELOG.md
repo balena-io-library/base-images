@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.9.2 - 2024-05-09
+
+* Add a schedule to trigger os-arch and stack-arch jobs [Kyle Harding]
+
 ## 2.9.1 - 2024-05-08
 
 * Update actions/checkout digest to 44c2b7a [Self-hosted Renovate Bot]
