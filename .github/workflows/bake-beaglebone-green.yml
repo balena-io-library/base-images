@@ -5,18 +5,6 @@ name: Bake beaglebone-green
       - Bake armv7hf
     types:
       - completed
-  workflow_call:
-    inputs:
-      no-push:
-        description: Do not push to DockerHub
-        required: false
-        type: boolean
-        default: false
-      cancel-in-progress:
-        description: Cancel in-progress bake workflows for all device-types
-        required: false
-        type: boolean
-        default: false
   workflow_dispatch:
     inputs:
       no-push:
@@ -25,7 +13,7 @@ name: Bake beaglebone-green
         type: boolean
         default: false
       cancel-in-progress:
-        description: Cancel in-progress bake workflows for all device-types
+        description: Cancel in-progress bake workflows for all device-types and stacks
         required: false
         type: boolean
         default: false
