@@ -13,7 +13,7 @@ name: Bake iot-gate-imx8plus
         type: boolean
         default: false
       cancel-in-progress:
-        description: Cancel in-progress bake workflows for all device-types and stacks
+        description: Cancel all in-progress bake workflows and only run this one
         required: false
         type: boolean
         default: false
@@ -24,6 +24,7 @@ jobs:
   prepare-iot-gate-imx8plus-alpine:
     name: Prepare iot-gate-imx8plus-alpine
     runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
@@ -85,6 +86,7 @@ jobs:
   prepare-iot-gate-imx8plus-debian:
     name: Prepare iot-gate-imx8plus-debian
     runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
@@ -146,6 +148,7 @@ jobs:
   prepare-iot-gate-imx8plus-fedora:
     name: Prepare iot-gate-imx8plus-fedora
     runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
@@ -207,6 +210,7 @@ jobs:
   prepare-iot-gate-imx8plus-ubuntu:
     name: Prepare iot-gate-imx8plus-ubuntu
     runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:

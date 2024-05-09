@@ -13,7 +13,7 @@ name: Bake rpi
         type: boolean
         default: false
       cancel-in-progress:
-        description: Cancel in-progress bake workflows for all device-types and stacks
+        description: Cancel all in-progress bake workflows and only run this one
         required: false
         type: boolean
         default: false
@@ -24,7 +24,7 @@ jobs:
   prepare-rpi-alpine:
     name: Prepare rpi-alpine
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
@@ -86,7 +86,7 @@ jobs:
   prepare-rpi-debian:
     name: Prepare rpi-debian
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
@@ -148,7 +148,6 @@ jobs:
   prepare-rpi-alpine-golang:
     name: Prepare rpi-alpine-golang
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     needs: bake-rpi-alpine
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -211,7 +210,6 @@ jobs:
   prepare-rpi-alpine-node:
     name: Prepare rpi-alpine-node
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     needs: bake-rpi-alpine
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -274,7 +272,6 @@ jobs:
   prepare-rpi-alpine-python:
     name: Prepare rpi-alpine-python
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     needs: bake-rpi-alpine
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -337,7 +334,6 @@ jobs:
   prepare-rpi-debian-golang:
     name: Prepare rpi-debian-golang
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     needs: bake-rpi-debian
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -400,7 +396,6 @@ jobs:
   prepare-rpi-debian-openjdk:
     name: Prepare rpi-debian-openjdk
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     needs: bake-rpi-debian
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -463,7 +458,6 @@ jobs:
   prepare-rpi-debian-python:
     name: Prepare rpi-debian-python
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     needs: bake-rpi-debian
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}

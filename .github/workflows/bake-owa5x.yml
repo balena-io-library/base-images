@@ -13,7 +13,7 @@ name: Bake owa5x
         type: boolean
         default: false
       cancel-in-progress:
-        description: Cancel in-progress bake workflows for all device-types and stacks
+        description: Cancel all in-progress bake workflows and only run this one
         required: false
         type: boolean
         default: false
@@ -24,6 +24,7 @@ jobs:
   prepare-owa5x-alpine:
     name: Prepare owa5x-alpine
     runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
@@ -85,6 +86,7 @@ jobs:
   prepare-owa5x-debian:
     name: Prepare owa5x-debian
     runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
@@ -146,6 +148,7 @@ jobs:
   prepare-owa5x-fedora:
     name: Prepare owa5x-fedora
     runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
@@ -207,6 +210,7 @@ jobs:
   prepare-owa5x-ubuntu:
     name: Prepare owa5x-ubuntu
     runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:

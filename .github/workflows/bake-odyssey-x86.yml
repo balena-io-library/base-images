@@ -13,7 +13,7 @@ name: Bake odyssey-x86
         type: boolean
         default: false
       cancel-in-progress:
-        description: Cancel in-progress bake workflows for all device-types and stacks
+        description: Cancel all in-progress bake workflows and only run this one
         required: false
         type: boolean
         default: false
@@ -24,6 +24,7 @@ jobs:
   prepare-odyssey-x86-alpine:
     name: Prepare odyssey-x86-alpine
     runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
@@ -85,6 +86,7 @@ jobs:
   prepare-odyssey-x86-debian:
     name: Prepare odyssey-x86-debian
     runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
@@ -146,6 +148,7 @@ jobs:
   prepare-odyssey-x86-fedora:
     name: Prepare odyssey-x86-fedora
     runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
@@ -207,6 +210,7 @@ jobs:
   prepare-odyssey-x86-ubuntu:
     name: Prepare odyssey-x86-ubuntu
     runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:

@@ -13,7 +13,7 @@ name: Bake aarch64
         type: boolean
         default: false
       cancel-in-progress:
-        description: Cancel in-progress bake workflows for all device-types and stacks
+        description: Cancel all in-progress bake workflows and only run this one
         required: false
         type: boolean
         default: false
@@ -24,7 +24,7 @@ jobs:
   prepare-aarch64-alpine:
     name: Prepare aarch64-alpine
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
@@ -86,7 +86,7 @@ jobs:
   prepare-aarch64-debian:
     name: Prepare aarch64-debian
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
@@ -148,7 +148,7 @@ jobs:
   prepare-aarch64-fedora:
     name: Prepare aarch64-fedora
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
@@ -210,7 +210,7 @@ jobs:
   prepare-aarch64-ubuntu:
     name: Prepare aarch64-ubuntu
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
@@ -272,7 +272,6 @@ jobs:
   prepare-aarch64-alpine-golang:
     name: Prepare aarch64-alpine-golang
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     needs: bake-aarch64-alpine
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -335,7 +334,6 @@ jobs:
   prepare-aarch64-alpine-node:
     name: Prepare aarch64-alpine-node
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     needs: bake-aarch64-alpine
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -398,7 +396,6 @@ jobs:
   prepare-aarch64-alpine-python:
     name: Prepare aarch64-alpine-python
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     needs: bake-aarch64-alpine
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -461,7 +458,6 @@ jobs:
   prepare-aarch64-debian-golang:
     name: Prepare aarch64-debian-golang
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     needs: bake-aarch64-debian
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -524,7 +520,6 @@ jobs:
   prepare-aarch64-debian-node:
     name: Prepare aarch64-debian-node
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     needs: bake-aarch64-debian
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -587,7 +582,6 @@ jobs:
   prepare-aarch64-debian-openjdk:
     name: Prepare aarch64-debian-openjdk
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     needs: bake-aarch64-debian
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -650,7 +644,6 @@ jobs:
   prepare-aarch64-debian-python:
     name: Prepare aarch64-debian-python
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     needs: bake-aarch64-debian
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -713,7 +706,6 @@ jobs:
   prepare-aarch64-fedora-golang:
     name: Prepare aarch64-fedora-golang
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     needs: bake-aarch64-fedora
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -776,7 +768,6 @@ jobs:
   prepare-aarch64-fedora-node:
     name: Prepare aarch64-fedora-node
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     needs: bake-aarch64-fedora
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -839,7 +830,6 @@ jobs:
   prepare-aarch64-fedora-python:
     name: Prepare aarch64-fedora-python
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     needs: bake-aarch64-fedora
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -902,7 +892,6 @@ jobs:
   prepare-aarch64-ubuntu-golang:
     name: Prepare aarch64-ubuntu-golang
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     needs: bake-aarch64-ubuntu
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -965,7 +954,6 @@ jobs:
   prepare-aarch64-ubuntu-node:
     name: Prepare aarch64-ubuntu-node
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     needs: bake-aarch64-ubuntu
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -1028,7 +1016,6 @@ jobs:
   prepare-aarch64-ubuntu-python:
     name: Prepare aarch64-ubuntu-python
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     needs: bake-aarch64-ubuntu
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -1091,7 +1078,6 @@ jobs:
   prepare-aarch64-ubuntu-openjdk:
     name: Prepare aarch64-ubuntu-openjdk
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     needs: bake-aarch64-ubuntu
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}

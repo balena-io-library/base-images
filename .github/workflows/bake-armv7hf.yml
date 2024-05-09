@@ -13,7 +13,7 @@ name: Bake armv7hf
         type: boolean
         default: false
       cancel-in-progress:
-        description: Cancel in-progress bake workflows for all device-types and stacks
+        description: Cancel all in-progress bake workflows and only run this one
         required: false
         type: boolean
         default: false
@@ -24,7 +24,7 @@ jobs:
   prepare-armv7hf-alpine:
     name: Prepare armv7hf-alpine
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
@@ -86,7 +86,7 @@ jobs:
   prepare-armv7hf-debian:
     name: Prepare armv7hf-debian
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
@@ -148,7 +148,7 @@ jobs:
   prepare-armv7hf-ubuntu:
     name: Prepare armv7hf-ubuntu
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
@@ -210,7 +210,6 @@ jobs:
   prepare-armv7hf-alpine-golang:
     name: Prepare armv7hf-alpine-golang
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     needs: bake-armv7hf-alpine
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -273,7 +272,6 @@ jobs:
   prepare-armv7hf-alpine-node:
     name: Prepare armv7hf-alpine-node
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     needs: bake-armv7hf-alpine
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -336,7 +334,6 @@ jobs:
   prepare-armv7hf-alpine-python:
     name: Prepare armv7hf-alpine-python
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     needs: bake-armv7hf-alpine
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -399,7 +396,6 @@ jobs:
   prepare-armv7hf-debian-golang:
     name: Prepare armv7hf-debian-golang
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     needs: bake-armv7hf-debian
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -462,7 +458,6 @@ jobs:
   prepare-armv7hf-debian-node:
     name: Prepare armv7hf-debian-node
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     needs: bake-armv7hf-debian
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -525,7 +520,6 @@ jobs:
   prepare-armv7hf-debian-openjdk:
     name: Prepare armv7hf-debian-openjdk
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     needs: bake-armv7hf-debian
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -588,7 +582,6 @@ jobs:
   prepare-armv7hf-debian-python:
     name: Prepare armv7hf-debian-python
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     needs: bake-armv7hf-debian
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -651,7 +644,6 @@ jobs:
   prepare-armv7hf-ubuntu-golang:
     name: Prepare armv7hf-ubuntu-golang
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     needs: bake-armv7hf-ubuntu
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -714,7 +706,6 @@ jobs:
   prepare-armv7hf-ubuntu-node:
     name: Prepare armv7hf-ubuntu-node
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     needs: bake-armv7hf-ubuntu
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -777,7 +768,6 @@ jobs:
   prepare-armv7hf-ubuntu-python:
     name: Prepare armv7hf-ubuntu-python
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     needs: bake-armv7hf-ubuntu
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
@@ -840,7 +830,6 @@ jobs:
   prepare-armv7hf-ubuntu-openjdk:
     name: Prepare armv7hf-ubuntu-openjdk
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     needs: bake-armv7hf-ubuntu
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
