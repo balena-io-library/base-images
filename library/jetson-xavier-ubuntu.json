@@ -19,19 +19,19 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:jammy-build-20240508",
+        "docker.io/balenalib/jetson-xavier-ubuntu:jammy-build-20240509",
         "docker.io/balenalib/jetson-xavier-ubuntu:jammy-build",
-        "docker.io/balenalib/jetson-xavier-ubuntu:latest-build-20240508",
+        "docker.io/balenalib/jetson-xavier-ubuntu:latest-build-20240509",
         "docker.io/balenalib/jetson-xavier-ubuntu:latest-build",
-        "docker.io/balenalib/jetson-xavier-ubuntu:build-20240508",
+        "docker.io/balenalib/jetson-xavier-ubuntu:build-20240509",
         "docker.io/balenalib/jetson-xavier-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:jammy-build-20240508",
+        "docker.io/balenalib/jetson-xavier-ubuntu:jammy-build-20240509",
         "docker.io/balenalib/jetson-xavier-ubuntu:jammy-build",
-        "docker.io/balenalib/jetson-xavier-ubuntu:latest-build-20240508",
+        "docker.io/balenalib/jetson-xavier-ubuntu:latest-build-20240509",
         "docker.io/balenalib/jetson-xavier-ubuntu:latest-build",
-        "docker.io/balenalib/jetson-xavier-ubuntu:build-20240508",
+        "docker.io/balenalib/jetson-xavier-ubuntu:build-20240509",
         "docker.io/balenalib/jetson-xavier-ubuntu:build"
       ]
     },
@@ -40,30 +40,30 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:jammy-run-20240508",
+        "docker.io/balenalib/jetson-xavier-ubuntu:jammy-run-20240509",
         "docker.io/balenalib/jetson-xavier-ubuntu:jammy-run",
-        "docker.io/balenalib/jetson-xavier-ubuntu:jammy-20240508",
+        "docker.io/balenalib/jetson-xavier-ubuntu:jammy-20240509",
         "docker.io/balenalib/jetson-xavier-ubuntu:jammy",
-        "docker.io/balenalib/jetson-xavier-ubuntu:latest-run-20240508",
+        "docker.io/balenalib/jetson-xavier-ubuntu:latest-run-20240509",
         "docker.io/balenalib/jetson-xavier-ubuntu:latest-run",
-        "docker.io/balenalib/jetson-xavier-ubuntu:latest-20240508",
+        "docker.io/balenalib/jetson-xavier-ubuntu:latest-20240509",
         "docker.io/balenalib/jetson-xavier-ubuntu:latest",
-        "docker.io/balenalib/jetson-xavier-ubuntu:run-20240508",
+        "docker.io/balenalib/jetson-xavier-ubuntu:run-20240509",
         "docker.io/balenalib/jetson-xavier-ubuntu:run",
-        "docker.io/balenalib/jetson-xavier-ubuntu:20240508"
+        "docker.io/balenalib/jetson-xavier-ubuntu:20240509"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:jammy-run-20240508",
+        "docker.io/balenalib/jetson-xavier-ubuntu:jammy-run-20240509",
         "docker.io/balenalib/jetson-xavier-ubuntu:jammy-run",
-        "docker.io/balenalib/jetson-xavier-ubuntu:jammy-20240508",
+        "docker.io/balenalib/jetson-xavier-ubuntu:jammy-20240509",
         "docker.io/balenalib/jetson-xavier-ubuntu:jammy",
-        "docker.io/balenalib/jetson-xavier-ubuntu:latest-run-20240508",
+        "docker.io/balenalib/jetson-xavier-ubuntu:latest-run-20240509",
         "docker.io/balenalib/jetson-xavier-ubuntu:latest-run",
-        "docker.io/balenalib/jetson-xavier-ubuntu:latest-20240508",
+        "docker.io/balenalib/jetson-xavier-ubuntu:latest-20240509",
         "docker.io/balenalib/jetson-xavier-ubuntu:latest",
-        "docker.io/balenalib/jetson-xavier-ubuntu:run-20240508",
+        "docker.io/balenalib/jetson-xavier-ubuntu:run-20240509",
         "docker.io/balenalib/jetson-xavier-ubuntu:run",
-        "docker.io/balenalib/jetson-xavier-ubuntu:20240508"
+        "docker.io/balenalib/jetson-xavier-ubuntu:20240509"
       ]
     },
     "jetson-xavier-ubuntu-focal-build": {
@@ -71,11 +71,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:focal-build-20240508",
+        "docker.io/balenalib/jetson-xavier-ubuntu:focal-build-20240509",
         "docker.io/balenalib/jetson-xavier-ubuntu:focal-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:focal-build-20240508",
+        "docker.io/balenalib/jetson-xavier-ubuntu:focal-build-20240509",
         "docker.io/balenalib/jetson-xavier-ubuntu:focal-build"
       ]
     },
@@ -84,15 +84,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:focal-run-20240508",
+        "docker.io/balenalib/jetson-xavier-ubuntu:focal-run-20240509",
         "docker.io/balenalib/jetson-xavier-ubuntu:focal-run",
-        "docker.io/balenalib/jetson-xavier-ubuntu:focal-20240508",
+        "docker.io/balenalib/jetson-xavier-ubuntu:focal-20240509",
         "docker.io/balenalib/jetson-xavier-ubuntu:focal"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:focal-run-20240508",
+        "docker.io/balenalib/jetson-xavier-ubuntu:focal-run-20240509",
         "docker.io/balenalib/jetson-xavier-ubuntu:focal-run",
-        "docker.io/balenalib/jetson-xavier-ubuntu:focal-20240508",
+        "docker.io/balenalib/jetson-xavier-ubuntu:focal-20240509",
         "docker.io/balenalib/jetson-xavier-ubuntu:focal"
       ]
     },
@@ -101,11 +101,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:xenial-build-20240508",
+        "docker.io/balenalib/jetson-xavier-ubuntu:xenial-build-20240509",
         "docker.io/balenalib/jetson-xavier-ubuntu:xenial-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:xenial-build-20240508",
+        "docker.io/balenalib/jetson-xavier-ubuntu:xenial-build-20240509",
         "docker.io/balenalib/jetson-xavier-ubuntu:xenial-build"
       ]
     },
@@ -114,15 +114,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:xenial-run-20240508",
+        "docker.io/balenalib/jetson-xavier-ubuntu:xenial-run-20240509",
         "docker.io/balenalib/jetson-xavier-ubuntu:xenial-run",
-        "docker.io/balenalib/jetson-xavier-ubuntu:xenial-20240508",
+        "docker.io/balenalib/jetson-xavier-ubuntu:xenial-20240509",
         "docker.io/balenalib/jetson-xavier-ubuntu:xenial"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:xenial-run-20240508",
+        "docker.io/balenalib/jetson-xavier-ubuntu:xenial-run-20240509",
         "docker.io/balenalib/jetson-xavier-ubuntu:xenial-run",
-        "docker.io/balenalib/jetson-xavier-ubuntu:xenial-20240508",
+        "docker.io/balenalib/jetson-xavier-ubuntu:xenial-20240509",
         "docker.io/balenalib/jetson-xavier-ubuntu:xenial"
       ]
     },
@@ -131,11 +131,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:bionic-build-20240508",
+        "docker.io/balenalib/jetson-xavier-ubuntu:bionic-build-20240509",
         "docker.io/balenalib/jetson-xavier-ubuntu:bionic-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:bionic-build-20240508",
+        "docker.io/balenalib/jetson-xavier-ubuntu:bionic-build-20240509",
         "docker.io/balenalib/jetson-xavier-ubuntu:bionic-build"
       ]
     },
@@ -144,15 +144,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:bionic-run-20240508",
+        "docker.io/balenalib/jetson-xavier-ubuntu:bionic-run-20240509",
         "docker.io/balenalib/jetson-xavier-ubuntu:bionic-run",
-        "docker.io/balenalib/jetson-xavier-ubuntu:bionic-20240508",
+        "docker.io/balenalib/jetson-xavier-ubuntu:bionic-20240509",
         "docker.io/balenalib/jetson-xavier-ubuntu:bionic"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:bionic-run-20240508",
+        "docker.io/balenalib/jetson-xavier-ubuntu:bionic-run-20240509",
         "docker.io/balenalib/jetson-xavier-ubuntu:bionic-run",
-        "docker.io/balenalib/jetson-xavier-ubuntu:bionic-20240508",
+        "docker.io/balenalib/jetson-xavier-ubuntu:bionic-20240509",
         "docker.io/balenalib/jetson-xavier-ubuntu:bionic"
       ]
     }
