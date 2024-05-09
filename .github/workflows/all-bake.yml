@@ -1,35 +1,38 @@
 name: Bake all
 'on':
   workflow_dispatch:
+    inputs:
+      cancel-in-progress:
+        description: Cancel in-progress bake workflows for all device-types and stacks
+        required: false
+        type: boolean
+        default: true
+      no-start:
+        description: Do not trigger any new bake workflows
+        required: false
+        type: boolean
+        default: false
   # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
   schedule:
-    # runs at 3:12 only on Saturdays
-    - cron: '12 3 * * 6'
+    # run at 01:11 on the 1st day of the month
+    - cron: '11 1 1 * *'
 
-# Workflows below should be limited to one at a time
-# by the concurency group in the workflow templates.
+# A single bake workflow can generate hundreds of jobs once the matrixes are
+# expanded, so they are limited the same concurrency group even though
+# they are of different architectures and device types.
+# Cancelling jobs in progress is destructive as the entire pipeline could
+# take days to complete, and a cancellation means jobs jobs at the end of
+# the queue never get run.
+concurrency:
+  group: bake
+  cancel-in-progress: ${{ inputs.cancel-in-progress == true }}
+
+# Downstream bake workflows are listening for 'Bake all' workflow_run completed events but
+# they will be skipped if the condition github.event.workflow_run.conclusion != 'success'.
 jobs:
-  bake-aarch64:
-    name: Bake aarch64
-    uses: ./.github/workflows/bake-aarch64.yml
-    secrets: inherit
-
-  bake-amd64:
-    name: Bake amd64
-    uses: ./.github/workflows/bake-amd64.yml
-    secrets: inherit
-
-  bake-armv7hf:
-    name: Bake armv7hf
-    uses: ./.github/workflows/bake-armv7hf.yml
-    secrets: inherit
-
-  bake-i386:
-    name: Bake i386
-    uses: ./.github/workflows/bake-i386.yml
-    secrets: inherit
-
-  bake-rpi:
-    name: Bake rpi
-    uses: ./.github/workflows/bake-rpi.yml
-    secrets: inherit
+  do-failure:
+    name: Do not trigger any new bake workflows
+    runs-on: ubuntu-latest
+    if: inputs.no-start == true
+    steps:
+      - run: exit 1
