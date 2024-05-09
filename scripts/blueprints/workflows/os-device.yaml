@@ -25,7 +25,7 @@ output:
             type: boolean
             default: false
           cancel-in-progress:
-            description: Cancel in-progress bake workflows for all device-types and stacks
+            description: Cancel all in-progress bake workflows and only run this one
             required: false
             type: boolean
             default: false
@@ -36,6 +36,7 @@ output:
       prepare:
         name: Prepare {{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}
         runs-on: ubuntu-latest
+        if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
         outputs:
           bake-targets: ${{ steps.bake-targets.outputs.matrix }}
         env:

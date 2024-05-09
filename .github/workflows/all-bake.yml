@@ -3,12 +3,7 @@ name: Bake all
   workflow_dispatch:
     inputs:
       cancel-in-progress:
-        description: Cancel in-progress bake workflows for all device-types and stacks
-        required: false
-        type: boolean
-        default: true
-      no-start:
-        description: Do not trigger any new bake workflows
+        description: Cancel all in-progress bake workflows and do not start any new ones
         required: false
         type: boolean
         default: false
@@ -20,9 +15,8 @@ name: Bake all
 # A single bake workflow can generate hundreds of jobs once the matrixes are
 # expanded, so they are limited the same concurrency group even though
 # they are of different architectures and device types.
-# Cancelling jobs in progress is destructive as the entire pipeline could
-# take days to complete, and a cancellation means jobs jobs at the end of
-# the queue never get run.
+# Do not cancel in-progress as we are expecting multiple bake workflows listening
+# for this event and we don't want them to cancel each other.
 concurrency:
   group: bake
   cancel-in-progress: ${{ inputs.cancel-in-progress == true }}
@@ -30,9 +24,9 @@ concurrency:
 # Downstream bake workflows are listening for 'Bake all' workflow_run completed events but
 # they will be skipped if the condition github.event.workflow_run.conclusion != 'success'.
 jobs:
-  do-failure:
-    name: Do not trigger any new bake workflows
+  do-success:
+    name: Return success
     runs-on: ubuntu-latest
-    if: inputs.no-start == true
+    if: ${{ inputs.cancel-in-progress != true }}
     steps:
-      - run: exit 1
+      - run: exit 0

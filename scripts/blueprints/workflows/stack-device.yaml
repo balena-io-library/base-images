@@ -26,7 +26,7 @@ output:
             type: boolean
             default: false
           cancel-in-progress:
-            description: Cancel in-progress bake workflows for all device-types and stacks
+            description: Cancel all in-progress bake workflows and only run this one
             required: false
             type: boolean
             default: false
