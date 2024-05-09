@@ -1,4 +1,24 @@
 - commits:
+    - subject: Allow the Bake all workflow to be triggered manually
+      hash: d44373db2378be5c6c0e1a8bcdfbc58e7ddae938
+      body: |
+        Use the workflow run event to trigger listening
+        jobs rather than calling them directly.
+
+        Use the same concurrency group for all bake workflows,
+        allowing for cancellation of all jobs in progress without
+        starting new ones.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Kyle Harding <kyle@balena.io>
+        signed-off-by: Kyle Harding <kyle@balena.io>
+      author: Kyle Harding
+      nested: []
+  version: 2.9.3
+  title: ""
+  date: 2024-05-09T12:27:55.543Z
+- commits:
     - subject: Add a schedule to trigger os-arch and stack-arch jobs
       hash: 1c2a72be8db84c0015ab1e0e760a1386d911ff6c
       body: |

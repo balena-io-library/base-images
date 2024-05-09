@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.9.3 - 2024-05-09
+
+* Allow the Bake all workflow to be triggered manually [Kyle Harding]
+
 ## 2.9.2 - 2024-05-09
 
 * Add a schedule to trigger os-arch and stack-arch jobs [Kyle Harding]
