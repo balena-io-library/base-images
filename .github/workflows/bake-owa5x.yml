@@ -12,6 +12,11 @@ name: Bake owa5x
         required: false
         type: boolean
         default: false
+      cancel-in-progress:
+        description: Cancel in-progress bake workflows for all device-types
+        required: false
+        type: boolean
+        default: false
   workflow_dispatch:
     inputs:
       no-push:
@@ -19,10 +24,259 @@ name: Bake owa5x
         required: false
         type: boolean
         default: false
+      cancel-in-progress:
+        description: Cancel in-progress bake workflows for all device-types
+        required: false
+        type: boolean
+        default: false
 concurrency:
-  group: ${{ github.workflow }}
-  cancel-in-progress: true
+  group: bake
+  cancel-in-progress: ${{ inputs.cancel-in-progress == true }}
 jobs:
+  prepare-owa5x-alpine:
+    name: Prepare owa5x-alpine
+    runs-on: ubuntu-latest
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/owa5x-alpine.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-owa5x-alpine:
+    name: Bake owa5x-alpine
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    needs: prepare-owa5x-alpine
+    env:
+      LIBRARY: library/owa5x-alpine.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-owa5x-alpine.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v6.2.0
+      - name: Setup buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Docker bake
+        continue-on-error: false
+        id: docker_bake
+        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+  prepare-owa5x-debian:
+    name: Prepare owa5x-debian
+    runs-on: ubuntu-latest
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/owa5x-debian.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-owa5x-debian:
+    name: Bake owa5x-debian
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    needs: prepare-owa5x-debian
+    env:
+      LIBRARY: library/owa5x-debian.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-owa5x-debian.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v6.2.0
+      - name: Setup buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Docker bake
+        continue-on-error: false
+        id: docker_bake
+        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+  prepare-owa5x-fedora:
+    name: Prepare owa5x-fedora
+    runs-on: ubuntu-latest
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/owa5x-fedora.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-owa5x-fedora:
+    name: Bake owa5x-fedora
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    needs: prepare-owa5x-fedora
+    env:
+      LIBRARY: library/owa5x-fedora.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-owa5x-fedora.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v6.2.0
+      - name: Setup buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Docker bake
+        continue-on-error: false
+        id: docker_bake
+        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+  prepare-owa5x-ubuntu:
+    name: Prepare owa5x-ubuntu
+    runs-on: ubuntu-latest
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/owa5x-ubuntu.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-owa5x-ubuntu:
+    name: Bake owa5x-ubuntu
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    needs: prepare-owa5x-ubuntu
+    env:
+      LIBRARY: library/owa5x-ubuntu.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-owa5x-ubuntu.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v6.2.0
+      - name: Setup buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Docker bake
+        continue-on-error: false
+        id: docker_bake
+        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
   prepare-owa5x-alpine-golang:
     name: Prepare owa5x-alpine-golang
     runs-on: ubuntu-latest
@@ -45,6 +299,7 @@ jobs:
   bake-owa5x-alpine-golang:
     name: Bake owa5x-alpine-golang
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-owa5x-alpine-golang
     env:
       LIBRARY: library/owa5x-alpine-golang.json
@@ -106,6 +361,7 @@ jobs:
   bake-owa5x-alpine-node:
     name: Bake owa5x-alpine-node
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-owa5x-alpine-node
     env:
       LIBRARY: library/owa5x-alpine-node.json
@@ -167,6 +423,7 @@ jobs:
   bake-owa5x-alpine-python:
     name: Bake owa5x-alpine-python
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-owa5x-alpine-python
     env:
       LIBRARY: library/owa5x-alpine-python.json
@@ -228,6 +485,7 @@ jobs:
   bake-owa5x-debian-golang:
     name: Bake owa5x-debian-golang
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-owa5x-debian-golang
     env:
       LIBRARY: library/owa5x-debian-golang.json
@@ -289,6 +547,7 @@ jobs:
   bake-owa5x-debian-node:
     name: Bake owa5x-debian-node
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-owa5x-debian-node
     env:
       LIBRARY: library/owa5x-debian-node.json
@@ -350,6 +609,7 @@ jobs:
   bake-owa5x-debian-openjdk:
     name: Bake owa5x-debian-openjdk
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-owa5x-debian-openjdk
     env:
       LIBRARY: library/owa5x-debian-openjdk.json
@@ -411,6 +671,7 @@ jobs:
   bake-owa5x-debian-python:
     name: Bake owa5x-debian-python
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-owa5x-debian-python
     env:
       LIBRARY: library/owa5x-debian-python.json
@@ -472,6 +733,7 @@ jobs:
   bake-owa5x-fedora-golang:
     name: Bake owa5x-fedora-golang
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-owa5x-fedora-golang
     env:
       LIBRARY: library/owa5x-fedora-golang.json
@@ -533,6 +795,7 @@ jobs:
   bake-owa5x-fedora-node:
     name: Bake owa5x-fedora-node
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-owa5x-fedora-node
     env:
       LIBRARY: library/owa5x-fedora-node.json
@@ -594,6 +857,7 @@ jobs:
   bake-owa5x-fedora-python:
     name: Bake owa5x-fedora-python
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-owa5x-fedora-python
     env:
       LIBRARY: library/owa5x-fedora-python.json
@@ -655,6 +919,7 @@ jobs:
   bake-owa5x-ubuntu-golang:
     name: Bake owa5x-ubuntu-golang
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-owa5x-ubuntu-golang
     env:
       LIBRARY: library/owa5x-ubuntu-golang.json
@@ -716,6 +981,7 @@ jobs:
   bake-owa5x-ubuntu-node:
     name: Bake owa5x-ubuntu-node
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-owa5x-ubuntu-node
     env:
       LIBRARY: library/owa5x-ubuntu-node.json
@@ -777,6 +1043,7 @@ jobs:
   bake-owa5x-ubuntu-python:
     name: Bake owa5x-ubuntu-python
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-owa5x-ubuntu-python
     env:
       LIBRARY: library/owa5x-ubuntu-python.json
@@ -838,6 +1105,7 @@ jobs:
   bake-owa5x-ubuntu-openjdk:
     name: Bake owa5x-ubuntu-openjdk
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-owa5x-ubuntu-openjdk
     env:
       LIBRARY: library/owa5x-ubuntu-openjdk.json
@@ -845,246 +1113,6 @@ jobs:
       fail-fast: false
       matrix:
         target: ${{ fromJSON(needs.prepare-owa5x-ubuntu-openjdk.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
-      - name: Setup buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
-  prepare-owa5x-alpine:
-    name: Prepare owa5x-alpine
-    runs-on: ubuntu-latest
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/owa5x-alpine.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-owa5x-alpine:
-    name: Bake owa5x-alpine
-    runs-on: ubuntu-latest
-    needs: prepare-owa5x-alpine
-    env:
-      LIBRARY: library/owa5x-alpine.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-owa5x-alpine.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
-      - name: Setup buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
-  prepare-owa5x-debian:
-    name: Prepare owa5x-debian
-    runs-on: ubuntu-latest
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/owa5x-debian.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-owa5x-debian:
-    name: Bake owa5x-debian
-    runs-on: ubuntu-latest
-    needs: prepare-owa5x-debian
-    env:
-      LIBRARY: library/owa5x-debian.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-owa5x-debian.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
-      - name: Setup buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
-  prepare-owa5x-fedora:
-    name: Prepare owa5x-fedora
-    runs-on: ubuntu-latest
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/owa5x-fedora.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-owa5x-fedora:
-    name: Bake owa5x-fedora
-    runs-on: ubuntu-latest
-    needs: prepare-owa5x-fedora
-    env:
-      LIBRARY: library/owa5x-fedora.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-owa5x-fedora.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
-      - name: Setup buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
-  prepare-owa5x-ubuntu:
-    name: Prepare owa5x-ubuntu
-    runs-on: ubuntu-latest
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/owa5x-ubuntu.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-owa5x-ubuntu:
-    name: Bake owa5x-ubuntu
-    runs-on: ubuntu-latest
-    needs: prepare-owa5x-ubuntu
-    env:
-      LIBRARY: library/owa5x-ubuntu.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-owa5x-ubuntu.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b

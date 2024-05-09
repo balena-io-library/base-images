@@ -12,6 +12,11 @@ name: Bake imx8m-var-dart
         required: false
         type: boolean
         default: false
+      cancel-in-progress:
+        description: Cancel in-progress bake workflows for all device-types
+        required: false
+        type: boolean
+        default: false
   workflow_dispatch:
     inputs:
       no-push:
@@ -19,10 +24,259 @@ name: Bake imx8m-var-dart
         required: false
         type: boolean
         default: false
+      cancel-in-progress:
+        description: Cancel in-progress bake workflows for all device-types
+        required: false
+        type: boolean
+        default: false
 concurrency:
-  group: ${{ github.workflow }}
-  cancel-in-progress: true
+  group: bake
+  cancel-in-progress: ${{ inputs.cancel-in-progress == true }}
 jobs:
+  prepare-imx8m-var-dart-alpine:
+    name: Prepare imx8m-var-dart-alpine
+    runs-on: ubuntu-latest
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/imx8m-var-dart-alpine.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-imx8m-var-dart-alpine:
+    name: Bake imx8m-var-dart-alpine
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    needs: prepare-imx8m-var-dart-alpine
+    env:
+      LIBRARY: library/imx8m-var-dart-alpine.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-imx8m-var-dart-alpine.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v6.2.0
+      - name: Setup buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Docker bake
+        continue-on-error: false
+        id: docker_bake
+        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+  prepare-imx8m-var-dart-debian:
+    name: Prepare imx8m-var-dart-debian
+    runs-on: ubuntu-latest
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/imx8m-var-dart-debian.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-imx8m-var-dart-debian:
+    name: Bake imx8m-var-dart-debian
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    needs: prepare-imx8m-var-dart-debian
+    env:
+      LIBRARY: library/imx8m-var-dart-debian.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-imx8m-var-dart-debian.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v6.2.0
+      - name: Setup buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Docker bake
+        continue-on-error: false
+        id: docker_bake
+        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+  prepare-imx8m-var-dart-fedora:
+    name: Prepare imx8m-var-dart-fedora
+    runs-on: ubuntu-latest
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/imx8m-var-dart-fedora.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-imx8m-var-dart-fedora:
+    name: Bake imx8m-var-dart-fedora
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    needs: prepare-imx8m-var-dart-fedora
+    env:
+      LIBRARY: library/imx8m-var-dart-fedora.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-imx8m-var-dart-fedora.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v6.2.0
+      - name: Setup buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Docker bake
+        continue-on-error: false
+        id: docker_bake
+        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+  prepare-imx8m-var-dart-ubuntu:
+    name: Prepare imx8m-var-dart-ubuntu
+    runs-on: ubuntu-latest
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/imx8m-var-dart-ubuntu.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-imx8m-var-dart-ubuntu:
+    name: Bake imx8m-var-dart-ubuntu
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    needs: prepare-imx8m-var-dart-ubuntu
+    env:
+      LIBRARY: library/imx8m-var-dart-ubuntu.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-imx8m-var-dart-ubuntu.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v6.2.0
+      - name: Setup buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Docker bake
+        continue-on-error: false
+        id: docker_bake
+        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
   prepare-imx8m-var-dart-alpine-golang:
     name: Prepare imx8m-var-dart-alpine-golang
     runs-on: ubuntu-latest
@@ -45,6 +299,7 @@ jobs:
   bake-imx8m-var-dart-alpine-golang:
     name: Bake imx8m-var-dart-alpine-golang
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-imx8m-var-dart-alpine-golang
     env:
       LIBRARY: library/imx8m-var-dart-alpine-golang.json
@@ -106,6 +361,7 @@ jobs:
   bake-imx8m-var-dart-alpine-node:
     name: Bake imx8m-var-dart-alpine-node
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-imx8m-var-dart-alpine-node
     env:
       LIBRARY: library/imx8m-var-dart-alpine-node.json
@@ -167,6 +423,7 @@ jobs:
   bake-imx8m-var-dart-alpine-python:
     name: Bake imx8m-var-dart-alpine-python
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-imx8m-var-dart-alpine-python
     env:
       LIBRARY: library/imx8m-var-dart-alpine-python.json
@@ -228,6 +485,7 @@ jobs:
   bake-imx8m-var-dart-debian-golang:
     name: Bake imx8m-var-dart-debian-golang
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-imx8m-var-dart-debian-golang
     env:
       LIBRARY: library/imx8m-var-dart-debian-golang.json
@@ -289,6 +547,7 @@ jobs:
   bake-imx8m-var-dart-debian-node:
     name: Bake imx8m-var-dart-debian-node
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-imx8m-var-dart-debian-node
     env:
       LIBRARY: library/imx8m-var-dart-debian-node.json
@@ -350,6 +609,7 @@ jobs:
   bake-imx8m-var-dart-debian-openjdk:
     name: Bake imx8m-var-dart-debian-openjdk
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-imx8m-var-dart-debian-openjdk
     env:
       LIBRARY: library/imx8m-var-dart-debian-openjdk.json
@@ -411,6 +671,7 @@ jobs:
   bake-imx8m-var-dart-debian-python:
     name: Bake imx8m-var-dart-debian-python
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-imx8m-var-dart-debian-python
     env:
       LIBRARY: library/imx8m-var-dart-debian-python.json
@@ -472,6 +733,7 @@ jobs:
   bake-imx8m-var-dart-fedora-golang:
     name: Bake imx8m-var-dart-fedora-golang
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-imx8m-var-dart-fedora-golang
     env:
       LIBRARY: library/imx8m-var-dart-fedora-golang.json
@@ -533,6 +795,7 @@ jobs:
   bake-imx8m-var-dart-fedora-node:
     name: Bake imx8m-var-dart-fedora-node
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-imx8m-var-dart-fedora-node
     env:
       LIBRARY: library/imx8m-var-dart-fedora-node.json
@@ -594,6 +857,7 @@ jobs:
   bake-imx8m-var-dart-fedora-python:
     name: Bake imx8m-var-dart-fedora-python
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-imx8m-var-dart-fedora-python
     env:
       LIBRARY: library/imx8m-var-dart-fedora-python.json
@@ -655,6 +919,7 @@ jobs:
   bake-imx8m-var-dart-ubuntu-golang:
     name: Bake imx8m-var-dart-ubuntu-golang
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-imx8m-var-dart-ubuntu-golang
     env:
       LIBRARY: library/imx8m-var-dart-ubuntu-golang.json
@@ -716,6 +981,7 @@ jobs:
   bake-imx8m-var-dart-ubuntu-node:
     name: Bake imx8m-var-dart-ubuntu-node
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-imx8m-var-dart-ubuntu-node
     env:
       LIBRARY: library/imx8m-var-dart-ubuntu-node.json
@@ -777,6 +1043,7 @@ jobs:
   bake-imx8m-var-dart-ubuntu-python:
     name: Bake imx8m-var-dart-ubuntu-python
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-imx8m-var-dart-ubuntu-python
     env:
       LIBRARY: library/imx8m-var-dart-ubuntu-python.json
@@ -838,6 +1105,7 @@ jobs:
   bake-imx8m-var-dart-ubuntu-openjdk:
     name: Bake imx8m-var-dart-ubuntu-openjdk
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-imx8m-var-dart-ubuntu-openjdk
     env:
       LIBRARY: library/imx8m-var-dart-ubuntu-openjdk.json
@@ -845,246 +1113,6 @@ jobs:
       fail-fast: false
       matrix:
         target: ${{ fromJSON(needs.prepare-imx8m-var-dart-ubuntu-openjdk.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
-      - name: Setup buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
-  prepare-imx8m-var-dart-alpine:
-    name: Prepare imx8m-var-dart-alpine
-    runs-on: ubuntu-latest
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/imx8m-var-dart-alpine.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-imx8m-var-dart-alpine:
-    name: Bake imx8m-var-dart-alpine
-    runs-on: ubuntu-latest
-    needs: prepare-imx8m-var-dart-alpine
-    env:
-      LIBRARY: library/imx8m-var-dart-alpine.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-imx8m-var-dart-alpine.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
-      - name: Setup buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
-  prepare-imx8m-var-dart-debian:
-    name: Prepare imx8m-var-dart-debian
-    runs-on: ubuntu-latest
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/imx8m-var-dart-debian.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-imx8m-var-dart-debian:
-    name: Bake imx8m-var-dart-debian
-    runs-on: ubuntu-latest
-    needs: prepare-imx8m-var-dart-debian
-    env:
-      LIBRARY: library/imx8m-var-dart-debian.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-imx8m-var-dart-debian.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
-      - name: Setup buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
-  prepare-imx8m-var-dart-fedora:
-    name: Prepare imx8m-var-dart-fedora
-    runs-on: ubuntu-latest
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/imx8m-var-dart-fedora.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-imx8m-var-dart-fedora:
-    name: Bake imx8m-var-dart-fedora
-    runs-on: ubuntu-latest
-    needs: prepare-imx8m-var-dart-fedora
-    env:
-      LIBRARY: library/imx8m-var-dart-fedora.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-imx8m-var-dart-fedora.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
-      - name: Setup buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
-  prepare-imx8m-var-dart-ubuntu:
-    name: Prepare imx8m-var-dart-ubuntu
-    runs-on: ubuntu-latest
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/imx8m-var-dart-ubuntu.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-imx8m-var-dart-ubuntu:
-    name: Bake imx8m-var-dart-ubuntu
-    runs-on: ubuntu-latest
-    needs: prepare-imx8m-var-dart-ubuntu
-    env:
-      LIBRARY: library/imx8m-var-dart-ubuntu.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-imx8m-var-dart-ubuntu.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b

@@ -12,6 +12,11 @@ name: Bake bananapi-m1-plus
         required: false
         type: boolean
         default: false
+      cancel-in-progress:
+        description: Cancel in-progress bake workflows for all device-types
+        required: false
+        type: boolean
+        default: false
   workflow_dispatch:
     inputs:
       no-push:
@@ -19,10 +24,198 @@ name: Bake bananapi-m1-plus
         required: false
         type: boolean
         default: false
+      cancel-in-progress:
+        description: Cancel in-progress bake workflows for all device-types
+        required: false
+        type: boolean
+        default: false
 concurrency:
-  group: ${{ github.workflow }}
-  cancel-in-progress: true
+  group: bake
+  cancel-in-progress: ${{ inputs.cancel-in-progress == true }}
 jobs:
+  prepare-bananapi-m1-plus-alpine:
+    name: Prepare bananapi-m1-plus-alpine
+    runs-on: ubuntu-latest
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/bananapi-m1-plus-alpine.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-bananapi-m1-plus-alpine:
+    name: Bake bananapi-m1-plus-alpine
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    needs: prepare-bananapi-m1-plus-alpine
+    env:
+      LIBRARY: library/bananapi-m1-plus-alpine.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-bananapi-m1-plus-alpine.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v6.2.0
+      - name: Setup buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Docker bake
+        continue-on-error: false
+        id: docker_bake
+        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+  prepare-bananapi-m1-plus-debian:
+    name: Prepare bananapi-m1-plus-debian
+    runs-on: ubuntu-latest
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/bananapi-m1-plus-debian.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-bananapi-m1-plus-debian:
+    name: Bake bananapi-m1-plus-debian
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    needs: prepare-bananapi-m1-plus-debian
+    env:
+      LIBRARY: library/bananapi-m1-plus-debian.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-bananapi-m1-plus-debian.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v6.2.0
+      - name: Setup buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Docker bake
+        continue-on-error: false
+        id: docker_bake
+        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+  prepare-bananapi-m1-plus-ubuntu:
+    name: Prepare bananapi-m1-plus-ubuntu
+    runs-on: ubuntu-latest
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/bananapi-m1-plus-ubuntu.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-bananapi-m1-plus-ubuntu:
+    name: Bake bananapi-m1-plus-ubuntu
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    needs: prepare-bananapi-m1-plus-ubuntu
+    env:
+      LIBRARY: library/bananapi-m1-plus-ubuntu.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-bananapi-m1-plus-ubuntu.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v6.2.0
+      - name: Setup buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Docker bake
+        continue-on-error: false
+        id: docker_bake
+        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
   prepare-bananapi-m1-plus-alpine-golang:
     name: Prepare bananapi-m1-plus-alpine-golang
     runs-on: ubuntu-latest
@@ -45,6 +238,7 @@ jobs:
   bake-bananapi-m1-plus-alpine-golang:
     name: Bake bananapi-m1-plus-alpine-golang
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-bananapi-m1-plus-alpine-golang
     env:
       LIBRARY: library/bananapi-m1-plus-alpine-golang.json
@@ -106,6 +300,7 @@ jobs:
   bake-bananapi-m1-plus-alpine-node:
     name: Bake bananapi-m1-plus-alpine-node
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-bananapi-m1-plus-alpine-node
     env:
       LIBRARY: library/bananapi-m1-plus-alpine-node.json
@@ -167,6 +362,7 @@ jobs:
   bake-bananapi-m1-plus-alpine-python:
     name: Bake bananapi-m1-plus-alpine-python
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-bananapi-m1-plus-alpine-python
     env:
       LIBRARY: library/bananapi-m1-plus-alpine-python.json
@@ -228,6 +424,7 @@ jobs:
   bake-bananapi-m1-plus-debian-golang:
     name: Bake bananapi-m1-plus-debian-golang
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-bananapi-m1-plus-debian-golang
     env:
       LIBRARY: library/bananapi-m1-plus-debian-golang.json
@@ -289,6 +486,7 @@ jobs:
   bake-bananapi-m1-plus-debian-node:
     name: Bake bananapi-m1-plus-debian-node
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-bananapi-m1-plus-debian-node
     env:
       LIBRARY: library/bananapi-m1-plus-debian-node.json
@@ -350,6 +548,7 @@ jobs:
   bake-bananapi-m1-plus-debian-openjdk:
     name: Bake bananapi-m1-plus-debian-openjdk
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-bananapi-m1-plus-debian-openjdk
     env:
       LIBRARY: library/bananapi-m1-plus-debian-openjdk.json
@@ -411,6 +610,7 @@ jobs:
   bake-bananapi-m1-plus-debian-python:
     name: Bake bananapi-m1-plus-debian-python
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-bananapi-m1-plus-debian-python
     env:
       LIBRARY: library/bananapi-m1-plus-debian-python.json
@@ -472,6 +672,7 @@ jobs:
   bake-bananapi-m1-plus-ubuntu-golang:
     name: Bake bananapi-m1-plus-ubuntu-golang
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-bananapi-m1-plus-ubuntu-golang
     env:
       LIBRARY: library/bananapi-m1-plus-ubuntu-golang.json
@@ -533,6 +734,7 @@ jobs:
   bake-bananapi-m1-plus-ubuntu-node:
     name: Bake bananapi-m1-plus-ubuntu-node
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-bananapi-m1-plus-ubuntu-node
     env:
       LIBRARY: library/bananapi-m1-plus-ubuntu-node.json
@@ -594,6 +796,7 @@ jobs:
   bake-bananapi-m1-plus-ubuntu-python:
     name: Bake bananapi-m1-plus-ubuntu-python
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-bananapi-m1-plus-ubuntu-python
     env:
       LIBRARY: library/bananapi-m1-plus-ubuntu-python.json
@@ -655,6 +858,7 @@ jobs:
   bake-bananapi-m1-plus-ubuntu-openjdk:
     name: Bake bananapi-m1-plus-ubuntu-openjdk
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-bananapi-m1-plus-ubuntu-openjdk
     env:
       LIBRARY: library/bananapi-m1-plus-ubuntu-openjdk.json
@@ -662,186 +866,6 @@ jobs:
       fail-fast: false
       matrix:
         target: ${{ fromJSON(needs.prepare-bananapi-m1-plus-ubuntu-openjdk.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
-      - name: Setup buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
-  prepare-bananapi-m1-plus-alpine:
-    name: Prepare bananapi-m1-plus-alpine
-    runs-on: ubuntu-latest
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/bananapi-m1-plus-alpine.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-bananapi-m1-plus-alpine:
-    name: Bake bananapi-m1-plus-alpine
-    runs-on: ubuntu-latest
-    needs: prepare-bananapi-m1-plus-alpine
-    env:
-      LIBRARY: library/bananapi-m1-plus-alpine.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-bananapi-m1-plus-alpine.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
-      - name: Setup buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
-  prepare-bananapi-m1-plus-debian:
-    name: Prepare bananapi-m1-plus-debian
-    runs-on: ubuntu-latest
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/bananapi-m1-plus-debian.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-bananapi-m1-plus-debian:
-    name: Bake bananapi-m1-plus-debian
-    runs-on: ubuntu-latest
-    needs: prepare-bananapi-m1-plus-debian
-    env:
-      LIBRARY: library/bananapi-m1-plus-debian.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-bananapi-m1-plus-debian.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
-      - name: Setup buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
-  prepare-bananapi-m1-plus-ubuntu:
-    name: Prepare bananapi-m1-plus-ubuntu
-    runs-on: ubuntu-latest
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/bananapi-m1-plus-ubuntu.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-bananapi-m1-plus-ubuntu:
-    name: Bake bananapi-m1-plus-ubuntu
-    runs-on: ubuntu-latest
-    needs: prepare-bananapi-m1-plus-ubuntu
-    env:
-      LIBRARY: library/bananapi-m1-plus-ubuntu.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-bananapi-m1-plus-ubuntu.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b

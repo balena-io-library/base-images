@@ -12,6 +12,11 @@ name: Bake surface-pro-6
         required: false
         type: boolean
         default: false
+      cancel-in-progress:
+        description: Cancel in-progress bake workflows for all device-types
+        required: false
+        type: boolean
+        default: false
   workflow_dispatch:
     inputs:
       no-push:
@@ -19,10 +24,259 @@ name: Bake surface-pro-6
         required: false
         type: boolean
         default: false
+      cancel-in-progress:
+        description: Cancel in-progress bake workflows for all device-types
+        required: false
+        type: boolean
+        default: false
 concurrency:
-  group: ${{ github.workflow }}
-  cancel-in-progress: true
+  group: bake
+  cancel-in-progress: ${{ inputs.cancel-in-progress == true }}
 jobs:
+  prepare-surface-pro-6-alpine:
+    name: Prepare surface-pro-6-alpine
+    runs-on: ubuntu-latest
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/surface-pro-6-alpine.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-surface-pro-6-alpine:
+    name: Bake surface-pro-6-alpine
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    needs: prepare-surface-pro-6-alpine
+    env:
+      LIBRARY: library/surface-pro-6-alpine.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-surface-pro-6-alpine.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v6.2.0
+      - name: Setup buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Docker bake
+        continue-on-error: false
+        id: docker_bake
+        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+  prepare-surface-pro-6-debian:
+    name: Prepare surface-pro-6-debian
+    runs-on: ubuntu-latest
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/surface-pro-6-debian.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-surface-pro-6-debian:
+    name: Bake surface-pro-6-debian
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    needs: prepare-surface-pro-6-debian
+    env:
+      LIBRARY: library/surface-pro-6-debian.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-surface-pro-6-debian.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v6.2.0
+      - name: Setup buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Docker bake
+        continue-on-error: false
+        id: docker_bake
+        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+  prepare-surface-pro-6-fedora:
+    name: Prepare surface-pro-6-fedora
+    runs-on: ubuntu-latest
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/surface-pro-6-fedora.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-surface-pro-6-fedora:
+    name: Bake surface-pro-6-fedora
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    needs: prepare-surface-pro-6-fedora
+    env:
+      LIBRARY: library/surface-pro-6-fedora.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-surface-pro-6-fedora.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v6.2.0
+      - name: Setup buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Docker bake
+        continue-on-error: false
+        id: docker_bake
+        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+  prepare-surface-pro-6-ubuntu:
+    name: Prepare surface-pro-6-ubuntu
+    runs-on: ubuntu-latest
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/surface-pro-6-ubuntu.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-surface-pro-6-ubuntu:
+    name: Bake surface-pro-6-ubuntu
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    needs: prepare-surface-pro-6-ubuntu
+    env:
+      LIBRARY: library/surface-pro-6-ubuntu.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-surface-pro-6-ubuntu.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v6.2.0
+      - name: Setup buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Docker bake
+        continue-on-error: false
+        id: docker_bake
+        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
   prepare-surface-pro-6-alpine-golang:
     name: Prepare surface-pro-6-alpine-golang
     runs-on: ubuntu-latest
@@ -45,6 +299,7 @@ jobs:
   bake-surface-pro-6-alpine-golang:
     name: Bake surface-pro-6-alpine-golang
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-surface-pro-6-alpine-golang
     env:
       LIBRARY: library/surface-pro-6-alpine-golang.json
@@ -106,6 +361,7 @@ jobs:
   bake-surface-pro-6-alpine-node:
     name: Bake surface-pro-6-alpine-node
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-surface-pro-6-alpine-node
     env:
       LIBRARY: library/surface-pro-6-alpine-node.json
@@ -167,6 +423,7 @@ jobs:
   bake-surface-pro-6-alpine-python:
     name: Bake surface-pro-6-alpine-python
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-surface-pro-6-alpine-python
     env:
       LIBRARY: library/surface-pro-6-alpine-python.json
@@ -228,6 +485,7 @@ jobs:
   bake-surface-pro-6-debian-dotnet:
     name: Bake surface-pro-6-debian-dotnet
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-surface-pro-6-debian-dotnet
     env:
       LIBRARY: library/surface-pro-6-debian-dotnet.json
@@ -289,6 +547,7 @@ jobs:
   bake-surface-pro-6-debian-golang:
     name: Bake surface-pro-6-debian-golang
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-surface-pro-6-debian-golang
     env:
       LIBRARY: library/surface-pro-6-debian-golang.json
@@ -350,6 +609,7 @@ jobs:
   bake-surface-pro-6-debian-node:
     name: Bake surface-pro-6-debian-node
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-surface-pro-6-debian-node
     env:
       LIBRARY: library/surface-pro-6-debian-node.json
@@ -411,6 +671,7 @@ jobs:
   bake-surface-pro-6-debian-openjdk:
     name: Bake surface-pro-6-debian-openjdk
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-surface-pro-6-debian-openjdk
     env:
       LIBRARY: library/surface-pro-6-debian-openjdk.json
@@ -472,6 +733,7 @@ jobs:
   bake-surface-pro-6-debian-python:
     name: Bake surface-pro-6-debian-python
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-surface-pro-6-debian-python
     env:
       LIBRARY: library/surface-pro-6-debian-python.json
@@ -533,6 +795,7 @@ jobs:
   bake-surface-pro-6-fedora-golang:
     name: Bake surface-pro-6-fedora-golang
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-surface-pro-6-fedora-golang
     env:
       LIBRARY: library/surface-pro-6-fedora-golang.json
@@ -594,6 +857,7 @@ jobs:
   bake-surface-pro-6-fedora-node:
     name: Bake surface-pro-6-fedora-node
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-surface-pro-6-fedora-node
     env:
       LIBRARY: library/surface-pro-6-fedora-node.json
@@ -655,6 +919,7 @@ jobs:
   bake-surface-pro-6-fedora-python:
     name: Bake surface-pro-6-fedora-python
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-surface-pro-6-fedora-python
     env:
       LIBRARY: library/surface-pro-6-fedora-python.json
@@ -716,6 +981,7 @@ jobs:
   bake-surface-pro-6-ubuntu-dotnet:
     name: Bake surface-pro-6-ubuntu-dotnet
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-surface-pro-6-ubuntu-dotnet
     env:
       LIBRARY: library/surface-pro-6-ubuntu-dotnet.json
@@ -777,6 +1043,7 @@ jobs:
   bake-surface-pro-6-ubuntu-golang:
     name: Bake surface-pro-6-ubuntu-golang
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-surface-pro-6-ubuntu-golang
     env:
       LIBRARY: library/surface-pro-6-ubuntu-golang.json
@@ -838,6 +1105,7 @@ jobs:
   bake-surface-pro-6-ubuntu-node:
     name: Bake surface-pro-6-ubuntu-node
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-surface-pro-6-ubuntu-node
     env:
       LIBRARY: library/surface-pro-6-ubuntu-node.json
@@ -899,6 +1167,7 @@ jobs:
   bake-surface-pro-6-ubuntu-python:
     name: Bake surface-pro-6-ubuntu-python
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-surface-pro-6-ubuntu-python
     env:
       LIBRARY: library/surface-pro-6-ubuntu-python.json
@@ -960,6 +1229,7 @@ jobs:
   bake-surface-pro-6-ubuntu-openjdk:
     name: Bake surface-pro-6-ubuntu-openjdk
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-surface-pro-6-ubuntu-openjdk
     env:
       LIBRARY: library/surface-pro-6-ubuntu-openjdk.json
@@ -967,246 +1237,6 @@ jobs:
       fail-fast: false
       matrix:
         target: ${{ fromJSON(needs.prepare-surface-pro-6-ubuntu-openjdk.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
-      - name: Setup buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
-  prepare-surface-pro-6-alpine:
-    name: Prepare surface-pro-6-alpine
-    runs-on: ubuntu-latest
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/surface-pro-6-alpine.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-surface-pro-6-alpine:
-    name: Bake surface-pro-6-alpine
-    runs-on: ubuntu-latest
-    needs: prepare-surface-pro-6-alpine
-    env:
-      LIBRARY: library/surface-pro-6-alpine.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-surface-pro-6-alpine.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
-      - name: Setup buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
-  prepare-surface-pro-6-debian:
-    name: Prepare surface-pro-6-debian
-    runs-on: ubuntu-latest
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/surface-pro-6-debian.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-surface-pro-6-debian:
-    name: Bake surface-pro-6-debian
-    runs-on: ubuntu-latest
-    needs: prepare-surface-pro-6-debian
-    env:
-      LIBRARY: library/surface-pro-6-debian.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-surface-pro-6-debian.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
-      - name: Setup buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
-  prepare-surface-pro-6-fedora:
-    name: Prepare surface-pro-6-fedora
-    runs-on: ubuntu-latest
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/surface-pro-6-fedora.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-surface-pro-6-fedora:
-    name: Bake surface-pro-6-fedora
-    runs-on: ubuntu-latest
-    needs: prepare-surface-pro-6-fedora
-    env:
-      LIBRARY: library/surface-pro-6-fedora.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-surface-pro-6-fedora.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
-      - name: Setup buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
-  prepare-surface-pro-6-ubuntu:
-    name: Prepare surface-pro-6-ubuntu
-    runs-on: ubuntu-latest
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/surface-pro-6-ubuntu.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-surface-pro-6-ubuntu:
-    name: Bake surface-pro-6-ubuntu
-    runs-on: ubuntu-latest
-    needs: prepare-surface-pro-6-ubuntu
-    env:
-      LIBRARY: library/surface-pro-6-ubuntu.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-surface-pro-6-ubuntu.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b

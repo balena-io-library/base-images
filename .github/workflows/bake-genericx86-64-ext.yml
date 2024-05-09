@@ -12,6 +12,11 @@ name: Bake genericx86-64-ext
         required: false
         type: boolean
         default: false
+      cancel-in-progress:
+        description: Cancel in-progress bake workflows for all device-types
+        required: false
+        type: boolean
+        default: false
   workflow_dispatch:
     inputs:
       no-push:
@@ -19,10 +24,259 @@ name: Bake genericx86-64-ext
         required: false
         type: boolean
         default: false
+      cancel-in-progress:
+        description: Cancel in-progress bake workflows for all device-types
+        required: false
+        type: boolean
+        default: false
 concurrency:
-  group: ${{ github.workflow }}
-  cancel-in-progress: true
+  group: bake
+  cancel-in-progress: ${{ inputs.cancel-in-progress == true }}
 jobs:
+  prepare-genericx86-64-ext-alpine:
+    name: Prepare genericx86-64-ext-alpine
+    runs-on: ubuntu-latest
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/genericx86-64-ext-alpine.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-genericx86-64-ext-alpine:
+    name: Bake genericx86-64-ext-alpine
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    needs: prepare-genericx86-64-ext-alpine
+    env:
+      LIBRARY: library/genericx86-64-ext-alpine.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-genericx86-64-ext-alpine.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v6.2.0
+      - name: Setup buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Docker bake
+        continue-on-error: false
+        id: docker_bake
+        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+  prepare-genericx86-64-ext-debian:
+    name: Prepare genericx86-64-ext-debian
+    runs-on: ubuntu-latest
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/genericx86-64-ext-debian.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-genericx86-64-ext-debian:
+    name: Bake genericx86-64-ext-debian
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    needs: prepare-genericx86-64-ext-debian
+    env:
+      LIBRARY: library/genericx86-64-ext-debian.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-genericx86-64-ext-debian.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v6.2.0
+      - name: Setup buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Docker bake
+        continue-on-error: false
+        id: docker_bake
+        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+  prepare-genericx86-64-ext-fedora:
+    name: Prepare genericx86-64-ext-fedora
+    runs-on: ubuntu-latest
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/genericx86-64-ext-fedora.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-genericx86-64-ext-fedora:
+    name: Bake genericx86-64-ext-fedora
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    needs: prepare-genericx86-64-ext-fedora
+    env:
+      LIBRARY: library/genericx86-64-ext-fedora.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-genericx86-64-ext-fedora.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v6.2.0
+      - name: Setup buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Docker bake
+        continue-on-error: false
+        id: docker_bake
+        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+  prepare-genericx86-64-ext-ubuntu:
+    name: Prepare genericx86-64-ext-ubuntu
+    runs-on: ubuntu-latest
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/genericx86-64-ext-ubuntu.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-genericx86-64-ext-ubuntu:
+    name: Bake genericx86-64-ext-ubuntu
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    needs: prepare-genericx86-64-ext-ubuntu
+    env:
+      LIBRARY: library/genericx86-64-ext-ubuntu.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-genericx86-64-ext-ubuntu.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v6.2.0
+      - name: Setup buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Docker bake
+        continue-on-error: false
+        id: docker_bake
+        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
   prepare-genericx86-64-ext-alpine-golang:
     name: Prepare genericx86-64-ext-alpine-golang
     runs-on: ubuntu-latest
@@ -45,6 +299,7 @@ jobs:
   bake-genericx86-64-ext-alpine-golang:
     name: Bake genericx86-64-ext-alpine-golang
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-genericx86-64-ext-alpine-golang
     env:
       LIBRARY: library/genericx86-64-ext-alpine-golang.json
@@ -106,6 +361,7 @@ jobs:
   bake-genericx86-64-ext-alpine-node:
     name: Bake genericx86-64-ext-alpine-node
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-genericx86-64-ext-alpine-node
     env:
       LIBRARY: library/genericx86-64-ext-alpine-node.json
@@ -167,6 +423,7 @@ jobs:
   bake-genericx86-64-ext-alpine-python:
     name: Bake genericx86-64-ext-alpine-python
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-genericx86-64-ext-alpine-python
     env:
       LIBRARY: library/genericx86-64-ext-alpine-python.json
@@ -228,6 +485,7 @@ jobs:
   bake-genericx86-64-ext-debian-dotnet:
     name: Bake genericx86-64-ext-debian-dotnet
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-genericx86-64-ext-debian-dotnet
     env:
       LIBRARY: library/genericx86-64-ext-debian-dotnet.json
@@ -289,6 +547,7 @@ jobs:
   bake-genericx86-64-ext-debian-golang:
     name: Bake genericx86-64-ext-debian-golang
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-genericx86-64-ext-debian-golang
     env:
       LIBRARY: library/genericx86-64-ext-debian-golang.json
@@ -350,6 +609,7 @@ jobs:
   bake-genericx86-64-ext-debian-node:
     name: Bake genericx86-64-ext-debian-node
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-genericx86-64-ext-debian-node
     env:
       LIBRARY: library/genericx86-64-ext-debian-node.json
@@ -411,6 +671,7 @@ jobs:
   bake-genericx86-64-ext-debian-openjdk:
     name: Bake genericx86-64-ext-debian-openjdk
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-genericx86-64-ext-debian-openjdk
     env:
       LIBRARY: library/genericx86-64-ext-debian-openjdk.json
@@ -472,6 +733,7 @@ jobs:
   bake-genericx86-64-ext-debian-python:
     name: Bake genericx86-64-ext-debian-python
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-genericx86-64-ext-debian-python
     env:
       LIBRARY: library/genericx86-64-ext-debian-python.json
@@ -533,6 +795,7 @@ jobs:
   bake-genericx86-64-ext-fedora-golang:
     name: Bake genericx86-64-ext-fedora-golang
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-genericx86-64-ext-fedora-golang
     env:
       LIBRARY: library/genericx86-64-ext-fedora-golang.json
@@ -594,6 +857,7 @@ jobs:
   bake-genericx86-64-ext-fedora-node:
     name: Bake genericx86-64-ext-fedora-node
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-genericx86-64-ext-fedora-node
     env:
       LIBRARY: library/genericx86-64-ext-fedora-node.json
@@ -655,6 +919,7 @@ jobs:
   bake-genericx86-64-ext-fedora-python:
     name: Bake genericx86-64-ext-fedora-python
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-genericx86-64-ext-fedora-python
     env:
       LIBRARY: library/genericx86-64-ext-fedora-python.json
@@ -716,6 +981,7 @@ jobs:
   bake-genericx86-64-ext-ubuntu-dotnet:
     name: Bake genericx86-64-ext-ubuntu-dotnet
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-genericx86-64-ext-ubuntu-dotnet
     env:
       LIBRARY: library/genericx86-64-ext-ubuntu-dotnet.json
@@ -777,6 +1043,7 @@ jobs:
   bake-genericx86-64-ext-ubuntu-golang:
     name: Bake genericx86-64-ext-ubuntu-golang
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-genericx86-64-ext-ubuntu-golang
     env:
       LIBRARY: library/genericx86-64-ext-ubuntu-golang.json
@@ -838,6 +1105,7 @@ jobs:
   bake-genericx86-64-ext-ubuntu-node:
     name: Bake genericx86-64-ext-ubuntu-node
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-genericx86-64-ext-ubuntu-node
     env:
       LIBRARY: library/genericx86-64-ext-ubuntu-node.json
@@ -899,6 +1167,7 @@ jobs:
   bake-genericx86-64-ext-ubuntu-python:
     name: Bake genericx86-64-ext-ubuntu-python
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-genericx86-64-ext-ubuntu-python
     env:
       LIBRARY: library/genericx86-64-ext-ubuntu-python.json
@@ -960,6 +1229,7 @@ jobs:
   bake-genericx86-64-ext-ubuntu-openjdk:
     name: Bake genericx86-64-ext-ubuntu-openjdk
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-genericx86-64-ext-ubuntu-openjdk
     env:
       LIBRARY: library/genericx86-64-ext-ubuntu-openjdk.json
@@ -967,246 +1237,6 @@ jobs:
       fail-fast: false
       matrix:
         target: ${{ fromJSON(needs.prepare-genericx86-64-ext-ubuntu-openjdk.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
-      - name: Setup buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
-  prepare-genericx86-64-ext-alpine:
-    name: Prepare genericx86-64-ext-alpine
-    runs-on: ubuntu-latest
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/genericx86-64-ext-alpine.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-genericx86-64-ext-alpine:
-    name: Bake genericx86-64-ext-alpine
-    runs-on: ubuntu-latest
-    needs: prepare-genericx86-64-ext-alpine
-    env:
-      LIBRARY: library/genericx86-64-ext-alpine.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-genericx86-64-ext-alpine.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
-      - name: Setup buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
-  prepare-genericx86-64-ext-debian:
-    name: Prepare genericx86-64-ext-debian
-    runs-on: ubuntu-latest
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/genericx86-64-ext-debian.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-genericx86-64-ext-debian:
-    name: Bake genericx86-64-ext-debian
-    runs-on: ubuntu-latest
-    needs: prepare-genericx86-64-ext-debian
-    env:
-      LIBRARY: library/genericx86-64-ext-debian.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-genericx86-64-ext-debian.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
-      - name: Setup buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
-  prepare-genericx86-64-ext-fedora:
-    name: Prepare genericx86-64-ext-fedora
-    runs-on: ubuntu-latest
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/genericx86-64-ext-fedora.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-genericx86-64-ext-fedora:
-    name: Bake genericx86-64-ext-fedora
-    runs-on: ubuntu-latest
-    needs: prepare-genericx86-64-ext-fedora
-    env:
-      LIBRARY: library/genericx86-64-ext-fedora.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-genericx86-64-ext-fedora.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
-      - name: Setup buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
-  prepare-genericx86-64-ext-ubuntu:
-    name: Prepare genericx86-64-ext-ubuntu
-    runs-on: ubuntu-latest
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/genericx86-64-ext-ubuntu.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-genericx86-64-ext-ubuntu:
-    name: Bake genericx86-64-ext-ubuntu
-    runs-on: ubuntu-latest
-    needs: prepare-genericx86-64-ext-ubuntu
-    env:
-      LIBRARY: library/genericx86-64-ext-ubuntu.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-genericx86-64-ext-ubuntu.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b

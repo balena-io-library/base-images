@@ -12,6 +12,11 @@ name: Bake asus-tinker-board-s
         required: false
         type: boolean
         default: false
+      cancel-in-progress:
+        description: Cancel in-progress bake workflows for all device-types
+        required: false
+        type: boolean
+        default: false
   workflow_dispatch:
     inputs:
       no-push:
@@ -19,10 +24,198 @@ name: Bake asus-tinker-board-s
         required: false
         type: boolean
         default: false
+      cancel-in-progress:
+        description: Cancel in-progress bake workflows for all device-types
+        required: false
+        type: boolean
+        default: false
 concurrency:
-  group: ${{ github.workflow }}
-  cancel-in-progress: true
+  group: bake
+  cancel-in-progress: ${{ inputs.cancel-in-progress == true }}
 jobs:
+  prepare-asus-tinker-board-s-alpine:
+    name: Prepare asus-tinker-board-s-alpine
+    runs-on: ubuntu-latest
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/asus-tinker-board-s-alpine.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-asus-tinker-board-s-alpine:
+    name: Bake asus-tinker-board-s-alpine
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    needs: prepare-asus-tinker-board-s-alpine
+    env:
+      LIBRARY: library/asus-tinker-board-s-alpine.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-asus-tinker-board-s-alpine.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v6.2.0
+      - name: Setup buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Docker bake
+        continue-on-error: false
+        id: docker_bake
+        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+  prepare-asus-tinker-board-s-debian:
+    name: Prepare asus-tinker-board-s-debian
+    runs-on: ubuntu-latest
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/asus-tinker-board-s-debian.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-asus-tinker-board-s-debian:
+    name: Bake asus-tinker-board-s-debian
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    needs: prepare-asus-tinker-board-s-debian
+    env:
+      LIBRARY: library/asus-tinker-board-s-debian.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-asus-tinker-board-s-debian.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v6.2.0
+      - name: Setup buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Docker bake
+        continue-on-error: false
+        id: docker_bake
+        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+  prepare-asus-tinker-board-s-ubuntu:
+    name: Prepare asus-tinker-board-s-ubuntu
+    runs-on: ubuntu-latest
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/asus-tinker-board-s-ubuntu.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-asus-tinker-board-s-ubuntu:
+    name: Bake asus-tinker-board-s-ubuntu
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    needs: prepare-asus-tinker-board-s-ubuntu
+    env:
+      LIBRARY: library/asus-tinker-board-s-ubuntu.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-asus-tinker-board-s-ubuntu.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v6.2.0
+      - name: Setup buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Docker bake
+        continue-on-error: false
+        id: docker_bake
+        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
   prepare-asus-tinker-board-s-alpine-golang:
     name: Prepare asus-tinker-board-s-alpine-golang
     runs-on: ubuntu-latest
@@ -45,6 +238,7 @@ jobs:
   bake-asus-tinker-board-s-alpine-golang:
     name: Bake asus-tinker-board-s-alpine-golang
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-asus-tinker-board-s-alpine-golang
     env:
       LIBRARY: library/asus-tinker-board-s-alpine-golang.json
@@ -106,6 +300,7 @@ jobs:
   bake-asus-tinker-board-s-alpine-node:
     name: Bake asus-tinker-board-s-alpine-node
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-asus-tinker-board-s-alpine-node
     env:
       LIBRARY: library/asus-tinker-board-s-alpine-node.json
@@ -167,6 +362,7 @@ jobs:
   bake-asus-tinker-board-s-alpine-python:
     name: Bake asus-tinker-board-s-alpine-python
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-asus-tinker-board-s-alpine-python
     env:
       LIBRARY: library/asus-tinker-board-s-alpine-python.json
@@ -228,6 +424,7 @@ jobs:
   bake-asus-tinker-board-s-debian-golang:
     name: Bake asus-tinker-board-s-debian-golang
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-asus-tinker-board-s-debian-golang
     env:
       LIBRARY: library/asus-tinker-board-s-debian-golang.json
@@ -289,6 +486,7 @@ jobs:
   bake-asus-tinker-board-s-debian-node:
     name: Bake asus-tinker-board-s-debian-node
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-asus-tinker-board-s-debian-node
     env:
       LIBRARY: library/asus-tinker-board-s-debian-node.json
@@ -350,6 +548,7 @@ jobs:
   bake-asus-tinker-board-s-debian-openjdk:
     name: Bake asus-tinker-board-s-debian-openjdk
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-asus-tinker-board-s-debian-openjdk
     env:
       LIBRARY: library/asus-tinker-board-s-debian-openjdk.json
@@ -411,6 +610,7 @@ jobs:
   bake-asus-tinker-board-s-debian-python:
     name: Bake asus-tinker-board-s-debian-python
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-asus-tinker-board-s-debian-python
     env:
       LIBRARY: library/asus-tinker-board-s-debian-python.json
@@ -472,6 +672,7 @@ jobs:
   bake-asus-tinker-board-s-ubuntu-golang:
     name: Bake asus-tinker-board-s-ubuntu-golang
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-asus-tinker-board-s-ubuntu-golang
     env:
       LIBRARY: library/asus-tinker-board-s-ubuntu-golang.json
@@ -533,6 +734,7 @@ jobs:
   bake-asus-tinker-board-s-ubuntu-node:
     name: Bake asus-tinker-board-s-ubuntu-node
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-asus-tinker-board-s-ubuntu-node
     env:
       LIBRARY: library/asus-tinker-board-s-ubuntu-node.json
@@ -594,6 +796,7 @@ jobs:
   bake-asus-tinker-board-s-ubuntu-python:
     name: Bake asus-tinker-board-s-ubuntu-python
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-asus-tinker-board-s-ubuntu-python
     env:
       LIBRARY: library/asus-tinker-board-s-ubuntu-python.json
@@ -655,6 +858,7 @@ jobs:
   bake-asus-tinker-board-s-ubuntu-openjdk:
     name: Bake asus-tinker-board-s-ubuntu-openjdk
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     needs: prepare-asus-tinker-board-s-ubuntu-openjdk
     env:
       LIBRARY: library/asus-tinker-board-s-ubuntu-openjdk.json
@@ -662,186 +866,6 @@ jobs:
       fail-fast: false
       matrix:
         target: ${{ fromJSON(needs.prepare-asus-tinker-board-s-ubuntu-openjdk.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
-      - name: Setup buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
-  prepare-asus-tinker-board-s-alpine:
-    name: Prepare asus-tinker-board-s-alpine
-    runs-on: ubuntu-latest
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/asus-tinker-board-s-alpine.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-asus-tinker-board-s-alpine:
-    name: Bake asus-tinker-board-s-alpine
-    runs-on: ubuntu-latest
-    needs: prepare-asus-tinker-board-s-alpine
-    env:
-      LIBRARY: library/asus-tinker-board-s-alpine.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-asus-tinker-board-s-alpine.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
-      - name: Setup buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
-  prepare-asus-tinker-board-s-debian:
-    name: Prepare asus-tinker-board-s-debian
-    runs-on: ubuntu-latest
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/asus-tinker-board-s-debian.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-asus-tinker-board-s-debian:
-    name: Bake asus-tinker-board-s-debian
-    runs-on: ubuntu-latest
-    needs: prepare-asus-tinker-board-s-debian
-    env:
-      LIBRARY: library/asus-tinker-board-s-debian.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-asus-tinker-board-s-debian.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v6.2.0
-      - name: Setup buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
-  prepare-asus-tinker-board-s-ubuntu:
-    name: Prepare asus-tinker-board-s-ubuntu
-    runs-on: ubuntu-latest
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/asus-tinker-board-s-ubuntu.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-asus-tinker-board-s-ubuntu:
-    name: Bake asus-tinker-board-s-ubuntu
-    runs-on: ubuntu-latest
-    needs: prepare-asus-tinker-board-s-ubuntu
-    env:
-      LIBRARY: library/asus-tinker-board-s-ubuntu.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-asus-tinker-board-s-ubuntu.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
