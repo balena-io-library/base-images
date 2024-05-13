@@ -19,19 +19,19 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/isg-503-ubuntu:jammy-build-20240509",
+        "docker.io/balenalib/isg-503-ubuntu:jammy-build-20240513",
         "docker.io/balenalib/isg-503-ubuntu:jammy-build",
-        "docker.io/balenalib/isg-503-ubuntu:latest-build-20240509",
+        "docker.io/balenalib/isg-503-ubuntu:latest-build-20240513",
         "docker.io/balenalib/isg-503-ubuntu:latest-build",
-        "docker.io/balenalib/isg-503-ubuntu:build-20240509",
+        "docker.io/balenalib/isg-503-ubuntu:build-20240513",
         "docker.io/balenalib/isg-503-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/isg-503-ubuntu:jammy-build-20240509",
+        "docker.io/balenalib/isg-503-ubuntu:jammy-build-20240513",
         "docker.io/balenalib/isg-503-ubuntu:jammy-build",
-        "docker.io/balenalib/isg-503-ubuntu:latest-build-20240509",
+        "docker.io/balenalib/isg-503-ubuntu:latest-build-20240513",
         "docker.io/balenalib/isg-503-ubuntu:latest-build",
-        "docker.io/balenalib/isg-503-ubuntu:build-20240509",
+        "docker.io/balenalib/isg-503-ubuntu:build-20240513",
         "docker.io/balenalib/isg-503-ubuntu:build"
       ]
     },
@@ -40,30 +40,30 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/isg-503-ubuntu:jammy-run-20240509",
+        "docker.io/balenalib/isg-503-ubuntu:jammy-run-20240513",
         "docker.io/balenalib/isg-503-ubuntu:jammy-run",
-        "docker.io/balenalib/isg-503-ubuntu:jammy-20240509",
+        "docker.io/balenalib/isg-503-ubuntu:jammy-20240513",
         "docker.io/balenalib/isg-503-ubuntu:jammy",
-        "docker.io/balenalib/isg-503-ubuntu:latest-run-20240509",
+        "docker.io/balenalib/isg-503-ubuntu:latest-run-20240513",
         "docker.io/balenalib/isg-503-ubuntu:latest-run",
-        "docker.io/balenalib/isg-503-ubuntu:latest-20240509",
+        "docker.io/balenalib/isg-503-ubuntu:latest-20240513",
         "docker.io/balenalib/isg-503-ubuntu:latest",
-        "docker.io/balenalib/isg-503-ubuntu:run-20240509",
+        "docker.io/balenalib/isg-503-ubuntu:run-20240513",
         "docker.io/balenalib/isg-503-ubuntu:run",
-        "docker.io/balenalib/isg-503-ubuntu:20240509"
+        "docker.io/balenalib/isg-503-ubuntu:20240513"
       ],
       "cache_from": [
-        "docker.io/balenalib/isg-503-ubuntu:jammy-run-20240509",
+        "docker.io/balenalib/isg-503-ubuntu:jammy-run-20240513",
         "docker.io/balenalib/isg-503-ubuntu:jammy-run",
-        "docker.io/balenalib/isg-503-ubuntu:jammy-20240509",
+        "docker.io/balenalib/isg-503-ubuntu:jammy-20240513",
         "docker.io/balenalib/isg-503-ubuntu:jammy",
-        "docker.io/balenalib/isg-503-ubuntu:latest-run-20240509",
+        "docker.io/balenalib/isg-503-ubuntu:latest-run-20240513",
         "docker.io/balenalib/isg-503-ubuntu:latest-run",
-        "docker.io/balenalib/isg-503-ubuntu:latest-20240509",
+        "docker.io/balenalib/isg-503-ubuntu:latest-20240513",
         "docker.io/balenalib/isg-503-ubuntu:latest",
-        "docker.io/balenalib/isg-503-ubuntu:run-20240509",
+        "docker.io/balenalib/isg-503-ubuntu:run-20240513",
         "docker.io/balenalib/isg-503-ubuntu:run",
-        "docker.io/balenalib/isg-503-ubuntu:20240509"
+        "docker.io/balenalib/isg-503-ubuntu:20240513"
       ]
     },
     "isg-503-ubuntu-focal-build": {
@@ -71,11 +71,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/isg-503-ubuntu:focal-build-20240509",
+        "docker.io/balenalib/isg-503-ubuntu:focal-build-20240513",
         "docker.io/balenalib/isg-503-ubuntu:focal-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/isg-503-ubuntu:focal-build-20240509",
+        "docker.io/balenalib/isg-503-ubuntu:focal-build-20240513",
         "docker.io/balenalib/isg-503-ubuntu:focal-build"
       ]
     },
@@ -84,15 +84,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/isg-503-ubuntu:focal-run-20240509",
+        "docker.io/balenalib/isg-503-ubuntu:focal-run-20240513",
         "docker.io/balenalib/isg-503-ubuntu:focal-run",
-        "docker.io/balenalib/isg-503-ubuntu:focal-20240509",
+        "docker.io/balenalib/isg-503-ubuntu:focal-20240513",
         "docker.io/balenalib/isg-503-ubuntu:focal"
       ],
       "cache_from": [
-        "docker.io/balenalib/isg-503-ubuntu:focal-run-20240509",
+        "docker.io/balenalib/isg-503-ubuntu:focal-run-20240513",
         "docker.io/balenalib/isg-503-ubuntu:focal-run",
-        "docker.io/balenalib/isg-503-ubuntu:focal-20240509",
+        "docker.io/balenalib/isg-503-ubuntu:focal-20240513",
         "docker.io/balenalib/isg-503-ubuntu:focal"
       ]
     },
@@ -101,11 +101,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/isg-503-ubuntu:xenial-build-20240509",
+        "docker.io/balenalib/isg-503-ubuntu:xenial-build-20240513",
         "docker.io/balenalib/isg-503-ubuntu:xenial-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/isg-503-ubuntu:xenial-build-20240509",
+        "docker.io/balenalib/isg-503-ubuntu:xenial-build-20240513",
         "docker.io/balenalib/isg-503-ubuntu:xenial-build"
       ]
     },
@@ -114,15 +114,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/isg-503-ubuntu:xenial-run-20240509",
+        "docker.io/balenalib/isg-503-ubuntu:xenial-run-20240513",
         "docker.io/balenalib/isg-503-ubuntu:xenial-run",
-        "docker.io/balenalib/isg-503-ubuntu:xenial-20240509",
+        "docker.io/balenalib/isg-503-ubuntu:xenial-20240513",
         "docker.io/balenalib/isg-503-ubuntu:xenial"
       ],
       "cache_from": [
-        "docker.io/balenalib/isg-503-ubuntu:xenial-run-20240509",
+        "docker.io/balenalib/isg-503-ubuntu:xenial-run-20240513",
         "docker.io/balenalib/isg-503-ubuntu:xenial-run",
-        "docker.io/balenalib/isg-503-ubuntu:xenial-20240509",
+        "docker.io/balenalib/isg-503-ubuntu:xenial-20240513",
         "docker.io/balenalib/isg-503-ubuntu:xenial"
       ]
     },
@@ -131,11 +131,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/isg-503-ubuntu:bionic-build-20240509",
+        "docker.io/balenalib/isg-503-ubuntu:bionic-build-20240513",
         "docker.io/balenalib/isg-503-ubuntu:bionic-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/isg-503-ubuntu:bionic-build-20240509",
+        "docker.io/balenalib/isg-503-ubuntu:bionic-build-20240513",
         "docker.io/balenalib/isg-503-ubuntu:bionic-build"
       ]
     },
@@ -144,15 +144,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/isg-503-ubuntu:bionic-run-20240509",
+        "docker.io/balenalib/isg-503-ubuntu:bionic-run-20240513",
         "docker.io/balenalib/isg-503-ubuntu:bionic-run",
-        "docker.io/balenalib/isg-503-ubuntu:bionic-20240509",
+        "docker.io/balenalib/isg-503-ubuntu:bionic-20240513",
         "docker.io/balenalib/isg-503-ubuntu:bionic"
       ],
       "cache_from": [
-        "docker.io/balenalib/isg-503-ubuntu:bionic-run-20240509",
+        "docker.io/balenalib/isg-503-ubuntu:bionic-run-20240513",
         "docker.io/balenalib/isg-503-ubuntu:bionic-run",
-        "docker.io/balenalib/isg-503-ubuntu:bionic-20240509",
+        "docker.io/balenalib/isg-503-ubuntu:bionic-20240513",
         "docker.io/balenalib/isg-503-ubuntu:bionic"
       ]
     }
