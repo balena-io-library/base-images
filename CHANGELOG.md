@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.9.5 - 2024-05-13
+
+* Lock file maintenance [Self-hosted Renovate Bot]
+
 ## 2.9.4 - 2024-05-09
 
 * Make cancel-in-progress an opt-in feature with clear explanation [Kyle Harding]
