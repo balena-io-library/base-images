@@ -1,8 +1,8 @@
-name: Bake aarch64
+name: Bake bluechiptechnology-db1
 'on':
   workflow_run:
     workflows:
-      - Bake all
+      - Bake aarch64
     types:
       - completed
   workflow_dispatch:
@@ -21,14 +21,14 @@ concurrency:
   group: bake
   cancel-in-progress: ${{ inputs.cancel-in-progress == true }}
 jobs:
-  prepare-aarch64-alpine:
-    name: Prepare aarch64-alpine
+  prepare-bluechiptechnology-db1-alpine:
+    name: Prepare bluechiptechnology-db1-alpine
     runs-on: ubuntu-latest
     if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/aarch64-alpine.json
+      LIBRARY: library/bluechiptechnology-db1-alpine.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -40,17 +40,17 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-aarch64-alpine:
-    name: Bake aarch64-alpine
+  bake-bluechiptechnology-db1-alpine:
+    name: Bake bluechiptechnology-db1-alpine
     runs-on: ubuntu-latest
     timeout-minutes: 240
-    needs: prepare-aarch64-alpine
+    needs: prepare-bluechiptechnology-db1-alpine
     env:
-      LIBRARY: library/aarch64-alpine.json
+      LIBRARY: library/bluechiptechnology-db1-alpine.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-aarch64-alpine.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-bluechiptechnology-db1-alpine.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -83,14 +83,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-aarch64-debian:
-    name: Prepare aarch64-debian
+  prepare-bluechiptechnology-db1-debian:
+    name: Prepare bluechiptechnology-db1-debian
     runs-on: ubuntu-latest
     if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/aarch64-debian.json
+      LIBRARY: library/bluechiptechnology-db1-debian.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -102,17 +102,17 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-aarch64-debian:
-    name: Bake aarch64-debian
+  bake-bluechiptechnology-db1-debian:
+    name: Bake bluechiptechnology-db1-debian
     runs-on: ubuntu-latest
     timeout-minutes: 240
-    needs: prepare-aarch64-debian
+    needs: prepare-bluechiptechnology-db1-debian
     env:
-      LIBRARY: library/aarch64-debian.json
+      LIBRARY: library/bluechiptechnology-db1-debian.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-aarch64-debian.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-bluechiptechnology-db1-debian.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -145,14 +145,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-aarch64-fedora:
-    name: Prepare aarch64-fedora
+  prepare-bluechiptechnology-db1-fedora:
+    name: Prepare bluechiptechnology-db1-fedora
     runs-on: ubuntu-latest
     if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/aarch64-fedora.json
+      LIBRARY: library/bluechiptechnology-db1-fedora.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -164,17 +164,17 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-aarch64-fedora:
-    name: Bake aarch64-fedora
+  bake-bluechiptechnology-db1-fedora:
+    name: Bake bluechiptechnology-db1-fedora
     runs-on: ubuntu-latest
     timeout-minutes: 240
-    needs: prepare-aarch64-fedora
+    needs: prepare-bluechiptechnology-db1-fedora
     env:
-      LIBRARY: library/aarch64-fedora.json
+      LIBRARY: library/bluechiptechnology-db1-fedora.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-aarch64-fedora.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-bluechiptechnology-db1-fedora.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -207,14 +207,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-aarch64-ubuntu:
-    name: Prepare aarch64-ubuntu
+  prepare-bluechiptechnology-db1-ubuntu:
+    name: Prepare bluechiptechnology-db1-ubuntu
     runs-on: ubuntu-latest
     if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/aarch64-ubuntu.json
+      LIBRARY: library/bluechiptechnology-db1-ubuntu.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -226,17 +226,17 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-aarch64-ubuntu:
-    name: Bake aarch64-ubuntu
+  bake-bluechiptechnology-db1-ubuntu:
+    name: Bake bluechiptechnology-db1-ubuntu
     runs-on: ubuntu-latest
     timeout-minutes: 240
-    needs: prepare-aarch64-ubuntu
+    needs: prepare-bluechiptechnology-db1-ubuntu
     env:
-      LIBRARY: library/aarch64-ubuntu.json
+      LIBRARY: library/bluechiptechnology-db1-ubuntu.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-aarch64-ubuntu.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-bluechiptechnology-db1-ubuntu.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -269,14 +269,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-aarch64-alpine-golang:
-    name: Prepare aarch64-alpine-golang
+  prepare-bluechiptechnology-db1-alpine-golang:
+    name: Prepare bluechiptechnology-db1-alpine-golang
     runs-on: ubuntu-latest
-    needs: bake-aarch64-alpine
+    needs: bake-bluechiptechnology-db1-alpine
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/aarch64-alpine-golang.json
+      LIBRARY: library/bluechiptechnology-db1-alpine-golang.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -288,17 +288,17 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-aarch64-alpine-golang:
-    name: Bake aarch64-alpine-golang
+  bake-bluechiptechnology-db1-alpine-golang:
+    name: Bake bluechiptechnology-db1-alpine-golang
     runs-on: ubuntu-latest
     timeout-minutes: 240
-    needs: prepare-aarch64-alpine-golang
+    needs: prepare-bluechiptechnology-db1-alpine-golang
     env:
-      LIBRARY: library/aarch64-alpine-golang.json
+      LIBRARY: library/bluechiptechnology-db1-alpine-golang.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-aarch64-alpine-golang.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-bluechiptechnology-db1-alpine-golang.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -331,14 +331,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-aarch64-alpine-node:
-    name: Prepare aarch64-alpine-node
+  prepare-bluechiptechnology-db1-alpine-node:
+    name: Prepare bluechiptechnology-db1-alpine-node
     runs-on: ubuntu-latest
-    needs: bake-aarch64-alpine
+    needs: bake-bluechiptechnology-db1-alpine
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/aarch64-alpine-node.json
+      LIBRARY: library/bluechiptechnology-db1-alpine-node.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -350,17 +350,17 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-aarch64-alpine-node:
-    name: Bake aarch64-alpine-node
+  bake-bluechiptechnology-db1-alpine-node:
+    name: Bake bluechiptechnology-db1-alpine-node
     runs-on: ubuntu-latest
     timeout-minutes: 240
-    needs: prepare-aarch64-alpine-node
+    needs: prepare-bluechiptechnology-db1-alpine-node
     env:
-      LIBRARY: library/aarch64-alpine-node.json
+      LIBRARY: library/bluechiptechnology-db1-alpine-node.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-aarch64-alpine-node.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-bluechiptechnology-db1-alpine-node.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -393,14 +393,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-aarch64-alpine-python:
-    name: Prepare aarch64-alpine-python
+  prepare-bluechiptechnology-db1-alpine-python:
+    name: Prepare bluechiptechnology-db1-alpine-python
     runs-on: ubuntu-latest
-    needs: bake-aarch64-alpine
+    needs: bake-bluechiptechnology-db1-alpine
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/aarch64-alpine-python.json
+      LIBRARY: library/bluechiptechnology-db1-alpine-python.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -412,17 +412,17 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-aarch64-alpine-python:
-    name: Bake aarch64-alpine-python
+  bake-bluechiptechnology-db1-alpine-python:
+    name: Bake bluechiptechnology-db1-alpine-python
     runs-on: ubuntu-latest
     timeout-minutes: 240
-    needs: prepare-aarch64-alpine-python
+    needs: prepare-bluechiptechnology-db1-alpine-python
     env:
-      LIBRARY: library/aarch64-alpine-python.json
+      LIBRARY: library/bluechiptechnology-db1-alpine-python.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-aarch64-alpine-python.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-bluechiptechnology-db1-alpine-python.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -455,14 +455,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-aarch64-debian-golang:
-    name: Prepare aarch64-debian-golang
+  prepare-bluechiptechnology-db1-debian-golang:
+    name: Prepare bluechiptechnology-db1-debian-golang
     runs-on: ubuntu-latest
-    needs: bake-aarch64-debian
+    needs: bake-bluechiptechnology-db1-debian
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/aarch64-debian-golang.json
+      LIBRARY: library/bluechiptechnology-db1-debian-golang.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -474,17 +474,17 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-aarch64-debian-golang:
-    name: Bake aarch64-debian-golang
+  bake-bluechiptechnology-db1-debian-golang:
+    name: Bake bluechiptechnology-db1-debian-golang
     runs-on: ubuntu-latest
     timeout-minutes: 240
-    needs: prepare-aarch64-debian-golang
+    needs: prepare-bluechiptechnology-db1-debian-golang
     env:
-      LIBRARY: library/aarch64-debian-golang.json
+      LIBRARY: library/bluechiptechnology-db1-debian-golang.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-aarch64-debian-golang.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-bluechiptechnology-db1-debian-golang.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -517,14 +517,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-aarch64-debian-node:
-    name: Prepare aarch64-debian-node
+  prepare-bluechiptechnology-db1-debian-node:
+    name: Prepare bluechiptechnology-db1-debian-node
     runs-on: ubuntu-latest
-    needs: bake-aarch64-debian
+    needs: bake-bluechiptechnology-db1-debian
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/aarch64-debian-node.json
+      LIBRARY: library/bluechiptechnology-db1-debian-node.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -536,17 +536,17 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-aarch64-debian-node:
-    name: Bake aarch64-debian-node
+  bake-bluechiptechnology-db1-debian-node:
+    name: Bake bluechiptechnology-db1-debian-node
     runs-on: ubuntu-latest
     timeout-minutes: 240
-    needs: prepare-aarch64-debian-node
+    needs: prepare-bluechiptechnology-db1-debian-node
     env:
-      LIBRARY: library/aarch64-debian-node.json
+      LIBRARY: library/bluechiptechnology-db1-debian-node.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-aarch64-debian-node.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-bluechiptechnology-db1-debian-node.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -579,14 +579,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-aarch64-debian-openjdk:
-    name: Prepare aarch64-debian-openjdk
+  prepare-bluechiptechnology-db1-debian-openjdk:
+    name: Prepare bluechiptechnology-db1-debian-openjdk
     runs-on: ubuntu-latest
-    needs: bake-aarch64-debian
+    needs: bake-bluechiptechnology-db1-debian
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/aarch64-debian-openjdk.json
+      LIBRARY: library/bluechiptechnology-db1-debian-openjdk.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -598,17 +598,17 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-aarch64-debian-openjdk:
-    name: Bake aarch64-debian-openjdk
+  bake-bluechiptechnology-db1-debian-openjdk:
+    name: Bake bluechiptechnology-db1-debian-openjdk
     runs-on: ubuntu-latest
     timeout-minutes: 240
-    needs: prepare-aarch64-debian-openjdk
+    needs: prepare-bluechiptechnology-db1-debian-openjdk
     env:
-      LIBRARY: library/aarch64-debian-openjdk.json
+      LIBRARY: library/bluechiptechnology-db1-debian-openjdk.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-aarch64-debian-openjdk.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-bluechiptechnology-db1-debian-openjdk.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -641,14 +641,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-aarch64-debian-python:
-    name: Prepare aarch64-debian-python
+  prepare-bluechiptechnology-db1-debian-python:
+    name: Prepare bluechiptechnology-db1-debian-python
     runs-on: ubuntu-latest
-    needs: bake-aarch64-debian
+    needs: bake-bluechiptechnology-db1-debian
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/aarch64-debian-python.json
+      LIBRARY: library/bluechiptechnology-db1-debian-python.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -660,17 +660,17 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-aarch64-debian-python:
-    name: Bake aarch64-debian-python
+  bake-bluechiptechnology-db1-debian-python:
+    name: Bake bluechiptechnology-db1-debian-python
     runs-on: ubuntu-latest
     timeout-minutes: 240
-    needs: prepare-aarch64-debian-python
+    needs: prepare-bluechiptechnology-db1-debian-python
     env:
-      LIBRARY: library/aarch64-debian-python.json
+      LIBRARY: library/bluechiptechnology-db1-debian-python.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-aarch64-debian-python.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-bluechiptechnology-db1-debian-python.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -703,14 +703,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-aarch64-fedora-golang:
-    name: Prepare aarch64-fedora-golang
+  prepare-bluechiptechnology-db1-fedora-golang:
+    name: Prepare bluechiptechnology-db1-fedora-golang
     runs-on: ubuntu-latest
-    needs: bake-aarch64-fedora
+    needs: bake-bluechiptechnology-db1-fedora
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/aarch64-fedora-golang.json
+      LIBRARY: library/bluechiptechnology-db1-fedora-golang.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -722,17 +722,17 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-aarch64-fedora-golang:
-    name: Bake aarch64-fedora-golang
+  bake-bluechiptechnology-db1-fedora-golang:
+    name: Bake bluechiptechnology-db1-fedora-golang
     runs-on: ubuntu-latest
     timeout-minutes: 240
-    needs: prepare-aarch64-fedora-golang
+    needs: prepare-bluechiptechnology-db1-fedora-golang
     env:
-      LIBRARY: library/aarch64-fedora-golang.json
+      LIBRARY: library/bluechiptechnology-db1-fedora-golang.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-aarch64-fedora-golang.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-bluechiptechnology-db1-fedora-golang.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -765,14 +765,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-aarch64-fedora-node:
-    name: Prepare aarch64-fedora-node
+  prepare-bluechiptechnology-db1-fedora-node:
+    name: Prepare bluechiptechnology-db1-fedora-node
     runs-on: ubuntu-latest
-    needs: bake-aarch64-fedora
+    needs: bake-bluechiptechnology-db1-fedora
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/aarch64-fedora-node.json
+      LIBRARY: library/bluechiptechnology-db1-fedora-node.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -784,17 +784,17 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-aarch64-fedora-node:
-    name: Bake aarch64-fedora-node
+  bake-bluechiptechnology-db1-fedora-node:
+    name: Bake bluechiptechnology-db1-fedora-node
     runs-on: ubuntu-latest
     timeout-minutes: 240
-    needs: prepare-aarch64-fedora-node
+    needs: prepare-bluechiptechnology-db1-fedora-node
     env:
-      LIBRARY: library/aarch64-fedora-node.json
+      LIBRARY: library/bluechiptechnology-db1-fedora-node.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-aarch64-fedora-node.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-bluechiptechnology-db1-fedora-node.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -827,14 +827,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-aarch64-fedora-python:
-    name: Prepare aarch64-fedora-python
+  prepare-bluechiptechnology-db1-fedora-python:
+    name: Prepare bluechiptechnology-db1-fedora-python
     runs-on: ubuntu-latest
-    needs: bake-aarch64-fedora
+    needs: bake-bluechiptechnology-db1-fedora
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/aarch64-fedora-python.json
+      LIBRARY: library/bluechiptechnology-db1-fedora-python.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -846,17 +846,17 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-aarch64-fedora-python:
-    name: Bake aarch64-fedora-python
+  bake-bluechiptechnology-db1-fedora-python:
+    name: Bake bluechiptechnology-db1-fedora-python
     runs-on: ubuntu-latest
     timeout-minutes: 240
-    needs: prepare-aarch64-fedora-python
+    needs: prepare-bluechiptechnology-db1-fedora-python
     env:
-      LIBRARY: library/aarch64-fedora-python.json
+      LIBRARY: library/bluechiptechnology-db1-fedora-python.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-aarch64-fedora-python.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-bluechiptechnology-db1-fedora-python.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -889,14 +889,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-aarch64-ubuntu-golang:
-    name: Prepare aarch64-ubuntu-golang
+  prepare-bluechiptechnology-db1-ubuntu-golang:
+    name: Prepare bluechiptechnology-db1-ubuntu-golang
     runs-on: ubuntu-latest
-    needs: bake-aarch64-ubuntu
+    needs: bake-bluechiptechnology-db1-ubuntu
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/aarch64-ubuntu-golang.json
+      LIBRARY: library/bluechiptechnology-db1-ubuntu-golang.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -908,17 +908,17 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-aarch64-ubuntu-golang:
-    name: Bake aarch64-ubuntu-golang
+  bake-bluechiptechnology-db1-ubuntu-golang:
+    name: Bake bluechiptechnology-db1-ubuntu-golang
     runs-on: ubuntu-latest
     timeout-minutes: 240
-    needs: prepare-aarch64-ubuntu-golang
+    needs: prepare-bluechiptechnology-db1-ubuntu-golang
     env:
-      LIBRARY: library/aarch64-ubuntu-golang.json
+      LIBRARY: library/bluechiptechnology-db1-ubuntu-golang.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-aarch64-ubuntu-golang.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-bluechiptechnology-db1-ubuntu-golang.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -951,14 +951,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-aarch64-ubuntu-node:
-    name: Prepare aarch64-ubuntu-node
+  prepare-bluechiptechnology-db1-ubuntu-node:
+    name: Prepare bluechiptechnology-db1-ubuntu-node
     runs-on: ubuntu-latest
-    needs: bake-aarch64-ubuntu
+    needs: bake-bluechiptechnology-db1-ubuntu
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/aarch64-ubuntu-node.json
+      LIBRARY: library/bluechiptechnology-db1-ubuntu-node.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -970,17 +970,17 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-aarch64-ubuntu-node:
-    name: Bake aarch64-ubuntu-node
+  bake-bluechiptechnology-db1-ubuntu-node:
+    name: Bake bluechiptechnology-db1-ubuntu-node
     runs-on: ubuntu-latest
     timeout-minutes: 240
-    needs: prepare-aarch64-ubuntu-node
+    needs: prepare-bluechiptechnology-db1-ubuntu-node
     env:
-      LIBRARY: library/aarch64-ubuntu-node.json
+      LIBRARY: library/bluechiptechnology-db1-ubuntu-node.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-aarch64-ubuntu-node.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-bluechiptechnology-db1-ubuntu-node.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -1013,14 +1013,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-aarch64-ubuntu-python:
-    name: Prepare aarch64-ubuntu-python
+  prepare-bluechiptechnology-db1-ubuntu-python:
+    name: Prepare bluechiptechnology-db1-ubuntu-python
     runs-on: ubuntu-latest
-    needs: bake-aarch64-ubuntu
+    needs: bake-bluechiptechnology-db1-ubuntu
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/aarch64-ubuntu-python.json
+      LIBRARY: library/bluechiptechnology-db1-ubuntu-python.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -1032,17 +1032,17 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-aarch64-ubuntu-python:
-    name: Bake aarch64-ubuntu-python
+  bake-bluechiptechnology-db1-ubuntu-python:
+    name: Bake bluechiptechnology-db1-ubuntu-python
     runs-on: ubuntu-latest
     timeout-minutes: 240
-    needs: prepare-aarch64-ubuntu-python
+    needs: prepare-bluechiptechnology-db1-ubuntu-python
     env:
-      LIBRARY: library/aarch64-ubuntu-python.json
+      LIBRARY: library/bluechiptechnology-db1-ubuntu-python.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-aarch64-ubuntu-python.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-bluechiptechnology-db1-ubuntu-python.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -1075,14 +1075,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-aarch64-ubuntu-openjdk:
-    name: Prepare aarch64-ubuntu-openjdk
+  prepare-bluechiptechnology-db1-ubuntu-openjdk:
+    name: Prepare bluechiptechnology-db1-ubuntu-openjdk
     runs-on: ubuntu-latest
-    needs: bake-aarch64-ubuntu
+    needs: bake-bluechiptechnology-db1-ubuntu
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/aarch64-ubuntu-openjdk.json
+      LIBRARY: library/bluechiptechnology-db1-ubuntu-openjdk.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -1094,17 +1094,17 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-aarch64-ubuntu-openjdk:
-    name: Bake aarch64-ubuntu-openjdk
+  bake-bluechiptechnology-db1-ubuntu-openjdk:
+    name: Bake bluechiptechnology-db1-ubuntu-openjdk
     runs-on: ubuntu-latest
     timeout-minutes: 240
-    needs: prepare-aarch64-ubuntu-openjdk
+    needs: prepare-bluechiptechnology-db1-ubuntu-openjdk
     env:
-      LIBRARY: library/aarch64-ubuntu-openjdk.json
+      LIBRARY: library/bluechiptechnology-db1-ubuntu-openjdk.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-aarch64-ubuntu-openjdk.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-bluechiptechnology-db1-ubuntu-openjdk.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
