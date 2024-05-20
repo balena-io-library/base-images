@@ -1,0 +1,230 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "bluechiptechnology-db1-debian-buster-build",
+        "bluechiptechnology-db1-debian-buster-run",
+        "bluechiptechnology-db1-debian-bullseye-build",
+        "bluechiptechnology-db1-debian-bullseye-run",
+        "bluechiptechnology-db1-debian-bookworm-build",
+        "bluechiptechnology-db1-debian-bookworm-run",
+        "bluechiptechnology-db1-debian-sid-build",
+        "bluechiptechnology-db1-debian-sid-run"
+      ]
+    }
+  },
+  "target": {
+    "bluechiptechnology-db1-debian-buster-build": {
+      "context": "device-base/bluechiptechnology-db1/debian/buster/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-db1-debian:buster-build-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:buster-build",
+        "docker.io/balenalib/bluechiptechnology-db1:buster-build-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1:buster-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-db1-debian:buster-build-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:buster-build",
+        "docker.io/balenalib/bluechiptechnology-db1:buster-build-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1:buster-build"
+      ]
+    },
+    "bluechiptechnology-db1-debian-buster-run": {
+      "context": "device-base/bluechiptechnology-db1/debian/buster/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-db1-debian:buster-run-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:buster-run",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:buster-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:buster",
+        "docker.io/balenalib/bluechiptechnology-db1:buster-run-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1:buster-run",
+        "docker.io/balenalib/bluechiptechnology-db1:buster-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1:buster"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-db1-debian:buster-run-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:buster-run",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:buster-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:buster",
+        "docker.io/balenalib/bluechiptechnology-db1:buster-run-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1:buster-run",
+        "docker.io/balenalib/bluechiptechnology-db1:buster-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1:buster"
+      ]
+    },
+    "bluechiptechnology-db1-debian-bullseye-build": {
+      "context": "device-base/bluechiptechnology-db1/debian/bullseye/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-db1-debian:bullseye-build-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:bullseye-build",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:latest-build-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:latest-build",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:build-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:build",
+        "docker.io/balenalib/bluechiptechnology-db1:bullseye-build-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1:bullseye-build",
+        "docker.io/balenalib/bluechiptechnology-db1:latest-build-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1:latest-build",
+        "docker.io/balenalib/bluechiptechnology-db1:build-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-db1-debian:bullseye-build-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:bullseye-build",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:latest-build-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:latest-build",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:build-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:build",
+        "docker.io/balenalib/bluechiptechnology-db1:bullseye-build-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1:bullseye-build",
+        "docker.io/balenalib/bluechiptechnology-db1:latest-build-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1:latest-build",
+        "docker.io/balenalib/bluechiptechnology-db1:build-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1:build"
+      ]
+    },
+    "bluechiptechnology-db1-debian-bullseye-run": {
+      "context": "device-base/bluechiptechnology-db1/debian/bullseye/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-db1-debian:bullseye-run-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:bullseye-run",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:bullseye-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:bullseye",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:latest-run-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:latest-run",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:latest-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:latest",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:run-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:run",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:20240520",
+        "docker.io/balenalib/bluechiptechnology-db1:bullseye-run-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1:bullseye-run",
+        "docker.io/balenalib/bluechiptechnology-db1:bullseye-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1:bullseye",
+        "docker.io/balenalib/bluechiptechnology-db1:latest-run-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1:latest-run",
+        "docker.io/balenalib/bluechiptechnology-db1:latest-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1:latest",
+        "docker.io/balenalib/bluechiptechnology-db1:run-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1:run",
+        "docker.io/balenalib/bluechiptechnology-db1:20240520"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-db1-debian:bullseye-run-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:bullseye-run",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:bullseye-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:bullseye",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:latest-run-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:latest-run",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:latest-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:latest",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:run-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:run",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:20240520",
+        "docker.io/balenalib/bluechiptechnology-db1:bullseye-run-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1:bullseye-run",
+        "docker.io/balenalib/bluechiptechnology-db1:bullseye-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1:bullseye",
+        "docker.io/balenalib/bluechiptechnology-db1:latest-run-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1:latest-run",
+        "docker.io/balenalib/bluechiptechnology-db1:latest-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1:latest",
+        "docker.io/balenalib/bluechiptechnology-db1:run-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1:run",
+        "docker.io/balenalib/bluechiptechnology-db1:20240520"
+      ]
+    },
+    "bluechiptechnology-db1-debian-bookworm-build": {
+      "context": "device-base/bluechiptechnology-db1/debian/bookworm/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-db1-debian:bookworm-build-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:bookworm-build",
+        "docker.io/balenalib/bluechiptechnology-db1:bookworm-build-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1:bookworm-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-db1-debian:bookworm-build-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:bookworm-build",
+        "docker.io/balenalib/bluechiptechnology-db1:bookworm-build-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1:bookworm-build"
+      ]
+    },
+    "bluechiptechnology-db1-debian-bookworm-run": {
+      "context": "device-base/bluechiptechnology-db1/debian/bookworm/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-db1-debian:bookworm-run-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:bookworm-run",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:bookworm-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:bookworm",
+        "docker.io/balenalib/bluechiptechnology-db1:bookworm-run-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1:bookworm-run",
+        "docker.io/balenalib/bluechiptechnology-db1:bookworm-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1:bookworm"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-db1-debian:bookworm-run-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:bookworm-run",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:bookworm-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:bookworm",
+        "docker.io/balenalib/bluechiptechnology-db1:bookworm-run-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1:bookworm-run",
+        "docker.io/balenalib/bluechiptechnology-db1:bookworm-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1:bookworm"
+      ]
+    },
+    "bluechiptechnology-db1-debian-sid-build": {
+      "context": "device-base/bluechiptechnology-db1/debian/sid/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-db1-debian:sid-build-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:sid-build",
+        "docker.io/balenalib/bluechiptechnology-db1:sid-build-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1:sid-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-db1-debian:sid-build-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:sid-build",
+        "docker.io/balenalib/bluechiptechnology-db1:sid-build-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1:sid-build"
+      ]
+    },
+    "bluechiptechnology-db1-debian-sid-run": {
+      "context": "device-base/bluechiptechnology-db1/debian/sid/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-db1-debian:sid-run-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:sid-run",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:sid-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:sid",
+        "docker.io/balenalib/bluechiptechnology-db1:sid-run-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1:sid-run",
+        "docker.io/balenalib/bluechiptechnology-db1:sid-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1:sid"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-db1-debian:sid-run-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:sid-run",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:sid-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1-debian:sid",
+        "docker.io/balenalib/bluechiptechnology-db1:sid-run-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1:sid-run",
+        "docker.io/balenalib/bluechiptechnology-db1:sid-20240520",
+        "docker.io/balenalib/bluechiptechnology-db1:sid"
+      ]
+    }
+  }
+}
