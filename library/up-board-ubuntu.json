@@ -19,19 +19,19 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/amd64",
       "tags": [
-        "docker.io/balenalib/up-board-ubuntu:jammy-build-20240520",
+        "docker.io/balenalib/up-board-ubuntu:jammy-build-20240527",
         "docker.io/balenalib/up-board-ubuntu:jammy-build",
-        "docker.io/balenalib/up-board-ubuntu:latest-build-20240520",
+        "docker.io/balenalib/up-board-ubuntu:latest-build-20240527",
         "docker.io/balenalib/up-board-ubuntu:latest-build",
-        "docker.io/balenalib/up-board-ubuntu:build-20240520",
+        "docker.io/balenalib/up-board-ubuntu:build-20240527",
         "docker.io/balenalib/up-board-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/up-board-ubuntu:jammy-build-20240520",
+        "docker.io/balenalib/up-board-ubuntu:jammy-build-20240527",
         "docker.io/balenalib/up-board-ubuntu:jammy-build",
-        "docker.io/balenalib/up-board-ubuntu:latest-build-20240520",
+        "docker.io/balenalib/up-board-ubuntu:latest-build-20240527",
         "docker.io/balenalib/up-board-ubuntu:latest-build",
-        "docker.io/balenalib/up-board-ubuntu:build-20240520",
+        "docker.io/balenalib/up-board-ubuntu:build-20240527",
         "docker.io/balenalib/up-board-ubuntu:build"
       ]
     },
@@ -40,30 +40,30 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/amd64",
       "tags": [
-        "docker.io/balenalib/up-board-ubuntu:jammy-run-20240520",
+        "docker.io/balenalib/up-board-ubuntu:jammy-run-20240527",
         "docker.io/balenalib/up-board-ubuntu:jammy-run",
-        "docker.io/balenalib/up-board-ubuntu:jammy-20240520",
+        "docker.io/balenalib/up-board-ubuntu:jammy-20240527",
         "docker.io/balenalib/up-board-ubuntu:jammy",
-        "docker.io/balenalib/up-board-ubuntu:latest-run-20240520",
+        "docker.io/balenalib/up-board-ubuntu:latest-run-20240527",
         "docker.io/balenalib/up-board-ubuntu:latest-run",
-        "docker.io/balenalib/up-board-ubuntu:latest-20240520",
+        "docker.io/balenalib/up-board-ubuntu:latest-20240527",
         "docker.io/balenalib/up-board-ubuntu:latest",
-        "docker.io/balenalib/up-board-ubuntu:run-20240520",
+        "docker.io/balenalib/up-board-ubuntu:run-20240527",
         "docker.io/balenalib/up-board-ubuntu:run",
-        "docker.io/balenalib/up-board-ubuntu:20240520"
+        "docker.io/balenalib/up-board-ubuntu:20240527"
       ],
       "cache_from": [
-        "docker.io/balenalib/up-board-ubuntu:jammy-run-20240520",
+        "docker.io/balenalib/up-board-ubuntu:jammy-run-20240527",
         "docker.io/balenalib/up-board-ubuntu:jammy-run",
-        "docker.io/balenalib/up-board-ubuntu:jammy-20240520",
+        "docker.io/balenalib/up-board-ubuntu:jammy-20240527",
         "docker.io/balenalib/up-board-ubuntu:jammy",
-        "docker.io/balenalib/up-board-ubuntu:latest-run-20240520",
+        "docker.io/balenalib/up-board-ubuntu:latest-run-20240527",
         "docker.io/balenalib/up-board-ubuntu:latest-run",
-        "docker.io/balenalib/up-board-ubuntu:latest-20240520",
+        "docker.io/balenalib/up-board-ubuntu:latest-20240527",
         "docker.io/balenalib/up-board-ubuntu:latest",
-        "docker.io/balenalib/up-board-ubuntu:run-20240520",
+        "docker.io/balenalib/up-board-ubuntu:run-20240527",
         "docker.io/balenalib/up-board-ubuntu:run",
-        "docker.io/balenalib/up-board-ubuntu:20240520"
+        "docker.io/balenalib/up-board-ubuntu:20240527"
       ]
     },
     "up-board-ubuntu-focal-build": {
@@ -71,11 +71,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/amd64",
       "tags": [
-        "docker.io/balenalib/up-board-ubuntu:focal-build-20240520",
+        "docker.io/balenalib/up-board-ubuntu:focal-build-20240527",
         "docker.io/balenalib/up-board-ubuntu:focal-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/up-board-ubuntu:focal-build-20240520",
+        "docker.io/balenalib/up-board-ubuntu:focal-build-20240527",
         "docker.io/balenalib/up-board-ubuntu:focal-build"
       ]
     },
@@ -84,15 +84,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/amd64",
       "tags": [
-        "docker.io/balenalib/up-board-ubuntu:focal-run-20240520",
+        "docker.io/balenalib/up-board-ubuntu:focal-run-20240527",
         "docker.io/balenalib/up-board-ubuntu:focal-run",
-        "docker.io/balenalib/up-board-ubuntu:focal-20240520",
+        "docker.io/balenalib/up-board-ubuntu:focal-20240527",
         "docker.io/balenalib/up-board-ubuntu:focal"
       ],
       "cache_from": [
-        "docker.io/balenalib/up-board-ubuntu:focal-run-20240520",
+        "docker.io/balenalib/up-board-ubuntu:focal-run-20240527",
         "docker.io/balenalib/up-board-ubuntu:focal-run",
-        "docker.io/balenalib/up-board-ubuntu:focal-20240520",
+        "docker.io/balenalib/up-board-ubuntu:focal-20240527",
         "docker.io/balenalib/up-board-ubuntu:focal"
       ]
     },
@@ -101,11 +101,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/amd64",
       "tags": [
-        "docker.io/balenalib/up-board-ubuntu:xenial-build-20240520",
+        "docker.io/balenalib/up-board-ubuntu:xenial-build-20240527",
         "docker.io/balenalib/up-board-ubuntu:xenial-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/up-board-ubuntu:xenial-build-20240520",
+        "docker.io/balenalib/up-board-ubuntu:xenial-build-20240527",
         "docker.io/balenalib/up-board-ubuntu:xenial-build"
       ]
     },
@@ -114,15 +114,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/amd64",
       "tags": [
-        "docker.io/balenalib/up-board-ubuntu:xenial-run-20240520",
+        "docker.io/balenalib/up-board-ubuntu:xenial-run-20240527",
         "docker.io/balenalib/up-board-ubuntu:xenial-run",
-        "docker.io/balenalib/up-board-ubuntu:xenial-20240520",
+        "docker.io/balenalib/up-board-ubuntu:xenial-20240527",
         "docker.io/balenalib/up-board-ubuntu:xenial"
       ],
       "cache_from": [
-        "docker.io/balenalib/up-board-ubuntu:xenial-run-20240520",
+        "docker.io/balenalib/up-board-ubuntu:xenial-run-20240527",
         "docker.io/balenalib/up-board-ubuntu:xenial-run",
-        "docker.io/balenalib/up-board-ubuntu:xenial-20240520",
+        "docker.io/balenalib/up-board-ubuntu:xenial-20240527",
         "docker.io/balenalib/up-board-ubuntu:xenial"
       ]
     },
@@ -131,11 +131,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/amd64",
       "tags": [
-        "docker.io/balenalib/up-board-ubuntu:bionic-build-20240520",
+        "docker.io/balenalib/up-board-ubuntu:bionic-build-20240527",
         "docker.io/balenalib/up-board-ubuntu:bionic-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/up-board-ubuntu:bionic-build-20240520",
+        "docker.io/balenalib/up-board-ubuntu:bionic-build-20240527",
         "docker.io/balenalib/up-board-ubuntu:bionic-build"
       ]
     },
@@ -144,15 +144,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/amd64",
       "tags": [
-        "docker.io/balenalib/up-board-ubuntu:bionic-run-20240520",
+        "docker.io/balenalib/up-board-ubuntu:bionic-run-20240527",
         "docker.io/balenalib/up-board-ubuntu:bionic-run",
-        "docker.io/balenalib/up-board-ubuntu:bionic-20240520",
+        "docker.io/balenalib/up-board-ubuntu:bionic-20240527",
         "docker.io/balenalib/up-board-ubuntu:bionic"
       ],
       "cache_from": [
-        "docker.io/balenalib/up-board-ubuntu:bionic-run-20240520",
+        "docker.io/balenalib/up-board-ubuntu:bionic-run-20240527",
         "docker.io/balenalib/up-board-ubuntu:bionic-run",
-        "docker.io/balenalib/up-board-ubuntu:bionic-20240520",
+        "docker.io/balenalib/up-board-ubuntu:bionic-20240527",
         "docker.io/balenalib/up-board-ubuntu:bionic"
       ]
     }

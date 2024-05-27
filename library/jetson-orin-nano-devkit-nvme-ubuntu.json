@@ -19,19 +19,19 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:jammy-build-20240520",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:jammy-build-20240527",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:jammy-build",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:latest-build-20240520",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:latest-build-20240527",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:latest-build",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:build-20240520",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:build-20240527",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:jammy-build-20240520",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:jammy-build-20240527",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:jammy-build",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:latest-build-20240520",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:latest-build-20240527",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:latest-build",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:build-20240520",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:build-20240527",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:build"
       ]
     },
@@ -40,30 +40,30 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:jammy-run-20240520",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:jammy-run-20240527",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:jammy-run",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:jammy-20240520",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:jammy-20240527",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:jammy",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:latest-run-20240520",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:latest-run-20240527",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:latest-run",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:latest-20240520",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:latest-20240527",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:latest",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:run-20240520",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:run-20240527",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:run",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:20240520"
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:20240527"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:jammy-run-20240520",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:jammy-run-20240527",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:jammy-run",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:jammy-20240520",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:jammy-20240527",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:jammy",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:latest-run-20240520",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:latest-run-20240527",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:latest-run",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:latest-20240520",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:latest-20240527",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:latest",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:run-20240520",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:run-20240527",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:run",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:20240520"
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:20240527"
       ]
     },
     "jetson-orin-nano-devkit-nvme-ubuntu-focal-build": {
@@ -71,11 +71,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:focal-build-20240520",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:focal-build-20240527",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:focal-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:focal-build-20240520",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:focal-build-20240527",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:focal-build"
       ]
     },
@@ -84,15 +84,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:focal-run-20240520",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:focal-run-20240527",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:focal-run",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:focal-20240520",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:focal-20240527",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:focal"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:focal-run-20240520",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:focal-run-20240527",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:focal-run",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:focal-20240520",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:focal-20240527",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:focal"
       ]
     },
@@ -101,11 +101,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:xenial-build-20240520",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:xenial-build-20240527",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:xenial-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:xenial-build-20240520",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:xenial-build-20240527",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:xenial-build"
       ]
     },
@@ -114,15 +114,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:xenial-run-20240520",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:xenial-run-20240527",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:xenial-run",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:xenial-20240520",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:xenial-20240527",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:xenial"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:xenial-run-20240520",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:xenial-run-20240527",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:xenial-run",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:xenial-20240520",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:xenial-20240527",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:xenial"
       ]
     },
@@ -131,11 +131,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:bionic-build-20240520",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:bionic-build-20240527",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:bionic-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:bionic-build-20240520",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:bionic-build-20240527",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:bionic-build"
       ]
     },
@@ -144,15 +144,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:bionic-run-20240520",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:bionic-run-20240527",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:bionic-run",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:bionic-20240520",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:bionic-20240527",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:bionic"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:bionic-run-20240520",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:bionic-run-20240527",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:bionic-run",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:bionic-20240520",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:bionic-20240527",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-ubuntu:bionic"
       ]
     }
