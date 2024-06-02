@@ -5,6 +5,20 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.9.9 - 2024-06-02
+
+
+<details>
+<summary> Update scripts/contracts digest to 94c4f90 [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.104 - 2024-06-02
+> 
+> * jetson-orin-nano-seeed-j3010: Specify RAM size for the Seeed J3010 [Alexandru Costache]
+> * jetson-orin-nano-seeed-j3010: add Seeed J3010 device-type [Alex Suykov]
+> 
+
+</details>
+
 ## 2.9.8 - 2024-05-27
 
 * Lock file maintenance [Self-hosted Renovate Bot]
