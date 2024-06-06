@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.9.11 - 2024-06-06
+
+
+<details>
+<summary> Update scripts/contracts digest to 8adfb6d [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.105 - 2024-06-06
+> 
+> * sw.os+hw.device-type: Update Jetson Orin distro configs for L4T 35.5.0 repositories [Alexandru Costache]
+> 
+
+</details>
+
 ## 2.9.10 - 2024-06-03
 
 * Lock file maintenance [Self-hosted Renovate Bot]

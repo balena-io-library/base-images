@@ -1,4 +1,42 @@
 - commits:
+    - subject: Update scripts/contracts digest to 8adfb6d
+      hash: f14aa15b8ec78f6fd088f6f66fc5442c02849353
+      body: |
+        Update scripts/contracts
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: "sw.os+hw.device-type: Update Jetson Orin distro configs for L4T 35.5.0
+                repositories"
+              hash: 12fb5f18b054878ded4124b555a725f7f446b902
+              body: >
+                All public Jetson Orin based device-types have just been updated
+                to L4T 35.5.0,
+
+                thus we need to update the base images to use the updated L4T
+                repositories.
+
+
+                We also add the distro configs for the upcoming Orin Nano 4GB
+                Seeed J3010
+
+                device-type.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+          version: contracts-2.0.105
+          title: ""
+          date: 2024-06-06T15:12:51.267Z
+  version: 2.9.11
+  title: ""
+  date: 2024-06-06T16:06:44.985Z
+- commits:
     - subject: Lock file maintenance
       hash: 93d1a9837a6860440c45fea43b08c60e0b9c681d
       body: |
