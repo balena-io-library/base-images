@@ -1,4 +1,31 @@
 - commits:
+    - subject: Update scripts/contracts digest to 773c77c
+      hash: 95078bebe15dcd0045cefdbf48a80b2b5980c32c
+      body: |
+        Update scripts/contracts
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: "hw.device-type: Disable bluetooth until this feature is officially
+                supported"
+              hash: bc3746dd50d63824e3069cd0098227d47e9f22ed
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Sidd-Gupta sidd.gupta@zylum.in
+                signed-off-by: Sidd-Gupta sidd.gupta@zylum.in
+              author: delhiryder
+          version: contracts-2.0.106
+          title: ""
+          date: 2024-07-12T09:11:52.729Z
+  version: 2.9.20
+  title: ""
+  date: 2024-07-12T10:05:05.385Z
+- commits:
     - subject: Update actions/setup-node action to v4.0.3
       hash: 03dd5e13491d5304a9a9ea0c334820b8ab97ab37
       body: |

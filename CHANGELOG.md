@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.9.20 - 2024-07-12
+
+
+<details>
+<summary> Update scripts/contracts digest to 773c77c [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.106 - 2024-07-12
+> 
+> * hw.device-type: Disable bluetooth until this feature is officially supported [delhiryder]
+> 
+
+</details>
+
 ## 2.9.19 - 2024-07-09
 
 * Update actions/setup-node action to v4.0.3 [Self-hosted Renovate Bot]
