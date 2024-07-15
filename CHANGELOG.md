@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.9.22 - 2024-07-15
+
+
+<details>
+<summary> Update scripts/contracts digest to 17b44ca [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.107 - 2024-07-15
+> 
+> * beagleplay: Fix provisioning instructions [Alexandru]
+> 
+
+</details>
+
 ## 2.9.21 - 2024-07-15
 
 * Lock file maintenance [Self-hosted Renovate Bot]
