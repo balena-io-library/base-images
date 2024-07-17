@@ -23,10 +23,16 @@ jobs:
       )
     secrets: inherit
     with:
-      custom_runs_on: >
-        [
-
-          ["self-hosted","X64"]
-        ]
-
-      custom_publish_matrix: all-dockerfiles, all-bakefiles, all-workflows, all-descriptions, missing-repositories
+      custom_publish_matrix: >
+        {
+          "value": [
+            "all-dockerfiles",
+            "all-bakefiles",
+            "all-workflows",
+            "all-descriptions",
+            "missing-repositories"
+          ],
+          "os": [
+            ["self-hosted","X64"]
+          ],
+        }
