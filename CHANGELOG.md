@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.9.23 - 2024-07-17
+
+* Replace deprecated Flowzone inputs [Kyle Harding]
+
 ## 2.9.22 - 2024-07-15
 
 
