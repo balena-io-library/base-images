@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.9.24 - 2024-07-22
+
+* Lock file maintenance [Self-hosted Renovate Bot]
+
 ## 2.9.23 - 2024-07-17
 
 * Replace deprecated Flowzone inputs [Kyle Harding]
