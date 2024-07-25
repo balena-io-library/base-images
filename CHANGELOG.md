@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.9.25 - 2024-07-25
+
+
+<details>
+<summary> Update scripts/contracts digest to 1d499fe [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.108 - 2024-07-25
+> 
+> * hw.device-type: Add new device-type Jetson AGX Orin 64GB Devkit [Alexandru Costache]
+> 
+
+</details>
+
 ## 2.9.24 - 2024-07-22
 
 * Lock file maintenance [Self-hosted Renovate Bot]
