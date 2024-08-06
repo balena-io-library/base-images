@@ -1,4 +1,36 @@
 - commits:
+    - subject: Update scripts/contracts digest to 6d69a05
+      hash: dddb369ec0d2d5580dff56a2147806a8ea09f8c4
+      body: |
+        Update scripts/contracts
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: "hw.device-type: Update provisioning instructions for AGX Orin 64GB"
+              hash: f8d665f044ea2e39a100fb865ffd5f8a8f4ae65f
+              body: >
+                The AGX Orin 64GB should be provisioned on the eMMC by default
+                as per the internal thread
+                https://balena.zulipchat.com/#narrow/stream/346009-aspect.2Fcustomer-success/topic/Get.20feedback.20on.20draft.20balenaOS.20with.20L4T.2036.2E3.20for.20Jetson.20Orin/near/455889690
+
+
+                We thus update the provisioning instructions accordingly
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru
+          version: contracts-2.0.109
+          title: ""
+          date: 2024-08-06T08:44:06.923Z
+  version: 2.9.29
+  title: ""
+  date: 2024-08-06T10:04:47.519Z
+- commits:
     - subject: Lock file maintenance
       hash: b80d7dda647c19bf12d81cf5604e6f70a0769521
       body: |

@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.9.29 - 2024-08-06
+
+
+<details>
+<summary> Update scripts/contracts digest to 6d69a05 [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.109 - 2024-08-06
+> 
+> * hw.device-type: Update provisioning instructions for AGX Orin 64GB [Alexandru]
+> 
+
+</details>
+
 ## 2.9.28 - 2024-08-05
 
 * Lock file maintenance [Self-hosted Renovate Bot]
