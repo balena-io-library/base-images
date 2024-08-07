@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.9.31 - 2024-08-07
+
+
+<details>
+<summary> Update scripts/contracts digest to 1663445 [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.110 - 2024-08-07
+> 
+> * Add CompuLab iotdin-imx8p to harware contract. [Valentin Raevsky]
+> 
+
+</details>
+
 ## 2.9.30 - 2024-08-06
 
 * Update actions/upload-artifact action to v4.3.6 [Self-hosted Renovate Bot]

@@ -1,4 +1,30 @@
 - commits:
+    - subject: Update scripts/contracts digest to 1663445
+      hash: d87a3db1c675e3ecae3d5fd6ca8965e7e5b03d5d
+      body: |
+        Update scripts/contracts
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: Add CompuLab iotdin-imx8p to harware contract.
+              hash: 2b0148ba2c6b34d8f74a5b2afe9405419f81e7ab
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Valentin Raevsky <valentin@compulab.co.il>
+                signed-off-by: Valentin Raevsky <valentin@compulab.co.il>
+              author: Valentin Raevsky
+          version: contracts-2.0.110
+          title: ""
+          date: 2024-08-07T13:28:36.285Z
+  version: 2.9.31
+  title: ""
+  date: 2024-08-07T14:04:07.041Z
+- commits:
     - subject: Update actions/upload-artifact action to v4.3.6
       hash: c76dbdc5608d1f7d9b1b24ed31a513a33a97f99a
       body: |
