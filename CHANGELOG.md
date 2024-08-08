@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.9.32 - 2024-08-08
+
+
+<details>
+<summary> Update scripts/contracts digest to bb77690 [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.111 - 2024-08-08
+> 
+> * patch: Add versionList to OpenJDK [Vipul Gupta (@vipulgupta2048)]
+> 
+
+</details>
+
 ## 2.9.31 - 2024-08-07
 
 
