@@ -21,6 +21,7 @@
     "stack-arch": "node scripts/generate-dockerfiles.js stack-arch",
     "stack-arch-lib": "node scripts/generate-bakefiles.js stack-arch",
     "all-dockerfiles": "npm run clean-dockerfiles && node scripts/generate-dockerfiles.js all",
+    "all-docs": "node scripts/generate-docs.js all",
     "all-bakefiles": "npm run clean-bakefiles && node scripts/generate-bakefiles.js all",
     "all-descriptions": "npm run clean-descriptions && node scripts/generate-dockerhub-description.js all",
     "all-workflows": "npm run clean-workflows && node scripts/generate-workflows.js all",
