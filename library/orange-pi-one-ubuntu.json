@@ -19,19 +19,19 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/orange-pi-one-ubuntu:jammy-build-20240527",
+        "docker.io/balenalib/orange-pi-one-ubuntu:jammy-build-20240813",
         "docker.io/balenalib/orange-pi-one-ubuntu:jammy-build",
-        "docker.io/balenalib/orange-pi-one-ubuntu:latest-build-20240527",
+        "docker.io/balenalib/orange-pi-one-ubuntu:latest-build-20240813",
         "docker.io/balenalib/orange-pi-one-ubuntu:latest-build",
-        "docker.io/balenalib/orange-pi-one-ubuntu:build-20240527",
+        "docker.io/balenalib/orange-pi-one-ubuntu:build-20240813",
         "docker.io/balenalib/orange-pi-one-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/orange-pi-one-ubuntu:jammy-build-20240527",
+        "docker.io/balenalib/orange-pi-one-ubuntu:jammy-build-20240813",
         "docker.io/balenalib/orange-pi-one-ubuntu:jammy-build",
-        "docker.io/balenalib/orange-pi-one-ubuntu:latest-build-20240527",
+        "docker.io/balenalib/orange-pi-one-ubuntu:latest-build-20240813",
         "docker.io/balenalib/orange-pi-one-ubuntu:latest-build",
-        "docker.io/balenalib/orange-pi-one-ubuntu:build-20240527",
+        "docker.io/balenalib/orange-pi-one-ubuntu:build-20240813",
         "docker.io/balenalib/orange-pi-one-ubuntu:build"
       ]
     },
@@ -40,30 +40,30 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/orange-pi-one-ubuntu:jammy-run-20240527",
+        "docker.io/balenalib/orange-pi-one-ubuntu:jammy-run-20240813",
         "docker.io/balenalib/orange-pi-one-ubuntu:jammy-run",
-        "docker.io/balenalib/orange-pi-one-ubuntu:jammy-20240527",
+        "docker.io/balenalib/orange-pi-one-ubuntu:jammy-20240813",
         "docker.io/balenalib/orange-pi-one-ubuntu:jammy",
-        "docker.io/balenalib/orange-pi-one-ubuntu:latest-run-20240527",
+        "docker.io/balenalib/orange-pi-one-ubuntu:latest-run-20240813",
         "docker.io/balenalib/orange-pi-one-ubuntu:latest-run",
-        "docker.io/balenalib/orange-pi-one-ubuntu:latest-20240527",
+        "docker.io/balenalib/orange-pi-one-ubuntu:latest-20240813",
         "docker.io/balenalib/orange-pi-one-ubuntu:latest",
-        "docker.io/balenalib/orange-pi-one-ubuntu:run-20240527",
+        "docker.io/balenalib/orange-pi-one-ubuntu:run-20240813",
         "docker.io/balenalib/orange-pi-one-ubuntu:run",
-        "docker.io/balenalib/orange-pi-one-ubuntu:20240527"
+        "docker.io/balenalib/orange-pi-one-ubuntu:20240813"
       ],
       "cache_from": [
-        "docker.io/balenalib/orange-pi-one-ubuntu:jammy-run-20240527",
+        "docker.io/balenalib/orange-pi-one-ubuntu:jammy-run-20240813",
         "docker.io/balenalib/orange-pi-one-ubuntu:jammy-run",
-        "docker.io/balenalib/orange-pi-one-ubuntu:jammy-20240527",
+        "docker.io/balenalib/orange-pi-one-ubuntu:jammy-20240813",
         "docker.io/balenalib/orange-pi-one-ubuntu:jammy",
-        "docker.io/balenalib/orange-pi-one-ubuntu:latest-run-20240527",
+        "docker.io/balenalib/orange-pi-one-ubuntu:latest-run-20240813",
         "docker.io/balenalib/orange-pi-one-ubuntu:latest-run",
-        "docker.io/balenalib/orange-pi-one-ubuntu:latest-20240527",
+        "docker.io/balenalib/orange-pi-one-ubuntu:latest-20240813",
         "docker.io/balenalib/orange-pi-one-ubuntu:latest",
-        "docker.io/balenalib/orange-pi-one-ubuntu:run-20240527",
+        "docker.io/balenalib/orange-pi-one-ubuntu:run-20240813",
         "docker.io/balenalib/orange-pi-one-ubuntu:run",
-        "docker.io/balenalib/orange-pi-one-ubuntu:20240527"
+        "docker.io/balenalib/orange-pi-one-ubuntu:20240813"
       ]
     },
     "orange-pi-one-ubuntu-focal-build": {
@@ -71,11 +71,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/orange-pi-one-ubuntu:focal-build-20240527",
+        "docker.io/balenalib/orange-pi-one-ubuntu:focal-build-20240813",
         "docker.io/balenalib/orange-pi-one-ubuntu:focal-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/orange-pi-one-ubuntu:focal-build-20240527",
+        "docker.io/balenalib/orange-pi-one-ubuntu:focal-build-20240813",
         "docker.io/balenalib/orange-pi-one-ubuntu:focal-build"
       ]
     },
@@ -84,15 +84,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/orange-pi-one-ubuntu:focal-run-20240527",
+        "docker.io/balenalib/orange-pi-one-ubuntu:focal-run-20240813",
         "docker.io/balenalib/orange-pi-one-ubuntu:focal-run",
-        "docker.io/balenalib/orange-pi-one-ubuntu:focal-20240527",
+        "docker.io/balenalib/orange-pi-one-ubuntu:focal-20240813",
         "docker.io/balenalib/orange-pi-one-ubuntu:focal"
       ],
       "cache_from": [
-        "docker.io/balenalib/orange-pi-one-ubuntu:focal-run-20240527",
+        "docker.io/balenalib/orange-pi-one-ubuntu:focal-run-20240813",
         "docker.io/balenalib/orange-pi-one-ubuntu:focal-run",
-        "docker.io/balenalib/orange-pi-one-ubuntu:focal-20240527",
+        "docker.io/balenalib/orange-pi-one-ubuntu:focal-20240813",
         "docker.io/balenalib/orange-pi-one-ubuntu:focal"
       ]
     },
@@ -101,11 +101,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/orange-pi-one-ubuntu:xenial-build-20240527",
+        "docker.io/balenalib/orange-pi-one-ubuntu:xenial-build-20240813",
         "docker.io/balenalib/orange-pi-one-ubuntu:xenial-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/orange-pi-one-ubuntu:xenial-build-20240527",
+        "docker.io/balenalib/orange-pi-one-ubuntu:xenial-build-20240813",
         "docker.io/balenalib/orange-pi-one-ubuntu:xenial-build"
       ]
     },
@@ -114,15 +114,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/orange-pi-one-ubuntu:xenial-run-20240527",
+        "docker.io/balenalib/orange-pi-one-ubuntu:xenial-run-20240813",
         "docker.io/balenalib/orange-pi-one-ubuntu:xenial-run",
-        "docker.io/balenalib/orange-pi-one-ubuntu:xenial-20240527",
+        "docker.io/balenalib/orange-pi-one-ubuntu:xenial-20240813",
         "docker.io/balenalib/orange-pi-one-ubuntu:xenial"
       ],
       "cache_from": [
-        "docker.io/balenalib/orange-pi-one-ubuntu:xenial-run-20240527",
+        "docker.io/balenalib/orange-pi-one-ubuntu:xenial-run-20240813",
         "docker.io/balenalib/orange-pi-one-ubuntu:xenial-run",
-        "docker.io/balenalib/orange-pi-one-ubuntu:xenial-20240527",
+        "docker.io/balenalib/orange-pi-one-ubuntu:xenial-20240813",
         "docker.io/balenalib/orange-pi-one-ubuntu:xenial"
       ]
     },
@@ -131,11 +131,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/orange-pi-one-ubuntu:bionic-build-20240527",
+        "docker.io/balenalib/orange-pi-one-ubuntu:bionic-build-20240813",
         "docker.io/balenalib/orange-pi-one-ubuntu:bionic-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/orange-pi-one-ubuntu:bionic-build-20240527",
+        "docker.io/balenalib/orange-pi-one-ubuntu:bionic-build-20240813",
         "docker.io/balenalib/orange-pi-one-ubuntu:bionic-build"
       ]
     },
@@ -144,15 +144,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/orange-pi-one-ubuntu:bionic-run-20240527",
+        "docker.io/balenalib/orange-pi-one-ubuntu:bionic-run-20240813",
         "docker.io/balenalib/orange-pi-one-ubuntu:bionic-run",
-        "docker.io/balenalib/orange-pi-one-ubuntu:bionic-20240527",
+        "docker.io/balenalib/orange-pi-one-ubuntu:bionic-20240813",
         "docker.io/balenalib/orange-pi-one-ubuntu:bionic"
       ],
       "cache_from": [
-        "docker.io/balenalib/orange-pi-one-ubuntu:bionic-run-20240527",
+        "docker.io/balenalib/orange-pi-one-ubuntu:bionic-run-20240813",
         "docker.io/balenalib/orange-pi-one-ubuntu:bionic-run",
-        "docker.io/balenalib/orange-pi-one-ubuntu:bionic-20240527",
+        "docker.io/balenalib/orange-pi-one-ubuntu:bionic-20240813",
         "docker.io/balenalib/orange-pi-one-ubuntu:bionic"
       ]
     }

@@ -1,0 +1,230 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "jetson-agx-orin-devkit-64gb-debian-buster-build",
+        "jetson-agx-orin-devkit-64gb-debian-buster-run",
+        "jetson-agx-orin-devkit-64gb-debian-bullseye-build",
+        "jetson-agx-orin-devkit-64gb-debian-bullseye-run",
+        "jetson-agx-orin-devkit-64gb-debian-bookworm-build",
+        "jetson-agx-orin-devkit-64gb-debian-bookworm-run",
+        "jetson-agx-orin-devkit-64gb-debian-sid-build",
+        "jetson-agx-orin-devkit-64gb-debian-sid-run"
+      ]
+    }
+  },
+  "target": {
+    "jetson-agx-orin-devkit-64gb-debian-buster-build": {
+      "context": "device-base/jetson-agx-orin-devkit-64gb/debian/buster/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:buster-build-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:buster-build",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:buster-build-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:buster-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:buster-build-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:buster-build",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:buster-build-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:buster-build"
+      ]
+    },
+    "jetson-agx-orin-devkit-64gb-debian-buster-run": {
+      "context": "device-base/jetson-agx-orin-devkit-64gb/debian/buster/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:buster-run-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:buster-run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:buster-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:buster",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:buster-run-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:buster-run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:buster-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:buster"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:buster-run-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:buster-run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:buster-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:buster",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:buster-run-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:buster-run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:buster-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:buster"
+      ]
+    },
+    "jetson-agx-orin-devkit-64gb-debian-bullseye-build": {
+      "context": "device-base/jetson-agx-orin-devkit-64gb/debian/bullseye/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bullseye-build-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bullseye-build",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:latest-build-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:latest-build",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:build-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:build",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bullseye-build-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bullseye-build",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:latest-build-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:latest-build",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:build-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bullseye-build-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bullseye-build",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:latest-build-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:latest-build",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:build-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:build",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bullseye-build-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bullseye-build",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:latest-build-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:latest-build",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:build-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:build"
+      ]
+    },
+    "jetson-agx-orin-devkit-64gb-debian-bullseye-run": {
+      "context": "device-base/jetson-agx-orin-devkit-64gb/debian/bullseye/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bullseye-run-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bullseye-run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bullseye-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bullseye",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:latest-run-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:latest-run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:latest-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:latest",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:run-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bullseye-run-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bullseye-run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bullseye-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bullseye",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:latest-run-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:latest-run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:latest-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:latest",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:run-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:20240813"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bullseye-run-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bullseye-run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bullseye-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bullseye",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:latest-run-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:latest-run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:latest-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:latest",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:run-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bullseye-run-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bullseye-run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bullseye-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bullseye",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:latest-run-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:latest-run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:latest-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:latest",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:run-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:20240813"
+      ]
+    },
+    "jetson-agx-orin-devkit-64gb-debian-bookworm-build": {
+      "context": "device-base/jetson-agx-orin-devkit-64gb/debian/bookworm/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bookworm-build-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bookworm-build",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bookworm-build-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bookworm-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bookworm-build-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bookworm-build",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bookworm-build-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bookworm-build"
+      ]
+    },
+    "jetson-agx-orin-devkit-64gb-debian-bookworm-run": {
+      "context": "device-base/jetson-agx-orin-devkit-64gb/debian/bookworm/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bookworm-run-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bookworm-run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bookworm-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bookworm",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bookworm-run-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bookworm-run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bookworm-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bookworm"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bookworm-run-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bookworm-run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bookworm-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bookworm",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bookworm-run-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bookworm-run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bookworm-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bookworm"
+      ]
+    },
+    "jetson-agx-orin-devkit-64gb-debian-sid-build": {
+      "context": "device-base/jetson-agx-orin-devkit-64gb/debian/sid/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:sid-build-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:sid-build",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:sid-build-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:sid-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:sid-build-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:sid-build",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:sid-build-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:sid-build"
+      ]
+    },
+    "jetson-agx-orin-devkit-64gb-debian-sid-run": {
+      "context": "device-base/jetson-agx-orin-devkit-64gb/debian/sid/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:sid-run-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:sid-run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:sid-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:sid",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:sid-run-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:sid-run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:sid-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:sid"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:sid-run-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:sid-run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:sid-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:sid",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:sid-run-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:sid-run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:sid-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:sid"
+      ]
+    }
+  }
+}

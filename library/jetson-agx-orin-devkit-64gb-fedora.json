@@ -1,0 +1,96 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "jetson-agx-orin-devkit-64gb-fedora-37-build",
+        "jetson-agx-orin-devkit-64gb-fedora-37-run",
+        "jetson-agx-orin-devkit-64gb-fedora-38-build",
+        "jetson-agx-orin-devkit-64gb-fedora-38-run"
+      ]
+    }
+  },
+  "target": {
+    "jetson-agx-orin-devkit-64gb-fedora-37-build": {
+      "context": "device-base/jetson-agx-orin-devkit-64gb/fedora/37/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:37-build-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:37-build",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:latest-build-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:latest-build",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:build-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:37-build-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:37-build",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:latest-build-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:latest-build",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:build-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:build"
+      ]
+    },
+    "jetson-agx-orin-devkit-64gb-fedora-37-run": {
+      "context": "device-base/jetson-agx-orin-devkit-64gb/fedora/37/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:37-run-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:37-run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:37-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:37",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:latest-run-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:latest-run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:latest-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:latest",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:run-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:20240813"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:37-run-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:37-run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:37-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:37",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:latest-run-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:latest-run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:latest-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:latest",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:run-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:20240813"
+      ]
+    },
+    "jetson-agx-orin-devkit-64gb-fedora-38-build": {
+      "context": "device-base/jetson-agx-orin-devkit-64gb/fedora/38/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:38-build-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:38-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:38-build-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:38-build"
+      ]
+    },
+    "jetson-agx-orin-devkit-64gb-fedora-38-run": {
+      "context": "device-base/jetson-agx-orin-devkit-64gb/fedora/38/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:38-run-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:38-run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:38-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:38"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:38-run-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:38-run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:38-20240813",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-fedora:38"
+      ]
+    }
+  }
+}
