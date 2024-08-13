@@ -1,4 +1,4 @@
-name: Bake smarc-px30
+name: Bake jetson-orin-nano-seeed-j3010
 'on':
   workflow_run:
     workflows:
@@ -21,14 +21,14 @@ concurrency:
   group: bake
   cancel-in-progress: ${{ inputs.cancel-in-progress == true }}
 jobs:
-  prepare-smarc-px30-alpine:
-    name: Prepare smarc-px30-alpine
+  prepare-jetson-orin-nano-seeed-j3010-alpine:
+    name: Prepare jetson-orin-nano-seeed-j3010-alpine
     runs-on: ubuntu-latest
     if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/smarc-px30-alpine.json
+      LIBRARY: library/jetson-orin-nano-seeed-j3010-alpine.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -40,17 +40,17 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-smarc-px30-alpine:
-    name: Bake smarc-px30-alpine
+  bake-jetson-orin-nano-seeed-j3010-alpine:
+    name: Bake jetson-orin-nano-seeed-j3010-alpine
     runs-on: ubuntu-latest
     timeout-minutes: 240
-    needs: prepare-smarc-px30-alpine
+    needs: prepare-jetson-orin-nano-seeed-j3010-alpine
     env:
-      LIBRARY: library/smarc-px30-alpine.json
+      LIBRARY: library/jetson-orin-nano-seeed-j3010-alpine.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-smarc-px30-alpine.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-jetson-orin-nano-seeed-j3010-alpine.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -83,14 +83,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-smarc-px30-debian:
-    name: Prepare smarc-px30-debian
+  prepare-jetson-orin-nano-seeed-j3010-debian:
+    name: Prepare jetson-orin-nano-seeed-j3010-debian
     runs-on: ubuntu-latest
     if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/smarc-px30-debian.json
+      LIBRARY: library/jetson-orin-nano-seeed-j3010-debian.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -102,17 +102,17 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-smarc-px30-debian:
-    name: Bake smarc-px30-debian
+  bake-jetson-orin-nano-seeed-j3010-debian:
+    name: Bake jetson-orin-nano-seeed-j3010-debian
     runs-on: ubuntu-latest
     timeout-minutes: 240
-    needs: prepare-smarc-px30-debian
+    needs: prepare-jetson-orin-nano-seeed-j3010-debian
     env:
-      LIBRARY: library/smarc-px30-debian.json
+      LIBRARY: library/jetson-orin-nano-seeed-j3010-debian.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-smarc-px30-debian.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-jetson-orin-nano-seeed-j3010-debian.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -145,14 +145,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-smarc-px30-fedora:
-    name: Prepare smarc-px30-fedora
+  prepare-jetson-orin-nano-seeed-j3010-fedora:
+    name: Prepare jetson-orin-nano-seeed-j3010-fedora
     runs-on: ubuntu-latest
     if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/smarc-px30-fedora.json
+      LIBRARY: library/jetson-orin-nano-seeed-j3010-fedora.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -164,17 +164,17 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-smarc-px30-fedora:
-    name: Bake smarc-px30-fedora
+  bake-jetson-orin-nano-seeed-j3010-fedora:
+    name: Bake jetson-orin-nano-seeed-j3010-fedora
     runs-on: ubuntu-latest
     timeout-minutes: 240
-    needs: prepare-smarc-px30-fedora
+    needs: prepare-jetson-orin-nano-seeed-j3010-fedora
     env:
-      LIBRARY: library/smarc-px30-fedora.json
+      LIBRARY: library/jetson-orin-nano-seeed-j3010-fedora.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-smarc-px30-fedora.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-jetson-orin-nano-seeed-j3010-fedora.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -207,14 +207,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-smarc-px30-ubuntu:
-    name: Prepare smarc-px30-ubuntu
+  prepare-jetson-orin-nano-seeed-j3010-ubuntu:
+    name: Prepare jetson-orin-nano-seeed-j3010-ubuntu
     runs-on: ubuntu-latest
     if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/smarc-px30-ubuntu.json
+      LIBRARY: library/jetson-orin-nano-seeed-j3010-ubuntu.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -226,17 +226,17 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-smarc-px30-ubuntu:
-    name: Bake smarc-px30-ubuntu
+  bake-jetson-orin-nano-seeed-j3010-ubuntu:
+    name: Bake jetson-orin-nano-seeed-j3010-ubuntu
     runs-on: ubuntu-latest
     timeout-minutes: 240
-    needs: prepare-smarc-px30-ubuntu
+    needs: prepare-jetson-orin-nano-seeed-j3010-ubuntu
     env:
-      LIBRARY: library/smarc-px30-ubuntu.json
+      LIBRARY: library/jetson-orin-nano-seeed-j3010-ubuntu.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-smarc-px30-ubuntu.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-jetson-orin-nano-seeed-j3010-ubuntu.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -269,14 +269,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-smarc-px30-alpine-golang:
-    name: Prepare smarc-px30-alpine-golang
+  prepare-jetson-orin-nano-seeed-j3010-alpine-golang:
+    name: Prepare jetson-orin-nano-seeed-j3010-alpine-golang
     runs-on: ubuntu-latest
-    needs: bake-smarc-px30-alpine
+    needs: bake-jetson-orin-nano-seeed-j3010-alpine
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/smarc-px30-alpine-golang.json
+      LIBRARY: library/jetson-orin-nano-seeed-j3010-alpine-golang.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -288,17 +288,17 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-smarc-px30-alpine-golang:
-    name: Bake smarc-px30-alpine-golang
+  bake-jetson-orin-nano-seeed-j3010-alpine-golang:
+    name: Bake jetson-orin-nano-seeed-j3010-alpine-golang
     runs-on: ubuntu-latest
     timeout-minutes: 240
-    needs: prepare-smarc-px30-alpine-golang
+    needs: prepare-jetson-orin-nano-seeed-j3010-alpine-golang
     env:
-      LIBRARY: library/smarc-px30-alpine-golang.json
+      LIBRARY: library/jetson-orin-nano-seeed-j3010-alpine-golang.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-smarc-px30-alpine-golang.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-jetson-orin-nano-seeed-j3010-alpine-golang.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -331,14 +331,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-smarc-px30-alpine-node:
-    name: Prepare smarc-px30-alpine-node
+  prepare-jetson-orin-nano-seeed-j3010-alpine-node:
+    name: Prepare jetson-orin-nano-seeed-j3010-alpine-node
     runs-on: ubuntu-latest
-    needs: bake-smarc-px30-alpine
+    needs: bake-jetson-orin-nano-seeed-j3010-alpine
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/smarc-px30-alpine-node.json
+      LIBRARY: library/jetson-orin-nano-seeed-j3010-alpine-node.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -350,17 +350,17 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-smarc-px30-alpine-node:
-    name: Bake smarc-px30-alpine-node
+  bake-jetson-orin-nano-seeed-j3010-alpine-node:
+    name: Bake jetson-orin-nano-seeed-j3010-alpine-node
     runs-on: ubuntu-latest
     timeout-minutes: 240
-    needs: prepare-smarc-px30-alpine-node
+    needs: prepare-jetson-orin-nano-seeed-j3010-alpine-node
     env:
-      LIBRARY: library/smarc-px30-alpine-node.json
+      LIBRARY: library/jetson-orin-nano-seeed-j3010-alpine-node.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-smarc-px30-alpine-node.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-jetson-orin-nano-seeed-j3010-alpine-node.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -393,14 +393,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-smarc-px30-alpine-python:
-    name: Prepare smarc-px30-alpine-python
+  prepare-jetson-orin-nano-seeed-j3010-alpine-python:
+    name: Prepare jetson-orin-nano-seeed-j3010-alpine-python
     runs-on: ubuntu-latest
-    needs: bake-smarc-px30-alpine
+    needs: bake-jetson-orin-nano-seeed-j3010-alpine
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/smarc-px30-alpine-python.json
+      LIBRARY: library/jetson-orin-nano-seeed-j3010-alpine-python.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -412,17 +412,17 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-smarc-px30-alpine-python:
-    name: Bake smarc-px30-alpine-python
+  bake-jetson-orin-nano-seeed-j3010-alpine-python:
+    name: Bake jetson-orin-nano-seeed-j3010-alpine-python
     runs-on: ubuntu-latest
     timeout-minutes: 240
-    needs: prepare-smarc-px30-alpine-python
+    needs: prepare-jetson-orin-nano-seeed-j3010-alpine-python
     env:
-      LIBRARY: library/smarc-px30-alpine-python.json
+      LIBRARY: library/jetson-orin-nano-seeed-j3010-alpine-python.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-smarc-px30-alpine-python.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-jetson-orin-nano-seeed-j3010-alpine-python.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -455,14 +455,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-smarc-px30-debian-golang:
-    name: Prepare smarc-px30-debian-golang
+  prepare-jetson-orin-nano-seeed-j3010-debian-golang:
+    name: Prepare jetson-orin-nano-seeed-j3010-debian-golang
     runs-on: ubuntu-latest
-    needs: bake-smarc-px30-debian
+    needs: bake-jetson-orin-nano-seeed-j3010-debian
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/smarc-px30-debian-golang.json
+      LIBRARY: library/jetson-orin-nano-seeed-j3010-debian-golang.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -474,17 +474,17 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-smarc-px30-debian-golang:
-    name: Bake smarc-px30-debian-golang
+  bake-jetson-orin-nano-seeed-j3010-debian-golang:
+    name: Bake jetson-orin-nano-seeed-j3010-debian-golang
     runs-on: ubuntu-latest
     timeout-minutes: 240
-    needs: prepare-smarc-px30-debian-golang
+    needs: prepare-jetson-orin-nano-seeed-j3010-debian-golang
     env:
-      LIBRARY: library/smarc-px30-debian-golang.json
+      LIBRARY: library/jetson-orin-nano-seeed-j3010-debian-golang.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-smarc-px30-debian-golang.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-jetson-orin-nano-seeed-j3010-debian-golang.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -517,14 +517,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-smarc-px30-debian-node:
-    name: Prepare smarc-px30-debian-node
+  prepare-jetson-orin-nano-seeed-j3010-debian-node:
+    name: Prepare jetson-orin-nano-seeed-j3010-debian-node
     runs-on: ubuntu-latest
-    needs: bake-smarc-px30-debian
+    needs: bake-jetson-orin-nano-seeed-j3010-debian
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/smarc-px30-debian-node.json
+      LIBRARY: library/jetson-orin-nano-seeed-j3010-debian-node.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -536,17 +536,17 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-smarc-px30-debian-node:
-    name: Bake smarc-px30-debian-node
+  bake-jetson-orin-nano-seeed-j3010-debian-node:
+    name: Bake jetson-orin-nano-seeed-j3010-debian-node
     runs-on: ubuntu-latest
     timeout-minutes: 240
-    needs: prepare-smarc-px30-debian-node
+    needs: prepare-jetson-orin-nano-seeed-j3010-debian-node
     env:
-      LIBRARY: library/smarc-px30-debian-node.json
+      LIBRARY: library/jetson-orin-nano-seeed-j3010-debian-node.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-smarc-px30-debian-node.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-jetson-orin-nano-seeed-j3010-debian-node.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -579,14 +579,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-smarc-px30-debian-openjdk:
-    name: Prepare smarc-px30-debian-openjdk
+  prepare-jetson-orin-nano-seeed-j3010-debian-openjdk:
+    name: Prepare jetson-orin-nano-seeed-j3010-debian-openjdk
     runs-on: ubuntu-latest
-    needs: bake-smarc-px30-debian
+    needs: bake-jetson-orin-nano-seeed-j3010-debian
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/smarc-px30-debian-openjdk.json
+      LIBRARY: library/jetson-orin-nano-seeed-j3010-debian-openjdk.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -598,17 +598,17 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-smarc-px30-debian-openjdk:
-    name: Bake smarc-px30-debian-openjdk
+  bake-jetson-orin-nano-seeed-j3010-debian-openjdk:
+    name: Bake jetson-orin-nano-seeed-j3010-debian-openjdk
     runs-on: ubuntu-latest
     timeout-minutes: 240
-    needs: prepare-smarc-px30-debian-openjdk
+    needs: prepare-jetson-orin-nano-seeed-j3010-debian-openjdk
     env:
-      LIBRARY: library/smarc-px30-debian-openjdk.json
+      LIBRARY: library/jetson-orin-nano-seeed-j3010-debian-openjdk.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-smarc-px30-debian-openjdk.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-jetson-orin-nano-seeed-j3010-debian-openjdk.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -641,14 +641,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-smarc-px30-debian-python:
-    name: Prepare smarc-px30-debian-python
+  prepare-jetson-orin-nano-seeed-j3010-debian-python:
+    name: Prepare jetson-orin-nano-seeed-j3010-debian-python
     runs-on: ubuntu-latest
-    needs: bake-smarc-px30-debian
+    needs: bake-jetson-orin-nano-seeed-j3010-debian
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/smarc-px30-debian-python.json
+      LIBRARY: library/jetson-orin-nano-seeed-j3010-debian-python.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -660,17 +660,17 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-smarc-px30-debian-python:
-    name: Bake smarc-px30-debian-python
+  bake-jetson-orin-nano-seeed-j3010-debian-python:
+    name: Bake jetson-orin-nano-seeed-j3010-debian-python
     runs-on: ubuntu-latest
     timeout-minutes: 240
-    needs: prepare-smarc-px30-debian-python
+    needs: prepare-jetson-orin-nano-seeed-j3010-debian-python
     env:
-      LIBRARY: library/smarc-px30-debian-python.json
+      LIBRARY: library/jetson-orin-nano-seeed-j3010-debian-python.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-smarc-px30-debian-python.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-jetson-orin-nano-seeed-j3010-debian-python.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -703,14 +703,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-smarc-px30-fedora-golang:
-    name: Prepare smarc-px30-fedora-golang
+  prepare-jetson-orin-nano-seeed-j3010-fedora-golang:
+    name: Prepare jetson-orin-nano-seeed-j3010-fedora-golang
     runs-on: ubuntu-latest
-    needs: bake-smarc-px30-fedora
+    needs: bake-jetson-orin-nano-seeed-j3010-fedora
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/smarc-px30-fedora-golang.json
+      LIBRARY: library/jetson-orin-nano-seeed-j3010-fedora-golang.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -722,17 +722,17 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-smarc-px30-fedora-golang:
-    name: Bake smarc-px30-fedora-golang
+  bake-jetson-orin-nano-seeed-j3010-fedora-golang:
+    name: Bake jetson-orin-nano-seeed-j3010-fedora-golang
     runs-on: ubuntu-latest
     timeout-minutes: 240
-    needs: prepare-smarc-px30-fedora-golang
+    needs: prepare-jetson-orin-nano-seeed-j3010-fedora-golang
     env:
-      LIBRARY: library/smarc-px30-fedora-golang.json
+      LIBRARY: library/jetson-orin-nano-seeed-j3010-fedora-golang.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-smarc-px30-fedora-golang.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-jetson-orin-nano-seeed-j3010-fedora-golang.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -765,14 +765,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-smarc-px30-fedora-node:
-    name: Prepare smarc-px30-fedora-node
+  prepare-jetson-orin-nano-seeed-j3010-fedora-node:
+    name: Prepare jetson-orin-nano-seeed-j3010-fedora-node
     runs-on: ubuntu-latest
-    needs: bake-smarc-px30-fedora
+    needs: bake-jetson-orin-nano-seeed-j3010-fedora
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/smarc-px30-fedora-node.json
+      LIBRARY: library/jetson-orin-nano-seeed-j3010-fedora-node.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -784,17 +784,17 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-smarc-px30-fedora-node:
-    name: Bake smarc-px30-fedora-node
+  bake-jetson-orin-nano-seeed-j3010-fedora-node:
+    name: Bake jetson-orin-nano-seeed-j3010-fedora-node
     runs-on: ubuntu-latest
     timeout-minutes: 240
-    needs: prepare-smarc-px30-fedora-node
+    needs: prepare-jetson-orin-nano-seeed-j3010-fedora-node
     env:
-      LIBRARY: library/smarc-px30-fedora-node.json
+      LIBRARY: library/jetson-orin-nano-seeed-j3010-fedora-node.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-smarc-px30-fedora-node.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-jetson-orin-nano-seeed-j3010-fedora-node.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -827,14 +827,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-smarc-px30-fedora-python:
-    name: Prepare smarc-px30-fedora-python
+  prepare-jetson-orin-nano-seeed-j3010-fedora-python:
+    name: Prepare jetson-orin-nano-seeed-j3010-fedora-python
     runs-on: ubuntu-latest
-    needs: bake-smarc-px30-fedora
+    needs: bake-jetson-orin-nano-seeed-j3010-fedora
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/smarc-px30-fedora-python.json
+      LIBRARY: library/jetson-orin-nano-seeed-j3010-fedora-python.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -846,17 +846,17 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-smarc-px30-fedora-python:
-    name: Bake smarc-px30-fedora-python
+  bake-jetson-orin-nano-seeed-j3010-fedora-python:
+    name: Bake jetson-orin-nano-seeed-j3010-fedora-python
     runs-on: ubuntu-latest
     timeout-minutes: 240
-    needs: prepare-smarc-px30-fedora-python
+    needs: prepare-jetson-orin-nano-seeed-j3010-fedora-python
     env:
-      LIBRARY: library/smarc-px30-fedora-python.json
+      LIBRARY: library/jetson-orin-nano-seeed-j3010-fedora-python.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-smarc-px30-fedora-python.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-jetson-orin-nano-seeed-j3010-fedora-python.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -889,14 +889,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-smarc-px30-ubuntu-golang:
-    name: Prepare smarc-px30-ubuntu-golang
+  prepare-jetson-orin-nano-seeed-j3010-ubuntu-golang:
+    name: Prepare jetson-orin-nano-seeed-j3010-ubuntu-golang
     runs-on: ubuntu-latest
-    needs: bake-smarc-px30-ubuntu
+    needs: bake-jetson-orin-nano-seeed-j3010-ubuntu
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/smarc-px30-ubuntu-golang.json
+      LIBRARY: library/jetson-orin-nano-seeed-j3010-ubuntu-golang.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -908,17 +908,17 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-smarc-px30-ubuntu-golang:
-    name: Bake smarc-px30-ubuntu-golang
+  bake-jetson-orin-nano-seeed-j3010-ubuntu-golang:
+    name: Bake jetson-orin-nano-seeed-j3010-ubuntu-golang
     runs-on: ubuntu-latest
     timeout-minutes: 240
-    needs: prepare-smarc-px30-ubuntu-golang
+    needs: prepare-jetson-orin-nano-seeed-j3010-ubuntu-golang
     env:
-      LIBRARY: library/smarc-px30-ubuntu-golang.json
+      LIBRARY: library/jetson-orin-nano-seeed-j3010-ubuntu-golang.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-smarc-px30-ubuntu-golang.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-jetson-orin-nano-seeed-j3010-ubuntu-golang.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -951,14 +951,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-smarc-px30-ubuntu-node:
-    name: Prepare smarc-px30-ubuntu-node
+  prepare-jetson-orin-nano-seeed-j3010-ubuntu-node:
+    name: Prepare jetson-orin-nano-seeed-j3010-ubuntu-node
     runs-on: ubuntu-latest
-    needs: bake-smarc-px30-ubuntu
+    needs: bake-jetson-orin-nano-seeed-j3010-ubuntu
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/smarc-px30-ubuntu-node.json
+      LIBRARY: library/jetson-orin-nano-seeed-j3010-ubuntu-node.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -970,17 +970,17 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-smarc-px30-ubuntu-node:
-    name: Bake smarc-px30-ubuntu-node
+  bake-jetson-orin-nano-seeed-j3010-ubuntu-node:
+    name: Bake jetson-orin-nano-seeed-j3010-ubuntu-node
     runs-on: ubuntu-latest
     timeout-minutes: 240
-    needs: prepare-smarc-px30-ubuntu-node
+    needs: prepare-jetson-orin-nano-seeed-j3010-ubuntu-node
     env:
-      LIBRARY: library/smarc-px30-ubuntu-node.json
+      LIBRARY: library/jetson-orin-nano-seeed-j3010-ubuntu-node.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-smarc-px30-ubuntu-node.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-jetson-orin-nano-seeed-j3010-ubuntu-node.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -1013,14 +1013,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-smarc-px30-ubuntu-python:
-    name: Prepare smarc-px30-ubuntu-python
+  prepare-jetson-orin-nano-seeed-j3010-ubuntu-python:
+    name: Prepare jetson-orin-nano-seeed-j3010-ubuntu-python
     runs-on: ubuntu-latest
-    needs: bake-smarc-px30-ubuntu
+    needs: bake-jetson-orin-nano-seeed-j3010-ubuntu
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/smarc-px30-ubuntu-python.json
+      LIBRARY: library/jetson-orin-nano-seeed-j3010-ubuntu-python.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -1032,17 +1032,17 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-smarc-px30-ubuntu-python:
-    name: Bake smarc-px30-ubuntu-python
+  bake-jetson-orin-nano-seeed-j3010-ubuntu-python:
+    name: Bake jetson-orin-nano-seeed-j3010-ubuntu-python
     runs-on: ubuntu-latest
     timeout-minutes: 240
-    needs: prepare-smarc-px30-ubuntu-python
+    needs: prepare-jetson-orin-nano-seeed-j3010-ubuntu-python
     env:
-      LIBRARY: library/smarc-px30-ubuntu-python.json
+      LIBRARY: library/jetson-orin-nano-seeed-j3010-ubuntu-python.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-smarc-px30-ubuntu-python.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-jetson-orin-nano-seeed-j3010-ubuntu-python.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -1075,14 +1075,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-smarc-px30-ubuntu-openjdk:
-    name: Prepare smarc-px30-ubuntu-openjdk
+  prepare-jetson-orin-nano-seeed-j3010-ubuntu-openjdk:
+    name: Prepare jetson-orin-nano-seeed-j3010-ubuntu-openjdk
     runs-on: ubuntu-latest
-    needs: bake-smarc-px30-ubuntu
+    needs: bake-jetson-orin-nano-seeed-j3010-ubuntu
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/smarc-px30-ubuntu-openjdk.json
+      LIBRARY: library/jetson-orin-nano-seeed-j3010-ubuntu-openjdk.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -1094,17 +1094,17 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-smarc-px30-ubuntu-openjdk:
-    name: Bake smarc-px30-ubuntu-openjdk
+  bake-jetson-orin-nano-seeed-j3010-ubuntu-openjdk:
+    name: Bake jetson-orin-nano-seeed-j3010-ubuntu-openjdk
     runs-on: ubuntu-latest
     timeout-minutes: 240
-    needs: prepare-smarc-px30-ubuntu-openjdk
+    needs: prepare-jetson-orin-nano-seeed-j3010-ubuntu-openjdk
     env:
-      LIBRARY: library/smarc-px30-ubuntu-openjdk.json
+      LIBRARY: library/jetson-orin-nano-seeed-j3010-ubuntu-openjdk.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-smarc-px30-ubuntu-openjdk.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-jetson-orin-nano-seeed-j3010-ubuntu-openjdk.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
