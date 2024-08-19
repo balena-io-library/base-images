@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.10.1 - 2024-08-19
+
+* Lock file maintenance [Self-hosted Renovate Bot]
+
 ## 2.10.0 - 2024-08-13
 
 * minor: Add base images docs generation [Vipul Gupta (@vipulgupta2048)]
