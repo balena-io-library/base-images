@@ -30,7 +30,7 @@ output:
             type: boolean
             default: false
     concurrency:
-      group: bake
+      group: ${{ github.workflow }}
       cancel-in-progress: ${{ inputs.cancel-in-progress == true }}
     jobs:
       prepare:
