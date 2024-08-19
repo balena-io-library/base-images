@@ -2,6 +2,8 @@
   "group": {
     "default": {
       "targets": [
+        "amd64-ubuntu-noble-build",
+        "amd64-ubuntu-noble-run",
         "amd64-ubuntu-jammy-build",
         "amd64-ubuntu-jammy-run",
         "amd64-ubuntu-focal-build",
@@ -14,25 +16,69 @@
     }
   },
   "target": {
-    "amd64-ubuntu-jammy-build": {
-      "context": "amd64/ubuntu/jammy/build",
+    "amd64-ubuntu-noble-build": {
+      "context": "amd64/ubuntu/noble/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/amd64",
       "tags": [
-        "docker.io/balenalib/amd64-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/amd64-ubuntu:jammy-build",
+        "docker.io/balenalib/amd64-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/amd64-ubuntu:noble-build",
         "docker.io/balenalib/amd64-ubuntu:latest-build-20240819",
         "docker.io/balenalib/amd64-ubuntu:latest-build",
         "docker.io/balenalib/amd64-ubuntu:build-20240819",
         "docker.io/balenalib/amd64-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/amd64-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/amd64-ubuntu:jammy-build",
+        "docker.io/balenalib/amd64-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/amd64-ubuntu:noble-build",
         "docker.io/balenalib/amd64-ubuntu:latest-build-20240819",
         "docker.io/balenalib/amd64-ubuntu:latest-build",
         "docker.io/balenalib/amd64-ubuntu:build-20240819",
         "docker.io/balenalib/amd64-ubuntu:build"
+      ]
+    },
+    "amd64-ubuntu-noble-run": {
+      "context": "amd64/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/amd64-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/amd64-ubuntu:noble-run",
+        "docker.io/balenalib/amd64-ubuntu:noble-20240819",
+        "docker.io/balenalib/amd64-ubuntu:noble",
+        "docker.io/balenalib/amd64-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/amd64-ubuntu:latest-run",
+        "docker.io/balenalib/amd64-ubuntu:latest-20240819",
+        "docker.io/balenalib/amd64-ubuntu:latest",
+        "docker.io/balenalib/amd64-ubuntu:run-20240819",
+        "docker.io/balenalib/amd64-ubuntu:run",
+        "docker.io/balenalib/amd64-ubuntu:20240819"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/amd64-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/amd64-ubuntu:noble-run",
+        "docker.io/balenalib/amd64-ubuntu:noble-20240819",
+        "docker.io/balenalib/amd64-ubuntu:noble",
+        "docker.io/balenalib/amd64-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/amd64-ubuntu:latest-run",
+        "docker.io/balenalib/amd64-ubuntu:latest-20240819",
+        "docker.io/balenalib/amd64-ubuntu:latest",
+        "docker.io/balenalib/amd64-ubuntu:run-20240819",
+        "docker.io/balenalib/amd64-ubuntu:run",
+        "docker.io/balenalib/amd64-ubuntu:20240819"
+      ]
+    },
+    "amd64-ubuntu-jammy-build": {
+      "context": "amd64/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/amd64-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/amd64-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/amd64-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/amd64-ubuntu:jammy-build"
       ]
     },
     "amd64-ubuntu-jammy-run": {
@@ -43,27 +89,13 @@
         "docker.io/balenalib/amd64-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/amd64-ubuntu:jammy-run",
         "docker.io/balenalib/amd64-ubuntu:jammy-20240819",
-        "docker.io/balenalib/amd64-ubuntu:jammy",
-        "docker.io/balenalib/amd64-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/amd64-ubuntu:latest-run",
-        "docker.io/balenalib/amd64-ubuntu:latest-20240819",
-        "docker.io/balenalib/amd64-ubuntu:latest",
-        "docker.io/balenalib/amd64-ubuntu:run-20240819",
-        "docker.io/balenalib/amd64-ubuntu:run",
-        "docker.io/balenalib/amd64-ubuntu:20240819"
+        "docker.io/balenalib/amd64-ubuntu:jammy"
       ],
       "cache_from": [
         "docker.io/balenalib/amd64-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/amd64-ubuntu:jammy-run",
         "docker.io/balenalib/amd64-ubuntu:jammy-20240819",
-        "docker.io/balenalib/amd64-ubuntu:jammy",
-        "docker.io/balenalib/amd64-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/amd64-ubuntu:latest-run",
-        "docker.io/balenalib/amd64-ubuntu:latest-20240819",
-        "docker.io/balenalib/amd64-ubuntu:latest",
-        "docker.io/balenalib/amd64-ubuntu:run-20240819",
-        "docker.io/balenalib/amd64-ubuntu:run",
-        "docker.io/balenalib/amd64-ubuntu:20240819"
+        "docker.io/balenalib/amd64-ubuntu:jammy"
       ]
     },
     "amd64-ubuntu-focal-build": {

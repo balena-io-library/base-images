@@ -2,6 +2,8 @@
   "group": {
     "default": {
       "targets": [
+        "jetson-agx-orin-devkit-64gb-ubuntu-noble-build",
+        "jetson-agx-orin-devkit-64gb-ubuntu-noble-run",
         "jetson-agx-orin-devkit-64gb-ubuntu-jammy-build",
         "jetson-agx-orin-devkit-64gb-ubuntu-jammy-run",
         "jetson-agx-orin-devkit-64gb-ubuntu-focal-build",
@@ -14,25 +16,69 @@
     }
   },
   "target": {
-    "jetson-agx-orin-devkit-64gb-ubuntu-jammy-build": {
-      "context": "device-base/jetson-agx-orin-devkit-64gb/ubuntu/jammy/build",
+    "jetson-agx-orin-devkit-64gb-ubuntu-noble-build": {
+      "context": "device-base/jetson-agx-orin-devkit-64gb/ubuntu/noble/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:jammy-build",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:noble-build",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:latest-build-20240819",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:latest-build",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:build-20240819",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:jammy-build",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:noble-build",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:latest-build-20240819",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:latest-build",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:build-20240819",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:build"
+      ]
+    },
+    "jetson-agx-orin-devkit-64gb-ubuntu-noble-run": {
+      "context": "device-base/jetson-agx-orin-devkit-64gb/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:noble-run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:noble-20240819",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:noble",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:latest-run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:latest-20240819",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:latest",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:run-20240819",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:20240819"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:noble-run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:noble-20240819",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:noble",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:latest-run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:latest-20240819",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:latest",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:run-20240819",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:20240819"
+      ]
+    },
+    "jetson-agx-orin-devkit-64gb-ubuntu-jammy-build": {
+      "context": "device-base/jetson-agx-orin-devkit-64gb/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:jammy-build"
       ]
     },
     "jetson-agx-orin-devkit-64gb-ubuntu-jammy-run": {
@@ -43,27 +89,13 @@
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:jammy-run",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:jammy-20240819",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:jammy",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:latest-run",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:latest-20240819",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:latest",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:run-20240819",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:run",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:20240819"
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:jammy"
       ],
       "cache_from": [
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:jammy-run",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:jammy-20240819",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:jammy",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:latest-run",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:latest-20240819",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:latest",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:run-20240819",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:run",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:20240819"
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-ubuntu:jammy"
       ]
     },
     "jetson-agx-orin-devkit-64gb-ubuntu-focal-build": {

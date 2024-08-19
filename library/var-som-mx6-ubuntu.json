@@ -2,6 +2,8 @@
   "group": {
     "default": {
       "targets": [
+        "var-som-mx6-ubuntu-noble-build",
+        "var-som-mx6-ubuntu-noble-run",
         "var-som-mx6-ubuntu-jammy-build",
         "var-som-mx6-ubuntu-jammy-run",
         "var-som-mx6-ubuntu-focal-build",
@@ -14,25 +16,69 @@
     }
   },
   "target": {
-    "var-som-mx6-ubuntu-jammy-build": {
-      "context": "device-base/var-som-mx6/ubuntu/jammy/build",
+    "var-som-mx6-ubuntu-noble-build": {
+      "context": "device-base/var-som-mx6/ubuntu/noble/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/var-som-mx6-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/var-som-mx6-ubuntu:jammy-build",
+        "docker.io/balenalib/var-som-mx6-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/var-som-mx6-ubuntu:noble-build",
         "docker.io/balenalib/var-som-mx6-ubuntu:latest-build-20240819",
         "docker.io/balenalib/var-som-mx6-ubuntu:latest-build",
         "docker.io/balenalib/var-som-mx6-ubuntu:build-20240819",
         "docker.io/balenalib/var-som-mx6-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/var-som-mx6-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/var-som-mx6-ubuntu:jammy-build",
+        "docker.io/balenalib/var-som-mx6-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/var-som-mx6-ubuntu:noble-build",
         "docker.io/balenalib/var-som-mx6-ubuntu:latest-build-20240819",
         "docker.io/balenalib/var-som-mx6-ubuntu:latest-build",
         "docker.io/balenalib/var-som-mx6-ubuntu:build-20240819",
         "docker.io/balenalib/var-som-mx6-ubuntu:build"
+      ]
+    },
+    "var-som-mx6-ubuntu-noble-run": {
+      "context": "device-base/var-som-mx6/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/var-som-mx6-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/var-som-mx6-ubuntu:noble-run",
+        "docker.io/balenalib/var-som-mx6-ubuntu:noble-20240819",
+        "docker.io/balenalib/var-som-mx6-ubuntu:noble",
+        "docker.io/balenalib/var-som-mx6-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/var-som-mx6-ubuntu:latest-run",
+        "docker.io/balenalib/var-som-mx6-ubuntu:latest-20240819",
+        "docker.io/balenalib/var-som-mx6-ubuntu:latest",
+        "docker.io/balenalib/var-som-mx6-ubuntu:run-20240819",
+        "docker.io/balenalib/var-som-mx6-ubuntu:run",
+        "docker.io/balenalib/var-som-mx6-ubuntu:20240819"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/var-som-mx6-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/var-som-mx6-ubuntu:noble-run",
+        "docker.io/balenalib/var-som-mx6-ubuntu:noble-20240819",
+        "docker.io/balenalib/var-som-mx6-ubuntu:noble",
+        "docker.io/balenalib/var-som-mx6-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/var-som-mx6-ubuntu:latest-run",
+        "docker.io/balenalib/var-som-mx6-ubuntu:latest-20240819",
+        "docker.io/balenalib/var-som-mx6-ubuntu:latest",
+        "docker.io/balenalib/var-som-mx6-ubuntu:run-20240819",
+        "docker.io/balenalib/var-som-mx6-ubuntu:run",
+        "docker.io/balenalib/var-som-mx6-ubuntu:20240819"
+      ]
+    },
+    "var-som-mx6-ubuntu-jammy-build": {
+      "context": "device-base/var-som-mx6/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/var-som-mx6-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/var-som-mx6-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/var-som-mx6-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/var-som-mx6-ubuntu:jammy-build"
       ]
     },
     "var-som-mx6-ubuntu-jammy-run": {
@@ -43,27 +89,13 @@
         "docker.io/balenalib/var-som-mx6-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/var-som-mx6-ubuntu:jammy-run",
         "docker.io/balenalib/var-som-mx6-ubuntu:jammy-20240819",
-        "docker.io/balenalib/var-som-mx6-ubuntu:jammy",
-        "docker.io/balenalib/var-som-mx6-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/var-som-mx6-ubuntu:latest-run",
-        "docker.io/balenalib/var-som-mx6-ubuntu:latest-20240819",
-        "docker.io/balenalib/var-som-mx6-ubuntu:latest",
-        "docker.io/balenalib/var-som-mx6-ubuntu:run-20240819",
-        "docker.io/balenalib/var-som-mx6-ubuntu:run",
-        "docker.io/balenalib/var-som-mx6-ubuntu:20240819"
+        "docker.io/balenalib/var-som-mx6-ubuntu:jammy"
       ],
       "cache_from": [
         "docker.io/balenalib/var-som-mx6-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/var-som-mx6-ubuntu:jammy-run",
         "docker.io/balenalib/var-som-mx6-ubuntu:jammy-20240819",
-        "docker.io/balenalib/var-som-mx6-ubuntu:jammy",
-        "docker.io/balenalib/var-som-mx6-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/var-som-mx6-ubuntu:latest-run",
-        "docker.io/balenalib/var-som-mx6-ubuntu:latest-20240819",
-        "docker.io/balenalib/var-som-mx6-ubuntu:latest",
-        "docker.io/balenalib/var-som-mx6-ubuntu:run-20240819",
-        "docker.io/balenalib/var-som-mx6-ubuntu:run",
-        "docker.io/balenalib/var-som-mx6-ubuntu:20240819"
+        "docker.io/balenalib/var-som-mx6-ubuntu:jammy"
       ]
     },
     "var-som-mx6-ubuntu-focal-build": {

@@ -2,6 +2,8 @@
   "group": {
     "default": {
       "targets": [
+        "nitrogen8mm-ubuntu-noble-build",
+        "nitrogen8mm-ubuntu-noble-run",
         "nitrogen8mm-ubuntu-jammy-build",
         "nitrogen8mm-ubuntu-jammy-run",
         "nitrogen8mm-ubuntu-focal-build",
@@ -14,25 +16,69 @@
     }
   },
   "target": {
-    "nitrogen8mm-ubuntu-jammy-build": {
-      "context": "device-base/nitrogen8mm/ubuntu/jammy/build",
+    "nitrogen8mm-ubuntu-noble-build": {
+      "context": "device-base/nitrogen8mm/ubuntu/noble/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/nitrogen8mm-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/nitrogen8mm-ubuntu:jammy-build",
+        "docker.io/balenalib/nitrogen8mm-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/nitrogen8mm-ubuntu:noble-build",
         "docker.io/balenalib/nitrogen8mm-ubuntu:latest-build-20240819",
         "docker.io/balenalib/nitrogen8mm-ubuntu:latest-build",
         "docker.io/balenalib/nitrogen8mm-ubuntu:build-20240819",
         "docker.io/balenalib/nitrogen8mm-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/nitrogen8mm-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/nitrogen8mm-ubuntu:jammy-build",
+        "docker.io/balenalib/nitrogen8mm-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/nitrogen8mm-ubuntu:noble-build",
         "docker.io/balenalib/nitrogen8mm-ubuntu:latest-build-20240819",
         "docker.io/balenalib/nitrogen8mm-ubuntu:latest-build",
         "docker.io/balenalib/nitrogen8mm-ubuntu:build-20240819",
         "docker.io/balenalib/nitrogen8mm-ubuntu:build"
+      ]
+    },
+    "nitrogen8mm-ubuntu-noble-run": {
+      "context": "device-base/nitrogen8mm/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nitrogen8mm-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/nitrogen8mm-ubuntu:noble-run",
+        "docker.io/balenalib/nitrogen8mm-ubuntu:noble-20240819",
+        "docker.io/balenalib/nitrogen8mm-ubuntu:noble",
+        "docker.io/balenalib/nitrogen8mm-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/nitrogen8mm-ubuntu:latest-run",
+        "docker.io/balenalib/nitrogen8mm-ubuntu:latest-20240819",
+        "docker.io/balenalib/nitrogen8mm-ubuntu:latest",
+        "docker.io/balenalib/nitrogen8mm-ubuntu:run-20240819",
+        "docker.io/balenalib/nitrogen8mm-ubuntu:run",
+        "docker.io/balenalib/nitrogen8mm-ubuntu:20240819"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nitrogen8mm-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/nitrogen8mm-ubuntu:noble-run",
+        "docker.io/balenalib/nitrogen8mm-ubuntu:noble-20240819",
+        "docker.io/balenalib/nitrogen8mm-ubuntu:noble",
+        "docker.io/balenalib/nitrogen8mm-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/nitrogen8mm-ubuntu:latest-run",
+        "docker.io/balenalib/nitrogen8mm-ubuntu:latest-20240819",
+        "docker.io/balenalib/nitrogen8mm-ubuntu:latest",
+        "docker.io/balenalib/nitrogen8mm-ubuntu:run-20240819",
+        "docker.io/balenalib/nitrogen8mm-ubuntu:run",
+        "docker.io/balenalib/nitrogen8mm-ubuntu:20240819"
+      ]
+    },
+    "nitrogen8mm-ubuntu-jammy-build": {
+      "context": "device-base/nitrogen8mm/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nitrogen8mm-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/nitrogen8mm-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nitrogen8mm-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/nitrogen8mm-ubuntu:jammy-build"
       ]
     },
     "nitrogen8mm-ubuntu-jammy-run": {
@@ -43,27 +89,13 @@
         "docker.io/balenalib/nitrogen8mm-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/nitrogen8mm-ubuntu:jammy-run",
         "docker.io/balenalib/nitrogen8mm-ubuntu:jammy-20240819",
-        "docker.io/balenalib/nitrogen8mm-ubuntu:jammy",
-        "docker.io/balenalib/nitrogen8mm-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/nitrogen8mm-ubuntu:latest-run",
-        "docker.io/balenalib/nitrogen8mm-ubuntu:latest-20240819",
-        "docker.io/balenalib/nitrogen8mm-ubuntu:latest",
-        "docker.io/balenalib/nitrogen8mm-ubuntu:run-20240819",
-        "docker.io/balenalib/nitrogen8mm-ubuntu:run",
-        "docker.io/balenalib/nitrogen8mm-ubuntu:20240819"
+        "docker.io/balenalib/nitrogen8mm-ubuntu:jammy"
       ],
       "cache_from": [
         "docker.io/balenalib/nitrogen8mm-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/nitrogen8mm-ubuntu:jammy-run",
         "docker.io/balenalib/nitrogen8mm-ubuntu:jammy-20240819",
-        "docker.io/balenalib/nitrogen8mm-ubuntu:jammy",
-        "docker.io/balenalib/nitrogen8mm-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/nitrogen8mm-ubuntu:latest-run",
-        "docker.io/balenalib/nitrogen8mm-ubuntu:latest-20240819",
-        "docker.io/balenalib/nitrogen8mm-ubuntu:latest",
-        "docker.io/balenalib/nitrogen8mm-ubuntu:run-20240819",
-        "docker.io/balenalib/nitrogen8mm-ubuntu:run",
-        "docker.io/balenalib/nitrogen8mm-ubuntu:20240819"
+        "docker.io/balenalib/nitrogen8mm-ubuntu:jammy"
       ]
     },
     "nitrogen8mm-ubuntu-focal-build": {

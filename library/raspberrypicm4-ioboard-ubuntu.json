@@ -2,6 +2,8 @@
   "group": {
     "default": {
       "targets": [
+        "raspberrypicm4-ioboard-ubuntu-noble-build",
+        "raspberrypicm4-ioboard-ubuntu-noble-run",
         "raspberrypicm4-ioboard-ubuntu-jammy-build",
         "raspberrypicm4-ioboard-ubuntu-jammy-run",
         "raspberrypicm4-ioboard-ubuntu-focal-build",
@@ -14,25 +16,69 @@
     }
   },
   "target": {
-    "raspberrypicm4-ioboard-ubuntu-jammy-build": {
-      "context": "device-base/raspberrypicm4-ioboard/ubuntu/jammy/build",
+    "raspberrypicm4-ioboard-ubuntu-noble-build": {
+      "context": "device-base/raspberrypicm4-ioboard/ubuntu/noble/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:jammy-build",
+        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:noble-build",
         "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:latest-build-20240819",
         "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:latest-build",
         "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:build-20240819",
         "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:jammy-build",
+        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:noble-build",
         "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:latest-build-20240819",
         "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:latest-build",
         "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:build-20240819",
         "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:build"
+      ]
+    },
+    "raspberrypicm4-ioboard-ubuntu-noble-run": {
+      "context": "device-base/raspberrypicm4-ioboard/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:noble-run",
+        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:noble-20240819",
+        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:noble",
+        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:latest-run",
+        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:latest-20240819",
+        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:latest",
+        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:run-20240819",
+        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:run",
+        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:20240819"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:noble-run",
+        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:noble-20240819",
+        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:noble",
+        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:latest-run",
+        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:latest-20240819",
+        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:latest",
+        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:run-20240819",
+        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:run",
+        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:20240819"
+      ]
+    },
+    "raspberrypicm4-ioboard-ubuntu-jammy-build": {
+      "context": "device-base/raspberrypicm4-ioboard/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:jammy-build"
       ]
     },
     "raspberrypicm4-ioboard-ubuntu-jammy-run": {
@@ -43,27 +89,13 @@
         "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:jammy-run",
         "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:jammy-20240819",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:jammy",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:latest-run",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:latest-20240819",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:latest",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:run-20240819",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:run",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:20240819"
+        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:jammy"
       ],
       "cache_from": [
         "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:jammy-run",
         "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:jammy-20240819",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:jammy",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:latest-run",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:latest-20240819",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:latest",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:run-20240819",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:run",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:20240819"
+        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:jammy"
       ]
     },
     "raspberrypicm4-ioboard-ubuntu-focal-build": {

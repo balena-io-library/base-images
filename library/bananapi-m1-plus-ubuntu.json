@@ -2,6 +2,8 @@
   "group": {
     "default": {
       "targets": [
+        "bananapi-m1-plus-ubuntu-noble-build",
+        "bananapi-m1-plus-ubuntu-noble-run",
         "bananapi-m1-plus-ubuntu-jammy-build",
         "bananapi-m1-plus-ubuntu-jammy-run",
         "bananapi-m1-plus-ubuntu-focal-build",
@@ -14,25 +16,69 @@
     }
   },
   "target": {
-    "bananapi-m1-plus-ubuntu-jammy-build": {
-      "context": "device-base/bananapi-m1-plus/ubuntu/jammy/build",
+    "bananapi-m1-plus-ubuntu-noble-build": {
+      "context": "device-base/bananapi-m1-plus/ubuntu/noble/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:jammy-build",
+        "docker.io/balenalib/bananapi-m1-plus-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/bananapi-m1-plus-ubuntu:noble-build",
         "docker.io/balenalib/bananapi-m1-plus-ubuntu:latest-build-20240819",
         "docker.io/balenalib/bananapi-m1-plus-ubuntu:latest-build",
         "docker.io/balenalib/bananapi-m1-plus-ubuntu:build-20240819",
         "docker.io/balenalib/bananapi-m1-plus-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:jammy-build",
+        "docker.io/balenalib/bananapi-m1-plus-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/bananapi-m1-plus-ubuntu:noble-build",
         "docker.io/balenalib/bananapi-m1-plus-ubuntu:latest-build-20240819",
         "docker.io/balenalib/bananapi-m1-plus-ubuntu:latest-build",
         "docker.io/balenalib/bananapi-m1-plus-ubuntu:build-20240819",
         "docker.io/balenalib/bananapi-m1-plus-ubuntu:build"
+      ]
+    },
+    "bananapi-m1-plus-ubuntu-noble-run": {
+      "context": "device-base/bananapi-m1-plus/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/bananapi-m1-plus-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/bananapi-m1-plus-ubuntu:noble-run",
+        "docker.io/balenalib/bananapi-m1-plus-ubuntu:noble-20240819",
+        "docker.io/balenalib/bananapi-m1-plus-ubuntu:noble",
+        "docker.io/balenalib/bananapi-m1-plus-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/bananapi-m1-plus-ubuntu:latest-run",
+        "docker.io/balenalib/bananapi-m1-plus-ubuntu:latest-20240819",
+        "docker.io/balenalib/bananapi-m1-plus-ubuntu:latest",
+        "docker.io/balenalib/bananapi-m1-plus-ubuntu:run-20240819",
+        "docker.io/balenalib/bananapi-m1-plus-ubuntu:run",
+        "docker.io/balenalib/bananapi-m1-plus-ubuntu:20240819"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bananapi-m1-plus-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/bananapi-m1-plus-ubuntu:noble-run",
+        "docker.io/balenalib/bananapi-m1-plus-ubuntu:noble-20240819",
+        "docker.io/balenalib/bananapi-m1-plus-ubuntu:noble",
+        "docker.io/balenalib/bananapi-m1-plus-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/bananapi-m1-plus-ubuntu:latest-run",
+        "docker.io/balenalib/bananapi-m1-plus-ubuntu:latest-20240819",
+        "docker.io/balenalib/bananapi-m1-plus-ubuntu:latest",
+        "docker.io/balenalib/bananapi-m1-plus-ubuntu:run-20240819",
+        "docker.io/balenalib/bananapi-m1-plus-ubuntu:run",
+        "docker.io/balenalib/bananapi-m1-plus-ubuntu:20240819"
+      ]
+    },
+    "bananapi-m1-plus-ubuntu-jammy-build": {
+      "context": "device-base/bananapi-m1-plus/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/bananapi-m1-plus-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/bananapi-m1-plus-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bananapi-m1-plus-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/bananapi-m1-plus-ubuntu:jammy-build"
       ]
     },
     "bananapi-m1-plus-ubuntu-jammy-run": {
@@ -43,27 +89,13 @@
         "docker.io/balenalib/bananapi-m1-plus-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/bananapi-m1-plus-ubuntu:jammy-run",
         "docker.io/balenalib/bananapi-m1-plus-ubuntu:jammy-20240819",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:jammy",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:latest-run",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:latest-20240819",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:latest",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:run-20240819",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:run",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:20240819"
+        "docker.io/balenalib/bananapi-m1-plus-ubuntu:jammy"
       ],
       "cache_from": [
         "docker.io/balenalib/bananapi-m1-plus-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/bananapi-m1-plus-ubuntu:jammy-run",
         "docker.io/balenalib/bananapi-m1-plus-ubuntu:jammy-20240819",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:jammy",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:latest-run",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:latest-20240819",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:latest",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:run-20240819",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:run",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:20240819"
+        "docker.io/balenalib/bananapi-m1-plus-ubuntu:jammy"
       ]
     },
     "bananapi-m1-plus-ubuntu-focal-build": {

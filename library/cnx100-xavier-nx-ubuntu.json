@@ -2,6 +2,8 @@
   "group": {
     "default": {
       "targets": [
+        "cnx100-xavier-nx-ubuntu-noble-build",
+        "cnx100-xavier-nx-ubuntu-noble-run",
         "cnx100-xavier-nx-ubuntu-jammy-build",
         "cnx100-xavier-nx-ubuntu-jammy-run",
         "cnx100-xavier-nx-ubuntu-focal-build",
@@ -14,25 +16,69 @@
     }
   },
   "target": {
-    "cnx100-xavier-nx-ubuntu-jammy-build": {
-      "context": "device-base/cnx100-xavier-nx/ubuntu/jammy/build",
+    "cnx100-xavier-nx-ubuntu-noble-build": {
+      "context": "device-base/cnx100-xavier-nx/ubuntu/noble/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:jammy-build",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:noble-build",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:latest-build-20240819",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:latest-build",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:build-20240819",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:jammy-build",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:noble-build",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:latest-build-20240819",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:latest-build",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:build-20240819",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:build"
+      ]
+    },
+    "cnx100-xavier-nx-ubuntu-noble-run": {
+      "context": "device-base/cnx100-xavier-nx/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:noble-run",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:noble-20240819",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:noble",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:latest-run",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:latest-20240819",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:latest",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:run-20240819",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:run",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:20240819"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:noble-run",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:noble-20240819",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:noble",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:latest-run",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:latest-20240819",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:latest",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:run-20240819",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:run",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:20240819"
+      ]
+    },
+    "cnx100-xavier-nx-ubuntu-jammy-build": {
+      "context": "device-base/cnx100-xavier-nx/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:jammy-build"
       ]
     },
     "cnx100-xavier-nx-ubuntu-jammy-run": {
@@ -43,27 +89,13 @@
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:jammy-run",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:jammy-20240819",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:jammy",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:latest-run",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:latest-20240819",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:latest",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:run-20240819",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:run",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:20240819"
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:jammy"
       ],
       "cache_from": [
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:jammy-run",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:jammy-20240819",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:jammy",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:latest-run",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:latest-20240819",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:latest",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:run-20240819",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:run",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:20240819"
+        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:jammy"
       ]
     },
     "cnx100-xavier-nx-ubuntu-focal-build": {

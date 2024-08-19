@@ -2,6 +2,8 @@
   "group": {
     "default": {
       "targets": [
+        "revpi-connect-s-ubuntu-noble-build",
+        "revpi-connect-s-ubuntu-noble-run",
         "revpi-connect-s-ubuntu-jammy-build",
         "revpi-connect-s-ubuntu-jammy-run",
         "revpi-connect-s-ubuntu-focal-build",
@@ -14,25 +16,69 @@
     }
   },
   "target": {
-    "revpi-connect-s-ubuntu-jammy-build": {
-      "context": "device-base/revpi-connect-s/ubuntu/jammy/build",
+    "revpi-connect-s-ubuntu-noble-build": {
+      "context": "device-base/revpi-connect-s/ubuntu/noble/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/revpi-connect-s-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/revpi-connect-s-ubuntu:jammy-build",
+        "docker.io/balenalib/revpi-connect-s-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/revpi-connect-s-ubuntu:noble-build",
         "docker.io/balenalib/revpi-connect-s-ubuntu:latest-build-20240819",
         "docker.io/balenalib/revpi-connect-s-ubuntu:latest-build",
         "docker.io/balenalib/revpi-connect-s-ubuntu:build-20240819",
         "docker.io/balenalib/revpi-connect-s-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/revpi-connect-s-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/revpi-connect-s-ubuntu:jammy-build",
+        "docker.io/balenalib/revpi-connect-s-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/revpi-connect-s-ubuntu:noble-build",
         "docker.io/balenalib/revpi-connect-s-ubuntu:latest-build-20240819",
         "docker.io/balenalib/revpi-connect-s-ubuntu:latest-build",
         "docker.io/balenalib/revpi-connect-s-ubuntu:build-20240819",
         "docker.io/balenalib/revpi-connect-s-ubuntu:build"
+      ]
+    },
+    "revpi-connect-s-ubuntu-noble-run": {
+      "context": "device-base/revpi-connect-s/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/revpi-connect-s-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/revpi-connect-s-ubuntu:noble-run",
+        "docker.io/balenalib/revpi-connect-s-ubuntu:noble-20240819",
+        "docker.io/balenalib/revpi-connect-s-ubuntu:noble",
+        "docker.io/balenalib/revpi-connect-s-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/revpi-connect-s-ubuntu:latest-run",
+        "docker.io/balenalib/revpi-connect-s-ubuntu:latest-20240819",
+        "docker.io/balenalib/revpi-connect-s-ubuntu:latest",
+        "docker.io/balenalib/revpi-connect-s-ubuntu:run-20240819",
+        "docker.io/balenalib/revpi-connect-s-ubuntu:run",
+        "docker.io/balenalib/revpi-connect-s-ubuntu:20240819"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/revpi-connect-s-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/revpi-connect-s-ubuntu:noble-run",
+        "docker.io/balenalib/revpi-connect-s-ubuntu:noble-20240819",
+        "docker.io/balenalib/revpi-connect-s-ubuntu:noble",
+        "docker.io/balenalib/revpi-connect-s-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/revpi-connect-s-ubuntu:latest-run",
+        "docker.io/balenalib/revpi-connect-s-ubuntu:latest-20240819",
+        "docker.io/balenalib/revpi-connect-s-ubuntu:latest",
+        "docker.io/balenalib/revpi-connect-s-ubuntu:run-20240819",
+        "docker.io/balenalib/revpi-connect-s-ubuntu:run",
+        "docker.io/balenalib/revpi-connect-s-ubuntu:20240819"
+      ]
+    },
+    "revpi-connect-s-ubuntu-jammy-build": {
+      "context": "device-base/revpi-connect-s/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/revpi-connect-s-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/revpi-connect-s-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/revpi-connect-s-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/revpi-connect-s-ubuntu:jammy-build"
       ]
     },
     "revpi-connect-s-ubuntu-jammy-run": {
@@ -43,27 +89,13 @@
         "docker.io/balenalib/revpi-connect-s-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/revpi-connect-s-ubuntu:jammy-run",
         "docker.io/balenalib/revpi-connect-s-ubuntu:jammy-20240819",
-        "docker.io/balenalib/revpi-connect-s-ubuntu:jammy",
-        "docker.io/balenalib/revpi-connect-s-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/revpi-connect-s-ubuntu:latest-run",
-        "docker.io/balenalib/revpi-connect-s-ubuntu:latest-20240819",
-        "docker.io/balenalib/revpi-connect-s-ubuntu:latest",
-        "docker.io/balenalib/revpi-connect-s-ubuntu:run-20240819",
-        "docker.io/balenalib/revpi-connect-s-ubuntu:run",
-        "docker.io/balenalib/revpi-connect-s-ubuntu:20240819"
+        "docker.io/balenalib/revpi-connect-s-ubuntu:jammy"
       ],
       "cache_from": [
         "docker.io/balenalib/revpi-connect-s-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/revpi-connect-s-ubuntu:jammy-run",
         "docker.io/balenalib/revpi-connect-s-ubuntu:jammy-20240819",
-        "docker.io/balenalib/revpi-connect-s-ubuntu:jammy",
-        "docker.io/balenalib/revpi-connect-s-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/revpi-connect-s-ubuntu:latest-run",
-        "docker.io/balenalib/revpi-connect-s-ubuntu:latest-20240819",
-        "docker.io/balenalib/revpi-connect-s-ubuntu:latest",
-        "docker.io/balenalib/revpi-connect-s-ubuntu:run-20240819",
-        "docker.io/balenalib/revpi-connect-s-ubuntu:run",
-        "docker.io/balenalib/revpi-connect-s-ubuntu:20240819"
+        "docker.io/balenalib/revpi-connect-s-ubuntu:jammy"
       ]
     },
     "revpi-connect-s-ubuntu-focal-build": {

@@ -2,6 +2,8 @@
   "group": {
     "default": {
       "targets": [
+        "beaglebone-black-ubuntu-noble-build",
+        "beaglebone-black-ubuntu-noble-run",
         "beaglebone-black-ubuntu-jammy-build",
         "beaglebone-black-ubuntu-jammy-run",
         "beaglebone-black-ubuntu-focal-build",
@@ -14,25 +16,69 @@
     }
   },
   "target": {
-    "beaglebone-black-ubuntu-jammy-build": {
-      "context": "device-base/beaglebone-black/ubuntu/jammy/build",
+    "beaglebone-black-ubuntu-noble-build": {
+      "context": "device-base/beaglebone-black/ubuntu/noble/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/beaglebone-black-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/beaglebone-black-ubuntu:jammy-build",
+        "docker.io/balenalib/beaglebone-black-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/beaglebone-black-ubuntu:noble-build",
         "docker.io/balenalib/beaglebone-black-ubuntu:latest-build-20240819",
         "docker.io/balenalib/beaglebone-black-ubuntu:latest-build",
         "docker.io/balenalib/beaglebone-black-ubuntu:build-20240819",
         "docker.io/balenalib/beaglebone-black-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/beaglebone-black-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/beaglebone-black-ubuntu:jammy-build",
+        "docker.io/balenalib/beaglebone-black-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/beaglebone-black-ubuntu:noble-build",
         "docker.io/balenalib/beaglebone-black-ubuntu:latest-build-20240819",
         "docker.io/balenalib/beaglebone-black-ubuntu:latest-build",
         "docker.io/balenalib/beaglebone-black-ubuntu:build-20240819",
         "docker.io/balenalib/beaglebone-black-ubuntu:build"
+      ]
+    },
+    "beaglebone-black-ubuntu-noble-run": {
+      "context": "device-base/beaglebone-black/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-black-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/beaglebone-black-ubuntu:noble-run",
+        "docker.io/balenalib/beaglebone-black-ubuntu:noble-20240819",
+        "docker.io/balenalib/beaglebone-black-ubuntu:noble",
+        "docker.io/balenalib/beaglebone-black-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/beaglebone-black-ubuntu:latest-run",
+        "docker.io/balenalib/beaglebone-black-ubuntu:latest-20240819",
+        "docker.io/balenalib/beaglebone-black-ubuntu:latest",
+        "docker.io/balenalib/beaglebone-black-ubuntu:run-20240819",
+        "docker.io/balenalib/beaglebone-black-ubuntu:run",
+        "docker.io/balenalib/beaglebone-black-ubuntu:20240819"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-black-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/beaglebone-black-ubuntu:noble-run",
+        "docker.io/balenalib/beaglebone-black-ubuntu:noble-20240819",
+        "docker.io/balenalib/beaglebone-black-ubuntu:noble",
+        "docker.io/balenalib/beaglebone-black-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/beaglebone-black-ubuntu:latest-run",
+        "docker.io/balenalib/beaglebone-black-ubuntu:latest-20240819",
+        "docker.io/balenalib/beaglebone-black-ubuntu:latest",
+        "docker.io/balenalib/beaglebone-black-ubuntu:run-20240819",
+        "docker.io/balenalib/beaglebone-black-ubuntu:run",
+        "docker.io/balenalib/beaglebone-black-ubuntu:20240819"
+      ]
+    },
+    "beaglebone-black-ubuntu-jammy-build": {
+      "context": "device-base/beaglebone-black/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-black-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/beaglebone-black-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-black-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/beaglebone-black-ubuntu:jammy-build"
       ]
     },
     "beaglebone-black-ubuntu-jammy-run": {
@@ -43,27 +89,13 @@
         "docker.io/balenalib/beaglebone-black-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/beaglebone-black-ubuntu:jammy-run",
         "docker.io/balenalib/beaglebone-black-ubuntu:jammy-20240819",
-        "docker.io/balenalib/beaglebone-black-ubuntu:jammy",
-        "docker.io/balenalib/beaglebone-black-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/beaglebone-black-ubuntu:latest-run",
-        "docker.io/balenalib/beaglebone-black-ubuntu:latest-20240819",
-        "docker.io/balenalib/beaglebone-black-ubuntu:latest",
-        "docker.io/balenalib/beaglebone-black-ubuntu:run-20240819",
-        "docker.io/balenalib/beaglebone-black-ubuntu:run",
-        "docker.io/balenalib/beaglebone-black-ubuntu:20240819"
+        "docker.io/balenalib/beaglebone-black-ubuntu:jammy"
       ],
       "cache_from": [
         "docker.io/balenalib/beaglebone-black-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/beaglebone-black-ubuntu:jammy-run",
         "docker.io/balenalib/beaglebone-black-ubuntu:jammy-20240819",
-        "docker.io/balenalib/beaglebone-black-ubuntu:jammy",
-        "docker.io/balenalib/beaglebone-black-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/beaglebone-black-ubuntu:latest-run",
-        "docker.io/balenalib/beaglebone-black-ubuntu:latest-20240819",
-        "docker.io/balenalib/beaglebone-black-ubuntu:latest",
-        "docker.io/balenalib/beaglebone-black-ubuntu:run-20240819",
-        "docker.io/balenalib/beaglebone-black-ubuntu:run",
-        "docker.io/balenalib/beaglebone-black-ubuntu:20240819"
+        "docker.io/balenalib/beaglebone-black-ubuntu:jammy"
       ]
     },
     "beaglebone-black-ubuntu-focal-build": {

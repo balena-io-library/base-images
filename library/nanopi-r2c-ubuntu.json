@@ -2,6 +2,8 @@
   "group": {
     "default": {
       "targets": [
+        "nanopi-r2c-ubuntu-noble-build",
+        "nanopi-r2c-ubuntu-noble-run",
         "nanopi-r2c-ubuntu-jammy-build",
         "nanopi-r2c-ubuntu-jammy-run",
         "nanopi-r2c-ubuntu-focal-build",
@@ -14,25 +16,69 @@
     }
   },
   "target": {
-    "nanopi-r2c-ubuntu-jammy-build": {
-      "context": "device-base/nanopi-r2c/ubuntu/jammy/build",
+    "nanopi-r2c-ubuntu-noble-build": {
+      "context": "device-base/nanopi-r2c/ubuntu/noble/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/nanopi-r2c-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/nanopi-r2c-ubuntu:jammy-build",
+        "docker.io/balenalib/nanopi-r2c-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/nanopi-r2c-ubuntu:noble-build",
         "docker.io/balenalib/nanopi-r2c-ubuntu:latest-build-20240819",
         "docker.io/balenalib/nanopi-r2c-ubuntu:latest-build",
         "docker.io/balenalib/nanopi-r2c-ubuntu:build-20240819",
         "docker.io/balenalib/nanopi-r2c-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/nanopi-r2c-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/nanopi-r2c-ubuntu:jammy-build",
+        "docker.io/balenalib/nanopi-r2c-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/nanopi-r2c-ubuntu:noble-build",
         "docker.io/balenalib/nanopi-r2c-ubuntu:latest-build-20240819",
         "docker.io/balenalib/nanopi-r2c-ubuntu:latest-build",
         "docker.io/balenalib/nanopi-r2c-ubuntu:build-20240819",
         "docker.io/balenalib/nanopi-r2c-ubuntu:build"
+      ]
+    },
+    "nanopi-r2c-ubuntu-noble-run": {
+      "context": "device-base/nanopi-r2c/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopi-r2c-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/nanopi-r2c-ubuntu:noble-run",
+        "docker.io/balenalib/nanopi-r2c-ubuntu:noble-20240819",
+        "docker.io/balenalib/nanopi-r2c-ubuntu:noble",
+        "docker.io/balenalib/nanopi-r2c-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/nanopi-r2c-ubuntu:latest-run",
+        "docker.io/balenalib/nanopi-r2c-ubuntu:latest-20240819",
+        "docker.io/balenalib/nanopi-r2c-ubuntu:latest",
+        "docker.io/balenalib/nanopi-r2c-ubuntu:run-20240819",
+        "docker.io/balenalib/nanopi-r2c-ubuntu:run",
+        "docker.io/balenalib/nanopi-r2c-ubuntu:20240819"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopi-r2c-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/nanopi-r2c-ubuntu:noble-run",
+        "docker.io/balenalib/nanopi-r2c-ubuntu:noble-20240819",
+        "docker.io/balenalib/nanopi-r2c-ubuntu:noble",
+        "docker.io/balenalib/nanopi-r2c-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/nanopi-r2c-ubuntu:latest-run",
+        "docker.io/balenalib/nanopi-r2c-ubuntu:latest-20240819",
+        "docker.io/balenalib/nanopi-r2c-ubuntu:latest",
+        "docker.io/balenalib/nanopi-r2c-ubuntu:run-20240819",
+        "docker.io/balenalib/nanopi-r2c-ubuntu:run",
+        "docker.io/balenalib/nanopi-r2c-ubuntu:20240819"
+      ]
+    },
+    "nanopi-r2c-ubuntu-jammy-build": {
+      "context": "device-base/nanopi-r2c/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopi-r2c-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/nanopi-r2c-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopi-r2c-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/nanopi-r2c-ubuntu:jammy-build"
       ]
     },
     "nanopi-r2c-ubuntu-jammy-run": {
@@ -43,27 +89,13 @@
         "docker.io/balenalib/nanopi-r2c-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/nanopi-r2c-ubuntu:jammy-run",
         "docker.io/balenalib/nanopi-r2c-ubuntu:jammy-20240819",
-        "docker.io/balenalib/nanopi-r2c-ubuntu:jammy",
-        "docker.io/balenalib/nanopi-r2c-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/nanopi-r2c-ubuntu:latest-run",
-        "docker.io/balenalib/nanopi-r2c-ubuntu:latest-20240819",
-        "docker.io/balenalib/nanopi-r2c-ubuntu:latest",
-        "docker.io/balenalib/nanopi-r2c-ubuntu:run-20240819",
-        "docker.io/balenalib/nanopi-r2c-ubuntu:run",
-        "docker.io/balenalib/nanopi-r2c-ubuntu:20240819"
+        "docker.io/balenalib/nanopi-r2c-ubuntu:jammy"
       ],
       "cache_from": [
         "docker.io/balenalib/nanopi-r2c-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/nanopi-r2c-ubuntu:jammy-run",
         "docker.io/balenalib/nanopi-r2c-ubuntu:jammy-20240819",
-        "docker.io/balenalib/nanopi-r2c-ubuntu:jammy",
-        "docker.io/balenalib/nanopi-r2c-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/nanopi-r2c-ubuntu:latest-run",
-        "docker.io/balenalib/nanopi-r2c-ubuntu:latest-20240819",
-        "docker.io/balenalib/nanopi-r2c-ubuntu:latest",
-        "docker.io/balenalib/nanopi-r2c-ubuntu:run-20240819",
-        "docker.io/balenalib/nanopi-r2c-ubuntu:run",
-        "docker.io/balenalib/nanopi-r2c-ubuntu:20240819"
+        "docker.io/balenalib/nanopi-r2c-ubuntu:jammy"
       ]
     },
     "nanopi-r2c-ubuntu-focal-build": {

@@ -2,6 +2,8 @@
   "group": {
     "default": {
       "targets": [
+        "advantech-ecu1370-ubuntu-noble-build",
+        "advantech-ecu1370-ubuntu-noble-run",
         "advantech-ecu1370-ubuntu-jammy-build",
         "advantech-ecu1370-ubuntu-jammy-run",
         "advantech-ecu1370-ubuntu-focal-build",
@@ -14,25 +16,69 @@
     }
   },
   "target": {
-    "advantech-ecu1370-ubuntu-jammy-build": {
-      "context": "device-base/advantech-ecu1370/ubuntu/jammy/build",
+    "advantech-ecu1370-ubuntu-noble-build": {
+      "context": "device-base/advantech-ecu1370/ubuntu/noble/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/advantech-ecu1370-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/advantech-ecu1370-ubuntu:jammy-build",
+        "docker.io/balenalib/advantech-ecu1370-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/advantech-ecu1370-ubuntu:noble-build",
         "docker.io/balenalib/advantech-ecu1370-ubuntu:latest-build-20240819",
         "docker.io/balenalib/advantech-ecu1370-ubuntu:latest-build",
         "docker.io/balenalib/advantech-ecu1370-ubuntu:build-20240819",
         "docker.io/balenalib/advantech-ecu1370-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/advantech-ecu1370-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/advantech-ecu1370-ubuntu:jammy-build",
+        "docker.io/balenalib/advantech-ecu1370-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/advantech-ecu1370-ubuntu:noble-build",
         "docker.io/balenalib/advantech-ecu1370-ubuntu:latest-build-20240819",
         "docker.io/balenalib/advantech-ecu1370-ubuntu:latest-build",
         "docker.io/balenalib/advantech-ecu1370-ubuntu:build-20240819",
         "docker.io/balenalib/advantech-ecu1370-ubuntu:build"
+      ]
+    },
+    "advantech-ecu1370-ubuntu-noble-run": {
+      "context": "device-base/advantech-ecu1370/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/advantech-ecu1370-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/advantech-ecu1370-ubuntu:noble-run",
+        "docker.io/balenalib/advantech-ecu1370-ubuntu:noble-20240819",
+        "docker.io/balenalib/advantech-ecu1370-ubuntu:noble",
+        "docker.io/balenalib/advantech-ecu1370-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/advantech-ecu1370-ubuntu:latest-run",
+        "docker.io/balenalib/advantech-ecu1370-ubuntu:latest-20240819",
+        "docker.io/balenalib/advantech-ecu1370-ubuntu:latest",
+        "docker.io/balenalib/advantech-ecu1370-ubuntu:run-20240819",
+        "docker.io/balenalib/advantech-ecu1370-ubuntu:run",
+        "docker.io/balenalib/advantech-ecu1370-ubuntu:20240819"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/advantech-ecu1370-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/advantech-ecu1370-ubuntu:noble-run",
+        "docker.io/balenalib/advantech-ecu1370-ubuntu:noble-20240819",
+        "docker.io/balenalib/advantech-ecu1370-ubuntu:noble",
+        "docker.io/balenalib/advantech-ecu1370-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/advantech-ecu1370-ubuntu:latest-run",
+        "docker.io/balenalib/advantech-ecu1370-ubuntu:latest-20240819",
+        "docker.io/balenalib/advantech-ecu1370-ubuntu:latest",
+        "docker.io/balenalib/advantech-ecu1370-ubuntu:run-20240819",
+        "docker.io/balenalib/advantech-ecu1370-ubuntu:run",
+        "docker.io/balenalib/advantech-ecu1370-ubuntu:20240819"
+      ]
+    },
+    "advantech-ecu1370-ubuntu-jammy-build": {
+      "context": "device-base/advantech-ecu1370/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/advantech-ecu1370-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/advantech-ecu1370-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/advantech-ecu1370-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/advantech-ecu1370-ubuntu:jammy-build"
       ]
     },
     "advantech-ecu1370-ubuntu-jammy-run": {
@@ -43,27 +89,13 @@
         "docker.io/balenalib/advantech-ecu1370-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/advantech-ecu1370-ubuntu:jammy-run",
         "docker.io/balenalib/advantech-ecu1370-ubuntu:jammy-20240819",
-        "docker.io/balenalib/advantech-ecu1370-ubuntu:jammy",
-        "docker.io/balenalib/advantech-ecu1370-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/advantech-ecu1370-ubuntu:latest-run",
-        "docker.io/balenalib/advantech-ecu1370-ubuntu:latest-20240819",
-        "docker.io/balenalib/advantech-ecu1370-ubuntu:latest",
-        "docker.io/balenalib/advantech-ecu1370-ubuntu:run-20240819",
-        "docker.io/balenalib/advantech-ecu1370-ubuntu:run",
-        "docker.io/balenalib/advantech-ecu1370-ubuntu:20240819"
+        "docker.io/balenalib/advantech-ecu1370-ubuntu:jammy"
       ],
       "cache_from": [
         "docker.io/balenalib/advantech-ecu1370-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/advantech-ecu1370-ubuntu:jammy-run",
         "docker.io/balenalib/advantech-ecu1370-ubuntu:jammy-20240819",
-        "docker.io/balenalib/advantech-ecu1370-ubuntu:jammy",
-        "docker.io/balenalib/advantech-ecu1370-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/advantech-ecu1370-ubuntu:latest-run",
-        "docker.io/balenalib/advantech-ecu1370-ubuntu:latest-20240819",
-        "docker.io/balenalib/advantech-ecu1370-ubuntu:latest",
-        "docker.io/balenalib/advantech-ecu1370-ubuntu:run-20240819",
-        "docker.io/balenalib/advantech-ecu1370-ubuntu:run",
-        "docker.io/balenalib/advantech-ecu1370-ubuntu:20240819"
+        "docker.io/balenalib/advantech-ecu1370-ubuntu:jammy"
       ]
     },
     "advantech-ecu1370-ubuntu-focal-build": {

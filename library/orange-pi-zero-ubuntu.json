@@ -2,6 +2,8 @@
   "group": {
     "default": {
       "targets": [
+        "orange-pi-zero-ubuntu-noble-build",
+        "orange-pi-zero-ubuntu-noble-run",
         "orange-pi-zero-ubuntu-jammy-build",
         "orange-pi-zero-ubuntu-jammy-run",
         "orange-pi-zero-ubuntu-focal-build",
@@ -14,25 +16,69 @@
     }
   },
   "target": {
-    "orange-pi-zero-ubuntu-jammy-build": {
-      "context": "device-base/orange-pi-zero/ubuntu/jammy/build",
+    "orange-pi-zero-ubuntu-noble-build": {
+      "context": "device-base/orange-pi-zero/ubuntu/noble/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/orange-pi-zero-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/orange-pi-zero-ubuntu:jammy-build",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:noble-build",
         "docker.io/balenalib/orange-pi-zero-ubuntu:latest-build-20240819",
         "docker.io/balenalib/orange-pi-zero-ubuntu:latest-build",
         "docker.io/balenalib/orange-pi-zero-ubuntu:build-20240819",
         "docker.io/balenalib/orange-pi-zero-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/orange-pi-zero-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/orange-pi-zero-ubuntu:jammy-build",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:noble-build",
         "docker.io/balenalib/orange-pi-zero-ubuntu:latest-build-20240819",
         "docker.io/balenalib/orange-pi-zero-ubuntu:latest-build",
         "docker.io/balenalib/orange-pi-zero-ubuntu:build-20240819",
         "docker.io/balenalib/orange-pi-zero-ubuntu:build"
+      ]
+    },
+    "orange-pi-zero-ubuntu-noble-run": {
+      "context": "device-base/orange-pi-zero/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/orange-pi-zero-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:noble-run",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:noble-20240819",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:noble",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:latest-run",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:latest-20240819",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:latest",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:run-20240819",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:run",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:20240819"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/orange-pi-zero-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:noble-run",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:noble-20240819",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:noble",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:latest-run",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:latest-20240819",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:latest",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:run-20240819",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:run",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:20240819"
+      ]
+    },
+    "orange-pi-zero-ubuntu-jammy-build": {
+      "context": "device-base/orange-pi-zero/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/orange-pi-zero-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/orange-pi-zero-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/orange-pi-zero-ubuntu:jammy-build"
       ]
     },
     "orange-pi-zero-ubuntu-jammy-run": {
@@ -43,27 +89,13 @@
         "docker.io/balenalib/orange-pi-zero-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/orange-pi-zero-ubuntu:jammy-run",
         "docker.io/balenalib/orange-pi-zero-ubuntu:jammy-20240819",
-        "docker.io/balenalib/orange-pi-zero-ubuntu:jammy",
-        "docker.io/balenalib/orange-pi-zero-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/orange-pi-zero-ubuntu:latest-run",
-        "docker.io/balenalib/orange-pi-zero-ubuntu:latest-20240819",
-        "docker.io/balenalib/orange-pi-zero-ubuntu:latest",
-        "docker.io/balenalib/orange-pi-zero-ubuntu:run-20240819",
-        "docker.io/balenalib/orange-pi-zero-ubuntu:run",
-        "docker.io/balenalib/orange-pi-zero-ubuntu:20240819"
+        "docker.io/balenalib/orange-pi-zero-ubuntu:jammy"
       ],
       "cache_from": [
         "docker.io/balenalib/orange-pi-zero-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/orange-pi-zero-ubuntu:jammy-run",
         "docker.io/balenalib/orange-pi-zero-ubuntu:jammy-20240819",
-        "docker.io/balenalib/orange-pi-zero-ubuntu:jammy",
-        "docker.io/balenalib/orange-pi-zero-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/orange-pi-zero-ubuntu:latest-run",
-        "docker.io/balenalib/orange-pi-zero-ubuntu:latest-20240819",
-        "docker.io/balenalib/orange-pi-zero-ubuntu:latest",
-        "docker.io/balenalib/orange-pi-zero-ubuntu:run-20240819",
-        "docker.io/balenalib/orange-pi-zero-ubuntu:run",
-        "docker.io/balenalib/orange-pi-zero-ubuntu:20240819"
+        "docker.io/balenalib/orange-pi-zero-ubuntu:jammy"
       ]
     },
     "orange-pi-zero-ubuntu-focal-build": {

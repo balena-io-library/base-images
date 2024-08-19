@@ -2,6 +2,8 @@
   "group": {
     "default": {
       "targets": [
+        "iot-gate-imx8plus-ubuntu-noble-build",
+        "iot-gate-imx8plus-ubuntu-noble-run",
         "iot-gate-imx8plus-ubuntu-jammy-build",
         "iot-gate-imx8plus-ubuntu-jammy-run",
         "iot-gate-imx8plus-ubuntu-focal-build",
@@ -14,25 +16,69 @@
     }
   },
   "target": {
-    "iot-gate-imx8plus-ubuntu-jammy-build": {
-      "context": "device-base/iot-gate-imx8plus/ubuntu/jammy/build",
+    "iot-gate-imx8plus-ubuntu-noble-build": {
+      "context": "device-base/iot-gate-imx8plus/ubuntu/noble/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:jammy-build",
+        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:noble-build",
         "docker.io/balenalib/iot-gate-imx8plus-ubuntu:latest-build-20240819",
         "docker.io/balenalib/iot-gate-imx8plus-ubuntu:latest-build",
         "docker.io/balenalib/iot-gate-imx8plus-ubuntu:build-20240819",
         "docker.io/balenalib/iot-gate-imx8plus-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:jammy-build",
+        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:noble-build",
         "docker.io/balenalib/iot-gate-imx8plus-ubuntu:latest-build-20240819",
         "docker.io/balenalib/iot-gate-imx8plus-ubuntu:latest-build",
         "docker.io/balenalib/iot-gate-imx8plus-ubuntu:build-20240819",
         "docker.io/balenalib/iot-gate-imx8plus-ubuntu:build"
+      ]
+    },
+    "iot-gate-imx8plus-ubuntu-noble-run": {
+      "context": "device-base/iot-gate-imx8plus/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:noble-run",
+        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:noble-20240819",
+        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:noble",
+        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:latest-run",
+        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:latest-20240819",
+        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:latest",
+        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:run-20240819",
+        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:run",
+        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:20240819"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:noble-run",
+        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:noble-20240819",
+        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:noble",
+        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:latest-run",
+        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:latest-20240819",
+        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:latest",
+        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:run-20240819",
+        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:run",
+        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:20240819"
+      ]
+    },
+    "iot-gate-imx8plus-ubuntu-jammy-build": {
+      "context": "device-base/iot-gate-imx8plus/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:jammy-build"
       ]
     },
     "iot-gate-imx8plus-ubuntu-jammy-run": {
@@ -43,27 +89,13 @@
         "docker.io/balenalib/iot-gate-imx8plus-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/iot-gate-imx8plus-ubuntu:jammy-run",
         "docker.io/balenalib/iot-gate-imx8plus-ubuntu:jammy-20240819",
-        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:jammy",
-        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:latest-run",
-        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:latest-20240819",
-        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:latest",
-        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:run-20240819",
-        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:run",
-        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:20240819"
+        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:jammy"
       ],
       "cache_from": [
         "docker.io/balenalib/iot-gate-imx8plus-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/iot-gate-imx8plus-ubuntu:jammy-run",
         "docker.io/balenalib/iot-gate-imx8plus-ubuntu:jammy-20240819",
-        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:jammy",
-        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:latest-run",
-        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:latest-20240819",
-        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:latest",
-        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:run-20240819",
-        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:run",
-        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:20240819"
+        "docker.io/balenalib/iot-gate-imx8plus-ubuntu:jammy"
       ]
     },
     "iot-gate-imx8plus-ubuntu-focal-build": {

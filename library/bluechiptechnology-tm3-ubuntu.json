@@ -2,6 +2,8 @@
   "group": {
     "default": {
       "targets": [
+        "bluechiptechnology-tm3-ubuntu-noble-build",
+        "bluechiptechnology-tm3-ubuntu-noble-run",
         "bluechiptechnology-tm3-ubuntu-jammy-build",
         "bluechiptechnology-tm3-ubuntu-jammy-run",
         "bluechiptechnology-tm3-ubuntu-focal-build",
@@ -14,25 +16,69 @@
     }
   },
   "target": {
-    "bluechiptechnology-tm3-ubuntu-jammy-build": {
-      "context": "device-base/bluechiptechnology-tm3/ubuntu/jammy/build",
+    "bluechiptechnology-tm3-ubuntu-noble-build": {
+      "context": "device-base/bluechiptechnology-tm3/ubuntu/noble/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:jammy-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:noble-build",
         "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:latest-build-20240819",
         "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:latest-build",
         "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:build-20240819",
         "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:jammy-build",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:noble-build",
         "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:latest-build-20240819",
         "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:latest-build",
         "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:build-20240819",
         "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:build"
+      ]
+    },
+    "bluechiptechnology-tm3-ubuntu-noble-run": {
+      "context": "device-base/bluechiptechnology-tm3/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:noble-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:noble-20240819",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:noble",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:latest-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:latest-20240819",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:latest",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:run-20240819",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:20240819"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:noble-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:noble-20240819",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:noble",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:latest-run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:latest-20240819",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:latest",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:run-20240819",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:run",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:20240819"
+      ]
+    },
+    "bluechiptechnology-tm3-ubuntu-jammy-build": {
+      "context": "device-base/bluechiptechnology-tm3/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:jammy-build"
       ]
     },
     "bluechiptechnology-tm3-ubuntu-jammy-run": {
@@ -43,27 +89,13 @@
         "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:jammy-run",
         "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:jammy-20240819",
-        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:jammy",
-        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:latest-run",
-        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:latest-20240819",
-        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:latest",
-        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:run-20240819",
-        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:run",
-        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:20240819"
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:jammy"
       ],
       "cache_from": [
         "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:jammy-run",
         "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:jammy-20240819",
-        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:jammy",
-        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:latest-run",
-        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:latest-20240819",
-        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:latest",
-        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:run-20240819",
-        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:run",
-        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:20240819"
+        "docker.io/balenalib/bluechiptechnology-tm3-ubuntu:jammy"
       ]
     },
     "bluechiptechnology-tm3-ubuntu-focal-build": {

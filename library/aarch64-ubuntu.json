@@ -2,6 +2,8 @@
   "group": {
     "default": {
       "targets": [
+        "aarch64-ubuntu-noble-build",
+        "aarch64-ubuntu-noble-run",
         "aarch64-ubuntu-jammy-build",
         "aarch64-ubuntu-jammy-run",
         "aarch64-ubuntu-focal-build",
@@ -14,25 +16,69 @@
     }
   },
   "target": {
-    "aarch64-ubuntu-jammy-build": {
-      "context": "aarch64/ubuntu/jammy/build",
+    "aarch64-ubuntu-noble-build": {
+      "context": "aarch64/ubuntu/noble/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/aarch64-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/aarch64-ubuntu:jammy-build",
+        "docker.io/balenalib/aarch64-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/aarch64-ubuntu:noble-build",
         "docker.io/balenalib/aarch64-ubuntu:latest-build-20240819",
         "docker.io/balenalib/aarch64-ubuntu:latest-build",
         "docker.io/balenalib/aarch64-ubuntu:build-20240819",
         "docker.io/balenalib/aarch64-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/aarch64-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/aarch64-ubuntu:jammy-build",
+        "docker.io/balenalib/aarch64-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/aarch64-ubuntu:noble-build",
         "docker.io/balenalib/aarch64-ubuntu:latest-build-20240819",
         "docker.io/balenalib/aarch64-ubuntu:latest-build",
         "docker.io/balenalib/aarch64-ubuntu:build-20240819",
         "docker.io/balenalib/aarch64-ubuntu:build"
+      ]
+    },
+    "aarch64-ubuntu-noble-run": {
+      "context": "aarch64/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/aarch64-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/aarch64-ubuntu:noble-run",
+        "docker.io/balenalib/aarch64-ubuntu:noble-20240819",
+        "docker.io/balenalib/aarch64-ubuntu:noble",
+        "docker.io/balenalib/aarch64-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/aarch64-ubuntu:latest-run",
+        "docker.io/balenalib/aarch64-ubuntu:latest-20240819",
+        "docker.io/balenalib/aarch64-ubuntu:latest",
+        "docker.io/balenalib/aarch64-ubuntu:run-20240819",
+        "docker.io/balenalib/aarch64-ubuntu:run",
+        "docker.io/balenalib/aarch64-ubuntu:20240819"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/aarch64-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/aarch64-ubuntu:noble-run",
+        "docker.io/balenalib/aarch64-ubuntu:noble-20240819",
+        "docker.io/balenalib/aarch64-ubuntu:noble",
+        "docker.io/balenalib/aarch64-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/aarch64-ubuntu:latest-run",
+        "docker.io/balenalib/aarch64-ubuntu:latest-20240819",
+        "docker.io/balenalib/aarch64-ubuntu:latest",
+        "docker.io/balenalib/aarch64-ubuntu:run-20240819",
+        "docker.io/balenalib/aarch64-ubuntu:run",
+        "docker.io/balenalib/aarch64-ubuntu:20240819"
+      ]
+    },
+    "aarch64-ubuntu-jammy-build": {
+      "context": "aarch64/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/aarch64-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/aarch64-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/aarch64-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/aarch64-ubuntu:jammy-build"
       ]
     },
     "aarch64-ubuntu-jammy-run": {
@@ -43,27 +89,13 @@
         "docker.io/balenalib/aarch64-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/aarch64-ubuntu:jammy-run",
         "docker.io/balenalib/aarch64-ubuntu:jammy-20240819",
-        "docker.io/balenalib/aarch64-ubuntu:jammy",
-        "docker.io/balenalib/aarch64-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/aarch64-ubuntu:latest-run",
-        "docker.io/balenalib/aarch64-ubuntu:latest-20240819",
-        "docker.io/balenalib/aarch64-ubuntu:latest",
-        "docker.io/balenalib/aarch64-ubuntu:run-20240819",
-        "docker.io/balenalib/aarch64-ubuntu:run",
-        "docker.io/balenalib/aarch64-ubuntu:20240819"
+        "docker.io/balenalib/aarch64-ubuntu:jammy"
       ],
       "cache_from": [
         "docker.io/balenalib/aarch64-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/aarch64-ubuntu:jammy-run",
         "docker.io/balenalib/aarch64-ubuntu:jammy-20240819",
-        "docker.io/balenalib/aarch64-ubuntu:jammy",
-        "docker.io/balenalib/aarch64-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/aarch64-ubuntu:latest-run",
-        "docker.io/balenalib/aarch64-ubuntu:latest-20240819",
-        "docker.io/balenalib/aarch64-ubuntu:latest",
-        "docker.io/balenalib/aarch64-ubuntu:run-20240819",
-        "docker.io/balenalib/aarch64-ubuntu:run",
-        "docker.io/balenalib/aarch64-ubuntu:20240819"
+        "docker.io/balenalib/aarch64-ubuntu:jammy"
       ]
     },
     "aarch64-ubuntu-focal-build": {

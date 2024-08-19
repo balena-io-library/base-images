@@ -2,6 +2,8 @@
   "group": {
     "default": {
       "targets": [
+        "jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu-noble-build",
+        "jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu-noble-run",
         "jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu-jammy-build",
         "jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu-jammy-run",
         "jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu-focal-build",
@@ -14,25 +16,69 @@
     }
   },
   "target": {
-    "jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu-jammy-build": {
-      "context": "device-base/jetson-xavier-nx-devkit-seeed-2mic-hat/ubuntu/jammy/build",
+    "jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu-noble-build": {
+      "context": "device-base/jetson-xavier-nx-devkit-seeed-2mic-hat/ubuntu/noble/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:jammy-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:noble-build",
         "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:latest-build-20240819",
         "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:latest-build",
         "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:build-20240819",
         "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:jammy-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:noble-build",
         "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:latest-build-20240819",
         "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:latest-build",
         "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:build-20240819",
         "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:build"
+      ]
+    },
+    "jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu-noble-run": {
+      "context": "device-base/jetson-xavier-nx-devkit-seeed-2mic-hat/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:noble-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:noble-20240819",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:noble",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:latest-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:latest-20240819",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:latest",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:run-20240819",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:20240819"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:noble-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:noble-20240819",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:noble",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:latest-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:latest-20240819",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:latest",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:run-20240819",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:20240819"
+      ]
+    },
+    "jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu-jammy-build": {
+      "context": "device-base/jetson-xavier-nx-devkit-seeed-2mic-hat/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:jammy-build"
       ]
     },
     "jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu-jammy-run": {
@@ -43,27 +89,13 @@
         "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:jammy-run",
         "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:jammy-20240819",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:jammy",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:latest-run",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:latest-20240819",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:latest",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:run-20240819",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:run",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:20240819"
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:jammy"
       ],
       "cache_from": [
         "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:jammy-run",
         "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:jammy-20240819",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:jammy",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:latest-run",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:latest-20240819",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:latest",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:run-20240819",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:run",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:20240819"
+        "docker.io/balenalib/jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu:jammy"
       ]
     },
     "jetson-xavier-nx-devkit-seeed-2mic-hat-ubuntu-focal-build": {

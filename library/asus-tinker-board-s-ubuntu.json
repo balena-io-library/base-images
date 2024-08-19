@@ -2,6 +2,8 @@
   "group": {
     "default": {
       "targets": [
+        "asus-tinker-board-s-ubuntu-noble-build",
+        "asus-tinker-board-s-ubuntu-noble-run",
         "asus-tinker-board-s-ubuntu-jammy-build",
         "asus-tinker-board-s-ubuntu-jammy-run",
         "asus-tinker-board-s-ubuntu-focal-build",
@@ -14,25 +16,69 @@
     }
   },
   "target": {
-    "asus-tinker-board-s-ubuntu-jammy-build": {
-      "context": "device-base/asus-tinker-board-s/ubuntu/jammy/build",
+    "asus-tinker-board-s-ubuntu-noble-build": {
+      "context": "device-base/asus-tinker-board-s/ubuntu/noble/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/asus-tinker-board-s-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/asus-tinker-board-s-ubuntu:jammy-build",
+        "docker.io/balenalib/asus-tinker-board-s-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/asus-tinker-board-s-ubuntu:noble-build",
         "docker.io/balenalib/asus-tinker-board-s-ubuntu:latest-build-20240819",
         "docker.io/balenalib/asus-tinker-board-s-ubuntu:latest-build",
         "docker.io/balenalib/asus-tinker-board-s-ubuntu:build-20240819",
         "docker.io/balenalib/asus-tinker-board-s-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/asus-tinker-board-s-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/asus-tinker-board-s-ubuntu:jammy-build",
+        "docker.io/balenalib/asus-tinker-board-s-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/asus-tinker-board-s-ubuntu:noble-build",
         "docker.io/balenalib/asus-tinker-board-s-ubuntu:latest-build-20240819",
         "docker.io/balenalib/asus-tinker-board-s-ubuntu:latest-build",
         "docker.io/balenalib/asus-tinker-board-s-ubuntu:build-20240819",
         "docker.io/balenalib/asus-tinker-board-s-ubuntu:build"
+      ]
+    },
+    "asus-tinker-board-s-ubuntu-noble-run": {
+      "context": "device-base/asus-tinker-board-s/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/asus-tinker-board-s-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/asus-tinker-board-s-ubuntu:noble-run",
+        "docker.io/balenalib/asus-tinker-board-s-ubuntu:noble-20240819",
+        "docker.io/balenalib/asus-tinker-board-s-ubuntu:noble",
+        "docker.io/balenalib/asus-tinker-board-s-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/asus-tinker-board-s-ubuntu:latest-run",
+        "docker.io/balenalib/asus-tinker-board-s-ubuntu:latest-20240819",
+        "docker.io/balenalib/asus-tinker-board-s-ubuntu:latest",
+        "docker.io/balenalib/asus-tinker-board-s-ubuntu:run-20240819",
+        "docker.io/balenalib/asus-tinker-board-s-ubuntu:run",
+        "docker.io/balenalib/asus-tinker-board-s-ubuntu:20240819"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/asus-tinker-board-s-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/asus-tinker-board-s-ubuntu:noble-run",
+        "docker.io/balenalib/asus-tinker-board-s-ubuntu:noble-20240819",
+        "docker.io/balenalib/asus-tinker-board-s-ubuntu:noble",
+        "docker.io/balenalib/asus-tinker-board-s-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/asus-tinker-board-s-ubuntu:latest-run",
+        "docker.io/balenalib/asus-tinker-board-s-ubuntu:latest-20240819",
+        "docker.io/balenalib/asus-tinker-board-s-ubuntu:latest",
+        "docker.io/balenalib/asus-tinker-board-s-ubuntu:run-20240819",
+        "docker.io/balenalib/asus-tinker-board-s-ubuntu:run",
+        "docker.io/balenalib/asus-tinker-board-s-ubuntu:20240819"
+      ]
+    },
+    "asus-tinker-board-s-ubuntu-jammy-build": {
+      "context": "device-base/asus-tinker-board-s/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/asus-tinker-board-s-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/asus-tinker-board-s-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/asus-tinker-board-s-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/asus-tinker-board-s-ubuntu:jammy-build"
       ]
     },
     "asus-tinker-board-s-ubuntu-jammy-run": {
@@ -43,27 +89,13 @@
         "docker.io/balenalib/asus-tinker-board-s-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/asus-tinker-board-s-ubuntu:jammy-run",
         "docker.io/balenalib/asus-tinker-board-s-ubuntu:jammy-20240819",
-        "docker.io/balenalib/asus-tinker-board-s-ubuntu:jammy",
-        "docker.io/balenalib/asus-tinker-board-s-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/asus-tinker-board-s-ubuntu:latest-run",
-        "docker.io/balenalib/asus-tinker-board-s-ubuntu:latest-20240819",
-        "docker.io/balenalib/asus-tinker-board-s-ubuntu:latest",
-        "docker.io/balenalib/asus-tinker-board-s-ubuntu:run-20240819",
-        "docker.io/balenalib/asus-tinker-board-s-ubuntu:run",
-        "docker.io/balenalib/asus-tinker-board-s-ubuntu:20240819"
+        "docker.io/balenalib/asus-tinker-board-s-ubuntu:jammy"
       ],
       "cache_from": [
         "docker.io/balenalib/asus-tinker-board-s-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/asus-tinker-board-s-ubuntu:jammy-run",
         "docker.io/balenalib/asus-tinker-board-s-ubuntu:jammy-20240819",
-        "docker.io/balenalib/asus-tinker-board-s-ubuntu:jammy",
-        "docker.io/balenalib/asus-tinker-board-s-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/asus-tinker-board-s-ubuntu:latest-run",
-        "docker.io/balenalib/asus-tinker-board-s-ubuntu:latest-20240819",
-        "docker.io/balenalib/asus-tinker-board-s-ubuntu:latest",
-        "docker.io/balenalib/asus-tinker-board-s-ubuntu:run-20240819",
-        "docker.io/balenalib/asus-tinker-board-s-ubuntu:run",
-        "docker.io/balenalib/asus-tinker-board-s-ubuntu:20240819"
+        "docker.io/balenalib/asus-tinker-board-s-ubuntu:jammy"
       ]
     },
     "asus-tinker-board-s-ubuntu-focal-build": {

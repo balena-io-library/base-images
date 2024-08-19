@@ -2,6 +2,8 @@
   "group": {
     "default": {
       "targets": [
+        "spacely-tx2-ubuntu-noble-build",
+        "spacely-tx2-ubuntu-noble-run",
         "spacely-tx2-ubuntu-jammy-build",
         "spacely-tx2-ubuntu-jammy-run",
         "spacely-tx2-ubuntu-focal-build",
@@ -14,25 +16,69 @@
     }
   },
   "target": {
-    "spacely-tx2-ubuntu-jammy-build": {
-      "context": "device-base/spacely-tx2/ubuntu/jammy/build",
+    "spacely-tx2-ubuntu-noble-build": {
+      "context": "device-base/spacely-tx2/ubuntu/noble/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/spacely-tx2-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/spacely-tx2-ubuntu:jammy-build",
+        "docker.io/balenalib/spacely-tx2-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/spacely-tx2-ubuntu:noble-build",
         "docker.io/balenalib/spacely-tx2-ubuntu:latest-build-20240819",
         "docker.io/balenalib/spacely-tx2-ubuntu:latest-build",
         "docker.io/balenalib/spacely-tx2-ubuntu:build-20240819",
         "docker.io/balenalib/spacely-tx2-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/spacely-tx2-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/spacely-tx2-ubuntu:jammy-build",
+        "docker.io/balenalib/spacely-tx2-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/spacely-tx2-ubuntu:noble-build",
         "docker.io/balenalib/spacely-tx2-ubuntu:latest-build-20240819",
         "docker.io/balenalib/spacely-tx2-ubuntu:latest-build",
         "docker.io/balenalib/spacely-tx2-ubuntu:build-20240819",
         "docker.io/balenalib/spacely-tx2-ubuntu:build"
+      ]
+    },
+    "spacely-tx2-ubuntu-noble-run": {
+      "context": "device-base/spacely-tx2/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/spacely-tx2-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/spacely-tx2-ubuntu:noble-run",
+        "docker.io/balenalib/spacely-tx2-ubuntu:noble-20240819",
+        "docker.io/balenalib/spacely-tx2-ubuntu:noble",
+        "docker.io/balenalib/spacely-tx2-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/spacely-tx2-ubuntu:latest-run",
+        "docker.io/balenalib/spacely-tx2-ubuntu:latest-20240819",
+        "docker.io/balenalib/spacely-tx2-ubuntu:latest",
+        "docker.io/balenalib/spacely-tx2-ubuntu:run-20240819",
+        "docker.io/balenalib/spacely-tx2-ubuntu:run",
+        "docker.io/balenalib/spacely-tx2-ubuntu:20240819"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/spacely-tx2-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/spacely-tx2-ubuntu:noble-run",
+        "docker.io/balenalib/spacely-tx2-ubuntu:noble-20240819",
+        "docker.io/balenalib/spacely-tx2-ubuntu:noble",
+        "docker.io/balenalib/spacely-tx2-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/spacely-tx2-ubuntu:latest-run",
+        "docker.io/balenalib/spacely-tx2-ubuntu:latest-20240819",
+        "docker.io/balenalib/spacely-tx2-ubuntu:latest",
+        "docker.io/balenalib/spacely-tx2-ubuntu:run-20240819",
+        "docker.io/balenalib/spacely-tx2-ubuntu:run",
+        "docker.io/balenalib/spacely-tx2-ubuntu:20240819"
+      ]
+    },
+    "spacely-tx2-ubuntu-jammy-build": {
+      "context": "device-base/spacely-tx2/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/spacely-tx2-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/spacely-tx2-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/spacely-tx2-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/spacely-tx2-ubuntu:jammy-build"
       ]
     },
     "spacely-tx2-ubuntu-jammy-run": {
@@ -43,27 +89,13 @@
         "docker.io/balenalib/spacely-tx2-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/spacely-tx2-ubuntu:jammy-run",
         "docker.io/balenalib/spacely-tx2-ubuntu:jammy-20240819",
-        "docker.io/balenalib/spacely-tx2-ubuntu:jammy",
-        "docker.io/balenalib/spacely-tx2-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/spacely-tx2-ubuntu:latest-run",
-        "docker.io/balenalib/spacely-tx2-ubuntu:latest-20240819",
-        "docker.io/balenalib/spacely-tx2-ubuntu:latest",
-        "docker.io/balenalib/spacely-tx2-ubuntu:run-20240819",
-        "docker.io/balenalib/spacely-tx2-ubuntu:run",
-        "docker.io/balenalib/spacely-tx2-ubuntu:20240819"
+        "docker.io/balenalib/spacely-tx2-ubuntu:jammy"
       ],
       "cache_from": [
         "docker.io/balenalib/spacely-tx2-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/spacely-tx2-ubuntu:jammy-run",
         "docker.io/balenalib/spacely-tx2-ubuntu:jammy-20240819",
-        "docker.io/balenalib/spacely-tx2-ubuntu:jammy",
-        "docker.io/balenalib/spacely-tx2-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/spacely-tx2-ubuntu:latest-run",
-        "docker.io/balenalib/spacely-tx2-ubuntu:latest-20240819",
-        "docker.io/balenalib/spacely-tx2-ubuntu:latest",
-        "docker.io/balenalib/spacely-tx2-ubuntu:run-20240819",
-        "docker.io/balenalib/spacely-tx2-ubuntu:run",
-        "docker.io/balenalib/spacely-tx2-ubuntu:20240819"
+        "docker.io/balenalib/spacely-tx2-ubuntu:jammy"
       ]
     },
     "spacely-tx2-ubuntu-focal-build": {

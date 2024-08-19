@@ -2,6 +2,8 @@
   "group": {
     "default": {
       "targets": [
+        "photon-tx2-nx-ubuntu-noble-build",
+        "photon-tx2-nx-ubuntu-noble-run",
         "photon-tx2-nx-ubuntu-jammy-build",
         "photon-tx2-nx-ubuntu-jammy-run",
         "photon-tx2-nx-ubuntu-focal-build",
@@ -14,25 +16,69 @@
     }
   },
   "target": {
-    "photon-tx2-nx-ubuntu-jammy-build": {
-      "context": "device-base/photon-tx2-nx/ubuntu/jammy/build",
+    "photon-tx2-nx-ubuntu-noble-build": {
+      "context": "device-base/photon-tx2-nx/ubuntu/noble/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:jammy-build",
+        "docker.io/balenalib/photon-tx2-nx-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/photon-tx2-nx-ubuntu:noble-build",
         "docker.io/balenalib/photon-tx2-nx-ubuntu:latest-build-20240819",
         "docker.io/balenalib/photon-tx2-nx-ubuntu:latest-build",
         "docker.io/balenalib/photon-tx2-nx-ubuntu:build-20240819",
         "docker.io/balenalib/photon-tx2-nx-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:jammy-build",
+        "docker.io/balenalib/photon-tx2-nx-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/photon-tx2-nx-ubuntu:noble-build",
         "docker.io/balenalib/photon-tx2-nx-ubuntu:latest-build-20240819",
         "docker.io/balenalib/photon-tx2-nx-ubuntu:latest-build",
         "docker.io/balenalib/photon-tx2-nx-ubuntu:build-20240819",
         "docker.io/balenalib/photon-tx2-nx-ubuntu:build"
+      ]
+    },
+    "photon-tx2-nx-ubuntu-noble-run": {
+      "context": "device-base/photon-tx2-nx/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/photon-tx2-nx-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/photon-tx2-nx-ubuntu:noble-run",
+        "docker.io/balenalib/photon-tx2-nx-ubuntu:noble-20240819",
+        "docker.io/balenalib/photon-tx2-nx-ubuntu:noble",
+        "docker.io/balenalib/photon-tx2-nx-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/photon-tx2-nx-ubuntu:latest-run",
+        "docker.io/balenalib/photon-tx2-nx-ubuntu:latest-20240819",
+        "docker.io/balenalib/photon-tx2-nx-ubuntu:latest",
+        "docker.io/balenalib/photon-tx2-nx-ubuntu:run-20240819",
+        "docker.io/balenalib/photon-tx2-nx-ubuntu:run",
+        "docker.io/balenalib/photon-tx2-nx-ubuntu:20240819"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/photon-tx2-nx-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/photon-tx2-nx-ubuntu:noble-run",
+        "docker.io/balenalib/photon-tx2-nx-ubuntu:noble-20240819",
+        "docker.io/balenalib/photon-tx2-nx-ubuntu:noble",
+        "docker.io/balenalib/photon-tx2-nx-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/photon-tx2-nx-ubuntu:latest-run",
+        "docker.io/balenalib/photon-tx2-nx-ubuntu:latest-20240819",
+        "docker.io/balenalib/photon-tx2-nx-ubuntu:latest",
+        "docker.io/balenalib/photon-tx2-nx-ubuntu:run-20240819",
+        "docker.io/balenalib/photon-tx2-nx-ubuntu:run",
+        "docker.io/balenalib/photon-tx2-nx-ubuntu:20240819"
+      ]
+    },
+    "photon-tx2-nx-ubuntu-jammy-build": {
+      "context": "device-base/photon-tx2-nx/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/photon-tx2-nx-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/photon-tx2-nx-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/photon-tx2-nx-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/photon-tx2-nx-ubuntu:jammy-build"
       ]
     },
     "photon-tx2-nx-ubuntu-jammy-run": {
@@ -43,27 +89,13 @@
         "docker.io/balenalib/photon-tx2-nx-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/photon-tx2-nx-ubuntu:jammy-run",
         "docker.io/balenalib/photon-tx2-nx-ubuntu:jammy-20240819",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:jammy",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:latest-run",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:latest-20240819",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:latest",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:run-20240819",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:run",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:20240819"
+        "docker.io/balenalib/photon-tx2-nx-ubuntu:jammy"
       ],
       "cache_from": [
         "docker.io/balenalib/photon-tx2-nx-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/photon-tx2-nx-ubuntu:jammy-run",
         "docker.io/balenalib/photon-tx2-nx-ubuntu:jammy-20240819",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:jammy",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:latest-run",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:latest-20240819",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:latest",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:run-20240819",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:run",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:20240819"
+        "docker.io/balenalib/photon-tx2-nx-ubuntu:jammy"
       ]
     },
     "photon-tx2-nx-ubuntu-focal-build": {

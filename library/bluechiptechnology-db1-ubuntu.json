@@ -2,6 +2,8 @@
   "group": {
     "default": {
       "targets": [
+        "bluechiptechnology-db1-ubuntu-noble-build",
+        "bluechiptechnology-db1-ubuntu-noble-run",
         "bluechiptechnology-db1-ubuntu-jammy-build",
         "bluechiptechnology-db1-ubuntu-jammy-run",
         "bluechiptechnology-db1-ubuntu-focal-build",
@@ -14,25 +16,69 @@
     }
   },
   "target": {
-    "bluechiptechnology-db1-ubuntu-jammy-build": {
-      "context": "device-base/bluechiptechnology-db1/ubuntu/jammy/build",
+    "bluechiptechnology-db1-ubuntu-noble-build": {
+      "context": "device-base/bluechiptechnology-db1/ubuntu/noble/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:jammy-build",
+        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:noble-build",
         "docker.io/balenalib/bluechiptechnology-db1-ubuntu:latest-build-20240819",
         "docker.io/balenalib/bluechiptechnology-db1-ubuntu:latest-build",
         "docker.io/balenalib/bluechiptechnology-db1-ubuntu:build-20240819",
         "docker.io/balenalib/bluechiptechnology-db1-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:jammy-build",
+        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:noble-build",
         "docker.io/balenalib/bluechiptechnology-db1-ubuntu:latest-build-20240819",
         "docker.io/balenalib/bluechiptechnology-db1-ubuntu:latest-build",
         "docker.io/balenalib/bluechiptechnology-db1-ubuntu:build-20240819",
         "docker.io/balenalib/bluechiptechnology-db1-ubuntu:build"
+      ]
+    },
+    "bluechiptechnology-db1-ubuntu-noble-run": {
+      "context": "device-base/bluechiptechnology-db1/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:noble-run",
+        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:noble-20240819",
+        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:noble",
+        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:latest-run",
+        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:latest-20240819",
+        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:latest",
+        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:run-20240819",
+        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:run",
+        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:20240819"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:noble-run",
+        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:noble-20240819",
+        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:noble",
+        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:latest-run",
+        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:latest-20240819",
+        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:latest",
+        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:run-20240819",
+        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:run",
+        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:20240819"
+      ]
+    },
+    "bluechiptechnology-db1-ubuntu-jammy-build": {
+      "context": "device-base/bluechiptechnology-db1/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:jammy-build"
       ]
     },
     "bluechiptechnology-db1-ubuntu-jammy-run": {
@@ -43,27 +89,13 @@
         "docker.io/balenalib/bluechiptechnology-db1-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/bluechiptechnology-db1-ubuntu:jammy-run",
         "docker.io/balenalib/bluechiptechnology-db1-ubuntu:jammy-20240819",
-        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:jammy",
-        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:latest-run",
-        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:latest-20240819",
-        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:latest",
-        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:run-20240819",
-        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:run",
-        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:20240819"
+        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:jammy"
       ],
       "cache_from": [
         "docker.io/balenalib/bluechiptechnology-db1-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/bluechiptechnology-db1-ubuntu:jammy-run",
         "docker.io/balenalib/bluechiptechnology-db1-ubuntu:jammy-20240819",
-        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:jammy",
-        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:latest-run",
-        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:latest-20240819",
-        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:latest",
-        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:run-20240819",
-        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:run",
-        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:20240819"
+        "docker.io/balenalib/bluechiptechnology-db1-ubuntu:jammy"
       ]
     },
     "bluechiptechnology-db1-ubuntu-focal-build": {

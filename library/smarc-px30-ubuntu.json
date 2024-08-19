@@ -2,6 +2,8 @@
   "group": {
     "default": {
       "targets": [
+        "smarc-px30-ubuntu-noble-build",
+        "smarc-px30-ubuntu-noble-run",
         "smarc-px30-ubuntu-jammy-build",
         "smarc-px30-ubuntu-jammy-run",
         "smarc-px30-ubuntu-focal-build",
@@ -14,25 +16,69 @@
     }
   },
   "target": {
-    "smarc-px30-ubuntu-jammy-build": {
-      "context": "device-base/smarc-px30/ubuntu/jammy/build",
+    "smarc-px30-ubuntu-noble-build": {
+      "context": "device-base/smarc-px30/ubuntu/noble/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/smarc-px30-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/smarc-px30-ubuntu:jammy-build",
+        "docker.io/balenalib/smarc-px30-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/smarc-px30-ubuntu:noble-build",
         "docker.io/balenalib/smarc-px30-ubuntu:latest-build-20240819",
         "docker.io/balenalib/smarc-px30-ubuntu:latest-build",
         "docker.io/balenalib/smarc-px30-ubuntu:build-20240819",
         "docker.io/balenalib/smarc-px30-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/smarc-px30-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/smarc-px30-ubuntu:jammy-build",
+        "docker.io/balenalib/smarc-px30-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/smarc-px30-ubuntu:noble-build",
         "docker.io/balenalib/smarc-px30-ubuntu:latest-build-20240819",
         "docker.io/balenalib/smarc-px30-ubuntu:latest-build",
         "docker.io/balenalib/smarc-px30-ubuntu:build-20240819",
         "docker.io/balenalib/smarc-px30-ubuntu:build"
+      ]
+    },
+    "smarc-px30-ubuntu-noble-run": {
+      "context": "device-base/smarc-px30/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/smarc-px30-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/smarc-px30-ubuntu:noble-run",
+        "docker.io/balenalib/smarc-px30-ubuntu:noble-20240819",
+        "docker.io/balenalib/smarc-px30-ubuntu:noble",
+        "docker.io/balenalib/smarc-px30-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/smarc-px30-ubuntu:latest-run",
+        "docker.io/balenalib/smarc-px30-ubuntu:latest-20240819",
+        "docker.io/balenalib/smarc-px30-ubuntu:latest",
+        "docker.io/balenalib/smarc-px30-ubuntu:run-20240819",
+        "docker.io/balenalib/smarc-px30-ubuntu:run",
+        "docker.io/balenalib/smarc-px30-ubuntu:20240819"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/smarc-px30-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/smarc-px30-ubuntu:noble-run",
+        "docker.io/balenalib/smarc-px30-ubuntu:noble-20240819",
+        "docker.io/balenalib/smarc-px30-ubuntu:noble",
+        "docker.io/balenalib/smarc-px30-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/smarc-px30-ubuntu:latest-run",
+        "docker.io/balenalib/smarc-px30-ubuntu:latest-20240819",
+        "docker.io/balenalib/smarc-px30-ubuntu:latest",
+        "docker.io/balenalib/smarc-px30-ubuntu:run-20240819",
+        "docker.io/balenalib/smarc-px30-ubuntu:run",
+        "docker.io/balenalib/smarc-px30-ubuntu:20240819"
+      ]
+    },
+    "smarc-px30-ubuntu-jammy-build": {
+      "context": "device-base/smarc-px30/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/smarc-px30-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/smarc-px30-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/smarc-px30-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/smarc-px30-ubuntu:jammy-build"
       ]
     },
     "smarc-px30-ubuntu-jammy-run": {
@@ -43,27 +89,13 @@
         "docker.io/balenalib/smarc-px30-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/smarc-px30-ubuntu:jammy-run",
         "docker.io/balenalib/smarc-px30-ubuntu:jammy-20240819",
-        "docker.io/balenalib/smarc-px30-ubuntu:jammy",
-        "docker.io/balenalib/smarc-px30-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/smarc-px30-ubuntu:latest-run",
-        "docker.io/balenalib/smarc-px30-ubuntu:latest-20240819",
-        "docker.io/balenalib/smarc-px30-ubuntu:latest",
-        "docker.io/balenalib/smarc-px30-ubuntu:run-20240819",
-        "docker.io/balenalib/smarc-px30-ubuntu:run",
-        "docker.io/balenalib/smarc-px30-ubuntu:20240819"
+        "docker.io/balenalib/smarc-px30-ubuntu:jammy"
       ],
       "cache_from": [
         "docker.io/balenalib/smarc-px30-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/smarc-px30-ubuntu:jammy-run",
         "docker.io/balenalib/smarc-px30-ubuntu:jammy-20240819",
-        "docker.io/balenalib/smarc-px30-ubuntu:jammy",
-        "docker.io/balenalib/smarc-px30-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/smarc-px30-ubuntu:latest-run",
-        "docker.io/balenalib/smarc-px30-ubuntu:latest-20240819",
-        "docker.io/balenalib/smarc-px30-ubuntu:latest",
-        "docker.io/balenalib/smarc-px30-ubuntu:run-20240819",
-        "docker.io/balenalib/smarc-px30-ubuntu:run",
-        "docker.io/balenalib/smarc-px30-ubuntu:20240819"
+        "docker.io/balenalib/smarc-px30-ubuntu:jammy"
       ]
     },
     "smarc-px30-ubuntu-focal-build": {

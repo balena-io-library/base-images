@@ -2,6 +2,8 @@
   "group": {
     "default": {
       "targets": [
+        "imx8mm-var-dart-ubuntu-noble-build",
+        "imx8mm-var-dart-ubuntu-noble-run",
         "imx8mm-var-dart-ubuntu-jammy-build",
         "imx8mm-var-dart-ubuntu-jammy-run",
         "imx8mm-var-dart-ubuntu-focal-build",
@@ -14,25 +16,69 @@
     }
   },
   "target": {
-    "imx8mm-var-dart-ubuntu-jammy-build": {
-      "context": "device-base/imx8mm-var-dart/ubuntu/jammy/build",
+    "imx8mm-var-dart-ubuntu-noble-build": {
+      "context": "device-base/imx8mm-var-dart/ubuntu/noble/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/imx8mm-var-dart-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/imx8mm-var-dart-ubuntu:jammy-build",
+        "docker.io/balenalib/imx8mm-var-dart-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/imx8mm-var-dart-ubuntu:noble-build",
         "docker.io/balenalib/imx8mm-var-dart-ubuntu:latest-build-20240819",
         "docker.io/balenalib/imx8mm-var-dart-ubuntu:latest-build",
         "docker.io/balenalib/imx8mm-var-dart-ubuntu:build-20240819",
         "docker.io/balenalib/imx8mm-var-dart-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/imx8mm-var-dart-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/imx8mm-var-dart-ubuntu:jammy-build",
+        "docker.io/balenalib/imx8mm-var-dart-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/imx8mm-var-dart-ubuntu:noble-build",
         "docker.io/balenalib/imx8mm-var-dart-ubuntu:latest-build-20240819",
         "docker.io/balenalib/imx8mm-var-dart-ubuntu:latest-build",
         "docker.io/balenalib/imx8mm-var-dart-ubuntu:build-20240819",
         "docker.io/balenalib/imx8mm-var-dart-ubuntu:build"
+      ]
+    },
+    "imx8mm-var-dart-ubuntu-noble-run": {
+      "context": "device-base/imx8mm-var-dart/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/imx8mm-var-dart-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/imx8mm-var-dart-ubuntu:noble-run",
+        "docker.io/balenalib/imx8mm-var-dart-ubuntu:noble-20240819",
+        "docker.io/balenalib/imx8mm-var-dart-ubuntu:noble",
+        "docker.io/balenalib/imx8mm-var-dart-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/imx8mm-var-dart-ubuntu:latest-run",
+        "docker.io/balenalib/imx8mm-var-dart-ubuntu:latest-20240819",
+        "docker.io/balenalib/imx8mm-var-dart-ubuntu:latest",
+        "docker.io/balenalib/imx8mm-var-dart-ubuntu:run-20240819",
+        "docker.io/balenalib/imx8mm-var-dart-ubuntu:run",
+        "docker.io/balenalib/imx8mm-var-dart-ubuntu:20240819"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/imx8mm-var-dart-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/imx8mm-var-dart-ubuntu:noble-run",
+        "docker.io/balenalib/imx8mm-var-dart-ubuntu:noble-20240819",
+        "docker.io/balenalib/imx8mm-var-dart-ubuntu:noble",
+        "docker.io/balenalib/imx8mm-var-dart-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/imx8mm-var-dart-ubuntu:latest-run",
+        "docker.io/balenalib/imx8mm-var-dart-ubuntu:latest-20240819",
+        "docker.io/balenalib/imx8mm-var-dart-ubuntu:latest",
+        "docker.io/balenalib/imx8mm-var-dart-ubuntu:run-20240819",
+        "docker.io/balenalib/imx8mm-var-dart-ubuntu:run",
+        "docker.io/balenalib/imx8mm-var-dart-ubuntu:20240819"
+      ]
+    },
+    "imx8mm-var-dart-ubuntu-jammy-build": {
+      "context": "device-base/imx8mm-var-dart/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/imx8mm-var-dart-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/imx8mm-var-dart-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/imx8mm-var-dart-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/imx8mm-var-dart-ubuntu:jammy-build"
       ]
     },
     "imx8mm-var-dart-ubuntu-jammy-run": {
@@ -43,27 +89,13 @@
         "docker.io/balenalib/imx8mm-var-dart-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/imx8mm-var-dart-ubuntu:jammy-run",
         "docker.io/balenalib/imx8mm-var-dart-ubuntu:jammy-20240819",
-        "docker.io/balenalib/imx8mm-var-dart-ubuntu:jammy",
-        "docker.io/balenalib/imx8mm-var-dart-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/imx8mm-var-dart-ubuntu:latest-run",
-        "docker.io/balenalib/imx8mm-var-dart-ubuntu:latest-20240819",
-        "docker.io/balenalib/imx8mm-var-dart-ubuntu:latest",
-        "docker.io/balenalib/imx8mm-var-dart-ubuntu:run-20240819",
-        "docker.io/balenalib/imx8mm-var-dart-ubuntu:run",
-        "docker.io/balenalib/imx8mm-var-dart-ubuntu:20240819"
+        "docker.io/balenalib/imx8mm-var-dart-ubuntu:jammy"
       ],
       "cache_from": [
         "docker.io/balenalib/imx8mm-var-dart-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/imx8mm-var-dart-ubuntu:jammy-run",
         "docker.io/balenalib/imx8mm-var-dart-ubuntu:jammy-20240819",
-        "docker.io/balenalib/imx8mm-var-dart-ubuntu:jammy",
-        "docker.io/balenalib/imx8mm-var-dart-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/imx8mm-var-dart-ubuntu:latest-run",
-        "docker.io/balenalib/imx8mm-var-dart-ubuntu:latest-20240819",
-        "docker.io/balenalib/imx8mm-var-dart-ubuntu:latest",
-        "docker.io/balenalib/imx8mm-var-dart-ubuntu:run-20240819",
-        "docker.io/balenalib/imx8mm-var-dart-ubuntu:run",
-        "docker.io/balenalib/imx8mm-var-dart-ubuntu:20240819"
+        "docker.io/balenalib/imx8mm-var-dart-ubuntu:jammy"
       ]
     },
     "imx8mm-var-dart-ubuntu-focal-build": {

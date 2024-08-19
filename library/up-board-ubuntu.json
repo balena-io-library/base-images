@@ -2,6 +2,8 @@
   "group": {
     "default": {
       "targets": [
+        "up-board-ubuntu-noble-build",
+        "up-board-ubuntu-noble-run",
         "up-board-ubuntu-jammy-build",
         "up-board-ubuntu-jammy-run",
         "up-board-ubuntu-focal-build",
@@ -14,25 +16,69 @@
     }
   },
   "target": {
-    "up-board-ubuntu-jammy-build": {
-      "context": "device-base/up-board/ubuntu/jammy/build",
+    "up-board-ubuntu-noble-build": {
+      "context": "device-base/up-board/ubuntu/noble/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/amd64",
       "tags": [
-        "docker.io/balenalib/up-board-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/up-board-ubuntu:jammy-build",
+        "docker.io/balenalib/up-board-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/up-board-ubuntu:noble-build",
         "docker.io/balenalib/up-board-ubuntu:latest-build-20240819",
         "docker.io/balenalib/up-board-ubuntu:latest-build",
         "docker.io/balenalib/up-board-ubuntu:build-20240819",
         "docker.io/balenalib/up-board-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/up-board-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/up-board-ubuntu:jammy-build",
+        "docker.io/balenalib/up-board-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/up-board-ubuntu:noble-build",
         "docker.io/balenalib/up-board-ubuntu:latest-build-20240819",
         "docker.io/balenalib/up-board-ubuntu:latest-build",
         "docker.io/balenalib/up-board-ubuntu:build-20240819",
         "docker.io/balenalib/up-board-ubuntu:build"
+      ]
+    },
+    "up-board-ubuntu-noble-run": {
+      "context": "device-base/up-board/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/up-board-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/up-board-ubuntu:noble-run",
+        "docker.io/balenalib/up-board-ubuntu:noble-20240819",
+        "docker.io/balenalib/up-board-ubuntu:noble",
+        "docker.io/balenalib/up-board-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/up-board-ubuntu:latest-run",
+        "docker.io/balenalib/up-board-ubuntu:latest-20240819",
+        "docker.io/balenalib/up-board-ubuntu:latest",
+        "docker.io/balenalib/up-board-ubuntu:run-20240819",
+        "docker.io/balenalib/up-board-ubuntu:run",
+        "docker.io/balenalib/up-board-ubuntu:20240819"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/up-board-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/up-board-ubuntu:noble-run",
+        "docker.io/balenalib/up-board-ubuntu:noble-20240819",
+        "docker.io/balenalib/up-board-ubuntu:noble",
+        "docker.io/balenalib/up-board-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/up-board-ubuntu:latest-run",
+        "docker.io/balenalib/up-board-ubuntu:latest-20240819",
+        "docker.io/balenalib/up-board-ubuntu:latest",
+        "docker.io/balenalib/up-board-ubuntu:run-20240819",
+        "docker.io/balenalib/up-board-ubuntu:run",
+        "docker.io/balenalib/up-board-ubuntu:20240819"
+      ]
+    },
+    "up-board-ubuntu-jammy-build": {
+      "context": "device-base/up-board/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/up-board-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/up-board-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/up-board-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/up-board-ubuntu:jammy-build"
       ]
     },
     "up-board-ubuntu-jammy-run": {
@@ -43,27 +89,13 @@
         "docker.io/balenalib/up-board-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/up-board-ubuntu:jammy-run",
         "docker.io/balenalib/up-board-ubuntu:jammy-20240819",
-        "docker.io/balenalib/up-board-ubuntu:jammy",
-        "docker.io/balenalib/up-board-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/up-board-ubuntu:latest-run",
-        "docker.io/balenalib/up-board-ubuntu:latest-20240819",
-        "docker.io/balenalib/up-board-ubuntu:latest",
-        "docker.io/balenalib/up-board-ubuntu:run-20240819",
-        "docker.io/balenalib/up-board-ubuntu:run",
-        "docker.io/balenalib/up-board-ubuntu:20240819"
+        "docker.io/balenalib/up-board-ubuntu:jammy"
       ],
       "cache_from": [
         "docker.io/balenalib/up-board-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/up-board-ubuntu:jammy-run",
         "docker.io/balenalib/up-board-ubuntu:jammy-20240819",
-        "docker.io/balenalib/up-board-ubuntu:jammy",
-        "docker.io/balenalib/up-board-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/up-board-ubuntu:latest-run",
-        "docker.io/balenalib/up-board-ubuntu:latest-20240819",
-        "docker.io/balenalib/up-board-ubuntu:latest",
-        "docker.io/balenalib/up-board-ubuntu:run-20240819",
-        "docker.io/balenalib/up-board-ubuntu:run",
-        "docker.io/balenalib/up-board-ubuntu:20240819"
+        "docker.io/balenalib/up-board-ubuntu:jammy"
       ]
     },
     "up-board-ubuntu-focal-build": {

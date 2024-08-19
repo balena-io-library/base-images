@@ -2,6 +2,8 @@
   "group": {
     "default": {
       "targets": [
+        "kontron-mx8mm-ubuntu-noble-build",
+        "kontron-mx8mm-ubuntu-noble-run",
         "kontron-mx8mm-ubuntu-jammy-build",
         "kontron-mx8mm-ubuntu-jammy-run",
         "kontron-mx8mm-ubuntu-focal-build",
@@ -14,25 +16,69 @@
     }
   },
   "target": {
-    "kontron-mx8mm-ubuntu-jammy-build": {
-      "context": "device-base/kontron-mx8mm/ubuntu/jammy/build",
+    "kontron-mx8mm-ubuntu-noble-build": {
+      "context": "device-base/kontron-mx8mm/ubuntu/noble/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/kontron-mx8mm-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/kontron-mx8mm-ubuntu:jammy-build",
+        "docker.io/balenalib/kontron-mx8mm-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/kontron-mx8mm-ubuntu:noble-build",
         "docker.io/balenalib/kontron-mx8mm-ubuntu:latest-build-20240819",
         "docker.io/balenalib/kontron-mx8mm-ubuntu:latest-build",
         "docker.io/balenalib/kontron-mx8mm-ubuntu:build-20240819",
         "docker.io/balenalib/kontron-mx8mm-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/kontron-mx8mm-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/kontron-mx8mm-ubuntu:jammy-build",
+        "docker.io/balenalib/kontron-mx8mm-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/kontron-mx8mm-ubuntu:noble-build",
         "docker.io/balenalib/kontron-mx8mm-ubuntu:latest-build-20240819",
         "docker.io/balenalib/kontron-mx8mm-ubuntu:latest-build",
         "docker.io/balenalib/kontron-mx8mm-ubuntu:build-20240819",
         "docker.io/balenalib/kontron-mx8mm-ubuntu:build"
+      ]
+    },
+    "kontron-mx8mm-ubuntu-noble-run": {
+      "context": "device-base/kontron-mx8mm/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/kontron-mx8mm-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/kontron-mx8mm-ubuntu:noble-run",
+        "docker.io/balenalib/kontron-mx8mm-ubuntu:noble-20240819",
+        "docker.io/balenalib/kontron-mx8mm-ubuntu:noble",
+        "docker.io/balenalib/kontron-mx8mm-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/kontron-mx8mm-ubuntu:latest-run",
+        "docker.io/balenalib/kontron-mx8mm-ubuntu:latest-20240819",
+        "docker.io/balenalib/kontron-mx8mm-ubuntu:latest",
+        "docker.io/balenalib/kontron-mx8mm-ubuntu:run-20240819",
+        "docker.io/balenalib/kontron-mx8mm-ubuntu:run",
+        "docker.io/balenalib/kontron-mx8mm-ubuntu:20240819"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/kontron-mx8mm-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/kontron-mx8mm-ubuntu:noble-run",
+        "docker.io/balenalib/kontron-mx8mm-ubuntu:noble-20240819",
+        "docker.io/balenalib/kontron-mx8mm-ubuntu:noble",
+        "docker.io/balenalib/kontron-mx8mm-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/kontron-mx8mm-ubuntu:latest-run",
+        "docker.io/balenalib/kontron-mx8mm-ubuntu:latest-20240819",
+        "docker.io/balenalib/kontron-mx8mm-ubuntu:latest",
+        "docker.io/balenalib/kontron-mx8mm-ubuntu:run-20240819",
+        "docker.io/balenalib/kontron-mx8mm-ubuntu:run",
+        "docker.io/balenalib/kontron-mx8mm-ubuntu:20240819"
+      ]
+    },
+    "kontron-mx8mm-ubuntu-jammy-build": {
+      "context": "device-base/kontron-mx8mm/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/kontron-mx8mm-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/kontron-mx8mm-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/kontron-mx8mm-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/kontron-mx8mm-ubuntu:jammy-build"
       ]
     },
     "kontron-mx8mm-ubuntu-jammy-run": {
@@ -43,27 +89,13 @@
         "docker.io/balenalib/kontron-mx8mm-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/kontron-mx8mm-ubuntu:jammy-run",
         "docker.io/balenalib/kontron-mx8mm-ubuntu:jammy-20240819",
-        "docker.io/balenalib/kontron-mx8mm-ubuntu:jammy",
-        "docker.io/balenalib/kontron-mx8mm-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/kontron-mx8mm-ubuntu:latest-run",
-        "docker.io/balenalib/kontron-mx8mm-ubuntu:latest-20240819",
-        "docker.io/balenalib/kontron-mx8mm-ubuntu:latest",
-        "docker.io/balenalib/kontron-mx8mm-ubuntu:run-20240819",
-        "docker.io/balenalib/kontron-mx8mm-ubuntu:run",
-        "docker.io/balenalib/kontron-mx8mm-ubuntu:20240819"
+        "docker.io/balenalib/kontron-mx8mm-ubuntu:jammy"
       ],
       "cache_from": [
         "docker.io/balenalib/kontron-mx8mm-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/kontron-mx8mm-ubuntu:jammy-run",
         "docker.io/balenalib/kontron-mx8mm-ubuntu:jammy-20240819",
-        "docker.io/balenalib/kontron-mx8mm-ubuntu:jammy",
-        "docker.io/balenalib/kontron-mx8mm-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/kontron-mx8mm-ubuntu:latest-run",
-        "docker.io/balenalib/kontron-mx8mm-ubuntu:latest-20240819",
-        "docker.io/balenalib/kontron-mx8mm-ubuntu:latest",
-        "docker.io/balenalib/kontron-mx8mm-ubuntu:run-20240819",
-        "docker.io/balenalib/kontron-mx8mm-ubuntu:run",
-        "docker.io/balenalib/kontron-mx8mm-ubuntu:20240819"
+        "docker.io/balenalib/kontron-mx8mm-ubuntu:jammy"
       ]
     },
     "kontron-mx8mm-ubuntu-focal-build": {

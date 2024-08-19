@@ -2,6 +2,8 @@
   "group": {
     "default": {
       "targets": [
+        "etcher-pro-ubuntu-noble-build",
+        "etcher-pro-ubuntu-noble-run",
         "etcher-pro-ubuntu-jammy-build",
         "etcher-pro-ubuntu-jammy-run",
         "etcher-pro-ubuntu-focal-build",
@@ -14,25 +16,69 @@
     }
   },
   "target": {
-    "etcher-pro-ubuntu-jammy-build": {
-      "context": "device-base/etcher-pro/ubuntu/jammy/build",
+    "etcher-pro-ubuntu-noble-build": {
+      "context": "device-base/etcher-pro/ubuntu/noble/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/etcher-pro-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/etcher-pro-ubuntu:jammy-build",
+        "docker.io/balenalib/etcher-pro-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/etcher-pro-ubuntu:noble-build",
         "docker.io/balenalib/etcher-pro-ubuntu:latest-build-20240819",
         "docker.io/balenalib/etcher-pro-ubuntu:latest-build",
         "docker.io/balenalib/etcher-pro-ubuntu:build-20240819",
         "docker.io/balenalib/etcher-pro-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/etcher-pro-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/etcher-pro-ubuntu:jammy-build",
+        "docker.io/balenalib/etcher-pro-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/etcher-pro-ubuntu:noble-build",
         "docker.io/balenalib/etcher-pro-ubuntu:latest-build-20240819",
         "docker.io/balenalib/etcher-pro-ubuntu:latest-build",
         "docker.io/balenalib/etcher-pro-ubuntu:build-20240819",
         "docker.io/balenalib/etcher-pro-ubuntu:build"
+      ]
+    },
+    "etcher-pro-ubuntu-noble-run": {
+      "context": "device-base/etcher-pro/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/etcher-pro-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/etcher-pro-ubuntu:noble-run",
+        "docker.io/balenalib/etcher-pro-ubuntu:noble-20240819",
+        "docker.io/balenalib/etcher-pro-ubuntu:noble",
+        "docker.io/balenalib/etcher-pro-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/etcher-pro-ubuntu:latest-run",
+        "docker.io/balenalib/etcher-pro-ubuntu:latest-20240819",
+        "docker.io/balenalib/etcher-pro-ubuntu:latest",
+        "docker.io/balenalib/etcher-pro-ubuntu:run-20240819",
+        "docker.io/balenalib/etcher-pro-ubuntu:run",
+        "docker.io/balenalib/etcher-pro-ubuntu:20240819"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/etcher-pro-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/etcher-pro-ubuntu:noble-run",
+        "docker.io/balenalib/etcher-pro-ubuntu:noble-20240819",
+        "docker.io/balenalib/etcher-pro-ubuntu:noble",
+        "docker.io/balenalib/etcher-pro-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/etcher-pro-ubuntu:latest-run",
+        "docker.io/balenalib/etcher-pro-ubuntu:latest-20240819",
+        "docker.io/balenalib/etcher-pro-ubuntu:latest",
+        "docker.io/balenalib/etcher-pro-ubuntu:run-20240819",
+        "docker.io/balenalib/etcher-pro-ubuntu:run",
+        "docker.io/balenalib/etcher-pro-ubuntu:20240819"
+      ]
+    },
+    "etcher-pro-ubuntu-jammy-build": {
+      "context": "device-base/etcher-pro/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/etcher-pro-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/etcher-pro-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/etcher-pro-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/etcher-pro-ubuntu:jammy-build"
       ]
     },
     "etcher-pro-ubuntu-jammy-run": {
@@ -43,27 +89,13 @@
         "docker.io/balenalib/etcher-pro-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/etcher-pro-ubuntu:jammy-run",
         "docker.io/balenalib/etcher-pro-ubuntu:jammy-20240819",
-        "docker.io/balenalib/etcher-pro-ubuntu:jammy",
-        "docker.io/balenalib/etcher-pro-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/etcher-pro-ubuntu:latest-run",
-        "docker.io/balenalib/etcher-pro-ubuntu:latest-20240819",
-        "docker.io/balenalib/etcher-pro-ubuntu:latest",
-        "docker.io/balenalib/etcher-pro-ubuntu:run-20240819",
-        "docker.io/balenalib/etcher-pro-ubuntu:run",
-        "docker.io/balenalib/etcher-pro-ubuntu:20240819"
+        "docker.io/balenalib/etcher-pro-ubuntu:jammy"
       ],
       "cache_from": [
         "docker.io/balenalib/etcher-pro-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/etcher-pro-ubuntu:jammy-run",
         "docker.io/balenalib/etcher-pro-ubuntu:jammy-20240819",
-        "docker.io/balenalib/etcher-pro-ubuntu:jammy",
-        "docker.io/balenalib/etcher-pro-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/etcher-pro-ubuntu:latest-run",
-        "docker.io/balenalib/etcher-pro-ubuntu:latest-20240819",
-        "docker.io/balenalib/etcher-pro-ubuntu:latest",
-        "docker.io/balenalib/etcher-pro-ubuntu:run-20240819",
-        "docker.io/balenalib/etcher-pro-ubuntu:run",
-        "docker.io/balenalib/etcher-pro-ubuntu:20240819"
+        "docker.io/balenalib/etcher-pro-ubuntu:jammy"
       ]
     },
     "etcher-pro-ubuntu-focal-build": {

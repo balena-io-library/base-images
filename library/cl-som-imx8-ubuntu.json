@@ -2,6 +2,8 @@
   "group": {
     "default": {
       "targets": [
+        "cl-som-imx8-ubuntu-noble-build",
+        "cl-som-imx8-ubuntu-noble-run",
         "cl-som-imx8-ubuntu-jammy-build",
         "cl-som-imx8-ubuntu-jammy-run",
         "cl-som-imx8-ubuntu-focal-build",
@@ -14,25 +16,69 @@
     }
   },
   "target": {
-    "cl-som-imx8-ubuntu-jammy-build": {
-      "context": "device-base/cl-som-imx8/ubuntu/jammy/build",
+    "cl-som-imx8-ubuntu-noble-build": {
+      "context": "device-base/cl-som-imx8/ubuntu/noble/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/cl-som-imx8-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/cl-som-imx8-ubuntu:jammy-build",
+        "docker.io/balenalib/cl-som-imx8-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/cl-som-imx8-ubuntu:noble-build",
         "docker.io/balenalib/cl-som-imx8-ubuntu:latest-build-20240819",
         "docker.io/balenalib/cl-som-imx8-ubuntu:latest-build",
         "docker.io/balenalib/cl-som-imx8-ubuntu:build-20240819",
         "docker.io/balenalib/cl-som-imx8-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/cl-som-imx8-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/cl-som-imx8-ubuntu:jammy-build",
+        "docker.io/balenalib/cl-som-imx8-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/cl-som-imx8-ubuntu:noble-build",
         "docker.io/balenalib/cl-som-imx8-ubuntu:latest-build-20240819",
         "docker.io/balenalib/cl-som-imx8-ubuntu:latest-build",
         "docker.io/balenalib/cl-som-imx8-ubuntu:build-20240819",
         "docker.io/balenalib/cl-som-imx8-ubuntu:build"
+      ]
+    },
+    "cl-som-imx8-ubuntu-noble-run": {
+      "context": "device-base/cl-som-imx8/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/cl-som-imx8-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/cl-som-imx8-ubuntu:noble-run",
+        "docker.io/balenalib/cl-som-imx8-ubuntu:noble-20240819",
+        "docker.io/balenalib/cl-som-imx8-ubuntu:noble",
+        "docker.io/balenalib/cl-som-imx8-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/cl-som-imx8-ubuntu:latest-run",
+        "docker.io/balenalib/cl-som-imx8-ubuntu:latest-20240819",
+        "docker.io/balenalib/cl-som-imx8-ubuntu:latest",
+        "docker.io/balenalib/cl-som-imx8-ubuntu:run-20240819",
+        "docker.io/balenalib/cl-som-imx8-ubuntu:run",
+        "docker.io/balenalib/cl-som-imx8-ubuntu:20240819"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/cl-som-imx8-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/cl-som-imx8-ubuntu:noble-run",
+        "docker.io/balenalib/cl-som-imx8-ubuntu:noble-20240819",
+        "docker.io/balenalib/cl-som-imx8-ubuntu:noble",
+        "docker.io/balenalib/cl-som-imx8-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/cl-som-imx8-ubuntu:latest-run",
+        "docker.io/balenalib/cl-som-imx8-ubuntu:latest-20240819",
+        "docker.io/balenalib/cl-som-imx8-ubuntu:latest",
+        "docker.io/balenalib/cl-som-imx8-ubuntu:run-20240819",
+        "docker.io/balenalib/cl-som-imx8-ubuntu:run",
+        "docker.io/balenalib/cl-som-imx8-ubuntu:20240819"
+      ]
+    },
+    "cl-som-imx8-ubuntu-jammy-build": {
+      "context": "device-base/cl-som-imx8/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/cl-som-imx8-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/cl-som-imx8-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/cl-som-imx8-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/cl-som-imx8-ubuntu:jammy-build"
       ]
     },
     "cl-som-imx8-ubuntu-jammy-run": {
@@ -43,27 +89,13 @@
         "docker.io/balenalib/cl-som-imx8-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/cl-som-imx8-ubuntu:jammy-run",
         "docker.io/balenalib/cl-som-imx8-ubuntu:jammy-20240819",
-        "docker.io/balenalib/cl-som-imx8-ubuntu:jammy",
-        "docker.io/balenalib/cl-som-imx8-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/cl-som-imx8-ubuntu:latest-run",
-        "docker.io/balenalib/cl-som-imx8-ubuntu:latest-20240819",
-        "docker.io/balenalib/cl-som-imx8-ubuntu:latest",
-        "docker.io/balenalib/cl-som-imx8-ubuntu:run-20240819",
-        "docker.io/balenalib/cl-som-imx8-ubuntu:run",
-        "docker.io/balenalib/cl-som-imx8-ubuntu:20240819"
+        "docker.io/balenalib/cl-som-imx8-ubuntu:jammy"
       ],
       "cache_from": [
         "docker.io/balenalib/cl-som-imx8-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/cl-som-imx8-ubuntu:jammy-run",
         "docker.io/balenalib/cl-som-imx8-ubuntu:jammy-20240819",
-        "docker.io/balenalib/cl-som-imx8-ubuntu:jammy",
-        "docker.io/balenalib/cl-som-imx8-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/cl-som-imx8-ubuntu:latest-run",
-        "docker.io/balenalib/cl-som-imx8-ubuntu:latest-20240819",
-        "docker.io/balenalib/cl-som-imx8-ubuntu:latest",
-        "docker.io/balenalib/cl-som-imx8-ubuntu:run-20240819",
-        "docker.io/balenalib/cl-som-imx8-ubuntu:run",
-        "docker.io/balenalib/cl-som-imx8-ubuntu:20240819"
+        "docker.io/balenalib/cl-som-imx8-ubuntu:jammy"
       ]
     },
     "cl-som-imx8-ubuntu-focal-build": {

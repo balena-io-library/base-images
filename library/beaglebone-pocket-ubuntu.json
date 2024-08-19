@@ -2,6 +2,8 @@
   "group": {
     "default": {
       "targets": [
+        "beaglebone-pocket-ubuntu-noble-build",
+        "beaglebone-pocket-ubuntu-noble-run",
         "beaglebone-pocket-ubuntu-jammy-build",
         "beaglebone-pocket-ubuntu-jammy-run",
         "beaglebone-pocket-ubuntu-focal-build",
@@ -14,25 +16,69 @@
     }
   },
   "target": {
-    "beaglebone-pocket-ubuntu-jammy-build": {
-      "context": "device-base/beaglebone-pocket/ubuntu/jammy/build",
+    "beaglebone-pocket-ubuntu-noble-build": {
+      "context": "device-base/beaglebone-pocket/ubuntu/noble/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:jammy-build",
+        "docker.io/balenalib/beaglebone-pocket-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/beaglebone-pocket-ubuntu:noble-build",
         "docker.io/balenalib/beaglebone-pocket-ubuntu:latest-build-20240819",
         "docker.io/balenalib/beaglebone-pocket-ubuntu:latest-build",
         "docker.io/balenalib/beaglebone-pocket-ubuntu:build-20240819",
         "docker.io/balenalib/beaglebone-pocket-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:jammy-build",
+        "docker.io/balenalib/beaglebone-pocket-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/beaglebone-pocket-ubuntu:noble-build",
         "docker.io/balenalib/beaglebone-pocket-ubuntu:latest-build-20240819",
         "docker.io/balenalib/beaglebone-pocket-ubuntu:latest-build",
         "docker.io/balenalib/beaglebone-pocket-ubuntu:build-20240819",
         "docker.io/balenalib/beaglebone-pocket-ubuntu:build"
+      ]
+    },
+    "beaglebone-pocket-ubuntu-noble-run": {
+      "context": "device-base/beaglebone-pocket/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/beaglebone-pocket-ubuntu:noble-run",
+        "docker.io/balenalib/beaglebone-pocket-ubuntu:noble-20240819",
+        "docker.io/balenalib/beaglebone-pocket-ubuntu:noble",
+        "docker.io/balenalib/beaglebone-pocket-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/beaglebone-pocket-ubuntu:latest-run",
+        "docker.io/balenalib/beaglebone-pocket-ubuntu:latest-20240819",
+        "docker.io/balenalib/beaglebone-pocket-ubuntu:latest",
+        "docker.io/balenalib/beaglebone-pocket-ubuntu:run-20240819",
+        "docker.io/balenalib/beaglebone-pocket-ubuntu:run",
+        "docker.io/balenalib/beaglebone-pocket-ubuntu:20240819"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/beaglebone-pocket-ubuntu:noble-run",
+        "docker.io/balenalib/beaglebone-pocket-ubuntu:noble-20240819",
+        "docker.io/balenalib/beaglebone-pocket-ubuntu:noble",
+        "docker.io/balenalib/beaglebone-pocket-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/beaglebone-pocket-ubuntu:latest-run",
+        "docker.io/balenalib/beaglebone-pocket-ubuntu:latest-20240819",
+        "docker.io/balenalib/beaglebone-pocket-ubuntu:latest",
+        "docker.io/balenalib/beaglebone-pocket-ubuntu:run-20240819",
+        "docker.io/balenalib/beaglebone-pocket-ubuntu:run",
+        "docker.io/balenalib/beaglebone-pocket-ubuntu:20240819"
+      ]
+    },
+    "beaglebone-pocket-ubuntu-jammy-build": {
+      "context": "device-base/beaglebone-pocket/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-pocket-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/beaglebone-pocket-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-pocket-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/beaglebone-pocket-ubuntu:jammy-build"
       ]
     },
     "beaglebone-pocket-ubuntu-jammy-run": {
@@ -43,27 +89,13 @@
         "docker.io/balenalib/beaglebone-pocket-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/beaglebone-pocket-ubuntu:jammy-run",
         "docker.io/balenalib/beaglebone-pocket-ubuntu:jammy-20240819",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:jammy",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:latest-run",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:latest-20240819",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:latest",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:run-20240819",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:run",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:20240819"
+        "docker.io/balenalib/beaglebone-pocket-ubuntu:jammy"
       ],
       "cache_from": [
         "docker.io/balenalib/beaglebone-pocket-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/beaglebone-pocket-ubuntu:jammy-run",
         "docker.io/balenalib/beaglebone-pocket-ubuntu:jammy-20240819",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:jammy",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:latest-run",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:latest-20240819",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:latest",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:run-20240819",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:run",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:20240819"
+        "docker.io/balenalib/beaglebone-pocket-ubuntu:jammy"
       ]
     },
     "beaglebone-pocket-ubuntu-focal-build": {

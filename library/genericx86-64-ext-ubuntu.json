@@ -2,6 +2,8 @@
   "group": {
     "default": {
       "targets": [
+        "genericx86-64-ext-ubuntu-noble-build",
+        "genericx86-64-ext-ubuntu-noble-run",
         "genericx86-64-ext-ubuntu-jammy-build",
         "genericx86-64-ext-ubuntu-jammy-run",
         "genericx86-64-ext-ubuntu-focal-build",
@@ -14,25 +16,69 @@
     }
   },
   "target": {
-    "genericx86-64-ext-ubuntu-jammy-build": {
-      "context": "device-base/genericx86-64-ext/ubuntu/jammy/build",
+    "genericx86-64-ext-ubuntu-noble-build": {
+      "context": "device-base/genericx86-64-ext/ubuntu/noble/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/amd64",
       "tags": [
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:jammy-build",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:noble-build",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:latest-build-20240819",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:latest-build",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:build-20240819",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:jammy-build",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:noble-build",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:latest-build-20240819",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:latest-build",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:build-20240819",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:build"
+      ]
+    },
+    "genericx86-64-ext-ubuntu-noble-run": {
+      "context": "device-base/genericx86-64-ext/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:noble-run",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:noble-20240819",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:noble",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:latest-run",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:latest-20240819",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:latest",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:run-20240819",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:run",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:20240819"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:noble-run",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:noble-20240819",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:noble",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:latest-run",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:latest-20240819",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:latest",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:run-20240819",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:run",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:20240819"
+      ]
+    },
+    "genericx86-64-ext-ubuntu-jammy-build": {
+      "context": "device-base/genericx86-64-ext/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:jammy-build"
       ]
     },
     "genericx86-64-ext-ubuntu-jammy-run": {
@@ -43,27 +89,13 @@
         "docker.io/balenalib/genericx86-64-ext-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:jammy-run",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:jammy-20240819",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:jammy",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:latest-run",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:latest-20240819",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:latest",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:run-20240819",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:run",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:20240819"
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:jammy"
       ],
       "cache_from": [
         "docker.io/balenalib/genericx86-64-ext-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:jammy-run",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:jammy-20240819",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:jammy",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:latest-run",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:latest-20240819",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:latest",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:run-20240819",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:run",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:20240819"
+        "docker.io/balenalib/genericx86-64-ext-ubuntu:jammy"
       ]
     },
     "genericx86-64-ext-ubuntu-focal-build": {

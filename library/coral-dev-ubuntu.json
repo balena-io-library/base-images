@@ -2,6 +2,8 @@
   "group": {
     "default": {
       "targets": [
+        "coral-dev-ubuntu-noble-build",
+        "coral-dev-ubuntu-noble-run",
         "coral-dev-ubuntu-jammy-build",
         "coral-dev-ubuntu-jammy-run",
         "coral-dev-ubuntu-focal-build",
@@ -14,25 +16,69 @@
     }
   },
   "target": {
-    "coral-dev-ubuntu-jammy-build": {
-      "context": "device-base/coral-dev/ubuntu/jammy/build",
+    "coral-dev-ubuntu-noble-build": {
+      "context": "device-base/coral-dev/ubuntu/noble/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/coral-dev-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/coral-dev-ubuntu:jammy-build",
+        "docker.io/balenalib/coral-dev-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/coral-dev-ubuntu:noble-build",
         "docker.io/balenalib/coral-dev-ubuntu:latest-build-20240819",
         "docker.io/balenalib/coral-dev-ubuntu:latest-build",
         "docker.io/balenalib/coral-dev-ubuntu:build-20240819",
         "docker.io/balenalib/coral-dev-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/coral-dev-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/coral-dev-ubuntu:jammy-build",
+        "docker.io/balenalib/coral-dev-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/coral-dev-ubuntu:noble-build",
         "docker.io/balenalib/coral-dev-ubuntu:latest-build-20240819",
         "docker.io/balenalib/coral-dev-ubuntu:latest-build",
         "docker.io/balenalib/coral-dev-ubuntu:build-20240819",
         "docker.io/balenalib/coral-dev-ubuntu:build"
+      ]
+    },
+    "coral-dev-ubuntu-noble-run": {
+      "context": "device-base/coral-dev/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/coral-dev-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/coral-dev-ubuntu:noble-run",
+        "docker.io/balenalib/coral-dev-ubuntu:noble-20240819",
+        "docker.io/balenalib/coral-dev-ubuntu:noble",
+        "docker.io/balenalib/coral-dev-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/coral-dev-ubuntu:latest-run",
+        "docker.io/balenalib/coral-dev-ubuntu:latest-20240819",
+        "docker.io/balenalib/coral-dev-ubuntu:latest",
+        "docker.io/balenalib/coral-dev-ubuntu:run-20240819",
+        "docker.io/balenalib/coral-dev-ubuntu:run",
+        "docker.io/balenalib/coral-dev-ubuntu:20240819"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/coral-dev-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/coral-dev-ubuntu:noble-run",
+        "docker.io/balenalib/coral-dev-ubuntu:noble-20240819",
+        "docker.io/balenalib/coral-dev-ubuntu:noble",
+        "docker.io/balenalib/coral-dev-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/coral-dev-ubuntu:latest-run",
+        "docker.io/balenalib/coral-dev-ubuntu:latest-20240819",
+        "docker.io/balenalib/coral-dev-ubuntu:latest",
+        "docker.io/balenalib/coral-dev-ubuntu:run-20240819",
+        "docker.io/balenalib/coral-dev-ubuntu:run",
+        "docker.io/balenalib/coral-dev-ubuntu:20240819"
+      ]
+    },
+    "coral-dev-ubuntu-jammy-build": {
+      "context": "device-base/coral-dev/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/coral-dev-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/coral-dev-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/coral-dev-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/coral-dev-ubuntu:jammy-build"
       ]
     },
     "coral-dev-ubuntu-jammy-run": {
@@ -43,27 +89,13 @@
         "docker.io/balenalib/coral-dev-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/coral-dev-ubuntu:jammy-run",
         "docker.io/balenalib/coral-dev-ubuntu:jammy-20240819",
-        "docker.io/balenalib/coral-dev-ubuntu:jammy",
-        "docker.io/balenalib/coral-dev-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/coral-dev-ubuntu:latest-run",
-        "docker.io/balenalib/coral-dev-ubuntu:latest-20240819",
-        "docker.io/balenalib/coral-dev-ubuntu:latest",
-        "docker.io/balenalib/coral-dev-ubuntu:run-20240819",
-        "docker.io/balenalib/coral-dev-ubuntu:run",
-        "docker.io/balenalib/coral-dev-ubuntu:20240819"
+        "docker.io/balenalib/coral-dev-ubuntu:jammy"
       ],
       "cache_from": [
         "docker.io/balenalib/coral-dev-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/coral-dev-ubuntu:jammy-run",
         "docker.io/balenalib/coral-dev-ubuntu:jammy-20240819",
-        "docker.io/balenalib/coral-dev-ubuntu:jammy",
-        "docker.io/balenalib/coral-dev-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/coral-dev-ubuntu:latest-run",
-        "docker.io/balenalib/coral-dev-ubuntu:latest-20240819",
-        "docker.io/balenalib/coral-dev-ubuntu:latest",
-        "docker.io/balenalib/coral-dev-ubuntu:run-20240819",
-        "docker.io/balenalib/coral-dev-ubuntu:run",
-        "docker.io/balenalib/coral-dev-ubuntu:20240819"
+        "docker.io/balenalib/coral-dev-ubuntu:jammy"
       ]
     },
     "coral-dev-ubuntu-focal-build": {

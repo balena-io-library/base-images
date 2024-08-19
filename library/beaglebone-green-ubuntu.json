@@ -2,6 +2,8 @@
   "group": {
     "default": {
       "targets": [
+        "beaglebone-green-ubuntu-noble-build",
+        "beaglebone-green-ubuntu-noble-run",
         "beaglebone-green-ubuntu-jammy-build",
         "beaglebone-green-ubuntu-jammy-run",
         "beaglebone-green-ubuntu-focal-build",
@@ -14,25 +16,69 @@
     }
   },
   "target": {
-    "beaglebone-green-ubuntu-jammy-build": {
-      "context": "device-base/beaglebone-green/ubuntu/jammy/build",
+    "beaglebone-green-ubuntu-noble-build": {
+      "context": "device-base/beaglebone-green/ubuntu/noble/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/beaglebone-green-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/beaglebone-green-ubuntu:jammy-build",
+        "docker.io/balenalib/beaglebone-green-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/beaglebone-green-ubuntu:noble-build",
         "docker.io/balenalib/beaglebone-green-ubuntu:latest-build-20240819",
         "docker.io/balenalib/beaglebone-green-ubuntu:latest-build",
         "docker.io/balenalib/beaglebone-green-ubuntu:build-20240819",
         "docker.io/balenalib/beaglebone-green-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/beaglebone-green-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/beaglebone-green-ubuntu:jammy-build",
+        "docker.io/balenalib/beaglebone-green-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/beaglebone-green-ubuntu:noble-build",
         "docker.io/balenalib/beaglebone-green-ubuntu:latest-build-20240819",
         "docker.io/balenalib/beaglebone-green-ubuntu:latest-build",
         "docker.io/balenalib/beaglebone-green-ubuntu:build-20240819",
         "docker.io/balenalib/beaglebone-green-ubuntu:build"
+      ]
+    },
+    "beaglebone-green-ubuntu-noble-run": {
+      "context": "device-base/beaglebone-green/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/beaglebone-green-ubuntu:noble-run",
+        "docker.io/balenalib/beaglebone-green-ubuntu:noble-20240819",
+        "docker.io/balenalib/beaglebone-green-ubuntu:noble",
+        "docker.io/balenalib/beaglebone-green-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/beaglebone-green-ubuntu:latest-run",
+        "docker.io/balenalib/beaglebone-green-ubuntu:latest-20240819",
+        "docker.io/balenalib/beaglebone-green-ubuntu:latest",
+        "docker.io/balenalib/beaglebone-green-ubuntu:run-20240819",
+        "docker.io/balenalib/beaglebone-green-ubuntu:run",
+        "docker.io/balenalib/beaglebone-green-ubuntu:20240819"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/beaglebone-green-ubuntu:noble-run",
+        "docker.io/balenalib/beaglebone-green-ubuntu:noble-20240819",
+        "docker.io/balenalib/beaglebone-green-ubuntu:noble",
+        "docker.io/balenalib/beaglebone-green-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/beaglebone-green-ubuntu:latest-run",
+        "docker.io/balenalib/beaglebone-green-ubuntu:latest-20240819",
+        "docker.io/balenalib/beaglebone-green-ubuntu:latest",
+        "docker.io/balenalib/beaglebone-green-ubuntu:run-20240819",
+        "docker.io/balenalib/beaglebone-green-ubuntu:run",
+        "docker.io/balenalib/beaglebone-green-ubuntu:20240819"
+      ]
+    },
+    "beaglebone-green-ubuntu-jammy-build": {
+      "context": "device-base/beaglebone-green/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/beaglebone-green-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/beaglebone-green-ubuntu:jammy-build"
       ]
     },
     "beaglebone-green-ubuntu-jammy-run": {
@@ -43,27 +89,13 @@
         "docker.io/balenalib/beaglebone-green-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/beaglebone-green-ubuntu:jammy-run",
         "docker.io/balenalib/beaglebone-green-ubuntu:jammy-20240819",
-        "docker.io/balenalib/beaglebone-green-ubuntu:jammy",
-        "docker.io/balenalib/beaglebone-green-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/beaglebone-green-ubuntu:latest-run",
-        "docker.io/balenalib/beaglebone-green-ubuntu:latest-20240819",
-        "docker.io/balenalib/beaglebone-green-ubuntu:latest",
-        "docker.io/balenalib/beaglebone-green-ubuntu:run-20240819",
-        "docker.io/balenalib/beaglebone-green-ubuntu:run",
-        "docker.io/balenalib/beaglebone-green-ubuntu:20240819"
+        "docker.io/balenalib/beaglebone-green-ubuntu:jammy"
       ],
       "cache_from": [
         "docker.io/balenalib/beaglebone-green-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/beaglebone-green-ubuntu:jammy-run",
         "docker.io/balenalib/beaglebone-green-ubuntu:jammy-20240819",
-        "docker.io/balenalib/beaglebone-green-ubuntu:jammy",
-        "docker.io/balenalib/beaglebone-green-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/beaglebone-green-ubuntu:latest-run",
-        "docker.io/balenalib/beaglebone-green-ubuntu:latest-20240819",
-        "docker.io/balenalib/beaglebone-green-ubuntu:latest",
-        "docker.io/balenalib/beaglebone-green-ubuntu:run-20240819",
-        "docker.io/balenalib/beaglebone-green-ubuntu:run",
-        "docker.io/balenalib/beaglebone-green-ubuntu:20240819"
+        "docker.io/balenalib/beaglebone-green-ubuntu:jammy"
       ]
     },
     "beaglebone-green-ubuntu-focal-build": {

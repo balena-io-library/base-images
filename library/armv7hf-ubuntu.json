@@ -2,6 +2,8 @@
   "group": {
     "default": {
       "targets": [
+        "armv7hf-ubuntu-noble-build",
+        "armv7hf-ubuntu-noble-run",
         "armv7hf-ubuntu-jammy-build",
         "armv7hf-ubuntu-jammy-run",
         "armv7hf-ubuntu-focal-build",
@@ -14,25 +16,69 @@
     }
   },
   "target": {
-    "armv7hf-ubuntu-jammy-build": {
-      "context": "armv7hf/ubuntu/jammy/build",
+    "armv7hf-ubuntu-noble-build": {
+      "context": "armv7hf/ubuntu/noble/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/armv7hf-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/armv7hf-ubuntu:jammy-build",
+        "docker.io/balenalib/armv7hf-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/armv7hf-ubuntu:noble-build",
         "docker.io/balenalib/armv7hf-ubuntu:latest-build-20240819",
         "docker.io/balenalib/armv7hf-ubuntu:latest-build",
         "docker.io/balenalib/armv7hf-ubuntu:build-20240819",
         "docker.io/balenalib/armv7hf-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/armv7hf-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/armv7hf-ubuntu:jammy-build",
+        "docker.io/balenalib/armv7hf-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/armv7hf-ubuntu:noble-build",
         "docker.io/balenalib/armv7hf-ubuntu:latest-build-20240819",
         "docker.io/balenalib/armv7hf-ubuntu:latest-build",
         "docker.io/balenalib/armv7hf-ubuntu:build-20240819",
         "docker.io/balenalib/armv7hf-ubuntu:build"
+      ]
+    },
+    "armv7hf-ubuntu-noble-run": {
+      "context": "armv7hf/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/armv7hf-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/armv7hf-ubuntu:noble-run",
+        "docker.io/balenalib/armv7hf-ubuntu:noble-20240819",
+        "docker.io/balenalib/armv7hf-ubuntu:noble",
+        "docker.io/balenalib/armv7hf-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/armv7hf-ubuntu:latest-run",
+        "docker.io/balenalib/armv7hf-ubuntu:latest-20240819",
+        "docker.io/balenalib/armv7hf-ubuntu:latest",
+        "docker.io/balenalib/armv7hf-ubuntu:run-20240819",
+        "docker.io/balenalib/armv7hf-ubuntu:run",
+        "docker.io/balenalib/armv7hf-ubuntu:20240819"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/armv7hf-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/armv7hf-ubuntu:noble-run",
+        "docker.io/balenalib/armv7hf-ubuntu:noble-20240819",
+        "docker.io/balenalib/armv7hf-ubuntu:noble",
+        "docker.io/balenalib/armv7hf-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/armv7hf-ubuntu:latest-run",
+        "docker.io/balenalib/armv7hf-ubuntu:latest-20240819",
+        "docker.io/balenalib/armv7hf-ubuntu:latest",
+        "docker.io/balenalib/armv7hf-ubuntu:run-20240819",
+        "docker.io/balenalib/armv7hf-ubuntu:run",
+        "docker.io/balenalib/armv7hf-ubuntu:20240819"
+      ]
+    },
+    "armv7hf-ubuntu-jammy-build": {
+      "context": "armv7hf/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/armv7hf-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/armv7hf-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/armv7hf-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/armv7hf-ubuntu:jammy-build"
       ]
     },
     "armv7hf-ubuntu-jammy-run": {
@@ -43,27 +89,13 @@
         "docker.io/balenalib/armv7hf-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/armv7hf-ubuntu:jammy-run",
         "docker.io/balenalib/armv7hf-ubuntu:jammy-20240819",
-        "docker.io/balenalib/armv7hf-ubuntu:jammy",
-        "docker.io/balenalib/armv7hf-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/armv7hf-ubuntu:latest-run",
-        "docker.io/balenalib/armv7hf-ubuntu:latest-20240819",
-        "docker.io/balenalib/armv7hf-ubuntu:latest",
-        "docker.io/balenalib/armv7hf-ubuntu:run-20240819",
-        "docker.io/balenalib/armv7hf-ubuntu:run",
-        "docker.io/balenalib/armv7hf-ubuntu:20240819"
+        "docker.io/balenalib/armv7hf-ubuntu:jammy"
       ],
       "cache_from": [
         "docker.io/balenalib/armv7hf-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/armv7hf-ubuntu:jammy-run",
         "docker.io/balenalib/armv7hf-ubuntu:jammy-20240819",
-        "docker.io/balenalib/armv7hf-ubuntu:jammy",
-        "docker.io/balenalib/armv7hf-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/armv7hf-ubuntu:latest-run",
-        "docker.io/balenalib/armv7hf-ubuntu:latest-20240819",
-        "docker.io/balenalib/armv7hf-ubuntu:latest",
-        "docker.io/balenalib/armv7hf-ubuntu:run-20240819",
-        "docker.io/balenalib/armv7hf-ubuntu:run",
-        "docker.io/balenalib/armv7hf-ubuntu:20240819"
+        "docker.io/balenalib/armv7hf-ubuntu:jammy"
       ]
     },
     "armv7hf-ubuntu-focal-build": {

@@ -2,6 +2,8 @@
   "group": {
     "default": {
       "targets": [
+        "asus-tinker-edge-t-ubuntu-noble-build",
+        "asus-tinker-edge-t-ubuntu-noble-run",
         "asus-tinker-edge-t-ubuntu-jammy-build",
         "asus-tinker-edge-t-ubuntu-jammy-run",
         "asus-tinker-edge-t-ubuntu-focal-build",
@@ -14,25 +16,69 @@
     }
   },
   "target": {
-    "asus-tinker-edge-t-ubuntu-jammy-build": {
-      "context": "device-base/asus-tinker-edge-t/ubuntu/jammy/build",
+    "asus-tinker-edge-t-ubuntu-noble-build": {
+      "context": "device-base/asus-tinker-edge-t/ubuntu/noble/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:jammy-build",
+        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:noble-build",
         "docker.io/balenalib/asus-tinker-edge-t-ubuntu:latest-build-20240819",
         "docker.io/balenalib/asus-tinker-edge-t-ubuntu:latest-build",
         "docker.io/balenalib/asus-tinker-edge-t-ubuntu:build-20240819",
         "docker.io/balenalib/asus-tinker-edge-t-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:jammy-build",
+        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:noble-build",
         "docker.io/balenalib/asus-tinker-edge-t-ubuntu:latest-build-20240819",
         "docker.io/balenalib/asus-tinker-edge-t-ubuntu:latest-build",
         "docker.io/balenalib/asus-tinker-edge-t-ubuntu:build-20240819",
         "docker.io/balenalib/asus-tinker-edge-t-ubuntu:build"
+      ]
+    },
+    "asus-tinker-edge-t-ubuntu-noble-run": {
+      "context": "device-base/asus-tinker-edge-t/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:noble-run",
+        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:noble-20240819",
+        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:noble",
+        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:latest-run",
+        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:latest-20240819",
+        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:latest",
+        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:run-20240819",
+        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:run",
+        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:20240819"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:noble-run",
+        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:noble-20240819",
+        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:noble",
+        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:latest-run",
+        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:latest-20240819",
+        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:latest",
+        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:run-20240819",
+        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:run",
+        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:20240819"
+      ]
+    },
+    "asus-tinker-edge-t-ubuntu-jammy-build": {
+      "context": "device-base/asus-tinker-edge-t/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:jammy-build"
       ]
     },
     "asus-tinker-edge-t-ubuntu-jammy-run": {
@@ -43,27 +89,13 @@
         "docker.io/balenalib/asus-tinker-edge-t-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/asus-tinker-edge-t-ubuntu:jammy-run",
         "docker.io/balenalib/asus-tinker-edge-t-ubuntu:jammy-20240819",
-        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:jammy",
-        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:latest-run",
-        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:latest-20240819",
-        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:latest",
-        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:run-20240819",
-        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:run",
-        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:20240819"
+        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:jammy"
       ],
       "cache_from": [
         "docker.io/balenalib/asus-tinker-edge-t-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/asus-tinker-edge-t-ubuntu:jammy-run",
         "docker.io/balenalib/asus-tinker-edge-t-ubuntu:jammy-20240819",
-        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:jammy",
-        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:latest-run",
-        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:latest-20240819",
-        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:latest",
-        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:run-20240819",
-        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:run",
-        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:20240819"
+        "docker.io/balenalib/asus-tinker-edge-t-ubuntu:jammy"
       ]
     },
     "asus-tinker-edge-t-ubuntu-focal-build": {

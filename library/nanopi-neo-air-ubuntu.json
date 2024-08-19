@@ -2,6 +2,8 @@
   "group": {
     "default": {
       "targets": [
+        "nanopi-neo-air-ubuntu-noble-build",
+        "nanopi-neo-air-ubuntu-noble-run",
         "nanopi-neo-air-ubuntu-jammy-build",
         "nanopi-neo-air-ubuntu-jammy-run",
         "nanopi-neo-air-ubuntu-focal-build",
@@ -14,25 +16,69 @@
     }
   },
   "target": {
-    "nanopi-neo-air-ubuntu-jammy-build": {
-      "context": "device-base/nanopi-neo-air/ubuntu/jammy/build",
+    "nanopi-neo-air-ubuntu-noble-build": {
+      "context": "device-base/nanopi-neo-air/ubuntu/noble/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/nanopi-neo-air-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/nanopi-neo-air-ubuntu:jammy-build",
+        "docker.io/balenalib/nanopi-neo-air-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/nanopi-neo-air-ubuntu:noble-build",
         "docker.io/balenalib/nanopi-neo-air-ubuntu:latest-build-20240819",
         "docker.io/balenalib/nanopi-neo-air-ubuntu:latest-build",
         "docker.io/balenalib/nanopi-neo-air-ubuntu:build-20240819",
         "docker.io/balenalib/nanopi-neo-air-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/nanopi-neo-air-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/nanopi-neo-air-ubuntu:jammy-build",
+        "docker.io/balenalib/nanopi-neo-air-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/nanopi-neo-air-ubuntu:noble-build",
         "docker.io/balenalib/nanopi-neo-air-ubuntu:latest-build-20240819",
         "docker.io/balenalib/nanopi-neo-air-ubuntu:latest-build",
         "docker.io/balenalib/nanopi-neo-air-ubuntu:build-20240819",
         "docker.io/balenalib/nanopi-neo-air-ubuntu:build"
+      ]
+    },
+    "nanopi-neo-air-ubuntu-noble-run": {
+      "context": "device-base/nanopi-neo-air/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/nanopi-neo-air-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/nanopi-neo-air-ubuntu:noble-run",
+        "docker.io/balenalib/nanopi-neo-air-ubuntu:noble-20240819",
+        "docker.io/balenalib/nanopi-neo-air-ubuntu:noble",
+        "docker.io/balenalib/nanopi-neo-air-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/nanopi-neo-air-ubuntu:latest-run",
+        "docker.io/balenalib/nanopi-neo-air-ubuntu:latest-20240819",
+        "docker.io/balenalib/nanopi-neo-air-ubuntu:latest",
+        "docker.io/balenalib/nanopi-neo-air-ubuntu:run-20240819",
+        "docker.io/balenalib/nanopi-neo-air-ubuntu:run",
+        "docker.io/balenalib/nanopi-neo-air-ubuntu:20240819"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopi-neo-air-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/nanopi-neo-air-ubuntu:noble-run",
+        "docker.io/balenalib/nanopi-neo-air-ubuntu:noble-20240819",
+        "docker.io/balenalib/nanopi-neo-air-ubuntu:noble",
+        "docker.io/balenalib/nanopi-neo-air-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/nanopi-neo-air-ubuntu:latest-run",
+        "docker.io/balenalib/nanopi-neo-air-ubuntu:latest-20240819",
+        "docker.io/balenalib/nanopi-neo-air-ubuntu:latest",
+        "docker.io/balenalib/nanopi-neo-air-ubuntu:run-20240819",
+        "docker.io/balenalib/nanopi-neo-air-ubuntu:run",
+        "docker.io/balenalib/nanopi-neo-air-ubuntu:20240819"
+      ]
+    },
+    "nanopi-neo-air-ubuntu-jammy-build": {
+      "context": "device-base/nanopi-neo-air/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/nanopi-neo-air-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/nanopi-neo-air-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopi-neo-air-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/nanopi-neo-air-ubuntu:jammy-build"
       ]
     },
     "nanopi-neo-air-ubuntu-jammy-run": {
@@ -43,27 +89,13 @@
         "docker.io/balenalib/nanopi-neo-air-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/nanopi-neo-air-ubuntu:jammy-run",
         "docker.io/balenalib/nanopi-neo-air-ubuntu:jammy-20240819",
-        "docker.io/balenalib/nanopi-neo-air-ubuntu:jammy",
-        "docker.io/balenalib/nanopi-neo-air-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/nanopi-neo-air-ubuntu:latest-run",
-        "docker.io/balenalib/nanopi-neo-air-ubuntu:latest-20240819",
-        "docker.io/balenalib/nanopi-neo-air-ubuntu:latest",
-        "docker.io/balenalib/nanopi-neo-air-ubuntu:run-20240819",
-        "docker.io/balenalib/nanopi-neo-air-ubuntu:run",
-        "docker.io/balenalib/nanopi-neo-air-ubuntu:20240819"
+        "docker.io/balenalib/nanopi-neo-air-ubuntu:jammy"
       ],
       "cache_from": [
         "docker.io/balenalib/nanopi-neo-air-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/nanopi-neo-air-ubuntu:jammy-run",
         "docker.io/balenalib/nanopi-neo-air-ubuntu:jammy-20240819",
-        "docker.io/balenalib/nanopi-neo-air-ubuntu:jammy",
-        "docker.io/balenalib/nanopi-neo-air-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/nanopi-neo-air-ubuntu:latest-run",
-        "docker.io/balenalib/nanopi-neo-air-ubuntu:latest-20240819",
-        "docker.io/balenalib/nanopi-neo-air-ubuntu:latest",
-        "docker.io/balenalib/nanopi-neo-air-ubuntu:run-20240819",
-        "docker.io/balenalib/nanopi-neo-air-ubuntu:run",
-        "docker.io/balenalib/nanopi-neo-air-ubuntu:20240819"
+        "docker.io/balenalib/nanopi-neo-air-ubuntu:jammy"
       ]
     },
     "nanopi-neo-air-ubuntu-focal-build": {

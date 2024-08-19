@@ -2,6 +2,8 @@
   "group": {
     "default": {
       "targets": [
+        "beaglebone-green-wifi-ubuntu-noble-build",
+        "beaglebone-green-wifi-ubuntu-noble-run",
         "beaglebone-green-wifi-ubuntu-jammy-build",
         "beaglebone-green-wifi-ubuntu-jammy-run",
         "beaglebone-green-wifi-ubuntu-focal-build",
@@ -14,25 +16,69 @@
     }
   },
   "target": {
-    "beaglebone-green-wifi-ubuntu-jammy-build": {
-      "context": "device-base/beaglebone-green-wifi/ubuntu/jammy/build",
+    "beaglebone-green-wifi-ubuntu-noble-build": {
+      "context": "device-base/beaglebone-green-wifi/ubuntu/noble/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:jammy-build",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:noble-build",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:latest-build-20240819",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:latest-build",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:build-20240819",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:jammy-build",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:noble-build",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:latest-build-20240819",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:latest-build",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:build-20240819",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:build"
+      ]
+    },
+    "beaglebone-green-wifi-ubuntu-noble-run": {
+      "context": "device-base/beaglebone-green-wifi/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:noble-run",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:noble-20240819",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:noble",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:latest-run",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:latest-20240819",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:latest",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:run-20240819",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:run",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:20240819"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:noble-run",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:noble-20240819",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:noble",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:latest-run",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:latest-20240819",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:latest",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:run-20240819",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:run",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:20240819"
+      ]
+    },
+    "beaglebone-green-wifi-ubuntu-jammy-build": {
+      "context": "device-base/beaglebone-green-wifi/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:jammy-build"
       ]
     },
     "beaglebone-green-wifi-ubuntu-jammy-run": {
@@ -43,27 +89,13 @@
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:jammy-run",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:jammy-20240819",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:jammy",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:latest-run",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:latest-20240819",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:latest",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:run-20240819",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:run",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:20240819"
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:jammy"
       ],
       "cache_from": [
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:jammy-run",
         "docker.io/balenalib/beaglebone-green-wifi-ubuntu:jammy-20240819",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:jammy",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:latest-run",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:latest-20240819",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:latest",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:run-20240819",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:run",
-        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:20240819"
+        "docker.io/balenalib/beaglebone-green-wifi-ubuntu:jammy"
       ]
     },
     "beaglebone-green-wifi-ubuntu-focal-build": {

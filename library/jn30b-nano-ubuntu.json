@@ -2,6 +2,8 @@
   "group": {
     "default": {
       "targets": [
+        "jn30b-nano-ubuntu-noble-build",
+        "jn30b-nano-ubuntu-noble-run",
         "jn30b-nano-ubuntu-jammy-build",
         "jn30b-nano-ubuntu-jammy-run",
         "jn30b-nano-ubuntu-focal-build",
@@ -14,25 +16,69 @@
     }
   },
   "target": {
-    "jn30b-nano-ubuntu-jammy-build": {
-      "context": "device-base/jn30b-nano/ubuntu/jammy/build",
+    "jn30b-nano-ubuntu-noble-build": {
+      "context": "device-base/jn30b-nano/ubuntu/noble/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jn30b-nano-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/jn30b-nano-ubuntu:jammy-build",
+        "docker.io/balenalib/jn30b-nano-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/jn30b-nano-ubuntu:noble-build",
         "docker.io/balenalib/jn30b-nano-ubuntu:latest-build-20240819",
         "docker.io/balenalib/jn30b-nano-ubuntu:latest-build",
         "docker.io/balenalib/jn30b-nano-ubuntu:build-20240819",
         "docker.io/balenalib/jn30b-nano-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jn30b-nano-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/jn30b-nano-ubuntu:jammy-build",
+        "docker.io/balenalib/jn30b-nano-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/jn30b-nano-ubuntu:noble-build",
         "docker.io/balenalib/jn30b-nano-ubuntu:latest-build-20240819",
         "docker.io/balenalib/jn30b-nano-ubuntu:latest-build",
         "docker.io/balenalib/jn30b-nano-ubuntu:build-20240819",
         "docker.io/balenalib/jn30b-nano-ubuntu:build"
+      ]
+    },
+    "jn30b-nano-ubuntu-noble-run": {
+      "context": "device-base/jn30b-nano/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jn30b-nano-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/jn30b-nano-ubuntu:noble-run",
+        "docker.io/balenalib/jn30b-nano-ubuntu:noble-20240819",
+        "docker.io/balenalib/jn30b-nano-ubuntu:noble",
+        "docker.io/balenalib/jn30b-nano-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/jn30b-nano-ubuntu:latest-run",
+        "docker.io/balenalib/jn30b-nano-ubuntu:latest-20240819",
+        "docker.io/balenalib/jn30b-nano-ubuntu:latest",
+        "docker.io/balenalib/jn30b-nano-ubuntu:run-20240819",
+        "docker.io/balenalib/jn30b-nano-ubuntu:run",
+        "docker.io/balenalib/jn30b-nano-ubuntu:20240819"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jn30b-nano-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/jn30b-nano-ubuntu:noble-run",
+        "docker.io/balenalib/jn30b-nano-ubuntu:noble-20240819",
+        "docker.io/balenalib/jn30b-nano-ubuntu:noble",
+        "docker.io/balenalib/jn30b-nano-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/jn30b-nano-ubuntu:latest-run",
+        "docker.io/balenalib/jn30b-nano-ubuntu:latest-20240819",
+        "docker.io/balenalib/jn30b-nano-ubuntu:latest",
+        "docker.io/balenalib/jn30b-nano-ubuntu:run-20240819",
+        "docker.io/balenalib/jn30b-nano-ubuntu:run",
+        "docker.io/balenalib/jn30b-nano-ubuntu:20240819"
+      ]
+    },
+    "jn30b-nano-ubuntu-jammy-build": {
+      "context": "device-base/jn30b-nano/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jn30b-nano-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/jn30b-nano-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jn30b-nano-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/jn30b-nano-ubuntu:jammy-build"
       ]
     },
     "jn30b-nano-ubuntu-jammy-run": {
@@ -43,27 +89,13 @@
         "docker.io/balenalib/jn30b-nano-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/jn30b-nano-ubuntu:jammy-run",
         "docker.io/balenalib/jn30b-nano-ubuntu:jammy-20240819",
-        "docker.io/balenalib/jn30b-nano-ubuntu:jammy",
-        "docker.io/balenalib/jn30b-nano-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/jn30b-nano-ubuntu:latest-run",
-        "docker.io/balenalib/jn30b-nano-ubuntu:latest-20240819",
-        "docker.io/balenalib/jn30b-nano-ubuntu:latest",
-        "docker.io/balenalib/jn30b-nano-ubuntu:run-20240819",
-        "docker.io/balenalib/jn30b-nano-ubuntu:run",
-        "docker.io/balenalib/jn30b-nano-ubuntu:20240819"
+        "docker.io/balenalib/jn30b-nano-ubuntu:jammy"
       ],
       "cache_from": [
         "docker.io/balenalib/jn30b-nano-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/jn30b-nano-ubuntu:jammy-run",
         "docker.io/balenalib/jn30b-nano-ubuntu:jammy-20240819",
-        "docker.io/balenalib/jn30b-nano-ubuntu:jammy",
-        "docker.io/balenalib/jn30b-nano-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/jn30b-nano-ubuntu:latest-run",
-        "docker.io/balenalib/jn30b-nano-ubuntu:latest-20240819",
-        "docker.io/balenalib/jn30b-nano-ubuntu:latest",
-        "docker.io/balenalib/jn30b-nano-ubuntu:run-20240819",
-        "docker.io/balenalib/jn30b-nano-ubuntu:run",
-        "docker.io/balenalib/jn30b-nano-ubuntu:20240819"
+        "docker.io/balenalib/jn30b-nano-ubuntu:jammy"
       ]
     },
     "jn30b-nano-ubuntu-focal-build": {

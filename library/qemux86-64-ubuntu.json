@@ -2,6 +2,8 @@
   "group": {
     "default": {
       "targets": [
+        "qemux86-64-ubuntu-noble-build",
+        "qemux86-64-ubuntu-noble-run",
         "qemux86-64-ubuntu-jammy-build",
         "qemux86-64-ubuntu-jammy-run",
         "qemux86-64-ubuntu-focal-build",
@@ -14,25 +16,69 @@
     }
   },
   "target": {
-    "qemux86-64-ubuntu-jammy-build": {
-      "context": "device-base/qemux86-64/ubuntu/jammy/build",
+    "qemux86-64-ubuntu-noble-build": {
+      "context": "device-base/qemux86-64/ubuntu/noble/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/amd64",
       "tags": [
-        "docker.io/balenalib/qemux86-64-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/qemux86-64-ubuntu:jammy-build",
+        "docker.io/balenalib/qemux86-64-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/qemux86-64-ubuntu:noble-build",
         "docker.io/balenalib/qemux86-64-ubuntu:latest-build-20240819",
         "docker.io/balenalib/qemux86-64-ubuntu:latest-build",
         "docker.io/balenalib/qemux86-64-ubuntu:build-20240819",
         "docker.io/balenalib/qemux86-64-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/qemux86-64-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/qemux86-64-ubuntu:jammy-build",
+        "docker.io/balenalib/qemux86-64-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/qemux86-64-ubuntu:noble-build",
         "docker.io/balenalib/qemux86-64-ubuntu:latest-build-20240819",
         "docker.io/balenalib/qemux86-64-ubuntu:latest-build",
         "docker.io/balenalib/qemux86-64-ubuntu:build-20240819",
         "docker.io/balenalib/qemux86-64-ubuntu:build"
+      ]
+    },
+    "qemux86-64-ubuntu-noble-run": {
+      "context": "device-base/qemux86-64/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/qemux86-64-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/qemux86-64-ubuntu:noble-run",
+        "docker.io/balenalib/qemux86-64-ubuntu:noble-20240819",
+        "docker.io/balenalib/qemux86-64-ubuntu:noble",
+        "docker.io/balenalib/qemux86-64-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/qemux86-64-ubuntu:latest-run",
+        "docker.io/balenalib/qemux86-64-ubuntu:latest-20240819",
+        "docker.io/balenalib/qemux86-64-ubuntu:latest",
+        "docker.io/balenalib/qemux86-64-ubuntu:run-20240819",
+        "docker.io/balenalib/qemux86-64-ubuntu:run",
+        "docker.io/balenalib/qemux86-64-ubuntu:20240819"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/qemux86-64-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/qemux86-64-ubuntu:noble-run",
+        "docker.io/balenalib/qemux86-64-ubuntu:noble-20240819",
+        "docker.io/balenalib/qemux86-64-ubuntu:noble",
+        "docker.io/balenalib/qemux86-64-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/qemux86-64-ubuntu:latest-run",
+        "docker.io/balenalib/qemux86-64-ubuntu:latest-20240819",
+        "docker.io/balenalib/qemux86-64-ubuntu:latest",
+        "docker.io/balenalib/qemux86-64-ubuntu:run-20240819",
+        "docker.io/balenalib/qemux86-64-ubuntu:run",
+        "docker.io/balenalib/qemux86-64-ubuntu:20240819"
+      ]
+    },
+    "qemux86-64-ubuntu-jammy-build": {
+      "context": "device-base/qemux86-64/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/qemux86-64-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/qemux86-64-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/qemux86-64-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/qemux86-64-ubuntu:jammy-build"
       ]
     },
     "qemux86-64-ubuntu-jammy-run": {
@@ -43,27 +89,13 @@
         "docker.io/balenalib/qemux86-64-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/qemux86-64-ubuntu:jammy-run",
         "docker.io/balenalib/qemux86-64-ubuntu:jammy-20240819",
-        "docker.io/balenalib/qemux86-64-ubuntu:jammy",
-        "docker.io/balenalib/qemux86-64-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/qemux86-64-ubuntu:latest-run",
-        "docker.io/balenalib/qemux86-64-ubuntu:latest-20240819",
-        "docker.io/balenalib/qemux86-64-ubuntu:latest",
-        "docker.io/balenalib/qemux86-64-ubuntu:run-20240819",
-        "docker.io/balenalib/qemux86-64-ubuntu:run",
-        "docker.io/balenalib/qemux86-64-ubuntu:20240819"
+        "docker.io/balenalib/qemux86-64-ubuntu:jammy"
       ],
       "cache_from": [
         "docker.io/balenalib/qemux86-64-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/qemux86-64-ubuntu:jammy-run",
         "docker.io/balenalib/qemux86-64-ubuntu:jammy-20240819",
-        "docker.io/balenalib/qemux86-64-ubuntu:jammy",
-        "docker.io/balenalib/qemux86-64-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/qemux86-64-ubuntu:latest-run",
-        "docker.io/balenalib/qemux86-64-ubuntu:latest-20240819",
-        "docker.io/balenalib/qemux86-64-ubuntu:latest",
-        "docker.io/balenalib/qemux86-64-ubuntu:run-20240819",
-        "docker.io/balenalib/qemux86-64-ubuntu:run",
-        "docker.io/balenalib/qemux86-64-ubuntu:20240819"
+        "docker.io/balenalib/qemux86-64-ubuntu:jammy"
       ]
     },
     "qemux86-64-ubuntu-focal-build": {

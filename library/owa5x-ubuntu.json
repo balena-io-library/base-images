@@ -2,6 +2,8 @@
   "group": {
     "default": {
       "targets": [
+        "owa5x-ubuntu-noble-build",
+        "owa5x-ubuntu-noble-run",
         "owa5x-ubuntu-jammy-build",
         "owa5x-ubuntu-jammy-run",
         "owa5x-ubuntu-focal-build",
@@ -14,25 +16,69 @@
     }
   },
   "target": {
-    "owa5x-ubuntu-jammy-build": {
-      "context": "device-base/owa5x/ubuntu/jammy/build",
+    "owa5x-ubuntu-noble-build": {
+      "context": "device-base/owa5x/ubuntu/noble/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/owa5x-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/owa5x-ubuntu:jammy-build",
+        "docker.io/balenalib/owa5x-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/owa5x-ubuntu:noble-build",
         "docker.io/balenalib/owa5x-ubuntu:latest-build-20240819",
         "docker.io/balenalib/owa5x-ubuntu:latest-build",
         "docker.io/balenalib/owa5x-ubuntu:build-20240819",
         "docker.io/balenalib/owa5x-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/owa5x-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/owa5x-ubuntu:jammy-build",
+        "docker.io/balenalib/owa5x-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/owa5x-ubuntu:noble-build",
         "docker.io/balenalib/owa5x-ubuntu:latest-build-20240819",
         "docker.io/balenalib/owa5x-ubuntu:latest-build",
         "docker.io/balenalib/owa5x-ubuntu:build-20240819",
         "docker.io/balenalib/owa5x-ubuntu:build"
+      ]
+    },
+    "owa5x-ubuntu-noble-run": {
+      "context": "device-base/owa5x/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/owa5x-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/owa5x-ubuntu:noble-run",
+        "docker.io/balenalib/owa5x-ubuntu:noble-20240819",
+        "docker.io/balenalib/owa5x-ubuntu:noble",
+        "docker.io/balenalib/owa5x-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/owa5x-ubuntu:latest-run",
+        "docker.io/balenalib/owa5x-ubuntu:latest-20240819",
+        "docker.io/balenalib/owa5x-ubuntu:latest",
+        "docker.io/balenalib/owa5x-ubuntu:run-20240819",
+        "docker.io/balenalib/owa5x-ubuntu:run",
+        "docker.io/balenalib/owa5x-ubuntu:20240819"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/owa5x-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/owa5x-ubuntu:noble-run",
+        "docker.io/balenalib/owa5x-ubuntu:noble-20240819",
+        "docker.io/balenalib/owa5x-ubuntu:noble",
+        "docker.io/balenalib/owa5x-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/owa5x-ubuntu:latest-run",
+        "docker.io/balenalib/owa5x-ubuntu:latest-20240819",
+        "docker.io/balenalib/owa5x-ubuntu:latest",
+        "docker.io/balenalib/owa5x-ubuntu:run-20240819",
+        "docker.io/balenalib/owa5x-ubuntu:run",
+        "docker.io/balenalib/owa5x-ubuntu:20240819"
+      ]
+    },
+    "owa5x-ubuntu-jammy-build": {
+      "context": "device-base/owa5x/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/owa5x-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/owa5x-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/owa5x-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/owa5x-ubuntu:jammy-build"
       ]
     },
     "owa5x-ubuntu-jammy-run": {
@@ -43,27 +89,13 @@
         "docker.io/balenalib/owa5x-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/owa5x-ubuntu:jammy-run",
         "docker.io/balenalib/owa5x-ubuntu:jammy-20240819",
-        "docker.io/balenalib/owa5x-ubuntu:jammy",
-        "docker.io/balenalib/owa5x-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/owa5x-ubuntu:latest-run",
-        "docker.io/balenalib/owa5x-ubuntu:latest-20240819",
-        "docker.io/balenalib/owa5x-ubuntu:latest",
-        "docker.io/balenalib/owa5x-ubuntu:run-20240819",
-        "docker.io/balenalib/owa5x-ubuntu:run",
-        "docker.io/balenalib/owa5x-ubuntu:20240819"
+        "docker.io/balenalib/owa5x-ubuntu:jammy"
       ],
       "cache_from": [
         "docker.io/balenalib/owa5x-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/owa5x-ubuntu:jammy-run",
         "docker.io/balenalib/owa5x-ubuntu:jammy-20240819",
-        "docker.io/balenalib/owa5x-ubuntu:jammy",
-        "docker.io/balenalib/owa5x-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/owa5x-ubuntu:latest-run",
-        "docker.io/balenalib/owa5x-ubuntu:latest-20240819",
-        "docker.io/balenalib/owa5x-ubuntu:latest",
-        "docker.io/balenalib/owa5x-ubuntu:run-20240819",
-        "docker.io/balenalib/owa5x-ubuntu:run",
-        "docker.io/balenalib/owa5x-ubuntu:20240819"
+        "docker.io/balenalib/owa5x-ubuntu:jammy"
       ]
     },
     "owa5x-ubuntu-focal-build": {

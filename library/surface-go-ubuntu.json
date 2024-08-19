@@ -2,6 +2,8 @@
   "group": {
     "default": {
       "targets": [
+        "surface-go-ubuntu-noble-build",
+        "surface-go-ubuntu-noble-run",
         "surface-go-ubuntu-jammy-build",
         "surface-go-ubuntu-jammy-run",
         "surface-go-ubuntu-focal-build",
@@ -14,25 +16,69 @@
     }
   },
   "target": {
-    "surface-go-ubuntu-jammy-build": {
-      "context": "device-base/surface-go/ubuntu/jammy/build",
+    "surface-go-ubuntu-noble-build": {
+      "context": "device-base/surface-go/ubuntu/noble/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/amd64",
       "tags": [
-        "docker.io/balenalib/surface-go-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/surface-go-ubuntu:jammy-build",
+        "docker.io/balenalib/surface-go-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/surface-go-ubuntu:noble-build",
         "docker.io/balenalib/surface-go-ubuntu:latest-build-20240819",
         "docker.io/balenalib/surface-go-ubuntu:latest-build",
         "docker.io/balenalib/surface-go-ubuntu:build-20240819",
         "docker.io/balenalib/surface-go-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/surface-go-ubuntu:jammy-build-20240819",
-        "docker.io/balenalib/surface-go-ubuntu:jammy-build",
+        "docker.io/balenalib/surface-go-ubuntu:noble-build-20240819",
+        "docker.io/balenalib/surface-go-ubuntu:noble-build",
         "docker.io/balenalib/surface-go-ubuntu:latest-build-20240819",
         "docker.io/balenalib/surface-go-ubuntu:latest-build",
         "docker.io/balenalib/surface-go-ubuntu:build-20240819",
         "docker.io/balenalib/surface-go-ubuntu:build"
+      ]
+    },
+    "surface-go-ubuntu-noble-run": {
+      "context": "device-base/surface-go/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/surface-go-ubuntu:noble-run",
+        "docker.io/balenalib/surface-go-ubuntu:noble-20240819",
+        "docker.io/balenalib/surface-go-ubuntu:noble",
+        "docker.io/balenalib/surface-go-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/surface-go-ubuntu:latest-run",
+        "docker.io/balenalib/surface-go-ubuntu:latest-20240819",
+        "docker.io/balenalib/surface-go-ubuntu:latest",
+        "docker.io/balenalib/surface-go-ubuntu:run-20240819",
+        "docker.io/balenalib/surface-go-ubuntu:run",
+        "docker.io/balenalib/surface-go-ubuntu:20240819"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-ubuntu:noble-run-20240819",
+        "docker.io/balenalib/surface-go-ubuntu:noble-run",
+        "docker.io/balenalib/surface-go-ubuntu:noble-20240819",
+        "docker.io/balenalib/surface-go-ubuntu:noble",
+        "docker.io/balenalib/surface-go-ubuntu:latest-run-20240819",
+        "docker.io/balenalib/surface-go-ubuntu:latest-run",
+        "docker.io/balenalib/surface-go-ubuntu:latest-20240819",
+        "docker.io/balenalib/surface-go-ubuntu:latest",
+        "docker.io/balenalib/surface-go-ubuntu:run-20240819",
+        "docker.io/balenalib/surface-go-ubuntu:run",
+        "docker.io/balenalib/surface-go-ubuntu:20240819"
+      ]
+    },
+    "surface-go-ubuntu-jammy-build": {
+      "context": "device-base/surface-go/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/surface-go-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-ubuntu:jammy-build-20240819",
+        "docker.io/balenalib/surface-go-ubuntu:jammy-build"
       ]
     },
     "surface-go-ubuntu-jammy-run": {
@@ -43,27 +89,13 @@
         "docker.io/balenalib/surface-go-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/surface-go-ubuntu:jammy-run",
         "docker.io/balenalib/surface-go-ubuntu:jammy-20240819",
-        "docker.io/balenalib/surface-go-ubuntu:jammy",
-        "docker.io/balenalib/surface-go-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/surface-go-ubuntu:latest-run",
-        "docker.io/balenalib/surface-go-ubuntu:latest-20240819",
-        "docker.io/balenalib/surface-go-ubuntu:latest",
-        "docker.io/balenalib/surface-go-ubuntu:run-20240819",
-        "docker.io/balenalib/surface-go-ubuntu:run",
-        "docker.io/balenalib/surface-go-ubuntu:20240819"
+        "docker.io/balenalib/surface-go-ubuntu:jammy"
       ],
       "cache_from": [
         "docker.io/balenalib/surface-go-ubuntu:jammy-run-20240819",
         "docker.io/balenalib/surface-go-ubuntu:jammy-run",
         "docker.io/balenalib/surface-go-ubuntu:jammy-20240819",
-        "docker.io/balenalib/surface-go-ubuntu:jammy",
-        "docker.io/balenalib/surface-go-ubuntu:latest-run-20240819",
-        "docker.io/balenalib/surface-go-ubuntu:latest-run",
-        "docker.io/balenalib/surface-go-ubuntu:latest-20240819",
-        "docker.io/balenalib/surface-go-ubuntu:latest",
-        "docker.io/balenalib/surface-go-ubuntu:run-20240819",
-        "docker.io/balenalib/surface-go-ubuntu:run",
-        "docker.io/balenalib/surface-go-ubuntu:20240819"
+        "docker.io/balenalib/surface-go-ubuntu:jammy"
       ]
     },
     "surface-go-ubuntu-focal-build": {
