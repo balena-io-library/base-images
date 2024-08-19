@@ -32,7 +32,7 @@ This [guide][getting-started] can help you get started with using this base imag
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;jammy (latest)&#x60;, &#x60;focal&#x60;, &#x60;xenial&#x60;, &#x60;bionic&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/jetson-nano-emmc/ubuntu/)
+[&#x60;noble (latest)&#x60;, &#x60;jammy&#x60;, &#x60;focal&#x60;, &#x60;xenial&#x60;, &#x60;bionic&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/jetson-nano-emmc/ubuntu/)
 
 For more information about this image and its history, please see the [relevant manifest file (`jetson-nano-emmc-ubuntu`)](https://github.com/balena-io-library/official-images/blob/master/library/jetson-nano-emmc-ubuntu) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 

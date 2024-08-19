@@ -28,7 +28,7 @@ The build variant is a heavier image that includes many of the tools required fo
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;jammy (latest)&#x60;, &#x60;focal&#x60;, &#x60;xenial&#x60;, &#x60;bionic&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/i386/ubuntu/)
+[&#x60;noble (latest)&#x60;, &#x60;jammy&#x60;, &#x60;focal&#x60;, &#x60;xenial&#x60;, &#x60;bionic&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/i386/ubuntu/)
 
 For more information about this image and its history, please see the [relevant manifest file (`i386-ubuntu`)](https://github.com/balena-io-library/official-images/blob/master/library/i386-ubuntu) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 
