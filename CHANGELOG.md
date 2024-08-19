@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.10.4 - 2024-08-19
+
+
+<details>
+<summary> Update scripts/contracts digest to e1d59ac [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.112 - 2024-08-19
+> 
+> * Add support for Ubuntu Noble [ruffsl]
+> 
+
+</details>
+
 ## 2.10.3 - 2024-08-19
 
 * Update dependency rimraf to v6 [Self-hosted Renovate Bot]
