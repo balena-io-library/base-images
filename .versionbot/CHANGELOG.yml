@@ -1,4 +1,32 @@
 - commits:
+    - subject: Update scripts/contracts digest to 59752b7
+      hash: 39a9b0ab01fab7ee032a39bed24074607a283dc5
+      body: |
+        Update scripts/contracts
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: "iotdin-imx8p: Update the devices contract"
+              hash: 6ba0c6f93908f3b57742c87f86bf87716dad616a
+              body: |
+                Disable bluetooth and wifi in the devices contracts files.
+                Reason: the CompuLab Autokit came without an IFM-WB i/o module.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Valentin Raevsky <valentin@compulab.co.il>
+                signed-off-by: Valentin Raevsky <valentin@compulab.co.il>
+              author: Valentin Raevsky
+          version: contracts-2.0.113
+          title: ""
+          date: 2024-08-20T11:19:30.688Z
+  version: 2.10.5
+  title: ""
+  date: 2024-08-20T12:05:36.238Z
+- commits:
     - subject: Update scripts/contracts digest to e1d59ac
       hash: a0c23ccfaa102ad0cb855cd3765cf36f7bd2814e
       body: |

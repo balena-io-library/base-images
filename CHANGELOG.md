@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.10.5 - 2024-08-20
+
+
+<details>
+<summary> Update scripts/contracts digest to 59752b7 [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.113 - 2024-08-20
+> 
+> * iotdin-imx8p: Update the devices contract [Valentin Raevsky]
+> 
+
+</details>
+
 ## 2.10.4 - 2024-08-19
 
 
