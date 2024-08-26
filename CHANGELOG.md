@@ -5,6 +5,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.10.7 - 2024-08-26
+
+* Update QEMU binfmt to v8.0.4 for building [Kyle Harding]
+* Bake on self-hosted runners with full concurrency [Kyle Harding]
+
 ## 2.10.6 - 2024-08-26
 
 * Lock file maintenance [Self-hosted Renovate Bot]
