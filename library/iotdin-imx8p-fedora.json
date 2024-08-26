@@ -1,0 +1,96 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "iotdin-imx8p-fedora-37-build",
+        "iotdin-imx8p-fedora-37-run",
+        "iotdin-imx8p-fedora-38-build",
+        "iotdin-imx8p-fedora-38-run"
+      ]
+    }
+  },
+  "target": {
+    "iotdin-imx8p-fedora-37-build": {
+      "context": "device-base/iotdin-imx8p/fedora/37/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/iotdin-imx8p-fedora:37-build-20240826",
+        "docker.io/balenalib/iotdin-imx8p-fedora:37-build",
+        "docker.io/balenalib/iotdin-imx8p-fedora:latest-build-20240826",
+        "docker.io/balenalib/iotdin-imx8p-fedora:latest-build",
+        "docker.io/balenalib/iotdin-imx8p-fedora:build-20240826",
+        "docker.io/balenalib/iotdin-imx8p-fedora:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/iotdin-imx8p-fedora:37-build-20240826",
+        "docker.io/balenalib/iotdin-imx8p-fedora:37-build",
+        "docker.io/balenalib/iotdin-imx8p-fedora:latest-build-20240826",
+        "docker.io/balenalib/iotdin-imx8p-fedora:latest-build",
+        "docker.io/balenalib/iotdin-imx8p-fedora:build-20240826",
+        "docker.io/balenalib/iotdin-imx8p-fedora:build"
+      ]
+    },
+    "iotdin-imx8p-fedora-37-run": {
+      "context": "device-base/iotdin-imx8p/fedora/37/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/iotdin-imx8p-fedora:37-run-20240826",
+        "docker.io/balenalib/iotdin-imx8p-fedora:37-run",
+        "docker.io/balenalib/iotdin-imx8p-fedora:37-20240826",
+        "docker.io/balenalib/iotdin-imx8p-fedora:37",
+        "docker.io/balenalib/iotdin-imx8p-fedora:latest-run-20240826",
+        "docker.io/balenalib/iotdin-imx8p-fedora:latest-run",
+        "docker.io/balenalib/iotdin-imx8p-fedora:latest-20240826",
+        "docker.io/balenalib/iotdin-imx8p-fedora:latest",
+        "docker.io/balenalib/iotdin-imx8p-fedora:run-20240826",
+        "docker.io/balenalib/iotdin-imx8p-fedora:run",
+        "docker.io/balenalib/iotdin-imx8p-fedora:20240826"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/iotdin-imx8p-fedora:37-run-20240826",
+        "docker.io/balenalib/iotdin-imx8p-fedora:37-run",
+        "docker.io/balenalib/iotdin-imx8p-fedora:37-20240826",
+        "docker.io/balenalib/iotdin-imx8p-fedora:37",
+        "docker.io/balenalib/iotdin-imx8p-fedora:latest-run-20240826",
+        "docker.io/balenalib/iotdin-imx8p-fedora:latest-run",
+        "docker.io/balenalib/iotdin-imx8p-fedora:latest-20240826",
+        "docker.io/balenalib/iotdin-imx8p-fedora:latest",
+        "docker.io/balenalib/iotdin-imx8p-fedora:run-20240826",
+        "docker.io/balenalib/iotdin-imx8p-fedora:run",
+        "docker.io/balenalib/iotdin-imx8p-fedora:20240826"
+      ]
+    },
+    "iotdin-imx8p-fedora-38-build": {
+      "context": "device-base/iotdin-imx8p/fedora/38/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/iotdin-imx8p-fedora:38-build-20240826",
+        "docker.io/balenalib/iotdin-imx8p-fedora:38-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/iotdin-imx8p-fedora:38-build-20240826",
+        "docker.io/balenalib/iotdin-imx8p-fedora:38-build"
+      ]
+    },
+    "iotdin-imx8p-fedora-38-run": {
+      "context": "device-base/iotdin-imx8p/fedora/38/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/iotdin-imx8p-fedora:38-run-20240826",
+        "docker.io/balenalib/iotdin-imx8p-fedora:38-run",
+        "docker.io/balenalib/iotdin-imx8p-fedora:38-20240826",
+        "docker.io/balenalib/iotdin-imx8p-fedora:38"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/iotdin-imx8p-fedora:38-run-20240826",
+        "docker.io/balenalib/iotdin-imx8p-fedora:38-run",
+        "docker.io/balenalib/iotdin-imx8p-fedora:38-20240826",
+        "docker.io/balenalib/iotdin-imx8p-fedora:38"
+      ]
+    }
+  }
+}

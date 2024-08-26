@@ -1,0 +1,192 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "iotdin-imx8p-d1d8-ubuntu-noble-build",
+        "iotdin-imx8p-d1d8-ubuntu-noble-run",
+        "iotdin-imx8p-d1d8-ubuntu-jammy-build",
+        "iotdin-imx8p-d1d8-ubuntu-jammy-run",
+        "iotdin-imx8p-d1d8-ubuntu-focal-build",
+        "iotdin-imx8p-d1d8-ubuntu-focal-run",
+        "iotdin-imx8p-d1d8-ubuntu-xenial-build",
+        "iotdin-imx8p-d1d8-ubuntu-xenial-run",
+        "iotdin-imx8p-d1d8-ubuntu-bionic-build",
+        "iotdin-imx8p-d1d8-ubuntu-bionic-run"
+      ]
+    }
+  },
+  "target": {
+    "iotdin-imx8p-d1d8-ubuntu-noble-build": {
+      "context": "device-base/iotdin-imx8p-d1d8/ubuntu/noble/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:noble-build-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:noble-build",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:latest-build-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:latest-build",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:build-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:noble-build-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:noble-build",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:latest-build-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:latest-build",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:build-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:build"
+      ]
+    },
+    "iotdin-imx8p-d1d8-ubuntu-noble-run": {
+      "context": "device-base/iotdin-imx8p-d1d8/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:noble-run-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:noble-run",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:noble-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:noble",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:latest-run-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:latest-run",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:latest-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:latest",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:run-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:run",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:20240826"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:noble-run-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:noble-run",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:noble-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:noble",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:latest-run-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:latest-run",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:latest-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:latest",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:run-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:run",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:20240826"
+      ]
+    },
+    "iotdin-imx8p-d1d8-ubuntu-jammy-build": {
+      "context": "device-base/iotdin-imx8p-d1d8/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:jammy-build-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:jammy-build-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:jammy-build"
+      ]
+    },
+    "iotdin-imx8p-d1d8-ubuntu-jammy-run": {
+      "context": "device-base/iotdin-imx8p-d1d8/ubuntu/jammy/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:jammy-run-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:jammy-run",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:jammy-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:jammy"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:jammy-run-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:jammy-run",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:jammy-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:jammy"
+      ]
+    },
+    "iotdin-imx8p-d1d8-ubuntu-focal-build": {
+      "context": "device-base/iotdin-imx8p-d1d8/ubuntu/focal/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:focal-build-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:focal-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:focal-build-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:focal-build"
+      ]
+    },
+    "iotdin-imx8p-d1d8-ubuntu-focal-run": {
+      "context": "device-base/iotdin-imx8p-d1d8/ubuntu/focal/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:focal-run-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:focal-run",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:focal-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:focal"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:focal-run-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:focal-run",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:focal-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:focal"
+      ]
+    },
+    "iotdin-imx8p-d1d8-ubuntu-xenial-build": {
+      "context": "device-base/iotdin-imx8p-d1d8/ubuntu/xenial/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:xenial-build-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:xenial-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:xenial-build-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:xenial-build"
+      ]
+    },
+    "iotdin-imx8p-d1d8-ubuntu-xenial-run": {
+      "context": "device-base/iotdin-imx8p-d1d8/ubuntu/xenial/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:xenial-run-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:xenial-run",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:xenial-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:xenial"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:xenial-run-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:xenial-run",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:xenial-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:xenial"
+      ]
+    },
+    "iotdin-imx8p-d1d8-ubuntu-bionic-build": {
+      "context": "device-base/iotdin-imx8p-d1d8/ubuntu/bionic/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:bionic-build-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:bionic-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:bionic-build-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:bionic-build"
+      ]
+    },
+    "iotdin-imx8p-d1d8-ubuntu-bionic-run": {
+      "context": "device-base/iotdin-imx8p-d1d8/ubuntu/bionic/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:bionic-run-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:bionic-run",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:bionic-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:bionic"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:bionic-run-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:bionic-run",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:bionic-20240826",
+        "docker.io/balenalib/iotdin-imx8p-d1d8-ubuntu:bionic"
+      ]
+    }
+  }
+}
