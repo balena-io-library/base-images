@@ -32,11 +32,57 @@ const balena = getSdk({
 	dataDirectory: false,
 });
 
+function getRunnerLabels(arch) {
+	switch (arch) {
+		case 'aarch64':
+			return ['self-hosted', 'base-images', 'ARM64'];
+		case 'amd64':
+			return ['self-hosted', 'base-images', 'X64'];
+		case 'armv7hf':
+			return ['self-hosted', 'base-images', 'ARM64'];
+		case 'i386':
+			return ['self-hosted', 'base-images', 'X64'];
+		case 'rpi':
+			return ['self-hosted', 'base-images', 'ARM64'];
+		default:
+			console.error(`Unsupported arch: ${arch}`);
+			process.exit(1);
+	}
+}
+
+function getPlatform(arch) {
+	switch (arch) {
+		case 'aarch64':
+			return 'linux/arm64';
+		case 'amd64':
+			return 'linux/amd64';
+		case 'armv7hf':
+			return 'linux/arm/v7';
+		case 'i386':
+			return 'linux/386';
+		case 'rpi':
+			return 'linux/arm/v5';
+		default:
+			console.error(`Unsupported arch: ${arch}`);
+			process.exit(1);
+	}
+}
+
 const workflows = {};
 function addToWorkflow(dest, context) {
 	const workflow = context.template;
 
 	workflow.jobs.bake.strategy.matrix.target = `\${{ fromJSON(needs.prepare-${context.imageName}.outputs.bake-targets) }}`;
+
+	// Use self-hosted runners with pre-defined labels
+	workflow.jobs.bake['runs-on'] = getRunnerLabels(
+		context.children.arch.sw.slug,
+	);
+
+	// Update the QEMU condition to check if emulation is needed
+	workflow.jobs.bake.steps[2].if = `contains(steps.setup-buildx.outputs.platforms, '${getPlatform(
+		context.children.arch.sw.slug,
+	)}') == false`;
 
 	workflow.jobs[`prepare-${context.imageName}`] = workflow.jobs.prepare;
 	workflow.jobs[`bake-${context.imageName}`] = workflow.jobs.bake;
