@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.10.8 - 2024-08-30
+
+* Update actions/upload-artifact action to v4.4.0 [Self-hosted Renovate Bot]
+
 ## 2.10.7 - 2024-08-26
 
 * Update QEMU binfmt to v8.0.4 for building [Kyle Harding]
