@@ -21,19 +21,19 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:noble-build-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:noble-build-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:noble-build",
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:latest-build-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:latest-build-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:latest-build",
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:build-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:build-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:noble-build-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:noble-build-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:noble-build",
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:latest-build-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:latest-build-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:latest-build",
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:build-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:build-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:build"
       ]
     },
@@ -42,30 +42,30 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:noble-run-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:noble-run-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:noble-run",
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:noble-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:noble-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:noble",
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:latest-run-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:latest-run-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:latest-run",
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:latest-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:latest-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:latest",
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:run-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:run-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:run",
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:20240826"
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:20240830"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:noble-run-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:noble-run-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:noble-run",
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:noble-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:noble-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:noble",
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:latest-run-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:latest-run-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:latest-run",
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:latest-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:latest-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:latest",
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:run-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:run-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:run",
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:20240826"
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:20240830"
       ]
     },
     "jetson-nano-emmc-ubuntu-jammy-build": {
@@ -73,11 +73,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:jammy-build-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:jammy-build-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:jammy-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:jammy-build-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:jammy-build-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:jammy-build"
       ]
     },
@@ -86,15 +86,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:jammy-run-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:jammy-run-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:jammy-run",
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:jammy-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:jammy-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:jammy"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:jammy-run-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:jammy-run-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:jammy-run",
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:jammy-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:jammy-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:jammy"
       ]
     },
@@ -103,11 +103,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:focal-build-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:focal-build-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:focal-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:focal-build-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:focal-build-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:focal-build"
       ]
     },
@@ -116,15 +116,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:focal-run-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:focal-run-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:focal-run",
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:focal-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:focal-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:focal"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:focal-run-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:focal-run-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:focal-run",
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:focal-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:focal-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:focal"
       ]
     },
@@ -133,11 +133,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:xenial-build-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:xenial-build-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:xenial-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:xenial-build-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:xenial-build-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:xenial-build"
       ]
     },
@@ -146,15 +146,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:xenial-run-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:xenial-run-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:xenial-run",
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:xenial-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:xenial-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:xenial"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:xenial-run-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:xenial-run-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:xenial-run",
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:xenial-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:xenial-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:xenial"
       ]
     },
@@ -163,11 +163,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:bionic-build-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:bionic-build-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:bionic-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:bionic-build-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:bionic-build-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:bionic-build"
       ]
     },
@@ -176,15 +176,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:bionic-run-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:bionic-run-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:bionic-run",
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:bionic-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:bionic-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:bionic"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:bionic-run-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:bionic-run-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:bionic-run",
-        "docker.io/balenalib/jetson-nano-emmc-ubuntu:bionic-20240826",
+        "docker.io/balenalib/jetson-nano-emmc-ubuntu:bionic-20240830",
         "docker.io/balenalib/jetson-nano-emmc-ubuntu:bionic"
       ]
     }
