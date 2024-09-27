@@ -48,6 +48,7 @@ output:
             uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4
             with:
               fetch-depth: 1
+              persist-credentials: false
           - name: Set matrix
             id: bake-targets
             run: |
@@ -72,6 +73,7 @@ output:
             uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4
             with:
               fetch-depth: 1
+              persist-credentials: false
           # https://github.com/docker/setup-buildx-action
           - name: Setup buildx
             id: setup-buildx

@@ -34,6 +34,7 @@ jobs:
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
         with:
           fetch-depth: 1
+          persist-credentials: false
       - name: Set matrix
         id: bake-targets
         run: |
@@ -59,6 +60,7 @@ jobs:
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
         with:
           fetch-depth: 1
+          persist-credentials: false
       - name: Setup buildx
         id: setup-buildx
         uses: docker/setup-buildx-action@988b5a0280414f521da01fcc63a27aeeb4b104db
@@ -101,6 +103,7 @@ jobs:
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
         with:
           fetch-depth: 1
+          persist-credentials: false
       - name: Set matrix
         id: bake-targets
         run: |
@@ -126,6 +129,7 @@ jobs:
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
         with:
           fetch-depth: 1
+          persist-credentials: false
       - name: Setup buildx
         id: setup-buildx
         uses: docker/setup-buildx-action@988b5a0280414f521da01fcc63a27aeeb4b104db
@@ -168,6 +172,7 @@ jobs:
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
         with:
           fetch-depth: 1
+          persist-credentials: false
       - name: Set matrix
         id: bake-targets
         run: |
@@ -193,6 +198,7 @@ jobs:
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
         with:
           fetch-depth: 1
+          persist-credentials: false
       - name: Setup buildx
         id: setup-buildx
         uses: docker/setup-buildx-action@988b5a0280414f521da01fcc63a27aeeb4b104db
@@ -235,6 +241,7 @@ jobs:
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
         with:
           fetch-depth: 1
+          persist-credentials: false
       - name: Set matrix
         id: bake-targets
         run: |
@@ -260,6 +267,7 @@ jobs:
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
         with:
           fetch-depth: 1
+          persist-credentials: false
       - name: Setup buildx
         id: setup-buildx
         uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
@@ -302,6 +310,7 @@ jobs:
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
         with:
           fetch-depth: 1
+          persist-credentials: false
       - name: Set matrix
         id: bake-targets
         run: |
@@ -327,6 +336,7 @@ jobs:
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
         with:
           fetch-depth: 1
+          persist-credentials: false
       - name: Setup buildx
         id: setup-buildx
         uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
@@ -369,6 +379,7 @@ jobs:
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
         with:
           fetch-depth: 1
+          persist-credentials: false
       - name: Set matrix
         id: bake-targets
         run: |
@@ -394,6 +405,7 @@ jobs:
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
         with:
           fetch-depth: 1
+          persist-credentials: false
       - name: Setup buildx
         id: setup-buildx
         uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
@@ -436,6 +448,7 @@ jobs:
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
         with:
           fetch-depth: 1
+          persist-credentials: false
       - name: Set matrix
         id: bake-targets
         run: |
@@ -461,6 +474,7 @@ jobs:
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
         with:
           fetch-depth: 1
+          persist-credentials: false
       - name: Setup buildx
         id: setup-buildx
         uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
@@ -503,6 +517,7 @@ jobs:
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
         with:
           fetch-depth: 1
+          persist-credentials: false
       - name: Set matrix
         id: bake-targets
         run: |
@@ -528,6 +543,7 @@ jobs:
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
         with:
           fetch-depth: 1
+          persist-credentials: false
       - name: Setup buildx
         id: setup-buildx
         uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
@@ -570,6 +586,7 @@ jobs:
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
         with:
           fetch-depth: 1
+          persist-credentials: false
       - name: Set matrix
         id: bake-targets
         run: |
@@ -595,6 +612,7 @@ jobs:
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
         with:
           fetch-depth: 1
+          persist-credentials: false
       - name: Setup buildx
         id: setup-buildx
         uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
@@ -637,6 +655,7 @@ jobs:
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
         with:
           fetch-depth: 1
+          persist-credentials: false
       - name: Set matrix
         id: bake-targets
         run: |
@@ -662,6 +681,7 @@ jobs:
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
         with:
           fetch-depth: 1
+          persist-credentials: false
       - name: Setup buildx
         id: setup-buildx
         uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
@@ -704,6 +724,7 @@ jobs:
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
         with:
           fetch-depth: 1
+          persist-credentials: false
       - name: Set matrix
         id: bake-targets
         run: |
@@ -729,6 +750,7 @@ jobs:
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
         with:
           fetch-depth: 1
+          persist-credentials: false
       - name: Setup buildx
         id: setup-buildx
         uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
@@ -771,6 +793,7 @@ jobs:
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
         with:
           fetch-depth: 1
+          persist-credentials: false
       - name: Set matrix
         id: bake-targets
         run: |
@@ -796,6 +819,7 @@ jobs:
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
         with:
           fetch-depth: 1
+          persist-credentials: false
       - name: Setup buildx
         id: setup-buildx
         uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
@@ -838,6 +862,7 @@ jobs:
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
         with:
           fetch-depth: 1
+          persist-credentials: false
       - name: Set matrix
         id: bake-targets
         run: |
@@ -863,6 +888,7 @@ jobs:
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
         with:
           fetch-depth: 1
+          persist-credentials: false
       - name: Setup buildx
         id: setup-buildx
         uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
@@ -905,6 +931,7 @@ jobs:
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
         with:
           fetch-depth: 1
+          persist-credentials: false
       - name: Set matrix
         id: bake-targets
         run: |
@@ -930,6 +957,7 @@ jobs:
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
         with:
           fetch-depth: 1
+          persist-credentials: false
       - name: Setup buildx
         id: setup-buildx
         uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
