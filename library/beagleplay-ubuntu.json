@@ -1,0 +1,192 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "beagleplay-ubuntu-noble-build",
+        "beagleplay-ubuntu-noble-run",
+        "beagleplay-ubuntu-jammy-build",
+        "beagleplay-ubuntu-jammy-run",
+        "beagleplay-ubuntu-focal-build",
+        "beagleplay-ubuntu-focal-run",
+        "beagleplay-ubuntu-xenial-build",
+        "beagleplay-ubuntu-xenial-run",
+        "beagleplay-ubuntu-bionic-build",
+        "beagleplay-ubuntu-bionic-run"
+      ]
+    }
+  },
+  "target": {
+    "beagleplay-ubuntu-noble-build": {
+      "context": "device-base/beagleplay/ubuntu/noble/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/beagleplay-ubuntu:noble-build-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:noble-build",
+        "docker.io/balenalib/beagleplay-ubuntu:latest-build-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:latest-build",
+        "docker.io/balenalib/beagleplay-ubuntu:build-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beagleplay-ubuntu:noble-build-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:noble-build",
+        "docker.io/balenalib/beagleplay-ubuntu:latest-build-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:latest-build",
+        "docker.io/balenalib/beagleplay-ubuntu:build-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:build"
+      ]
+    },
+    "beagleplay-ubuntu-noble-run": {
+      "context": "device-base/beagleplay/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/beagleplay-ubuntu:noble-run-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:noble-run",
+        "docker.io/balenalib/beagleplay-ubuntu:noble-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:noble",
+        "docker.io/balenalib/beagleplay-ubuntu:latest-run-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:latest-run",
+        "docker.io/balenalib/beagleplay-ubuntu:latest-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:latest",
+        "docker.io/balenalib/beagleplay-ubuntu:run-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:run",
+        "docker.io/balenalib/beagleplay-ubuntu:20240927"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beagleplay-ubuntu:noble-run-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:noble-run",
+        "docker.io/balenalib/beagleplay-ubuntu:noble-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:noble",
+        "docker.io/balenalib/beagleplay-ubuntu:latest-run-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:latest-run",
+        "docker.io/balenalib/beagleplay-ubuntu:latest-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:latest",
+        "docker.io/balenalib/beagleplay-ubuntu:run-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:run",
+        "docker.io/balenalib/beagleplay-ubuntu:20240927"
+      ]
+    },
+    "beagleplay-ubuntu-jammy-build": {
+      "context": "device-base/beagleplay/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/beagleplay-ubuntu:jammy-build-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beagleplay-ubuntu:jammy-build-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:jammy-build"
+      ]
+    },
+    "beagleplay-ubuntu-jammy-run": {
+      "context": "device-base/beagleplay/ubuntu/jammy/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/beagleplay-ubuntu:jammy-run-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:jammy-run",
+        "docker.io/balenalib/beagleplay-ubuntu:jammy-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:jammy"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beagleplay-ubuntu:jammy-run-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:jammy-run",
+        "docker.io/balenalib/beagleplay-ubuntu:jammy-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:jammy"
+      ]
+    },
+    "beagleplay-ubuntu-focal-build": {
+      "context": "device-base/beagleplay/ubuntu/focal/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/beagleplay-ubuntu:focal-build-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:focal-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beagleplay-ubuntu:focal-build-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:focal-build"
+      ]
+    },
+    "beagleplay-ubuntu-focal-run": {
+      "context": "device-base/beagleplay/ubuntu/focal/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/beagleplay-ubuntu:focal-run-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:focal-run",
+        "docker.io/balenalib/beagleplay-ubuntu:focal-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:focal"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beagleplay-ubuntu:focal-run-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:focal-run",
+        "docker.io/balenalib/beagleplay-ubuntu:focal-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:focal"
+      ]
+    },
+    "beagleplay-ubuntu-xenial-build": {
+      "context": "device-base/beagleplay/ubuntu/xenial/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/beagleplay-ubuntu:xenial-build-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:xenial-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beagleplay-ubuntu:xenial-build-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:xenial-build"
+      ]
+    },
+    "beagleplay-ubuntu-xenial-run": {
+      "context": "device-base/beagleplay/ubuntu/xenial/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/beagleplay-ubuntu:xenial-run-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:xenial-run",
+        "docker.io/balenalib/beagleplay-ubuntu:xenial-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:xenial"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beagleplay-ubuntu:xenial-run-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:xenial-run",
+        "docker.io/balenalib/beagleplay-ubuntu:xenial-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:xenial"
+      ]
+    },
+    "beagleplay-ubuntu-bionic-build": {
+      "context": "device-base/beagleplay/ubuntu/bionic/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/beagleplay-ubuntu:bionic-build-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:bionic-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beagleplay-ubuntu:bionic-build-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:bionic-build"
+      ]
+    },
+    "beagleplay-ubuntu-bionic-run": {
+      "context": "device-base/beagleplay/ubuntu/bionic/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/beagleplay-ubuntu:bionic-run-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:bionic-run",
+        "docker.io/balenalib/beagleplay-ubuntu:bionic-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:bionic"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/beagleplay-ubuntu:bionic-run-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:bionic-run",
+        "docker.io/balenalib/beagleplay-ubuntu:bionic-20240927",
+        "docker.io/balenalib/beagleplay-ubuntu:bionic"
+      ]
+    }
+  }
+}
