@@ -338,6 +338,29 @@
 | beaglebone-pocket-ubuntu-python | [Docker Hub](https://hub.docker.com/r/balenalib/beaglebone-pocket-ubuntu-python), [GitHub](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/beaglebone-pocket) |
 | beaglebone-pocket-ubuntu-openjdk | [Docker Hub](https://hub.docker.com/r/balenalib/beaglebone-pocket-ubuntu-openjdk), [GitHub](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/beaglebone-pocket) |
 
+## BeaglePlay
+
+| Image | Links |
+|-----|-----|
+| beagleplay-alpine | [Docker Hub](https://hub.docker.com/r/balenalib/beagleplay-alpine), [GitHub](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/beagleplay) |
+| beagleplay-debian | [Docker Hub](https://hub.docker.com/r/balenalib/beagleplay-debian), [GitHub](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/beagleplay) |
+| beagleplay-fedora | [Docker Hub](https://hub.docker.com/r/balenalib/beagleplay-fedora), [GitHub](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/beagleplay) |
+| beagleplay-ubuntu | [Docker Hub](https://hub.docker.com/r/balenalib/beagleplay-ubuntu), [GitHub](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/beagleplay) |
+| beagleplay-alpine-golang | [Docker Hub](https://hub.docker.com/r/balenalib/beagleplay-alpine-golang), [GitHub](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/beagleplay) |
+| beagleplay-alpine-node | [Docker Hub](https://hub.docker.com/r/balenalib/beagleplay-alpine-node), [GitHub](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/beagleplay) |
+| beagleplay-alpine-python | [Docker Hub](https://hub.docker.com/r/balenalib/beagleplay-alpine-python), [GitHub](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/beagleplay) |
+| beagleplay-debian-golang | [Docker Hub](https://hub.docker.com/r/balenalib/beagleplay-debian-golang), [GitHub](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/beagleplay) |
+| beagleplay-debian-node | [Docker Hub](https://hub.docker.com/r/balenalib/beagleplay-debian-node), [GitHub](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/beagleplay) |
+| beagleplay-debian-openjdk | [Docker Hub](https://hub.docker.com/r/balenalib/beagleplay-debian-openjdk), [GitHub](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/beagleplay) |
+| beagleplay-debian-python | [Docker Hub](https://hub.docker.com/r/balenalib/beagleplay-debian-python), [GitHub](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/beagleplay) |
+| beagleplay-fedora-golang | [Docker Hub](https://hub.docker.com/r/balenalib/beagleplay-fedora-golang), [GitHub](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/beagleplay) |
+| beagleplay-fedora-node | [Docker Hub](https://hub.docker.com/r/balenalib/beagleplay-fedora-node), [GitHub](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/beagleplay) |
+| beagleplay-fedora-python | [Docker Hub](https://hub.docker.com/r/balenalib/beagleplay-fedora-python), [GitHub](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/beagleplay) |
+| beagleplay-ubuntu-golang | [Docker Hub](https://hub.docker.com/r/balenalib/beagleplay-ubuntu-golang), [GitHub](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/beagleplay) |
+| beagleplay-ubuntu-node | [Docker Hub](https://hub.docker.com/r/balenalib/beagleplay-ubuntu-node), [GitHub](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/beagleplay) |
+| beagleplay-ubuntu-python | [Docker Hub](https://hub.docker.com/r/balenalib/beagleplay-ubuntu-python), [GitHub](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/beagleplay) |
+| beagleplay-ubuntu-openjdk | [Docker Hub](https://hub.docker.com/r/balenalib/beagleplay-ubuntu-openjdk), [GitHub](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/beagleplay) |
+
 ## Blue Chip Technology DB1
 
 | Image | Links |
