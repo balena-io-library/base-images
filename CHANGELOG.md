@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.10.15 - 2024-09-30
+
+* Update scripts/contracts digest to 1fb0b0c [Self-hosted Renovate Bot]
+
 ## 2.10.14 - 2024-09-27
 
 * CI: Update checkout settings [Pagan Gazzard]
