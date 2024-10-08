@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.10.19 - 2024-10-08
+
+* Update actions/upload-artifact action to v4.4.2 [Self-hosted Renovate Bot]
+
 ## 2.10.18 - 2024-10-07
 
 * Update actions/checkout digest to eef6144 [Self-hosted Renovate Bot]
