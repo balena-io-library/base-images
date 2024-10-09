@@ -1,4 +1,40 @@
 - commits:
+    - subject: Update scripts/contracts digest to 5ac053b
+      hash: 0056824eab7f8f0a74b9796440886a7610163bc9
+      body: |
+        Update scripts/contracts
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: "sw.os+hw.device-type: Update all Orin devices to r36.3 in
+                sources.list"
+              hash: f2b34b2d9c7c6a58b74984ca5c14217effe253d0
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+            - subject: "hw.device-type: Remove superfluous instructions for beagleplay"
+              hash: 3f400e0f27d792734a2db70cc53863ffeb87907c
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru
+          version: contracts-2.0.114
+          title: ""
+          date: 2024-10-09T13:56:48.392Z
+  version: 2.10.20
+  title: ""
+  date: 2024-10-09T15:10:00.930Z
+- commits:
     - subject: Update actions/upload-artifact action to v4.4.2
       hash: 8aed29883c5b2b8372e64235813a99cac3bcfe78
       body: |
