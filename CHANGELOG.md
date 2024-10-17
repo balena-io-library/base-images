@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.10.24 - 2024-10-17
+
+
+<details>
+<summary> Update scripts/contracts digest to 88fb8ad [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.116 - 2024-10-17
+> 
+> * Add alpine 3.20 [Otavio Jacobi]
+> 
+
+</details>
+
 ## 2.10.23 - 2024-10-17
 
 
