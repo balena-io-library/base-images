@@ -14,6 +14,8 @@
         "bluechiptechnology-db1-alpine-3-18-run",
         "bluechiptechnology-db1-alpine-3-19-build",
         "bluechiptechnology-db1-alpine-3-19-run",
+        "bluechiptechnology-db1-alpine-3-20-build",
+        "bluechiptechnology-db1-alpine-3-20-run",
         "bluechiptechnology-db1-alpine-3-13-build",
         "bluechiptechnology-db1-alpine-3-13-run",
         "bluechiptechnology-db1-alpine-3-12-build",
@@ -180,19 +182,11 @@
       "platform": "linux/arm64",
       "tags": [
         "docker.io/balenalib/bluechiptechnology-db1-alpine:3.19-build-20241017",
-        "docker.io/balenalib/bluechiptechnology-db1-alpine:3.19-build",
-        "docker.io/balenalib/bluechiptechnology-db1-alpine:latest-build-20241017",
-        "docker.io/balenalib/bluechiptechnology-db1-alpine:latest-build",
-        "docker.io/balenalib/bluechiptechnology-db1-alpine:build-20241017",
-        "docker.io/balenalib/bluechiptechnology-db1-alpine:build"
+        "docker.io/balenalib/bluechiptechnology-db1-alpine:3.19-build"
       ],
       "cache_from": [
         "docker.io/balenalib/bluechiptechnology-db1-alpine:3.19-build-20241017",
-        "docker.io/balenalib/bluechiptechnology-db1-alpine:3.19-build",
-        "docker.io/balenalib/bluechiptechnology-db1-alpine:latest-build-20241017",
-        "docker.io/balenalib/bluechiptechnology-db1-alpine:latest-build",
-        "docker.io/balenalib/bluechiptechnology-db1-alpine:build-20241017",
-        "docker.io/balenalib/bluechiptechnology-db1-alpine:build"
+        "docker.io/balenalib/bluechiptechnology-db1-alpine:3.19-build"
       ]
     },
     "bluechiptechnology-db1-alpine-3-19-run": {
@@ -203,7 +197,45 @@
         "docker.io/balenalib/bluechiptechnology-db1-alpine:3.19-run-20241017",
         "docker.io/balenalib/bluechiptechnology-db1-alpine:3.19-run",
         "docker.io/balenalib/bluechiptechnology-db1-alpine:3.19-20241017",
-        "docker.io/balenalib/bluechiptechnology-db1-alpine:3.19",
+        "docker.io/balenalib/bluechiptechnology-db1-alpine:3.19"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-db1-alpine:3.19-run-20241017",
+        "docker.io/balenalib/bluechiptechnology-db1-alpine:3.19-run",
+        "docker.io/balenalib/bluechiptechnology-db1-alpine:3.19-20241017",
+        "docker.io/balenalib/bluechiptechnology-db1-alpine:3.19"
+      ]
+    },
+    "bluechiptechnology-db1-alpine-3-20-build": {
+      "context": "device-base/bluechiptechnology-db1/alpine/3.20/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-db1-alpine:3.20-build-20241017",
+        "docker.io/balenalib/bluechiptechnology-db1-alpine:3.20-build",
+        "docker.io/balenalib/bluechiptechnology-db1-alpine:latest-build-20241017",
+        "docker.io/balenalib/bluechiptechnology-db1-alpine:latest-build",
+        "docker.io/balenalib/bluechiptechnology-db1-alpine:build-20241017",
+        "docker.io/balenalib/bluechiptechnology-db1-alpine:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bluechiptechnology-db1-alpine:3.20-build-20241017",
+        "docker.io/balenalib/bluechiptechnology-db1-alpine:3.20-build",
+        "docker.io/balenalib/bluechiptechnology-db1-alpine:latest-build-20241017",
+        "docker.io/balenalib/bluechiptechnology-db1-alpine:latest-build",
+        "docker.io/balenalib/bluechiptechnology-db1-alpine:build-20241017",
+        "docker.io/balenalib/bluechiptechnology-db1-alpine:build"
+      ]
+    },
+    "bluechiptechnology-db1-alpine-3-20-run": {
+      "context": "device-base/bluechiptechnology-db1/alpine/3.20/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/bluechiptechnology-db1-alpine:3.20-run-20241017",
+        "docker.io/balenalib/bluechiptechnology-db1-alpine:3.20-run",
+        "docker.io/balenalib/bluechiptechnology-db1-alpine:3.20-20241017",
+        "docker.io/balenalib/bluechiptechnology-db1-alpine:3.20",
         "docker.io/balenalib/bluechiptechnology-db1-alpine:latest-run-20241017",
         "docker.io/balenalib/bluechiptechnology-db1-alpine:latest-run",
         "docker.io/balenalib/bluechiptechnology-db1-alpine:latest-20241017",
@@ -213,10 +245,10 @@
         "docker.io/balenalib/bluechiptechnology-db1-alpine:20241017"
       ],
       "cache_from": [
-        "docker.io/balenalib/bluechiptechnology-db1-alpine:3.19-run-20241017",
-        "docker.io/balenalib/bluechiptechnology-db1-alpine:3.19-run",
-        "docker.io/balenalib/bluechiptechnology-db1-alpine:3.19-20241017",
-        "docker.io/balenalib/bluechiptechnology-db1-alpine:3.19",
+        "docker.io/balenalib/bluechiptechnology-db1-alpine:3.20-run-20241017",
+        "docker.io/balenalib/bluechiptechnology-db1-alpine:3.20-run",
+        "docker.io/balenalib/bluechiptechnology-db1-alpine:3.20-20241017",
+        "docker.io/balenalib/bluechiptechnology-db1-alpine:3.20",
         "docker.io/balenalib/bluechiptechnology-db1-alpine:latest-run-20241017",
         "docker.io/balenalib/bluechiptechnology-db1-alpine:latest-run",
         "docker.io/balenalib/bluechiptechnology-db1-alpine:latest-20241017",

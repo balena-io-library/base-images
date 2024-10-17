@@ -14,6 +14,8 @@
         "imx7-var-som-alpine-3-18-run",
         "imx7-var-som-alpine-3-19-build",
         "imx7-var-som-alpine-3-19-run",
+        "imx7-var-som-alpine-3-20-build",
+        "imx7-var-som-alpine-3-20-run",
         "imx7-var-som-alpine-3-13-build",
         "imx7-var-som-alpine-3-13-run",
         "imx7-var-som-alpine-3-12-build",
@@ -180,19 +182,11 @@
       "platform": "linux/arm/v7",
       "tags": [
         "docker.io/balenalib/imx7-var-som-alpine:3.19-build-20241017",
-        "docker.io/balenalib/imx7-var-som-alpine:3.19-build",
-        "docker.io/balenalib/imx7-var-som-alpine:latest-build-20241017",
-        "docker.io/balenalib/imx7-var-som-alpine:latest-build",
-        "docker.io/balenalib/imx7-var-som-alpine:build-20241017",
-        "docker.io/balenalib/imx7-var-som-alpine:build"
+        "docker.io/balenalib/imx7-var-som-alpine:3.19-build"
       ],
       "cache_from": [
         "docker.io/balenalib/imx7-var-som-alpine:3.19-build-20241017",
-        "docker.io/balenalib/imx7-var-som-alpine:3.19-build",
-        "docker.io/balenalib/imx7-var-som-alpine:latest-build-20241017",
-        "docker.io/balenalib/imx7-var-som-alpine:latest-build",
-        "docker.io/balenalib/imx7-var-som-alpine:build-20241017",
-        "docker.io/balenalib/imx7-var-som-alpine:build"
+        "docker.io/balenalib/imx7-var-som-alpine:3.19-build"
       ]
     },
     "imx7-var-som-alpine-3-19-run": {
@@ -203,7 +197,45 @@
         "docker.io/balenalib/imx7-var-som-alpine:3.19-run-20241017",
         "docker.io/balenalib/imx7-var-som-alpine:3.19-run",
         "docker.io/balenalib/imx7-var-som-alpine:3.19-20241017",
-        "docker.io/balenalib/imx7-var-som-alpine:3.19",
+        "docker.io/balenalib/imx7-var-som-alpine:3.19"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/imx7-var-som-alpine:3.19-run-20241017",
+        "docker.io/balenalib/imx7-var-som-alpine:3.19-run",
+        "docker.io/balenalib/imx7-var-som-alpine:3.19-20241017",
+        "docker.io/balenalib/imx7-var-som-alpine:3.19"
+      ]
+    },
+    "imx7-var-som-alpine-3-20-build": {
+      "context": "device-base/imx7-var-som/alpine/3.20/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/imx7-var-som-alpine:3.20-build-20241017",
+        "docker.io/balenalib/imx7-var-som-alpine:3.20-build",
+        "docker.io/balenalib/imx7-var-som-alpine:latest-build-20241017",
+        "docker.io/balenalib/imx7-var-som-alpine:latest-build",
+        "docker.io/balenalib/imx7-var-som-alpine:build-20241017",
+        "docker.io/balenalib/imx7-var-som-alpine:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/imx7-var-som-alpine:3.20-build-20241017",
+        "docker.io/balenalib/imx7-var-som-alpine:3.20-build",
+        "docker.io/balenalib/imx7-var-som-alpine:latest-build-20241017",
+        "docker.io/balenalib/imx7-var-som-alpine:latest-build",
+        "docker.io/balenalib/imx7-var-som-alpine:build-20241017",
+        "docker.io/balenalib/imx7-var-som-alpine:build"
+      ]
+    },
+    "imx7-var-som-alpine-3-20-run": {
+      "context": "device-base/imx7-var-som/alpine/3.20/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/imx7-var-som-alpine:3.20-run-20241017",
+        "docker.io/balenalib/imx7-var-som-alpine:3.20-run",
+        "docker.io/balenalib/imx7-var-som-alpine:3.20-20241017",
+        "docker.io/balenalib/imx7-var-som-alpine:3.20",
         "docker.io/balenalib/imx7-var-som-alpine:latest-run-20241017",
         "docker.io/balenalib/imx7-var-som-alpine:latest-run",
         "docker.io/balenalib/imx7-var-som-alpine:latest-20241017",
@@ -213,10 +245,10 @@
         "docker.io/balenalib/imx7-var-som-alpine:20241017"
       ],
       "cache_from": [
-        "docker.io/balenalib/imx7-var-som-alpine:3.19-run-20241017",
-        "docker.io/balenalib/imx7-var-som-alpine:3.19-run",
-        "docker.io/balenalib/imx7-var-som-alpine:3.19-20241017",
-        "docker.io/balenalib/imx7-var-som-alpine:3.19",
+        "docker.io/balenalib/imx7-var-som-alpine:3.20-run-20241017",
+        "docker.io/balenalib/imx7-var-som-alpine:3.20-run",
+        "docker.io/balenalib/imx7-var-som-alpine:3.20-20241017",
+        "docker.io/balenalib/imx7-var-som-alpine:3.20",
         "docker.io/balenalib/imx7-var-som-alpine:latest-run-20241017",
         "docker.io/balenalib/imx7-var-som-alpine:latest-run",
         "docker.io/balenalib/imx7-var-som-alpine:latest-20241017",

@@ -14,6 +14,8 @@
         "intel-nuc-alpine-3-18-run",
         "intel-nuc-alpine-3-19-build",
         "intel-nuc-alpine-3-19-run",
+        "intel-nuc-alpine-3-20-build",
+        "intel-nuc-alpine-3-20-run",
         "intel-nuc-alpine-3-13-build",
         "intel-nuc-alpine-3-13-run",
         "intel-nuc-alpine-3-12-build",
@@ -180,19 +182,11 @@
       "platform": "linux/amd64",
       "tags": [
         "docker.io/balenalib/intel-nuc-alpine:3.19-build-20241017",
-        "docker.io/balenalib/intel-nuc-alpine:3.19-build",
-        "docker.io/balenalib/intel-nuc-alpine:latest-build-20241017",
-        "docker.io/balenalib/intel-nuc-alpine:latest-build",
-        "docker.io/balenalib/intel-nuc-alpine:build-20241017",
-        "docker.io/balenalib/intel-nuc-alpine:build"
+        "docker.io/balenalib/intel-nuc-alpine:3.19-build"
       ],
       "cache_from": [
         "docker.io/balenalib/intel-nuc-alpine:3.19-build-20241017",
-        "docker.io/balenalib/intel-nuc-alpine:3.19-build",
-        "docker.io/balenalib/intel-nuc-alpine:latest-build-20241017",
-        "docker.io/balenalib/intel-nuc-alpine:latest-build",
-        "docker.io/balenalib/intel-nuc-alpine:build-20241017",
-        "docker.io/balenalib/intel-nuc-alpine:build"
+        "docker.io/balenalib/intel-nuc-alpine:3.19-build"
       ]
     },
     "intel-nuc-alpine-3-19-run": {
@@ -203,7 +197,45 @@
         "docker.io/balenalib/intel-nuc-alpine:3.19-run-20241017",
         "docker.io/balenalib/intel-nuc-alpine:3.19-run",
         "docker.io/balenalib/intel-nuc-alpine:3.19-20241017",
-        "docker.io/balenalib/intel-nuc-alpine:3.19",
+        "docker.io/balenalib/intel-nuc-alpine:3.19"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/intel-nuc-alpine:3.19-run-20241017",
+        "docker.io/balenalib/intel-nuc-alpine:3.19-run",
+        "docker.io/balenalib/intel-nuc-alpine:3.19-20241017",
+        "docker.io/balenalib/intel-nuc-alpine:3.19"
+      ]
+    },
+    "intel-nuc-alpine-3-20-build": {
+      "context": "device-base/intel-nuc/alpine/3.20/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/intel-nuc-alpine:3.20-build-20241017",
+        "docker.io/balenalib/intel-nuc-alpine:3.20-build",
+        "docker.io/balenalib/intel-nuc-alpine:latest-build-20241017",
+        "docker.io/balenalib/intel-nuc-alpine:latest-build",
+        "docker.io/balenalib/intel-nuc-alpine:build-20241017",
+        "docker.io/balenalib/intel-nuc-alpine:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/intel-nuc-alpine:3.20-build-20241017",
+        "docker.io/balenalib/intel-nuc-alpine:3.20-build",
+        "docker.io/balenalib/intel-nuc-alpine:latest-build-20241017",
+        "docker.io/balenalib/intel-nuc-alpine:latest-build",
+        "docker.io/balenalib/intel-nuc-alpine:build-20241017",
+        "docker.io/balenalib/intel-nuc-alpine:build"
+      ]
+    },
+    "intel-nuc-alpine-3-20-run": {
+      "context": "device-base/intel-nuc/alpine/3.20/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/intel-nuc-alpine:3.20-run-20241017",
+        "docker.io/balenalib/intel-nuc-alpine:3.20-run",
+        "docker.io/balenalib/intel-nuc-alpine:3.20-20241017",
+        "docker.io/balenalib/intel-nuc-alpine:3.20",
         "docker.io/balenalib/intel-nuc-alpine:latest-run-20241017",
         "docker.io/balenalib/intel-nuc-alpine:latest-run",
         "docker.io/balenalib/intel-nuc-alpine:latest-20241017",
@@ -213,10 +245,10 @@
         "docker.io/balenalib/intel-nuc-alpine:20241017"
       ],
       "cache_from": [
-        "docker.io/balenalib/intel-nuc-alpine:3.19-run-20241017",
-        "docker.io/balenalib/intel-nuc-alpine:3.19-run",
-        "docker.io/balenalib/intel-nuc-alpine:3.19-20241017",
-        "docker.io/balenalib/intel-nuc-alpine:3.19",
+        "docker.io/balenalib/intel-nuc-alpine:3.20-run-20241017",
+        "docker.io/balenalib/intel-nuc-alpine:3.20-run",
+        "docker.io/balenalib/intel-nuc-alpine:3.20-20241017",
+        "docker.io/balenalib/intel-nuc-alpine:3.20",
         "docker.io/balenalib/intel-nuc-alpine:latest-run-20241017",
         "docker.io/balenalib/intel-nuc-alpine:latest-run",
         "docker.io/balenalib/intel-nuc-alpine:latest-20241017",

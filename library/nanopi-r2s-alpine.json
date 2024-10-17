@@ -14,6 +14,8 @@
         "nanopi-r2s-alpine-3-18-run",
         "nanopi-r2s-alpine-3-19-build",
         "nanopi-r2s-alpine-3-19-run",
+        "nanopi-r2s-alpine-3-20-build",
+        "nanopi-r2s-alpine-3-20-run",
         "nanopi-r2s-alpine-3-13-build",
         "nanopi-r2s-alpine-3-13-run",
         "nanopi-r2s-alpine-3-12-build",
@@ -180,19 +182,11 @@
       "platform": "linux/arm64",
       "tags": [
         "docker.io/balenalib/nanopi-r2s-alpine:3.19-build-20241017",
-        "docker.io/balenalib/nanopi-r2s-alpine:3.19-build",
-        "docker.io/balenalib/nanopi-r2s-alpine:latest-build-20241017",
-        "docker.io/balenalib/nanopi-r2s-alpine:latest-build",
-        "docker.io/balenalib/nanopi-r2s-alpine:build-20241017",
-        "docker.io/balenalib/nanopi-r2s-alpine:build"
+        "docker.io/balenalib/nanopi-r2s-alpine:3.19-build"
       ],
       "cache_from": [
         "docker.io/balenalib/nanopi-r2s-alpine:3.19-build-20241017",
-        "docker.io/balenalib/nanopi-r2s-alpine:3.19-build",
-        "docker.io/balenalib/nanopi-r2s-alpine:latest-build-20241017",
-        "docker.io/balenalib/nanopi-r2s-alpine:latest-build",
-        "docker.io/balenalib/nanopi-r2s-alpine:build-20241017",
-        "docker.io/balenalib/nanopi-r2s-alpine:build"
+        "docker.io/balenalib/nanopi-r2s-alpine:3.19-build"
       ]
     },
     "nanopi-r2s-alpine-3-19-run": {
@@ -203,7 +197,45 @@
         "docker.io/balenalib/nanopi-r2s-alpine:3.19-run-20241017",
         "docker.io/balenalib/nanopi-r2s-alpine:3.19-run",
         "docker.io/balenalib/nanopi-r2s-alpine:3.19-20241017",
-        "docker.io/balenalib/nanopi-r2s-alpine:3.19",
+        "docker.io/balenalib/nanopi-r2s-alpine:3.19"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopi-r2s-alpine:3.19-run-20241017",
+        "docker.io/balenalib/nanopi-r2s-alpine:3.19-run",
+        "docker.io/balenalib/nanopi-r2s-alpine:3.19-20241017",
+        "docker.io/balenalib/nanopi-r2s-alpine:3.19"
+      ]
+    },
+    "nanopi-r2s-alpine-3-20-build": {
+      "context": "device-base/nanopi-r2s/alpine/3.20/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopi-r2s-alpine:3.20-build-20241017",
+        "docker.io/balenalib/nanopi-r2s-alpine:3.20-build",
+        "docker.io/balenalib/nanopi-r2s-alpine:latest-build-20241017",
+        "docker.io/balenalib/nanopi-r2s-alpine:latest-build",
+        "docker.io/balenalib/nanopi-r2s-alpine:build-20241017",
+        "docker.io/balenalib/nanopi-r2s-alpine:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopi-r2s-alpine:3.20-build-20241017",
+        "docker.io/balenalib/nanopi-r2s-alpine:3.20-build",
+        "docker.io/balenalib/nanopi-r2s-alpine:latest-build-20241017",
+        "docker.io/balenalib/nanopi-r2s-alpine:latest-build",
+        "docker.io/balenalib/nanopi-r2s-alpine:build-20241017",
+        "docker.io/balenalib/nanopi-r2s-alpine:build"
+      ]
+    },
+    "nanopi-r2s-alpine-3-20-run": {
+      "context": "device-base/nanopi-r2s/alpine/3.20/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopi-r2s-alpine:3.20-run-20241017",
+        "docker.io/balenalib/nanopi-r2s-alpine:3.20-run",
+        "docker.io/balenalib/nanopi-r2s-alpine:3.20-20241017",
+        "docker.io/balenalib/nanopi-r2s-alpine:3.20",
         "docker.io/balenalib/nanopi-r2s-alpine:latest-run-20241017",
         "docker.io/balenalib/nanopi-r2s-alpine:latest-run",
         "docker.io/balenalib/nanopi-r2s-alpine:latest-20241017",
@@ -213,10 +245,10 @@
         "docker.io/balenalib/nanopi-r2s-alpine:20241017"
       ],
       "cache_from": [
-        "docker.io/balenalib/nanopi-r2s-alpine:3.19-run-20241017",
-        "docker.io/balenalib/nanopi-r2s-alpine:3.19-run",
-        "docker.io/balenalib/nanopi-r2s-alpine:3.19-20241017",
-        "docker.io/balenalib/nanopi-r2s-alpine:3.19",
+        "docker.io/balenalib/nanopi-r2s-alpine:3.20-run-20241017",
+        "docker.io/balenalib/nanopi-r2s-alpine:3.20-run",
+        "docker.io/balenalib/nanopi-r2s-alpine:3.20-20241017",
+        "docker.io/balenalib/nanopi-r2s-alpine:3.20",
         "docker.io/balenalib/nanopi-r2s-alpine:latest-run-20241017",
         "docker.io/balenalib/nanopi-r2s-alpine:latest-run",
         "docker.io/balenalib/nanopi-r2s-alpine:latest-20241017",

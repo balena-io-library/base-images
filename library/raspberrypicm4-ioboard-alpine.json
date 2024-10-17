@@ -14,6 +14,8 @@
         "raspberrypicm4-ioboard-alpine-3-18-run",
         "raspberrypicm4-ioboard-alpine-3-19-build",
         "raspberrypicm4-ioboard-alpine-3-19-run",
+        "raspberrypicm4-ioboard-alpine-3-20-build",
+        "raspberrypicm4-ioboard-alpine-3-20-run",
         "raspberrypicm4-ioboard-alpine-3-13-build",
         "raspberrypicm4-ioboard-alpine-3-13-run",
         "raspberrypicm4-ioboard-alpine-3-12-build",
@@ -180,19 +182,11 @@
       "platform": "linux/arm64",
       "tags": [
         "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.19-build-20241017",
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.19-build",
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:latest-build-20241017",
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:latest-build",
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:build-20241017",
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:build"
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.19-build"
       ],
       "cache_from": [
         "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.19-build-20241017",
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.19-build",
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:latest-build-20241017",
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:latest-build",
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:build-20241017",
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:build"
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.19-build"
       ]
     },
     "raspberrypicm4-ioboard-alpine-3-19-run": {
@@ -203,7 +197,45 @@
         "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.19-run-20241017",
         "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.19-run",
         "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.19-20241017",
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.19",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.19"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.19-run-20241017",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.19-run",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.19-20241017",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.19"
+      ]
+    },
+    "raspberrypicm4-ioboard-alpine-3-20-build": {
+      "context": "device-base/raspberrypicm4-ioboard/alpine/3.20/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.20-build-20241017",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.20-build",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:latest-build-20241017",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:latest-build",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:build-20241017",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.20-build-20241017",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.20-build",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:latest-build-20241017",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:latest-build",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:build-20241017",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:build"
+      ]
+    },
+    "raspberrypicm4-ioboard-alpine-3-20-run": {
+      "context": "device-base/raspberrypicm4-ioboard/alpine/3.20/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.20-run-20241017",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.20-run",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.20-20241017",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.20",
         "docker.io/balenalib/raspberrypicm4-ioboard-alpine:latest-run-20241017",
         "docker.io/balenalib/raspberrypicm4-ioboard-alpine:latest-run",
         "docker.io/balenalib/raspberrypicm4-ioboard-alpine:latest-20241017",
@@ -213,10 +245,10 @@
         "docker.io/balenalib/raspberrypicm4-ioboard-alpine:20241017"
       ],
       "cache_from": [
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.19-run-20241017",
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.19-run",
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.19-20241017",
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.19",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.20-run-20241017",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.20-run",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.20-20241017",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.20",
         "docker.io/balenalib/raspberrypicm4-ioboard-alpine:latest-run-20241017",
         "docker.io/balenalib/raspberrypicm4-ioboard-alpine:latest-run",
         "docker.io/balenalib/raspberrypicm4-ioboard-alpine:latest-20241017",

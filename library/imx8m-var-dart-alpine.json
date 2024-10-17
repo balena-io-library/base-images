@@ -14,6 +14,8 @@
         "imx8m-var-dart-alpine-3-18-run",
         "imx8m-var-dart-alpine-3-19-build",
         "imx8m-var-dart-alpine-3-19-run",
+        "imx8m-var-dart-alpine-3-20-build",
+        "imx8m-var-dart-alpine-3-20-run",
         "imx8m-var-dart-alpine-3-13-build",
         "imx8m-var-dart-alpine-3-13-run",
         "imx8m-var-dart-alpine-3-12-build",
@@ -180,19 +182,11 @@
       "platform": "linux/arm64",
       "tags": [
         "docker.io/balenalib/imx8m-var-dart-alpine:3.19-build-20241017",
-        "docker.io/balenalib/imx8m-var-dart-alpine:3.19-build",
-        "docker.io/balenalib/imx8m-var-dart-alpine:latest-build-20241017",
-        "docker.io/balenalib/imx8m-var-dart-alpine:latest-build",
-        "docker.io/balenalib/imx8m-var-dart-alpine:build-20241017",
-        "docker.io/balenalib/imx8m-var-dart-alpine:build"
+        "docker.io/balenalib/imx8m-var-dart-alpine:3.19-build"
       ],
       "cache_from": [
         "docker.io/balenalib/imx8m-var-dart-alpine:3.19-build-20241017",
-        "docker.io/balenalib/imx8m-var-dart-alpine:3.19-build",
-        "docker.io/balenalib/imx8m-var-dart-alpine:latest-build-20241017",
-        "docker.io/balenalib/imx8m-var-dart-alpine:latest-build",
-        "docker.io/balenalib/imx8m-var-dart-alpine:build-20241017",
-        "docker.io/balenalib/imx8m-var-dart-alpine:build"
+        "docker.io/balenalib/imx8m-var-dart-alpine:3.19-build"
       ]
     },
     "imx8m-var-dart-alpine-3-19-run": {
@@ -203,7 +197,45 @@
         "docker.io/balenalib/imx8m-var-dart-alpine:3.19-run-20241017",
         "docker.io/balenalib/imx8m-var-dart-alpine:3.19-run",
         "docker.io/balenalib/imx8m-var-dart-alpine:3.19-20241017",
-        "docker.io/balenalib/imx8m-var-dart-alpine:3.19",
+        "docker.io/balenalib/imx8m-var-dart-alpine:3.19"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/imx8m-var-dart-alpine:3.19-run-20241017",
+        "docker.io/balenalib/imx8m-var-dart-alpine:3.19-run",
+        "docker.io/balenalib/imx8m-var-dart-alpine:3.19-20241017",
+        "docker.io/balenalib/imx8m-var-dart-alpine:3.19"
+      ]
+    },
+    "imx8m-var-dart-alpine-3-20-build": {
+      "context": "device-base/imx8m-var-dart/alpine/3.20/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/imx8m-var-dart-alpine:3.20-build-20241017",
+        "docker.io/balenalib/imx8m-var-dart-alpine:3.20-build",
+        "docker.io/balenalib/imx8m-var-dart-alpine:latest-build-20241017",
+        "docker.io/balenalib/imx8m-var-dart-alpine:latest-build",
+        "docker.io/balenalib/imx8m-var-dart-alpine:build-20241017",
+        "docker.io/balenalib/imx8m-var-dart-alpine:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/imx8m-var-dart-alpine:3.20-build-20241017",
+        "docker.io/balenalib/imx8m-var-dart-alpine:3.20-build",
+        "docker.io/balenalib/imx8m-var-dart-alpine:latest-build-20241017",
+        "docker.io/balenalib/imx8m-var-dart-alpine:latest-build",
+        "docker.io/balenalib/imx8m-var-dart-alpine:build-20241017",
+        "docker.io/balenalib/imx8m-var-dart-alpine:build"
+      ]
+    },
+    "imx8m-var-dart-alpine-3-20-run": {
+      "context": "device-base/imx8m-var-dart/alpine/3.20/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/imx8m-var-dart-alpine:3.20-run-20241017",
+        "docker.io/balenalib/imx8m-var-dart-alpine:3.20-run",
+        "docker.io/balenalib/imx8m-var-dart-alpine:3.20-20241017",
+        "docker.io/balenalib/imx8m-var-dart-alpine:3.20",
         "docker.io/balenalib/imx8m-var-dart-alpine:latest-run-20241017",
         "docker.io/balenalib/imx8m-var-dart-alpine:latest-run",
         "docker.io/balenalib/imx8m-var-dart-alpine:latest-20241017",
@@ -213,10 +245,10 @@
         "docker.io/balenalib/imx8m-var-dart-alpine:20241017"
       ],
       "cache_from": [
-        "docker.io/balenalib/imx8m-var-dart-alpine:3.19-run-20241017",
-        "docker.io/balenalib/imx8m-var-dart-alpine:3.19-run",
-        "docker.io/balenalib/imx8m-var-dart-alpine:3.19-20241017",
-        "docker.io/balenalib/imx8m-var-dart-alpine:3.19",
+        "docker.io/balenalib/imx8m-var-dart-alpine:3.20-run-20241017",
+        "docker.io/balenalib/imx8m-var-dart-alpine:3.20-run",
+        "docker.io/balenalib/imx8m-var-dart-alpine:3.20-20241017",
+        "docker.io/balenalib/imx8m-var-dart-alpine:3.20",
         "docker.io/balenalib/imx8m-var-dart-alpine:latest-run-20241017",
         "docker.io/balenalib/imx8m-var-dart-alpine:latest-run",
         "docker.io/balenalib/imx8m-var-dart-alpine:latest-20241017",

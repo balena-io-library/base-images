@@ -14,6 +14,8 @@
         "i386-alpine-3-18-run",
         "i386-alpine-3-19-build",
         "i386-alpine-3-19-run",
+        "i386-alpine-3-20-build",
+        "i386-alpine-3-20-run",
         "i386-alpine-3-13-build",
         "i386-alpine-3-13-run",
         "i386-alpine-3-12-build",
@@ -180,19 +182,11 @@
       "platform": "linux/386",
       "tags": [
         "docker.io/balenalib/i386-alpine:3.19-build-20241017",
-        "docker.io/balenalib/i386-alpine:3.19-build",
-        "docker.io/balenalib/i386-alpine:latest-build-20241017",
-        "docker.io/balenalib/i386-alpine:latest-build",
-        "docker.io/balenalib/i386-alpine:build-20241017",
-        "docker.io/balenalib/i386-alpine:build"
+        "docker.io/balenalib/i386-alpine:3.19-build"
       ],
       "cache_from": [
         "docker.io/balenalib/i386-alpine:3.19-build-20241017",
-        "docker.io/balenalib/i386-alpine:3.19-build",
-        "docker.io/balenalib/i386-alpine:latest-build-20241017",
-        "docker.io/balenalib/i386-alpine:latest-build",
-        "docker.io/balenalib/i386-alpine:build-20241017",
-        "docker.io/balenalib/i386-alpine:build"
+        "docker.io/balenalib/i386-alpine:3.19-build"
       ]
     },
     "i386-alpine-3-19-run": {
@@ -203,7 +197,45 @@
         "docker.io/balenalib/i386-alpine:3.19-run-20241017",
         "docker.io/balenalib/i386-alpine:3.19-run",
         "docker.io/balenalib/i386-alpine:3.19-20241017",
-        "docker.io/balenalib/i386-alpine:3.19",
+        "docker.io/balenalib/i386-alpine:3.19"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/i386-alpine:3.19-run-20241017",
+        "docker.io/balenalib/i386-alpine:3.19-run",
+        "docker.io/balenalib/i386-alpine:3.19-20241017",
+        "docker.io/balenalib/i386-alpine:3.19"
+      ]
+    },
+    "i386-alpine-3-20-build": {
+      "context": "i386/alpine/3.20/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/i386-alpine:3.20-build-20241017",
+        "docker.io/balenalib/i386-alpine:3.20-build",
+        "docker.io/balenalib/i386-alpine:latest-build-20241017",
+        "docker.io/balenalib/i386-alpine:latest-build",
+        "docker.io/balenalib/i386-alpine:build-20241017",
+        "docker.io/balenalib/i386-alpine:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/i386-alpine:3.20-build-20241017",
+        "docker.io/balenalib/i386-alpine:3.20-build",
+        "docker.io/balenalib/i386-alpine:latest-build-20241017",
+        "docker.io/balenalib/i386-alpine:latest-build",
+        "docker.io/balenalib/i386-alpine:build-20241017",
+        "docker.io/balenalib/i386-alpine:build"
+      ]
+    },
+    "i386-alpine-3-20-run": {
+      "context": "i386/alpine/3.20/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/i386-alpine:3.20-run-20241017",
+        "docker.io/balenalib/i386-alpine:3.20-run",
+        "docker.io/balenalib/i386-alpine:3.20-20241017",
+        "docker.io/balenalib/i386-alpine:3.20",
         "docker.io/balenalib/i386-alpine:latest-run-20241017",
         "docker.io/balenalib/i386-alpine:latest-run",
         "docker.io/balenalib/i386-alpine:latest-20241017",
@@ -213,10 +245,10 @@
         "docker.io/balenalib/i386-alpine:20241017"
       ],
       "cache_from": [
-        "docker.io/balenalib/i386-alpine:3.19-run-20241017",
-        "docker.io/balenalib/i386-alpine:3.19-run",
-        "docker.io/balenalib/i386-alpine:3.19-20241017",
-        "docker.io/balenalib/i386-alpine:3.19",
+        "docker.io/balenalib/i386-alpine:3.20-run-20241017",
+        "docker.io/balenalib/i386-alpine:3.20-run",
+        "docker.io/balenalib/i386-alpine:3.20-20241017",
+        "docker.io/balenalib/i386-alpine:3.20",
         "docker.io/balenalib/i386-alpine:latest-run-20241017",
         "docker.io/balenalib/i386-alpine:latest-run",
         "docker.io/balenalib/i386-alpine:latest-20241017",
