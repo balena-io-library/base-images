@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.10.29 - 2024-10-28
+
+* Lock file maintenance [Self-hosted Renovate Bot]
+
 ## 2.10.28 - 2024-10-24
 
 * Update dependency balena-sdk to v20 [Self-hosted Renovate Bot]
