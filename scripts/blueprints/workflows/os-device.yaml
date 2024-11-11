@@ -95,6 +95,8 @@ output:
               registry: docker.io
               username: ${{ secrets.BALENAIMAGES_USER }}
               password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          - name: Set the DATESTAMP variable
+            run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
           # https://github.com/docker/bake-action
           - name: Docker bake
             continue-on-error: false
