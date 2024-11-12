@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.11.0 - 2024-11-12
+
+* Generate datestamps during docker bake and not on merge [Kyle Harding]
+
 ## 2.10.32 - 2024-11-12
 
 * Update Node.js to v22 [Self-hosted Renovate Bot]

@@ -1,4 +1,20 @@
 - commits:
+    - subject: Generate datestamps during docker bake and not on merge
+      hash: ac6b1bd0b4684c02066f8511ae3037abc15c599f
+      body: |
+        This more accurately represents when the image was published,
+        and not when the bake files were last updated.
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Kyle Harding <kyle@balena.io>
+        signed-off-by: Kyle Harding <kyle@balena.io>
+      author: Kyle Harding
+      nested: []
+  version: 2.11.0
+  title: ""
+  date: 2024-11-12T15:40:01.519Z
+- commits:
     - subject: Update Node.js to v22
       hash: 99169cd9a905b8ea4ac4f12a97fe86c3da708e90
       body: |
