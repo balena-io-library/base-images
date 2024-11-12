@@ -19,15 +19,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/kontron-mx8mm-debian:buster-build-20241111",
+        "docker.io/balenalib/kontron-mx8mm-debian:buster-build-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm-debian:buster-build",
-        "docker.io/balenalib/kontron-mx8mm:buster-build-20241111",
+        "docker.io/balenalib/kontron-mx8mm:buster-build-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm:buster-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/kontron-mx8mm-debian:buster-build-20241111",
+        "docker.io/balenalib/kontron-mx8mm-debian:buster-build-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm-debian:buster-build",
-        "docker.io/balenalib/kontron-mx8mm:buster-build-20241111",
+        "docker.io/balenalib/kontron-mx8mm:buster-build-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm:buster-build"
       ]
     },
@@ -36,23 +36,23 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/kontron-mx8mm-debian:buster-run-20241111",
+        "docker.io/balenalib/kontron-mx8mm-debian:buster-run-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm-debian:buster-run",
-        "docker.io/balenalib/kontron-mx8mm-debian:buster-20241111",
+        "docker.io/balenalib/kontron-mx8mm-debian:buster-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm-debian:buster",
-        "docker.io/balenalib/kontron-mx8mm:buster-run-20241111",
+        "docker.io/balenalib/kontron-mx8mm:buster-run-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm:buster-run",
-        "docker.io/balenalib/kontron-mx8mm:buster-20241111",
+        "docker.io/balenalib/kontron-mx8mm:buster-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm:buster"
       ],
       "cache_from": [
-        "docker.io/balenalib/kontron-mx8mm-debian:buster-run-20241111",
+        "docker.io/balenalib/kontron-mx8mm-debian:buster-run-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm-debian:buster-run",
-        "docker.io/balenalib/kontron-mx8mm-debian:buster-20241111",
+        "docker.io/balenalib/kontron-mx8mm-debian:buster-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm-debian:buster",
-        "docker.io/balenalib/kontron-mx8mm:buster-run-20241111",
+        "docker.io/balenalib/kontron-mx8mm:buster-run-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm:buster-run",
-        "docker.io/balenalib/kontron-mx8mm:buster-20241111",
+        "docker.io/balenalib/kontron-mx8mm:buster-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm:buster"
       ]
     },
@@ -61,31 +61,31 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/kontron-mx8mm-debian:bullseye-build-20241111",
+        "docker.io/balenalib/kontron-mx8mm-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm-debian:bullseye-build",
-        "docker.io/balenalib/kontron-mx8mm-debian:latest-build-20241111",
+        "docker.io/balenalib/kontron-mx8mm-debian:latest-build-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm-debian:latest-build",
-        "docker.io/balenalib/kontron-mx8mm-debian:build-20241111",
+        "docker.io/balenalib/kontron-mx8mm-debian:build-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm-debian:build",
-        "docker.io/balenalib/kontron-mx8mm:bullseye-build-20241111",
+        "docker.io/balenalib/kontron-mx8mm:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm:bullseye-build",
-        "docker.io/balenalib/kontron-mx8mm:latest-build-20241111",
+        "docker.io/balenalib/kontron-mx8mm:latest-build-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm:latest-build",
-        "docker.io/balenalib/kontron-mx8mm:build-20241111",
+        "docker.io/balenalib/kontron-mx8mm:build-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/kontron-mx8mm-debian:bullseye-build-20241111",
+        "docker.io/balenalib/kontron-mx8mm-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm-debian:bullseye-build",
-        "docker.io/balenalib/kontron-mx8mm-debian:latest-build-20241111",
+        "docker.io/balenalib/kontron-mx8mm-debian:latest-build-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm-debian:latest-build",
-        "docker.io/balenalib/kontron-mx8mm-debian:build-20241111",
+        "docker.io/balenalib/kontron-mx8mm-debian:build-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm-debian:build",
-        "docker.io/balenalib/kontron-mx8mm:bullseye-build-20241111",
+        "docker.io/balenalib/kontron-mx8mm:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm:bullseye-build",
-        "docker.io/balenalib/kontron-mx8mm:latest-build-20241111",
+        "docker.io/balenalib/kontron-mx8mm:latest-build-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm:latest-build",
-        "docker.io/balenalib/kontron-mx8mm:build-20241111",
+        "docker.io/balenalib/kontron-mx8mm:build-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm:build"
       ]
     },
@@ -94,52 +94,52 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/kontron-mx8mm-debian:bullseye-run-20241111",
+        "docker.io/balenalib/kontron-mx8mm-debian:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm-debian:bullseye-run",
-        "docker.io/balenalib/kontron-mx8mm-debian:bullseye-20241111",
+        "docker.io/balenalib/kontron-mx8mm-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm-debian:bullseye",
-        "docker.io/balenalib/kontron-mx8mm-debian:latest-run-20241111",
+        "docker.io/balenalib/kontron-mx8mm-debian:latest-run-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm-debian:latest-run",
-        "docker.io/balenalib/kontron-mx8mm-debian:latest-20241111",
+        "docker.io/balenalib/kontron-mx8mm-debian:latest-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm-debian:latest",
-        "docker.io/balenalib/kontron-mx8mm-debian:run-20241111",
+        "docker.io/balenalib/kontron-mx8mm-debian:run-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm-debian:run",
-        "docker.io/balenalib/kontron-mx8mm-debian:20241111",
-        "docker.io/balenalib/kontron-mx8mm:bullseye-run-20241111",
+        "docker.io/balenalib/kontron-mx8mm-debian:${DATESTAMP}",
+        "docker.io/balenalib/kontron-mx8mm:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm:bullseye-run",
-        "docker.io/balenalib/kontron-mx8mm:bullseye-20241111",
+        "docker.io/balenalib/kontron-mx8mm:bullseye-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm:bullseye",
-        "docker.io/balenalib/kontron-mx8mm:latest-run-20241111",
+        "docker.io/balenalib/kontron-mx8mm:latest-run-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm:latest-run",
-        "docker.io/balenalib/kontron-mx8mm:latest-20241111",
+        "docker.io/balenalib/kontron-mx8mm:latest-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm:latest",
-        "docker.io/balenalib/kontron-mx8mm:run-20241111",
+        "docker.io/balenalib/kontron-mx8mm:run-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm:run",
-        "docker.io/balenalib/kontron-mx8mm:20241111"
+        "docker.io/balenalib/kontron-mx8mm:${DATESTAMP}"
       ],
       "cache_from": [
-        "docker.io/balenalib/kontron-mx8mm-debian:bullseye-run-20241111",
+        "docker.io/balenalib/kontron-mx8mm-debian:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm-debian:bullseye-run",
-        "docker.io/balenalib/kontron-mx8mm-debian:bullseye-20241111",
+        "docker.io/balenalib/kontron-mx8mm-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm-debian:bullseye",
-        "docker.io/balenalib/kontron-mx8mm-debian:latest-run-20241111",
+        "docker.io/balenalib/kontron-mx8mm-debian:latest-run-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm-debian:latest-run",
-        "docker.io/balenalib/kontron-mx8mm-debian:latest-20241111",
+        "docker.io/balenalib/kontron-mx8mm-debian:latest-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm-debian:latest",
-        "docker.io/balenalib/kontron-mx8mm-debian:run-20241111",
+        "docker.io/balenalib/kontron-mx8mm-debian:run-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm-debian:run",
-        "docker.io/balenalib/kontron-mx8mm-debian:20241111",
-        "docker.io/balenalib/kontron-mx8mm:bullseye-run-20241111",
+        "docker.io/balenalib/kontron-mx8mm-debian:${DATESTAMP}",
+        "docker.io/balenalib/kontron-mx8mm:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm:bullseye-run",
-        "docker.io/balenalib/kontron-mx8mm:bullseye-20241111",
+        "docker.io/balenalib/kontron-mx8mm:bullseye-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm:bullseye",
-        "docker.io/balenalib/kontron-mx8mm:latest-run-20241111",
+        "docker.io/balenalib/kontron-mx8mm:latest-run-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm:latest-run",
-        "docker.io/balenalib/kontron-mx8mm:latest-20241111",
+        "docker.io/balenalib/kontron-mx8mm:latest-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm:latest",
-        "docker.io/balenalib/kontron-mx8mm:run-20241111",
+        "docker.io/balenalib/kontron-mx8mm:run-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm:run",
-        "docker.io/balenalib/kontron-mx8mm:20241111"
+        "docker.io/balenalib/kontron-mx8mm:${DATESTAMP}"
       ]
     },
     "kontron-mx8mm-debian-bookworm-build": {
@@ -147,15 +147,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/kontron-mx8mm-debian:bookworm-build-20241111",
+        "docker.io/balenalib/kontron-mx8mm-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm-debian:bookworm-build",
-        "docker.io/balenalib/kontron-mx8mm:bookworm-build-20241111",
+        "docker.io/balenalib/kontron-mx8mm:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm:bookworm-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/kontron-mx8mm-debian:bookworm-build-20241111",
+        "docker.io/balenalib/kontron-mx8mm-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm-debian:bookworm-build",
-        "docker.io/balenalib/kontron-mx8mm:bookworm-build-20241111",
+        "docker.io/balenalib/kontron-mx8mm:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm:bookworm-build"
       ]
     },
@@ -164,23 +164,23 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/kontron-mx8mm-debian:bookworm-run-20241111",
+        "docker.io/balenalib/kontron-mx8mm-debian:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm-debian:bookworm-run",
-        "docker.io/balenalib/kontron-mx8mm-debian:bookworm-20241111",
+        "docker.io/balenalib/kontron-mx8mm-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm-debian:bookworm",
-        "docker.io/balenalib/kontron-mx8mm:bookworm-run-20241111",
+        "docker.io/balenalib/kontron-mx8mm:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm:bookworm-run",
-        "docker.io/balenalib/kontron-mx8mm:bookworm-20241111",
+        "docker.io/balenalib/kontron-mx8mm:bookworm-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm:bookworm"
       ],
       "cache_from": [
-        "docker.io/balenalib/kontron-mx8mm-debian:bookworm-run-20241111",
+        "docker.io/balenalib/kontron-mx8mm-debian:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm-debian:bookworm-run",
-        "docker.io/balenalib/kontron-mx8mm-debian:bookworm-20241111",
+        "docker.io/balenalib/kontron-mx8mm-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm-debian:bookworm",
-        "docker.io/balenalib/kontron-mx8mm:bookworm-run-20241111",
+        "docker.io/balenalib/kontron-mx8mm:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm:bookworm-run",
-        "docker.io/balenalib/kontron-mx8mm:bookworm-20241111",
+        "docker.io/balenalib/kontron-mx8mm:bookworm-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm:bookworm"
       ]
     },
@@ -189,15 +189,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/kontron-mx8mm-debian:sid-build-20241111",
+        "docker.io/balenalib/kontron-mx8mm-debian:sid-build-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm-debian:sid-build",
-        "docker.io/balenalib/kontron-mx8mm:sid-build-20241111",
+        "docker.io/balenalib/kontron-mx8mm:sid-build-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm:sid-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/kontron-mx8mm-debian:sid-build-20241111",
+        "docker.io/balenalib/kontron-mx8mm-debian:sid-build-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm-debian:sid-build",
-        "docker.io/balenalib/kontron-mx8mm:sid-build-20241111",
+        "docker.io/balenalib/kontron-mx8mm:sid-build-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm:sid-build"
       ]
     },
@@ -206,25 +206,30 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/kontron-mx8mm-debian:sid-run-20241111",
+        "docker.io/balenalib/kontron-mx8mm-debian:sid-run-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm-debian:sid-run",
-        "docker.io/balenalib/kontron-mx8mm-debian:sid-20241111",
+        "docker.io/balenalib/kontron-mx8mm-debian:sid-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm-debian:sid",
-        "docker.io/balenalib/kontron-mx8mm:sid-run-20241111",
+        "docker.io/balenalib/kontron-mx8mm:sid-run-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm:sid-run",
-        "docker.io/balenalib/kontron-mx8mm:sid-20241111",
+        "docker.io/balenalib/kontron-mx8mm:sid-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm:sid"
       ],
       "cache_from": [
-        "docker.io/balenalib/kontron-mx8mm-debian:sid-run-20241111",
+        "docker.io/balenalib/kontron-mx8mm-debian:sid-run-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm-debian:sid-run",
-        "docker.io/balenalib/kontron-mx8mm-debian:sid-20241111",
+        "docker.io/balenalib/kontron-mx8mm-debian:sid-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm-debian:sid",
-        "docker.io/balenalib/kontron-mx8mm:sid-run-20241111",
+        "docker.io/balenalib/kontron-mx8mm:sid-run-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm:sid-run",
-        "docker.io/balenalib/kontron-mx8mm:sid-20241111",
+        "docker.io/balenalib/kontron-mx8mm:sid-${DATESTAMP}",
         "docker.io/balenalib/kontron-mx8mm:sid"
       ]
+    }
+  },
+  "variable": {
+    "DATESTAMP": {
+      "default": "$DATESTAMP"
     }
   }
 }

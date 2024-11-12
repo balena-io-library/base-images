@@ -19,15 +19,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/astro-tx2-debian:buster-build-20241111",
+        "docker.io/balenalib/astro-tx2-debian:buster-build-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2-debian:buster-build",
-        "docker.io/balenalib/astro-tx2:buster-build-20241111",
+        "docker.io/balenalib/astro-tx2:buster-build-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2:buster-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/astro-tx2-debian:buster-build-20241111",
+        "docker.io/balenalib/astro-tx2-debian:buster-build-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2-debian:buster-build",
-        "docker.io/balenalib/astro-tx2:buster-build-20241111",
+        "docker.io/balenalib/astro-tx2:buster-build-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2:buster-build"
       ]
     },
@@ -36,23 +36,23 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/astro-tx2-debian:buster-run-20241111",
+        "docker.io/balenalib/astro-tx2-debian:buster-run-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2-debian:buster-run",
-        "docker.io/balenalib/astro-tx2-debian:buster-20241111",
+        "docker.io/balenalib/astro-tx2-debian:buster-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2-debian:buster",
-        "docker.io/balenalib/astro-tx2:buster-run-20241111",
+        "docker.io/balenalib/astro-tx2:buster-run-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2:buster-run",
-        "docker.io/balenalib/astro-tx2:buster-20241111",
+        "docker.io/balenalib/astro-tx2:buster-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2:buster"
       ],
       "cache_from": [
-        "docker.io/balenalib/astro-tx2-debian:buster-run-20241111",
+        "docker.io/balenalib/astro-tx2-debian:buster-run-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2-debian:buster-run",
-        "docker.io/balenalib/astro-tx2-debian:buster-20241111",
+        "docker.io/balenalib/astro-tx2-debian:buster-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2-debian:buster",
-        "docker.io/balenalib/astro-tx2:buster-run-20241111",
+        "docker.io/balenalib/astro-tx2:buster-run-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2:buster-run",
-        "docker.io/balenalib/astro-tx2:buster-20241111",
+        "docker.io/balenalib/astro-tx2:buster-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2:buster"
       ]
     },
@@ -61,31 +61,31 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/astro-tx2-debian:bullseye-build-20241111",
+        "docker.io/balenalib/astro-tx2-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2-debian:bullseye-build",
-        "docker.io/balenalib/astro-tx2-debian:latest-build-20241111",
+        "docker.io/balenalib/astro-tx2-debian:latest-build-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2-debian:latest-build",
-        "docker.io/balenalib/astro-tx2-debian:build-20241111",
+        "docker.io/balenalib/astro-tx2-debian:build-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2-debian:build",
-        "docker.io/balenalib/astro-tx2:bullseye-build-20241111",
+        "docker.io/balenalib/astro-tx2:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2:bullseye-build",
-        "docker.io/balenalib/astro-tx2:latest-build-20241111",
+        "docker.io/balenalib/astro-tx2:latest-build-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2:latest-build",
-        "docker.io/balenalib/astro-tx2:build-20241111",
+        "docker.io/balenalib/astro-tx2:build-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/astro-tx2-debian:bullseye-build-20241111",
+        "docker.io/balenalib/astro-tx2-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2-debian:bullseye-build",
-        "docker.io/balenalib/astro-tx2-debian:latest-build-20241111",
+        "docker.io/balenalib/astro-tx2-debian:latest-build-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2-debian:latest-build",
-        "docker.io/balenalib/astro-tx2-debian:build-20241111",
+        "docker.io/balenalib/astro-tx2-debian:build-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2-debian:build",
-        "docker.io/balenalib/astro-tx2:bullseye-build-20241111",
+        "docker.io/balenalib/astro-tx2:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2:bullseye-build",
-        "docker.io/balenalib/astro-tx2:latest-build-20241111",
+        "docker.io/balenalib/astro-tx2:latest-build-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2:latest-build",
-        "docker.io/balenalib/astro-tx2:build-20241111",
+        "docker.io/balenalib/astro-tx2:build-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2:build"
       ]
     },
@@ -94,52 +94,52 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/astro-tx2-debian:bullseye-run-20241111",
+        "docker.io/balenalib/astro-tx2-debian:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2-debian:bullseye-run",
-        "docker.io/balenalib/astro-tx2-debian:bullseye-20241111",
+        "docker.io/balenalib/astro-tx2-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2-debian:bullseye",
-        "docker.io/balenalib/astro-tx2-debian:latest-run-20241111",
+        "docker.io/balenalib/astro-tx2-debian:latest-run-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2-debian:latest-run",
-        "docker.io/balenalib/astro-tx2-debian:latest-20241111",
+        "docker.io/balenalib/astro-tx2-debian:latest-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2-debian:latest",
-        "docker.io/balenalib/astro-tx2-debian:run-20241111",
+        "docker.io/balenalib/astro-tx2-debian:run-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2-debian:run",
-        "docker.io/balenalib/astro-tx2-debian:20241111",
-        "docker.io/balenalib/astro-tx2:bullseye-run-20241111",
+        "docker.io/balenalib/astro-tx2-debian:${DATESTAMP}",
+        "docker.io/balenalib/astro-tx2:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2:bullseye-run",
-        "docker.io/balenalib/astro-tx2:bullseye-20241111",
+        "docker.io/balenalib/astro-tx2:bullseye-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2:bullseye",
-        "docker.io/balenalib/astro-tx2:latest-run-20241111",
+        "docker.io/balenalib/astro-tx2:latest-run-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2:latest-run",
-        "docker.io/balenalib/astro-tx2:latest-20241111",
+        "docker.io/balenalib/astro-tx2:latest-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2:latest",
-        "docker.io/balenalib/astro-tx2:run-20241111",
+        "docker.io/balenalib/astro-tx2:run-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2:run",
-        "docker.io/balenalib/astro-tx2:20241111"
+        "docker.io/balenalib/astro-tx2:${DATESTAMP}"
       ],
       "cache_from": [
-        "docker.io/balenalib/astro-tx2-debian:bullseye-run-20241111",
+        "docker.io/balenalib/astro-tx2-debian:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2-debian:bullseye-run",
-        "docker.io/balenalib/astro-tx2-debian:bullseye-20241111",
+        "docker.io/balenalib/astro-tx2-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2-debian:bullseye",
-        "docker.io/balenalib/astro-tx2-debian:latest-run-20241111",
+        "docker.io/balenalib/astro-tx2-debian:latest-run-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2-debian:latest-run",
-        "docker.io/balenalib/astro-tx2-debian:latest-20241111",
+        "docker.io/balenalib/astro-tx2-debian:latest-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2-debian:latest",
-        "docker.io/balenalib/astro-tx2-debian:run-20241111",
+        "docker.io/balenalib/astro-tx2-debian:run-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2-debian:run",
-        "docker.io/balenalib/astro-tx2-debian:20241111",
-        "docker.io/balenalib/astro-tx2:bullseye-run-20241111",
+        "docker.io/balenalib/astro-tx2-debian:${DATESTAMP}",
+        "docker.io/balenalib/astro-tx2:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2:bullseye-run",
-        "docker.io/balenalib/astro-tx2:bullseye-20241111",
+        "docker.io/balenalib/astro-tx2:bullseye-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2:bullseye",
-        "docker.io/balenalib/astro-tx2:latest-run-20241111",
+        "docker.io/balenalib/astro-tx2:latest-run-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2:latest-run",
-        "docker.io/balenalib/astro-tx2:latest-20241111",
+        "docker.io/balenalib/astro-tx2:latest-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2:latest",
-        "docker.io/balenalib/astro-tx2:run-20241111",
+        "docker.io/balenalib/astro-tx2:run-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2:run",
-        "docker.io/balenalib/astro-tx2:20241111"
+        "docker.io/balenalib/astro-tx2:${DATESTAMP}"
       ]
     },
     "astro-tx2-debian-bookworm-build": {
@@ -147,15 +147,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/astro-tx2-debian:bookworm-build-20241111",
+        "docker.io/balenalib/astro-tx2-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2-debian:bookworm-build",
-        "docker.io/balenalib/astro-tx2:bookworm-build-20241111",
+        "docker.io/balenalib/astro-tx2:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2:bookworm-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/astro-tx2-debian:bookworm-build-20241111",
+        "docker.io/balenalib/astro-tx2-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2-debian:bookworm-build",
-        "docker.io/balenalib/astro-tx2:bookworm-build-20241111",
+        "docker.io/balenalib/astro-tx2:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2:bookworm-build"
       ]
     },
@@ -164,23 +164,23 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/astro-tx2-debian:bookworm-run-20241111",
+        "docker.io/balenalib/astro-tx2-debian:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2-debian:bookworm-run",
-        "docker.io/balenalib/astro-tx2-debian:bookworm-20241111",
+        "docker.io/balenalib/astro-tx2-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2-debian:bookworm",
-        "docker.io/balenalib/astro-tx2:bookworm-run-20241111",
+        "docker.io/balenalib/astro-tx2:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2:bookworm-run",
-        "docker.io/balenalib/astro-tx2:bookworm-20241111",
+        "docker.io/balenalib/astro-tx2:bookworm-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2:bookworm"
       ],
       "cache_from": [
-        "docker.io/balenalib/astro-tx2-debian:bookworm-run-20241111",
+        "docker.io/balenalib/astro-tx2-debian:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2-debian:bookworm-run",
-        "docker.io/balenalib/astro-tx2-debian:bookworm-20241111",
+        "docker.io/balenalib/astro-tx2-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2-debian:bookworm",
-        "docker.io/balenalib/astro-tx2:bookworm-run-20241111",
+        "docker.io/balenalib/astro-tx2:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2:bookworm-run",
-        "docker.io/balenalib/astro-tx2:bookworm-20241111",
+        "docker.io/balenalib/astro-tx2:bookworm-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2:bookworm"
       ]
     },
@@ -189,15 +189,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/astro-tx2-debian:sid-build-20241111",
+        "docker.io/balenalib/astro-tx2-debian:sid-build-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2-debian:sid-build",
-        "docker.io/balenalib/astro-tx2:sid-build-20241111",
+        "docker.io/balenalib/astro-tx2:sid-build-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2:sid-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/astro-tx2-debian:sid-build-20241111",
+        "docker.io/balenalib/astro-tx2-debian:sid-build-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2-debian:sid-build",
-        "docker.io/balenalib/astro-tx2:sid-build-20241111",
+        "docker.io/balenalib/astro-tx2:sid-build-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2:sid-build"
       ]
     },
@@ -206,25 +206,30 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/astro-tx2-debian:sid-run-20241111",
+        "docker.io/balenalib/astro-tx2-debian:sid-run-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2-debian:sid-run",
-        "docker.io/balenalib/astro-tx2-debian:sid-20241111",
+        "docker.io/balenalib/astro-tx2-debian:sid-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2-debian:sid",
-        "docker.io/balenalib/astro-tx2:sid-run-20241111",
+        "docker.io/balenalib/astro-tx2:sid-run-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2:sid-run",
-        "docker.io/balenalib/astro-tx2:sid-20241111",
+        "docker.io/balenalib/astro-tx2:sid-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2:sid"
       ],
       "cache_from": [
-        "docker.io/balenalib/astro-tx2-debian:sid-run-20241111",
+        "docker.io/balenalib/astro-tx2-debian:sid-run-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2-debian:sid-run",
-        "docker.io/balenalib/astro-tx2-debian:sid-20241111",
+        "docker.io/balenalib/astro-tx2-debian:sid-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2-debian:sid",
-        "docker.io/balenalib/astro-tx2:sid-run-20241111",
+        "docker.io/balenalib/astro-tx2:sid-run-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2:sid-run",
-        "docker.io/balenalib/astro-tx2:sid-20241111",
+        "docker.io/balenalib/astro-tx2:sid-${DATESTAMP}",
         "docker.io/balenalib/astro-tx2:sid"
       ]
+    }
+  },
+  "variable": {
+    "DATESTAMP": {
+      "default": "$DATESTAMP"
     }
   }
 }

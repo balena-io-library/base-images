@@ -19,15 +19,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-nano-emmc-debian:buster-build-20241111",
+        "docker.io/balenalib/jetson-nano-emmc-debian:buster-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc-debian:buster-build",
-        "docker.io/balenalib/jetson-nano-emmc:buster-build-20241111",
+        "docker.io/balenalib/jetson-nano-emmc:buster-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc:buster-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-nano-emmc-debian:buster-build-20241111",
+        "docker.io/balenalib/jetson-nano-emmc-debian:buster-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc-debian:buster-build",
-        "docker.io/balenalib/jetson-nano-emmc:buster-build-20241111",
+        "docker.io/balenalib/jetson-nano-emmc:buster-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc:buster-build"
       ]
     },
@@ -36,23 +36,23 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-nano-emmc-debian:buster-run-20241111",
+        "docker.io/balenalib/jetson-nano-emmc-debian:buster-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc-debian:buster-run",
-        "docker.io/balenalib/jetson-nano-emmc-debian:buster-20241111",
+        "docker.io/balenalib/jetson-nano-emmc-debian:buster-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc-debian:buster",
-        "docker.io/balenalib/jetson-nano-emmc:buster-run-20241111",
+        "docker.io/balenalib/jetson-nano-emmc:buster-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc:buster-run",
-        "docker.io/balenalib/jetson-nano-emmc:buster-20241111",
+        "docker.io/balenalib/jetson-nano-emmc:buster-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc:buster"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-nano-emmc-debian:buster-run-20241111",
+        "docker.io/balenalib/jetson-nano-emmc-debian:buster-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc-debian:buster-run",
-        "docker.io/balenalib/jetson-nano-emmc-debian:buster-20241111",
+        "docker.io/balenalib/jetson-nano-emmc-debian:buster-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc-debian:buster",
-        "docker.io/balenalib/jetson-nano-emmc:buster-run-20241111",
+        "docker.io/balenalib/jetson-nano-emmc:buster-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc:buster-run",
-        "docker.io/balenalib/jetson-nano-emmc:buster-20241111",
+        "docker.io/balenalib/jetson-nano-emmc:buster-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc:buster"
       ]
     },
@@ -61,31 +61,31 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-nano-emmc-debian:bullseye-build-20241111",
+        "docker.io/balenalib/jetson-nano-emmc-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc-debian:bullseye-build",
-        "docker.io/balenalib/jetson-nano-emmc-debian:latest-build-20241111",
+        "docker.io/balenalib/jetson-nano-emmc-debian:latest-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc-debian:latest-build",
-        "docker.io/balenalib/jetson-nano-emmc-debian:build-20241111",
+        "docker.io/balenalib/jetson-nano-emmc-debian:build-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc-debian:build",
-        "docker.io/balenalib/jetson-nano-emmc:bullseye-build-20241111",
+        "docker.io/balenalib/jetson-nano-emmc:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc:bullseye-build",
-        "docker.io/balenalib/jetson-nano-emmc:latest-build-20241111",
+        "docker.io/balenalib/jetson-nano-emmc:latest-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc:latest-build",
-        "docker.io/balenalib/jetson-nano-emmc:build-20241111",
+        "docker.io/balenalib/jetson-nano-emmc:build-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-nano-emmc-debian:bullseye-build-20241111",
+        "docker.io/balenalib/jetson-nano-emmc-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc-debian:bullseye-build",
-        "docker.io/balenalib/jetson-nano-emmc-debian:latest-build-20241111",
+        "docker.io/balenalib/jetson-nano-emmc-debian:latest-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc-debian:latest-build",
-        "docker.io/balenalib/jetson-nano-emmc-debian:build-20241111",
+        "docker.io/balenalib/jetson-nano-emmc-debian:build-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc-debian:build",
-        "docker.io/balenalib/jetson-nano-emmc:bullseye-build-20241111",
+        "docker.io/balenalib/jetson-nano-emmc:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc:bullseye-build",
-        "docker.io/balenalib/jetson-nano-emmc:latest-build-20241111",
+        "docker.io/balenalib/jetson-nano-emmc:latest-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc:latest-build",
-        "docker.io/balenalib/jetson-nano-emmc:build-20241111",
+        "docker.io/balenalib/jetson-nano-emmc:build-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc:build"
       ]
     },
@@ -94,52 +94,52 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-nano-emmc-debian:bullseye-run-20241111",
+        "docker.io/balenalib/jetson-nano-emmc-debian:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc-debian:bullseye-run",
-        "docker.io/balenalib/jetson-nano-emmc-debian:bullseye-20241111",
+        "docker.io/balenalib/jetson-nano-emmc-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc-debian:bullseye",
-        "docker.io/balenalib/jetson-nano-emmc-debian:latest-run-20241111",
+        "docker.io/balenalib/jetson-nano-emmc-debian:latest-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc-debian:latest-run",
-        "docker.io/balenalib/jetson-nano-emmc-debian:latest-20241111",
+        "docker.io/balenalib/jetson-nano-emmc-debian:latest-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc-debian:latest",
-        "docker.io/balenalib/jetson-nano-emmc-debian:run-20241111",
+        "docker.io/balenalib/jetson-nano-emmc-debian:run-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc-debian:run",
-        "docker.io/balenalib/jetson-nano-emmc-debian:20241111",
-        "docker.io/balenalib/jetson-nano-emmc:bullseye-run-20241111",
+        "docker.io/balenalib/jetson-nano-emmc-debian:${DATESTAMP}",
+        "docker.io/balenalib/jetson-nano-emmc:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc:bullseye-run",
-        "docker.io/balenalib/jetson-nano-emmc:bullseye-20241111",
+        "docker.io/balenalib/jetson-nano-emmc:bullseye-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc:bullseye",
-        "docker.io/balenalib/jetson-nano-emmc:latest-run-20241111",
+        "docker.io/balenalib/jetson-nano-emmc:latest-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc:latest-run",
-        "docker.io/balenalib/jetson-nano-emmc:latest-20241111",
+        "docker.io/balenalib/jetson-nano-emmc:latest-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc:latest",
-        "docker.io/balenalib/jetson-nano-emmc:run-20241111",
+        "docker.io/balenalib/jetson-nano-emmc:run-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc:run",
-        "docker.io/balenalib/jetson-nano-emmc:20241111"
+        "docker.io/balenalib/jetson-nano-emmc:${DATESTAMP}"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-nano-emmc-debian:bullseye-run-20241111",
+        "docker.io/balenalib/jetson-nano-emmc-debian:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc-debian:bullseye-run",
-        "docker.io/balenalib/jetson-nano-emmc-debian:bullseye-20241111",
+        "docker.io/balenalib/jetson-nano-emmc-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc-debian:bullseye",
-        "docker.io/balenalib/jetson-nano-emmc-debian:latest-run-20241111",
+        "docker.io/balenalib/jetson-nano-emmc-debian:latest-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc-debian:latest-run",
-        "docker.io/balenalib/jetson-nano-emmc-debian:latest-20241111",
+        "docker.io/balenalib/jetson-nano-emmc-debian:latest-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc-debian:latest",
-        "docker.io/balenalib/jetson-nano-emmc-debian:run-20241111",
+        "docker.io/balenalib/jetson-nano-emmc-debian:run-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc-debian:run",
-        "docker.io/balenalib/jetson-nano-emmc-debian:20241111",
-        "docker.io/balenalib/jetson-nano-emmc:bullseye-run-20241111",
+        "docker.io/balenalib/jetson-nano-emmc-debian:${DATESTAMP}",
+        "docker.io/balenalib/jetson-nano-emmc:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc:bullseye-run",
-        "docker.io/balenalib/jetson-nano-emmc:bullseye-20241111",
+        "docker.io/balenalib/jetson-nano-emmc:bullseye-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc:bullseye",
-        "docker.io/balenalib/jetson-nano-emmc:latest-run-20241111",
+        "docker.io/balenalib/jetson-nano-emmc:latest-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc:latest-run",
-        "docker.io/balenalib/jetson-nano-emmc:latest-20241111",
+        "docker.io/balenalib/jetson-nano-emmc:latest-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc:latest",
-        "docker.io/balenalib/jetson-nano-emmc:run-20241111",
+        "docker.io/balenalib/jetson-nano-emmc:run-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc:run",
-        "docker.io/balenalib/jetson-nano-emmc:20241111"
+        "docker.io/balenalib/jetson-nano-emmc:${DATESTAMP}"
       ]
     },
     "jetson-nano-emmc-debian-bookworm-build": {
@@ -147,15 +147,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-nano-emmc-debian:bookworm-build-20241111",
+        "docker.io/balenalib/jetson-nano-emmc-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc-debian:bookworm-build",
-        "docker.io/balenalib/jetson-nano-emmc:bookworm-build-20241111",
+        "docker.io/balenalib/jetson-nano-emmc:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc:bookworm-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-nano-emmc-debian:bookworm-build-20241111",
+        "docker.io/balenalib/jetson-nano-emmc-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc-debian:bookworm-build",
-        "docker.io/balenalib/jetson-nano-emmc:bookworm-build-20241111",
+        "docker.io/balenalib/jetson-nano-emmc:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc:bookworm-build"
       ]
     },
@@ -164,23 +164,23 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-nano-emmc-debian:bookworm-run-20241111",
+        "docker.io/balenalib/jetson-nano-emmc-debian:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc-debian:bookworm-run",
-        "docker.io/balenalib/jetson-nano-emmc-debian:bookworm-20241111",
+        "docker.io/balenalib/jetson-nano-emmc-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc-debian:bookworm",
-        "docker.io/balenalib/jetson-nano-emmc:bookworm-run-20241111",
+        "docker.io/balenalib/jetson-nano-emmc:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc:bookworm-run",
-        "docker.io/balenalib/jetson-nano-emmc:bookworm-20241111",
+        "docker.io/balenalib/jetson-nano-emmc:bookworm-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc:bookworm"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-nano-emmc-debian:bookworm-run-20241111",
+        "docker.io/balenalib/jetson-nano-emmc-debian:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc-debian:bookworm-run",
-        "docker.io/balenalib/jetson-nano-emmc-debian:bookworm-20241111",
+        "docker.io/balenalib/jetson-nano-emmc-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc-debian:bookworm",
-        "docker.io/balenalib/jetson-nano-emmc:bookworm-run-20241111",
+        "docker.io/balenalib/jetson-nano-emmc:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc:bookworm-run",
-        "docker.io/balenalib/jetson-nano-emmc:bookworm-20241111",
+        "docker.io/balenalib/jetson-nano-emmc:bookworm-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc:bookworm"
       ]
     },
@@ -189,15 +189,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-nano-emmc-debian:sid-build-20241111",
+        "docker.io/balenalib/jetson-nano-emmc-debian:sid-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc-debian:sid-build",
-        "docker.io/balenalib/jetson-nano-emmc:sid-build-20241111",
+        "docker.io/balenalib/jetson-nano-emmc:sid-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc:sid-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-nano-emmc-debian:sid-build-20241111",
+        "docker.io/balenalib/jetson-nano-emmc-debian:sid-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc-debian:sid-build",
-        "docker.io/balenalib/jetson-nano-emmc:sid-build-20241111",
+        "docker.io/balenalib/jetson-nano-emmc:sid-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc:sid-build"
       ]
     },
@@ -206,25 +206,30 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-nano-emmc-debian:sid-run-20241111",
+        "docker.io/balenalib/jetson-nano-emmc-debian:sid-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc-debian:sid-run",
-        "docker.io/balenalib/jetson-nano-emmc-debian:sid-20241111",
+        "docker.io/balenalib/jetson-nano-emmc-debian:sid-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc-debian:sid",
-        "docker.io/balenalib/jetson-nano-emmc:sid-run-20241111",
+        "docker.io/balenalib/jetson-nano-emmc:sid-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc:sid-run",
-        "docker.io/balenalib/jetson-nano-emmc:sid-20241111",
+        "docker.io/balenalib/jetson-nano-emmc:sid-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc:sid"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-nano-emmc-debian:sid-run-20241111",
+        "docker.io/balenalib/jetson-nano-emmc-debian:sid-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc-debian:sid-run",
-        "docker.io/balenalib/jetson-nano-emmc-debian:sid-20241111",
+        "docker.io/balenalib/jetson-nano-emmc-debian:sid-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc-debian:sid",
-        "docker.io/balenalib/jetson-nano-emmc:sid-run-20241111",
+        "docker.io/balenalib/jetson-nano-emmc:sid-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc:sid-run",
-        "docker.io/balenalib/jetson-nano-emmc:sid-20241111",
+        "docker.io/balenalib/jetson-nano-emmc:sid-${DATESTAMP}",
         "docker.io/balenalib/jetson-nano-emmc:sid"
       ]
+    }
+  },
+  "variable": {
+    "DATESTAMP": {
+      "default": "$DATESTAMP"
     }
   }
 }

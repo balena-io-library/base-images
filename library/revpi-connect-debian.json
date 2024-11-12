@@ -19,15 +19,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/revpi-connect-debian:buster-build-20241111",
+        "docker.io/balenalib/revpi-connect-debian:buster-build-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect-debian:buster-build",
-        "docker.io/balenalib/revpi-connect:buster-build-20241111",
+        "docker.io/balenalib/revpi-connect:buster-build-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect:buster-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/revpi-connect-debian:buster-build-20241111",
+        "docker.io/balenalib/revpi-connect-debian:buster-build-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect-debian:buster-build",
-        "docker.io/balenalib/revpi-connect:buster-build-20241111",
+        "docker.io/balenalib/revpi-connect:buster-build-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect:buster-build"
       ]
     },
@@ -36,23 +36,23 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/revpi-connect-debian:buster-run-20241111",
+        "docker.io/balenalib/revpi-connect-debian:buster-run-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect-debian:buster-run",
-        "docker.io/balenalib/revpi-connect-debian:buster-20241111",
+        "docker.io/balenalib/revpi-connect-debian:buster-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect-debian:buster",
-        "docker.io/balenalib/revpi-connect:buster-run-20241111",
+        "docker.io/balenalib/revpi-connect:buster-run-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect:buster-run",
-        "docker.io/balenalib/revpi-connect:buster-20241111",
+        "docker.io/balenalib/revpi-connect:buster-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect:buster"
       ],
       "cache_from": [
-        "docker.io/balenalib/revpi-connect-debian:buster-run-20241111",
+        "docker.io/balenalib/revpi-connect-debian:buster-run-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect-debian:buster-run",
-        "docker.io/balenalib/revpi-connect-debian:buster-20241111",
+        "docker.io/balenalib/revpi-connect-debian:buster-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect-debian:buster",
-        "docker.io/balenalib/revpi-connect:buster-run-20241111",
+        "docker.io/balenalib/revpi-connect:buster-run-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect:buster-run",
-        "docker.io/balenalib/revpi-connect:buster-20241111",
+        "docker.io/balenalib/revpi-connect:buster-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect:buster"
       ]
     },
@@ -61,31 +61,31 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/revpi-connect-debian:bullseye-build-20241111",
+        "docker.io/balenalib/revpi-connect-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect-debian:bullseye-build",
-        "docker.io/balenalib/revpi-connect-debian:latest-build-20241111",
+        "docker.io/balenalib/revpi-connect-debian:latest-build-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect-debian:latest-build",
-        "docker.io/balenalib/revpi-connect-debian:build-20241111",
+        "docker.io/balenalib/revpi-connect-debian:build-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect-debian:build",
-        "docker.io/balenalib/revpi-connect:bullseye-build-20241111",
+        "docker.io/balenalib/revpi-connect:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect:bullseye-build",
-        "docker.io/balenalib/revpi-connect:latest-build-20241111",
+        "docker.io/balenalib/revpi-connect:latest-build-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect:latest-build",
-        "docker.io/balenalib/revpi-connect:build-20241111",
+        "docker.io/balenalib/revpi-connect:build-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/revpi-connect-debian:bullseye-build-20241111",
+        "docker.io/balenalib/revpi-connect-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect-debian:bullseye-build",
-        "docker.io/balenalib/revpi-connect-debian:latest-build-20241111",
+        "docker.io/balenalib/revpi-connect-debian:latest-build-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect-debian:latest-build",
-        "docker.io/balenalib/revpi-connect-debian:build-20241111",
+        "docker.io/balenalib/revpi-connect-debian:build-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect-debian:build",
-        "docker.io/balenalib/revpi-connect:bullseye-build-20241111",
+        "docker.io/balenalib/revpi-connect:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect:bullseye-build",
-        "docker.io/balenalib/revpi-connect:latest-build-20241111",
+        "docker.io/balenalib/revpi-connect:latest-build-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect:latest-build",
-        "docker.io/balenalib/revpi-connect:build-20241111",
+        "docker.io/balenalib/revpi-connect:build-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect:build"
       ]
     },
@@ -94,52 +94,52 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/revpi-connect-debian:bullseye-run-20241111",
+        "docker.io/balenalib/revpi-connect-debian:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect-debian:bullseye-run",
-        "docker.io/balenalib/revpi-connect-debian:bullseye-20241111",
+        "docker.io/balenalib/revpi-connect-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect-debian:bullseye",
-        "docker.io/balenalib/revpi-connect-debian:latest-run-20241111",
+        "docker.io/balenalib/revpi-connect-debian:latest-run-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect-debian:latest-run",
-        "docker.io/balenalib/revpi-connect-debian:latest-20241111",
+        "docker.io/balenalib/revpi-connect-debian:latest-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect-debian:latest",
-        "docker.io/balenalib/revpi-connect-debian:run-20241111",
+        "docker.io/balenalib/revpi-connect-debian:run-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect-debian:run",
-        "docker.io/balenalib/revpi-connect-debian:20241111",
-        "docker.io/balenalib/revpi-connect:bullseye-run-20241111",
+        "docker.io/balenalib/revpi-connect-debian:${DATESTAMP}",
+        "docker.io/balenalib/revpi-connect:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect:bullseye-run",
-        "docker.io/balenalib/revpi-connect:bullseye-20241111",
+        "docker.io/balenalib/revpi-connect:bullseye-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect:bullseye",
-        "docker.io/balenalib/revpi-connect:latest-run-20241111",
+        "docker.io/balenalib/revpi-connect:latest-run-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect:latest-run",
-        "docker.io/balenalib/revpi-connect:latest-20241111",
+        "docker.io/balenalib/revpi-connect:latest-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect:latest",
-        "docker.io/balenalib/revpi-connect:run-20241111",
+        "docker.io/balenalib/revpi-connect:run-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect:run",
-        "docker.io/balenalib/revpi-connect:20241111"
+        "docker.io/balenalib/revpi-connect:${DATESTAMP}"
       ],
       "cache_from": [
-        "docker.io/balenalib/revpi-connect-debian:bullseye-run-20241111",
+        "docker.io/balenalib/revpi-connect-debian:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect-debian:bullseye-run",
-        "docker.io/balenalib/revpi-connect-debian:bullseye-20241111",
+        "docker.io/balenalib/revpi-connect-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect-debian:bullseye",
-        "docker.io/balenalib/revpi-connect-debian:latest-run-20241111",
+        "docker.io/balenalib/revpi-connect-debian:latest-run-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect-debian:latest-run",
-        "docker.io/balenalib/revpi-connect-debian:latest-20241111",
+        "docker.io/balenalib/revpi-connect-debian:latest-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect-debian:latest",
-        "docker.io/balenalib/revpi-connect-debian:run-20241111",
+        "docker.io/balenalib/revpi-connect-debian:run-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect-debian:run",
-        "docker.io/balenalib/revpi-connect-debian:20241111",
-        "docker.io/balenalib/revpi-connect:bullseye-run-20241111",
+        "docker.io/balenalib/revpi-connect-debian:${DATESTAMP}",
+        "docker.io/balenalib/revpi-connect:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect:bullseye-run",
-        "docker.io/balenalib/revpi-connect:bullseye-20241111",
+        "docker.io/balenalib/revpi-connect:bullseye-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect:bullseye",
-        "docker.io/balenalib/revpi-connect:latest-run-20241111",
+        "docker.io/balenalib/revpi-connect:latest-run-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect:latest-run",
-        "docker.io/balenalib/revpi-connect:latest-20241111",
+        "docker.io/balenalib/revpi-connect:latest-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect:latest",
-        "docker.io/balenalib/revpi-connect:run-20241111",
+        "docker.io/balenalib/revpi-connect:run-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect:run",
-        "docker.io/balenalib/revpi-connect:20241111"
+        "docker.io/balenalib/revpi-connect:${DATESTAMP}"
       ]
     },
     "revpi-connect-debian-bookworm-build": {
@@ -147,15 +147,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/revpi-connect-debian:bookworm-build-20241111",
+        "docker.io/balenalib/revpi-connect-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect-debian:bookworm-build",
-        "docker.io/balenalib/revpi-connect:bookworm-build-20241111",
+        "docker.io/balenalib/revpi-connect:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect:bookworm-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/revpi-connect-debian:bookworm-build-20241111",
+        "docker.io/balenalib/revpi-connect-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect-debian:bookworm-build",
-        "docker.io/balenalib/revpi-connect:bookworm-build-20241111",
+        "docker.io/balenalib/revpi-connect:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect:bookworm-build"
       ]
     },
@@ -164,23 +164,23 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/revpi-connect-debian:bookworm-run-20241111",
+        "docker.io/balenalib/revpi-connect-debian:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect-debian:bookworm-run",
-        "docker.io/balenalib/revpi-connect-debian:bookworm-20241111",
+        "docker.io/balenalib/revpi-connect-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect-debian:bookworm",
-        "docker.io/balenalib/revpi-connect:bookworm-run-20241111",
+        "docker.io/balenalib/revpi-connect:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect:bookworm-run",
-        "docker.io/balenalib/revpi-connect:bookworm-20241111",
+        "docker.io/balenalib/revpi-connect:bookworm-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect:bookworm"
       ],
       "cache_from": [
-        "docker.io/balenalib/revpi-connect-debian:bookworm-run-20241111",
+        "docker.io/balenalib/revpi-connect-debian:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect-debian:bookworm-run",
-        "docker.io/balenalib/revpi-connect-debian:bookworm-20241111",
+        "docker.io/balenalib/revpi-connect-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect-debian:bookworm",
-        "docker.io/balenalib/revpi-connect:bookworm-run-20241111",
+        "docker.io/balenalib/revpi-connect:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect:bookworm-run",
-        "docker.io/balenalib/revpi-connect:bookworm-20241111",
+        "docker.io/balenalib/revpi-connect:bookworm-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect:bookworm"
       ]
     },
@@ -189,15 +189,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/revpi-connect-debian:sid-build-20241111",
+        "docker.io/balenalib/revpi-connect-debian:sid-build-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect-debian:sid-build",
-        "docker.io/balenalib/revpi-connect:sid-build-20241111",
+        "docker.io/balenalib/revpi-connect:sid-build-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect:sid-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/revpi-connect-debian:sid-build-20241111",
+        "docker.io/balenalib/revpi-connect-debian:sid-build-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect-debian:sid-build",
-        "docker.io/balenalib/revpi-connect:sid-build-20241111",
+        "docker.io/balenalib/revpi-connect:sid-build-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect:sid-build"
       ]
     },
@@ -206,25 +206,30 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/revpi-connect-debian:sid-run-20241111",
+        "docker.io/balenalib/revpi-connect-debian:sid-run-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect-debian:sid-run",
-        "docker.io/balenalib/revpi-connect-debian:sid-20241111",
+        "docker.io/balenalib/revpi-connect-debian:sid-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect-debian:sid",
-        "docker.io/balenalib/revpi-connect:sid-run-20241111",
+        "docker.io/balenalib/revpi-connect:sid-run-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect:sid-run",
-        "docker.io/balenalib/revpi-connect:sid-20241111",
+        "docker.io/balenalib/revpi-connect:sid-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect:sid"
       ],
       "cache_from": [
-        "docker.io/balenalib/revpi-connect-debian:sid-run-20241111",
+        "docker.io/balenalib/revpi-connect-debian:sid-run-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect-debian:sid-run",
-        "docker.io/balenalib/revpi-connect-debian:sid-20241111",
+        "docker.io/balenalib/revpi-connect-debian:sid-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect-debian:sid",
-        "docker.io/balenalib/revpi-connect:sid-run-20241111",
+        "docker.io/balenalib/revpi-connect:sid-run-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect:sid-run",
-        "docker.io/balenalib/revpi-connect:sid-20241111",
+        "docker.io/balenalib/revpi-connect:sid-${DATESTAMP}",
         "docker.io/balenalib/revpi-connect:sid"
       ]
+    }
+  },
+  "variable": {
+    "DATESTAMP": {
+      "default": "$DATESTAMP"
     }
   }
 }

@@ -15,19 +15,19 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:37-build-20241111",
+        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:37-build-${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard-fedora:37-build",
-        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:latest-build-20241111",
+        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:latest-build-${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard-fedora:latest-build",
-        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:build-20241111",
+        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:build-${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard-fedora:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:37-build-20241111",
+        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:37-build-${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard-fedora:37-build",
-        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:latest-build-20241111",
+        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:latest-build-${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard-fedora:latest-build",
-        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:build-20241111",
+        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:build-${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard-fedora:build"
       ]
     },
@@ -36,30 +36,30 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:37-run-20241111",
+        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:37-run-${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard-fedora:37-run",
-        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:37-20241111",
+        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:37-${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard-fedora:37",
-        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:latest-run-20241111",
+        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:latest-run-${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard-fedora:latest-run",
-        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:latest-20241111",
+        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:latest-${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard-fedora:latest",
-        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:run-20241111",
+        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:run-${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard-fedora:run",
-        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:20241111"
+        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:${DATESTAMP}"
       ],
       "cache_from": [
-        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:37-run-20241111",
+        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:37-run-${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard-fedora:37-run",
-        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:37-20241111",
+        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:37-${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard-fedora:37",
-        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:latest-run-20241111",
+        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:latest-run-${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard-fedora:latest-run",
-        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:latest-20241111",
+        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:latest-${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard-fedora:latest",
-        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:run-20241111",
+        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:run-${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard-fedora:run",
-        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:20241111"
+        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:${DATESTAMP}"
       ]
     },
     "raspberrypicm4-ioboard-fedora-38-build": {
@@ -67,11 +67,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:38-build-20241111",
+        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:38-build-${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard-fedora:38-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:38-build-20241111",
+        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:38-build-${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard-fedora:38-build"
       ]
     },
@@ -80,17 +80,22 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:38-run-20241111",
+        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:38-run-${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard-fedora:38-run",
-        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:38-20241111",
+        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:38-${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard-fedora:38"
       ],
       "cache_from": [
-        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:38-run-20241111",
+        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:38-run-${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard-fedora:38-run",
-        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:38-20241111",
+        "docker.io/balenalib/raspberrypicm4-ioboard-fedora:38-${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard-fedora:38"
       ]
+    }
+  },
+  "variable": {
+    "DATESTAMP": {
+      "default": "$DATESTAMP"
     }
   }
 }

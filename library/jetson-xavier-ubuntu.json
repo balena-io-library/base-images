@@ -21,19 +21,19 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:noble-build-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:noble-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:noble-build",
-        "docker.io/balenalib/jetson-xavier-ubuntu:latest-build-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:latest-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:latest-build",
-        "docker.io/balenalib/jetson-xavier-ubuntu:build-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:build-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:noble-build-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:noble-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:noble-build",
-        "docker.io/balenalib/jetson-xavier-ubuntu:latest-build-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:latest-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:latest-build",
-        "docker.io/balenalib/jetson-xavier-ubuntu:build-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:build-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:build"
       ]
     },
@@ -42,30 +42,30 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:noble-run-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:noble-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:noble-run",
-        "docker.io/balenalib/jetson-xavier-ubuntu:noble-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:noble-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:noble",
-        "docker.io/balenalib/jetson-xavier-ubuntu:latest-run-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:latest-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:latest-run",
-        "docker.io/balenalib/jetson-xavier-ubuntu:latest-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:latest-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:latest",
-        "docker.io/balenalib/jetson-xavier-ubuntu:run-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:run-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:run",
-        "docker.io/balenalib/jetson-xavier-ubuntu:20241111"
+        "docker.io/balenalib/jetson-xavier-ubuntu:${DATESTAMP}"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:noble-run-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:noble-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:noble-run",
-        "docker.io/balenalib/jetson-xavier-ubuntu:noble-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:noble-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:noble",
-        "docker.io/balenalib/jetson-xavier-ubuntu:latest-run-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:latest-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:latest-run",
-        "docker.io/balenalib/jetson-xavier-ubuntu:latest-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:latest-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:latest",
-        "docker.io/balenalib/jetson-xavier-ubuntu:run-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:run-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:run",
-        "docker.io/balenalib/jetson-xavier-ubuntu:20241111"
+        "docker.io/balenalib/jetson-xavier-ubuntu:${DATESTAMP}"
       ]
     },
     "jetson-xavier-ubuntu-jammy-build": {
@@ -73,11 +73,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:jammy-build-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:jammy-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:jammy-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:jammy-build-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:jammy-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:jammy-build"
       ]
     },
@@ -86,15 +86,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:jammy-run-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:jammy-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:jammy-run",
-        "docker.io/balenalib/jetson-xavier-ubuntu:jammy-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:jammy-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:jammy"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:jammy-run-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:jammy-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:jammy-run",
-        "docker.io/balenalib/jetson-xavier-ubuntu:jammy-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:jammy-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:jammy"
       ]
     },
@@ -103,11 +103,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:focal-build-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:focal-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:focal-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:focal-build-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:focal-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:focal-build"
       ]
     },
@@ -116,15 +116,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:focal-run-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:focal-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:focal-run",
-        "docker.io/balenalib/jetson-xavier-ubuntu:focal-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:focal-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:focal"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:focal-run-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:focal-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:focal-run",
-        "docker.io/balenalib/jetson-xavier-ubuntu:focal-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:focal-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:focal"
       ]
     },
@@ -133,11 +133,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:xenial-build-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:xenial-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:xenial-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:xenial-build-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:xenial-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:xenial-build"
       ]
     },
@@ -146,15 +146,15 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:xenial-run-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:xenial-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:xenial-run",
-        "docker.io/balenalib/jetson-xavier-ubuntu:xenial-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:xenial-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:xenial"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:xenial-run-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:xenial-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:xenial-run",
-        "docker.io/balenalib/jetson-xavier-ubuntu:xenial-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:xenial-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:xenial"
       ]
     },
@@ -163,11 +163,11 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:bionic-build-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:bionic-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:bionic-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:bionic-build-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:bionic-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:bionic-build"
       ]
     },
@@ -176,17 +176,22 @@
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:bionic-run-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:bionic-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:bionic-run",
-        "docker.io/balenalib/jetson-xavier-ubuntu:bionic-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:bionic-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:bionic"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:bionic-run-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:bionic-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:bionic-run",
-        "docker.io/balenalib/jetson-xavier-ubuntu:bionic-20241111",
+        "docker.io/balenalib/jetson-xavier-ubuntu:bionic-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:bionic"
       ]
+    }
+  },
+  "variable": {
+    "DATESTAMP": {
+      "default": "$DATESTAMP"
     }
   }
 }
