@@ -32,14 +32,6 @@ const balena = getSdk({
 	dataDirectory: false,
 });
 
-function yyyymmdd() {
-	const now = new Date();
-	const y = now.getFullYear();
-	const m = now.getMonth() + 1;
-	const d = now.getDate();
-	return '' + y + (m < 10 ? '0' : '') + m + (d < 10 ? '0' : '') + d;
-}
-
 function getVersionAliases(version, latestVersion, generateAllAliases = true) {
 	// version can be a full version x.y.z or x.y or just x (only for latest version if generateAllAliases is false).
 	const result = [version];
@@ -150,6 +142,11 @@ function generateBakeFile(context, tags) {
 				cache_from: tags,
 			},
 		},
+		variable: {
+			DATESTAMP: {
+				default: '$DATESTAMP',
+			},
+		},
 	};
 
 	const destination = path.join(DEST_DIR, context.imageName + '.json');
@@ -196,7 +193,11 @@ async function generateOsArchLibrary(context) {
 	}
 
 	let repo = [NAMESPACE, context.imageName].join('/');
-	const tags = generateCombinations([osVersions, variants, [yyyymmdd(), null]]);
+	const tags = generateCombinations([
+		osVersions,
+		variants,
+		['${DATESTAMP}', null],
+	]);
 
 	// loop over all tags and append the repo as a prefix
 	let repoTags = tags.map((tag) => {
@@ -257,7 +258,7 @@ async function generateStackLibrary(context) {
 		stackVersions,
 		osVersions,
 		variants,
-		[yyyymmdd(), null],
+		['${DATESTAMP}', null],
 	]);
 
 	// loop over all tags and append the repo as a prefix
