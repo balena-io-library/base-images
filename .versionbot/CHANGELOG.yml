@@ -1,5 +1,18 @@
 - commits:
     - subject: Lock file maintenance
+      hash: e14be6121f2f956c44e3ff5e16a8ab93aaae5259
+      body: |
+        Update
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested: []
+  version: 2.11.2
+  title: ""
+  date: 2024-11-25T01:21:19.996Z
+- commits:
+    - subject: Lock file maintenance
       hash: a76d42234e18af40e438e6f57d39e93a6270b463
       body: |
         Update
@@ -633,11 +646,8 @@
         - commits:
             - subject: "hw.device-type: Update provisioning instructions for AGX Orin 64GB"
               hash: f8d665f044ea2e39a100fb865ffd5f8a8f4ae65f
-              body: >
-                The AGX Orin 64GB should be provisioned on the eMMC by default
-                as per the internal thread
-                https://balena.zulipchat.com/#narrow/stream/346009-aspect.2Fcustomer-success/topic/Get.20feedback.20on.20draft.20balenaOS.20with.20L4T.2036.2E3.20for.20Jetson.20Orin/near/455889690
-
+              body: |
+                The AGX Orin 64GB should be provisioned on the eMMC by default as per the internal thread https://balena.zulipchat.com/#narrow/stream/346009-aspect.2Fcustomer-success/topic/Get.20feedback.20on.20draft.20balenaOS.20with.20L4T.2036.2E3.20for.20Jetson.20Orin/near/455889690
 
                 We thus update the provisioning instructions accordingly
               footer:
@@ -4174,10 +4184,8 @@
         - commits:
             - subject: Fix LED support for ISG-503
               hash: 8c779e12dbb16892528af17d8749cff1902146ad
-              body: >
-                The LED support was incorrectly changed in
-                https://github.com/balena-io/contracts/commit/4bb6eb1f732957e605f00e47b068199f14ff1765
-
+              body: |
+                The LED support was incorrectly changed in https://github.com/balena-io/contracts/commit/4bb6eb1f732957e605f00e47b068199f14ff1765
                 Let's switch it back to unsupported. 
               footer:
                 Change-type: patch
