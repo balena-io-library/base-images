@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.11.3 - 2024-11-25
+
+
+<details>
+<summary> Update scripts/contracts digest to 0175739 [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.117 - 2024-11-25
+> 
+> * hw.device-type: Rename Seeed J3010 and J4012 to include module name [Alexandru Costache]
+> 
+
+</details>
+
 ## 2.11.2 - 2024-11-25
 
 * Lock file maintenance [Self-hosted Renovate Bot]
