@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.11.6 - 2024-12-04
+
+
+<details>
+<summary> Update scripts/contracts digest to 474ab2d [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.118 - 2024-12-04
+> 
+> * hw.device-type: update logo for nitrogen8M Mini [Jonathan Berger]
+> 
+
+</details>
+
 ## 2.11.5 - 2024-12-02
 
 * Lock file maintenance [Self-hosted Renovate Bot]
