@@ -1,4 +1,30 @@
 - commits:
+    - subject: Update scripts/contracts digest to 9ce0ad7
+      hash: dda94041a2747113aa5bacfe9a616fb3463085b5
+      body: |
+        Update scripts/contracts
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: "contracts/hw.device-type: Update instructions for Orin flasher types"
+              hash: 79b1757276a189f0b898903f5d85658e0b5c478a
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+          version: contracts-2.0.119
+          title: ""
+          date: 2024-12-16T04:57:49.690Z
+  version: 2.11.11
+  title: ""
+  date: 2024-12-16T06:14:36.271Z
+- commits:
     - subject: Lock file maintenance
       hash: b13936ea4bb2dcb3e1e22315920b1a7d2500820d
       body: |

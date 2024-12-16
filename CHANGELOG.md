@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.11.11 - 2024-12-16
+
+
+<details>
+<summary> Update scripts/contracts digest to 9ce0ad7 [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.119 - 2024-12-16
+> 
+> * contracts/hw.device-type: Update instructions for Orin flasher types [Alexandru Costache]
+> 
+
+</details>
+
 ## 2.11.10 - 2024-12-16
 
 * Lock file maintenance [Self-hosted Renovate Bot]
