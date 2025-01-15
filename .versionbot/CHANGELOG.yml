@@ -1,4 +1,112 @@
 - commits:
+    - subject: Update scripts/contracts digest to cde8b88
+      hash: ff2fdd758ac7f9c0d896faa2eaf76a5edde70af2
+      body: |
+        Update scripts/contracts
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: "hw.device-type: Switch to using markdown for links"
+              hash: 4c648636dd05ee31ea458b74df97207fc7b8d5c7
+              body: |
+                ... as per the internal thread
+                https://balena.zulipchat.com/#narrow/channel/350505-aspect.2Fgrowth/topic/Improving.20Jetson-flash.20documentation/near/493450821
+
+                Due to recent changes in the renderer, HTML links are no
+                longer displayed.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+          version: contracts-2.0.125
+          title: ""
+          date: 2025-01-15T09:07:30.756Z
+        - commits:
+            - subject: "sw.os+hw.device-type: Add Forecr DSB Orin Nano 8GB and Orin NX 16GB
+                distro tpl files"
+              hash: 62db64e1b73ce5b40f3d672109496ee9b6721c25
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+            - subject: "forecr-dsb-ornx-lan-orin-nx-16gb: Add new public device type"
+              hash: fa485d9a76dcbaf1d2e160889e36fe531d10fc10
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+          version: contracts-2.0.124
+          title: ""
+          date: 2025-01-07T08:35:14.426Z
+        - commits:
+            - subject: "Forecr DSB ORNX: Update device name"
+              hash: 06d7cd7e8cd4864a6cb7547adb76ad698b821c4c
+              body: >
+                ... to match the carrier board more clearly. The slug stays the
+                same as the device is already present in the API.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru
+          version: contracts-2.0.123
+          title: ""
+          date: 2025-01-02T09:27:41.615Z
+        - commits:
+            - subject: "hw.device-type: add Forecr DSB ORNX entries"
+              hash: aaacf7dde8997f5291da82aab537ca902a24267e
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Suykov <alex.suykov@sirinsoftware.com>
+                signed-off-by: Alex Suykov <alex.suykov@sirinsoftware.com>
+              author: Alex Suykov
+          version: contracts-2.0.122
+          title: ""
+          date: 2024-12-23T10:57:21.261Z
+        - commits:
+            - subject: "hw.device-type: Fix compatibility with existing sdk structure"
+              hash: e234b48207f0a7e82e56fb636d2791ba2a364a68
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+          version: contracts-2.0.121
+          title: ""
+          date: 2024-12-18T20:31:37.211Z
+        - commits:
+            - subject: add eg5120-imx8mp contract
+              hash: 272015edab63d911b6a716b43d3ef52f3c577153
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Ryan Cooke <ryan@balena.io>
+                signed-off-by: Ryan Cooke <ryan@balena.io>
+              author: Ryan Cooke
+          version: contracts-2.0.120
+          title: ""
+          date: 2024-12-18T12:47:37.969Z
+  version: 2.11.12
+  title: ""
+  date: 2025-01-15T10:10:01.267Z
+- commits:
     - subject: Update scripts/contracts digest to 9ce0ad7
       hash: dda94041a2747113aa5bacfe9a616fb3463085b5
       body: |

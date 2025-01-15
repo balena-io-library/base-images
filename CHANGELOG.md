@@ -5,6 +5,40 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.11.12 - 2025-01-15
+
+
+<details>
+<summary> Update scripts/contracts digest to cde8b88 [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.125 - 2025-01-15
+> 
+> * hw.device-type: Switch to using markdown for links [Alexandru Costache]
+> 
+> ### contracts-2.0.124 - 2025-01-07
+> 
+> * sw.os+hw.device-type: Add Forecr DSB Orin Nano 8GB and Orin NX 16GB distro tpl files [Alexandru Costache]
+> * forecr-dsb-ornx-lan-orin-nx-16gb: Add new public device type [Alexandru Costache]
+> 
+> ### contracts-2.0.123 - 2025-01-02
+> 
+> * Forecr DSB ORNX: Update device name [Alexandru]
+> 
+> ### contracts-2.0.122 - 2024-12-23
+> 
+> * hw.device-type: add Forecr DSB ORNX entries [Alex Suykov]
+> 
+> ### contracts-2.0.121 - 2024-12-18
+> 
+> * hw.device-type: Fix compatibility with existing sdk structure [Alexandru Costache]
+> 
+> ### contracts-2.0.120 - 2024-12-18
+> 
+> * add eg5120-imx8mp contract [Ryan Cooke]
+> 
+
+</details>
+
 ## 2.11.11 - 2024-12-16
 
 
