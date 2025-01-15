@@ -1,4 +1,4 @@
-name: Bake beaglebone-ai64
+name: Bake forecr-dsb-ornx-lan-orin-nx-16gb
 'on':
   workflow_run:
     workflows:
@@ -21,14 +21,14 @@ concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: ${{ inputs.cancel-in-progress == true }}
 jobs:
-  prepare-beaglebone-ai64-alpine:
-    name: Prepare beaglebone-ai64-alpine
+  prepare-forecr-dsb-ornx-lan-orin-nx-16gb-alpine:
+    name: Prepare forecr-dsb-ornx-lan-orin-nx-16gb-alpine
     runs-on: ubuntu-latest
     if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/beaglebone-ai64-alpine.json
+      LIBRARY: library/forecr-dsb-ornx-lan-orin-nx-16gb-alpine.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -41,20 +41,20 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-beaglebone-ai64-alpine:
-    name: Bake beaglebone-ai64-alpine
+  bake-forecr-dsb-ornx-lan-orin-nx-16gb-alpine:
+    name: Bake forecr-dsb-ornx-lan-orin-nx-16gb-alpine
     runs-on:
       - self-hosted
       - base-images
       - ARM64
     timeout-minutes: 240
-    needs: prepare-beaglebone-ai64-alpine
+    needs: prepare-forecr-dsb-ornx-lan-orin-nx-16gb-alpine
     env:
-      LIBRARY: library/beaglebone-ai64-alpine.json
+      LIBRARY: library/forecr-dsb-ornx-lan-orin-nx-16gb-alpine.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-beaglebone-ai64-alpine.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-forecr-dsb-ornx-lan-orin-nx-16gb-alpine.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -92,14 +92,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-beaglebone-ai64-debian:
-    name: Prepare beaglebone-ai64-debian
+  prepare-forecr-dsb-ornx-lan-orin-nx-16gb-debian:
+    name: Prepare forecr-dsb-ornx-lan-orin-nx-16gb-debian
     runs-on: ubuntu-latest
     if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/beaglebone-ai64-debian.json
+      LIBRARY: library/forecr-dsb-ornx-lan-orin-nx-16gb-debian.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -112,20 +112,20 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-beaglebone-ai64-debian:
-    name: Bake beaglebone-ai64-debian
+  bake-forecr-dsb-ornx-lan-orin-nx-16gb-debian:
+    name: Bake forecr-dsb-ornx-lan-orin-nx-16gb-debian
     runs-on:
       - self-hosted
       - base-images
       - ARM64
     timeout-minutes: 240
-    needs: prepare-beaglebone-ai64-debian
+    needs: prepare-forecr-dsb-ornx-lan-orin-nx-16gb-debian
     env:
-      LIBRARY: library/beaglebone-ai64-debian.json
+      LIBRARY: library/forecr-dsb-ornx-lan-orin-nx-16gb-debian.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-beaglebone-ai64-debian.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-forecr-dsb-ornx-lan-orin-nx-16gb-debian.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -163,14 +163,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-beaglebone-ai64-fedora:
-    name: Prepare beaglebone-ai64-fedora
+  prepare-forecr-dsb-ornx-lan-orin-nx-16gb-fedora:
+    name: Prepare forecr-dsb-ornx-lan-orin-nx-16gb-fedora
     runs-on: ubuntu-latest
     if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/beaglebone-ai64-fedora.json
+      LIBRARY: library/forecr-dsb-ornx-lan-orin-nx-16gb-fedora.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -183,20 +183,20 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-beaglebone-ai64-fedora:
-    name: Bake beaglebone-ai64-fedora
+  bake-forecr-dsb-ornx-lan-orin-nx-16gb-fedora:
+    name: Bake forecr-dsb-ornx-lan-orin-nx-16gb-fedora
     runs-on:
       - self-hosted
       - base-images
       - ARM64
     timeout-minutes: 240
-    needs: prepare-beaglebone-ai64-fedora
+    needs: prepare-forecr-dsb-ornx-lan-orin-nx-16gb-fedora
     env:
-      LIBRARY: library/beaglebone-ai64-fedora.json
+      LIBRARY: library/forecr-dsb-ornx-lan-orin-nx-16gb-fedora.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-beaglebone-ai64-fedora.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-forecr-dsb-ornx-lan-orin-nx-16gb-fedora.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -234,14 +234,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-beaglebone-ai64-ubuntu:
-    name: Prepare beaglebone-ai64-ubuntu
+  prepare-forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:
+    name: Prepare forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu
     runs-on: ubuntu-latest
     if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/beaglebone-ai64-ubuntu.json
+      LIBRARY: library/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -254,20 +254,20 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-beaglebone-ai64-ubuntu:
-    name: Bake beaglebone-ai64-ubuntu
+  bake-forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:
+    name: Bake forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu
     runs-on:
       - self-hosted
       - base-images
       - ARM64
     timeout-minutes: 240
-    needs: prepare-beaglebone-ai64-ubuntu
+    needs: prepare-forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu
     env:
-      LIBRARY: library/beaglebone-ai64-ubuntu.json
+      LIBRARY: library/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-beaglebone-ai64-ubuntu.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -305,14 +305,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-beaglebone-ai64-alpine-golang:
-    name: Prepare beaglebone-ai64-alpine-golang
+  prepare-forecr-dsb-ornx-lan-orin-nx-16gb-alpine-golang:
+    name: Prepare forecr-dsb-ornx-lan-orin-nx-16gb-alpine-golang
     runs-on: ubuntu-latest
-    needs: bake-beaglebone-ai64-alpine
+    needs: bake-forecr-dsb-ornx-lan-orin-nx-16gb-alpine
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/beaglebone-ai64-alpine-golang.json
+      LIBRARY: library/forecr-dsb-ornx-lan-orin-nx-16gb-alpine-golang.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -325,20 +325,20 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-beaglebone-ai64-alpine-golang:
-    name: Bake beaglebone-ai64-alpine-golang
+  bake-forecr-dsb-ornx-lan-orin-nx-16gb-alpine-golang:
+    name: Bake forecr-dsb-ornx-lan-orin-nx-16gb-alpine-golang
     runs-on:
       - self-hosted
       - base-images
       - ARM64
     timeout-minutes: 240
-    needs: prepare-beaglebone-ai64-alpine-golang
+    needs: prepare-forecr-dsb-ornx-lan-orin-nx-16gb-alpine-golang
     env:
-      LIBRARY: library/beaglebone-ai64-alpine-golang.json
+      LIBRARY: library/forecr-dsb-ornx-lan-orin-nx-16gb-alpine-golang.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-beaglebone-ai64-alpine-golang.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-forecr-dsb-ornx-lan-orin-nx-16gb-alpine-golang.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -376,14 +376,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-beaglebone-ai64-alpine-node:
-    name: Prepare beaglebone-ai64-alpine-node
+  prepare-forecr-dsb-ornx-lan-orin-nx-16gb-alpine-node:
+    name: Prepare forecr-dsb-ornx-lan-orin-nx-16gb-alpine-node
     runs-on: ubuntu-latest
-    needs: bake-beaglebone-ai64-alpine
+    needs: bake-forecr-dsb-ornx-lan-orin-nx-16gb-alpine
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/beaglebone-ai64-alpine-node.json
+      LIBRARY: library/forecr-dsb-ornx-lan-orin-nx-16gb-alpine-node.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -396,20 +396,20 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-beaglebone-ai64-alpine-node:
-    name: Bake beaglebone-ai64-alpine-node
+  bake-forecr-dsb-ornx-lan-orin-nx-16gb-alpine-node:
+    name: Bake forecr-dsb-ornx-lan-orin-nx-16gb-alpine-node
     runs-on:
       - self-hosted
       - base-images
       - ARM64
     timeout-minutes: 240
-    needs: prepare-beaglebone-ai64-alpine-node
+    needs: prepare-forecr-dsb-ornx-lan-orin-nx-16gb-alpine-node
     env:
-      LIBRARY: library/beaglebone-ai64-alpine-node.json
+      LIBRARY: library/forecr-dsb-ornx-lan-orin-nx-16gb-alpine-node.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-beaglebone-ai64-alpine-node.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-forecr-dsb-ornx-lan-orin-nx-16gb-alpine-node.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -447,14 +447,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-beaglebone-ai64-alpine-python:
-    name: Prepare beaglebone-ai64-alpine-python
+  prepare-forecr-dsb-ornx-lan-orin-nx-16gb-alpine-python:
+    name: Prepare forecr-dsb-ornx-lan-orin-nx-16gb-alpine-python
     runs-on: ubuntu-latest
-    needs: bake-beaglebone-ai64-alpine
+    needs: bake-forecr-dsb-ornx-lan-orin-nx-16gb-alpine
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/beaglebone-ai64-alpine-python.json
+      LIBRARY: library/forecr-dsb-ornx-lan-orin-nx-16gb-alpine-python.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -467,20 +467,20 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-beaglebone-ai64-alpine-python:
-    name: Bake beaglebone-ai64-alpine-python
+  bake-forecr-dsb-ornx-lan-orin-nx-16gb-alpine-python:
+    name: Bake forecr-dsb-ornx-lan-orin-nx-16gb-alpine-python
     runs-on:
       - self-hosted
       - base-images
       - ARM64
     timeout-minutes: 240
-    needs: prepare-beaglebone-ai64-alpine-python
+    needs: prepare-forecr-dsb-ornx-lan-orin-nx-16gb-alpine-python
     env:
-      LIBRARY: library/beaglebone-ai64-alpine-python.json
+      LIBRARY: library/forecr-dsb-ornx-lan-orin-nx-16gb-alpine-python.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-beaglebone-ai64-alpine-python.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-forecr-dsb-ornx-lan-orin-nx-16gb-alpine-python.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -518,14 +518,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-beaglebone-ai64-debian-golang:
-    name: Prepare beaglebone-ai64-debian-golang
+  prepare-forecr-dsb-ornx-lan-orin-nx-16gb-debian-golang:
+    name: Prepare forecr-dsb-ornx-lan-orin-nx-16gb-debian-golang
     runs-on: ubuntu-latest
-    needs: bake-beaglebone-ai64-debian
+    needs: bake-forecr-dsb-ornx-lan-orin-nx-16gb-debian
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/beaglebone-ai64-debian-golang.json
+      LIBRARY: library/forecr-dsb-ornx-lan-orin-nx-16gb-debian-golang.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -538,20 +538,20 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-beaglebone-ai64-debian-golang:
-    name: Bake beaglebone-ai64-debian-golang
+  bake-forecr-dsb-ornx-lan-orin-nx-16gb-debian-golang:
+    name: Bake forecr-dsb-ornx-lan-orin-nx-16gb-debian-golang
     runs-on:
       - self-hosted
       - base-images
       - ARM64
     timeout-minutes: 240
-    needs: prepare-beaglebone-ai64-debian-golang
+    needs: prepare-forecr-dsb-ornx-lan-orin-nx-16gb-debian-golang
     env:
-      LIBRARY: library/beaglebone-ai64-debian-golang.json
+      LIBRARY: library/forecr-dsb-ornx-lan-orin-nx-16gb-debian-golang.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-beaglebone-ai64-debian-golang.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-forecr-dsb-ornx-lan-orin-nx-16gb-debian-golang.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -589,14 +589,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-beaglebone-ai64-debian-node:
-    name: Prepare beaglebone-ai64-debian-node
+  prepare-forecr-dsb-ornx-lan-orin-nx-16gb-debian-node:
+    name: Prepare forecr-dsb-ornx-lan-orin-nx-16gb-debian-node
     runs-on: ubuntu-latest
-    needs: bake-beaglebone-ai64-debian
+    needs: bake-forecr-dsb-ornx-lan-orin-nx-16gb-debian
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/beaglebone-ai64-debian-node.json
+      LIBRARY: library/forecr-dsb-ornx-lan-orin-nx-16gb-debian-node.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -609,20 +609,20 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-beaglebone-ai64-debian-node:
-    name: Bake beaglebone-ai64-debian-node
+  bake-forecr-dsb-ornx-lan-orin-nx-16gb-debian-node:
+    name: Bake forecr-dsb-ornx-lan-orin-nx-16gb-debian-node
     runs-on:
       - self-hosted
       - base-images
       - ARM64
     timeout-minutes: 240
-    needs: prepare-beaglebone-ai64-debian-node
+    needs: prepare-forecr-dsb-ornx-lan-orin-nx-16gb-debian-node
     env:
-      LIBRARY: library/beaglebone-ai64-debian-node.json
+      LIBRARY: library/forecr-dsb-ornx-lan-orin-nx-16gb-debian-node.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-beaglebone-ai64-debian-node.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-forecr-dsb-ornx-lan-orin-nx-16gb-debian-node.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -660,14 +660,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-beaglebone-ai64-debian-openjdk:
-    name: Prepare beaglebone-ai64-debian-openjdk
+  prepare-forecr-dsb-ornx-lan-orin-nx-16gb-debian-openjdk:
+    name: Prepare forecr-dsb-ornx-lan-orin-nx-16gb-debian-openjdk
     runs-on: ubuntu-latest
-    needs: bake-beaglebone-ai64-debian
+    needs: bake-forecr-dsb-ornx-lan-orin-nx-16gb-debian
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/beaglebone-ai64-debian-openjdk.json
+      LIBRARY: library/forecr-dsb-ornx-lan-orin-nx-16gb-debian-openjdk.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -680,20 +680,20 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-beaglebone-ai64-debian-openjdk:
-    name: Bake beaglebone-ai64-debian-openjdk
+  bake-forecr-dsb-ornx-lan-orin-nx-16gb-debian-openjdk:
+    name: Bake forecr-dsb-ornx-lan-orin-nx-16gb-debian-openjdk
     runs-on:
       - self-hosted
       - base-images
       - ARM64
     timeout-minutes: 240
-    needs: prepare-beaglebone-ai64-debian-openjdk
+    needs: prepare-forecr-dsb-ornx-lan-orin-nx-16gb-debian-openjdk
     env:
-      LIBRARY: library/beaglebone-ai64-debian-openjdk.json
+      LIBRARY: library/forecr-dsb-ornx-lan-orin-nx-16gb-debian-openjdk.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-beaglebone-ai64-debian-openjdk.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-forecr-dsb-ornx-lan-orin-nx-16gb-debian-openjdk.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -731,14 +731,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-beaglebone-ai64-debian-python:
-    name: Prepare beaglebone-ai64-debian-python
+  prepare-forecr-dsb-ornx-lan-orin-nx-16gb-debian-python:
+    name: Prepare forecr-dsb-ornx-lan-orin-nx-16gb-debian-python
     runs-on: ubuntu-latest
-    needs: bake-beaglebone-ai64-debian
+    needs: bake-forecr-dsb-ornx-lan-orin-nx-16gb-debian
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/beaglebone-ai64-debian-python.json
+      LIBRARY: library/forecr-dsb-ornx-lan-orin-nx-16gb-debian-python.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -751,20 +751,20 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-beaglebone-ai64-debian-python:
-    name: Bake beaglebone-ai64-debian-python
+  bake-forecr-dsb-ornx-lan-orin-nx-16gb-debian-python:
+    name: Bake forecr-dsb-ornx-lan-orin-nx-16gb-debian-python
     runs-on:
       - self-hosted
       - base-images
       - ARM64
     timeout-minutes: 240
-    needs: prepare-beaglebone-ai64-debian-python
+    needs: prepare-forecr-dsb-ornx-lan-orin-nx-16gb-debian-python
     env:
-      LIBRARY: library/beaglebone-ai64-debian-python.json
+      LIBRARY: library/forecr-dsb-ornx-lan-orin-nx-16gb-debian-python.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-beaglebone-ai64-debian-python.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-forecr-dsb-ornx-lan-orin-nx-16gb-debian-python.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -802,14 +802,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-beaglebone-ai64-fedora-golang:
-    name: Prepare beaglebone-ai64-fedora-golang
+  prepare-forecr-dsb-ornx-lan-orin-nx-16gb-fedora-golang:
+    name: Prepare forecr-dsb-ornx-lan-orin-nx-16gb-fedora-golang
     runs-on: ubuntu-latest
-    needs: bake-beaglebone-ai64-fedora
+    needs: bake-forecr-dsb-ornx-lan-orin-nx-16gb-fedora
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/beaglebone-ai64-fedora-golang.json
+      LIBRARY: library/forecr-dsb-ornx-lan-orin-nx-16gb-fedora-golang.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -822,20 +822,20 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-beaglebone-ai64-fedora-golang:
-    name: Bake beaglebone-ai64-fedora-golang
+  bake-forecr-dsb-ornx-lan-orin-nx-16gb-fedora-golang:
+    name: Bake forecr-dsb-ornx-lan-orin-nx-16gb-fedora-golang
     runs-on:
       - self-hosted
       - base-images
       - ARM64
     timeout-minutes: 240
-    needs: prepare-beaglebone-ai64-fedora-golang
+    needs: prepare-forecr-dsb-ornx-lan-orin-nx-16gb-fedora-golang
     env:
-      LIBRARY: library/beaglebone-ai64-fedora-golang.json
+      LIBRARY: library/forecr-dsb-ornx-lan-orin-nx-16gb-fedora-golang.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-beaglebone-ai64-fedora-golang.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-forecr-dsb-ornx-lan-orin-nx-16gb-fedora-golang.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -873,14 +873,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-beaglebone-ai64-fedora-node:
-    name: Prepare beaglebone-ai64-fedora-node
+  prepare-forecr-dsb-ornx-lan-orin-nx-16gb-fedora-node:
+    name: Prepare forecr-dsb-ornx-lan-orin-nx-16gb-fedora-node
     runs-on: ubuntu-latest
-    needs: bake-beaglebone-ai64-fedora
+    needs: bake-forecr-dsb-ornx-lan-orin-nx-16gb-fedora
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/beaglebone-ai64-fedora-node.json
+      LIBRARY: library/forecr-dsb-ornx-lan-orin-nx-16gb-fedora-node.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -893,20 +893,20 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-beaglebone-ai64-fedora-node:
-    name: Bake beaglebone-ai64-fedora-node
+  bake-forecr-dsb-ornx-lan-orin-nx-16gb-fedora-node:
+    name: Bake forecr-dsb-ornx-lan-orin-nx-16gb-fedora-node
     runs-on:
       - self-hosted
       - base-images
       - ARM64
     timeout-minutes: 240
-    needs: prepare-beaglebone-ai64-fedora-node
+    needs: prepare-forecr-dsb-ornx-lan-orin-nx-16gb-fedora-node
     env:
-      LIBRARY: library/beaglebone-ai64-fedora-node.json
+      LIBRARY: library/forecr-dsb-ornx-lan-orin-nx-16gb-fedora-node.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-beaglebone-ai64-fedora-node.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-forecr-dsb-ornx-lan-orin-nx-16gb-fedora-node.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -944,14 +944,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-beaglebone-ai64-fedora-python:
-    name: Prepare beaglebone-ai64-fedora-python
+  prepare-forecr-dsb-ornx-lan-orin-nx-16gb-fedora-python:
+    name: Prepare forecr-dsb-ornx-lan-orin-nx-16gb-fedora-python
     runs-on: ubuntu-latest
-    needs: bake-beaglebone-ai64-fedora
+    needs: bake-forecr-dsb-ornx-lan-orin-nx-16gb-fedora
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/beaglebone-ai64-fedora-python.json
+      LIBRARY: library/forecr-dsb-ornx-lan-orin-nx-16gb-fedora-python.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -964,20 +964,20 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-beaglebone-ai64-fedora-python:
-    name: Bake beaglebone-ai64-fedora-python
+  bake-forecr-dsb-ornx-lan-orin-nx-16gb-fedora-python:
+    name: Bake forecr-dsb-ornx-lan-orin-nx-16gb-fedora-python
     runs-on:
       - self-hosted
       - base-images
       - ARM64
     timeout-minutes: 240
-    needs: prepare-beaglebone-ai64-fedora-python
+    needs: prepare-forecr-dsb-ornx-lan-orin-nx-16gb-fedora-python
     env:
-      LIBRARY: library/beaglebone-ai64-fedora-python.json
+      LIBRARY: library/forecr-dsb-ornx-lan-orin-nx-16gb-fedora-python.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-beaglebone-ai64-fedora-python.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-forecr-dsb-ornx-lan-orin-nx-16gb-fedora-python.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -1015,14 +1015,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-beaglebone-ai64-ubuntu-golang:
-    name: Prepare beaglebone-ai64-ubuntu-golang
+  prepare-forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-golang:
+    name: Prepare forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-golang
     runs-on: ubuntu-latest
-    needs: bake-beaglebone-ai64-ubuntu
+    needs: bake-forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/beaglebone-ai64-ubuntu-golang.json
+      LIBRARY: library/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-golang.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -1035,20 +1035,20 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-beaglebone-ai64-ubuntu-golang:
-    name: Bake beaglebone-ai64-ubuntu-golang
+  bake-forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-golang:
+    name: Bake forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-golang
     runs-on:
       - self-hosted
       - base-images
       - ARM64
     timeout-minutes: 240
-    needs: prepare-beaglebone-ai64-ubuntu-golang
+    needs: prepare-forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-golang
     env:
-      LIBRARY: library/beaglebone-ai64-ubuntu-golang.json
+      LIBRARY: library/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-golang.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-beaglebone-ai64-ubuntu-golang.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-golang.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -1086,14 +1086,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-beaglebone-ai64-ubuntu-node:
-    name: Prepare beaglebone-ai64-ubuntu-node
+  prepare-forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-node:
+    name: Prepare forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-node
     runs-on: ubuntu-latest
-    needs: bake-beaglebone-ai64-ubuntu
+    needs: bake-forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/beaglebone-ai64-ubuntu-node.json
+      LIBRARY: library/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-node.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -1106,20 +1106,20 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-beaglebone-ai64-ubuntu-node:
-    name: Bake beaglebone-ai64-ubuntu-node
+  bake-forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-node:
+    name: Bake forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-node
     runs-on:
       - self-hosted
       - base-images
       - ARM64
     timeout-minutes: 240
-    needs: prepare-beaglebone-ai64-ubuntu-node
+    needs: prepare-forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-node
     env:
-      LIBRARY: library/beaglebone-ai64-ubuntu-node.json
+      LIBRARY: library/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-node.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-beaglebone-ai64-ubuntu-node.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-node.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -1157,14 +1157,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-beaglebone-ai64-ubuntu-python:
-    name: Prepare beaglebone-ai64-ubuntu-python
+  prepare-forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-python:
+    name: Prepare forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-python
     runs-on: ubuntu-latest
-    needs: bake-beaglebone-ai64-ubuntu
+    needs: bake-forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/beaglebone-ai64-ubuntu-python.json
+      LIBRARY: library/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-python.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -1177,20 +1177,20 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-beaglebone-ai64-ubuntu-python:
-    name: Bake beaglebone-ai64-ubuntu-python
+  bake-forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-python:
+    name: Bake forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-python
     runs-on:
       - self-hosted
       - base-images
       - ARM64
     timeout-minutes: 240
-    needs: prepare-beaglebone-ai64-ubuntu-python
+    needs: prepare-forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-python
     env:
-      LIBRARY: library/beaglebone-ai64-ubuntu-python.json
+      LIBRARY: library/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-python.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-beaglebone-ai64-ubuntu-python.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-python.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -1228,14 +1228,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-beaglebone-ai64-ubuntu-openjdk:
-    name: Prepare beaglebone-ai64-ubuntu-openjdk
+  prepare-forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-openjdk:
+    name: Prepare forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-openjdk
     runs-on: ubuntu-latest
-    needs: bake-beaglebone-ai64-ubuntu
+    needs: bake-forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/beaglebone-ai64-ubuntu-openjdk.json
+      LIBRARY: library/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-openjdk.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -1248,20 +1248,20 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-beaglebone-ai64-ubuntu-openjdk:
-    name: Bake beaglebone-ai64-ubuntu-openjdk
+  bake-forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-openjdk:
+    name: Bake forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-openjdk
     runs-on:
       - self-hosted
       - base-images
       - ARM64
     timeout-minutes: 240
-    needs: prepare-beaglebone-ai64-ubuntu-openjdk
+    needs: prepare-forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-openjdk
     env:
-      LIBRARY: library/beaglebone-ai64-ubuntu-openjdk.json
+      LIBRARY: library/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-openjdk.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-beaglebone-ai64-ubuntu-openjdk.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-openjdk.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
