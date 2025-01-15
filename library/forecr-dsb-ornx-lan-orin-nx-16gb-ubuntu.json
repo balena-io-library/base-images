@@ -1,0 +1,197 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-noble-build",
+        "forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-noble-run",
+        "forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-jammy-build",
+        "forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-jammy-run",
+        "forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-focal-build",
+        "forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-focal-run",
+        "forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-xenial-build",
+        "forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-xenial-run",
+        "forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-bionic-build",
+        "forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-bionic-run"
+      ]
+    }
+  },
+  "target": {
+    "forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-noble-build": {
+      "context": "device-base/forecr-dsb-ornx-lan-orin-nx-16gb/ubuntu/noble/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:noble-build-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:noble-build",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:latest-build",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:build-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:noble-build-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:noble-build",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:latest-build",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:build-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:build"
+      ]
+    },
+    "forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-noble-run": {
+      "context": "device-base/forecr-dsb-ornx-lan-orin-nx-16gb/ubuntu/noble/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:noble-run-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:noble-run",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:noble-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:noble",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:latest-run",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:latest-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:latest",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:run-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:run",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:${DATESTAMP}"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:noble-run-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:noble-run",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:noble-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:noble",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:latest-run",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:latest-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:latest",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:run-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:run",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:${DATESTAMP}"
+      ]
+    },
+    "forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-jammy-build": {
+      "context": "device-base/forecr-dsb-ornx-lan-orin-nx-16gb/ubuntu/jammy/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:jammy-build-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:jammy-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:jammy-build-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:jammy-build"
+      ]
+    },
+    "forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-jammy-run": {
+      "context": "device-base/forecr-dsb-ornx-lan-orin-nx-16gb/ubuntu/jammy/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:jammy-run-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:jammy-run",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:jammy-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:jammy"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:jammy-run-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:jammy-run",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:jammy-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:jammy"
+      ]
+    },
+    "forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-focal-build": {
+      "context": "device-base/forecr-dsb-ornx-lan-orin-nx-16gb/ubuntu/focal/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:focal-build-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:focal-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:focal-build-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:focal-build"
+      ]
+    },
+    "forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-focal-run": {
+      "context": "device-base/forecr-dsb-ornx-lan-orin-nx-16gb/ubuntu/focal/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:focal-run-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:focal-run",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:focal-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:focal"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:focal-run-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:focal-run",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:focal-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:focal"
+      ]
+    },
+    "forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-xenial-build": {
+      "context": "device-base/forecr-dsb-ornx-lan-orin-nx-16gb/ubuntu/xenial/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:xenial-build-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:xenial-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:xenial-build-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:xenial-build"
+      ]
+    },
+    "forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-xenial-run": {
+      "context": "device-base/forecr-dsb-ornx-lan-orin-nx-16gb/ubuntu/xenial/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:xenial-run-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:xenial-run",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:xenial-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:xenial"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:xenial-run-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:xenial-run",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:xenial-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:xenial"
+      ]
+    },
+    "forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-bionic-build": {
+      "context": "device-base/forecr-dsb-ornx-lan-orin-nx-16gb/ubuntu/bionic/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:bionic-build-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:bionic-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:bionic-build-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:bionic-build"
+      ]
+    },
+    "forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-bionic-run": {
+      "context": "device-base/forecr-dsb-ornx-lan-orin-nx-16gb/ubuntu/bionic/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:bionic-run-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:bionic-run",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:bionic-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:bionic"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:bionic-run-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:bionic-run",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:bionic-${DATESTAMP}",
+        "docker.io/balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:bionic"
+      ]
+    }
+  },
+  "variable": {
+    "DATESTAMP": {
+      "default": "$DATESTAMP"
+    }
+  }
+}
