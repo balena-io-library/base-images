@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.11.19 - 2025-01-28
+
+
+<details>
+<summary> Update scripts/contracts digest to b042ab7 [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.127 - 2025-01-28
+> 
+> * Mark alpine 3.21 as the default alpine version [Thodoris Greasidis]
+> 
+
+</details>
+
 ## 2.11.18 - 2025-01-28
 
 
