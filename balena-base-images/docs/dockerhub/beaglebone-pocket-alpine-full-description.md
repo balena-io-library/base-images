@@ -32,7 +32,7 @@ This [guide][getting-started] can help you get started with using this base imag
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;3.20 (latest)&#x60;, &#x60;3.19&#x60;, &#x60;3.18&#x60;, &#x60;3.17&#x60;, &#x60;3.16&#x60;, &#x60;3.15&#x60;, &#x60;3.14&#x60;, &#x60;3.13&#x60;, &#x60;3.12&#x60;, &#x60;edge&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/beaglebone-pocket/alpine/)
+[&#x60;3.21 (latest)&#x60;, &#x60;3.20&#x60;, &#x60;3.19&#x60;, &#x60;3.18&#x60;, &#x60;3.17&#x60;, &#x60;3.16&#x60;, &#x60;3.15&#x60;, &#x60;3.14&#x60;, &#x60;3.13&#x60;, &#x60;3.12&#x60;, &#x60;edge&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/beaglebone-pocket/alpine/)
 
 For more information about this image and its history, please see the [relevant manifest file (`beaglebone-pocket-alpine`)](https://github.com/balena-io-library/official-images/blob/master/library/beaglebone-pocket-alpine) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 

@@ -28,7 +28,7 @@ The build variant is a heavier image that includes many of the tools required fo
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;3.20 (latest)&#x60;, &#x60;3.19&#x60;, &#x60;3.18&#x60;, &#x60;3.17&#x60;, &#x60;3.16&#x60;, &#x60;3.15&#x60;, &#x60;3.14&#x60;, &#x60;3.13&#x60;, &#x60;3.12&#x60;, &#x60;edge&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/armv7hf/alpine/)
+[&#x60;3.21 (latest)&#x60;, &#x60;3.20&#x60;, &#x60;3.19&#x60;, &#x60;3.18&#x60;, &#x60;3.17&#x60;, &#x60;3.16&#x60;, &#x60;3.15&#x60;, &#x60;3.14&#x60;, &#x60;3.13&#x60;, &#x60;3.12&#x60;, &#x60;edge&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/armv7hf/alpine/)
 
 For more information about this image and its history, please see the [relevant manifest file (`armv7hf-alpine`)](https://github.com/balena-io-library/official-images/blob/master/library/armv7hf-alpine) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 
