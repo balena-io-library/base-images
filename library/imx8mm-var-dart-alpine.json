@@ -4,8 +4,14 @@
       "targets": [
         "imx8mm-var-dart-alpine-edge-build",
         "imx8mm-var-dart-alpine-edge-run",
+        "imx8mm-var-dart-alpine-3-12-build",
+        "imx8mm-var-dart-alpine-3-12-run",
+        "imx8mm-var-dart-alpine-3-13-build",
+        "imx8mm-var-dart-alpine-3-13-run",
         "imx8mm-var-dart-alpine-3-14-build",
         "imx8mm-var-dart-alpine-3-14-run",
+        "imx8mm-var-dart-alpine-3-15-build",
+        "imx8mm-var-dart-alpine-3-15-run",
         "imx8mm-var-dart-alpine-3-16-build",
         "imx8mm-var-dart-alpine-3-16-run",
         "imx8mm-var-dart-alpine-3-17-build",
@@ -16,12 +22,8 @@
         "imx8mm-var-dart-alpine-3-19-run",
         "imx8mm-var-dart-alpine-3-20-build",
         "imx8mm-var-dart-alpine-3-20-run",
-        "imx8mm-var-dart-alpine-3-13-build",
-        "imx8mm-var-dart-alpine-3-13-run",
-        "imx8mm-var-dart-alpine-3-12-build",
-        "imx8mm-var-dart-alpine-3-12-run",
-        "imx8mm-var-dart-alpine-3-15-build",
-        "imx8mm-var-dart-alpine-3-15-run"
+        "imx8mm-var-dart-alpine-3-21-build",
+        "imx8mm-var-dart-alpine-3-21-run"
       ]
     }
   },
@@ -56,6 +58,66 @@
         "docker.io/balenalib/imx8mm-var-dart-alpine:edge"
       ]
     },
+    "imx8mm-var-dart-alpine-3-12-build": {
+      "context": "device-base/imx8mm-var-dart/alpine/3.12/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.12-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.12-build"
+      ]
+    },
+    "imx8mm-var-dart-alpine-3-12-run": {
+      "context": "device-base/imx8mm-var-dart/alpine/3.12/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.12-run",
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.12-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.12"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.12-run",
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.12-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.12"
+      ]
+    },
+    "imx8mm-var-dart-alpine-3-13-build": {
+      "context": "device-base/imx8mm-var-dart/alpine/3.13/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.13-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.13-build"
+      ]
+    },
+    "imx8mm-var-dart-alpine-3-13-run": {
+      "context": "device-base/imx8mm-var-dart/alpine/3.13/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.13-run",
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.13-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.13"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.13-run",
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.13-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.13"
+      ]
+    },
     "imx8mm-var-dart-alpine-3-14-build": {
       "context": "device-base/imx8mm-var-dart/alpine/3.14/build",
       "dockerfile": "Dockerfile",
@@ -84,6 +146,36 @@
         "docker.io/balenalib/imx8mm-var-dart-alpine:3.14-run",
         "docker.io/balenalib/imx8mm-var-dart-alpine:3.14-${DATESTAMP}",
         "docker.io/balenalib/imx8mm-var-dart-alpine:3.14"
+      ]
+    },
+    "imx8mm-var-dart-alpine-3-15-build": {
+      "context": "device-base/imx8mm-var-dart/alpine/3.15/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.15-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.15-build"
+      ]
+    },
+    "imx8mm-var-dart-alpine-3-15-run": {
+      "context": "device-base/imx8mm-var-dart/alpine/3.15/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.15-run",
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.15-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.15"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.15-run",
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.15-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.15"
       ]
     },
     "imx8mm-var-dart-alpine-3-16-build": {
@@ -258,94 +350,34 @@
         "docker.io/balenalib/imx8mm-var-dart-alpine:${DATESTAMP}"
       ]
     },
-    "imx8mm-var-dart-alpine-3-13-build": {
-      "context": "device-base/imx8mm-var-dart/alpine/3.13/build",
+    "imx8mm-var-dart-alpine-3-21-build": {
+      "context": "device-base/imx8mm-var-dart/alpine/3.21/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/imx8mm-var-dart-alpine:3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-var-dart-alpine:3.13-build"
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.21-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/imx8mm-var-dart-alpine:3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-var-dart-alpine:3.13-build"
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.21-build"
       ]
     },
-    "imx8mm-var-dart-alpine-3-13-run": {
-      "context": "device-base/imx8mm-var-dart/alpine/3.13/run",
+    "imx8mm-var-dart-alpine-3-21-run": {
+      "context": "device-base/imx8mm-var-dart/alpine/3.21/run",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/imx8mm-var-dart-alpine:3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-var-dart-alpine:3.13-run",
-        "docker.io/balenalib/imx8mm-var-dart-alpine:3.13-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-var-dart-alpine:3.13"
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.21-run",
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.21-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.21"
       ],
       "cache_from": [
-        "docker.io/balenalib/imx8mm-var-dart-alpine:3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-var-dart-alpine:3.13-run",
-        "docker.io/balenalib/imx8mm-var-dart-alpine:3.13-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-var-dart-alpine:3.13"
-      ]
-    },
-    "imx8mm-var-dart-alpine-3-12-build": {
-      "context": "device-base/imx8mm-var-dart/alpine/3.12/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/imx8mm-var-dart-alpine:3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-var-dart-alpine:3.12-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/imx8mm-var-dart-alpine:3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-var-dart-alpine:3.12-build"
-      ]
-    },
-    "imx8mm-var-dart-alpine-3-12-run": {
-      "context": "device-base/imx8mm-var-dart/alpine/3.12/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/imx8mm-var-dart-alpine:3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-var-dart-alpine:3.12-run",
-        "docker.io/balenalib/imx8mm-var-dart-alpine:3.12-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-var-dart-alpine:3.12"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/imx8mm-var-dart-alpine:3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-var-dart-alpine:3.12-run",
-        "docker.io/balenalib/imx8mm-var-dart-alpine:3.12-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-var-dart-alpine:3.12"
-      ]
-    },
-    "imx8mm-var-dart-alpine-3-15-build": {
-      "context": "device-base/imx8mm-var-dart/alpine/3.15/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/imx8mm-var-dart-alpine:3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-var-dart-alpine:3.15-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/imx8mm-var-dart-alpine:3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-var-dart-alpine:3.15-build"
-      ]
-    },
-    "imx8mm-var-dart-alpine-3-15-run": {
-      "context": "device-base/imx8mm-var-dart/alpine/3.15/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/imx8mm-var-dart-alpine:3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-var-dart-alpine:3.15-run",
-        "docker.io/balenalib/imx8mm-var-dart-alpine:3.15-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-var-dart-alpine:3.15"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/imx8mm-var-dart-alpine:3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-var-dart-alpine:3.15-run",
-        "docker.io/balenalib/imx8mm-var-dart-alpine:3.15-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-var-dart-alpine:3.15"
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.21-run",
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.21-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-var-dart-alpine:3.21"
       ]
     }
   },

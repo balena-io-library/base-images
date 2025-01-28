@@ -4,8 +4,14 @@
       "targets": [
         "nanopc-t4-alpine-edge-build",
         "nanopc-t4-alpine-edge-run",
+        "nanopc-t4-alpine-3-12-build",
+        "nanopc-t4-alpine-3-12-run",
+        "nanopc-t4-alpine-3-13-build",
+        "nanopc-t4-alpine-3-13-run",
         "nanopc-t4-alpine-3-14-build",
         "nanopc-t4-alpine-3-14-run",
+        "nanopc-t4-alpine-3-15-build",
+        "nanopc-t4-alpine-3-15-run",
         "nanopc-t4-alpine-3-16-build",
         "nanopc-t4-alpine-3-16-run",
         "nanopc-t4-alpine-3-17-build",
@@ -16,12 +22,8 @@
         "nanopc-t4-alpine-3-19-run",
         "nanopc-t4-alpine-3-20-build",
         "nanopc-t4-alpine-3-20-run",
-        "nanopc-t4-alpine-3-13-build",
-        "nanopc-t4-alpine-3-13-run",
-        "nanopc-t4-alpine-3-12-build",
-        "nanopc-t4-alpine-3-12-run",
-        "nanopc-t4-alpine-3-15-build",
-        "nanopc-t4-alpine-3-15-run"
+        "nanopc-t4-alpine-3-21-build",
+        "nanopc-t4-alpine-3-21-run"
       ]
     }
   },
@@ -56,6 +58,66 @@
         "docker.io/balenalib/nanopc-t4-alpine:edge"
       ]
     },
+    "nanopc-t4-alpine-3-12-build": {
+      "context": "device-base/nanopc-t4/alpine/3.12/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopc-t4-alpine:3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/nanopc-t4-alpine:3.12-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopc-t4-alpine:3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/nanopc-t4-alpine:3.12-build"
+      ]
+    },
+    "nanopc-t4-alpine-3-12-run": {
+      "context": "device-base/nanopc-t4/alpine/3.12/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopc-t4-alpine:3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/nanopc-t4-alpine:3.12-run",
+        "docker.io/balenalib/nanopc-t4-alpine:3.12-${DATESTAMP}",
+        "docker.io/balenalib/nanopc-t4-alpine:3.12"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopc-t4-alpine:3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/nanopc-t4-alpine:3.12-run",
+        "docker.io/balenalib/nanopc-t4-alpine:3.12-${DATESTAMP}",
+        "docker.io/balenalib/nanopc-t4-alpine:3.12"
+      ]
+    },
+    "nanopc-t4-alpine-3-13-build": {
+      "context": "device-base/nanopc-t4/alpine/3.13/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopc-t4-alpine:3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/nanopc-t4-alpine:3.13-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopc-t4-alpine:3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/nanopc-t4-alpine:3.13-build"
+      ]
+    },
+    "nanopc-t4-alpine-3-13-run": {
+      "context": "device-base/nanopc-t4/alpine/3.13/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopc-t4-alpine:3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/nanopc-t4-alpine:3.13-run",
+        "docker.io/balenalib/nanopc-t4-alpine:3.13-${DATESTAMP}",
+        "docker.io/balenalib/nanopc-t4-alpine:3.13"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopc-t4-alpine:3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/nanopc-t4-alpine:3.13-run",
+        "docker.io/balenalib/nanopc-t4-alpine:3.13-${DATESTAMP}",
+        "docker.io/balenalib/nanopc-t4-alpine:3.13"
+      ]
+    },
     "nanopc-t4-alpine-3-14-build": {
       "context": "device-base/nanopc-t4/alpine/3.14/build",
       "dockerfile": "Dockerfile",
@@ -84,6 +146,36 @@
         "docker.io/balenalib/nanopc-t4-alpine:3.14-run",
         "docker.io/balenalib/nanopc-t4-alpine:3.14-${DATESTAMP}",
         "docker.io/balenalib/nanopc-t4-alpine:3.14"
+      ]
+    },
+    "nanopc-t4-alpine-3-15-build": {
+      "context": "device-base/nanopc-t4/alpine/3.15/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopc-t4-alpine:3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/nanopc-t4-alpine:3.15-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopc-t4-alpine:3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/nanopc-t4-alpine:3.15-build"
+      ]
+    },
+    "nanopc-t4-alpine-3-15-run": {
+      "context": "device-base/nanopc-t4/alpine/3.15/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/nanopc-t4-alpine:3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/nanopc-t4-alpine:3.15-run",
+        "docker.io/balenalib/nanopc-t4-alpine:3.15-${DATESTAMP}",
+        "docker.io/balenalib/nanopc-t4-alpine:3.15"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/nanopc-t4-alpine:3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/nanopc-t4-alpine:3.15-run",
+        "docker.io/balenalib/nanopc-t4-alpine:3.15-${DATESTAMP}",
+        "docker.io/balenalib/nanopc-t4-alpine:3.15"
       ]
     },
     "nanopc-t4-alpine-3-16-build": {
@@ -258,94 +350,34 @@
         "docker.io/balenalib/nanopc-t4-alpine:${DATESTAMP}"
       ]
     },
-    "nanopc-t4-alpine-3-13-build": {
-      "context": "device-base/nanopc-t4/alpine/3.13/build",
+    "nanopc-t4-alpine-3-21-build": {
+      "context": "device-base/nanopc-t4/alpine/3.21/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/nanopc-t4-alpine:3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/nanopc-t4-alpine:3.13-build"
+        "docker.io/balenalib/nanopc-t4-alpine:3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/nanopc-t4-alpine:3.21-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/nanopc-t4-alpine:3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/nanopc-t4-alpine:3.13-build"
+        "docker.io/balenalib/nanopc-t4-alpine:3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/nanopc-t4-alpine:3.21-build"
       ]
     },
-    "nanopc-t4-alpine-3-13-run": {
-      "context": "device-base/nanopc-t4/alpine/3.13/run",
+    "nanopc-t4-alpine-3-21-run": {
+      "context": "device-base/nanopc-t4/alpine/3.21/run",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/nanopc-t4-alpine:3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/nanopc-t4-alpine:3.13-run",
-        "docker.io/balenalib/nanopc-t4-alpine:3.13-${DATESTAMP}",
-        "docker.io/balenalib/nanopc-t4-alpine:3.13"
+        "docker.io/balenalib/nanopc-t4-alpine:3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/nanopc-t4-alpine:3.21-run",
+        "docker.io/balenalib/nanopc-t4-alpine:3.21-${DATESTAMP}",
+        "docker.io/balenalib/nanopc-t4-alpine:3.21"
       ],
       "cache_from": [
-        "docker.io/balenalib/nanopc-t4-alpine:3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/nanopc-t4-alpine:3.13-run",
-        "docker.io/balenalib/nanopc-t4-alpine:3.13-${DATESTAMP}",
-        "docker.io/balenalib/nanopc-t4-alpine:3.13"
-      ]
-    },
-    "nanopc-t4-alpine-3-12-build": {
-      "context": "device-base/nanopc-t4/alpine/3.12/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/nanopc-t4-alpine:3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/nanopc-t4-alpine:3.12-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/nanopc-t4-alpine:3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/nanopc-t4-alpine:3.12-build"
-      ]
-    },
-    "nanopc-t4-alpine-3-12-run": {
-      "context": "device-base/nanopc-t4/alpine/3.12/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/nanopc-t4-alpine:3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/nanopc-t4-alpine:3.12-run",
-        "docker.io/balenalib/nanopc-t4-alpine:3.12-${DATESTAMP}",
-        "docker.io/balenalib/nanopc-t4-alpine:3.12"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/nanopc-t4-alpine:3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/nanopc-t4-alpine:3.12-run",
-        "docker.io/balenalib/nanopc-t4-alpine:3.12-${DATESTAMP}",
-        "docker.io/balenalib/nanopc-t4-alpine:3.12"
-      ]
-    },
-    "nanopc-t4-alpine-3-15-build": {
-      "context": "device-base/nanopc-t4/alpine/3.15/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/nanopc-t4-alpine:3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/nanopc-t4-alpine:3.15-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/nanopc-t4-alpine:3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/nanopc-t4-alpine:3.15-build"
-      ]
-    },
-    "nanopc-t4-alpine-3-15-run": {
-      "context": "device-base/nanopc-t4/alpine/3.15/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/nanopc-t4-alpine:3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/nanopc-t4-alpine:3.15-run",
-        "docker.io/balenalib/nanopc-t4-alpine:3.15-${DATESTAMP}",
-        "docker.io/balenalib/nanopc-t4-alpine:3.15"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/nanopc-t4-alpine:3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/nanopc-t4-alpine:3.15-run",
-        "docker.io/balenalib/nanopc-t4-alpine:3.15-${DATESTAMP}",
-        "docker.io/balenalib/nanopc-t4-alpine:3.15"
+        "docker.io/balenalib/nanopc-t4-alpine:3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/nanopc-t4-alpine:3.21-run",
+        "docker.io/balenalib/nanopc-t4-alpine:3.21-${DATESTAMP}",
+        "docker.io/balenalib/nanopc-t4-alpine:3.21"
       ]
     }
   },

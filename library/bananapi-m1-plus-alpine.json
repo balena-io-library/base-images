@@ -4,8 +4,14 @@
       "targets": [
         "bananapi-m1-plus-alpine-edge-build",
         "bananapi-m1-plus-alpine-edge-run",
+        "bananapi-m1-plus-alpine-3-12-build",
+        "bananapi-m1-plus-alpine-3-12-run",
+        "bananapi-m1-plus-alpine-3-13-build",
+        "bananapi-m1-plus-alpine-3-13-run",
         "bananapi-m1-plus-alpine-3-14-build",
         "bananapi-m1-plus-alpine-3-14-run",
+        "bananapi-m1-plus-alpine-3-15-build",
+        "bananapi-m1-plus-alpine-3-15-run",
         "bananapi-m1-plus-alpine-3-16-build",
         "bananapi-m1-plus-alpine-3-16-run",
         "bananapi-m1-plus-alpine-3-17-build",
@@ -16,12 +22,8 @@
         "bananapi-m1-plus-alpine-3-19-run",
         "bananapi-m1-plus-alpine-3-20-build",
         "bananapi-m1-plus-alpine-3-20-run",
-        "bananapi-m1-plus-alpine-3-13-build",
-        "bananapi-m1-plus-alpine-3-13-run",
-        "bananapi-m1-plus-alpine-3-12-build",
-        "bananapi-m1-plus-alpine-3-12-run",
-        "bananapi-m1-plus-alpine-3-15-build",
-        "bananapi-m1-plus-alpine-3-15-run"
+        "bananapi-m1-plus-alpine-3-21-build",
+        "bananapi-m1-plus-alpine-3-21-run"
       ]
     }
   },
@@ -56,6 +58,66 @@
         "docker.io/balenalib/bananapi-m1-plus-alpine:edge"
       ]
     },
+    "bananapi-m1-plus-alpine-3-12-build": {
+      "context": "device-base/bananapi-m1-plus/alpine/3.12/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.12-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.12-build"
+      ]
+    },
+    "bananapi-m1-plus-alpine-3-12-run": {
+      "context": "device-base/bananapi-m1-plus/alpine/3.12/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.12-run",
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.12-${DATESTAMP}",
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.12"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.12-run",
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.12-${DATESTAMP}",
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.12"
+      ]
+    },
+    "bananapi-m1-plus-alpine-3-13-build": {
+      "context": "device-base/bananapi-m1-plus/alpine/3.13/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.13-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.13-build"
+      ]
+    },
+    "bananapi-m1-plus-alpine-3-13-run": {
+      "context": "device-base/bananapi-m1-plus/alpine/3.13/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.13-run",
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.13-${DATESTAMP}",
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.13"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.13-run",
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.13-${DATESTAMP}",
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.13"
+      ]
+    },
     "bananapi-m1-plus-alpine-3-14-build": {
       "context": "device-base/bananapi-m1-plus/alpine/3.14/build",
       "dockerfile": "Dockerfile",
@@ -84,6 +146,36 @@
         "docker.io/balenalib/bananapi-m1-plus-alpine:3.14-run",
         "docker.io/balenalib/bananapi-m1-plus-alpine:3.14-${DATESTAMP}",
         "docker.io/balenalib/bananapi-m1-plus-alpine:3.14"
+      ]
+    },
+    "bananapi-m1-plus-alpine-3-15-build": {
+      "context": "device-base/bananapi-m1-plus/alpine/3.15/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.15-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.15-build"
+      ]
+    },
+    "bananapi-m1-plus-alpine-3-15-run": {
+      "context": "device-base/bananapi-m1-plus/alpine/3.15/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v7",
+      "tags": [
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.15-run",
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.15-${DATESTAMP}",
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.15"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.15-run",
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.15-${DATESTAMP}",
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.15"
       ]
     },
     "bananapi-m1-plus-alpine-3-16-build": {
@@ -258,94 +350,34 @@
         "docker.io/balenalib/bananapi-m1-plus-alpine:${DATESTAMP}"
       ]
     },
-    "bananapi-m1-plus-alpine-3-13-build": {
-      "context": "device-base/bananapi-m1-plus/alpine/3.13/build",
+    "bananapi-m1-plus-alpine-3-21-build": {
+      "context": "device-base/bananapi-m1-plus/alpine/3.21/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/bananapi-m1-plus-alpine:3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/bananapi-m1-plus-alpine:3.13-build"
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.21-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/bananapi-m1-plus-alpine:3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/bananapi-m1-plus-alpine:3.13-build"
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.21-build"
       ]
     },
-    "bananapi-m1-plus-alpine-3-13-run": {
-      "context": "device-base/bananapi-m1-plus/alpine/3.13/run",
+    "bananapi-m1-plus-alpine-3-21-run": {
+      "context": "device-base/bananapi-m1-plus/alpine/3.21/run",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v7",
       "tags": [
-        "docker.io/balenalib/bananapi-m1-plus-alpine:3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/bananapi-m1-plus-alpine:3.13-run",
-        "docker.io/balenalib/bananapi-m1-plus-alpine:3.13-${DATESTAMP}",
-        "docker.io/balenalib/bananapi-m1-plus-alpine:3.13"
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.21-run",
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.21-${DATESTAMP}",
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.21"
       ],
       "cache_from": [
-        "docker.io/balenalib/bananapi-m1-plus-alpine:3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/bananapi-m1-plus-alpine:3.13-run",
-        "docker.io/balenalib/bananapi-m1-plus-alpine:3.13-${DATESTAMP}",
-        "docker.io/balenalib/bananapi-m1-plus-alpine:3.13"
-      ]
-    },
-    "bananapi-m1-plus-alpine-3-12-build": {
-      "context": "device-base/bananapi-m1-plus/alpine/3.12/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/bananapi-m1-plus-alpine:3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/bananapi-m1-plus-alpine:3.12-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/bananapi-m1-plus-alpine:3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/bananapi-m1-plus-alpine:3.12-build"
-      ]
-    },
-    "bananapi-m1-plus-alpine-3-12-run": {
-      "context": "device-base/bananapi-m1-plus/alpine/3.12/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/bananapi-m1-plus-alpine:3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/bananapi-m1-plus-alpine:3.12-run",
-        "docker.io/balenalib/bananapi-m1-plus-alpine:3.12-${DATESTAMP}",
-        "docker.io/balenalib/bananapi-m1-plus-alpine:3.12"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/bananapi-m1-plus-alpine:3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/bananapi-m1-plus-alpine:3.12-run",
-        "docker.io/balenalib/bananapi-m1-plus-alpine:3.12-${DATESTAMP}",
-        "docker.io/balenalib/bananapi-m1-plus-alpine:3.12"
-      ]
-    },
-    "bananapi-m1-plus-alpine-3-15-build": {
-      "context": "device-base/bananapi-m1-plus/alpine/3.15/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/bananapi-m1-plus-alpine:3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/bananapi-m1-plus-alpine:3.15-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/bananapi-m1-plus-alpine:3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/bananapi-m1-plus-alpine:3.15-build"
-      ]
-    },
-    "bananapi-m1-plus-alpine-3-15-run": {
-      "context": "device-base/bananapi-m1-plus/alpine/3.15/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/bananapi-m1-plus-alpine:3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/bananapi-m1-plus-alpine:3.15-run",
-        "docker.io/balenalib/bananapi-m1-plus-alpine:3.15-${DATESTAMP}",
-        "docker.io/balenalib/bananapi-m1-plus-alpine:3.15"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/bananapi-m1-plus-alpine:3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/bananapi-m1-plus-alpine:3.15-run",
-        "docker.io/balenalib/bananapi-m1-plus-alpine:3.15-${DATESTAMP}",
-        "docker.io/balenalib/bananapi-m1-plus-alpine:3.15"
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.21-run",
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.21-${DATESTAMP}",
+        "docker.io/balenalib/bananapi-m1-plus-alpine:3.21"
       ]
     }
   },

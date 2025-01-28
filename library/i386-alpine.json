@@ -4,8 +4,14 @@
       "targets": [
         "i386-alpine-edge-build",
         "i386-alpine-edge-run",
+        "i386-alpine-3-12-build",
+        "i386-alpine-3-12-run",
+        "i386-alpine-3-13-build",
+        "i386-alpine-3-13-run",
         "i386-alpine-3-14-build",
         "i386-alpine-3-14-run",
+        "i386-alpine-3-15-build",
+        "i386-alpine-3-15-run",
         "i386-alpine-3-16-build",
         "i386-alpine-3-16-run",
         "i386-alpine-3-17-build",
@@ -16,12 +22,8 @@
         "i386-alpine-3-19-run",
         "i386-alpine-3-20-build",
         "i386-alpine-3-20-run",
-        "i386-alpine-3-13-build",
-        "i386-alpine-3-13-run",
-        "i386-alpine-3-12-build",
-        "i386-alpine-3-12-run",
-        "i386-alpine-3-15-build",
-        "i386-alpine-3-15-run"
+        "i386-alpine-3-21-build",
+        "i386-alpine-3-21-run"
       ]
     }
   },
@@ -56,6 +58,66 @@
         "docker.io/balenalib/i386-alpine:edge"
       ]
     },
+    "i386-alpine-3-12-build": {
+      "context": "i386/alpine/3.12/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/i386-alpine:3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/i386-alpine:3.12-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/i386-alpine:3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/i386-alpine:3.12-build"
+      ]
+    },
+    "i386-alpine-3-12-run": {
+      "context": "i386/alpine/3.12/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/i386-alpine:3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/i386-alpine:3.12-run",
+        "docker.io/balenalib/i386-alpine:3.12-${DATESTAMP}",
+        "docker.io/balenalib/i386-alpine:3.12"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/i386-alpine:3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/i386-alpine:3.12-run",
+        "docker.io/balenalib/i386-alpine:3.12-${DATESTAMP}",
+        "docker.io/balenalib/i386-alpine:3.12"
+      ]
+    },
+    "i386-alpine-3-13-build": {
+      "context": "i386/alpine/3.13/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/i386-alpine:3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/i386-alpine:3.13-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/i386-alpine:3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/i386-alpine:3.13-build"
+      ]
+    },
+    "i386-alpine-3-13-run": {
+      "context": "i386/alpine/3.13/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/i386-alpine:3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/i386-alpine:3.13-run",
+        "docker.io/balenalib/i386-alpine:3.13-${DATESTAMP}",
+        "docker.io/balenalib/i386-alpine:3.13"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/i386-alpine:3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/i386-alpine:3.13-run",
+        "docker.io/balenalib/i386-alpine:3.13-${DATESTAMP}",
+        "docker.io/balenalib/i386-alpine:3.13"
+      ]
+    },
     "i386-alpine-3-14-build": {
       "context": "i386/alpine/3.14/build",
       "dockerfile": "Dockerfile",
@@ -84,6 +146,36 @@
         "docker.io/balenalib/i386-alpine:3.14-run",
         "docker.io/balenalib/i386-alpine:3.14-${DATESTAMP}",
         "docker.io/balenalib/i386-alpine:3.14"
+      ]
+    },
+    "i386-alpine-3-15-build": {
+      "context": "i386/alpine/3.15/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/i386-alpine:3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/i386-alpine:3.15-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/i386-alpine:3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/i386-alpine:3.15-build"
+      ]
+    },
+    "i386-alpine-3-15-run": {
+      "context": "i386/alpine/3.15/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/386",
+      "tags": [
+        "docker.io/balenalib/i386-alpine:3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/i386-alpine:3.15-run",
+        "docker.io/balenalib/i386-alpine:3.15-${DATESTAMP}",
+        "docker.io/balenalib/i386-alpine:3.15"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/i386-alpine:3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/i386-alpine:3.15-run",
+        "docker.io/balenalib/i386-alpine:3.15-${DATESTAMP}",
+        "docker.io/balenalib/i386-alpine:3.15"
       ]
     },
     "i386-alpine-3-16-build": {
@@ -258,94 +350,34 @@
         "docker.io/balenalib/i386-alpine:${DATESTAMP}"
       ]
     },
-    "i386-alpine-3-13-build": {
-      "context": "i386/alpine/3.13/build",
+    "i386-alpine-3-21-build": {
+      "context": "i386/alpine/3.21/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/386",
       "tags": [
-        "docker.io/balenalib/i386-alpine:3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/i386-alpine:3.13-build"
+        "docker.io/balenalib/i386-alpine:3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/i386-alpine:3.21-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/i386-alpine:3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/i386-alpine:3.13-build"
+        "docker.io/balenalib/i386-alpine:3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/i386-alpine:3.21-build"
       ]
     },
-    "i386-alpine-3-13-run": {
-      "context": "i386/alpine/3.13/run",
+    "i386-alpine-3-21-run": {
+      "context": "i386/alpine/3.21/run",
       "dockerfile": "Dockerfile",
       "platform": "linux/386",
       "tags": [
-        "docker.io/balenalib/i386-alpine:3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/i386-alpine:3.13-run",
-        "docker.io/balenalib/i386-alpine:3.13-${DATESTAMP}",
-        "docker.io/balenalib/i386-alpine:3.13"
+        "docker.io/balenalib/i386-alpine:3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/i386-alpine:3.21-run",
+        "docker.io/balenalib/i386-alpine:3.21-${DATESTAMP}",
+        "docker.io/balenalib/i386-alpine:3.21"
       ],
       "cache_from": [
-        "docker.io/balenalib/i386-alpine:3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/i386-alpine:3.13-run",
-        "docker.io/balenalib/i386-alpine:3.13-${DATESTAMP}",
-        "docker.io/balenalib/i386-alpine:3.13"
-      ]
-    },
-    "i386-alpine-3-12-build": {
-      "context": "i386/alpine/3.12/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/386",
-      "tags": [
-        "docker.io/balenalib/i386-alpine:3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/i386-alpine:3.12-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/i386-alpine:3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/i386-alpine:3.12-build"
-      ]
-    },
-    "i386-alpine-3-12-run": {
-      "context": "i386/alpine/3.12/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/386",
-      "tags": [
-        "docker.io/balenalib/i386-alpine:3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/i386-alpine:3.12-run",
-        "docker.io/balenalib/i386-alpine:3.12-${DATESTAMP}",
-        "docker.io/balenalib/i386-alpine:3.12"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/i386-alpine:3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/i386-alpine:3.12-run",
-        "docker.io/balenalib/i386-alpine:3.12-${DATESTAMP}",
-        "docker.io/balenalib/i386-alpine:3.12"
-      ]
-    },
-    "i386-alpine-3-15-build": {
-      "context": "i386/alpine/3.15/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/386",
-      "tags": [
-        "docker.io/balenalib/i386-alpine:3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/i386-alpine:3.15-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/i386-alpine:3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/i386-alpine:3.15-build"
-      ]
-    },
-    "i386-alpine-3-15-run": {
-      "context": "i386/alpine/3.15/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/386",
-      "tags": [
-        "docker.io/balenalib/i386-alpine:3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/i386-alpine:3.15-run",
-        "docker.io/balenalib/i386-alpine:3.15-${DATESTAMP}",
-        "docker.io/balenalib/i386-alpine:3.15"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/i386-alpine:3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/i386-alpine:3.15-run",
-        "docker.io/balenalib/i386-alpine:3.15-${DATESTAMP}",
-        "docker.io/balenalib/i386-alpine:3.15"
+        "docker.io/balenalib/i386-alpine:3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/i386-alpine:3.21-run",
+        "docker.io/balenalib/i386-alpine:3.21-${DATESTAMP}",
+        "docker.io/balenalib/i386-alpine:3.21"
       ]
     }
   },

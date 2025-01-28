@@ -8,10 +8,24 @@
         "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-19-6-edge-run",
         "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-18-10-edge-build",
         "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-18-10-edge-run",
+        "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-19-6-3-12-build",
+        "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-19-6-3-12-run",
+        "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-18-10-3-12-build",
+        "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-18-10-3-12-run",
+        "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-19-6-3-13-build",
+        "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-19-6-3-13-run",
+        "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-18-10-3-13-build",
+        "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-18-10-3-13-run",
         "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-19-6-3-14-build",
         "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-19-6-3-14-run",
         "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-18-10-3-14-build",
         "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-18-10-3-14-run",
+        "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-20-1-3-15-build",
+        "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-20-1-3-15-run",
+        "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-19-6-3-15-build",
+        "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-19-6-3-15-run",
+        "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-18-10-3-15-build",
+        "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-18-10-3-15-run",
         "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-20-1-3-16-build",
         "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-20-1-3-16-run",
         "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-19-6-3-16-build",
@@ -42,20 +56,10 @@
         "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-19-6-3-20-run",
         "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-18-10-3-20-build",
         "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-18-10-3-20-run",
-        "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-19-6-3-13-build",
-        "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-19-6-3-13-run",
-        "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-18-10-3-13-build",
-        "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-18-10-3-13-run",
-        "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-19-6-3-12-build",
-        "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-19-6-3-12-run",
-        "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-18-10-3-12-build",
-        "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-18-10-3-12-run",
-        "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-20-1-3-15-build",
-        "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-20-1-3-15-run",
-        "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-19-6-3-15-build",
-        "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-19-6-3-15-run",
-        "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-18-10-3-15-build",
-        "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-18-10-3-15-run"
+        "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-19-6-3-21-build",
+        "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-19-6-3-21-run",
+        "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-18-10-3-21-build",
+        "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-18-10-3-21-run"
       ]
     }
   },
@@ -246,6 +250,222 @@
         "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-edge"
       ]
     },
+    "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-19-6-3-12-build": {
+      "context": "golang/jetson-orin-nx-xavier-nx-devkit/alpine/3.12/1.19.6/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.12-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.12-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.12-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.12-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-build"
+      ]
+    },
+    "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-19-6-3-12-run": {
+      "context": "golang/jetson-orin-nx-xavier-nx-devkit/alpine/3.12/1.19.6/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.12-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.12-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.12",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.12-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.12-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.12",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.12-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.12-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.12",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.12-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.12-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.12",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12"
+      ]
+    },
+    "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-18-10-3-12-build": {
+      "context": "golang/jetson-orin-nx-xavier-nx-devkit/alpine/3.12/1.18.10/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.12-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.12-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.12-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.12-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-build"
+      ]
+    },
+    "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-18-10-3-12-run": {
+      "context": "golang/jetson-orin-nx-xavier-nx-devkit/alpine/3.12/1.18.10/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.12-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.12-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.12",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.12-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.12-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.12",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.12-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.12-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.12",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.12-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.12-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.12",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12"
+      ]
+    },
+    "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-19-6-3-13-build": {
+      "context": "golang/jetson-orin-nx-xavier-nx-devkit/alpine/3.13/1.19.6/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.13-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.13-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.13-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.13-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-build"
+      ]
+    },
+    "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-19-6-3-13-run": {
+      "context": "golang/jetson-orin-nx-xavier-nx-devkit/alpine/3.13/1.19.6/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.13-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.13-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.13",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.13-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.13-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.13",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.13-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.13-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.13",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.13-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.13-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.13",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13"
+      ]
+    },
+    "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-18-10-3-13-build": {
+      "context": "golang/jetson-orin-nx-xavier-nx-devkit/alpine/3.13/1.18.10/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.13-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.13-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.13-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.13-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-build"
+      ]
+    },
+    "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-18-10-3-13-run": {
+      "context": "golang/jetson-orin-nx-xavier-nx-devkit/alpine/3.13/1.18.10/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.13-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.13-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.13",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.13-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.13-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.13",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.13-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.13-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.13",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.13-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.13-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.13",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13"
+      ]
+    },
     "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-19-6-3-14-build": {
       "context": "golang/jetson-orin-nx-xavier-nx-devkit/alpine/3.14/1.19.6/build",
       "dockerfile": "Dockerfile",
@@ -352,6 +572,192 @@
         "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.14-run",
         "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.14-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.14"
+      ]
+    },
+    "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-20-1-3-15-build": {
+      "context": "golang/jetson-orin-nx-xavier-nx-devkit/alpine/3.15/1.20.1/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20.1-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20.1-3.15-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20-3.15-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:latest-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:latest-3.15-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:3.15-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20.1-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20.1-3.15-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20-3.15-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:latest-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:latest-3.15-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:3.15-build"
+      ]
+    },
+    "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-20-1-3-15-run": {
+      "context": "golang/jetson-orin-nx-xavier-nx-devkit/alpine/3.15/1.20.1/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20.1-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20.1-3.15-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20.1-3.15-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20.1-3.15",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20-3.15-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20-3.15-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20-3.15",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:latest-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:latest-3.15-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:latest-3.15-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:latest-3.15",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:3.15-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:3.15-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:3.15"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20.1-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20.1-3.15-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20.1-3.15-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20.1-3.15",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20-3.15-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20-3.15-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20-3.15",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:latest-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:latest-3.15-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:latest-3.15-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:latest-3.15",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:3.15-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:3.15-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:3.15"
+      ]
+    },
+    "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-19-6-3-15-build": {
+      "context": "golang/jetson-orin-nx-xavier-nx-devkit/alpine/3.15/1.19.6/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.15-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.15-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.15-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.15-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-build"
+      ]
+    },
+    "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-19-6-3-15-run": {
+      "context": "golang/jetson-orin-nx-xavier-nx-devkit/alpine/3.15/1.19.6/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.15-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.15-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.15",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.15-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.15-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.15",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.15-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.15-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.15",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.15-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.15-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.15",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15"
+      ]
+    },
+    "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-18-10-3-15-build": {
+      "context": "golang/jetson-orin-nx-xavier-nx-devkit/alpine/3.15/1.18.10/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.15-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.15-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.15-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.15-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-build"
+      ]
+    },
+    "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-18-10-3-15-run": {
+      "context": "golang/jetson-orin-nx-xavier-nx-devkit/alpine/3.15/1.18.10/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.15-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.15-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.15",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.15-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.15-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.15",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.15-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.15-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.15",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.15-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.15-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.15",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15"
       ]
     },
     "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-20-1-3-16-build": {
@@ -1546,406 +1952,112 @@
         "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1"
       ]
     },
-    "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-19-6-3-13-build": {
-      "context": "golang/jetson-orin-nx-xavier-nx-devkit/alpine/3.13/1.19.6/build",
+    "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-19-6-3-21-build": {
+      "context": "golang/jetson-orin-nx-xavier-nx-devkit/alpine/3.21/1.19.6/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.13-build",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.13-build",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-build"
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.21-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.21-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.21-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.13-build",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.13-build",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-build"
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.21-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.21-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.21-build"
       ]
     },
-    "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-19-6-3-13-run": {
-      "context": "golang/jetson-orin-nx-xavier-nx-devkit/alpine/3.13/1.19.6/run",
+    "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-19-6-3-21-run": {
+      "context": "golang/jetson-orin-nx-xavier-nx-devkit/alpine/3.21/1.19.6/run",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.13-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.13-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.13",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.13-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.13-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.13",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13"
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.21-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.21-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.21",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.21-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.21-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.21",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.21-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.21-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.21"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.13-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.13-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.13",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.13-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.13-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.13",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13"
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.21-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.21-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.21",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.21-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.21-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.21",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.21-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.21-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.21"
       ]
     },
-    "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-18-10-3-13-build": {
-      "context": "golang/jetson-orin-nx-xavier-nx-devkit/alpine/3.13/1.18.10/build",
+    "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-18-10-3-21-build": {
+      "context": "golang/jetson-orin-nx-xavier-nx-devkit/alpine/3.21/1.18.10/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.13-build",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.13-build",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-build"
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.21-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.21-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.21-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.13-build",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.13-build",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-build"
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.21-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.21-build",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.21-build"
       ]
     },
-    "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-18-10-3-13-run": {
-      "context": "golang/jetson-orin-nx-xavier-nx-devkit/alpine/3.13/1.18.10/run",
+    "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-18-10-3-21-run": {
+      "context": "golang/jetson-orin-nx-xavier-nx-devkit/alpine/3.21/1.18.10/run",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.13-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.13-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.13",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.13-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.13-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.13",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13"
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.21-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.21-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.21",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.21-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.21-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.21",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.21-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.21-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.21"
       ],
       "cache_from": [
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.13-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.13-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.13",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.13-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.13-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.13",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.13"
-      ]
-    },
-    "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-19-6-3-12-build": {
-      "context": "golang/jetson-orin-nx-xavier-nx-devkit/alpine/3.12/1.19.6/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.12-build",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.12-build",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.12-build",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.12-build",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-build"
-      ]
-    },
-    "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-19-6-3-12-run": {
-      "context": "golang/jetson-orin-nx-xavier-nx-devkit/alpine/3.12/1.19.6/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.12-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.12-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.12",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.12-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.12-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.12",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.12-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.12-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.12",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.12-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.12-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.12",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12"
-      ]
-    },
-    "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-18-10-3-12-build": {
-      "context": "golang/jetson-orin-nx-xavier-nx-devkit/alpine/3.12/1.18.10/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.12-build",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.12-build",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.12-build",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.12-build",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-build"
-      ]
-    },
-    "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-18-10-3-12-run": {
-      "context": "golang/jetson-orin-nx-xavier-nx-devkit/alpine/3.12/1.18.10/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.12-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.12-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.12",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.12-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.12-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.12",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.12-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.12-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.12",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.12-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.12-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.12",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.12"
-      ]
-    },
-    "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-20-1-3-15-build": {
-      "context": "golang/jetson-orin-nx-xavier-nx-devkit/alpine/3.15/1.20.1/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20.1-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20.1-3.15-build",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20-3.15-build",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-build",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:latest-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:latest-3.15-build",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:3.15-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20.1-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20.1-3.15-build",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20-3.15-build",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-build",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:latest-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:latest-3.15-build",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:3.15-build"
-      ]
-    },
-    "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-20-1-3-15-run": {
-      "context": "golang/jetson-orin-nx-xavier-nx-devkit/alpine/3.15/1.20.1/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20.1-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20.1-3.15-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20.1-3.15-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20.1-3.15",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20-3.15-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20-3.15-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20-3.15",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:latest-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:latest-3.15-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:latest-3.15-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:latest-3.15",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:3.15-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:3.15-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:3.15"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20.1-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20.1-3.15-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20.1-3.15-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20.1-3.15",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20-3.15-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20-3.15-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.20-3.15",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:latest-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:latest-3.15-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:latest-3.15-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:latest-3.15",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:3.15-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:3.15-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:3.15"
-      ]
-    },
-    "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-19-6-3-15-build": {
-      "context": "golang/jetson-orin-nx-xavier-nx-devkit/alpine/3.15/1.19.6/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.15-build",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.15-build",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.15-build",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.15-build",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-build"
-      ]
-    },
-    "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-19-6-3-15-run": {
-      "context": "golang/jetson-orin-nx-xavier-nx-devkit/alpine/3.15/1.19.6/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.15-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.15-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.15",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.15-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.15-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.15",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.15-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.15-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19.6-3.15",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.15-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.15-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.19-3.15",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15"
-      ]
-    },
-    "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-18-10-3-15-build": {
-      "context": "golang/jetson-orin-nx-xavier-nx-devkit/alpine/3.15/1.18.10/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.15-build",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.15-build",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.15-build",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.15-build",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-build"
-      ]
-    },
-    "jetson-orin-nx-xavier-nx-devkit-alpine-golang-1-18-10-3-15-run": {
-      "context": "golang/jetson-orin-nx-xavier-nx-devkit/alpine/3.15/1.18.10/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.15-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.15-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.15",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.15-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.15-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.15",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.15-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.15-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.15",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.15-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.15-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.15",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-run",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.15"
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.21-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.21-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18.10-3.21",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.21-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.21-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1.18-3.21",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.21-run",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.21-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-xavier-nx-devkit-alpine-golang:1-3.21"
       ]
     }
   },

@@ -4,8 +4,14 @@
       "targets": [
         "raspberry-pi-alpine-edge-build",
         "raspberry-pi-alpine-edge-run",
+        "raspberry-pi-alpine-3-12-build",
+        "raspberry-pi-alpine-3-12-run",
+        "raspberry-pi-alpine-3-13-build",
+        "raspberry-pi-alpine-3-13-run",
         "raspberry-pi-alpine-3-14-build",
         "raspberry-pi-alpine-3-14-run",
+        "raspberry-pi-alpine-3-15-build",
+        "raspberry-pi-alpine-3-15-run",
         "raspberry-pi-alpine-3-16-build",
         "raspberry-pi-alpine-3-16-run",
         "raspberry-pi-alpine-3-17-build",
@@ -16,12 +22,8 @@
         "raspberry-pi-alpine-3-19-run",
         "raspberry-pi-alpine-3-20-build",
         "raspberry-pi-alpine-3-20-run",
-        "raspberry-pi-alpine-3-13-build",
-        "raspberry-pi-alpine-3-13-run",
-        "raspberry-pi-alpine-3-12-build",
-        "raspberry-pi-alpine-3-12-run",
-        "raspberry-pi-alpine-3-15-build",
-        "raspberry-pi-alpine-3-15-run"
+        "raspberry-pi-alpine-3-21-build",
+        "raspberry-pi-alpine-3-21-run"
       ]
     }
   },
@@ -56,6 +58,66 @@
         "docker.io/balenalib/raspberry-pi-alpine:edge"
       ]
     },
+    "raspberry-pi-alpine-3-12-build": {
+      "context": "device-base/raspberry-pi/alpine/3.12/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v5",
+      "tags": [
+        "docker.io/balenalib/raspberry-pi-alpine:3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-alpine:3.12-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberry-pi-alpine:3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-alpine:3.12-build"
+      ]
+    },
+    "raspberry-pi-alpine-3-12-run": {
+      "context": "device-base/raspberry-pi/alpine/3.12/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v5",
+      "tags": [
+        "docker.io/balenalib/raspberry-pi-alpine:3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-alpine:3.12-run",
+        "docker.io/balenalib/raspberry-pi-alpine:3.12-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-alpine:3.12"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberry-pi-alpine:3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-alpine:3.12-run",
+        "docker.io/balenalib/raspberry-pi-alpine:3.12-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-alpine:3.12"
+      ]
+    },
+    "raspberry-pi-alpine-3-13-build": {
+      "context": "device-base/raspberry-pi/alpine/3.13/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v5",
+      "tags": [
+        "docker.io/balenalib/raspberry-pi-alpine:3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-alpine:3.13-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberry-pi-alpine:3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-alpine:3.13-build"
+      ]
+    },
+    "raspberry-pi-alpine-3-13-run": {
+      "context": "device-base/raspberry-pi/alpine/3.13/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v5",
+      "tags": [
+        "docker.io/balenalib/raspberry-pi-alpine:3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-alpine:3.13-run",
+        "docker.io/balenalib/raspberry-pi-alpine:3.13-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-alpine:3.13"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberry-pi-alpine:3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-alpine:3.13-run",
+        "docker.io/balenalib/raspberry-pi-alpine:3.13-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-alpine:3.13"
+      ]
+    },
     "raspberry-pi-alpine-3-14-build": {
       "context": "device-base/raspberry-pi/alpine/3.14/build",
       "dockerfile": "Dockerfile",
@@ -84,6 +146,36 @@
         "docker.io/balenalib/raspberry-pi-alpine:3.14-run",
         "docker.io/balenalib/raspberry-pi-alpine:3.14-${DATESTAMP}",
         "docker.io/balenalib/raspberry-pi-alpine:3.14"
+      ]
+    },
+    "raspberry-pi-alpine-3-15-build": {
+      "context": "device-base/raspberry-pi/alpine/3.15/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v5",
+      "tags": [
+        "docker.io/balenalib/raspberry-pi-alpine:3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-alpine:3.15-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberry-pi-alpine:3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-alpine:3.15-build"
+      ]
+    },
+    "raspberry-pi-alpine-3-15-run": {
+      "context": "device-base/raspberry-pi/alpine/3.15/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v5",
+      "tags": [
+        "docker.io/balenalib/raspberry-pi-alpine:3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-alpine:3.15-run",
+        "docker.io/balenalib/raspberry-pi-alpine:3.15-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-alpine:3.15"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberry-pi-alpine:3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-alpine:3.15-run",
+        "docker.io/balenalib/raspberry-pi-alpine:3.15-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-alpine:3.15"
       ]
     },
     "raspberry-pi-alpine-3-16-build": {
@@ -258,94 +350,34 @@
         "docker.io/balenalib/raspberry-pi-alpine:${DATESTAMP}"
       ]
     },
-    "raspberry-pi-alpine-3-13-build": {
-      "context": "device-base/raspberry-pi/alpine/3.13/build",
+    "raspberry-pi-alpine-3-21-build": {
+      "context": "device-base/raspberry-pi/alpine/3.21/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v5",
       "tags": [
-        "docker.io/balenalib/raspberry-pi-alpine:3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-alpine:3.13-build"
+        "docker.io/balenalib/raspberry-pi-alpine:3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-alpine:3.21-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/raspberry-pi-alpine:3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-alpine:3.13-build"
+        "docker.io/balenalib/raspberry-pi-alpine:3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-alpine:3.21-build"
       ]
     },
-    "raspberry-pi-alpine-3-13-run": {
-      "context": "device-base/raspberry-pi/alpine/3.13/run",
+    "raspberry-pi-alpine-3-21-run": {
+      "context": "device-base/raspberry-pi/alpine/3.21/run",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm/v5",
       "tags": [
-        "docker.io/balenalib/raspberry-pi-alpine:3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-alpine:3.13-run",
-        "docker.io/balenalib/raspberry-pi-alpine:3.13-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-alpine:3.13"
+        "docker.io/balenalib/raspberry-pi-alpine:3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-alpine:3.21-run",
+        "docker.io/balenalib/raspberry-pi-alpine:3.21-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-alpine:3.21"
       ],
       "cache_from": [
-        "docker.io/balenalib/raspberry-pi-alpine:3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-alpine:3.13-run",
-        "docker.io/balenalib/raspberry-pi-alpine:3.13-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-alpine:3.13"
-      ]
-    },
-    "raspberry-pi-alpine-3-12-build": {
-      "context": "device-base/raspberry-pi/alpine/3.12/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v5",
-      "tags": [
-        "docker.io/balenalib/raspberry-pi-alpine:3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-alpine:3.12-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/raspberry-pi-alpine:3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-alpine:3.12-build"
-      ]
-    },
-    "raspberry-pi-alpine-3-12-run": {
-      "context": "device-base/raspberry-pi/alpine/3.12/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v5",
-      "tags": [
-        "docker.io/balenalib/raspberry-pi-alpine:3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-alpine:3.12-run",
-        "docker.io/balenalib/raspberry-pi-alpine:3.12-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-alpine:3.12"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/raspberry-pi-alpine:3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-alpine:3.12-run",
-        "docker.io/balenalib/raspberry-pi-alpine:3.12-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-alpine:3.12"
-      ]
-    },
-    "raspberry-pi-alpine-3-15-build": {
-      "context": "device-base/raspberry-pi/alpine/3.15/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v5",
-      "tags": [
-        "docker.io/balenalib/raspberry-pi-alpine:3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-alpine:3.15-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/raspberry-pi-alpine:3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-alpine:3.15-build"
-      ]
-    },
-    "raspberry-pi-alpine-3-15-run": {
-      "context": "device-base/raspberry-pi/alpine/3.15/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v5",
-      "tags": [
-        "docker.io/balenalib/raspberry-pi-alpine:3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-alpine:3.15-run",
-        "docker.io/balenalib/raspberry-pi-alpine:3.15-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-alpine:3.15"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/raspberry-pi-alpine:3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-alpine:3.15-run",
-        "docker.io/balenalib/raspberry-pi-alpine:3.15-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-alpine:3.15"
+        "docker.io/balenalib/raspberry-pi-alpine:3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-alpine:3.21-run",
+        "docker.io/balenalib/raspberry-pi-alpine:3.21-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-alpine:3.21"
       ]
     }
   },

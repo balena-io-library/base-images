@@ -8,10 +8,24 @@
         "surface-go-alpine-golang-1-19-6-edge-run",
         "surface-go-alpine-golang-1-18-10-edge-build",
         "surface-go-alpine-golang-1-18-10-edge-run",
+        "surface-go-alpine-golang-1-19-6-3-12-build",
+        "surface-go-alpine-golang-1-19-6-3-12-run",
+        "surface-go-alpine-golang-1-18-10-3-12-build",
+        "surface-go-alpine-golang-1-18-10-3-12-run",
+        "surface-go-alpine-golang-1-19-6-3-13-build",
+        "surface-go-alpine-golang-1-19-6-3-13-run",
+        "surface-go-alpine-golang-1-18-10-3-13-build",
+        "surface-go-alpine-golang-1-18-10-3-13-run",
         "surface-go-alpine-golang-1-19-6-3-14-build",
         "surface-go-alpine-golang-1-19-6-3-14-run",
         "surface-go-alpine-golang-1-18-10-3-14-build",
         "surface-go-alpine-golang-1-18-10-3-14-run",
+        "surface-go-alpine-golang-1-20-1-3-15-build",
+        "surface-go-alpine-golang-1-20-1-3-15-run",
+        "surface-go-alpine-golang-1-19-6-3-15-build",
+        "surface-go-alpine-golang-1-19-6-3-15-run",
+        "surface-go-alpine-golang-1-18-10-3-15-build",
+        "surface-go-alpine-golang-1-18-10-3-15-run",
         "surface-go-alpine-golang-1-20-1-3-16-build",
         "surface-go-alpine-golang-1-20-1-3-16-run",
         "surface-go-alpine-golang-1-19-6-3-16-build",
@@ -42,20 +56,10 @@
         "surface-go-alpine-golang-1-19-6-3-20-run",
         "surface-go-alpine-golang-1-18-10-3-20-build",
         "surface-go-alpine-golang-1-18-10-3-20-run",
-        "surface-go-alpine-golang-1-19-6-3-13-build",
-        "surface-go-alpine-golang-1-19-6-3-13-run",
-        "surface-go-alpine-golang-1-18-10-3-13-build",
-        "surface-go-alpine-golang-1-18-10-3-13-run",
-        "surface-go-alpine-golang-1-19-6-3-12-build",
-        "surface-go-alpine-golang-1-19-6-3-12-run",
-        "surface-go-alpine-golang-1-18-10-3-12-build",
-        "surface-go-alpine-golang-1-18-10-3-12-run",
-        "surface-go-alpine-golang-1-20-1-3-15-build",
-        "surface-go-alpine-golang-1-20-1-3-15-run",
-        "surface-go-alpine-golang-1-19-6-3-15-build",
-        "surface-go-alpine-golang-1-19-6-3-15-run",
-        "surface-go-alpine-golang-1-18-10-3-15-build",
-        "surface-go-alpine-golang-1-18-10-3-15-run"
+        "surface-go-alpine-golang-1-19-6-3-21-build",
+        "surface-go-alpine-golang-1-19-6-3-21-run",
+        "surface-go-alpine-golang-1-18-10-3-21-build",
+        "surface-go-alpine-golang-1-18-10-3-21-run"
       ]
     }
   },
@@ -246,6 +250,222 @@
         "docker.io/balenalib/surface-go-alpine-golang:1-edge"
       ]
     },
+    "surface-go-alpine-golang-1-19-6-3-12-build": {
+      "context": "golang/surface-go/alpine/3.12/1.19.6/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.12-build",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.12-build",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.12-build",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.12-build",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-build"
+      ]
+    },
+    "surface-go-alpine-golang-1-19-6-3-12-run": {
+      "context": "golang/surface-go/alpine/3.12/1.19.6/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.12-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.12-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.12",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.12-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.12-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.12",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.12"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.12-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.12-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.12",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.12-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.12-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.12",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.12"
+      ]
+    },
+    "surface-go-alpine-golang-1-18-10-3-12-build": {
+      "context": "golang/surface-go/alpine/3.12/1.18.10/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.12-build",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.12-build",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.12-build",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.12-build",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-build"
+      ]
+    },
+    "surface-go-alpine-golang-1-18-10-3-12-run": {
+      "context": "golang/surface-go/alpine/3.12/1.18.10/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.12-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.12-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.12",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.12-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.12-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.12",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.12"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.12-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.12-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.12",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.12-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.12-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.12",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.12"
+      ]
+    },
+    "surface-go-alpine-golang-1-19-6-3-13-build": {
+      "context": "golang/surface-go/alpine/3.13/1.19.6/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.13-build",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.13-build",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.13-build",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.13-build",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-build"
+      ]
+    },
+    "surface-go-alpine-golang-1-19-6-3-13-run": {
+      "context": "golang/surface-go/alpine/3.13/1.19.6/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.13-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.13-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.13",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.13-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.13-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.13",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.13"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.13-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.13-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.13",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.13-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.13-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.13",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.13"
+      ]
+    },
+    "surface-go-alpine-golang-1-18-10-3-13-build": {
+      "context": "golang/surface-go/alpine/3.13/1.18.10/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.13-build",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.13-build",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.13-build",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.13-build",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-build"
+      ]
+    },
+    "surface-go-alpine-golang-1-18-10-3-13-run": {
+      "context": "golang/surface-go/alpine/3.13/1.18.10/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.13-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.13-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.13",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.13-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.13-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.13",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.13"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.13-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.13-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.13",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.13-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.13-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.13",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.13"
+      ]
+    },
     "surface-go-alpine-golang-1-19-6-3-14-build": {
       "context": "golang/surface-go/alpine/3.14/1.19.6/build",
       "dockerfile": "Dockerfile",
@@ -352,6 +572,192 @@
         "docker.io/balenalib/surface-go-alpine-golang:1-3.14-run",
         "docker.io/balenalib/surface-go-alpine-golang:1-3.14-${DATESTAMP}",
         "docker.io/balenalib/surface-go-alpine-golang:1-3.14"
+      ]
+    },
+    "surface-go-alpine-golang-1-20-1-3-15-build": {
+      "context": "golang/surface-go/alpine/3.15/1.20.1/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-alpine-golang:1.20.1-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.20.1-3.15-build",
+        "docker.io/balenalib/surface-go-alpine-golang:1.20-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.20-3.15-build",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-build",
+        "docker.io/balenalib/surface-go-alpine-golang:latest-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:latest-3.15-build",
+        "docker.io/balenalib/surface-go-alpine-golang:3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:3.15-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-alpine-golang:1.20.1-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.20.1-3.15-build",
+        "docker.io/balenalib/surface-go-alpine-golang:1.20-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.20-3.15-build",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-build",
+        "docker.io/balenalib/surface-go-alpine-golang:latest-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:latest-3.15-build",
+        "docker.io/balenalib/surface-go-alpine-golang:3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:3.15-build"
+      ]
+    },
+    "surface-go-alpine-golang-1-20-1-3-15-run": {
+      "context": "golang/surface-go/alpine/3.15/1.20.1/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-alpine-golang:1.20.1-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.20.1-3.15-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1.20.1-3.15-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.20.1-3.15",
+        "docker.io/balenalib/surface-go-alpine-golang:1.20-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.20-3.15-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1.20-3.15-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.20-3.15",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.15",
+        "docker.io/balenalib/surface-go-alpine-golang:latest-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:latest-3.15-run",
+        "docker.io/balenalib/surface-go-alpine-golang:latest-3.15-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:latest-3.15",
+        "docker.io/balenalib/surface-go-alpine-golang:3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:3.15-run",
+        "docker.io/balenalib/surface-go-alpine-golang:3.15-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:3.15"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-alpine-golang:1.20.1-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.20.1-3.15-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1.20.1-3.15-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.20.1-3.15",
+        "docker.io/balenalib/surface-go-alpine-golang:1.20-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.20-3.15-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1.20-3.15-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.20-3.15",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.15",
+        "docker.io/balenalib/surface-go-alpine-golang:latest-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:latest-3.15-run",
+        "docker.io/balenalib/surface-go-alpine-golang:latest-3.15-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:latest-3.15",
+        "docker.io/balenalib/surface-go-alpine-golang:3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:3.15-run",
+        "docker.io/balenalib/surface-go-alpine-golang:3.15-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:3.15"
+      ]
+    },
+    "surface-go-alpine-golang-1-19-6-3-15-build": {
+      "context": "golang/surface-go/alpine/3.15/1.19.6/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.15-build",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.15-build",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.15-build",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.15-build",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-build"
+      ]
+    },
+    "surface-go-alpine-golang-1-19-6-3-15-run": {
+      "context": "golang/surface-go/alpine/3.15/1.19.6/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.15-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.15-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.15",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.15-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.15-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.15",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.15"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.15-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.15-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.15",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.15-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.15-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.15",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.15"
+      ]
+    },
+    "surface-go-alpine-golang-1-18-10-3-15-build": {
+      "context": "golang/surface-go/alpine/3.15/1.18.10/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.15-build",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.15-build",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.15-build",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.15-build",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-build"
+      ]
+    },
+    "surface-go-alpine-golang-1-18-10-3-15-run": {
+      "context": "golang/surface-go/alpine/3.15/1.18.10/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.15-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.15-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.15",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.15-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.15-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.15",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.15"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.15-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.15-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.15",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.15-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.15-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.15",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.15"
       ]
     },
     "surface-go-alpine-golang-1-20-1-3-16-build": {
@@ -1546,406 +1952,112 @@
         "docker.io/balenalib/surface-go-alpine-golang:1"
       ]
     },
-    "surface-go-alpine-golang-1-19-6-3-13-build": {
-      "context": "golang/surface-go/alpine/3.13/1.19.6/build",
+    "surface-go-alpine-golang-1-19-6-3-21-build": {
+      "context": "golang/surface-go/alpine/3.21/1.19.6/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/amd64",
       "tags": [
-        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.13-build",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.13-build",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-build"
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.21-build",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.21-build",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.21-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.13-build",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.13-build",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-build"
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.21-build",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.21-build",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.21-build"
       ]
     },
-    "surface-go-alpine-golang-1-19-6-3-13-run": {
-      "context": "golang/surface-go/alpine/3.13/1.19.6/run",
+    "surface-go-alpine-golang-1-19-6-3-21-run": {
+      "context": "golang/surface-go/alpine/3.21/1.19.6/run",
       "dockerfile": "Dockerfile",
       "platform": "linux/amd64",
       "tags": [
-        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.13-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.13-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.13",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.13-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.13-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.13",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.13"
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.21-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.21-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.21",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.21-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.21-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.21",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.21-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.21-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.21"
       ],
       "cache_from": [
-        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.13-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.13-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.13",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.13-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.13-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.13",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.13"
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.21-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.21-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.21",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.21-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.21-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.21",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.21-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.21-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.21"
       ]
     },
-    "surface-go-alpine-golang-1-18-10-3-13-build": {
-      "context": "golang/surface-go/alpine/3.13/1.18.10/build",
+    "surface-go-alpine-golang-1-18-10-3-21-build": {
+      "context": "golang/surface-go/alpine/3.21/1.18.10/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/amd64",
       "tags": [
-        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.13-build",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.13-build",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-build"
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.21-build",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.21-build",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.21-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.13-build",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.13-build",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-build"
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.21-build",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.21-build",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.21-build"
       ]
     },
-    "surface-go-alpine-golang-1-18-10-3-13-run": {
-      "context": "golang/surface-go/alpine/3.13/1.18.10/run",
+    "surface-go-alpine-golang-1-18-10-3-21-run": {
+      "context": "golang/surface-go/alpine/3.21/1.18.10/run",
       "dockerfile": "Dockerfile",
       "platform": "linux/amd64",
       "tags": [
-        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.13-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.13-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.13",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.13-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.13-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.13",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.13"
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.21-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.21-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.21",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.21-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.21-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.21",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.21-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.21-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.21"
       ],
       "cache_from": [
-        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.13-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.13-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.13",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.13-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.13-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.13",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.13-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.13"
-      ]
-    },
-    "surface-go-alpine-golang-1-19-6-3-12-build": {
-      "context": "golang/surface-go/alpine/3.12/1.19.6/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/amd64",
-      "tags": [
-        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.12-build",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.12-build",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.12-build",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.12-build",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-build"
-      ]
-    },
-    "surface-go-alpine-golang-1-19-6-3-12-run": {
-      "context": "golang/surface-go/alpine/3.12/1.19.6/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/amd64",
-      "tags": [
-        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.12-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.12-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.12",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.12-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.12-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.12",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.12"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.12-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.12-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.12",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.12-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.12-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.12",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.12"
-      ]
-    },
-    "surface-go-alpine-golang-1-18-10-3-12-build": {
-      "context": "golang/surface-go/alpine/3.12/1.18.10/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/amd64",
-      "tags": [
-        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.12-build",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.12-build",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.12-build",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.12-build",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-build"
-      ]
-    },
-    "surface-go-alpine-golang-1-18-10-3-12-run": {
-      "context": "golang/surface-go/alpine/3.12/1.18.10/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/amd64",
-      "tags": [
-        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.12-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.12-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.12",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.12-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.12-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.12",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.12"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.12-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.12-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.12",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.12-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.12-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.12",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.12-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.12"
-      ]
-    },
-    "surface-go-alpine-golang-1-20-1-3-15-build": {
-      "context": "golang/surface-go/alpine/3.15/1.20.1/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/amd64",
-      "tags": [
-        "docker.io/balenalib/surface-go-alpine-golang:1.20.1-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.20.1-3.15-build",
-        "docker.io/balenalib/surface-go-alpine-golang:1.20-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.20-3.15-build",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-build",
-        "docker.io/balenalib/surface-go-alpine-golang:latest-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:latest-3.15-build",
-        "docker.io/balenalib/surface-go-alpine-golang:3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:3.15-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/surface-go-alpine-golang:1.20.1-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.20.1-3.15-build",
-        "docker.io/balenalib/surface-go-alpine-golang:1.20-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.20-3.15-build",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-build",
-        "docker.io/balenalib/surface-go-alpine-golang:latest-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:latest-3.15-build",
-        "docker.io/balenalib/surface-go-alpine-golang:3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:3.15-build"
-      ]
-    },
-    "surface-go-alpine-golang-1-20-1-3-15-run": {
-      "context": "golang/surface-go/alpine/3.15/1.20.1/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/amd64",
-      "tags": [
-        "docker.io/balenalib/surface-go-alpine-golang:1.20.1-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.20.1-3.15-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1.20.1-3.15-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.20.1-3.15",
-        "docker.io/balenalib/surface-go-alpine-golang:1.20-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.20-3.15-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1.20-3.15-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.20-3.15",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.15",
-        "docker.io/balenalib/surface-go-alpine-golang:latest-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:latest-3.15-run",
-        "docker.io/balenalib/surface-go-alpine-golang:latest-3.15-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:latest-3.15",
-        "docker.io/balenalib/surface-go-alpine-golang:3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:3.15-run",
-        "docker.io/balenalib/surface-go-alpine-golang:3.15-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:3.15"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/surface-go-alpine-golang:1.20.1-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.20.1-3.15-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1.20.1-3.15-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.20.1-3.15",
-        "docker.io/balenalib/surface-go-alpine-golang:1.20-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.20-3.15-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1.20-3.15-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.20-3.15",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.15",
-        "docker.io/balenalib/surface-go-alpine-golang:latest-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:latest-3.15-run",
-        "docker.io/balenalib/surface-go-alpine-golang:latest-3.15-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:latest-3.15",
-        "docker.io/balenalib/surface-go-alpine-golang:3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:3.15-run",
-        "docker.io/balenalib/surface-go-alpine-golang:3.15-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:3.15"
-      ]
-    },
-    "surface-go-alpine-golang-1-19-6-3-15-build": {
-      "context": "golang/surface-go/alpine/3.15/1.19.6/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/amd64",
-      "tags": [
-        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.15-build",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.15-build",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.15-build",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.15-build",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-build"
-      ]
-    },
-    "surface-go-alpine-golang-1-19-6-3-15-run": {
-      "context": "golang/surface-go/alpine/3.15/1.19.6/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/amd64",
-      "tags": [
-        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.15-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.15-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.15",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.15-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.15-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.15",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.15"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.15-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.15-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19.6-3.15",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.15-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.15-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.19-3.15",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.15"
-      ]
-    },
-    "surface-go-alpine-golang-1-18-10-3-15-build": {
-      "context": "golang/surface-go/alpine/3.15/1.18.10/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/amd64",
-      "tags": [
-        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.15-build",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.15-build",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.15-build",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.15-build",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-build"
-      ]
-    },
-    "surface-go-alpine-golang-1-18-10-3-15-run": {
-      "context": "golang/surface-go/alpine/3.15/1.18.10/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/amd64",
-      "tags": [
-        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.15-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.15-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.15",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.15-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.15-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.15",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.15"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.15-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.15-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.15",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.15-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.15-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.15",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-run",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.15-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-alpine-golang:1-3.15"
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.21-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.21-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18.10-3.21",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.21-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.21-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1.18-3.21",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.21-run",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.21-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-alpine-golang:1-3.21"
       ]
     }
   },

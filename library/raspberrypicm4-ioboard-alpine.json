@@ -4,8 +4,14 @@
       "targets": [
         "raspberrypicm4-ioboard-alpine-edge-build",
         "raspberrypicm4-ioboard-alpine-edge-run",
+        "raspberrypicm4-ioboard-alpine-3-12-build",
+        "raspberrypicm4-ioboard-alpine-3-12-run",
+        "raspberrypicm4-ioboard-alpine-3-13-build",
+        "raspberrypicm4-ioboard-alpine-3-13-run",
         "raspberrypicm4-ioboard-alpine-3-14-build",
         "raspberrypicm4-ioboard-alpine-3-14-run",
+        "raspberrypicm4-ioboard-alpine-3-15-build",
+        "raspberrypicm4-ioboard-alpine-3-15-run",
         "raspberrypicm4-ioboard-alpine-3-16-build",
         "raspberrypicm4-ioboard-alpine-3-16-run",
         "raspberrypicm4-ioboard-alpine-3-17-build",
@@ -16,12 +22,8 @@
         "raspberrypicm4-ioboard-alpine-3-19-run",
         "raspberrypicm4-ioboard-alpine-3-20-build",
         "raspberrypicm4-ioboard-alpine-3-20-run",
-        "raspberrypicm4-ioboard-alpine-3-13-build",
-        "raspberrypicm4-ioboard-alpine-3-13-run",
-        "raspberrypicm4-ioboard-alpine-3-12-build",
-        "raspberrypicm4-ioboard-alpine-3-12-run",
-        "raspberrypicm4-ioboard-alpine-3-15-build",
-        "raspberrypicm4-ioboard-alpine-3-15-run"
+        "raspberrypicm4-ioboard-alpine-3-21-build",
+        "raspberrypicm4-ioboard-alpine-3-21-run"
       ]
     }
   },
@@ -56,6 +58,66 @@
         "docker.io/balenalib/raspberrypicm4-ioboard-alpine:edge"
       ]
     },
+    "raspberrypicm4-ioboard-alpine-3-12-build": {
+      "context": "device-base/raspberrypicm4-ioboard/alpine/3.12/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.12-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.12-build"
+      ]
+    },
+    "raspberrypicm4-ioboard-alpine-3-12-run": {
+      "context": "device-base/raspberrypicm4-ioboard/alpine/3.12/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.12-run",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.12-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.12"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.12-run",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.12-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.12"
+      ]
+    },
+    "raspberrypicm4-ioboard-alpine-3-13-build": {
+      "context": "device-base/raspberrypicm4-ioboard/alpine/3.13/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.13-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.13-build"
+      ]
+    },
+    "raspberrypicm4-ioboard-alpine-3-13-run": {
+      "context": "device-base/raspberrypicm4-ioboard/alpine/3.13/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.13-run",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.13-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.13"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.13-run",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.13-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.13"
+      ]
+    },
     "raspberrypicm4-ioboard-alpine-3-14-build": {
       "context": "device-base/raspberrypicm4-ioboard/alpine/3.14/build",
       "dockerfile": "Dockerfile",
@@ -84,6 +146,36 @@
         "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.14-run",
         "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.14-${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.14"
+      ]
+    },
+    "raspberrypicm4-ioboard-alpine-3-15-build": {
+      "context": "device-base/raspberrypicm4-ioboard/alpine/3.15/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.15-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.15-build"
+      ]
+    },
+    "raspberrypicm4-ioboard-alpine-3-15-run": {
+      "context": "device-base/raspberrypicm4-ioboard/alpine/3.15/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.15-run",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.15-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.15"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.15-run",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.15-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.15"
       ]
     },
     "raspberrypicm4-ioboard-alpine-3-16-build": {
@@ -258,94 +350,34 @@
         "docker.io/balenalib/raspberrypicm4-ioboard-alpine:${DATESTAMP}"
       ]
     },
-    "raspberrypicm4-ioboard-alpine-3-13-build": {
-      "context": "device-base/raspberrypicm4-ioboard/alpine/3.13/build",
+    "raspberrypicm4-ioboard-alpine-3-21-build": {
+      "context": "device-base/raspberrypicm4-ioboard/alpine/3.21/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.13-build"
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.21-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.13-build"
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.21-build"
       ]
     },
-    "raspberrypicm4-ioboard-alpine-3-13-run": {
-      "context": "device-base/raspberrypicm4-ioboard/alpine/3.13/run",
+    "raspberrypicm4-ioboard-alpine-3-21-run": {
+      "context": "device-base/raspberrypicm4-ioboard/alpine/3.21/run",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.13-run",
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.13-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.13"
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.21-run",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.21-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.21"
       ],
       "cache_from": [
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.13-run",
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.13-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.13"
-      ]
-    },
-    "raspberrypicm4-ioboard-alpine-3-12-build": {
-      "context": "device-base/raspberrypicm4-ioboard/alpine/3.12/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.12-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.12-build"
-      ]
-    },
-    "raspberrypicm4-ioboard-alpine-3-12-run": {
-      "context": "device-base/raspberrypicm4-ioboard/alpine/3.12/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.12-run",
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.12-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.12"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.12-run",
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.12-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.12"
-      ]
-    },
-    "raspberrypicm4-ioboard-alpine-3-15-build": {
-      "context": "device-base/raspberrypicm4-ioboard/alpine/3.15/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.15-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.15-build"
-      ]
-    },
-    "raspberrypicm4-ioboard-alpine-3-15-run": {
-      "context": "device-base/raspberrypicm4-ioboard/alpine/3.15/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.15-run",
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.15-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.15"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.15-run",
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.15-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.15"
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.21-run",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.21-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard-alpine:3.21"
       ]
     }
   },

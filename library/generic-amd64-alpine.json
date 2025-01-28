@@ -4,8 +4,14 @@
       "targets": [
         "generic-amd64-alpine-edge-build",
         "generic-amd64-alpine-edge-run",
+        "generic-amd64-alpine-3-12-build",
+        "generic-amd64-alpine-3-12-run",
+        "generic-amd64-alpine-3-13-build",
+        "generic-amd64-alpine-3-13-run",
         "generic-amd64-alpine-3-14-build",
         "generic-amd64-alpine-3-14-run",
+        "generic-amd64-alpine-3-15-build",
+        "generic-amd64-alpine-3-15-run",
         "generic-amd64-alpine-3-16-build",
         "generic-amd64-alpine-3-16-run",
         "generic-amd64-alpine-3-17-build",
@@ -16,12 +22,8 @@
         "generic-amd64-alpine-3-19-run",
         "generic-amd64-alpine-3-20-build",
         "generic-amd64-alpine-3-20-run",
-        "generic-amd64-alpine-3-13-build",
-        "generic-amd64-alpine-3-13-run",
-        "generic-amd64-alpine-3-12-build",
-        "generic-amd64-alpine-3-12-run",
-        "generic-amd64-alpine-3-15-build",
-        "generic-amd64-alpine-3-15-run"
+        "generic-amd64-alpine-3-21-build",
+        "generic-amd64-alpine-3-21-run"
       ]
     }
   },
@@ -56,6 +58,66 @@
         "docker.io/balenalib/generic-amd64-alpine:edge"
       ]
     },
+    "generic-amd64-alpine-3-12-build": {
+      "context": "device-base/generic-amd64/alpine/3.12/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/generic-amd64-alpine:3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/generic-amd64-alpine:3.12-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/generic-amd64-alpine:3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/generic-amd64-alpine:3.12-build"
+      ]
+    },
+    "generic-amd64-alpine-3-12-run": {
+      "context": "device-base/generic-amd64/alpine/3.12/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/generic-amd64-alpine:3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/generic-amd64-alpine:3.12-run",
+        "docker.io/balenalib/generic-amd64-alpine:3.12-${DATESTAMP}",
+        "docker.io/balenalib/generic-amd64-alpine:3.12"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/generic-amd64-alpine:3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/generic-amd64-alpine:3.12-run",
+        "docker.io/balenalib/generic-amd64-alpine:3.12-${DATESTAMP}",
+        "docker.io/balenalib/generic-amd64-alpine:3.12"
+      ]
+    },
+    "generic-amd64-alpine-3-13-build": {
+      "context": "device-base/generic-amd64/alpine/3.13/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/generic-amd64-alpine:3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/generic-amd64-alpine:3.13-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/generic-amd64-alpine:3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/generic-amd64-alpine:3.13-build"
+      ]
+    },
+    "generic-amd64-alpine-3-13-run": {
+      "context": "device-base/generic-amd64/alpine/3.13/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/generic-amd64-alpine:3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/generic-amd64-alpine:3.13-run",
+        "docker.io/balenalib/generic-amd64-alpine:3.13-${DATESTAMP}",
+        "docker.io/balenalib/generic-amd64-alpine:3.13"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/generic-amd64-alpine:3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/generic-amd64-alpine:3.13-run",
+        "docker.io/balenalib/generic-amd64-alpine:3.13-${DATESTAMP}",
+        "docker.io/balenalib/generic-amd64-alpine:3.13"
+      ]
+    },
     "generic-amd64-alpine-3-14-build": {
       "context": "device-base/generic-amd64/alpine/3.14/build",
       "dockerfile": "Dockerfile",
@@ -84,6 +146,36 @@
         "docker.io/balenalib/generic-amd64-alpine:3.14-run",
         "docker.io/balenalib/generic-amd64-alpine:3.14-${DATESTAMP}",
         "docker.io/balenalib/generic-amd64-alpine:3.14"
+      ]
+    },
+    "generic-amd64-alpine-3-15-build": {
+      "context": "device-base/generic-amd64/alpine/3.15/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/generic-amd64-alpine:3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/generic-amd64-alpine:3.15-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/generic-amd64-alpine:3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/generic-amd64-alpine:3.15-build"
+      ]
+    },
+    "generic-amd64-alpine-3-15-run": {
+      "context": "device-base/generic-amd64/alpine/3.15/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/amd64",
+      "tags": [
+        "docker.io/balenalib/generic-amd64-alpine:3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/generic-amd64-alpine:3.15-run",
+        "docker.io/balenalib/generic-amd64-alpine:3.15-${DATESTAMP}",
+        "docker.io/balenalib/generic-amd64-alpine:3.15"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/generic-amd64-alpine:3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/generic-amd64-alpine:3.15-run",
+        "docker.io/balenalib/generic-amd64-alpine:3.15-${DATESTAMP}",
+        "docker.io/balenalib/generic-amd64-alpine:3.15"
       ]
     },
     "generic-amd64-alpine-3-16-build": {
@@ -258,94 +350,34 @@
         "docker.io/balenalib/generic-amd64-alpine:${DATESTAMP}"
       ]
     },
-    "generic-amd64-alpine-3-13-build": {
-      "context": "device-base/generic-amd64/alpine/3.13/build",
+    "generic-amd64-alpine-3-21-build": {
+      "context": "device-base/generic-amd64/alpine/3.21/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/amd64",
       "tags": [
-        "docker.io/balenalib/generic-amd64-alpine:3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/generic-amd64-alpine:3.13-build"
+        "docker.io/balenalib/generic-amd64-alpine:3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/generic-amd64-alpine:3.21-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/generic-amd64-alpine:3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/generic-amd64-alpine:3.13-build"
+        "docker.io/balenalib/generic-amd64-alpine:3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/generic-amd64-alpine:3.21-build"
       ]
     },
-    "generic-amd64-alpine-3-13-run": {
-      "context": "device-base/generic-amd64/alpine/3.13/run",
+    "generic-amd64-alpine-3-21-run": {
+      "context": "device-base/generic-amd64/alpine/3.21/run",
       "dockerfile": "Dockerfile",
       "platform": "linux/amd64",
       "tags": [
-        "docker.io/balenalib/generic-amd64-alpine:3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/generic-amd64-alpine:3.13-run",
-        "docker.io/balenalib/generic-amd64-alpine:3.13-${DATESTAMP}",
-        "docker.io/balenalib/generic-amd64-alpine:3.13"
+        "docker.io/balenalib/generic-amd64-alpine:3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/generic-amd64-alpine:3.21-run",
+        "docker.io/balenalib/generic-amd64-alpine:3.21-${DATESTAMP}",
+        "docker.io/balenalib/generic-amd64-alpine:3.21"
       ],
       "cache_from": [
-        "docker.io/balenalib/generic-amd64-alpine:3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/generic-amd64-alpine:3.13-run",
-        "docker.io/balenalib/generic-amd64-alpine:3.13-${DATESTAMP}",
-        "docker.io/balenalib/generic-amd64-alpine:3.13"
-      ]
-    },
-    "generic-amd64-alpine-3-12-build": {
-      "context": "device-base/generic-amd64/alpine/3.12/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/amd64",
-      "tags": [
-        "docker.io/balenalib/generic-amd64-alpine:3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/generic-amd64-alpine:3.12-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/generic-amd64-alpine:3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/generic-amd64-alpine:3.12-build"
-      ]
-    },
-    "generic-amd64-alpine-3-12-run": {
-      "context": "device-base/generic-amd64/alpine/3.12/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/amd64",
-      "tags": [
-        "docker.io/balenalib/generic-amd64-alpine:3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/generic-amd64-alpine:3.12-run",
-        "docker.io/balenalib/generic-amd64-alpine:3.12-${DATESTAMP}",
-        "docker.io/balenalib/generic-amd64-alpine:3.12"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/generic-amd64-alpine:3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/generic-amd64-alpine:3.12-run",
-        "docker.io/balenalib/generic-amd64-alpine:3.12-${DATESTAMP}",
-        "docker.io/balenalib/generic-amd64-alpine:3.12"
-      ]
-    },
-    "generic-amd64-alpine-3-15-build": {
-      "context": "device-base/generic-amd64/alpine/3.15/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/amd64",
-      "tags": [
-        "docker.io/balenalib/generic-amd64-alpine:3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/generic-amd64-alpine:3.15-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/generic-amd64-alpine:3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/generic-amd64-alpine:3.15-build"
-      ]
-    },
-    "generic-amd64-alpine-3-15-run": {
-      "context": "device-base/generic-amd64/alpine/3.15/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/amd64",
-      "tags": [
-        "docker.io/balenalib/generic-amd64-alpine:3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/generic-amd64-alpine:3.15-run",
-        "docker.io/balenalib/generic-amd64-alpine:3.15-${DATESTAMP}",
-        "docker.io/balenalib/generic-amd64-alpine:3.15"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/generic-amd64-alpine:3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/generic-amd64-alpine:3.15-run",
-        "docker.io/balenalib/generic-amd64-alpine:3.15-${DATESTAMP}",
-        "docker.io/balenalib/generic-amd64-alpine:3.15"
+        "docker.io/balenalib/generic-amd64-alpine:3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/generic-amd64-alpine:3.21-run",
+        "docker.io/balenalib/generic-amd64-alpine:3.21-${DATESTAMP}",
+        "docker.io/balenalib/generic-amd64-alpine:3.21"
       ]
     }
   },

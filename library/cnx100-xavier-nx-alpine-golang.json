@@ -8,10 +8,24 @@
         "cnx100-xavier-nx-alpine-golang-1-19-6-edge-run",
         "cnx100-xavier-nx-alpine-golang-1-18-10-edge-build",
         "cnx100-xavier-nx-alpine-golang-1-18-10-edge-run",
+        "cnx100-xavier-nx-alpine-golang-1-19-6-3-12-build",
+        "cnx100-xavier-nx-alpine-golang-1-19-6-3-12-run",
+        "cnx100-xavier-nx-alpine-golang-1-18-10-3-12-build",
+        "cnx100-xavier-nx-alpine-golang-1-18-10-3-12-run",
+        "cnx100-xavier-nx-alpine-golang-1-19-6-3-13-build",
+        "cnx100-xavier-nx-alpine-golang-1-19-6-3-13-run",
+        "cnx100-xavier-nx-alpine-golang-1-18-10-3-13-build",
+        "cnx100-xavier-nx-alpine-golang-1-18-10-3-13-run",
         "cnx100-xavier-nx-alpine-golang-1-19-6-3-14-build",
         "cnx100-xavier-nx-alpine-golang-1-19-6-3-14-run",
         "cnx100-xavier-nx-alpine-golang-1-18-10-3-14-build",
         "cnx100-xavier-nx-alpine-golang-1-18-10-3-14-run",
+        "cnx100-xavier-nx-alpine-golang-1-20-1-3-15-build",
+        "cnx100-xavier-nx-alpine-golang-1-20-1-3-15-run",
+        "cnx100-xavier-nx-alpine-golang-1-19-6-3-15-build",
+        "cnx100-xavier-nx-alpine-golang-1-19-6-3-15-run",
+        "cnx100-xavier-nx-alpine-golang-1-18-10-3-15-build",
+        "cnx100-xavier-nx-alpine-golang-1-18-10-3-15-run",
         "cnx100-xavier-nx-alpine-golang-1-20-1-3-16-build",
         "cnx100-xavier-nx-alpine-golang-1-20-1-3-16-run",
         "cnx100-xavier-nx-alpine-golang-1-19-6-3-16-build",
@@ -42,20 +56,10 @@
         "cnx100-xavier-nx-alpine-golang-1-19-6-3-20-run",
         "cnx100-xavier-nx-alpine-golang-1-18-10-3-20-build",
         "cnx100-xavier-nx-alpine-golang-1-18-10-3-20-run",
-        "cnx100-xavier-nx-alpine-golang-1-19-6-3-13-build",
-        "cnx100-xavier-nx-alpine-golang-1-19-6-3-13-run",
-        "cnx100-xavier-nx-alpine-golang-1-18-10-3-13-build",
-        "cnx100-xavier-nx-alpine-golang-1-18-10-3-13-run",
-        "cnx100-xavier-nx-alpine-golang-1-19-6-3-12-build",
-        "cnx100-xavier-nx-alpine-golang-1-19-6-3-12-run",
-        "cnx100-xavier-nx-alpine-golang-1-18-10-3-12-build",
-        "cnx100-xavier-nx-alpine-golang-1-18-10-3-12-run",
-        "cnx100-xavier-nx-alpine-golang-1-20-1-3-15-build",
-        "cnx100-xavier-nx-alpine-golang-1-20-1-3-15-run",
-        "cnx100-xavier-nx-alpine-golang-1-19-6-3-15-build",
-        "cnx100-xavier-nx-alpine-golang-1-19-6-3-15-run",
-        "cnx100-xavier-nx-alpine-golang-1-18-10-3-15-build",
-        "cnx100-xavier-nx-alpine-golang-1-18-10-3-15-run"
+        "cnx100-xavier-nx-alpine-golang-1-19-6-3-21-build",
+        "cnx100-xavier-nx-alpine-golang-1-19-6-3-21-run",
+        "cnx100-xavier-nx-alpine-golang-1-18-10-3-21-build",
+        "cnx100-xavier-nx-alpine-golang-1-18-10-3-21-run"
       ]
     }
   },
@@ -246,6 +250,222 @@
         "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-edge"
       ]
     },
+    "cnx100-xavier-nx-alpine-golang-1-19-6-3-12-build": {
+      "context": "golang/cnx100-xavier-nx/alpine/3.12/1.19.6/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.12-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.12-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.12-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.12-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-build"
+      ]
+    },
+    "cnx100-xavier-nx-alpine-golang-1-19-6-3-12-run": {
+      "context": "golang/cnx100-xavier-nx/alpine/3.12/1.19.6/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.12-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.12-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.12",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.12-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.12-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.12",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.12-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.12-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.12",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.12-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.12-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.12",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12"
+      ]
+    },
+    "cnx100-xavier-nx-alpine-golang-1-18-10-3-12-build": {
+      "context": "golang/cnx100-xavier-nx/alpine/3.12/1.18.10/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.12-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.12-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.12-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.12-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-build"
+      ]
+    },
+    "cnx100-xavier-nx-alpine-golang-1-18-10-3-12-run": {
+      "context": "golang/cnx100-xavier-nx/alpine/3.12/1.18.10/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.12-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.12-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.12",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.12-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.12-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.12",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.12-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.12-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.12",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.12-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.12-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.12",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12"
+      ]
+    },
+    "cnx100-xavier-nx-alpine-golang-1-19-6-3-13-build": {
+      "context": "golang/cnx100-xavier-nx/alpine/3.13/1.19.6/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.13-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.13-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.13-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.13-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-build"
+      ]
+    },
+    "cnx100-xavier-nx-alpine-golang-1-19-6-3-13-run": {
+      "context": "golang/cnx100-xavier-nx/alpine/3.13/1.19.6/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.13-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.13-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.13",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.13-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.13-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.13",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.13-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.13-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.13",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.13-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.13-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.13",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13"
+      ]
+    },
+    "cnx100-xavier-nx-alpine-golang-1-18-10-3-13-build": {
+      "context": "golang/cnx100-xavier-nx/alpine/3.13/1.18.10/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.13-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.13-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.13-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.13-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-build"
+      ]
+    },
+    "cnx100-xavier-nx-alpine-golang-1-18-10-3-13-run": {
+      "context": "golang/cnx100-xavier-nx/alpine/3.13/1.18.10/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.13-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.13-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.13",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.13-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.13-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.13",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.13-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.13-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.13",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.13-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.13-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.13",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13"
+      ]
+    },
     "cnx100-xavier-nx-alpine-golang-1-19-6-3-14-build": {
       "context": "golang/cnx100-xavier-nx/alpine/3.14/1.19.6/build",
       "dockerfile": "Dockerfile",
@@ -352,6 +572,192 @@
         "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.14-run",
         "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.14-${DATESTAMP}",
         "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.14"
+      ]
+    },
+    "cnx100-xavier-nx-alpine-golang-1-20-1-3-15-build": {
+      "context": "golang/cnx100-xavier-nx/alpine/3.15/1.20.1/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20.1-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20.1-3.15-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20-3.15-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:latest-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:latest-3.15-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:3.15-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20.1-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20.1-3.15-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20-3.15-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:latest-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:latest-3.15-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:3.15-build"
+      ]
+    },
+    "cnx100-xavier-nx-alpine-golang-1-20-1-3-15-run": {
+      "context": "golang/cnx100-xavier-nx/alpine/3.15/1.20.1/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20.1-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20.1-3.15-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20.1-3.15-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20.1-3.15",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20-3.15-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20-3.15-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20-3.15",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:latest-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:latest-3.15-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:latest-3.15-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:latest-3.15",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:3.15-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:3.15-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:3.15"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20.1-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20.1-3.15-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20.1-3.15-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20.1-3.15",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20-3.15-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20-3.15-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20-3.15",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:latest-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:latest-3.15-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:latest-3.15-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:latest-3.15",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:3.15-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:3.15-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:3.15"
+      ]
+    },
+    "cnx100-xavier-nx-alpine-golang-1-19-6-3-15-build": {
+      "context": "golang/cnx100-xavier-nx/alpine/3.15/1.19.6/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.15-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.15-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.15-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.15-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-build"
+      ]
+    },
+    "cnx100-xavier-nx-alpine-golang-1-19-6-3-15-run": {
+      "context": "golang/cnx100-xavier-nx/alpine/3.15/1.19.6/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.15-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.15-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.15",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.15-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.15-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.15",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.15-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.15-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.15",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.15-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.15-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.15",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15"
+      ]
+    },
+    "cnx100-xavier-nx-alpine-golang-1-18-10-3-15-build": {
+      "context": "golang/cnx100-xavier-nx/alpine/3.15/1.18.10/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.15-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.15-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.15-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.15-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-build"
+      ]
+    },
+    "cnx100-xavier-nx-alpine-golang-1-18-10-3-15-run": {
+      "context": "golang/cnx100-xavier-nx/alpine/3.15/1.18.10/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.15-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.15-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.15",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.15-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.15-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.15",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.15-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.15-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.15",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.15-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.15-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.15",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15"
       ]
     },
     "cnx100-xavier-nx-alpine-golang-1-20-1-3-16-build": {
@@ -1546,406 +1952,112 @@
         "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1"
       ]
     },
-    "cnx100-xavier-nx-alpine-golang-1-19-6-3-13-build": {
-      "context": "golang/cnx100-xavier-nx/alpine/3.13/1.19.6/build",
+    "cnx100-xavier-nx-alpine-golang-1-19-6-3-21-build": {
+      "context": "golang/cnx100-xavier-nx/alpine/3.21/1.19.6/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.13-build",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.13-build",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-build"
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.21-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.21-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.21-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.13-build",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.13-build",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-build"
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.21-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.21-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.21-build"
       ]
     },
-    "cnx100-xavier-nx-alpine-golang-1-19-6-3-13-run": {
-      "context": "golang/cnx100-xavier-nx/alpine/3.13/1.19.6/run",
+    "cnx100-xavier-nx-alpine-golang-1-19-6-3-21-run": {
+      "context": "golang/cnx100-xavier-nx/alpine/3.21/1.19.6/run",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.13-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.13-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.13",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.13-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.13-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.13",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13"
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.21-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.21-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.21",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.21-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.21-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.21",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.21-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.21-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.21"
       ],
       "cache_from": [
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.13-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.13-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.13",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.13-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.13-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.13",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13"
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.21-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.21-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.21",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.21-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.21-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.21",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.21-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.21-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.21"
       ]
     },
-    "cnx100-xavier-nx-alpine-golang-1-18-10-3-13-build": {
-      "context": "golang/cnx100-xavier-nx/alpine/3.13/1.18.10/build",
+    "cnx100-xavier-nx-alpine-golang-1-18-10-3-21-build": {
+      "context": "golang/cnx100-xavier-nx/alpine/3.21/1.18.10/build",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.13-build",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.13-build",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-build"
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.21-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.21-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.21-build"
       ],
       "cache_from": [
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.13-build",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.13-build",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-build"
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.21-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.21-build",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.21-build"
       ]
     },
-    "cnx100-xavier-nx-alpine-golang-1-18-10-3-13-run": {
-      "context": "golang/cnx100-xavier-nx/alpine/3.13/1.18.10/run",
+    "cnx100-xavier-nx-alpine-golang-1-18-10-3-21-run": {
+      "context": "golang/cnx100-xavier-nx/alpine/3.21/1.18.10/run",
       "dockerfile": "Dockerfile",
       "platform": "linux/arm64",
       "tags": [
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.13-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.13-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.13",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.13-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.13-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.13",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13"
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.21-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.21-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.21",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.21-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.21-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.21",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.21-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.21-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.21"
       ],
       "cache_from": [
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.13-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.13-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.13",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.13-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.13-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.13",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.13"
-      ]
-    },
-    "cnx100-xavier-nx-alpine-golang-1-19-6-3-12-build": {
-      "context": "golang/cnx100-xavier-nx/alpine/3.12/1.19.6/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.12-build",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.12-build",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.12-build",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.12-build",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-build"
-      ]
-    },
-    "cnx100-xavier-nx-alpine-golang-1-19-6-3-12-run": {
-      "context": "golang/cnx100-xavier-nx/alpine/3.12/1.19.6/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.12-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.12-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.12",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.12-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.12-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.12",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.12-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.12-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.12",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.12-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.12-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.12",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12"
-      ]
-    },
-    "cnx100-xavier-nx-alpine-golang-1-18-10-3-12-build": {
-      "context": "golang/cnx100-xavier-nx/alpine/3.12/1.18.10/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.12-build",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.12-build",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.12-build",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.12-build",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-build"
-      ]
-    },
-    "cnx100-xavier-nx-alpine-golang-1-18-10-3-12-run": {
-      "context": "golang/cnx100-xavier-nx/alpine/3.12/1.18.10/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.12-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.12-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.12",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.12-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.12-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.12",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.12-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.12-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.12",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.12-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.12-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.12",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.12"
-      ]
-    },
-    "cnx100-xavier-nx-alpine-golang-1-20-1-3-15-build": {
-      "context": "golang/cnx100-xavier-nx/alpine/3.15/1.20.1/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20.1-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20.1-3.15-build",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20-3.15-build",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-build",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:latest-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:latest-3.15-build",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:3.15-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20.1-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20.1-3.15-build",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20-3.15-build",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-build",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:latest-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:latest-3.15-build",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:3.15-build"
-      ]
-    },
-    "cnx100-xavier-nx-alpine-golang-1-20-1-3-15-run": {
-      "context": "golang/cnx100-xavier-nx/alpine/3.15/1.20.1/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20.1-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20.1-3.15-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20.1-3.15-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20.1-3.15",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20-3.15-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20-3.15-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20-3.15",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:latest-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:latest-3.15-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:latest-3.15-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:latest-3.15",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:3.15-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:3.15-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:3.15"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20.1-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20.1-3.15-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20.1-3.15-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20.1-3.15",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20-3.15-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20-3.15-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.20-3.15",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:latest-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:latest-3.15-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:latest-3.15-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:latest-3.15",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:3.15-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:3.15-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:3.15"
-      ]
-    },
-    "cnx100-xavier-nx-alpine-golang-1-19-6-3-15-build": {
-      "context": "golang/cnx100-xavier-nx/alpine/3.15/1.19.6/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.15-build",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.15-build",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.15-build",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.15-build",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-build"
-      ]
-    },
-    "cnx100-xavier-nx-alpine-golang-1-19-6-3-15-run": {
-      "context": "golang/cnx100-xavier-nx/alpine/3.15/1.19.6/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.15-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.15-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.15",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.15-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.15-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.15",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.15-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.15-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19.6-3.15",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.15-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.15-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.19-3.15",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15"
-      ]
-    },
-    "cnx100-xavier-nx-alpine-golang-1-18-10-3-15-build": {
-      "context": "golang/cnx100-xavier-nx/alpine/3.15/1.18.10/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.15-build",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.15-build",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.15-build",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.15-build",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-build"
-      ]
-    },
-    "cnx100-xavier-nx-alpine-golang-1-18-10-3-15-run": {
-      "context": "golang/cnx100-xavier-nx/alpine/3.15/1.18.10/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.15-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.15-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.15",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.15-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.15-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.15",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.15-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.15-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.15",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.15-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.15-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.15",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-run",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.15"
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.21-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.21-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18.10-3.21",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.21-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.21-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1.18-3.21",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.21-run",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.21-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-alpine-golang:1-3.21"
       ]
     }
   },
