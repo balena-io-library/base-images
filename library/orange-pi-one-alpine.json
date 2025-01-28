@@ -304,19 +304,11 @@
       "platform": "linux/arm/v7",
       "tags": [
         "docker.io/balenalib/orange-pi-one-alpine:3.20-build-${DATESTAMP}",
-        "docker.io/balenalib/orange-pi-one-alpine:3.20-build",
-        "docker.io/balenalib/orange-pi-one-alpine:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/orange-pi-one-alpine:latest-build",
-        "docker.io/balenalib/orange-pi-one-alpine:build-${DATESTAMP}",
-        "docker.io/balenalib/orange-pi-one-alpine:build"
+        "docker.io/balenalib/orange-pi-one-alpine:3.20-build"
       ],
       "cache_from": [
         "docker.io/balenalib/orange-pi-one-alpine:3.20-build-${DATESTAMP}",
-        "docker.io/balenalib/orange-pi-one-alpine:3.20-build",
-        "docker.io/balenalib/orange-pi-one-alpine:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/orange-pi-one-alpine:latest-build",
-        "docker.io/balenalib/orange-pi-one-alpine:build-${DATESTAMP}",
-        "docker.io/balenalib/orange-pi-one-alpine:build"
+        "docker.io/balenalib/orange-pi-one-alpine:3.20-build"
       ]
     },
     "orange-pi-one-alpine-3-20-run": {
@@ -327,27 +319,13 @@
         "docker.io/balenalib/orange-pi-one-alpine:3.20-run-${DATESTAMP}",
         "docker.io/balenalib/orange-pi-one-alpine:3.20-run",
         "docker.io/balenalib/orange-pi-one-alpine:3.20-${DATESTAMP}",
-        "docker.io/balenalib/orange-pi-one-alpine:3.20",
-        "docker.io/balenalib/orange-pi-one-alpine:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/orange-pi-one-alpine:latest-run",
-        "docker.io/balenalib/orange-pi-one-alpine:latest-${DATESTAMP}",
-        "docker.io/balenalib/orange-pi-one-alpine:latest",
-        "docker.io/balenalib/orange-pi-one-alpine:run-${DATESTAMP}",
-        "docker.io/balenalib/orange-pi-one-alpine:run",
-        "docker.io/balenalib/orange-pi-one-alpine:${DATESTAMP}"
+        "docker.io/balenalib/orange-pi-one-alpine:3.20"
       ],
       "cache_from": [
         "docker.io/balenalib/orange-pi-one-alpine:3.20-run-${DATESTAMP}",
         "docker.io/balenalib/orange-pi-one-alpine:3.20-run",
         "docker.io/balenalib/orange-pi-one-alpine:3.20-${DATESTAMP}",
-        "docker.io/balenalib/orange-pi-one-alpine:3.20",
-        "docker.io/balenalib/orange-pi-one-alpine:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/orange-pi-one-alpine:latest-run",
-        "docker.io/balenalib/orange-pi-one-alpine:latest-${DATESTAMP}",
-        "docker.io/balenalib/orange-pi-one-alpine:latest",
-        "docker.io/balenalib/orange-pi-one-alpine:run-${DATESTAMP}",
-        "docker.io/balenalib/orange-pi-one-alpine:run",
-        "docker.io/balenalib/orange-pi-one-alpine:${DATESTAMP}"
+        "docker.io/balenalib/orange-pi-one-alpine:3.20"
       ]
     },
     "orange-pi-one-alpine-3-21-build": {
@@ -356,11 +334,19 @@
       "platform": "linux/arm/v7",
       "tags": [
         "docker.io/balenalib/orange-pi-one-alpine:3.21-build-${DATESTAMP}",
-        "docker.io/balenalib/orange-pi-one-alpine:3.21-build"
+        "docker.io/balenalib/orange-pi-one-alpine:3.21-build",
+        "docker.io/balenalib/orange-pi-one-alpine:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/orange-pi-one-alpine:latest-build",
+        "docker.io/balenalib/orange-pi-one-alpine:build-${DATESTAMP}",
+        "docker.io/balenalib/orange-pi-one-alpine:build"
       ],
       "cache_from": [
         "docker.io/balenalib/orange-pi-one-alpine:3.21-build-${DATESTAMP}",
-        "docker.io/balenalib/orange-pi-one-alpine:3.21-build"
+        "docker.io/balenalib/orange-pi-one-alpine:3.21-build",
+        "docker.io/balenalib/orange-pi-one-alpine:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/orange-pi-one-alpine:latest-build",
+        "docker.io/balenalib/orange-pi-one-alpine:build-${DATESTAMP}",
+        "docker.io/balenalib/orange-pi-one-alpine:build"
       ]
     },
     "orange-pi-one-alpine-3-21-run": {
@@ -371,13 +357,27 @@
         "docker.io/balenalib/orange-pi-one-alpine:3.21-run-${DATESTAMP}",
         "docker.io/balenalib/orange-pi-one-alpine:3.21-run",
         "docker.io/balenalib/orange-pi-one-alpine:3.21-${DATESTAMP}",
-        "docker.io/balenalib/orange-pi-one-alpine:3.21"
+        "docker.io/balenalib/orange-pi-one-alpine:3.21",
+        "docker.io/balenalib/orange-pi-one-alpine:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/orange-pi-one-alpine:latest-run",
+        "docker.io/balenalib/orange-pi-one-alpine:latest-${DATESTAMP}",
+        "docker.io/balenalib/orange-pi-one-alpine:latest",
+        "docker.io/balenalib/orange-pi-one-alpine:run-${DATESTAMP}",
+        "docker.io/balenalib/orange-pi-one-alpine:run",
+        "docker.io/balenalib/orange-pi-one-alpine:${DATESTAMP}"
       ],
       "cache_from": [
         "docker.io/balenalib/orange-pi-one-alpine:3.21-run-${DATESTAMP}",
         "docker.io/balenalib/orange-pi-one-alpine:3.21-run",
         "docker.io/balenalib/orange-pi-one-alpine:3.21-${DATESTAMP}",
-        "docker.io/balenalib/orange-pi-one-alpine:3.21"
+        "docker.io/balenalib/orange-pi-one-alpine:3.21",
+        "docker.io/balenalib/orange-pi-one-alpine:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/orange-pi-one-alpine:latest-run",
+        "docker.io/balenalib/orange-pi-one-alpine:latest-${DATESTAMP}",
+        "docker.io/balenalib/orange-pi-one-alpine:latest",
+        "docker.io/balenalib/orange-pi-one-alpine:run-${DATESTAMP}",
+        "docker.io/balenalib/orange-pi-one-alpine:run",
+        "docker.io/balenalib/orange-pi-one-alpine:${DATESTAMP}"
       ]
     }
   },

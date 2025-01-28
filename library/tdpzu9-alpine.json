@@ -304,19 +304,11 @@
       "platform": "linux/arm64",
       "tags": [
         "docker.io/balenalib/tdpzu9-alpine:3.20-build-${DATESTAMP}",
-        "docker.io/balenalib/tdpzu9-alpine:3.20-build",
-        "docker.io/balenalib/tdpzu9-alpine:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/tdpzu9-alpine:latest-build",
-        "docker.io/balenalib/tdpzu9-alpine:build-${DATESTAMP}",
-        "docker.io/balenalib/tdpzu9-alpine:build"
+        "docker.io/balenalib/tdpzu9-alpine:3.20-build"
       ],
       "cache_from": [
         "docker.io/balenalib/tdpzu9-alpine:3.20-build-${DATESTAMP}",
-        "docker.io/balenalib/tdpzu9-alpine:3.20-build",
-        "docker.io/balenalib/tdpzu9-alpine:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/tdpzu9-alpine:latest-build",
-        "docker.io/balenalib/tdpzu9-alpine:build-${DATESTAMP}",
-        "docker.io/balenalib/tdpzu9-alpine:build"
+        "docker.io/balenalib/tdpzu9-alpine:3.20-build"
       ]
     },
     "tdpzu9-alpine-3-20-run": {
@@ -327,27 +319,13 @@
         "docker.io/balenalib/tdpzu9-alpine:3.20-run-${DATESTAMP}",
         "docker.io/balenalib/tdpzu9-alpine:3.20-run",
         "docker.io/balenalib/tdpzu9-alpine:3.20-${DATESTAMP}",
-        "docker.io/balenalib/tdpzu9-alpine:3.20",
-        "docker.io/balenalib/tdpzu9-alpine:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/tdpzu9-alpine:latest-run",
-        "docker.io/balenalib/tdpzu9-alpine:latest-${DATESTAMP}",
-        "docker.io/balenalib/tdpzu9-alpine:latest",
-        "docker.io/balenalib/tdpzu9-alpine:run-${DATESTAMP}",
-        "docker.io/balenalib/tdpzu9-alpine:run",
-        "docker.io/balenalib/tdpzu9-alpine:${DATESTAMP}"
+        "docker.io/balenalib/tdpzu9-alpine:3.20"
       ],
       "cache_from": [
         "docker.io/balenalib/tdpzu9-alpine:3.20-run-${DATESTAMP}",
         "docker.io/balenalib/tdpzu9-alpine:3.20-run",
         "docker.io/balenalib/tdpzu9-alpine:3.20-${DATESTAMP}",
-        "docker.io/balenalib/tdpzu9-alpine:3.20",
-        "docker.io/balenalib/tdpzu9-alpine:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/tdpzu9-alpine:latest-run",
-        "docker.io/balenalib/tdpzu9-alpine:latest-${DATESTAMP}",
-        "docker.io/balenalib/tdpzu9-alpine:latest",
-        "docker.io/balenalib/tdpzu9-alpine:run-${DATESTAMP}",
-        "docker.io/balenalib/tdpzu9-alpine:run",
-        "docker.io/balenalib/tdpzu9-alpine:${DATESTAMP}"
+        "docker.io/balenalib/tdpzu9-alpine:3.20"
       ]
     },
     "tdpzu9-alpine-3-21-build": {
@@ -356,11 +334,19 @@
       "platform": "linux/arm64",
       "tags": [
         "docker.io/balenalib/tdpzu9-alpine:3.21-build-${DATESTAMP}",
-        "docker.io/balenalib/tdpzu9-alpine:3.21-build"
+        "docker.io/balenalib/tdpzu9-alpine:3.21-build",
+        "docker.io/balenalib/tdpzu9-alpine:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/tdpzu9-alpine:latest-build",
+        "docker.io/balenalib/tdpzu9-alpine:build-${DATESTAMP}",
+        "docker.io/balenalib/tdpzu9-alpine:build"
       ],
       "cache_from": [
         "docker.io/balenalib/tdpzu9-alpine:3.21-build-${DATESTAMP}",
-        "docker.io/balenalib/tdpzu9-alpine:3.21-build"
+        "docker.io/balenalib/tdpzu9-alpine:3.21-build",
+        "docker.io/balenalib/tdpzu9-alpine:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/tdpzu9-alpine:latest-build",
+        "docker.io/balenalib/tdpzu9-alpine:build-${DATESTAMP}",
+        "docker.io/balenalib/tdpzu9-alpine:build"
       ]
     },
     "tdpzu9-alpine-3-21-run": {
@@ -371,13 +357,27 @@
         "docker.io/balenalib/tdpzu9-alpine:3.21-run-${DATESTAMP}",
         "docker.io/balenalib/tdpzu9-alpine:3.21-run",
         "docker.io/balenalib/tdpzu9-alpine:3.21-${DATESTAMP}",
-        "docker.io/balenalib/tdpzu9-alpine:3.21"
+        "docker.io/balenalib/tdpzu9-alpine:3.21",
+        "docker.io/balenalib/tdpzu9-alpine:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/tdpzu9-alpine:latest-run",
+        "docker.io/balenalib/tdpzu9-alpine:latest-${DATESTAMP}",
+        "docker.io/balenalib/tdpzu9-alpine:latest",
+        "docker.io/balenalib/tdpzu9-alpine:run-${DATESTAMP}",
+        "docker.io/balenalib/tdpzu9-alpine:run",
+        "docker.io/balenalib/tdpzu9-alpine:${DATESTAMP}"
       ],
       "cache_from": [
         "docker.io/balenalib/tdpzu9-alpine:3.21-run-${DATESTAMP}",
         "docker.io/balenalib/tdpzu9-alpine:3.21-run",
         "docker.io/balenalib/tdpzu9-alpine:3.21-${DATESTAMP}",
-        "docker.io/balenalib/tdpzu9-alpine:3.21"
+        "docker.io/balenalib/tdpzu9-alpine:3.21",
+        "docker.io/balenalib/tdpzu9-alpine:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/tdpzu9-alpine:latest-run",
+        "docker.io/balenalib/tdpzu9-alpine:latest-${DATESTAMP}",
+        "docker.io/balenalib/tdpzu9-alpine:latest",
+        "docker.io/balenalib/tdpzu9-alpine:run-${DATESTAMP}",
+        "docker.io/balenalib/tdpzu9-alpine:run",
+        "docker.io/balenalib/tdpzu9-alpine:${DATESTAMP}"
       ]
     }
   },
