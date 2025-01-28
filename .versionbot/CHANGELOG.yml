@@ -1,4 +1,28 @@
 - commits:
+    - subject: Update scripts/contracts digest to c5fdb88
+      hash: 5a873c859b01432bbb959e56c8f58c645b06d692
+      body: |
+        Update scripts/contracts
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: Add alpine 3.21
+              hash: 53eda7f97f29b7321862c3f057710ba0010aa463
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Felipe Lalanne
+          version: contracts-2.0.126
+          title: ""
+          date: 2025-01-28T16:35:59.267Z
+  version: 2.11.18
+  title: ""
+  date: 2025-01-28T17:13:13.865Z
+- commits:
     - subject: Update actions/setup-node action to v4.2.0
       hash: d535f33858d7135c82a58dc1c75288fc6e648517
       body: |
