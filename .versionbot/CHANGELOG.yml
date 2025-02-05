@@ -1,4 +1,41 @@
 - commits:
+    - subject: Update scripts/contracts digest to 1adfd1c
+      hash: a1980d0685a3f3fdf0239e3fee5f85ab134d9879
+      body: |
+        Update scripts/contracts
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: Improve testing of contracts
+              hash: 072ab7219d03952ed3c42cbd78eb397afdac4e97
+              body: >
+                - Migrates contracts to typescript
+
+                - Parallelizes scanning of folders and loading contracts
+
+                - Adds validation for internal consistency of the contract
+                universe
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Felipe Lalanne
+            - subject: Remove unused sw.os-image contracts
+              hash: 2903ca430d32ba59fc662ed2a646fcb2aac6e6a0
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Felipe Lalanne
+          version: contracts-2.0.128
+          title: ""
+          date: 2025-02-05T10:59:52.343Z
+  version: 2.11.21
+  title: ""
+  date: 2025-02-05T12:08:09.697Z
+- commits:
     - subject: Lock file maintenance
       hash: c80a17425e2fcdc4974ffa6f0a089073123883f8
       body: |

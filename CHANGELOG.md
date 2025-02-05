@@ -5,6 +5,20 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.11.21 - 2025-02-05
+
+
+<details>
+<summary> Update scripts/contracts digest to 1adfd1c [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.128 - 2025-02-05
+> 
+> * Improve testing of contracts [Felipe Lalanne]
+> * Remove unused sw.os-image contracts [Felipe Lalanne]
+> 
+
+</details>
+
 ## 2.11.20 - 2025-02-03
 
 * Lock file maintenance [Self-hosted Renovate Bot]
