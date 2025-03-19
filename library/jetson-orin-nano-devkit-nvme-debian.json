@@ -63,30 +63,14 @@
       "tags": [
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:bullseye-build",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:latest-build",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:build",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:bullseye-build",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:latest-build",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:build"
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:bullseye-build"
       ],
       "cache_from": [
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:bullseye-build",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:latest-build",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:build",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:bullseye-build",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:latest-build",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:build"
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:bullseye-build"
       ]
     },
     "jetson-orin-nano-devkit-nvme-debian-bullseye-run": {
@@ -98,48 +82,20 @@
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:bullseye-run",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:bullseye",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:latest-run",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:latest",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:run",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme:bullseye-run",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:bullseye",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:latest-run",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:latest-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:latest",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:run",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:${DATESTAMP}"
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:bullseye"
       ],
       "cache_from": [
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:bullseye-run",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:bullseye",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:latest-run",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:latest",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:run",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme:bullseye-run",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:bullseye",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:latest-run",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:latest-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:latest",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:run",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:${DATESTAMP}"
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:bullseye"
       ]
     },
     "jetson-orin-nano-devkit-nvme-debian-bookworm-build": {
@@ -149,14 +105,30 @@
       "tags": [
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:bookworm-build",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:latest-build",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:build",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:bookworm-build"
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:bookworm-build",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:latest-build",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:build"
       ],
       "cache_from": [
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:bookworm-build",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:latest-build",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:build",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:bookworm-build"
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:bookworm-build",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:latest-build",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:build"
       ]
     },
     "jetson-orin-nano-devkit-nvme-debian-bookworm-run": {
@@ -168,20 +140,48 @@
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:bookworm-run",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:bookworm",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:latest-run",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:latest",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:run",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme:bookworm-run",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:bookworm"
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:bookworm",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:latest-run",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:latest-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:latest",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:run",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:${DATESTAMP}"
       ],
       "cache_from": [
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:bookworm-run",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:bookworm",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:latest-run",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:latest",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:run",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme-debian:${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme:bookworm-run",
         "docker.io/balenalib/jetson-orin-nano-devkit-nvme:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:bookworm"
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:bookworm",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:latest-run",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:latest-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:latest",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:run",
+        "docker.io/balenalib/jetson-orin-nano-devkit-nvme:${DATESTAMP}"
       ]
     },
     "jetson-orin-nano-devkit-nvme-debian-sid-build": {

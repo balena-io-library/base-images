@@ -63,30 +63,14 @@
       "tags": [
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bullseye-build",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:latest-build",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:build",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bullseye-build",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:latest-build",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:build"
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bullseye-build"
       ],
       "cache_from": [
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bullseye-build",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:latest-build",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:build",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bullseye-build",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:latest-build",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:build"
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bullseye-build"
       ]
     },
     "jetson-agx-orin-devkit-64gb-debian-bullseye-run": {
@@ -98,48 +82,20 @@
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bullseye-run",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bullseye",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:latest-run",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:latest",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:run",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:${DATESTAMP}",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bullseye-run",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bullseye",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:latest-run",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:latest-${DATESTAMP}",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:latest",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:run",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:${DATESTAMP}"
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bullseye"
       ],
       "cache_from": [
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bullseye-run",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bullseye",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:latest-run",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:latest",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:run",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:${DATESTAMP}",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bullseye-run",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bullseye",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:latest-run",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:latest-${DATESTAMP}",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:latest",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:run",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:${DATESTAMP}"
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bullseye"
       ]
     },
     "jetson-agx-orin-devkit-64gb-debian-bookworm-build": {
@@ -149,14 +105,30 @@
       "tags": [
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bookworm-build",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:latest-build",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:build",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bookworm-build"
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bookworm-build",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:latest-build",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:build"
       ],
       "cache_from": [
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bookworm-build",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:latest-build",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:build",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bookworm-build"
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bookworm-build",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:latest-build",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:build"
       ]
     },
     "jetson-agx-orin-devkit-64gb-debian-bookworm-run": {
@@ -168,20 +140,48 @@
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bookworm-run",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bookworm",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:latest-run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:latest",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:${DATESTAMP}",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bookworm-run",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bookworm"
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bookworm",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:latest-run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:latest-${DATESTAMP}",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:latest",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:${DATESTAMP}"
       ],
       "cache_from": [
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bookworm-run",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:bookworm",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:latest-run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:latest",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb-debian:${DATESTAMP}",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bookworm-run",
         "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bookworm"
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:bookworm",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:latest-run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:latest-${DATESTAMP}",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:latest",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:run",
+        "docker.io/balenalib/jetson-agx-orin-devkit-64gb:${DATESTAMP}"
       ]
     },
     "jetson-agx-orin-devkit-64gb-debian-sid-build": {

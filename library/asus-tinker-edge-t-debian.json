@@ -63,30 +63,14 @@
       "tags": [
         "docker.io/balenalib/asus-tinker-edge-t-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/asus-tinker-edge-t-debian:bullseye-build",
-        "docker.io/balenalib/asus-tinker-edge-t-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/asus-tinker-edge-t-debian:latest-build",
-        "docker.io/balenalib/asus-tinker-edge-t-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/asus-tinker-edge-t-debian:build",
         "docker.io/balenalib/asus-tinker-edge-t:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/asus-tinker-edge-t:bullseye-build",
-        "docker.io/balenalib/asus-tinker-edge-t:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/asus-tinker-edge-t:latest-build",
-        "docker.io/balenalib/asus-tinker-edge-t:build-${DATESTAMP}",
-        "docker.io/balenalib/asus-tinker-edge-t:build"
+        "docker.io/balenalib/asus-tinker-edge-t:bullseye-build"
       ],
       "cache_from": [
         "docker.io/balenalib/asus-tinker-edge-t-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/asus-tinker-edge-t-debian:bullseye-build",
-        "docker.io/balenalib/asus-tinker-edge-t-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/asus-tinker-edge-t-debian:latest-build",
-        "docker.io/balenalib/asus-tinker-edge-t-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/asus-tinker-edge-t-debian:build",
         "docker.io/balenalib/asus-tinker-edge-t:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/asus-tinker-edge-t:bullseye-build",
-        "docker.io/balenalib/asus-tinker-edge-t:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/asus-tinker-edge-t:latest-build",
-        "docker.io/balenalib/asus-tinker-edge-t:build-${DATESTAMP}",
-        "docker.io/balenalib/asus-tinker-edge-t:build"
+        "docker.io/balenalib/asus-tinker-edge-t:bullseye-build"
       ]
     },
     "asus-tinker-edge-t-debian-bullseye-run": {
@@ -98,48 +82,20 @@
         "docker.io/balenalib/asus-tinker-edge-t-debian:bullseye-run",
         "docker.io/balenalib/asus-tinker-edge-t-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/asus-tinker-edge-t-debian:bullseye",
-        "docker.io/balenalib/asus-tinker-edge-t-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/asus-tinker-edge-t-debian:latest-run",
-        "docker.io/balenalib/asus-tinker-edge-t-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/asus-tinker-edge-t-debian:latest",
-        "docker.io/balenalib/asus-tinker-edge-t-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/asus-tinker-edge-t-debian:run",
-        "docker.io/balenalib/asus-tinker-edge-t-debian:${DATESTAMP}",
         "docker.io/balenalib/asus-tinker-edge-t:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/asus-tinker-edge-t:bullseye-run",
         "docker.io/balenalib/asus-tinker-edge-t:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/asus-tinker-edge-t:bullseye",
-        "docker.io/balenalib/asus-tinker-edge-t:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/asus-tinker-edge-t:latest-run",
-        "docker.io/balenalib/asus-tinker-edge-t:latest-${DATESTAMP}",
-        "docker.io/balenalib/asus-tinker-edge-t:latest",
-        "docker.io/balenalib/asus-tinker-edge-t:run-${DATESTAMP}",
-        "docker.io/balenalib/asus-tinker-edge-t:run",
-        "docker.io/balenalib/asus-tinker-edge-t:${DATESTAMP}"
+        "docker.io/balenalib/asus-tinker-edge-t:bullseye"
       ],
       "cache_from": [
         "docker.io/balenalib/asus-tinker-edge-t-debian:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/asus-tinker-edge-t-debian:bullseye-run",
         "docker.io/balenalib/asus-tinker-edge-t-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/asus-tinker-edge-t-debian:bullseye",
-        "docker.io/balenalib/asus-tinker-edge-t-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/asus-tinker-edge-t-debian:latest-run",
-        "docker.io/balenalib/asus-tinker-edge-t-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/asus-tinker-edge-t-debian:latest",
-        "docker.io/balenalib/asus-tinker-edge-t-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/asus-tinker-edge-t-debian:run",
-        "docker.io/balenalib/asus-tinker-edge-t-debian:${DATESTAMP}",
         "docker.io/balenalib/asus-tinker-edge-t:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/asus-tinker-edge-t:bullseye-run",
         "docker.io/balenalib/asus-tinker-edge-t:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/asus-tinker-edge-t:bullseye",
-        "docker.io/balenalib/asus-tinker-edge-t:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/asus-tinker-edge-t:latest-run",
-        "docker.io/balenalib/asus-tinker-edge-t:latest-${DATESTAMP}",
-        "docker.io/balenalib/asus-tinker-edge-t:latest",
-        "docker.io/balenalib/asus-tinker-edge-t:run-${DATESTAMP}",
-        "docker.io/balenalib/asus-tinker-edge-t:run",
-        "docker.io/balenalib/asus-tinker-edge-t:${DATESTAMP}"
+        "docker.io/balenalib/asus-tinker-edge-t:bullseye"
       ]
     },
     "asus-tinker-edge-t-debian-bookworm-build": {
@@ -149,14 +105,30 @@
       "tags": [
         "docker.io/balenalib/asus-tinker-edge-t-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/asus-tinker-edge-t-debian:bookworm-build",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:latest-build",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:build",
         "docker.io/balenalib/asus-tinker-edge-t:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/asus-tinker-edge-t:bookworm-build"
+        "docker.io/balenalib/asus-tinker-edge-t:bookworm-build",
+        "docker.io/balenalib/asus-tinker-edge-t:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/asus-tinker-edge-t:latest-build",
+        "docker.io/balenalib/asus-tinker-edge-t:build-${DATESTAMP}",
+        "docker.io/balenalib/asus-tinker-edge-t:build"
       ],
       "cache_from": [
         "docker.io/balenalib/asus-tinker-edge-t-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/asus-tinker-edge-t-debian:bookworm-build",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:latest-build",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:build",
         "docker.io/balenalib/asus-tinker-edge-t:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/asus-tinker-edge-t:bookworm-build"
+        "docker.io/balenalib/asus-tinker-edge-t:bookworm-build",
+        "docker.io/balenalib/asus-tinker-edge-t:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/asus-tinker-edge-t:latest-build",
+        "docker.io/balenalib/asus-tinker-edge-t:build-${DATESTAMP}",
+        "docker.io/balenalib/asus-tinker-edge-t:build"
       ]
     },
     "asus-tinker-edge-t-debian-bookworm-run": {
@@ -168,20 +140,48 @@
         "docker.io/balenalib/asus-tinker-edge-t-debian:bookworm-run",
         "docker.io/balenalib/asus-tinker-edge-t-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/asus-tinker-edge-t-debian:bookworm",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:latest-run",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:latest",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:run",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:${DATESTAMP}",
         "docker.io/balenalib/asus-tinker-edge-t:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/asus-tinker-edge-t:bookworm-run",
         "docker.io/balenalib/asus-tinker-edge-t:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/asus-tinker-edge-t:bookworm"
+        "docker.io/balenalib/asus-tinker-edge-t:bookworm",
+        "docker.io/balenalib/asus-tinker-edge-t:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/asus-tinker-edge-t:latest-run",
+        "docker.io/balenalib/asus-tinker-edge-t:latest-${DATESTAMP}",
+        "docker.io/balenalib/asus-tinker-edge-t:latest",
+        "docker.io/balenalib/asus-tinker-edge-t:run-${DATESTAMP}",
+        "docker.io/balenalib/asus-tinker-edge-t:run",
+        "docker.io/balenalib/asus-tinker-edge-t:${DATESTAMP}"
       ],
       "cache_from": [
         "docker.io/balenalib/asus-tinker-edge-t-debian:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/asus-tinker-edge-t-debian:bookworm-run",
         "docker.io/balenalib/asus-tinker-edge-t-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/asus-tinker-edge-t-debian:bookworm",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:latest-run",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:latest",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:run",
+        "docker.io/balenalib/asus-tinker-edge-t-debian:${DATESTAMP}",
         "docker.io/balenalib/asus-tinker-edge-t:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/asus-tinker-edge-t:bookworm-run",
         "docker.io/balenalib/asus-tinker-edge-t:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/asus-tinker-edge-t:bookworm"
+        "docker.io/balenalib/asus-tinker-edge-t:bookworm",
+        "docker.io/balenalib/asus-tinker-edge-t:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/asus-tinker-edge-t:latest-run",
+        "docker.io/balenalib/asus-tinker-edge-t:latest-${DATESTAMP}",
+        "docker.io/balenalib/asus-tinker-edge-t:latest",
+        "docker.io/balenalib/asus-tinker-edge-t:run-${DATESTAMP}",
+        "docker.io/balenalib/asus-tinker-edge-t:run",
+        "docker.io/balenalib/asus-tinker-edge-t:${DATESTAMP}"
       ]
     },
     "asus-tinker-edge-t-debian-sid-build": {

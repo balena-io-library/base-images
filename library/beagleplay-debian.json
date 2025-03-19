@@ -63,30 +63,14 @@
       "tags": [
         "docker.io/balenalib/beagleplay-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/beagleplay-debian:bullseye-build",
-        "docker.io/balenalib/beagleplay-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/beagleplay-debian:latest-build",
-        "docker.io/balenalib/beagleplay-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/beagleplay-debian:build",
         "docker.io/balenalib/beagleplay:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/beagleplay:bullseye-build",
-        "docker.io/balenalib/beagleplay:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/beagleplay:latest-build",
-        "docker.io/balenalib/beagleplay:build-${DATESTAMP}",
-        "docker.io/balenalib/beagleplay:build"
+        "docker.io/balenalib/beagleplay:bullseye-build"
       ],
       "cache_from": [
         "docker.io/balenalib/beagleplay-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/beagleplay-debian:bullseye-build",
-        "docker.io/balenalib/beagleplay-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/beagleplay-debian:latest-build",
-        "docker.io/balenalib/beagleplay-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/beagleplay-debian:build",
         "docker.io/balenalib/beagleplay:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/beagleplay:bullseye-build",
-        "docker.io/balenalib/beagleplay:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/beagleplay:latest-build",
-        "docker.io/balenalib/beagleplay:build-${DATESTAMP}",
-        "docker.io/balenalib/beagleplay:build"
+        "docker.io/balenalib/beagleplay:bullseye-build"
       ]
     },
     "beagleplay-debian-bullseye-run": {
@@ -98,48 +82,20 @@
         "docker.io/balenalib/beagleplay-debian:bullseye-run",
         "docker.io/balenalib/beagleplay-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/beagleplay-debian:bullseye",
-        "docker.io/balenalib/beagleplay-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/beagleplay-debian:latest-run",
-        "docker.io/balenalib/beagleplay-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/beagleplay-debian:latest",
-        "docker.io/balenalib/beagleplay-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/beagleplay-debian:run",
-        "docker.io/balenalib/beagleplay-debian:${DATESTAMP}",
         "docker.io/balenalib/beagleplay:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/beagleplay:bullseye-run",
         "docker.io/balenalib/beagleplay:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/beagleplay:bullseye",
-        "docker.io/balenalib/beagleplay:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/beagleplay:latest-run",
-        "docker.io/balenalib/beagleplay:latest-${DATESTAMP}",
-        "docker.io/balenalib/beagleplay:latest",
-        "docker.io/balenalib/beagleplay:run-${DATESTAMP}",
-        "docker.io/balenalib/beagleplay:run",
-        "docker.io/balenalib/beagleplay:${DATESTAMP}"
+        "docker.io/balenalib/beagleplay:bullseye"
       ],
       "cache_from": [
         "docker.io/balenalib/beagleplay-debian:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/beagleplay-debian:bullseye-run",
         "docker.io/balenalib/beagleplay-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/beagleplay-debian:bullseye",
-        "docker.io/balenalib/beagleplay-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/beagleplay-debian:latest-run",
-        "docker.io/balenalib/beagleplay-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/beagleplay-debian:latest",
-        "docker.io/balenalib/beagleplay-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/beagleplay-debian:run",
-        "docker.io/balenalib/beagleplay-debian:${DATESTAMP}",
         "docker.io/balenalib/beagleplay:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/beagleplay:bullseye-run",
         "docker.io/balenalib/beagleplay:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/beagleplay:bullseye",
-        "docker.io/balenalib/beagleplay:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/beagleplay:latest-run",
-        "docker.io/balenalib/beagleplay:latest-${DATESTAMP}",
-        "docker.io/balenalib/beagleplay:latest",
-        "docker.io/balenalib/beagleplay:run-${DATESTAMP}",
-        "docker.io/balenalib/beagleplay:run",
-        "docker.io/balenalib/beagleplay:${DATESTAMP}"
+        "docker.io/balenalib/beagleplay:bullseye"
       ]
     },
     "beagleplay-debian-bookworm-build": {
@@ -149,14 +105,30 @@
       "tags": [
         "docker.io/balenalib/beagleplay-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/beagleplay-debian:bookworm-build",
+        "docker.io/balenalib/beagleplay-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/beagleplay-debian:latest-build",
+        "docker.io/balenalib/beagleplay-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/beagleplay-debian:build",
         "docker.io/balenalib/beagleplay:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/beagleplay:bookworm-build"
+        "docker.io/balenalib/beagleplay:bookworm-build",
+        "docker.io/balenalib/beagleplay:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/beagleplay:latest-build",
+        "docker.io/balenalib/beagleplay:build-${DATESTAMP}",
+        "docker.io/balenalib/beagleplay:build"
       ],
       "cache_from": [
         "docker.io/balenalib/beagleplay-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/beagleplay-debian:bookworm-build",
+        "docker.io/balenalib/beagleplay-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/beagleplay-debian:latest-build",
+        "docker.io/balenalib/beagleplay-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/beagleplay-debian:build",
         "docker.io/balenalib/beagleplay:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/beagleplay:bookworm-build"
+        "docker.io/balenalib/beagleplay:bookworm-build",
+        "docker.io/balenalib/beagleplay:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/beagleplay:latest-build",
+        "docker.io/balenalib/beagleplay:build-${DATESTAMP}",
+        "docker.io/balenalib/beagleplay:build"
       ]
     },
     "beagleplay-debian-bookworm-run": {
@@ -168,20 +140,48 @@
         "docker.io/balenalib/beagleplay-debian:bookworm-run",
         "docker.io/balenalib/beagleplay-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/beagleplay-debian:bookworm",
+        "docker.io/balenalib/beagleplay-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/beagleplay-debian:latest-run",
+        "docker.io/balenalib/beagleplay-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/beagleplay-debian:latest",
+        "docker.io/balenalib/beagleplay-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/beagleplay-debian:run",
+        "docker.io/balenalib/beagleplay-debian:${DATESTAMP}",
         "docker.io/balenalib/beagleplay:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/beagleplay:bookworm-run",
         "docker.io/balenalib/beagleplay:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/beagleplay:bookworm"
+        "docker.io/balenalib/beagleplay:bookworm",
+        "docker.io/balenalib/beagleplay:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/beagleplay:latest-run",
+        "docker.io/balenalib/beagleplay:latest-${DATESTAMP}",
+        "docker.io/balenalib/beagleplay:latest",
+        "docker.io/balenalib/beagleplay:run-${DATESTAMP}",
+        "docker.io/balenalib/beagleplay:run",
+        "docker.io/balenalib/beagleplay:${DATESTAMP}"
       ],
       "cache_from": [
         "docker.io/balenalib/beagleplay-debian:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/beagleplay-debian:bookworm-run",
         "docker.io/balenalib/beagleplay-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/beagleplay-debian:bookworm",
+        "docker.io/balenalib/beagleplay-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/beagleplay-debian:latest-run",
+        "docker.io/balenalib/beagleplay-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/beagleplay-debian:latest",
+        "docker.io/balenalib/beagleplay-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/beagleplay-debian:run",
+        "docker.io/balenalib/beagleplay-debian:${DATESTAMP}",
         "docker.io/balenalib/beagleplay:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/beagleplay:bookworm-run",
         "docker.io/balenalib/beagleplay:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/beagleplay:bookworm"
+        "docker.io/balenalib/beagleplay:bookworm",
+        "docker.io/balenalib/beagleplay:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/beagleplay:latest-run",
+        "docker.io/balenalib/beagleplay:latest-${DATESTAMP}",
+        "docker.io/balenalib/beagleplay:latest",
+        "docker.io/balenalib/beagleplay:run-${DATESTAMP}",
+        "docker.io/balenalib/beagleplay:run",
+        "docker.io/balenalib/beagleplay:${DATESTAMP}"
       ]
     },
     "beagleplay-debian-sid-build": {

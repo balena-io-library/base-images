@@ -63,30 +63,14 @@
       "tags": [
         "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:bullseye-build",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:latest-build",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:build",
         "docker.io/balenalib/raspberrypi4-unipi-neuron:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron:bullseye-build",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron:latest-build",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron:build-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron:build"
+        "docker.io/balenalib/raspberrypi4-unipi-neuron:bullseye-build"
       ],
       "cache_from": [
         "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:bullseye-build",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:latest-build",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:build",
         "docker.io/balenalib/raspberrypi4-unipi-neuron:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron:bullseye-build",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron:latest-build",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron:build-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron:build"
+        "docker.io/balenalib/raspberrypi4-unipi-neuron:bullseye-build"
       ]
     },
     "raspberrypi4-unipi-neuron-debian-bullseye-run": {
@@ -98,48 +82,20 @@
         "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:bullseye-run",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:bullseye",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:latest-run",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:latest",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:run",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:${DATESTAMP}",
         "docker.io/balenalib/raspberrypi4-unipi-neuron:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/raspberrypi4-unipi-neuron:bullseye-run",
         "docker.io/balenalib/raspberrypi4-unipi-neuron:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron:bullseye",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron:latest-run",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron:latest-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron:latest",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron:run-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron:run",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron:${DATESTAMP}"
+        "docker.io/balenalib/raspberrypi4-unipi-neuron:bullseye"
       ],
       "cache_from": [
         "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:bullseye-run",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:bullseye",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:latest-run",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:latest",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:run",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:${DATESTAMP}",
         "docker.io/balenalib/raspberrypi4-unipi-neuron:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/raspberrypi4-unipi-neuron:bullseye-run",
         "docker.io/balenalib/raspberrypi4-unipi-neuron:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron:bullseye",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron:latest-run",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron:latest-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron:latest",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron:run-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron:run",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron:${DATESTAMP}"
+        "docker.io/balenalib/raspberrypi4-unipi-neuron:bullseye"
       ]
     },
     "raspberrypi4-unipi-neuron-debian-bookworm-build": {
@@ -149,14 +105,30 @@
       "tags": [
         "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:bookworm-build",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:latest-build",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:build",
         "docker.io/balenalib/raspberrypi4-unipi-neuron:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron:bookworm-build"
+        "docker.io/balenalib/raspberrypi4-unipi-neuron:bookworm-build",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron:latest-build",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron:build-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron:build"
       ],
       "cache_from": [
         "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:bookworm-build",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:latest-build",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:build",
         "docker.io/balenalib/raspberrypi4-unipi-neuron:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron:bookworm-build"
+        "docker.io/balenalib/raspberrypi4-unipi-neuron:bookworm-build",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron:latest-build",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron:build-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron:build"
       ]
     },
     "raspberrypi4-unipi-neuron-debian-bookworm-run": {
@@ -168,20 +140,48 @@
         "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:bookworm-run",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:bookworm",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:latest-run",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:latest",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:run",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:${DATESTAMP}",
         "docker.io/balenalib/raspberrypi4-unipi-neuron:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/raspberrypi4-unipi-neuron:bookworm-run",
         "docker.io/balenalib/raspberrypi4-unipi-neuron:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron:bookworm"
+        "docker.io/balenalib/raspberrypi4-unipi-neuron:bookworm",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron:latest-run",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron:latest-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron:latest",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron:run-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron:run",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron:${DATESTAMP}"
       ],
       "cache_from": [
         "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:bookworm-run",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:bookworm",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:latest-run",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:latest",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:run",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron-debian:${DATESTAMP}",
         "docker.io/balenalib/raspberrypi4-unipi-neuron:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/raspberrypi4-unipi-neuron:bookworm-run",
         "docker.io/balenalib/raspberrypi4-unipi-neuron:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypi4-unipi-neuron:bookworm"
+        "docker.io/balenalib/raspberrypi4-unipi-neuron:bookworm",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron:latest-run",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron:latest-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron:latest",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron:run-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron:run",
+        "docker.io/balenalib/raspberrypi4-unipi-neuron:${DATESTAMP}"
       ]
     },
     "raspberrypi4-unipi-neuron-debian-sid-build": {

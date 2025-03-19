@@ -63,30 +63,14 @@
       "tags": [
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bullseye-build",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:latest-build",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:build",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bullseye-build",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:latest-build",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:build"
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bullseye-build"
       ],
       "cache_from": [
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bullseye-build",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:latest-build",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:build",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bullseye-build",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:latest-build",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:build"
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bullseye-build"
       ]
     },
     "jetson-xavier-nx-devkit-emmc-debian-bullseye-run": {
@@ -98,48 +82,20 @@
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bullseye-run",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bullseye",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:latest-run",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:latest",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:run",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bullseye-run",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bullseye",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:latest-run",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:latest-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:latest",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:run",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:${DATESTAMP}"
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bullseye"
       ],
       "cache_from": [
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bullseye-run",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bullseye",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:latest-run",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:latest",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:run",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bullseye-run",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bullseye",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:latest-run",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:latest-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:latest",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:run",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:${DATESTAMP}"
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bullseye"
       ]
     },
     "jetson-xavier-nx-devkit-emmc-debian-bookworm-build": {
@@ -149,14 +105,30 @@
       "tags": [
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bookworm-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:latest-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:build",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bookworm-build"
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bookworm-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:latest-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:build"
       ],
       "cache_from": [
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bookworm-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:latest-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:build",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bookworm-build"
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bookworm-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:latest-build",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:build"
       ]
     },
     "jetson-xavier-nx-devkit-emmc-debian-bookworm-run": {
@@ -168,20 +140,48 @@
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bookworm-run",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bookworm",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:latest-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:latest",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bookworm-run",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bookworm"
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bookworm",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:latest-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:latest-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:latest",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:${DATESTAMP}"
       ],
       "cache_from": [
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bookworm-run",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:bookworm",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:latest-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:latest",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc-debian:${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bookworm-run",
         "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bookworm"
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:bookworm",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:latest-run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:latest-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:latest",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:run",
+        "docker.io/balenalib/jetson-xavier-nx-devkit-emmc:${DATESTAMP}"
       ]
     },
     "jetson-xavier-nx-devkit-emmc-debian-sid-build": {

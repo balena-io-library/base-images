@@ -2,144 +2,16 @@
   "group": {
     "default": {
       "targets": [
+        "raspberry-pi-debian-buster-build",
+        "raspberry-pi-debian-buster-run",
         "raspberry-pi-debian-bullseye-build",
         "raspberry-pi-debian-bullseye-run",
         "raspberry-pi-debian-bookworm-build",
-        "raspberry-pi-debian-bookworm-run",
-        "raspberry-pi-debian-buster-build",
-        "raspberry-pi-debian-buster-run"
+        "raspberry-pi-debian-bookworm-run"
       ]
     }
   },
   "target": {
-    "raspberry-pi-debian-bullseye-build": {
-      "context": "device-base/raspberry-pi/debian/bullseye/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v5",
-      "tags": [
-        "docker.io/balenalib/raspberry-pi-debian:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-debian:bullseye-build",
-        "docker.io/balenalib/raspberry-pi-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-debian:latest-build",
-        "docker.io/balenalib/raspberry-pi-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-debian:build",
-        "docker.io/balenalib/raspberry-pi:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi:bullseye-build",
-        "docker.io/balenalib/raspberry-pi:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi:latest-build",
-        "docker.io/balenalib/raspberry-pi:build-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi:build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/raspberry-pi-debian:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-debian:bullseye-build",
-        "docker.io/balenalib/raspberry-pi-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-debian:latest-build",
-        "docker.io/balenalib/raspberry-pi-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-debian:build",
-        "docker.io/balenalib/raspberry-pi:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi:bullseye-build",
-        "docker.io/balenalib/raspberry-pi:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi:latest-build",
-        "docker.io/balenalib/raspberry-pi:build-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi:build"
-      ]
-    },
-    "raspberry-pi-debian-bullseye-run": {
-      "context": "device-base/raspberry-pi/debian/bullseye/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v5",
-      "tags": [
-        "docker.io/balenalib/raspberry-pi-debian:bullseye-run-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-debian:bullseye-run",
-        "docker.io/balenalib/raspberry-pi-debian:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-debian:bullseye",
-        "docker.io/balenalib/raspberry-pi-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-debian:latest-run",
-        "docker.io/balenalib/raspberry-pi-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-debian:latest",
-        "docker.io/balenalib/raspberry-pi-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-debian:run",
-        "docker.io/balenalib/raspberry-pi-debian:${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi:bullseye-run-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi:bullseye-run",
-        "docker.io/balenalib/raspberry-pi:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi:bullseye",
-        "docker.io/balenalib/raspberry-pi:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi:latest-run",
-        "docker.io/balenalib/raspberry-pi:latest-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi:latest",
-        "docker.io/balenalib/raspberry-pi:run-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi:run",
-        "docker.io/balenalib/raspberry-pi:${DATESTAMP}"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/raspberry-pi-debian:bullseye-run-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-debian:bullseye-run",
-        "docker.io/balenalib/raspberry-pi-debian:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-debian:bullseye",
-        "docker.io/balenalib/raspberry-pi-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-debian:latest-run",
-        "docker.io/balenalib/raspberry-pi-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-debian:latest",
-        "docker.io/balenalib/raspberry-pi-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-debian:run",
-        "docker.io/balenalib/raspberry-pi-debian:${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi:bullseye-run-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi:bullseye-run",
-        "docker.io/balenalib/raspberry-pi:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi:bullseye",
-        "docker.io/balenalib/raspberry-pi:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi:latest-run",
-        "docker.io/balenalib/raspberry-pi:latest-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi:latest",
-        "docker.io/balenalib/raspberry-pi:run-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi:run",
-        "docker.io/balenalib/raspberry-pi:${DATESTAMP}"
-      ]
-    },
-    "raspberry-pi-debian-bookworm-build": {
-      "context": "device-base/raspberry-pi/debian/bookworm/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v5",
-      "tags": [
-        "docker.io/balenalib/raspberry-pi-debian:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-debian:bookworm-build",
-        "docker.io/balenalib/raspberry-pi:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi:bookworm-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/raspberry-pi-debian:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-debian:bookworm-build",
-        "docker.io/balenalib/raspberry-pi:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi:bookworm-build"
-      ]
-    },
-    "raspberry-pi-debian-bookworm-run": {
-      "context": "device-base/raspberry-pi/debian/bookworm/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v5",
-      "tags": [
-        "docker.io/balenalib/raspberry-pi-debian:bookworm-run-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-debian:bookworm-run",
-        "docker.io/balenalib/raspberry-pi-debian:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-debian:bookworm",
-        "docker.io/balenalib/raspberry-pi:bookworm-run-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi:bookworm-run",
-        "docker.io/balenalib/raspberry-pi:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi:bookworm"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/raspberry-pi-debian:bookworm-run-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-debian:bookworm-run",
-        "docker.io/balenalib/raspberry-pi-debian:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi-debian:bookworm",
-        "docker.io/balenalib/raspberry-pi:bookworm-run-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi:bookworm-run",
-        "docker.io/balenalib/raspberry-pi:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/raspberry-pi:bookworm"
-      ]
-    },
     "raspberry-pi-debian-buster-build": {
       "context": "device-base/raspberry-pi/debian/buster/build",
       "dockerfile": "Dockerfile",
@@ -180,6 +52,134 @@
         "docker.io/balenalib/raspberry-pi:buster-run",
         "docker.io/balenalib/raspberry-pi:buster-${DATESTAMP}",
         "docker.io/balenalib/raspberry-pi:buster"
+      ]
+    },
+    "raspberry-pi-debian-bullseye-build": {
+      "context": "device-base/raspberry-pi/debian/bullseye/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v5",
+      "tags": [
+        "docker.io/balenalib/raspberry-pi-debian:bullseye-build-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-debian:bullseye-build",
+        "docker.io/balenalib/raspberry-pi:bullseye-build-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi:bullseye-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberry-pi-debian:bullseye-build-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-debian:bullseye-build",
+        "docker.io/balenalib/raspberry-pi:bullseye-build-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi:bullseye-build"
+      ]
+    },
+    "raspberry-pi-debian-bullseye-run": {
+      "context": "device-base/raspberry-pi/debian/bullseye/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v5",
+      "tags": [
+        "docker.io/balenalib/raspberry-pi-debian:bullseye-run-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-debian:bullseye-run",
+        "docker.io/balenalib/raspberry-pi-debian:bullseye-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-debian:bullseye",
+        "docker.io/balenalib/raspberry-pi:bullseye-run-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi:bullseye-run",
+        "docker.io/balenalib/raspberry-pi:bullseye-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi:bullseye"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberry-pi-debian:bullseye-run-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-debian:bullseye-run",
+        "docker.io/balenalib/raspberry-pi-debian:bullseye-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-debian:bullseye",
+        "docker.io/balenalib/raspberry-pi:bullseye-run-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi:bullseye-run",
+        "docker.io/balenalib/raspberry-pi:bullseye-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi:bullseye"
+      ]
+    },
+    "raspberry-pi-debian-bookworm-build": {
+      "context": "device-base/raspberry-pi/debian/bookworm/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v5",
+      "tags": [
+        "docker.io/balenalib/raspberry-pi-debian:bookworm-build-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-debian:bookworm-build",
+        "docker.io/balenalib/raspberry-pi-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-debian:latest-build",
+        "docker.io/balenalib/raspberry-pi-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-debian:build",
+        "docker.io/balenalib/raspberry-pi:bookworm-build-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi:bookworm-build",
+        "docker.io/balenalib/raspberry-pi:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi:latest-build",
+        "docker.io/balenalib/raspberry-pi:build-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberry-pi-debian:bookworm-build-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-debian:bookworm-build",
+        "docker.io/balenalib/raspberry-pi-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-debian:latest-build",
+        "docker.io/balenalib/raspberry-pi-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-debian:build",
+        "docker.io/balenalib/raspberry-pi:bookworm-build-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi:bookworm-build",
+        "docker.io/balenalib/raspberry-pi:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi:latest-build",
+        "docker.io/balenalib/raspberry-pi:build-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi:build"
+      ]
+    },
+    "raspberry-pi-debian-bookworm-run": {
+      "context": "device-base/raspberry-pi/debian/bookworm/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm/v5",
+      "tags": [
+        "docker.io/balenalib/raspberry-pi-debian:bookworm-run-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-debian:bookworm-run",
+        "docker.io/balenalib/raspberry-pi-debian:bookworm-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-debian:bookworm",
+        "docker.io/balenalib/raspberry-pi-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-debian:latest-run",
+        "docker.io/balenalib/raspberry-pi-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-debian:latest",
+        "docker.io/balenalib/raspberry-pi-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-debian:run",
+        "docker.io/balenalib/raspberry-pi-debian:${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi:bookworm-run-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi:bookworm-run",
+        "docker.io/balenalib/raspberry-pi:bookworm-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi:bookworm",
+        "docker.io/balenalib/raspberry-pi:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi:latest-run",
+        "docker.io/balenalib/raspberry-pi:latest-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi:latest",
+        "docker.io/balenalib/raspberry-pi:run-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi:run",
+        "docker.io/balenalib/raspberry-pi:${DATESTAMP}"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/raspberry-pi-debian:bookworm-run-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-debian:bookworm-run",
+        "docker.io/balenalib/raspberry-pi-debian:bookworm-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-debian:bookworm",
+        "docker.io/balenalib/raspberry-pi-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-debian:latest-run",
+        "docker.io/balenalib/raspberry-pi-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-debian:latest",
+        "docker.io/balenalib/raspberry-pi-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi-debian:run",
+        "docker.io/balenalib/raspberry-pi-debian:${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi:bookworm-run-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi:bookworm-run",
+        "docker.io/balenalib/raspberry-pi:bookworm-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi:bookworm",
+        "docker.io/balenalib/raspberry-pi:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi:latest-run",
+        "docker.io/balenalib/raspberry-pi:latest-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi:latest",
+        "docker.io/balenalib/raspberry-pi:run-${DATESTAMP}",
+        "docker.io/balenalib/raspberry-pi:run",
+        "docker.io/balenalib/raspberry-pi:${DATESTAMP}"
       ]
     }
   },

@@ -63,30 +63,14 @@
       "tags": [
         "docker.io/balenalib/armv7hf-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/armv7hf-debian:bullseye-build",
-        "docker.io/balenalib/armv7hf-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/armv7hf-debian:latest-build",
-        "docker.io/balenalib/armv7hf-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/armv7hf-debian:build",
         "docker.io/balenalib/armv7hf:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/armv7hf:bullseye-build",
-        "docker.io/balenalib/armv7hf:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/armv7hf:latest-build",
-        "docker.io/balenalib/armv7hf:build-${DATESTAMP}",
-        "docker.io/balenalib/armv7hf:build"
+        "docker.io/balenalib/armv7hf:bullseye-build"
       ],
       "cache_from": [
         "docker.io/balenalib/armv7hf-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/armv7hf-debian:bullseye-build",
-        "docker.io/balenalib/armv7hf-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/armv7hf-debian:latest-build",
-        "docker.io/balenalib/armv7hf-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/armv7hf-debian:build",
         "docker.io/balenalib/armv7hf:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/armv7hf:bullseye-build",
-        "docker.io/balenalib/armv7hf:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/armv7hf:latest-build",
-        "docker.io/balenalib/armv7hf:build-${DATESTAMP}",
-        "docker.io/balenalib/armv7hf:build"
+        "docker.io/balenalib/armv7hf:bullseye-build"
       ]
     },
     "armv7hf-debian-bullseye-run": {
@@ -98,48 +82,20 @@
         "docker.io/balenalib/armv7hf-debian:bullseye-run",
         "docker.io/balenalib/armv7hf-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/armv7hf-debian:bullseye",
-        "docker.io/balenalib/armv7hf-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/armv7hf-debian:latest-run",
-        "docker.io/balenalib/armv7hf-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/armv7hf-debian:latest",
-        "docker.io/balenalib/armv7hf-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/armv7hf-debian:run",
-        "docker.io/balenalib/armv7hf-debian:${DATESTAMP}",
         "docker.io/balenalib/armv7hf:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/armv7hf:bullseye-run",
         "docker.io/balenalib/armv7hf:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/armv7hf:bullseye",
-        "docker.io/balenalib/armv7hf:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/armv7hf:latest-run",
-        "docker.io/balenalib/armv7hf:latest-${DATESTAMP}",
-        "docker.io/balenalib/armv7hf:latest",
-        "docker.io/balenalib/armv7hf:run-${DATESTAMP}",
-        "docker.io/balenalib/armv7hf:run",
-        "docker.io/balenalib/armv7hf:${DATESTAMP}"
+        "docker.io/balenalib/armv7hf:bullseye"
       ],
       "cache_from": [
         "docker.io/balenalib/armv7hf-debian:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/armv7hf-debian:bullseye-run",
         "docker.io/balenalib/armv7hf-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/armv7hf-debian:bullseye",
-        "docker.io/balenalib/armv7hf-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/armv7hf-debian:latest-run",
-        "docker.io/balenalib/armv7hf-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/armv7hf-debian:latest",
-        "docker.io/balenalib/armv7hf-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/armv7hf-debian:run",
-        "docker.io/balenalib/armv7hf-debian:${DATESTAMP}",
         "docker.io/balenalib/armv7hf:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/armv7hf:bullseye-run",
         "docker.io/balenalib/armv7hf:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/armv7hf:bullseye",
-        "docker.io/balenalib/armv7hf:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/armv7hf:latest-run",
-        "docker.io/balenalib/armv7hf:latest-${DATESTAMP}",
-        "docker.io/balenalib/armv7hf:latest",
-        "docker.io/balenalib/armv7hf:run-${DATESTAMP}",
-        "docker.io/balenalib/armv7hf:run",
-        "docker.io/balenalib/armv7hf:${DATESTAMP}"
+        "docker.io/balenalib/armv7hf:bullseye"
       ]
     },
     "armv7hf-debian-bookworm-build": {
@@ -149,14 +105,30 @@
       "tags": [
         "docker.io/balenalib/armv7hf-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/armv7hf-debian:bookworm-build",
+        "docker.io/balenalib/armv7hf-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/armv7hf-debian:latest-build",
+        "docker.io/balenalib/armv7hf-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/armv7hf-debian:build",
         "docker.io/balenalib/armv7hf:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/armv7hf:bookworm-build"
+        "docker.io/balenalib/armv7hf:bookworm-build",
+        "docker.io/balenalib/armv7hf:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/armv7hf:latest-build",
+        "docker.io/balenalib/armv7hf:build-${DATESTAMP}",
+        "docker.io/balenalib/armv7hf:build"
       ],
       "cache_from": [
         "docker.io/balenalib/armv7hf-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/armv7hf-debian:bookworm-build",
+        "docker.io/balenalib/armv7hf-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/armv7hf-debian:latest-build",
+        "docker.io/balenalib/armv7hf-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/armv7hf-debian:build",
         "docker.io/balenalib/armv7hf:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/armv7hf:bookworm-build"
+        "docker.io/balenalib/armv7hf:bookworm-build",
+        "docker.io/balenalib/armv7hf:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/armv7hf:latest-build",
+        "docker.io/balenalib/armv7hf:build-${DATESTAMP}",
+        "docker.io/balenalib/armv7hf:build"
       ]
     },
     "armv7hf-debian-bookworm-run": {
@@ -168,20 +140,48 @@
         "docker.io/balenalib/armv7hf-debian:bookworm-run",
         "docker.io/balenalib/armv7hf-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/armv7hf-debian:bookworm",
+        "docker.io/balenalib/armv7hf-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/armv7hf-debian:latest-run",
+        "docker.io/balenalib/armv7hf-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/armv7hf-debian:latest",
+        "docker.io/balenalib/armv7hf-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/armv7hf-debian:run",
+        "docker.io/balenalib/armv7hf-debian:${DATESTAMP}",
         "docker.io/balenalib/armv7hf:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/armv7hf:bookworm-run",
         "docker.io/balenalib/armv7hf:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/armv7hf:bookworm"
+        "docker.io/balenalib/armv7hf:bookworm",
+        "docker.io/balenalib/armv7hf:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/armv7hf:latest-run",
+        "docker.io/balenalib/armv7hf:latest-${DATESTAMP}",
+        "docker.io/balenalib/armv7hf:latest",
+        "docker.io/balenalib/armv7hf:run-${DATESTAMP}",
+        "docker.io/balenalib/armv7hf:run",
+        "docker.io/balenalib/armv7hf:${DATESTAMP}"
       ],
       "cache_from": [
         "docker.io/balenalib/armv7hf-debian:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/armv7hf-debian:bookworm-run",
         "docker.io/balenalib/armv7hf-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/armv7hf-debian:bookworm",
+        "docker.io/balenalib/armv7hf-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/armv7hf-debian:latest-run",
+        "docker.io/balenalib/armv7hf-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/armv7hf-debian:latest",
+        "docker.io/balenalib/armv7hf-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/armv7hf-debian:run",
+        "docker.io/balenalib/armv7hf-debian:${DATESTAMP}",
         "docker.io/balenalib/armv7hf:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/armv7hf:bookworm-run",
         "docker.io/balenalib/armv7hf:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/armv7hf:bookworm"
+        "docker.io/balenalib/armv7hf:bookworm",
+        "docker.io/balenalib/armv7hf:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/armv7hf:latest-run",
+        "docker.io/balenalib/armv7hf:latest-${DATESTAMP}",
+        "docker.io/balenalib/armv7hf:latest",
+        "docker.io/balenalib/armv7hf:run-${DATESTAMP}",
+        "docker.io/balenalib/armv7hf:run",
+        "docker.io/balenalib/armv7hf:${DATESTAMP}"
       ]
     },
     "armv7hf-debian-sid-build": {

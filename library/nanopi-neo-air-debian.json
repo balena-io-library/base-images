@@ -63,30 +63,14 @@
       "tags": [
         "docker.io/balenalib/nanopi-neo-air-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/nanopi-neo-air-debian:bullseye-build",
-        "docker.io/balenalib/nanopi-neo-air-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-neo-air-debian:latest-build",
-        "docker.io/balenalib/nanopi-neo-air-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-neo-air-debian:build",
         "docker.io/balenalib/nanopi-neo-air:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-neo-air:bullseye-build",
-        "docker.io/balenalib/nanopi-neo-air:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-neo-air:latest-build",
-        "docker.io/balenalib/nanopi-neo-air:build-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-neo-air:build"
+        "docker.io/balenalib/nanopi-neo-air:bullseye-build"
       ],
       "cache_from": [
         "docker.io/balenalib/nanopi-neo-air-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/nanopi-neo-air-debian:bullseye-build",
-        "docker.io/balenalib/nanopi-neo-air-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-neo-air-debian:latest-build",
-        "docker.io/balenalib/nanopi-neo-air-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-neo-air-debian:build",
         "docker.io/balenalib/nanopi-neo-air:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-neo-air:bullseye-build",
-        "docker.io/balenalib/nanopi-neo-air:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-neo-air:latest-build",
-        "docker.io/balenalib/nanopi-neo-air:build-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-neo-air:build"
+        "docker.io/balenalib/nanopi-neo-air:bullseye-build"
       ]
     },
     "nanopi-neo-air-debian-bullseye-run": {
@@ -98,48 +82,20 @@
         "docker.io/balenalib/nanopi-neo-air-debian:bullseye-run",
         "docker.io/balenalib/nanopi-neo-air-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/nanopi-neo-air-debian:bullseye",
-        "docker.io/balenalib/nanopi-neo-air-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-neo-air-debian:latest-run",
-        "docker.io/balenalib/nanopi-neo-air-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-neo-air-debian:latest",
-        "docker.io/balenalib/nanopi-neo-air-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-neo-air-debian:run",
-        "docker.io/balenalib/nanopi-neo-air-debian:${DATESTAMP}",
         "docker.io/balenalib/nanopi-neo-air:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/nanopi-neo-air:bullseye-run",
         "docker.io/balenalib/nanopi-neo-air:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-neo-air:bullseye",
-        "docker.io/balenalib/nanopi-neo-air:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-neo-air:latest-run",
-        "docker.io/balenalib/nanopi-neo-air:latest-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-neo-air:latest",
-        "docker.io/balenalib/nanopi-neo-air:run-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-neo-air:run",
-        "docker.io/balenalib/nanopi-neo-air:${DATESTAMP}"
+        "docker.io/balenalib/nanopi-neo-air:bullseye"
       ],
       "cache_from": [
         "docker.io/balenalib/nanopi-neo-air-debian:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/nanopi-neo-air-debian:bullseye-run",
         "docker.io/balenalib/nanopi-neo-air-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/nanopi-neo-air-debian:bullseye",
-        "docker.io/balenalib/nanopi-neo-air-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-neo-air-debian:latest-run",
-        "docker.io/balenalib/nanopi-neo-air-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-neo-air-debian:latest",
-        "docker.io/balenalib/nanopi-neo-air-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-neo-air-debian:run",
-        "docker.io/balenalib/nanopi-neo-air-debian:${DATESTAMP}",
         "docker.io/balenalib/nanopi-neo-air:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/nanopi-neo-air:bullseye-run",
         "docker.io/balenalib/nanopi-neo-air:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-neo-air:bullseye",
-        "docker.io/balenalib/nanopi-neo-air:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-neo-air:latest-run",
-        "docker.io/balenalib/nanopi-neo-air:latest-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-neo-air:latest",
-        "docker.io/balenalib/nanopi-neo-air:run-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-neo-air:run",
-        "docker.io/balenalib/nanopi-neo-air:${DATESTAMP}"
+        "docker.io/balenalib/nanopi-neo-air:bullseye"
       ]
     },
     "nanopi-neo-air-debian-bookworm-build": {
@@ -149,14 +105,30 @@
       "tags": [
         "docker.io/balenalib/nanopi-neo-air-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/nanopi-neo-air-debian:bookworm-build",
+        "docker.io/balenalib/nanopi-neo-air-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-neo-air-debian:latest-build",
+        "docker.io/balenalib/nanopi-neo-air-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-neo-air-debian:build",
         "docker.io/balenalib/nanopi-neo-air:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-neo-air:bookworm-build"
+        "docker.io/balenalib/nanopi-neo-air:bookworm-build",
+        "docker.io/balenalib/nanopi-neo-air:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-neo-air:latest-build",
+        "docker.io/balenalib/nanopi-neo-air:build-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-neo-air:build"
       ],
       "cache_from": [
         "docker.io/balenalib/nanopi-neo-air-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/nanopi-neo-air-debian:bookworm-build",
+        "docker.io/balenalib/nanopi-neo-air-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-neo-air-debian:latest-build",
+        "docker.io/balenalib/nanopi-neo-air-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-neo-air-debian:build",
         "docker.io/balenalib/nanopi-neo-air:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-neo-air:bookworm-build"
+        "docker.io/balenalib/nanopi-neo-air:bookworm-build",
+        "docker.io/balenalib/nanopi-neo-air:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-neo-air:latest-build",
+        "docker.io/balenalib/nanopi-neo-air:build-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-neo-air:build"
       ]
     },
     "nanopi-neo-air-debian-bookworm-run": {
@@ -168,20 +140,48 @@
         "docker.io/balenalib/nanopi-neo-air-debian:bookworm-run",
         "docker.io/balenalib/nanopi-neo-air-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/nanopi-neo-air-debian:bookworm",
+        "docker.io/balenalib/nanopi-neo-air-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-neo-air-debian:latest-run",
+        "docker.io/balenalib/nanopi-neo-air-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-neo-air-debian:latest",
+        "docker.io/balenalib/nanopi-neo-air-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-neo-air-debian:run",
+        "docker.io/balenalib/nanopi-neo-air-debian:${DATESTAMP}",
         "docker.io/balenalib/nanopi-neo-air:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/nanopi-neo-air:bookworm-run",
         "docker.io/balenalib/nanopi-neo-air:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-neo-air:bookworm"
+        "docker.io/balenalib/nanopi-neo-air:bookworm",
+        "docker.io/balenalib/nanopi-neo-air:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-neo-air:latest-run",
+        "docker.io/balenalib/nanopi-neo-air:latest-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-neo-air:latest",
+        "docker.io/balenalib/nanopi-neo-air:run-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-neo-air:run",
+        "docker.io/balenalib/nanopi-neo-air:${DATESTAMP}"
       ],
       "cache_from": [
         "docker.io/balenalib/nanopi-neo-air-debian:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/nanopi-neo-air-debian:bookworm-run",
         "docker.io/balenalib/nanopi-neo-air-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/nanopi-neo-air-debian:bookworm",
+        "docker.io/balenalib/nanopi-neo-air-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-neo-air-debian:latest-run",
+        "docker.io/balenalib/nanopi-neo-air-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-neo-air-debian:latest",
+        "docker.io/balenalib/nanopi-neo-air-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-neo-air-debian:run",
+        "docker.io/balenalib/nanopi-neo-air-debian:${DATESTAMP}",
         "docker.io/balenalib/nanopi-neo-air:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/nanopi-neo-air:bookworm-run",
         "docker.io/balenalib/nanopi-neo-air:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-neo-air:bookworm"
+        "docker.io/balenalib/nanopi-neo-air:bookworm",
+        "docker.io/balenalib/nanopi-neo-air:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-neo-air:latest-run",
+        "docker.io/balenalib/nanopi-neo-air:latest-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-neo-air:latest",
+        "docker.io/balenalib/nanopi-neo-air:run-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-neo-air:run",
+        "docker.io/balenalib/nanopi-neo-air:${DATESTAMP}"
       ]
     },
     "nanopi-neo-air-debian-sid-build": {

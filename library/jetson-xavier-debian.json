@@ -63,30 +63,14 @@
       "tags": [
         "docker.io/balenalib/jetson-xavier-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-debian:bullseye-build",
-        "docker.io/balenalib/jetson-xavier-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-debian:latest-build",
-        "docker.io/balenalib/jetson-xavier-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-debian:build",
         "docker.io/balenalib/jetson-xavier:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier:bullseye-build",
-        "docker.io/balenalib/jetson-xavier:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier:latest-build",
-        "docker.io/balenalib/jetson-xavier:build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier:build"
+        "docker.io/balenalib/jetson-xavier:bullseye-build"
       ],
       "cache_from": [
         "docker.io/balenalib/jetson-xavier-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-debian:bullseye-build",
-        "docker.io/balenalib/jetson-xavier-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-debian:latest-build",
-        "docker.io/balenalib/jetson-xavier-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-debian:build",
         "docker.io/balenalib/jetson-xavier:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier:bullseye-build",
-        "docker.io/balenalib/jetson-xavier:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier:latest-build",
-        "docker.io/balenalib/jetson-xavier:build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier:build"
+        "docker.io/balenalib/jetson-xavier:bullseye-build"
       ]
     },
     "jetson-xavier-debian-bullseye-run": {
@@ -98,48 +82,20 @@
         "docker.io/balenalib/jetson-xavier-debian:bullseye-run",
         "docker.io/balenalib/jetson-xavier-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-debian:bullseye",
-        "docker.io/balenalib/jetson-xavier-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-debian:latest-run",
-        "docker.io/balenalib/jetson-xavier-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-debian:latest",
-        "docker.io/balenalib/jetson-xavier-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-debian:run",
-        "docker.io/balenalib/jetson-xavier-debian:${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier:bullseye-run",
         "docker.io/balenalib/jetson-xavier:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier:bullseye",
-        "docker.io/balenalib/jetson-xavier:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier:latest-run",
-        "docker.io/balenalib/jetson-xavier:latest-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier:latest",
-        "docker.io/balenalib/jetson-xavier:run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier:run",
-        "docker.io/balenalib/jetson-xavier:${DATESTAMP}"
+        "docker.io/balenalib/jetson-xavier:bullseye"
       ],
       "cache_from": [
         "docker.io/balenalib/jetson-xavier-debian:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-debian:bullseye-run",
         "docker.io/balenalib/jetson-xavier-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-debian:bullseye",
-        "docker.io/balenalib/jetson-xavier-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-debian:latest-run",
-        "docker.io/balenalib/jetson-xavier-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-debian:latest",
-        "docker.io/balenalib/jetson-xavier-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-debian:run",
-        "docker.io/balenalib/jetson-xavier-debian:${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier:bullseye-run",
         "docker.io/balenalib/jetson-xavier:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier:bullseye",
-        "docker.io/balenalib/jetson-xavier:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier:latest-run",
-        "docker.io/balenalib/jetson-xavier:latest-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier:latest",
-        "docker.io/balenalib/jetson-xavier:run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier:run",
-        "docker.io/balenalib/jetson-xavier:${DATESTAMP}"
+        "docker.io/balenalib/jetson-xavier:bullseye"
       ]
     },
     "jetson-xavier-debian-bookworm-build": {
@@ -149,14 +105,30 @@
       "tags": [
         "docker.io/balenalib/jetson-xavier-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-debian:bookworm-build",
+        "docker.io/balenalib/jetson-xavier-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier-debian:latest-build",
+        "docker.io/balenalib/jetson-xavier-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier-debian:build",
         "docker.io/balenalib/jetson-xavier:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier:bookworm-build"
+        "docker.io/balenalib/jetson-xavier:bookworm-build",
+        "docker.io/balenalib/jetson-xavier:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier:latest-build",
+        "docker.io/balenalib/jetson-xavier:build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier:build"
       ],
       "cache_from": [
         "docker.io/balenalib/jetson-xavier-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-debian:bookworm-build",
+        "docker.io/balenalib/jetson-xavier-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier-debian:latest-build",
+        "docker.io/balenalib/jetson-xavier-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier-debian:build",
         "docker.io/balenalib/jetson-xavier:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier:bookworm-build"
+        "docker.io/balenalib/jetson-xavier:bookworm-build",
+        "docker.io/balenalib/jetson-xavier:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier:latest-build",
+        "docker.io/balenalib/jetson-xavier:build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier:build"
       ]
     },
     "jetson-xavier-debian-bookworm-run": {
@@ -168,20 +140,48 @@
         "docker.io/balenalib/jetson-xavier-debian:bookworm-run",
         "docker.io/balenalib/jetson-xavier-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-debian:bookworm",
+        "docker.io/balenalib/jetson-xavier-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier-debian:latest-run",
+        "docker.io/balenalib/jetson-xavier-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier-debian:latest",
+        "docker.io/balenalib/jetson-xavier-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier-debian:run",
+        "docker.io/balenalib/jetson-xavier-debian:${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier:bookworm-run",
         "docker.io/balenalib/jetson-xavier:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier:bookworm"
+        "docker.io/balenalib/jetson-xavier:bookworm",
+        "docker.io/balenalib/jetson-xavier:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier:latest-run",
+        "docker.io/balenalib/jetson-xavier:latest-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier:latest",
+        "docker.io/balenalib/jetson-xavier:run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier:run",
+        "docker.io/balenalib/jetson-xavier:${DATESTAMP}"
       ],
       "cache_from": [
         "docker.io/balenalib/jetson-xavier-debian:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-debian:bookworm-run",
         "docker.io/balenalib/jetson-xavier-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-debian:bookworm",
+        "docker.io/balenalib/jetson-xavier-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier-debian:latest-run",
+        "docker.io/balenalib/jetson-xavier-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier-debian:latest",
+        "docker.io/balenalib/jetson-xavier-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier-debian:run",
+        "docker.io/balenalib/jetson-xavier-debian:${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier:bookworm-run",
         "docker.io/balenalib/jetson-xavier:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier:bookworm"
+        "docker.io/balenalib/jetson-xavier:bookworm",
+        "docker.io/balenalib/jetson-xavier:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier:latest-run",
+        "docker.io/balenalib/jetson-xavier:latest-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier:latest",
+        "docker.io/balenalib/jetson-xavier:run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-xavier:run",
+        "docker.io/balenalib/jetson-xavier:${DATESTAMP}"
       ]
     },
     "jetson-xavier-debian-sid-build": {

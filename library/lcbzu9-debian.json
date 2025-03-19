@@ -63,30 +63,14 @@
       "tags": [
         "docker.io/balenalib/lcbzu9-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/lcbzu9-debian:bullseye-build",
-        "docker.io/balenalib/lcbzu9-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/lcbzu9-debian:latest-build",
-        "docker.io/balenalib/lcbzu9-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/lcbzu9-debian:build",
         "docker.io/balenalib/lcbzu9:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/lcbzu9:bullseye-build",
-        "docker.io/balenalib/lcbzu9:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/lcbzu9:latest-build",
-        "docker.io/balenalib/lcbzu9:build-${DATESTAMP}",
-        "docker.io/balenalib/lcbzu9:build"
+        "docker.io/balenalib/lcbzu9:bullseye-build"
       ],
       "cache_from": [
         "docker.io/balenalib/lcbzu9-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/lcbzu9-debian:bullseye-build",
-        "docker.io/balenalib/lcbzu9-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/lcbzu9-debian:latest-build",
-        "docker.io/balenalib/lcbzu9-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/lcbzu9-debian:build",
         "docker.io/balenalib/lcbzu9:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/lcbzu9:bullseye-build",
-        "docker.io/balenalib/lcbzu9:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/lcbzu9:latest-build",
-        "docker.io/balenalib/lcbzu9:build-${DATESTAMP}",
-        "docker.io/balenalib/lcbzu9:build"
+        "docker.io/balenalib/lcbzu9:bullseye-build"
       ]
     },
     "lcbzu9-debian-bullseye-run": {
@@ -98,48 +82,20 @@
         "docker.io/balenalib/lcbzu9-debian:bullseye-run",
         "docker.io/balenalib/lcbzu9-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/lcbzu9-debian:bullseye",
-        "docker.io/balenalib/lcbzu9-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/lcbzu9-debian:latest-run",
-        "docker.io/balenalib/lcbzu9-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/lcbzu9-debian:latest",
-        "docker.io/balenalib/lcbzu9-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/lcbzu9-debian:run",
-        "docker.io/balenalib/lcbzu9-debian:${DATESTAMP}",
         "docker.io/balenalib/lcbzu9:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/lcbzu9:bullseye-run",
         "docker.io/balenalib/lcbzu9:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/lcbzu9:bullseye",
-        "docker.io/balenalib/lcbzu9:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/lcbzu9:latest-run",
-        "docker.io/balenalib/lcbzu9:latest-${DATESTAMP}",
-        "docker.io/balenalib/lcbzu9:latest",
-        "docker.io/balenalib/lcbzu9:run-${DATESTAMP}",
-        "docker.io/balenalib/lcbzu9:run",
-        "docker.io/balenalib/lcbzu9:${DATESTAMP}"
+        "docker.io/balenalib/lcbzu9:bullseye"
       ],
       "cache_from": [
         "docker.io/balenalib/lcbzu9-debian:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/lcbzu9-debian:bullseye-run",
         "docker.io/balenalib/lcbzu9-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/lcbzu9-debian:bullseye",
-        "docker.io/balenalib/lcbzu9-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/lcbzu9-debian:latest-run",
-        "docker.io/balenalib/lcbzu9-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/lcbzu9-debian:latest",
-        "docker.io/balenalib/lcbzu9-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/lcbzu9-debian:run",
-        "docker.io/balenalib/lcbzu9-debian:${DATESTAMP}",
         "docker.io/balenalib/lcbzu9:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/lcbzu9:bullseye-run",
         "docker.io/balenalib/lcbzu9:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/lcbzu9:bullseye",
-        "docker.io/balenalib/lcbzu9:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/lcbzu9:latest-run",
-        "docker.io/balenalib/lcbzu9:latest-${DATESTAMP}",
-        "docker.io/balenalib/lcbzu9:latest",
-        "docker.io/balenalib/lcbzu9:run-${DATESTAMP}",
-        "docker.io/balenalib/lcbzu9:run",
-        "docker.io/balenalib/lcbzu9:${DATESTAMP}"
+        "docker.io/balenalib/lcbzu9:bullseye"
       ]
     },
     "lcbzu9-debian-bookworm-build": {
@@ -149,14 +105,30 @@
       "tags": [
         "docker.io/balenalib/lcbzu9-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/lcbzu9-debian:bookworm-build",
+        "docker.io/balenalib/lcbzu9-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/lcbzu9-debian:latest-build",
+        "docker.io/balenalib/lcbzu9-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/lcbzu9-debian:build",
         "docker.io/balenalib/lcbzu9:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/lcbzu9:bookworm-build"
+        "docker.io/balenalib/lcbzu9:bookworm-build",
+        "docker.io/balenalib/lcbzu9:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/lcbzu9:latest-build",
+        "docker.io/balenalib/lcbzu9:build-${DATESTAMP}",
+        "docker.io/balenalib/lcbzu9:build"
       ],
       "cache_from": [
         "docker.io/balenalib/lcbzu9-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/lcbzu9-debian:bookworm-build",
+        "docker.io/balenalib/lcbzu9-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/lcbzu9-debian:latest-build",
+        "docker.io/balenalib/lcbzu9-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/lcbzu9-debian:build",
         "docker.io/balenalib/lcbzu9:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/lcbzu9:bookworm-build"
+        "docker.io/balenalib/lcbzu9:bookworm-build",
+        "docker.io/balenalib/lcbzu9:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/lcbzu9:latest-build",
+        "docker.io/balenalib/lcbzu9:build-${DATESTAMP}",
+        "docker.io/balenalib/lcbzu9:build"
       ]
     },
     "lcbzu9-debian-bookworm-run": {
@@ -168,20 +140,48 @@
         "docker.io/balenalib/lcbzu9-debian:bookworm-run",
         "docker.io/balenalib/lcbzu9-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/lcbzu9-debian:bookworm",
+        "docker.io/balenalib/lcbzu9-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/lcbzu9-debian:latest-run",
+        "docker.io/balenalib/lcbzu9-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/lcbzu9-debian:latest",
+        "docker.io/balenalib/lcbzu9-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/lcbzu9-debian:run",
+        "docker.io/balenalib/lcbzu9-debian:${DATESTAMP}",
         "docker.io/balenalib/lcbzu9:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/lcbzu9:bookworm-run",
         "docker.io/balenalib/lcbzu9:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/lcbzu9:bookworm"
+        "docker.io/balenalib/lcbzu9:bookworm",
+        "docker.io/balenalib/lcbzu9:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/lcbzu9:latest-run",
+        "docker.io/balenalib/lcbzu9:latest-${DATESTAMP}",
+        "docker.io/balenalib/lcbzu9:latest",
+        "docker.io/balenalib/lcbzu9:run-${DATESTAMP}",
+        "docker.io/balenalib/lcbzu9:run",
+        "docker.io/balenalib/lcbzu9:${DATESTAMP}"
       ],
       "cache_from": [
         "docker.io/balenalib/lcbzu9-debian:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/lcbzu9-debian:bookworm-run",
         "docker.io/balenalib/lcbzu9-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/lcbzu9-debian:bookworm",
+        "docker.io/balenalib/lcbzu9-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/lcbzu9-debian:latest-run",
+        "docker.io/balenalib/lcbzu9-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/lcbzu9-debian:latest",
+        "docker.io/balenalib/lcbzu9-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/lcbzu9-debian:run",
+        "docker.io/balenalib/lcbzu9-debian:${DATESTAMP}",
         "docker.io/balenalib/lcbzu9:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/lcbzu9:bookworm-run",
         "docker.io/balenalib/lcbzu9:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/lcbzu9:bookworm"
+        "docker.io/balenalib/lcbzu9:bookworm",
+        "docker.io/balenalib/lcbzu9:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/lcbzu9:latest-run",
+        "docker.io/balenalib/lcbzu9:latest-${DATESTAMP}",
+        "docker.io/balenalib/lcbzu9:latest",
+        "docker.io/balenalib/lcbzu9:run-${DATESTAMP}",
+        "docker.io/balenalib/lcbzu9:run",
+        "docker.io/balenalib/lcbzu9:${DATESTAMP}"
       ]
     },
     "lcbzu9-debian-sid-build": {

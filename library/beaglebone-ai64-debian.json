@@ -63,30 +63,14 @@
       "tags": [
         "docker.io/balenalib/beaglebone-ai64-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-ai64-debian:bullseye-build",
-        "docker.io/balenalib/beaglebone-ai64-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-ai64-debian:latest-build",
-        "docker.io/balenalib/beaglebone-ai64-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-ai64-debian:build",
         "docker.io/balenalib/beaglebone-ai64:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-ai64:bullseye-build",
-        "docker.io/balenalib/beaglebone-ai64:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-ai64:latest-build",
-        "docker.io/balenalib/beaglebone-ai64:build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-ai64:build"
+        "docker.io/balenalib/beaglebone-ai64:bullseye-build"
       ],
       "cache_from": [
         "docker.io/balenalib/beaglebone-ai64-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-ai64-debian:bullseye-build",
-        "docker.io/balenalib/beaglebone-ai64-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-ai64-debian:latest-build",
-        "docker.io/balenalib/beaglebone-ai64-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-ai64-debian:build",
         "docker.io/balenalib/beaglebone-ai64:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-ai64:bullseye-build",
-        "docker.io/balenalib/beaglebone-ai64:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-ai64:latest-build",
-        "docker.io/balenalib/beaglebone-ai64:build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-ai64:build"
+        "docker.io/balenalib/beaglebone-ai64:bullseye-build"
       ]
     },
     "beaglebone-ai64-debian-bullseye-run": {
@@ -98,48 +82,20 @@
         "docker.io/balenalib/beaglebone-ai64-debian:bullseye-run",
         "docker.io/balenalib/beaglebone-ai64-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-ai64-debian:bullseye",
-        "docker.io/balenalib/beaglebone-ai64-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-ai64-debian:latest-run",
-        "docker.io/balenalib/beaglebone-ai64-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-ai64-debian:latest",
-        "docker.io/balenalib/beaglebone-ai64-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-ai64-debian:run",
-        "docker.io/balenalib/beaglebone-ai64-debian:${DATESTAMP}",
         "docker.io/balenalib/beaglebone-ai64:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-ai64:bullseye-run",
         "docker.io/balenalib/beaglebone-ai64:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-ai64:bullseye",
-        "docker.io/balenalib/beaglebone-ai64:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-ai64:latest-run",
-        "docker.io/balenalib/beaglebone-ai64:latest-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-ai64:latest",
-        "docker.io/balenalib/beaglebone-ai64:run-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-ai64:run",
-        "docker.io/balenalib/beaglebone-ai64:${DATESTAMP}"
+        "docker.io/balenalib/beaglebone-ai64:bullseye"
       ],
       "cache_from": [
         "docker.io/balenalib/beaglebone-ai64-debian:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-ai64-debian:bullseye-run",
         "docker.io/balenalib/beaglebone-ai64-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-ai64-debian:bullseye",
-        "docker.io/balenalib/beaglebone-ai64-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-ai64-debian:latest-run",
-        "docker.io/balenalib/beaglebone-ai64-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-ai64-debian:latest",
-        "docker.io/balenalib/beaglebone-ai64-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-ai64-debian:run",
-        "docker.io/balenalib/beaglebone-ai64-debian:${DATESTAMP}",
         "docker.io/balenalib/beaglebone-ai64:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-ai64:bullseye-run",
         "docker.io/balenalib/beaglebone-ai64:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-ai64:bullseye",
-        "docker.io/balenalib/beaglebone-ai64:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-ai64:latest-run",
-        "docker.io/balenalib/beaglebone-ai64:latest-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-ai64:latest",
-        "docker.io/balenalib/beaglebone-ai64:run-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-ai64:run",
-        "docker.io/balenalib/beaglebone-ai64:${DATESTAMP}"
+        "docker.io/balenalib/beaglebone-ai64:bullseye"
       ]
     },
     "beaglebone-ai64-debian-bookworm-build": {
@@ -149,14 +105,30 @@
       "tags": [
         "docker.io/balenalib/beaglebone-ai64-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-ai64-debian:bookworm-build",
+        "docker.io/balenalib/beaglebone-ai64-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-ai64-debian:latest-build",
+        "docker.io/balenalib/beaglebone-ai64-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-ai64-debian:build",
         "docker.io/balenalib/beaglebone-ai64:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-ai64:bookworm-build"
+        "docker.io/balenalib/beaglebone-ai64:bookworm-build",
+        "docker.io/balenalib/beaglebone-ai64:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-ai64:latest-build",
+        "docker.io/balenalib/beaglebone-ai64:build-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-ai64:build"
       ],
       "cache_from": [
         "docker.io/balenalib/beaglebone-ai64-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-ai64-debian:bookworm-build",
+        "docker.io/balenalib/beaglebone-ai64-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-ai64-debian:latest-build",
+        "docker.io/balenalib/beaglebone-ai64-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-ai64-debian:build",
         "docker.io/balenalib/beaglebone-ai64:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-ai64:bookworm-build"
+        "docker.io/balenalib/beaglebone-ai64:bookworm-build",
+        "docker.io/balenalib/beaglebone-ai64:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-ai64:latest-build",
+        "docker.io/balenalib/beaglebone-ai64:build-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-ai64:build"
       ]
     },
     "beaglebone-ai64-debian-bookworm-run": {
@@ -168,20 +140,48 @@
         "docker.io/balenalib/beaglebone-ai64-debian:bookworm-run",
         "docker.io/balenalib/beaglebone-ai64-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-ai64-debian:bookworm",
+        "docker.io/balenalib/beaglebone-ai64-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-ai64-debian:latest-run",
+        "docker.io/balenalib/beaglebone-ai64-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-ai64-debian:latest",
+        "docker.io/balenalib/beaglebone-ai64-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-ai64-debian:run",
+        "docker.io/balenalib/beaglebone-ai64-debian:${DATESTAMP}",
         "docker.io/balenalib/beaglebone-ai64:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-ai64:bookworm-run",
         "docker.io/balenalib/beaglebone-ai64:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-ai64:bookworm"
+        "docker.io/balenalib/beaglebone-ai64:bookworm",
+        "docker.io/balenalib/beaglebone-ai64:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-ai64:latest-run",
+        "docker.io/balenalib/beaglebone-ai64:latest-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-ai64:latest",
+        "docker.io/balenalib/beaglebone-ai64:run-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-ai64:run",
+        "docker.io/balenalib/beaglebone-ai64:${DATESTAMP}"
       ],
       "cache_from": [
         "docker.io/balenalib/beaglebone-ai64-debian:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-ai64-debian:bookworm-run",
         "docker.io/balenalib/beaglebone-ai64-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-ai64-debian:bookworm",
+        "docker.io/balenalib/beaglebone-ai64-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-ai64-debian:latest-run",
+        "docker.io/balenalib/beaglebone-ai64-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-ai64-debian:latest",
+        "docker.io/balenalib/beaglebone-ai64-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-ai64-debian:run",
+        "docker.io/balenalib/beaglebone-ai64-debian:${DATESTAMP}",
         "docker.io/balenalib/beaglebone-ai64:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-ai64:bookworm-run",
         "docker.io/balenalib/beaglebone-ai64:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-ai64:bookworm"
+        "docker.io/balenalib/beaglebone-ai64:bookworm",
+        "docker.io/balenalib/beaglebone-ai64:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-ai64:latest-run",
+        "docker.io/balenalib/beaglebone-ai64:latest-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-ai64:latest",
+        "docker.io/balenalib/beaglebone-ai64:run-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-ai64:run",
+        "docker.io/balenalib/beaglebone-ai64:${DATESTAMP}"
       ]
     },
     "beaglebone-ai64-debian-sid-build": {

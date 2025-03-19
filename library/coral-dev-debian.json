@@ -63,30 +63,14 @@
       "tags": [
         "docker.io/balenalib/coral-dev-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/coral-dev-debian:bullseye-build",
-        "docker.io/balenalib/coral-dev-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/coral-dev-debian:latest-build",
-        "docker.io/balenalib/coral-dev-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/coral-dev-debian:build",
         "docker.io/balenalib/coral-dev:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/coral-dev:bullseye-build",
-        "docker.io/balenalib/coral-dev:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/coral-dev:latest-build",
-        "docker.io/balenalib/coral-dev:build-${DATESTAMP}",
-        "docker.io/balenalib/coral-dev:build"
+        "docker.io/balenalib/coral-dev:bullseye-build"
       ],
       "cache_from": [
         "docker.io/balenalib/coral-dev-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/coral-dev-debian:bullseye-build",
-        "docker.io/balenalib/coral-dev-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/coral-dev-debian:latest-build",
-        "docker.io/balenalib/coral-dev-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/coral-dev-debian:build",
         "docker.io/balenalib/coral-dev:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/coral-dev:bullseye-build",
-        "docker.io/balenalib/coral-dev:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/coral-dev:latest-build",
-        "docker.io/balenalib/coral-dev:build-${DATESTAMP}",
-        "docker.io/balenalib/coral-dev:build"
+        "docker.io/balenalib/coral-dev:bullseye-build"
       ]
     },
     "coral-dev-debian-bullseye-run": {
@@ -98,48 +82,20 @@
         "docker.io/balenalib/coral-dev-debian:bullseye-run",
         "docker.io/balenalib/coral-dev-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/coral-dev-debian:bullseye",
-        "docker.io/balenalib/coral-dev-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/coral-dev-debian:latest-run",
-        "docker.io/balenalib/coral-dev-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/coral-dev-debian:latest",
-        "docker.io/balenalib/coral-dev-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/coral-dev-debian:run",
-        "docker.io/balenalib/coral-dev-debian:${DATESTAMP}",
         "docker.io/balenalib/coral-dev:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/coral-dev:bullseye-run",
         "docker.io/balenalib/coral-dev:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/coral-dev:bullseye",
-        "docker.io/balenalib/coral-dev:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/coral-dev:latest-run",
-        "docker.io/balenalib/coral-dev:latest-${DATESTAMP}",
-        "docker.io/balenalib/coral-dev:latest",
-        "docker.io/balenalib/coral-dev:run-${DATESTAMP}",
-        "docker.io/balenalib/coral-dev:run",
-        "docker.io/balenalib/coral-dev:${DATESTAMP}"
+        "docker.io/balenalib/coral-dev:bullseye"
       ],
       "cache_from": [
         "docker.io/balenalib/coral-dev-debian:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/coral-dev-debian:bullseye-run",
         "docker.io/balenalib/coral-dev-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/coral-dev-debian:bullseye",
-        "docker.io/balenalib/coral-dev-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/coral-dev-debian:latest-run",
-        "docker.io/balenalib/coral-dev-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/coral-dev-debian:latest",
-        "docker.io/balenalib/coral-dev-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/coral-dev-debian:run",
-        "docker.io/balenalib/coral-dev-debian:${DATESTAMP}",
         "docker.io/balenalib/coral-dev:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/coral-dev:bullseye-run",
         "docker.io/balenalib/coral-dev:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/coral-dev:bullseye",
-        "docker.io/balenalib/coral-dev:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/coral-dev:latest-run",
-        "docker.io/balenalib/coral-dev:latest-${DATESTAMP}",
-        "docker.io/balenalib/coral-dev:latest",
-        "docker.io/balenalib/coral-dev:run-${DATESTAMP}",
-        "docker.io/balenalib/coral-dev:run",
-        "docker.io/balenalib/coral-dev:${DATESTAMP}"
+        "docker.io/balenalib/coral-dev:bullseye"
       ]
     },
     "coral-dev-debian-bookworm-build": {
@@ -149,14 +105,30 @@
       "tags": [
         "docker.io/balenalib/coral-dev-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/coral-dev-debian:bookworm-build",
+        "docker.io/balenalib/coral-dev-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/coral-dev-debian:latest-build",
+        "docker.io/balenalib/coral-dev-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/coral-dev-debian:build",
         "docker.io/balenalib/coral-dev:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/coral-dev:bookworm-build"
+        "docker.io/balenalib/coral-dev:bookworm-build",
+        "docker.io/balenalib/coral-dev:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/coral-dev:latest-build",
+        "docker.io/balenalib/coral-dev:build-${DATESTAMP}",
+        "docker.io/balenalib/coral-dev:build"
       ],
       "cache_from": [
         "docker.io/balenalib/coral-dev-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/coral-dev-debian:bookworm-build",
+        "docker.io/balenalib/coral-dev-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/coral-dev-debian:latest-build",
+        "docker.io/balenalib/coral-dev-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/coral-dev-debian:build",
         "docker.io/balenalib/coral-dev:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/coral-dev:bookworm-build"
+        "docker.io/balenalib/coral-dev:bookworm-build",
+        "docker.io/balenalib/coral-dev:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/coral-dev:latest-build",
+        "docker.io/balenalib/coral-dev:build-${DATESTAMP}",
+        "docker.io/balenalib/coral-dev:build"
       ]
     },
     "coral-dev-debian-bookworm-run": {
@@ -168,20 +140,48 @@
         "docker.io/balenalib/coral-dev-debian:bookworm-run",
         "docker.io/balenalib/coral-dev-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/coral-dev-debian:bookworm",
+        "docker.io/balenalib/coral-dev-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/coral-dev-debian:latest-run",
+        "docker.io/balenalib/coral-dev-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/coral-dev-debian:latest",
+        "docker.io/balenalib/coral-dev-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/coral-dev-debian:run",
+        "docker.io/balenalib/coral-dev-debian:${DATESTAMP}",
         "docker.io/balenalib/coral-dev:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/coral-dev:bookworm-run",
         "docker.io/balenalib/coral-dev:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/coral-dev:bookworm"
+        "docker.io/balenalib/coral-dev:bookworm",
+        "docker.io/balenalib/coral-dev:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/coral-dev:latest-run",
+        "docker.io/balenalib/coral-dev:latest-${DATESTAMP}",
+        "docker.io/balenalib/coral-dev:latest",
+        "docker.io/balenalib/coral-dev:run-${DATESTAMP}",
+        "docker.io/balenalib/coral-dev:run",
+        "docker.io/balenalib/coral-dev:${DATESTAMP}"
       ],
       "cache_from": [
         "docker.io/balenalib/coral-dev-debian:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/coral-dev-debian:bookworm-run",
         "docker.io/balenalib/coral-dev-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/coral-dev-debian:bookworm",
+        "docker.io/balenalib/coral-dev-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/coral-dev-debian:latest-run",
+        "docker.io/balenalib/coral-dev-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/coral-dev-debian:latest",
+        "docker.io/balenalib/coral-dev-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/coral-dev-debian:run",
+        "docker.io/balenalib/coral-dev-debian:${DATESTAMP}",
         "docker.io/balenalib/coral-dev:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/coral-dev:bookworm-run",
         "docker.io/balenalib/coral-dev:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/coral-dev:bookworm"
+        "docker.io/balenalib/coral-dev:bookworm",
+        "docker.io/balenalib/coral-dev:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/coral-dev:latest-run",
+        "docker.io/balenalib/coral-dev:latest-${DATESTAMP}",
+        "docker.io/balenalib/coral-dev:latest",
+        "docker.io/balenalib/coral-dev:run-${DATESTAMP}",
+        "docker.io/balenalib/coral-dev:run",
+        "docker.io/balenalib/coral-dev:${DATESTAMP}"
       ]
     },
     "coral-dev-debian-sid-build": {

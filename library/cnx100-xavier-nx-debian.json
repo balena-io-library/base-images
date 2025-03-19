@@ -63,30 +63,14 @@
       "tags": [
         "docker.io/balenalib/cnx100-xavier-nx-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/cnx100-xavier-nx-debian:bullseye-build",
-        "docker.io/balenalib/cnx100-xavier-nx-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-debian:latest-build",
-        "docker.io/balenalib/cnx100-xavier-nx-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-debian:build",
         "docker.io/balenalib/cnx100-xavier-nx:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx:bullseye-build",
-        "docker.io/balenalib/cnx100-xavier-nx:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx:latest-build",
-        "docker.io/balenalib/cnx100-xavier-nx:build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx:build"
+        "docker.io/balenalib/cnx100-xavier-nx:bullseye-build"
       ],
       "cache_from": [
         "docker.io/balenalib/cnx100-xavier-nx-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/cnx100-xavier-nx-debian:bullseye-build",
-        "docker.io/balenalib/cnx100-xavier-nx-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-debian:latest-build",
-        "docker.io/balenalib/cnx100-xavier-nx-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-debian:build",
         "docker.io/balenalib/cnx100-xavier-nx:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx:bullseye-build",
-        "docker.io/balenalib/cnx100-xavier-nx:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx:latest-build",
-        "docker.io/balenalib/cnx100-xavier-nx:build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx:build"
+        "docker.io/balenalib/cnx100-xavier-nx:bullseye-build"
       ]
     },
     "cnx100-xavier-nx-debian-bullseye-run": {
@@ -98,48 +82,20 @@
         "docker.io/balenalib/cnx100-xavier-nx-debian:bullseye-run",
         "docker.io/balenalib/cnx100-xavier-nx-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/cnx100-xavier-nx-debian:bullseye",
-        "docker.io/balenalib/cnx100-xavier-nx-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-debian:latest-run",
-        "docker.io/balenalib/cnx100-xavier-nx-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-debian:latest",
-        "docker.io/balenalib/cnx100-xavier-nx-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-debian:run",
-        "docker.io/balenalib/cnx100-xavier-nx-debian:${DATESTAMP}",
         "docker.io/balenalib/cnx100-xavier-nx:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/cnx100-xavier-nx:bullseye-run",
         "docker.io/balenalib/cnx100-xavier-nx:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx:bullseye",
-        "docker.io/balenalib/cnx100-xavier-nx:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx:latest-run",
-        "docker.io/balenalib/cnx100-xavier-nx:latest-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx:latest",
-        "docker.io/balenalib/cnx100-xavier-nx:run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx:run",
-        "docker.io/balenalib/cnx100-xavier-nx:${DATESTAMP}"
+        "docker.io/balenalib/cnx100-xavier-nx:bullseye"
       ],
       "cache_from": [
         "docker.io/balenalib/cnx100-xavier-nx-debian:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/cnx100-xavier-nx-debian:bullseye-run",
         "docker.io/balenalib/cnx100-xavier-nx-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/cnx100-xavier-nx-debian:bullseye",
-        "docker.io/balenalib/cnx100-xavier-nx-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-debian:latest-run",
-        "docker.io/balenalib/cnx100-xavier-nx-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-debian:latest",
-        "docker.io/balenalib/cnx100-xavier-nx-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-debian:run",
-        "docker.io/balenalib/cnx100-xavier-nx-debian:${DATESTAMP}",
         "docker.io/balenalib/cnx100-xavier-nx:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/cnx100-xavier-nx:bullseye-run",
         "docker.io/balenalib/cnx100-xavier-nx:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx:bullseye",
-        "docker.io/balenalib/cnx100-xavier-nx:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx:latest-run",
-        "docker.io/balenalib/cnx100-xavier-nx:latest-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx:latest",
-        "docker.io/balenalib/cnx100-xavier-nx:run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx:run",
-        "docker.io/balenalib/cnx100-xavier-nx:${DATESTAMP}"
+        "docker.io/balenalib/cnx100-xavier-nx:bullseye"
       ]
     },
     "cnx100-xavier-nx-debian-bookworm-build": {
@@ -149,14 +105,30 @@
       "tags": [
         "docker.io/balenalib/cnx100-xavier-nx-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/cnx100-xavier-nx-debian:bookworm-build",
+        "docker.io/balenalib/cnx100-xavier-nx-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-debian:latest-build",
+        "docker.io/balenalib/cnx100-xavier-nx-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-debian:build",
         "docker.io/balenalib/cnx100-xavier-nx:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx:bookworm-build"
+        "docker.io/balenalib/cnx100-xavier-nx:bookworm-build",
+        "docker.io/balenalib/cnx100-xavier-nx:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx:latest-build",
+        "docker.io/balenalib/cnx100-xavier-nx:build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx:build"
       ],
       "cache_from": [
         "docker.io/balenalib/cnx100-xavier-nx-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/cnx100-xavier-nx-debian:bookworm-build",
+        "docker.io/balenalib/cnx100-xavier-nx-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-debian:latest-build",
+        "docker.io/balenalib/cnx100-xavier-nx-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-debian:build",
         "docker.io/balenalib/cnx100-xavier-nx:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx:bookworm-build"
+        "docker.io/balenalib/cnx100-xavier-nx:bookworm-build",
+        "docker.io/balenalib/cnx100-xavier-nx:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx:latest-build",
+        "docker.io/balenalib/cnx100-xavier-nx:build-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx:build"
       ]
     },
     "cnx100-xavier-nx-debian-bookworm-run": {
@@ -168,20 +140,48 @@
         "docker.io/balenalib/cnx100-xavier-nx-debian:bookworm-run",
         "docker.io/balenalib/cnx100-xavier-nx-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/cnx100-xavier-nx-debian:bookworm",
+        "docker.io/balenalib/cnx100-xavier-nx-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-debian:latest-run",
+        "docker.io/balenalib/cnx100-xavier-nx-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-debian:latest",
+        "docker.io/balenalib/cnx100-xavier-nx-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-debian:run",
+        "docker.io/balenalib/cnx100-xavier-nx-debian:${DATESTAMP}",
         "docker.io/balenalib/cnx100-xavier-nx:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/cnx100-xavier-nx:bookworm-run",
         "docker.io/balenalib/cnx100-xavier-nx:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx:bookworm"
+        "docker.io/balenalib/cnx100-xavier-nx:bookworm",
+        "docker.io/balenalib/cnx100-xavier-nx:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx:latest-run",
+        "docker.io/balenalib/cnx100-xavier-nx:latest-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx:latest",
+        "docker.io/balenalib/cnx100-xavier-nx:run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx:run",
+        "docker.io/balenalib/cnx100-xavier-nx:${DATESTAMP}"
       ],
       "cache_from": [
         "docker.io/balenalib/cnx100-xavier-nx-debian:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/cnx100-xavier-nx-debian:bookworm-run",
         "docker.io/balenalib/cnx100-xavier-nx-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/cnx100-xavier-nx-debian:bookworm",
+        "docker.io/balenalib/cnx100-xavier-nx-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-debian:latest-run",
+        "docker.io/balenalib/cnx100-xavier-nx-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-debian:latest",
+        "docker.io/balenalib/cnx100-xavier-nx-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx-debian:run",
+        "docker.io/balenalib/cnx100-xavier-nx-debian:${DATESTAMP}",
         "docker.io/balenalib/cnx100-xavier-nx:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/cnx100-xavier-nx:bookworm-run",
         "docker.io/balenalib/cnx100-xavier-nx:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx:bookworm"
+        "docker.io/balenalib/cnx100-xavier-nx:bookworm",
+        "docker.io/balenalib/cnx100-xavier-nx:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx:latest-run",
+        "docker.io/balenalib/cnx100-xavier-nx:latest-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx:latest",
+        "docker.io/balenalib/cnx100-xavier-nx:run-${DATESTAMP}",
+        "docker.io/balenalib/cnx100-xavier-nx:run",
+        "docker.io/balenalib/cnx100-xavier-nx:${DATESTAMP}"
       ]
     },
     "cnx100-xavier-nx-debian-sid-build": {

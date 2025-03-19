@@ -63,30 +63,14 @@
       "tags": [
         "docker.io/balenalib/owa5x-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/owa5x-debian:bullseye-build",
-        "docker.io/balenalib/owa5x-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/owa5x-debian:latest-build",
-        "docker.io/balenalib/owa5x-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/owa5x-debian:build",
         "docker.io/balenalib/owa5x:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/owa5x:bullseye-build",
-        "docker.io/balenalib/owa5x:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/owa5x:latest-build",
-        "docker.io/balenalib/owa5x:build-${DATESTAMP}",
-        "docker.io/balenalib/owa5x:build"
+        "docker.io/balenalib/owa5x:bullseye-build"
       ],
       "cache_from": [
         "docker.io/balenalib/owa5x-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/owa5x-debian:bullseye-build",
-        "docker.io/balenalib/owa5x-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/owa5x-debian:latest-build",
-        "docker.io/balenalib/owa5x-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/owa5x-debian:build",
         "docker.io/balenalib/owa5x:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/owa5x:bullseye-build",
-        "docker.io/balenalib/owa5x:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/owa5x:latest-build",
-        "docker.io/balenalib/owa5x:build-${DATESTAMP}",
-        "docker.io/balenalib/owa5x:build"
+        "docker.io/balenalib/owa5x:bullseye-build"
       ]
     },
     "owa5x-debian-bullseye-run": {
@@ -98,48 +82,20 @@
         "docker.io/balenalib/owa5x-debian:bullseye-run",
         "docker.io/balenalib/owa5x-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/owa5x-debian:bullseye",
-        "docker.io/balenalib/owa5x-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/owa5x-debian:latest-run",
-        "docker.io/balenalib/owa5x-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/owa5x-debian:latest",
-        "docker.io/balenalib/owa5x-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/owa5x-debian:run",
-        "docker.io/balenalib/owa5x-debian:${DATESTAMP}",
         "docker.io/balenalib/owa5x:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/owa5x:bullseye-run",
         "docker.io/balenalib/owa5x:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/owa5x:bullseye",
-        "docker.io/balenalib/owa5x:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/owa5x:latest-run",
-        "docker.io/balenalib/owa5x:latest-${DATESTAMP}",
-        "docker.io/balenalib/owa5x:latest",
-        "docker.io/balenalib/owa5x:run-${DATESTAMP}",
-        "docker.io/balenalib/owa5x:run",
-        "docker.io/balenalib/owa5x:${DATESTAMP}"
+        "docker.io/balenalib/owa5x:bullseye"
       ],
       "cache_from": [
         "docker.io/balenalib/owa5x-debian:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/owa5x-debian:bullseye-run",
         "docker.io/balenalib/owa5x-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/owa5x-debian:bullseye",
-        "docker.io/balenalib/owa5x-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/owa5x-debian:latest-run",
-        "docker.io/balenalib/owa5x-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/owa5x-debian:latest",
-        "docker.io/balenalib/owa5x-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/owa5x-debian:run",
-        "docker.io/balenalib/owa5x-debian:${DATESTAMP}",
         "docker.io/balenalib/owa5x:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/owa5x:bullseye-run",
         "docker.io/balenalib/owa5x:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/owa5x:bullseye",
-        "docker.io/balenalib/owa5x:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/owa5x:latest-run",
-        "docker.io/balenalib/owa5x:latest-${DATESTAMP}",
-        "docker.io/balenalib/owa5x:latest",
-        "docker.io/balenalib/owa5x:run-${DATESTAMP}",
-        "docker.io/balenalib/owa5x:run",
-        "docker.io/balenalib/owa5x:${DATESTAMP}"
+        "docker.io/balenalib/owa5x:bullseye"
       ]
     },
     "owa5x-debian-bookworm-build": {
@@ -149,14 +105,30 @@
       "tags": [
         "docker.io/balenalib/owa5x-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/owa5x-debian:bookworm-build",
+        "docker.io/balenalib/owa5x-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/owa5x-debian:latest-build",
+        "docker.io/balenalib/owa5x-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/owa5x-debian:build",
         "docker.io/balenalib/owa5x:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/owa5x:bookworm-build"
+        "docker.io/balenalib/owa5x:bookworm-build",
+        "docker.io/balenalib/owa5x:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/owa5x:latest-build",
+        "docker.io/balenalib/owa5x:build-${DATESTAMP}",
+        "docker.io/balenalib/owa5x:build"
       ],
       "cache_from": [
         "docker.io/balenalib/owa5x-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/owa5x-debian:bookworm-build",
+        "docker.io/balenalib/owa5x-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/owa5x-debian:latest-build",
+        "docker.io/balenalib/owa5x-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/owa5x-debian:build",
         "docker.io/balenalib/owa5x:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/owa5x:bookworm-build"
+        "docker.io/balenalib/owa5x:bookworm-build",
+        "docker.io/balenalib/owa5x:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/owa5x:latest-build",
+        "docker.io/balenalib/owa5x:build-${DATESTAMP}",
+        "docker.io/balenalib/owa5x:build"
       ]
     },
     "owa5x-debian-bookworm-run": {
@@ -168,20 +140,48 @@
         "docker.io/balenalib/owa5x-debian:bookworm-run",
         "docker.io/balenalib/owa5x-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/owa5x-debian:bookworm",
+        "docker.io/balenalib/owa5x-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/owa5x-debian:latest-run",
+        "docker.io/balenalib/owa5x-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/owa5x-debian:latest",
+        "docker.io/balenalib/owa5x-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/owa5x-debian:run",
+        "docker.io/balenalib/owa5x-debian:${DATESTAMP}",
         "docker.io/balenalib/owa5x:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/owa5x:bookworm-run",
         "docker.io/balenalib/owa5x:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/owa5x:bookworm"
+        "docker.io/balenalib/owa5x:bookworm",
+        "docker.io/balenalib/owa5x:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/owa5x:latest-run",
+        "docker.io/balenalib/owa5x:latest-${DATESTAMP}",
+        "docker.io/balenalib/owa5x:latest",
+        "docker.io/balenalib/owa5x:run-${DATESTAMP}",
+        "docker.io/balenalib/owa5x:run",
+        "docker.io/balenalib/owa5x:${DATESTAMP}"
       ],
       "cache_from": [
         "docker.io/balenalib/owa5x-debian:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/owa5x-debian:bookworm-run",
         "docker.io/balenalib/owa5x-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/owa5x-debian:bookworm",
+        "docker.io/balenalib/owa5x-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/owa5x-debian:latest-run",
+        "docker.io/balenalib/owa5x-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/owa5x-debian:latest",
+        "docker.io/balenalib/owa5x-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/owa5x-debian:run",
+        "docker.io/balenalib/owa5x-debian:${DATESTAMP}",
         "docker.io/balenalib/owa5x:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/owa5x:bookworm-run",
         "docker.io/balenalib/owa5x:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/owa5x:bookworm"
+        "docker.io/balenalib/owa5x:bookworm",
+        "docker.io/balenalib/owa5x:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/owa5x:latest-run",
+        "docker.io/balenalib/owa5x:latest-${DATESTAMP}",
+        "docker.io/balenalib/owa5x:latest",
+        "docker.io/balenalib/owa5x:run-${DATESTAMP}",
+        "docker.io/balenalib/owa5x:run",
+        "docker.io/balenalib/owa5x:${DATESTAMP}"
       ]
     },
     "owa5x-debian-sid-build": {

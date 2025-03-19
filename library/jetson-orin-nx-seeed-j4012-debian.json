@@ -63,30 +63,14 @@
       "tags": [
         "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:bullseye-build",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:latest-build",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:build",
         "docker.io/balenalib/jetson-orin-nx-seeed-j4012:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:bullseye-build",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:latest-build",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:build"
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:bullseye-build"
       ],
       "cache_from": [
         "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:bullseye-build",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:latest-build",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:build",
         "docker.io/balenalib/jetson-orin-nx-seeed-j4012:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:bullseye-build",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:latest-build",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:build"
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:bullseye-build"
       ]
     },
     "jetson-orin-nx-seeed-j4012-debian-bullseye-run": {
@@ -98,48 +82,20 @@
         "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:bullseye-run",
         "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:bullseye",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:latest-run",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:latest",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:run",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nx-seeed-j4012:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nx-seeed-j4012:bullseye-run",
         "docker.io/balenalib/jetson-orin-nx-seeed-j4012:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:bullseye",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:latest-run",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:latest-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:latest",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:run",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:${DATESTAMP}"
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:bullseye"
       ],
       "cache_from": [
         "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:bullseye-run",
         "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:bullseye",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:latest-run",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:latest",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:run",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nx-seeed-j4012:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nx-seeed-j4012:bullseye-run",
         "docker.io/balenalib/jetson-orin-nx-seeed-j4012:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:bullseye",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:latest-run",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:latest-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:latest",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:run",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:${DATESTAMP}"
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:bullseye"
       ]
     },
     "jetson-orin-nx-seeed-j4012-debian-bookworm-build": {
@@ -149,14 +105,30 @@
       "tags": [
         "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:bookworm-build",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:latest-build",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:build",
         "docker.io/balenalib/jetson-orin-nx-seeed-j4012:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:bookworm-build"
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:bookworm-build",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:latest-build",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:build"
       ],
       "cache_from": [
         "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:bookworm-build",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:latest-build",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:build",
         "docker.io/balenalib/jetson-orin-nx-seeed-j4012:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:bookworm-build"
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:bookworm-build",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:latest-build",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:build"
       ]
     },
     "jetson-orin-nx-seeed-j4012-debian-bookworm-run": {
@@ -168,20 +140,48 @@
         "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:bookworm-run",
         "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:bookworm",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:latest-run",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:latest",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:run",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nx-seeed-j4012:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nx-seeed-j4012:bookworm-run",
         "docker.io/balenalib/jetson-orin-nx-seeed-j4012:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:bookworm"
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:bookworm",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:latest-run",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:latest-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:latest",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:run",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:${DATESTAMP}"
       ],
       "cache_from": [
         "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:bookworm-run",
         "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:bookworm",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:latest-run",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:latest",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:run",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012-debian:${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nx-seeed-j4012:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nx-seeed-j4012:bookworm-run",
         "docker.io/balenalib/jetson-orin-nx-seeed-j4012:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:bookworm"
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:bookworm",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:latest-run",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:latest-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:latest",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:run",
+        "docker.io/balenalib/jetson-orin-nx-seeed-j4012:${DATESTAMP}"
       ]
     },
     "jetson-orin-nx-seeed-j4012-debian-sid-build": {

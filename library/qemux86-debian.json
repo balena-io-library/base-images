@@ -63,30 +63,14 @@
       "tags": [
         "docker.io/balenalib/qemux86-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/qemux86-debian:bullseye-build",
-        "docker.io/balenalib/qemux86-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/qemux86-debian:latest-build",
-        "docker.io/balenalib/qemux86-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/qemux86-debian:build",
         "docker.io/balenalib/qemux86:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/qemux86:bullseye-build",
-        "docker.io/balenalib/qemux86:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/qemux86:latest-build",
-        "docker.io/balenalib/qemux86:build-${DATESTAMP}",
-        "docker.io/balenalib/qemux86:build"
+        "docker.io/balenalib/qemux86:bullseye-build"
       ],
       "cache_from": [
         "docker.io/balenalib/qemux86-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/qemux86-debian:bullseye-build",
-        "docker.io/balenalib/qemux86-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/qemux86-debian:latest-build",
-        "docker.io/balenalib/qemux86-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/qemux86-debian:build",
         "docker.io/balenalib/qemux86:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/qemux86:bullseye-build",
-        "docker.io/balenalib/qemux86:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/qemux86:latest-build",
-        "docker.io/balenalib/qemux86:build-${DATESTAMP}",
-        "docker.io/balenalib/qemux86:build"
+        "docker.io/balenalib/qemux86:bullseye-build"
       ]
     },
     "qemux86-debian-bullseye-run": {
@@ -98,48 +82,20 @@
         "docker.io/balenalib/qemux86-debian:bullseye-run",
         "docker.io/balenalib/qemux86-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/qemux86-debian:bullseye",
-        "docker.io/balenalib/qemux86-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/qemux86-debian:latest-run",
-        "docker.io/balenalib/qemux86-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/qemux86-debian:latest",
-        "docker.io/balenalib/qemux86-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/qemux86-debian:run",
-        "docker.io/balenalib/qemux86-debian:${DATESTAMP}",
         "docker.io/balenalib/qemux86:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/qemux86:bullseye-run",
         "docker.io/balenalib/qemux86:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/qemux86:bullseye",
-        "docker.io/balenalib/qemux86:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/qemux86:latest-run",
-        "docker.io/balenalib/qemux86:latest-${DATESTAMP}",
-        "docker.io/balenalib/qemux86:latest",
-        "docker.io/balenalib/qemux86:run-${DATESTAMP}",
-        "docker.io/balenalib/qemux86:run",
-        "docker.io/balenalib/qemux86:${DATESTAMP}"
+        "docker.io/balenalib/qemux86:bullseye"
       ],
       "cache_from": [
         "docker.io/balenalib/qemux86-debian:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/qemux86-debian:bullseye-run",
         "docker.io/balenalib/qemux86-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/qemux86-debian:bullseye",
-        "docker.io/balenalib/qemux86-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/qemux86-debian:latest-run",
-        "docker.io/balenalib/qemux86-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/qemux86-debian:latest",
-        "docker.io/balenalib/qemux86-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/qemux86-debian:run",
-        "docker.io/balenalib/qemux86-debian:${DATESTAMP}",
         "docker.io/balenalib/qemux86:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/qemux86:bullseye-run",
         "docker.io/balenalib/qemux86:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/qemux86:bullseye",
-        "docker.io/balenalib/qemux86:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/qemux86:latest-run",
-        "docker.io/balenalib/qemux86:latest-${DATESTAMP}",
-        "docker.io/balenalib/qemux86:latest",
-        "docker.io/balenalib/qemux86:run-${DATESTAMP}",
-        "docker.io/balenalib/qemux86:run",
-        "docker.io/balenalib/qemux86:${DATESTAMP}"
+        "docker.io/balenalib/qemux86:bullseye"
       ]
     },
     "qemux86-debian-bookworm-build": {
@@ -149,14 +105,30 @@
       "tags": [
         "docker.io/balenalib/qemux86-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/qemux86-debian:bookworm-build",
+        "docker.io/balenalib/qemux86-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/qemux86-debian:latest-build",
+        "docker.io/balenalib/qemux86-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/qemux86-debian:build",
         "docker.io/balenalib/qemux86:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/qemux86:bookworm-build"
+        "docker.io/balenalib/qemux86:bookworm-build",
+        "docker.io/balenalib/qemux86:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/qemux86:latest-build",
+        "docker.io/balenalib/qemux86:build-${DATESTAMP}",
+        "docker.io/balenalib/qemux86:build"
       ],
       "cache_from": [
         "docker.io/balenalib/qemux86-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/qemux86-debian:bookworm-build",
+        "docker.io/balenalib/qemux86-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/qemux86-debian:latest-build",
+        "docker.io/balenalib/qemux86-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/qemux86-debian:build",
         "docker.io/balenalib/qemux86:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/qemux86:bookworm-build"
+        "docker.io/balenalib/qemux86:bookworm-build",
+        "docker.io/balenalib/qemux86:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/qemux86:latest-build",
+        "docker.io/balenalib/qemux86:build-${DATESTAMP}",
+        "docker.io/balenalib/qemux86:build"
       ]
     },
     "qemux86-debian-bookworm-run": {
@@ -168,20 +140,48 @@
         "docker.io/balenalib/qemux86-debian:bookworm-run",
         "docker.io/balenalib/qemux86-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/qemux86-debian:bookworm",
+        "docker.io/balenalib/qemux86-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/qemux86-debian:latest-run",
+        "docker.io/balenalib/qemux86-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/qemux86-debian:latest",
+        "docker.io/balenalib/qemux86-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/qemux86-debian:run",
+        "docker.io/balenalib/qemux86-debian:${DATESTAMP}",
         "docker.io/balenalib/qemux86:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/qemux86:bookworm-run",
         "docker.io/balenalib/qemux86:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/qemux86:bookworm"
+        "docker.io/balenalib/qemux86:bookworm",
+        "docker.io/balenalib/qemux86:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/qemux86:latest-run",
+        "docker.io/balenalib/qemux86:latest-${DATESTAMP}",
+        "docker.io/balenalib/qemux86:latest",
+        "docker.io/balenalib/qemux86:run-${DATESTAMP}",
+        "docker.io/balenalib/qemux86:run",
+        "docker.io/balenalib/qemux86:${DATESTAMP}"
       ],
       "cache_from": [
         "docker.io/balenalib/qemux86-debian:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/qemux86-debian:bookworm-run",
         "docker.io/balenalib/qemux86-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/qemux86-debian:bookworm",
+        "docker.io/balenalib/qemux86-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/qemux86-debian:latest-run",
+        "docker.io/balenalib/qemux86-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/qemux86-debian:latest",
+        "docker.io/balenalib/qemux86-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/qemux86-debian:run",
+        "docker.io/balenalib/qemux86-debian:${DATESTAMP}",
         "docker.io/balenalib/qemux86:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/qemux86:bookworm-run",
         "docker.io/balenalib/qemux86:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/qemux86:bookworm"
+        "docker.io/balenalib/qemux86:bookworm",
+        "docker.io/balenalib/qemux86:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/qemux86:latest-run",
+        "docker.io/balenalib/qemux86:latest-${DATESTAMP}",
+        "docker.io/balenalib/qemux86:latest",
+        "docker.io/balenalib/qemux86:run-${DATESTAMP}",
+        "docker.io/balenalib/qemux86:run",
+        "docker.io/balenalib/qemux86:${DATESTAMP}"
       ]
     },
     "qemux86-debian-sid-build": {

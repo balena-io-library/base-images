@@ -63,30 +63,14 @@
       "tags": [
         "docker.io/balenalib/iotdin-imx8p-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/iotdin-imx8p-debian:bullseye-build",
-        "docker.io/balenalib/iotdin-imx8p-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/iotdin-imx8p-debian:latest-build",
-        "docker.io/balenalib/iotdin-imx8p-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/iotdin-imx8p-debian:build",
         "docker.io/balenalib/iotdin-imx8p:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/iotdin-imx8p:bullseye-build",
-        "docker.io/balenalib/iotdin-imx8p:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/iotdin-imx8p:latest-build",
-        "docker.io/balenalib/iotdin-imx8p:build-${DATESTAMP}",
-        "docker.io/balenalib/iotdin-imx8p:build"
+        "docker.io/balenalib/iotdin-imx8p:bullseye-build"
       ],
       "cache_from": [
         "docker.io/balenalib/iotdin-imx8p-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/iotdin-imx8p-debian:bullseye-build",
-        "docker.io/balenalib/iotdin-imx8p-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/iotdin-imx8p-debian:latest-build",
-        "docker.io/balenalib/iotdin-imx8p-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/iotdin-imx8p-debian:build",
         "docker.io/balenalib/iotdin-imx8p:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/iotdin-imx8p:bullseye-build",
-        "docker.io/balenalib/iotdin-imx8p:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/iotdin-imx8p:latest-build",
-        "docker.io/balenalib/iotdin-imx8p:build-${DATESTAMP}",
-        "docker.io/balenalib/iotdin-imx8p:build"
+        "docker.io/balenalib/iotdin-imx8p:bullseye-build"
       ]
     },
     "iotdin-imx8p-debian-bullseye-run": {
@@ -98,48 +82,20 @@
         "docker.io/balenalib/iotdin-imx8p-debian:bullseye-run",
         "docker.io/balenalib/iotdin-imx8p-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/iotdin-imx8p-debian:bullseye",
-        "docker.io/balenalib/iotdin-imx8p-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/iotdin-imx8p-debian:latest-run",
-        "docker.io/balenalib/iotdin-imx8p-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/iotdin-imx8p-debian:latest",
-        "docker.io/balenalib/iotdin-imx8p-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/iotdin-imx8p-debian:run",
-        "docker.io/balenalib/iotdin-imx8p-debian:${DATESTAMP}",
         "docker.io/balenalib/iotdin-imx8p:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/iotdin-imx8p:bullseye-run",
         "docker.io/balenalib/iotdin-imx8p:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/iotdin-imx8p:bullseye",
-        "docker.io/balenalib/iotdin-imx8p:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/iotdin-imx8p:latest-run",
-        "docker.io/balenalib/iotdin-imx8p:latest-${DATESTAMP}",
-        "docker.io/balenalib/iotdin-imx8p:latest",
-        "docker.io/balenalib/iotdin-imx8p:run-${DATESTAMP}",
-        "docker.io/balenalib/iotdin-imx8p:run",
-        "docker.io/balenalib/iotdin-imx8p:${DATESTAMP}"
+        "docker.io/balenalib/iotdin-imx8p:bullseye"
       ],
       "cache_from": [
         "docker.io/balenalib/iotdin-imx8p-debian:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/iotdin-imx8p-debian:bullseye-run",
         "docker.io/balenalib/iotdin-imx8p-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/iotdin-imx8p-debian:bullseye",
-        "docker.io/balenalib/iotdin-imx8p-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/iotdin-imx8p-debian:latest-run",
-        "docker.io/balenalib/iotdin-imx8p-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/iotdin-imx8p-debian:latest",
-        "docker.io/balenalib/iotdin-imx8p-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/iotdin-imx8p-debian:run",
-        "docker.io/balenalib/iotdin-imx8p-debian:${DATESTAMP}",
         "docker.io/balenalib/iotdin-imx8p:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/iotdin-imx8p:bullseye-run",
         "docker.io/balenalib/iotdin-imx8p:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/iotdin-imx8p:bullseye",
-        "docker.io/balenalib/iotdin-imx8p:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/iotdin-imx8p:latest-run",
-        "docker.io/balenalib/iotdin-imx8p:latest-${DATESTAMP}",
-        "docker.io/balenalib/iotdin-imx8p:latest",
-        "docker.io/balenalib/iotdin-imx8p:run-${DATESTAMP}",
-        "docker.io/balenalib/iotdin-imx8p:run",
-        "docker.io/balenalib/iotdin-imx8p:${DATESTAMP}"
+        "docker.io/balenalib/iotdin-imx8p:bullseye"
       ]
     },
     "iotdin-imx8p-debian-bookworm-build": {
@@ -149,14 +105,30 @@
       "tags": [
         "docker.io/balenalib/iotdin-imx8p-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/iotdin-imx8p-debian:bookworm-build",
+        "docker.io/balenalib/iotdin-imx8p-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/iotdin-imx8p-debian:latest-build",
+        "docker.io/balenalib/iotdin-imx8p-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/iotdin-imx8p-debian:build",
         "docker.io/balenalib/iotdin-imx8p:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/iotdin-imx8p:bookworm-build"
+        "docker.io/balenalib/iotdin-imx8p:bookworm-build",
+        "docker.io/balenalib/iotdin-imx8p:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/iotdin-imx8p:latest-build",
+        "docker.io/balenalib/iotdin-imx8p:build-${DATESTAMP}",
+        "docker.io/balenalib/iotdin-imx8p:build"
       ],
       "cache_from": [
         "docker.io/balenalib/iotdin-imx8p-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/iotdin-imx8p-debian:bookworm-build",
+        "docker.io/balenalib/iotdin-imx8p-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/iotdin-imx8p-debian:latest-build",
+        "docker.io/balenalib/iotdin-imx8p-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/iotdin-imx8p-debian:build",
         "docker.io/balenalib/iotdin-imx8p:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/iotdin-imx8p:bookworm-build"
+        "docker.io/balenalib/iotdin-imx8p:bookworm-build",
+        "docker.io/balenalib/iotdin-imx8p:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/iotdin-imx8p:latest-build",
+        "docker.io/balenalib/iotdin-imx8p:build-${DATESTAMP}",
+        "docker.io/balenalib/iotdin-imx8p:build"
       ]
     },
     "iotdin-imx8p-debian-bookworm-run": {
@@ -168,20 +140,48 @@
         "docker.io/balenalib/iotdin-imx8p-debian:bookworm-run",
         "docker.io/balenalib/iotdin-imx8p-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/iotdin-imx8p-debian:bookworm",
+        "docker.io/balenalib/iotdin-imx8p-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/iotdin-imx8p-debian:latest-run",
+        "docker.io/balenalib/iotdin-imx8p-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/iotdin-imx8p-debian:latest",
+        "docker.io/balenalib/iotdin-imx8p-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/iotdin-imx8p-debian:run",
+        "docker.io/balenalib/iotdin-imx8p-debian:${DATESTAMP}",
         "docker.io/balenalib/iotdin-imx8p:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/iotdin-imx8p:bookworm-run",
         "docker.io/balenalib/iotdin-imx8p:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/iotdin-imx8p:bookworm"
+        "docker.io/balenalib/iotdin-imx8p:bookworm",
+        "docker.io/balenalib/iotdin-imx8p:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/iotdin-imx8p:latest-run",
+        "docker.io/balenalib/iotdin-imx8p:latest-${DATESTAMP}",
+        "docker.io/balenalib/iotdin-imx8p:latest",
+        "docker.io/balenalib/iotdin-imx8p:run-${DATESTAMP}",
+        "docker.io/balenalib/iotdin-imx8p:run",
+        "docker.io/balenalib/iotdin-imx8p:${DATESTAMP}"
       ],
       "cache_from": [
         "docker.io/balenalib/iotdin-imx8p-debian:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/iotdin-imx8p-debian:bookworm-run",
         "docker.io/balenalib/iotdin-imx8p-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/iotdin-imx8p-debian:bookworm",
+        "docker.io/balenalib/iotdin-imx8p-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/iotdin-imx8p-debian:latest-run",
+        "docker.io/balenalib/iotdin-imx8p-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/iotdin-imx8p-debian:latest",
+        "docker.io/balenalib/iotdin-imx8p-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/iotdin-imx8p-debian:run",
+        "docker.io/balenalib/iotdin-imx8p-debian:${DATESTAMP}",
         "docker.io/balenalib/iotdin-imx8p:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/iotdin-imx8p:bookworm-run",
         "docker.io/balenalib/iotdin-imx8p:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/iotdin-imx8p:bookworm"
+        "docker.io/balenalib/iotdin-imx8p:bookworm",
+        "docker.io/balenalib/iotdin-imx8p:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/iotdin-imx8p:latest-run",
+        "docker.io/balenalib/iotdin-imx8p:latest-${DATESTAMP}",
+        "docker.io/balenalib/iotdin-imx8p:latest",
+        "docker.io/balenalib/iotdin-imx8p:run-${DATESTAMP}",
+        "docker.io/balenalib/iotdin-imx8p:run",
+        "docker.io/balenalib/iotdin-imx8p:${DATESTAMP}"
       ]
     },
     "iotdin-imx8p-debian-sid-build": {

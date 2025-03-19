@@ -63,30 +63,14 @@
       "tags": [
         "docker.io/balenalib/surface-go-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/surface-go-debian:bullseye-build",
-        "docker.io/balenalib/surface-go-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-debian:latest-build",
-        "docker.io/balenalib/surface-go-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-debian:build",
         "docker.io/balenalib/surface-go:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go:bullseye-build",
-        "docker.io/balenalib/surface-go:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go:latest-build",
-        "docker.io/balenalib/surface-go:build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go:build"
+        "docker.io/balenalib/surface-go:bullseye-build"
       ],
       "cache_from": [
         "docker.io/balenalib/surface-go-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/surface-go-debian:bullseye-build",
-        "docker.io/balenalib/surface-go-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-debian:latest-build",
-        "docker.io/balenalib/surface-go-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-debian:build",
         "docker.io/balenalib/surface-go:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go:bullseye-build",
-        "docker.io/balenalib/surface-go:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go:latest-build",
-        "docker.io/balenalib/surface-go:build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go:build"
+        "docker.io/balenalib/surface-go:bullseye-build"
       ]
     },
     "surface-go-debian-bullseye-run": {
@@ -98,48 +82,20 @@
         "docker.io/balenalib/surface-go-debian:bullseye-run",
         "docker.io/balenalib/surface-go-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/surface-go-debian:bullseye",
-        "docker.io/balenalib/surface-go-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-debian:latest-run",
-        "docker.io/balenalib/surface-go-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-debian:latest",
-        "docker.io/balenalib/surface-go-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-debian:run",
-        "docker.io/balenalib/surface-go-debian:${DATESTAMP}",
         "docker.io/balenalib/surface-go:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/surface-go:bullseye-run",
         "docker.io/balenalib/surface-go:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/surface-go:bullseye",
-        "docker.io/balenalib/surface-go:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go:latest-run",
-        "docker.io/balenalib/surface-go:latest-${DATESTAMP}",
-        "docker.io/balenalib/surface-go:latest",
-        "docker.io/balenalib/surface-go:run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go:run",
-        "docker.io/balenalib/surface-go:${DATESTAMP}"
+        "docker.io/balenalib/surface-go:bullseye"
       ],
       "cache_from": [
         "docker.io/balenalib/surface-go-debian:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/surface-go-debian:bullseye-run",
         "docker.io/balenalib/surface-go-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/surface-go-debian:bullseye",
-        "docker.io/balenalib/surface-go-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-debian:latest-run",
-        "docker.io/balenalib/surface-go-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-debian:latest",
-        "docker.io/balenalib/surface-go-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go-debian:run",
-        "docker.io/balenalib/surface-go-debian:${DATESTAMP}",
         "docker.io/balenalib/surface-go:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/surface-go:bullseye-run",
         "docker.io/balenalib/surface-go:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/surface-go:bullseye",
-        "docker.io/balenalib/surface-go:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go:latest-run",
-        "docker.io/balenalib/surface-go:latest-${DATESTAMP}",
-        "docker.io/balenalib/surface-go:latest",
-        "docker.io/balenalib/surface-go:run-${DATESTAMP}",
-        "docker.io/balenalib/surface-go:run",
-        "docker.io/balenalib/surface-go:${DATESTAMP}"
+        "docker.io/balenalib/surface-go:bullseye"
       ]
     },
     "surface-go-debian-bookworm-build": {
@@ -149,14 +105,30 @@
       "tags": [
         "docker.io/balenalib/surface-go-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/surface-go-debian:bookworm-build",
+        "docker.io/balenalib/surface-go-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-debian:latest-build",
+        "docker.io/balenalib/surface-go-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-debian:build",
         "docker.io/balenalib/surface-go:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go:bookworm-build"
+        "docker.io/balenalib/surface-go:bookworm-build",
+        "docker.io/balenalib/surface-go:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go:latest-build",
+        "docker.io/balenalib/surface-go:build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go:build"
       ],
       "cache_from": [
         "docker.io/balenalib/surface-go-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/surface-go-debian:bookworm-build",
+        "docker.io/balenalib/surface-go-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-debian:latest-build",
+        "docker.io/balenalib/surface-go-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-debian:build",
         "docker.io/balenalib/surface-go:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-go:bookworm-build"
+        "docker.io/balenalib/surface-go:bookworm-build",
+        "docker.io/balenalib/surface-go:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go:latest-build",
+        "docker.io/balenalib/surface-go:build-${DATESTAMP}",
+        "docker.io/balenalib/surface-go:build"
       ]
     },
     "surface-go-debian-bookworm-run": {
@@ -168,20 +140,48 @@
         "docker.io/balenalib/surface-go-debian:bookworm-run",
         "docker.io/balenalib/surface-go-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/surface-go-debian:bookworm",
+        "docker.io/balenalib/surface-go-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-debian:latest-run",
+        "docker.io/balenalib/surface-go-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-debian:latest",
+        "docker.io/balenalib/surface-go-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-debian:run",
+        "docker.io/balenalib/surface-go-debian:${DATESTAMP}",
         "docker.io/balenalib/surface-go:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/surface-go:bookworm-run",
         "docker.io/balenalib/surface-go:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/surface-go:bookworm"
+        "docker.io/balenalib/surface-go:bookworm",
+        "docker.io/balenalib/surface-go:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go:latest-run",
+        "docker.io/balenalib/surface-go:latest-${DATESTAMP}",
+        "docker.io/balenalib/surface-go:latest",
+        "docker.io/balenalib/surface-go:run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go:run",
+        "docker.io/balenalib/surface-go:${DATESTAMP}"
       ],
       "cache_from": [
         "docker.io/balenalib/surface-go-debian:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/surface-go-debian:bookworm-run",
         "docker.io/balenalib/surface-go-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/surface-go-debian:bookworm",
+        "docker.io/balenalib/surface-go-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-debian:latest-run",
+        "docker.io/balenalib/surface-go-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-debian:latest",
+        "docker.io/balenalib/surface-go-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go-debian:run",
+        "docker.io/balenalib/surface-go-debian:${DATESTAMP}",
         "docker.io/balenalib/surface-go:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/surface-go:bookworm-run",
         "docker.io/balenalib/surface-go:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/surface-go:bookworm"
+        "docker.io/balenalib/surface-go:bookworm",
+        "docker.io/balenalib/surface-go:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go:latest-run",
+        "docker.io/balenalib/surface-go:latest-${DATESTAMP}",
+        "docker.io/balenalib/surface-go:latest",
+        "docker.io/balenalib/surface-go:run-${DATESTAMP}",
+        "docker.io/balenalib/surface-go:run",
+        "docker.io/balenalib/surface-go:${DATESTAMP}"
       ]
     },
     "surface-go-debian-sid-build": {

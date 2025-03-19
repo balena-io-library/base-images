@@ -63,30 +63,14 @@
       "tags": [
         "docker.io/balenalib/nanopi-r2s-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/nanopi-r2s-debian:bullseye-build",
-        "docker.io/balenalib/nanopi-r2s-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-r2s-debian:latest-build",
-        "docker.io/balenalib/nanopi-r2s-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-r2s-debian:build",
         "docker.io/balenalib/nanopi-r2s:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-r2s:bullseye-build",
-        "docker.io/balenalib/nanopi-r2s:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-r2s:latest-build",
-        "docker.io/balenalib/nanopi-r2s:build-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-r2s:build"
+        "docker.io/balenalib/nanopi-r2s:bullseye-build"
       ],
       "cache_from": [
         "docker.io/balenalib/nanopi-r2s-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/nanopi-r2s-debian:bullseye-build",
-        "docker.io/balenalib/nanopi-r2s-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-r2s-debian:latest-build",
-        "docker.io/balenalib/nanopi-r2s-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-r2s-debian:build",
         "docker.io/balenalib/nanopi-r2s:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-r2s:bullseye-build",
-        "docker.io/balenalib/nanopi-r2s:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-r2s:latest-build",
-        "docker.io/balenalib/nanopi-r2s:build-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-r2s:build"
+        "docker.io/balenalib/nanopi-r2s:bullseye-build"
       ]
     },
     "nanopi-r2s-debian-bullseye-run": {
@@ -98,48 +82,20 @@
         "docker.io/balenalib/nanopi-r2s-debian:bullseye-run",
         "docker.io/balenalib/nanopi-r2s-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/nanopi-r2s-debian:bullseye",
-        "docker.io/balenalib/nanopi-r2s-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-r2s-debian:latest-run",
-        "docker.io/balenalib/nanopi-r2s-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-r2s-debian:latest",
-        "docker.io/balenalib/nanopi-r2s-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-r2s-debian:run",
-        "docker.io/balenalib/nanopi-r2s-debian:${DATESTAMP}",
         "docker.io/balenalib/nanopi-r2s:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/nanopi-r2s:bullseye-run",
         "docker.io/balenalib/nanopi-r2s:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-r2s:bullseye",
-        "docker.io/balenalib/nanopi-r2s:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-r2s:latest-run",
-        "docker.io/balenalib/nanopi-r2s:latest-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-r2s:latest",
-        "docker.io/balenalib/nanopi-r2s:run-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-r2s:run",
-        "docker.io/balenalib/nanopi-r2s:${DATESTAMP}"
+        "docker.io/balenalib/nanopi-r2s:bullseye"
       ],
       "cache_from": [
         "docker.io/balenalib/nanopi-r2s-debian:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/nanopi-r2s-debian:bullseye-run",
         "docker.io/balenalib/nanopi-r2s-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/nanopi-r2s-debian:bullseye",
-        "docker.io/balenalib/nanopi-r2s-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-r2s-debian:latest-run",
-        "docker.io/balenalib/nanopi-r2s-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-r2s-debian:latest",
-        "docker.io/balenalib/nanopi-r2s-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-r2s-debian:run",
-        "docker.io/balenalib/nanopi-r2s-debian:${DATESTAMP}",
         "docker.io/balenalib/nanopi-r2s:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/nanopi-r2s:bullseye-run",
         "docker.io/balenalib/nanopi-r2s:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-r2s:bullseye",
-        "docker.io/balenalib/nanopi-r2s:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-r2s:latest-run",
-        "docker.io/balenalib/nanopi-r2s:latest-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-r2s:latest",
-        "docker.io/balenalib/nanopi-r2s:run-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-r2s:run",
-        "docker.io/balenalib/nanopi-r2s:${DATESTAMP}"
+        "docker.io/balenalib/nanopi-r2s:bullseye"
       ]
     },
     "nanopi-r2s-debian-bookworm-build": {
@@ -149,14 +105,30 @@
       "tags": [
         "docker.io/balenalib/nanopi-r2s-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/nanopi-r2s-debian:bookworm-build",
+        "docker.io/balenalib/nanopi-r2s-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-r2s-debian:latest-build",
+        "docker.io/balenalib/nanopi-r2s-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-r2s-debian:build",
         "docker.io/balenalib/nanopi-r2s:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-r2s:bookworm-build"
+        "docker.io/balenalib/nanopi-r2s:bookworm-build",
+        "docker.io/balenalib/nanopi-r2s:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-r2s:latest-build",
+        "docker.io/balenalib/nanopi-r2s:build-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-r2s:build"
       ],
       "cache_from": [
         "docker.io/balenalib/nanopi-r2s-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/nanopi-r2s-debian:bookworm-build",
+        "docker.io/balenalib/nanopi-r2s-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-r2s-debian:latest-build",
+        "docker.io/balenalib/nanopi-r2s-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-r2s-debian:build",
         "docker.io/balenalib/nanopi-r2s:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-r2s:bookworm-build"
+        "docker.io/balenalib/nanopi-r2s:bookworm-build",
+        "docker.io/balenalib/nanopi-r2s:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-r2s:latest-build",
+        "docker.io/balenalib/nanopi-r2s:build-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-r2s:build"
       ]
     },
     "nanopi-r2s-debian-bookworm-run": {
@@ -168,20 +140,48 @@
         "docker.io/balenalib/nanopi-r2s-debian:bookworm-run",
         "docker.io/balenalib/nanopi-r2s-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/nanopi-r2s-debian:bookworm",
+        "docker.io/balenalib/nanopi-r2s-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-r2s-debian:latest-run",
+        "docker.io/balenalib/nanopi-r2s-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-r2s-debian:latest",
+        "docker.io/balenalib/nanopi-r2s-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-r2s-debian:run",
+        "docker.io/balenalib/nanopi-r2s-debian:${DATESTAMP}",
         "docker.io/balenalib/nanopi-r2s:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/nanopi-r2s:bookworm-run",
         "docker.io/balenalib/nanopi-r2s:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-r2s:bookworm"
+        "docker.io/balenalib/nanopi-r2s:bookworm",
+        "docker.io/balenalib/nanopi-r2s:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-r2s:latest-run",
+        "docker.io/balenalib/nanopi-r2s:latest-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-r2s:latest",
+        "docker.io/balenalib/nanopi-r2s:run-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-r2s:run",
+        "docker.io/balenalib/nanopi-r2s:${DATESTAMP}"
       ],
       "cache_from": [
         "docker.io/balenalib/nanopi-r2s-debian:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/nanopi-r2s-debian:bookworm-run",
         "docker.io/balenalib/nanopi-r2s-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/nanopi-r2s-debian:bookworm",
+        "docker.io/balenalib/nanopi-r2s-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-r2s-debian:latest-run",
+        "docker.io/balenalib/nanopi-r2s-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-r2s-debian:latest",
+        "docker.io/balenalib/nanopi-r2s-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-r2s-debian:run",
+        "docker.io/balenalib/nanopi-r2s-debian:${DATESTAMP}",
         "docker.io/balenalib/nanopi-r2s:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/nanopi-r2s:bookworm-run",
         "docker.io/balenalib/nanopi-r2s:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/nanopi-r2s:bookworm"
+        "docker.io/balenalib/nanopi-r2s:bookworm",
+        "docker.io/balenalib/nanopi-r2s:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-r2s:latest-run",
+        "docker.io/balenalib/nanopi-r2s:latest-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-r2s:latest",
+        "docker.io/balenalib/nanopi-r2s:run-${DATESTAMP}",
+        "docker.io/balenalib/nanopi-r2s:run",
+        "docker.io/balenalib/nanopi-r2s:${DATESTAMP}"
       ]
     },
     "nanopi-r2s-debian-sid-build": {

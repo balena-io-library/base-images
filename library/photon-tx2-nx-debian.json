@@ -63,30 +63,14 @@
       "tags": [
         "docker.io/balenalib/photon-tx2-nx-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/photon-tx2-nx-debian:bullseye-build",
-        "docker.io/balenalib/photon-tx2-nx-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx-debian:latest-build",
-        "docker.io/balenalib/photon-tx2-nx-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx-debian:build",
         "docker.io/balenalib/photon-tx2-nx:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx:bullseye-build",
-        "docker.io/balenalib/photon-tx2-nx:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx:latest-build",
-        "docker.io/balenalib/photon-tx2-nx:build-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx:build"
+        "docker.io/balenalib/photon-tx2-nx:bullseye-build"
       ],
       "cache_from": [
         "docker.io/balenalib/photon-tx2-nx-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/photon-tx2-nx-debian:bullseye-build",
-        "docker.io/balenalib/photon-tx2-nx-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx-debian:latest-build",
-        "docker.io/balenalib/photon-tx2-nx-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx-debian:build",
         "docker.io/balenalib/photon-tx2-nx:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx:bullseye-build",
-        "docker.io/balenalib/photon-tx2-nx:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx:latest-build",
-        "docker.io/balenalib/photon-tx2-nx:build-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx:build"
+        "docker.io/balenalib/photon-tx2-nx:bullseye-build"
       ]
     },
     "photon-tx2-nx-debian-bullseye-run": {
@@ -98,48 +82,20 @@
         "docker.io/balenalib/photon-tx2-nx-debian:bullseye-run",
         "docker.io/balenalib/photon-tx2-nx-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/photon-tx2-nx-debian:bullseye",
-        "docker.io/balenalib/photon-tx2-nx-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx-debian:latest-run",
-        "docker.io/balenalib/photon-tx2-nx-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx-debian:latest",
-        "docker.io/balenalib/photon-tx2-nx-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx-debian:run",
-        "docker.io/balenalib/photon-tx2-nx-debian:${DATESTAMP}",
         "docker.io/balenalib/photon-tx2-nx:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/photon-tx2-nx:bullseye-run",
         "docker.io/balenalib/photon-tx2-nx:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx:bullseye",
-        "docker.io/balenalib/photon-tx2-nx:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx:latest-run",
-        "docker.io/balenalib/photon-tx2-nx:latest-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx:latest",
-        "docker.io/balenalib/photon-tx2-nx:run-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx:run",
-        "docker.io/balenalib/photon-tx2-nx:${DATESTAMP}"
+        "docker.io/balenalib/photon-tx2-nx:bullseye"
       ],
       "cache_from": [
         "docker.io/balenalib/photon-tx2-nx-debian:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/photon-tx2-nx-debian:bullseye-run",
         "docker.io/balenalib/photon-tx2-nx-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/photon-tx2-nx-debian:bullseye",
-        "docker.io/balenalib/photon-tx2-nx-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx-debian:latest-run",
-        "docker.io/balenalib/photon-tx2-nx-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx-debian:latest",
-        "docker.io/balenalib/photon-tx2-nx-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx-debian:run",
-        "docker.io/balenalib/photon-tx2-nx-debian:${DATESTAMP}",
         "docker.io/balenalib/photon-tx2-nx:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/photon-tx2-nx:bullseye-run",
         "docker.io/balenalib/photon-tx2-nx:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx:bullseye",
-        "docker.io/balenalib/photon-tx2-nx:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx:latest-run",
-        "docker.io/balenalib/photon-tx2-nx:latest-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx:latest",
-        "docker.io/balenalib/photon-tx2-nx:run-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx:run",
-        "docker.io/balenalib/photon-tx2-nx:${DATESTAMP}"
+        "docker.io/balenalib/photon-tx2-nx:bullseye"
       ]
     },
     "photon-tx2-nx-debian-bookworm-build": {
@@ -149,14 +105,30 @@
       "tags": [
         "docker.io/balenalib/photon-tx2-nx-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/photon-tx2-nx-debian:bookworm-build",
+        "docker.io/balenalib/photon-tx2-nx-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/photon-tx2-nx-debian:latest-build",
+        "docker.io/balenalib/photon-tx2-nx-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/photon-tx2-nx-debian:build",
         "docker.io/balenalib/photon-tx2-nx:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx:bookworm-build"
+        "docker.io/balenalib/photon-tx2-nx:bookworm-build",
+        "docker.io/balenalib/photon-tx2-nx:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/photon-tx2-nx:latest-build",
+        "docker.io/balenalib/photon-tx2-nx:build-${DATESTAMP}",
+        "docker.io/balenalib/photon-tx2-nx:build"
       ],
       "cache_from": [
         "docker.io/balenalib/photon-tx2-nx-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/photon-tx2-nx-debian:bookworm-build",
+        "docker.io/balenalib/photon-tx2-nx-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/photon-tx2-nx-debian:latest-build",
+        "docker.io/balenalib/photon-tx2-nx-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/photon-tx2-nx-debian:build",
         "docker.io/balenalib/photon-tx2-nx:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx:bookworm-build"
+        "docker.io/balenalib/photon-tx2-nx:bookworm-build",
+        "docker.io/balenalib/photon-tx2-nx:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/photon-tx2-nx:latest-build",
+        "docker.io/balenalib/photon-tx2-nx:build-${DATESTAMP}",
+        "docker.io/balenalib/photon-tx2-nx:build"
       ]
     },
     "photon-tx2-nx-debian-bookworm-run": {
@@ -168,20 +140,48 @@
         "docker.io/balenalib/photon-tx2-nx-debian:bookworm-run",
         "docker.io/balenalib/photon-tx2-nx-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/photon-tx2-nx-debian:bookworm",
+        "docker.io/balenalib/photon-tx2-nx-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/photon-tx2-nx-debian:latest-run",
+        "docker.io/balenalib/photon-tx2-nx-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/photon-tx2-nx-debian:latest",
+        "docker.io/balenalib/photon-tx2-nx-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/photon-tx2-nx-debian:run",
+        "docker.io/balenalib/photon-tx2-nx-debian:${DATESTAMP}",
         "docker.io/balenalib/photon-tx2-nx:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/photon-tx2-nx:bookworm-run",
         "docker.io/balenalib/photon-tx2-nx:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx:bookworm"
+        "docker.io/balenalib/photon-tx2-nx:bookworm",
+        "docker.io/balenalib/photon-tx2-nx:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/photon-tx2-nx:latest-run",
+        "docker.io/balenalib/photon-tx2-nx:latest-${DATESTAMP}",
+        "docker.io/balenalib/photon-tx2-nx:latest",
+        "docker.io/balenalib/photon-tx2-nx:run-${DATESTAMP}",
+        "docker.io/balenalib/photon-tx2-nx:run",
+        "docker.io/balenalib/photon-tx2-nx:${DATESTAMP}"
       ],
       "cache_from": [
         "docker.io/balenalib/photon-tx2-nx-debian:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/photon-tx2-nx-debian:bookworm-run",
         "docker.io/balenalib/photon-tx2-nx-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/photon-tx2-nx-debian:bookworm",
+        "docker.io/balenalib/photon-tx2-nx-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/photon-tx2-nx-debian:latest-run",
+        "docker.io/balenalib/photon-tx2-nx-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/photon-tx2-nx-debian:latest",
+        "docker.io/balenalib/photon-tx2-nx-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/photon-tx2-nx-debian:run",
+        "docker.io/balenalib/photon-tx2-nx-debian:${DATESTAMP}",
         "docker.io/balenalib/photon-tx2-nx:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/photon-tx2-nx:bookworm-run",
         "docker.io/balenalib/photon-tx2-nx:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx:bookworm"
+        "docker.io/balenalib/photon-tx2-nx:bookworm",
+        "docker.io/balenalib/photon-tx2-nx:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/photon-tx2-nx:latest-run",
+        "docker.io/balenalib/photon-tx2-nx:latest-${DATESTAMP}",
+        "docker.io/balenalib/photon-tx2-nx:latest",
+        "docker.io/balenalib/photon-tx2-nx:run-${DATESTAMP}",
+        "docker.io/balenalib/photon-tx2-nx:run",
+        "docker.io/balenalib/photon-tx2-nx:${DATESTAMP}"
       ]
     },
     "photon-tx2-nx-debian-sid-build": {

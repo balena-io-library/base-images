@@ -63,30 +63,14 @@
       "tags": [
         "docker.io/balenalib/iot-gate-imx8plus-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/iot-gate-imx8plus-debian:bullseye-build",
-        "docker.io/balenalib/iot-gate-imx8plus-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/iot-gate-imx8plus-debian:latest-build",
-        "docker.io/balenalib/iot-gate-imx8plus-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/iot-gate-imx8plus-debian:build",
         "docker.io/balenalib/iot-gate-imx8plus:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/iot-gate-imx8plus:bullseye-build",
-        "docker.io/balenalib/iot-gate-imx8plus:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/iot-gate-imx8plus:latest-build",
-        "docker.io/balenalib/iot-gate-imx8plus:build-${DATESTAMP}",
-        "docker.io/balenalib/iot-gate-imx8plus:build"
+        "docker.io/balenalib/iot-gate-imx8plus:bullseye-build"
       ],
       "cache_from": [
         "docker.io/balenalib/iot-gate-imx8plus-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/iot-gate-imx8plus-debian:bullseye-build",
-        "docker.io/balenalib/iot-gate-imx8plus-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/iot-gate-imx8plus-debian:latest-build",
-        "docker.io/balenalib/iot-gate-imx8plus-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/iot-gate-imx8plus-debian:build",
         "docker.io/balenalib/iot-gate-imx8plus:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/iot-gate-imx8plus:bullseye-build",
-        "docker.io/balenalib/iot-gate-imx8plus:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/iot-gate-imx8plus:latest-build",
-        "docker.io/balenalib/iot-gate-imx8plus:build-${DATESTAMP}",
-        "docker.io/balenalib/iot-gate-imx8plus:build"
+        "docker.io/balenalib/iot-gate-imx8plus:bullseye-build"
       ]
     },
     "iot-gate-imx8plus-debian-bullseye-run": {
@@ -98,48 +82,20 @@
         "docker.io/balenalib/iot-gate-imx8plus-debian:bullseye-run",
         "docker.io/balenalib/iot-gate-imx8plus-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/iot-gate-imx8plus-debian:bullseye",
-        "docker.io/balenalib/iot-gate-imx8plus-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/iot-gate-imx8plus-debian:latest-run",
-        "docker.io/balenalib/iot-gate-imx8plus-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/iot-gate-imx8plus-debian:latest",
-        "docker.io/balenalib/iot-gate-imx8plus-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/iot-gate-imx8plus-debian:run",
-        "docker.io/balenalib/iot-gate-imx8plus-debian:${DATESTAMP}",
         "docker.io/balenalib/iot-gate-imx8plus:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/iot-gate-imx8plus:bullseye-run",
         "docker.io/balenalib/iot-gate-imx8plus:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/iot-gate-imx8plus:bullseye",
-        "docker.io/balenalib/iot-gate-imx8plus:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/iot-gate-imx8plus:latest-run",
-        "docker.io/balenalib/iot-gate-imx8plus:latest-${DATESTAMP}",
-        "docker.io/balenalib/iot-gate-imx8plus:latest",
-        "docker.io/balenalib/iot-gate-imx8plus:run-${DATESTAMP}",
-        "docker.io/balenalib/iot-gate-imx8plus:run",
-        "docker.io/balenalib/iot-gate-imx8plus:${DATESTAMP}"
+        "docker.io/balenalib/iot-gate-imx8plus:bullseye"
       ],
       "cache_from": [
         "docker.io/balenalib/iot-gate-imx8plus-debian:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/iot-gate-imx8plus-debian:bullseye-run",
         "docker.io/balenalib/iot-gate-imx8plus-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/iot-gate-imx8plus-debian:bullseye",
-        "docker.io/balenalib/iot-gate-imx8plus-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/iot-gate-imx8plus-debian:latest-run",
-        "docker.io/balenalib/iot-gate-imx8plus-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/iot-gate-imx8plus-debian:latest",
-        "docker.io/balenalib/iot-gate-imx8plus-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/iot-gate-imx8plus-debian:run",
-        "docker.io/balenalib/iot-gate-imx8plus-debian:${DATESTAMP}",
         "docker.io/balenalib/iot-gate-imx8plus:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/iot-gate-imx8plus:bullseye-run",
         "docker.io/balenalib/iot-gate-imx8plus:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/iot-gate-imx8plus:bullseye",
-        "docker.io/balenalib/iot-gate-imx8plus:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/iot-gate-imx8plus:latest-run",
-        "docker.io/balenalib/iot-gate-imx8plus:latest-${DATESTAMP}",
-        "docker.io/balenalib/iot-gate-imx8plus:latest",
-        "docker.io/balenalib/iot-gate-imx8plus:run-${DATESTAMP}",
-        "docker.io/balenalib/iot-gate-imx8plus:run",
-        "docker.io/balenalib/iot-gate-imx8plus:${DATESTAMP}"
+        "docker.io/balenalib/iot-gate-imx8plus:bullseye"
       ]
     },
     "iot-gate-imx8plus-debian-bookworm-build": {
@@ -149,14 +105,30 @@
       "tags": [
         "docker.io/balenalib/iot-gate-imx8plus-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/iot-gate-imx8plus-debian:bookworm-build",
+        "docker.io/balenalib/iot-gate-imx8plus-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/iot-gate-imx8plus-debian:latest-build",
+        "docker.io/balenalib/iot-gate-imx8plus-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/iot-gate-imx8plus-debian:build",
         "docker.io/balenalib/iot-gate-imx8plus:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/iot-gate-imx8plus:bookworm-build"
+        "docker.io/balenalib/iot-gate-imx8plus:bookworm-build",
+        "docker.io/balenalib/iot-gate-imx8plus:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/iot-gate-imx8plus:latest-build",
+        "docker.io/balenalib/iot-gate-imx8plus:build-${DATESTAMP}",
+        "docker.io/balenalib/iot-gate-imx8plus:build"
       ],
       "cache_from": [
         "docker.io/balenalib/iot-gate-imx8plus-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/iot-gate-imx8plus-debian:bookworm-build",
+        "docker.io/balenalib/iot-gate-imx8plus-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/iot-gate-imx8plus-debian:latest-build",
+        "docker.io/balenalib/iot-gate-imx8plus-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/iot-gate-imx8plus-debian:build",
         "docker.io/balenalib/iot-gate-imx8plus:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/iot-gate-imx8plus:bookworm-build"
+        "docker.io/balenalib/iot-gate-imx8plus:bookworm-build",
+        "docker.io/balenalib/iot-gate-imx8plus:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/iot-gate-imx8plus:latest-build",
+        "docker.io/balenalib/iot-gate-imx8plus:build-${DATESTAMP}",
+        "docker.io/balenalib/iot-gate-imx8plus:build"
       ]
     },
     "iot-gate-imx8plus-debian-bookworm-run": {
@@ -168,20 +140,48 @@
         "docker.io/balenalib/iot-gate-imx8plus-debian:bookworm-run",
         "docker.io/balenalib/iot-gate-imx8plus-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/iot-gate-imx8plus-debian:bookworm",
+        "docker.io/balenalib/iot-gate-imx8plus-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/iot-gate-imx8plus-debian:latest-run",
+        "docker.io/balenalib/iot-gate-imx8plus-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/iot-gate-imx8plus-debian:latest",
+        "docker.io/balenalib/iot-gate-imx8plus-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/iot-gate-imx8plus-debian:run",
+        "docker.io/balenalib/iot-gate-imx8plus-debian:${DATESTAMP}",
         "docker.io/balenalib/iot-gate-imx8plus:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/iot-gate-imx8plus:bookworm-run",
         "docker.io/balenalib/iot-gate-imx8plus:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/iot-gate-imx8plus:bookworm"
+        "docker.io/balenalib/iot-gate-imx8plus:bookworm",
+        "docker.io/balenalib/iot-gate-imx8plus:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/iot-gate-imx8plus:latest-run",
+        "docker.io/balenalib/iot-gate-imx8plus:latest-${DATESTAMP}",
+        "docker.io/balenalib/iot-gate-imx8plus:latest",
+        "docker.io/balenalib/iot-gate-imx8plus:run-${DATESTAMP}",
+        "docker.io/balenalib/iot-gate-imx8plus:run",
+        "docker.io/balenalib/iot-gate-imx8plus:${DATESTAMP}"
       ],
       "cache_from": [
         "docker.io/balenalib/iot-gate-imx8plus-debian:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/iot-gate-imx8plus-debian:bookworm-run",
         "docker.io/balenalib/iot-gate-imx8plus-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/iot-gate-imx8plus-debian:bookworm",
+        "docker.io/balenalib/iot-gate-imx8plus-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/iot-gate-imx8plus-debian:latest-run",
+        "docker.io/balenalib/iot-gate-imx8plus-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/iot-gate-imx8plus-debian:latest",
+        "docker.io/balenalib/iot-gate-imx8plus-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/iot-gate-imx8plus-debian:run",
+        "docker.io/balenalib/iot-gate-imx8plus-debian:${DATESTAMP}",
         "docker.io/balenalib/iot-gate-imx8plus:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/iot-gate-imx8plus:bookworm-run",
         "docker.io/balenalib/iot-gate-imx8plus:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/iot-gate-imx8plus:bookworm"
+        "docker.io/balenalib/iot-gate-imx8plus:bookworm",
+        "docker.io/balenalib/iot-gate-imx8plus:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/iot-gate-imx8plus:latest-run",
+        "docker.io/balenalib/iot-gate-imx8plus:latest-${DATESTAMP}",
+        "docker.io/balenalib/iot-gate-imx8plus:latest",
+        "docker.io/balenalib/iot-gate-imx8plus:run-${DATESTAMP}",
+        "docker.io/balenalib/iot-gate-imx8plus:run",
+        "docker.io/balenalib/iot-gate-imx8plus:${DATESTAMP}"
       ]
     },
     "iot-gate-imx8plus-debian-sid-build": {

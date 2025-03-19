@@ -63,30 +63,14 @@
       "tags": [
         "docker.io/balenalib/imx8mm-lpddr4-evk-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/imx8mm-lpddr4-evk-debian:bullseye-build",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:latest-build",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:build",
         "docker.io/balenalib/imx8mm-lpddr4-evk:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk:bullseye-build",
-        "docker.io/balenalib/imx8mm-lpddr4-evk:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk:latest-build",
-        "docker.io/balenalib/imx8mm-lpddr4-evk:build-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk:build"
+        "docker.io/balenalib/imx8mm-lpddr4-evk:bullseye-build"
       ],
       "cache_from": [
         "docker.io/balenalib/imx8mm-lpddr4-evk-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/imx8mm-lpddr4-evk-debian:bullseye-build",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:latest-build",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:build",
         "docker.io/balenalib/imx8mm-lpddr4-evk:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk:bullseye-build",
-        "docker.io/balenalib/imx8mm-lpddr4-evk:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk:latest-build",
-        "docker.io/balenalib/imx8mm-lpddr4-evk:build-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk:build"
+        "docker.io/balenalib/imx8mm-lpddr4-evk:bullseye-build"
       ]
     },
     "imx8mm-lpddr4-evk-debian-bullseye-run": {
@@ -98,48 +82,20 @@
         "docker.io/balenalib/imx8mm-lpddr4-evk-debian:bullseye-run",
         "docker.io/balenalib/imx8mm-lpddr4-evk-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/imx8mm-lpddr4-evk-debian:bullseye",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:latest-run",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:latest",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:run",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:${DATESTAMP}",
         "docker.io/balenalib/imx8mm-lpddr4-evk:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/imx8mm-lpddr4-evk:bullseye-run",
         "docker.io/balenalib/imx8mm-lpddr4-evk:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk:bullseye",
-        "docker.io/balenalib/imx8mm-lpddr4-evk:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk:latest-run",
-        "docker.io/balenalib/imx8mm-lpddr4-evk:latest-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk:latest",
-        "docker.io/balenalib/imx8mm-lpddr4-evk:run-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk:run",
-        "docker.io/balenalib/imx8mm-lpddr4-evk:${DATESTAMP}"
+        "docker.io/balenalib/imx8mm-lpddr4-evk:bullseye"
       ],
       "cache_from": [
         "docker.io/balenalib/imx8mm-lpddr4-evk-debian:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/imx8mm-lpddr4-evk-debian:bullseye-run",
         "docker.io/balenalib/imx8mm-lpddr4-evk-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/imx8mm-lpddr4-evk-debian:bullseye",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:latest-run",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:latest",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:run",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:${DATESTAMP}",
         "docker.io/balenalib/imx8mm-lpddr4-evk:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/imx8mm-lpddr4-evk:bullseye-run",
         "docker.io/balenalib/imx8mm-lpddr4-evk:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk:bullseye",
-        "docker.io/balenalib/imx8mm-lpddr4-evk:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk:latest-run",
-        "docker.io/balenalib/imx8mm-lpddr4-evk:latest-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk:latest",
-        "docker.io/balenalib/imx8mm-lpddr4-evk:run-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk:run",
-        "docker.io/balenalib/imx8mm-lpddr4-evk:${DATESTAMP}"
+        "docker.io/balenalib/imx8mm-lpddr4-evk:bullseye"
       ]
     },
     "imx8mm-lpddr4-evk-debian-bookworm-build": {
@@ -149,14 +105,30 @@
       "tags": [
         "docker.io/balenalib/imx8mm-lpddr4-evk-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/imx8mm-lpddr4-evk-debian:bookworm-build",
+        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:latest-build",
+        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:build",
         "docker.io/balenalib/imx8mm-lpddr4-evk:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk:bookworm-build"
+        "docker.io/balenalib/imx8mm-lpddr4-evk:bookworm-build",
+        "docker.io/balenalib/imx8mm-lpddr4-evk:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-lpddr4-evk:latest-build",
+        "docker.io/balenalib/imx8mm-lpddr4-evk:build-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-lpddr4-evk:build"
       ],
       "cache_from": [
         "docker.io/balenalib/imx8mm-lpddr4-evk-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/imx8mm-lpddr4-evk-debian:bookworm-build",
+        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:latest-build",
+        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:build",
         "docker.io/balenalib/imx8mm-lpddr4-evk:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk:bookworm-build"
+        "docker.io/balenalib/imx8mm-lpddr4-evk:bookworm-build",
+        "docker.io/balenalib/imx8mm-lpddr4-evk:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-lpddr4-evk:latest-build",
+        "docker.io/balenalib/imx8mm-lpddr4-evk:build-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-lpddr4-evk:build"
       ]
     },
     "imx8mm-lpddr4-evk-debian-bookworm-run": {
@@ -168,20 +140,48 @@
         "docker.io/balenalib/imx8mm-lpddr4-evk-debian:bookworm-run",
         "docker.io/balenalib/imx8mm-lpddr4-evk-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/imx8mm-lpddr4-evk-debian:bookworm",
+        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:latest-run",
+        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:latest",
+        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:run",
+        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:${DATESTAMP}",
         "docker.io/balenalib/imx8mm-lpddr4-evk:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/imx8mm-lpddr4-evk:bookworm-run",
         "docker.io/balenalib/imx8mm-lpddr4-evk:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk:bookworm"
+        "docker.io/balenalib/imx8mm-lpddr4-evk:bookworm",
+        "docker.io/balenalib/imx8mm-lpddr4-evk:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-lpddr4-evk:latest-run",
+        "docker.io/balenalib/imx8mm-lpddr4-evk:latest-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-lpddr4-evk:latest",
+        "docker.io/balenalib/imx8mm-lpddr4-evk:run-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-lpddr4-evk:run",
+        "docker.io/balenalib/imx8mm-lpddr4-evk:${DATESTAMP}"
       ],
       "cache_from": [
         "docker.io/balenalib/imx8mm-lpddr4-evk-debian:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/imx8mm-lpddr4-evk-debian:bookworm-run",
         "docker.io/balenalib/imx8mm-lpddr4-evk-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/imx8mm-lpddr4-evk-debian:bookworm",
+        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:latest-run",
+        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:latest",
+        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:run",
+        "docker.io/balenalib/imx8mm-lpddr4-evk-debian:${DATESTAMP}",
         "docker.io/balenalib/imx8mm-lpddr4-evk:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/imx8mm-lpddr4-evk:bookworm-run",
         "docker.io/balenalib/imx8mm-lpddr4-evk:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk:bookworm"
+        "docker.io/balenalib/imx8mm-lpddr4-evk:bookworm",
+        "docker.io/balenalib/imx8mm-lpddr4-evk:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-lpddr4-evk:latest-run",
+        "docker.io/balenalib/imx8mm-lpddr4-evk:latest-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-lpddr4-evk:latest",
+        "docker.io/balenalib/imx8mm-lpddr4-evk:run-${DATESTAMP}",
+        "docker.io/balenalib/imx8mm-lpddr4-evk:run",
+        "docker.io/balenalib/imx8mm-lpddr4-evk:${DATESTAMP}"
       ]
     },
     "imx8mm-lpddr4-evk-debian-sid-build": {

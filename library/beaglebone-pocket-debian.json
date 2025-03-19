@@ -63,30 +63,14 @@
       "tags": [
         "docker.io/balenalib/beaglebone-pocket-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-pocket-debian:bullseye-build",
-        "docker.io/balenalib/beaglebone-pocket-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket-debian:latest-build",
-        "docker.io/balenalib/beaglebone-pocket-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket-debian:build",
         "docker.io/balenalib/beaglebone-pocket:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket:bullseye-build",
-        "docker.io/balenalib/beaglebone-pocket:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket:latest-build",
-        "docker.io/balenalib/beaglebone-pocket:build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket:build"
+        "docker.io/balenalib/beaglebone-pocket:bullseye-build"
       ],
       "cache_from": [
         "docker.io/balenalib/beaglebone-pocket-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-pocket-debian:bullseye-build",
-        "docker.io/balenalib/beaglebone-pocket-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket-debian:latest-build",
-        "docker.io/balenalib/beaglebone-pocket-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket-debian:build",
         "docker.io/balenalib/beaglebone-pocket:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket:bullseye-build",
-        "docker.io/balenalib/beaglebone-pocket:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket:latest-build",
-        "docker.io/balenalib/beaglebone-pocket:build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket:build"
+        "docker.io/balenalib/beaglebone-pocket:bullseye-build"
       ]
     },
     "beaglebone-pocket-debian-bullseye-run": {
@@ -98,48 +82,20 @@
         "docker.io/balenalib/beaglebone-pocket-debian:bullseye-run",
         "docker.io/balenalib/beaglebone-pocket-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-pocket-debian:bullseye",
-        "docker.io/balenalib/beaglebone-pocket-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket-debian:latest-run",
-        "docker.io/balenalib/beaglebone-pocket-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket-debian:latest",
-        "docker.io/balenalib/beaglebone-pocket-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket-debian:run",
-        "docker.io/balenalib/beaglebone-pocket-debian:${DATESTAMP}",
         "docker.io/balenalib/beaglebone-pocket:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-pocket:bullseye-run",
         "docker.io/balenalib/beaglebone-pocket:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket:bullseye",
-        "docker.io/balenalib/beaglebone-pocket:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket:latest-run",
-        "docker.io/balenalib/beaglebone-pocket:latest-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket:latest",
-        "docker.io/balenalib/beaglebone-pocket:run-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket:run",
-        "docker.io/balenalib/beaglebone-pocket:${DATESTAMP}"
+        "docker.io/balenalib/beaglebone-pocket:bullseye"
       ],
       "cache_from": [
         "docker.io/balenalib/beaglebone-pocket-debian:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-pocket-debian:bullseye-run",
         "docker.io/balenalib/beaglebone-pocket-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-pocket-debian:bullseye",
-        "docker.io/balenalib/beaglebone-pocket-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket-debian:latest-run",
-        "docker.io/balenalib/beaglebone-pocket-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket-debian:latest",
-        "docker.io/balenalib/beaglebone-pocket-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket-debian:run",
-        "docker.io/balenalib/beaglebone-pocket-debian:${DATESTAMP}",
         "docker.io/balenalib/beaglebone-pocket:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-pocket:bullseye-run",
         "docker.io/balenalib/beaglebone-pocket:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket:bullseye",
-        "docker.io/balenalib/beaglebone-pocket:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket:latest-run",
-        "docker.io/balenalib/beaglebone-pocket:latest-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket:latest",
-        "docker.io/balenalib/beaglebone-pocket:run-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket:run",
-        "docker.io/balenalib/beaglebone-pocket:${DATESTAMP}"
+        "docker.io/balenalib/beaglebone-pocket:bullseye"
       ]
     },
     "beaglebone-pocket-debian-bookworm-build": {
@@ -149,14 +105,30 @@
       "tags": [
         "docker.io/balenalib/beaglebone-pocket-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-pocket-debian:bookworm-build",
+        "docker.io/balenalib/beaglebone-pocket-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-pocket-debian:latest-build",
+        "docker.io/balenalib/beaglebone-pocket-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-pocket-debian:build",
         "docker.io/balenalib/beaglebone-pocket:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket:bookworm-build"
+        "docker.io/balenalib/beaglebone-pocket:bookworm-build",
+        "docker.io/balenalib/beaglebone-pocket:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-pocket:latest-build",
+        "docker.io/balenalib/beaglebone-pocket:build-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-pocket:build"
       ],
       "cache_from": [
         "docker.io/balenalib/beaglebone-pocket-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-pocket-debian:bookworm-build",
+        "docker.io/balenalib/beaglebone-pocket-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-pocket-debian:latest-build",
+        "docker.io/balenalib/beaglebone-pocket-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-pocket-debian:build",
         "docker.io/balenalib/beaglebone-pocket:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket:bookworm-build"
+        "docker.io/balenalib/beaglebone-pocket:bookworm-build",
+        "docker.io/balenalib/beaglebone-pocket:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-pocket:latest-build",
+        "docker.io/balenalib/beaglebone-pocket:build-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-pocket:build"
       ]
     },
     "beaglebone-pocket-debian-bookworm-run": {
@@ -168,20 +140,48 @@
         "docker.io/balenalib/beaglebone-pocket-debian:bookworm-run",
         "docker.io/balenalib/beaglebone-pocket-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-pocket-debian:bookworm",
+        "docker.io/balenalib/beaglebone-pocket-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-pocket-debian:latest-run",
+        "docker.io/balenalib/beaglebone-pocket-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-pocket-debian:latest",
+        "docker.io/balenalib/beaglebone-pocket-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-pocket-debian:run",
+        "docker.io/balenalib/beaglebone-pocket-debian:${DATESTAMP}",
         "docker.io/balenalib/beaglebone-pocket:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-pocket:bookworm-run",
         "docker.io/balenalib/beaglebone-pocket:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket:bookworm"
+        "docker.io/balenalib/beaglebone-pocket:bookworm",
+        "docker.io/balenalib/beaglebone-pocket:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-pocket:latest-run",
+        "docker.io/balenalib/beaglebone-pocket:latest-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-pocket:latest",
+        "docker.io/balenalib/beaglebone-pocket:run-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-pocket:run",
+        "docker.io/balenalib/beaglebone-pocket:${DATESTAMP}"
       ],
       "cache_from": [
         "docker.io/balenalib/beaglebone-pocket-debian:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-pocket-debian:bookworm-run",
         "docker.io/balenalib/beaglebone-pocket-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-pocket-debian:bookworm",
+        "docker.io/balenalib/beaglebone-pocket-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-pocket-debian:latest-run",
+        "docker.io/balenalib/beaglebone-pocket-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-pocket-debian:latest",
+        "docker.io/balenalib/beaglebone-pocket-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-pocket-debian:run",
+        "docker.io/balenalib/beaglebone-pocket-debian:${DATESTAMP}",
         "docker.io/balenalib/beaglebone-pocket:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-pocket:bookworm-run",
         "docker.io/balenalib/beaglebone-pocket:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket:bookworm"
+        "docker.io/balenalib/beaglebone-pocket:bookworm",
+        "docker.io/balenalib/beaglebone-pocket:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-pocket:latest-run",
+        "docker.io/balenalib/beaglebone-pocket:latest-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-pocket:latest",
+        "docker.io/balenalib/beaglebone-pocket:run-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-pocket:run",
+        "docker.io/balenalib/beaglebone-pocket:${DATESTAMP}"
       ]
     },
     "beaglebone-pocket-debian-sid-build": {

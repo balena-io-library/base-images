@@ -63,30 +63,14 @@
       "tags": [
         "docker.io/balenalib/jn30b-nano-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/jn30b-nano-debian:bullseye-build",
-        "docker.io/balenalib/jn30b-nano-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano-debian:latest-build",
-        "docker.io/balenalib/jn30b-nano-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano-debian:build",
         "docker.io/balenalib/jn30b-nano:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano:bullseye-build",
-        "docker.io/balenalib/jn30b-nano:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano:latest-build",
-        "docker.io/balenalib/jn30b-nano:build-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano:build"
+        "docker.io/balenalib/jn30b-nano:bullseye-build"
       ],
       "cache_from": [
         "docker.io/balenalib/jn30b-nano-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/jn30b-nano-debian:bullseye-build",
-        "docker.io/balenalib/jn30b-nano-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano-debian:latest-build",
-        "docker.io/balenalib/jn30b-nano-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano-debian:build",
         "docker.io/balenalib/jn30b-nano:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano:bullseye-build",
-        "docker.io/balenalib/jn30b-nano:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano:latest-build",
-        "docker.io/balenalib/jn30b-nano:build-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano:build"
+        "docker.io/balenalib/jn30b-nano:bullseye-build"
       ]
     },
     "jn30b-nano-debian-bullseye-run": {
@@ -98,48 +82,20 @@
         "docker.io/balenalib/jn30b-nano-debian:bullseye-run",
         "docker.io/balenalib/jn30b-nano-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/jn30b-nano-debian:bullseye",
-        "docker.io/balenalib/jn30b-nano-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano-debian:latest-run",
-        "docker.io/balenalib/jn30b-nano-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano-debian:latest",
-        "docker.io/balenalib/jn30b-nano-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano-debian:run",
-        "docker.io/balenalib/jn30b-nano-debian:${DATESTAMP}",
         "docker.io/balenalib/jn30b-nano:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/jn30b-nano:bullseye-run",
         "docker.io/balenalib/jn30b-nano:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano:bullseye",
-        "docker.io/balenalib/jn30b-nano:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano:latest-run",
-        "docker.io/balenalib/jn30b-nano:latest-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano:latest",
-        "docker.io/balenalib/jn30b-nano:run-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano:run",
-        "docker.io/balenalib/jn30b-nano:${DATESTAMP}"
+        "docker.io/balenalib/jn30b-nano:bullseye"
       ],
       "cache_from": [
         "docker.io/balenalib/jn30b-nano-debian:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/jn30b-nano-debian:bullseye-run",
         "docker.io/balenalib/jn30b-nano-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/jn30b-nano-debian:bullseye",
-        "docker.io/balenalib/jn30b-nano-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano-debian:latest-run",
-        "docker.io/balenalib/jn30b-nano-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano-debian:latest",
-        "docker.io/balenalib/jn30b-nano-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano-debian:run",
-        "docker.io/balenalib/jn30b-nano-debian:${DATESTAMP}",
         "docker.io/balenalib/jn30b-nano:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/jn30b-nano:bullseye-run",
         "docker.io/balenalib/jn30b-nano:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano:bullseye",
-        "docker.io/balenalib/jn30b-nano:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano:latest-run",
-        "docker.io/balenalib/jn30b-nano:latest-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano:latest",
-        "docker.io/balenalib/jn30b-nano:run-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano:run",
-        "docker.io/balenalib/jn30b-nano:${DATESTAMP}"
+        "docker.io/balenalib/jn30b-nano:bullseye"
       ]
     },
     "jn30b-nano-debian-bookworm-build": {
@@ -149,14 +105,30 @@
       "tags": [
         "docker.io/balenalib/jn30b-nano-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/jn30b-nano-debian:bookworm-build",
+        "docker.io/balenalib/jn30b-nano-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/jn30b-nano-debian:latest-build",
+        "docker.io/balenalib/jn30b-nano-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/jn30b-nano-debian:build",
         "docker.io/balenalib/jn30b-nano:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano:bookworm-build"
+        "docker.io/balenalib/jn30b-nano:bookworm-build",
+        "docker.io/balenalib/jn30b-nano:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/jn30b-nano:latest-build",
+        "docker.io/balenalib/jn30b-nano:build-${DATESTAMP}",
+        "docker.io/balenalib/jn30b-nano:build"
       ],
       "cache_from": [
         "docker.io/balenalib/jn30b-nano-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/jn30b-nano-debian:bookworm-build",
+        "docker.io/balenalib/jn30b-nano-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/jn30b-nano-debian:latest-build",
+        "docker.io/balenalib/jn30b-nano-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/jn30b-nano-debian:build",
         "docker.io/balenalib/jn30b-nano:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano:bookworm-build"
+        "docker.io/balenalib/jn30b-nano:bookworm-build",
+        "docker.io/balenalib/jn30b-nano:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/jn30b-nano:latest-build",
+        "docker.io/balenalib/jn30b-nano:build-${DATESTAMP}",
+        "docker.io/balenalib/jn30b-nano:build"
       ]
     },
     "jn30b-nano-debian-bookworm-run": {
@@ -168,20 +140,48 @@
         "docker.io/balenalib/jn30b-nano-debian:bookworm-run",
         "docker.io/balenalib/jn30b-nano-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/jn30b-nano-debian:bookworm",
+        "docker.io/balenalib/jn30b-nano-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/jn30b-nano-debian:latest-run",
+        "docker.io/balenalib/jn30b-nano-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/jn30b-nano-debian:latest",
+        "docker.io/balenalib/jn30b-nano-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/jn30b-nano-debian:run",
+        "docker.io/balenalib/jn30b-nano-debian:${DATESTAMP}",
         "docker.io/balenalib/jn30b-nano:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/jn30b-nano:bookworm-run",
         "docker.io/balenalib/jn30b-nano:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano:bookworm"
+        "docker.io/balenalib/jn30b-nano:bookworm",
+        "docker.io/balenalib/jn30b-nano:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/jn30b-nano:latest-run",
+        "docker.io/balenalib/jn30b-nano:latest-${DATESTAMP}",
+        "docker.io/balenalib/jn30b-nano:latest",
+        "docker.io/balenalib/jn30b-nano:run-${DATESTAMP}",
+        "docker.io/balenalib/jn30b-nano:run",
+        "docker.io/balenalib/jn30b-nano:${DATESTAMP}"
       ],
       "cache_from": [
         "docker.io/balenalib/jn30b-nano-debian:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/jn30b-nano-debian:bookworm-run",
         "docker.io/balenalib/jn30b-nano-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/jn30b-nano-debian:bookworm",
+        "docker.io/balenalib/jn30b-nano-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/jn30b-nano-debian:latest-run",
+        "docker.io/balenalib/jn30b-nano-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/jn30b-nano-debian:latest",
+        "docker.io/balenalib/jn30b-nano-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/jn30b-nano-debian:run",
+        "docker.io/balenalib/jn30b-nano-debian:${DATESTAMP}",
         "docker.io/balenalib/jn30b-nano:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/jn30b-nano:bookworm-run",
         "docker.io/balenalib/jn30b-nano:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano:bookworm"
+        "docker.io/balenalib/jn30b-nano:bookworm",
+        "docker.io/balenalib/jn30b-nano:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/jn30b-nano:latest-run",
+        "docker.io/balenalib/jn30b-nano:latest-${DATESTAMP}",
+        "docker.io/balenalib/jn30b-nano:latest",
+        "docker.io/balenalib/jn30b-nano:run-${DATESTAMP}",
+        "docker.io/balenalib/jn30b-nano:run",
+        "docker.io/balenalib/jn30b-nano:${DATESTAMP}"
       ]
     },
     "jn30b-nano-debian-sid-build": {

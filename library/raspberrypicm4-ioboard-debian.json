@@ -63,30 +63,14 @@
       "tags": [
         "docker.io/balenalib/raspberrypicm4-ioboard-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard-debian:bullseye-build",
-        "docker.io/balenalib/raspberrypicm4-ioboard-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-debian:latest-build",
-        "docker.io/balenalib/raspberrypicm4-ioboard-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-debian:build",
         "docker.io/balenalib/raspberrypicm4-ioboard:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard:bullseye-build",
-        "docker.io/balenalib/raspberrypicm4-ioboard:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard:latest-build",
-        "docker.io/balenalib/raspberrypicm4-ioboard:build-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard:build"
+        "docker.io/balenalib/raspberrypicm4-ioboard:bullseye-build"
       ],
       "cache_from": [
         "docker.io/balenalib/raspberrypicm4-ioboard-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard-debian:bullseye-build",
-        "docker.io/balenalib/raspberrypicm4-ioboard-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-debian:latest-build",
-        "docker.io/balenalib/raspberrypicm4-ioboard-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-debian:build",
         "docker.io/balenalib/raspberrypicm4-ioboard:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard:bullseye-build",
-        "docker.io/balenalib/raspberrypicm4-ioboard:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard:latest-build",
-        "docker.io/balenalib/raspberrypicm4-ioboard:build-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard:build"
+        "docker.io/balenalib/raspberrypicm4-ioboard:bullseye-build"
       ]
     },
     "raspberrypicm4-ioboard-debian-bullseye-run": {
@@ -98,48 +82,20 @@
         "docker.io/balenalib/raspberrypicm4-ioboard-debian:bullseye-run",
         "docker.io/balenalib/raspberrypicm4-ioboard-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard-debian:bullseye",
-        "docker.io/balenalib/raspberrypicm4-ioboard-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-debian:latest-run",
-        "docker.io/balenalib/raspberrypicm4-ioboard-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-debian:latest",
-        "docker.io/balenalib/raspberrypicm4-ioboard-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-debian:run",
-        "docker.io/balenalib/raspberrypicm4-ioboard-debian:${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard:bullseye-run",
         "docker.io/balenalib/raspberrypicm4-ioboard:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard:bullseye",
-        "docker.io/balenalib/raspberrypicm4-ioboard:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard:latest-run",
-        "docker.io/balenalib/raspberrypicm4-ioboard:latest-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard:latest",
-        "docker.io/balenalib/raspberrypicm4-ioboard:run-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard:run",
-        "docker.io/balenalib/raspberrypicm4-ioboard:${DATESTAMP}"
+        "docker.io/balenalib/raspberrypicm4-ioboard:bullseye"
       ],
       "cache_from": [
         "docker.io/balenalib/raspberrypicm4-ioboard-debian:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard-debian:bullseye-run",
         "docker.io/balenalib/raspberrypicm4-ioboard-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard-debian:bullseye",
-        "docker.io/balenalib/raspberrypicm4-ioboard-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-debian:latest-run",
-        "docker.io/balenalib/raspberrypicm4-ioboard-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-debian:latest",
-        "docker.io/balenalib/raspberrypicm4-ioboard-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-debian:run",
-        "docker.io/balenalib/raspberrypicm4-ioboard-debian:${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard:bullseye-run",
         "docker.io/balenalib/raspberrypicm4-ioboard:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard:bullseye",
-        "docker.io/balenalib/raspberrypicm4-ioboard:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard:latest-run",
-        "docker.io/balenalib/raspberrypicm4-ioboard:latest-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard:latest",
-        "docker.io/balenalib/raspberrypicm4-ioboard:run-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard:run",
-        "docker.io/balenalib/raspberrypicm4-ioboard:${DATESTAMP}"
+        "docker.io/balenalib/raspberrypicm4-ioboard:bullseye"
       ]
     },
     "raspberrypicm4-ioboard-debian-bookworm-build": {
@@ -149,14 +105,30 @@
       "tags": [
         "docker.io/balenalib/raspberrypicm4-ioboard-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard-debian:bookworm-build",
+        "docker.io/balenalib/raspberrypicm4-ioboard-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard-debian:latest-build",
+        "docker.io/balenalib/raspberrypicm4-ioboard-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard-debian:build",
         "docker.io/balenalib/raspberrypicm4-ioboard:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard:bookworm-build"
+        "docker.io/balenalib/raspberrypicm4-ioboard:bookworm-build",
+        "docker.io/balenalib/raspberrypicm4-ioboard:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard:latest-build",
+        "docker.io/balenalib/raspberrypicm4-ioboard:build-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard:build"
       ],
       "cache_from": [
         "docker.io/balenalib/raspberrypicm4-ioboard-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard-debian:bookworm-build",
+        "docker.io/balenalib/raspberrypicm4-ioboard-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard-debian:latest-build",
+        "docker.io/balenalib/raspberrypicm4-ioboard-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard-debian:build",
         "docker.io/balenalib/raspberrypicm4-ioboard:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard:bookworm-build"
+        "docker.io/balenalib/raspberrypicm4-ioboard:bookworm-build",
+        "docker.io/balenalib/raspberrypicm4-ioboard:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard:latest-build",
+        "docker.io/balenalib/raspberrypicm4-ioboard:build-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard:build"
       ]
     },
     "raspberrypicm4-ioboard-debian-bookworm-run": {
@@ -168,20 +140,48 @@
         "docker.io/balenalib/raspberrypicm4-ioboard-debian:bookworm-run",
         "docker.io/balenalib/raspberrypicm4-ioboard-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard-debian:bookworm",
+        "docker.io/balenalib/raspberrypicm4-ioboard-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard-debian:latest-run",
+        "docker.io/balenalib/raspberrypicm4-ioboard-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard-debian:latest",
+        "docker.io/balenalib/raspberrypicm4-ioboard-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard-debian:run",
+        "docker.io/balenalib/raspberrypicm4-ioboard-debian:${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard:bookworm-run",
         "docker.io/balenalib/raspberrypicm4-ioboard:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard:bookworm"
+        "docker.io/balenalib/raspberrypicm4-ioboard:bookworm",
+        "docker.io/balenalib/raspberrypicm4-ioboard:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard:latest-run",
+        "docker.io/balenalib/raspberrypicm4-ioboard:latest-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard:latest",
+        "docker.io/balenalib/raspberrypicm4-ioboard:run-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard:run",
+        "docker.io/balenalib/raspberrypicm4-ioboard:${DATESTAMP}"
       ],
       "cache_from": [
         "docker.io/balenalib/raspberrypicm4-ioboard-debian:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard-debian:bookworm-run",
         "docker.io/balenalib/raspberrypicm4-ioboard-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard-debian:bookworm",
+        "docker.io/balenalib/raspberrypicm4-ioboard-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard-debian:latest-run",
+        "docker.io/balenalib/raspberrypicm4-ioboard-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard-debian:latest",
+        "docker.io/balenalib/raspberrypicm4-ioboard-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard-debian:run",
+        "docker.io/balenalib/raspberrypicm4-ioboard-debian:${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard:bookworm-run",
         "docker.io/balenalib/raspberrypicm4-ioboard:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard:bookworm"
+        "docker.io/balenalib/raspberrypicm4-ioboard:bookworm",
+        "docker.io/balenalib/raspberrypicm4-ioboard:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard:latest-run",
+        "docker.io/balenalib/raspberrypicm4-ioboard:latest-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard:latest",
+        "docker.io/balenalib/raspberrypicm4-ioboard:run-${DATESTAMP}",
+        "docker.io/balenalib/raspberrypicm4-ioboard:run",
+        "docker.io/balenalib/raspberrypicm4-ioboard:${DATESTAMP}"
       ]
     },
     "raspberrypicm4-ioboard-debian-sid-build": {

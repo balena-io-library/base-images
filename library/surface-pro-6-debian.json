@@ -63,30 +63,14 @@
       "tags": [
         "docker.io/balenalib/surface-pro-6-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/surface-pro-6-debian:bullseye-build",
-        "docker.io/balenalib/surface-pro-6-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-pro-6-debian:latest-build",
-        "docker.io/balenalib/surface-pro-6-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/surface-pro-6-debian:build",
         "docker.io/balenalib/surface-pro-6:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-pro-6:bullseye-build",
-        "docker.io/balenalib/surface-pro-6:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-pro-6:latest-build",
-        "docker.io/balenalib/surface-pro-6:build-${DATESTAMP}",
-        "docker.io/balenalib/surface-pro-6:build"
+        "docker.io/balenalib/surface-pro-6:bullseye-build"
       ],
       "cache_from": [
         "docker.io/balenalib/surface-pro-6-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/surface-pro-6-debian:bullseye-build",
-        "docker.io/balenalib/surface-pro-6-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-pro-6-debian:latest-build",
-        "docker.io/balenalib/surface-pro-6-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/surface-pro-6-debian:build",
         "docker.io/balenalib/surface-pro-6:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-pro-6:bullseye-build",
-        "docker.io/balenalib/surface-pro-6:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-pro-6:latest-build",
-        "docker.io/balenalib/surface-pro-6:build-${DATESTAMP}",
-        "docker.io/balenalib/surface-pro-6:build"
+        "docker.io/balenalib/surface-pro-6:bullseye-build"
       ]
     },
     "surface-pro-6-debian-bullseye-run": {
@@ -98,48 +82,20 @@
         "docker.io/balenalib/surface-pro-6-debian:bullseye-run",
         "docker.io/balenalib/surface-pro-6-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/surface-pro-6-debian:bullseye",
-        "docker.io/balenalib/surface-pro-6-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-pro-6-debian:latest-run",
-        "docker.io/balenalib/surface-pro-6-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/surface-pro-6-debian:latest",
-        "docker.io/balenalib/surface-pro-6-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/surface-pro-6-debian:run",
-        "docker.io/balenalib/surface-pro-6-debian:${DATESTAMP}",
         "docker.io/balenalib/surface-pro-6:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/surface-pro-6:bullseye-run",
         "docker.io/balenalib/surface-pro-6:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/surface-pro-6:bullseye",
-        "docker.io/balenalib/surface-pro-6:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-pro-6:latest-run",
-        "docker.io/balenalib/surface-pro-6:latest-${DATESTAMP}",
-        "docker.io/balenalib/surface-pro-6:latest",
-        "docker.io/balenalib/surface-pro-6:run-${DATESTAMP}",
-        "docker.io/balenalib/surface-pro-6:run",
-        "docker.io/balenalib/surface-pro-6:${DATESTAMP}"
+        "docker.io/balenalib/surface-pro-6:bullseye"
       ],
       "cache_from": [
         "docker.io/balenalib/surface-pro-6-debian:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/surface-pro-6-debian:bullseye-run",
         "docker.io/balenalib/surface-pro-6-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/surface-pro-6-debian:bullseye",
-        "docker.io/balenalib/surface-pro-6-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-pro-6-debian:latest-run",
-        "docker.io/balenalib/surface-pro-6-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/surface-pro-6-debian:latest",
-        "docker.io/balenalib/surface-pro-6-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/surface-pro-6-debian:run",
-        "docker.io/balenalib/surface-pro-6-debian:${DATESTAMP}",
         "docker.io/balenalib/surface-pro-6:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/surface-pro-6:bullseye-run",
         "docker.io/balenalib/surface-pro-6:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/surface-pro-6:bullseye",
-        "docker.io/balenalib/surface-pro-6:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/surface-pro-6:latest-run",
-        "docker.io/balenalib/surface-pro-6:latest-${DATESTAMP}",
-        "docker.io/balenalib/surface-pro-6:latest",
-        "docker.io/balenalib/surface-pro-6:run-${DATESTAMP}",
-        "docker.io/balenalib/surface-pro-6:run",
-        "docker.io/balenalib/surface-pro-6:${DATESTAMP}"
+        "docker.io/balenalib/surface-pro-6:bullseye"
       ]
     },
     "surface-pro-6-debian-bookworm-build": {
@@ -149,14 +105,30 @@
       "tags": [
         "docker.io/balenalib/surface-pro-6-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/surface-pro-6-debian:bookworm-build",
+        "docker.io/balenalib/surface-pro-6-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-pro-6-debian:latest-build",
+        "docker.io/balenalib/surface-pro-6-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/surface-pro-6-debian:build",
         "docker.io/balenalib/surface-pro-6:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-pro-6:bookworm-build"
+        "docker.io/balenalib/surface-pro-6:bookworm-build",
+        "docker.io/balenalib/surface-pro-6:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-pro-6:latest-build",
+        "docker.io/balenalib/surface-pro-6:build-${DATESTAMP}",
+        "docker.io/balenalib/surface-pro-6:build"
       ],
       "cache_from": [
         "docker.io/balenalib/surface-pro-6-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/surface-pro-6-debian:bookworm-build",
+        "docker.io/balenalib/surface-pro-6-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-pro-6-debian:latest-build",
+        "docker.io/balenalib/surface-pro-6-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/surface-pro-6-debian:build",
         "docker.io/balenalib/surface-pro-6:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/surface-pro-6:bookworm-build"
+        "docker.io/balenalib/surface-pro-6:bookworm-build",
+        "docker.io/balenalib/surface-pro-6:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/surface-pro-6:latest-build",
+        "docker.io/balenalib/surface-pro-6:build-${DATESTAMP}",
+        "docker.io/balenalib/surface-pro-6:build"
       ]
     },
     "surface-pro-6-debian-bookworm-run": {
@@ -168,20 +140,48 @@
         "docker.io/balenalib/surface-pro-6-debian:bookworm-run",
         "docker.io/balenalib/surface-pro-6-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/surface-pro-6-debian:bookworm",
+        "docker.io/balenalib/surface-pro-6-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-pro-6-debian:latest-run",
+        "docker.io/balenalib/surface-pro-6-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/surface-pro-6-debian:latest",
+        "docker.io/balenalib/surface-pro-6-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/surface-pro-6-debian:run",
+        "docker.io/balenalib/surface-pro-6-debian:${DATESTAMP}",
         "docker.io/balenalib/surface-pro-6:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/surface-pro-6:bookworm-run",
         "docker.io/balenalib/surface-pro-6:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/surface-pro-6:bookworm"
+        "docker.io/balenalib/surface-pro-6:bookworm",
+        "docker.io/balenalib/surface-pro-6:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-pro-6:latest-run",
+        "docker.io/balenalib/surface-pro-6:latest-${DATESTAMP}",
+        "docker.io/balenalib/surface-pro-6:latest",
+        "docker.io/balenalib/surface-pro-6:run-${DATESTAMP}",
+        "docker.io/balenalib/surface-pro-6:run",
+        "docker.io/balenalib/surface-pro-6:${DATESTAMP}"
       ],
       "cache_from": [
         "docker.io/balenalib/surface-pro-6-debian:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/surface-pro-6-debian:bookworm-run",
         "docker.io/balenalib/surface-pro-6-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/surface-pro-6-debian:bookworm",
+        "docker.io/balenalib/surface-pro-6-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-pro-6-debian:latest-run",
+        "docker.io/balenalib/surface-pro-6-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/surface-pro-6-debian:latest",
+        "docker.io/balenalib/surface-pro-6-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/surface-pro-6-debian:run",
+        "docker.io/balenalib/surface-pro-6-debian:${DATESTAMP}",
         "docker.io/balenalib/surface-pro-6:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/surface-pro-6:bookworm-run",
         "docker.io/balenalib/surface-pro-6:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/surface-pro-6:bookworm"
+        "docker.io/balenalib/surface-pro-6:bookworm",
+        "docker.io/balenalib/surface-pro-6:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/surface-pro-6:latest-run",
+        "docker.io/balenalib/surface-pro-6:latest-${DATESTAMP}",
+        "docker.io/balenalib/surface-pro-6:latest",
+        "docker.io/balenalib/surface-pro-6:run-${DATESTAMP}",
+        "docker.io/balenalib/surface-pro-6:run",
+        "docker.io/balenalib/surface-pro-6:${DATESTAMP}"
       ]
     },
     "surface-pro-6-debian-sid-build": {

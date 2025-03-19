@@ -63,30 +63,14 @@
       "tags": [
         "docker.io/balenalib/imx7-var-som-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/imx7-var-som-debian:bullseye-build",
-        "docker.io/balenalib/imx7-var-som-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/imx7-var-som-debian:latest-build",
-        "docker.io/balenalib/imx7-var-som-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/imx7-var-som-debian:build",
         "docker.io/balenalib/imx7-var-som:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/imx7-var-som:bullseye-build",
-        "docker.io/balenalib/imx7-var-som:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/imx7-var-som:latest-build",
-        "docker.io/balenalib/imx7-var-som:build-${DATESTAMP}",
-        "docker.io/balenalib/imx7-var-som:build"
+        "docker.io/balenalib/imx7-var-som:bullseye-build"
       ],
       "cache_from": [
         "docker.io/balenalib/imx7-var-som-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/imx7-var-som-debian:bullseye-build",
-        "docker.io/balenalib/imx7-var-som-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/imx7-var-som-debian:latest-build",
-        "docker.io/balenalib/imx7-var-som-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/imx7-var-som-debian:build",
         "docker.io/balenalib/imx7-var-som:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/imx7-var-som:bullseye-build",
-        "docker.io/balenalib/imx7-var-som:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/imx7-var-som:latest-build",
-        "docker.io/balenalib/imx7-var-som:build-${DATESTAMP}",
-        "docker.io/balenalib/imx7-var-som:build"
+        "docker.io/balenalib/imx7-var-som:bullseye-build"
       ]
     },
     "imx7-var-som-debian-bullseye-run": {
@@ -98,48 +82,20 @@
         "docker.io/balenalib/imx7-var-som-debian:bullseye-run",
         "docker.io/balenalib/imx7-var-som-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/imx7-var-som-debian:bullseye",
-        "docker.io/balenalib/imx7-var-som-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/imx7-var-som-debian:latest-run",
-        "docker.io/balenalib/imx7-var-som-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/imx7-var-som-debian:latest",
-        "docker.io/balenalib/imx7-var-som-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/imx7-var-som-debian:run",
-        "docker.io/balenalib/imx7-var-som-debian:${DATESTAMP}",
         "docker.io/balenalib/imx7-var-som:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/imx7-var-som:bullseye-run",
         "docker.io/balenalib/imx7-var-som:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/imx7-var-som:bullseye",
-        "docker.io/balenalib/imx7-var-som:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/imx7-var-som:latest-run",
-        "docker.io/balenalib/imx7-var-som:latest-${DATESTAMP}",
-        "docker.io/balenalib/imx7-var-som:latest",
-        "docker.io/balenalib/imx7-var-som:run-${DATESTAMP}",
-        "docker.io/balenalib/imx7-var-som:run",
-        "docker.io/balenalib/imx7-var-som:${DATESTAMP}"
+        "docker.io/balenalib/imx7-var-som:bullseye"
       ],
       "cache_from": [
         "docker.io/balenalib/imx7-var-som-debian:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/imx7-var-som-debian:bullseye-run",
         "docker.io/balenalib/imx7-var-som-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/imx7-var-som-debian:bullseye",
-        "docker.io/balenalib/imx7-var-som-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/imx7-var-som-debian:latest-run",
-        "docker.io/balenalib/imx7-var-som-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/imx7-var-som-debian:latest",
-        "docker.io/balenalib/imx7-var-som-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/imx7-var-som-debian:run",
-        "docker.io/balenalib/imx7-var-som-debian:${DATESTAMP}",
         "docker.io/balenalib/imx7-var-som:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/imx7-var-som:bullseye-run",
         "docker.io/balenalib/imx7-var-som:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/imx7-var-som:bullseye",
-        "docker.io/balenalib/imx7-var-som:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/imx7-var-som:latest-run",
-        "docker.io/balenalib/imx7-var-som:latest-${DATESTAMP}",
-        "docker.io/balenalib/imx7-var-som:latest",
-        "docker.io/balenalib/imx7-var-som:run-${DATESTAMP}",
-        "docker.io/balenalib/imx7-var-som:run",
-        "docker.io/balenalib/imx7-var-som:${DATESTAMP}"
+        "docker.io/balenalib/imx7-var-som:bullseye"
       ]
     },
     "imx7-var-som-debian-bookworm-build": {
@@ -149,14 +105,30 @@
       "tags": [
         "docker.io/balenalib/imx7-var-som-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/imx7-var-som-debian:bookworm-build",
+        "docker.io/balenalib/imx7-var-som-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/imx7-var-som-debian:latest-build",
+        "docker.io/balenalib/imx7-var-som-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/imx7-var-som-debian:build",
         "docker.io/balenalib/imx7-var-som:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/imx7-var-som:bookworm-build"
+        "docker.io/balenalib/imx7-var-som:bookworm-build",
+        "docker.io/balenalib/imx7-var-som:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/imx7-var-som:latest-build",
+        "docker.io/balenalib/imx7-var-som:build-${DATESTAMP}",
+        "docker.io/balenalib/imx7-var-som:build"
       ],
       "cache_from": [
         "docker.io/balenalib/imx7-var-som-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/imx7-var-som-debian:bookworm-build",
+        "docker.io/balenalib/imx7-var-som-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/imx7-var-som-debian:latest-build",
+        "docker.io/balenalib/imx7-var-som-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/imx7-var-som-debian:build",
         "docker.io/balenalib/imx7-var-som:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/imx7-var-som:bookworm-build"
+        "docker.io/balenalib/imx7-var-som:bookworm-build",
+        "docker.io/balenalib/imx7-var-som:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/imx7-var-som:latest-build",
+        "docker.io/balenalib/imx7-var-som:build-${DATESTAMP}",
+        "docker.io/balenalib/imx7-var-som:build"
       ]
     },
     "imx7-var-som-debian-bookworm-run": {
@@ -168,20 +140,48 @@
         "docker.io/balenalib/imx7-var-som-debian:bookworm-run",
         "docker.io/balenalib/imx7-var-som-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/imx7-var-som-debian:bookworm",
+        "docker.io/balenalib/imx7-var-som-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/imx7-var-som-debian:latest-run",
+        "docker.io/balenalib/imx7-var-som-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/imx7-var-som-debian:latest",
+        "docker.io/balenalib/imx7-var-som-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/imx7-var-som-debian:run",
+        "docker.io/balenalib/imx7-var-som-debian:${DATESTAMP}",
         "docker.io/balenalib/imx7-var-som:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/imx7-var-som:bookworm-run",
         "docker.io/balenalib/imx7-var-som:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/imx7-var-som:bookworm"
+        "docker.io/balenalib/imx7-var-som:bookworm",
+        "docker.io/balenalib/imx7-var-som:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/imx7-var-som:latest-run",
+        "docker.io/balenalib/imx7-var-som:latest-${DATESTAMP}",
+        "docker.io/balenalib/imx7-var-som:latest",
+        "docker.io/balenalib/imx7-var-som:run-${DATESTAMP}",
+        "docker.io/balenalib/imx7-var-som:run",
+        "docker.io/balenalib/imx7-var-som:${DATESTAMP}"
       ],
       "cache_from": [
         "docker.io/balenalib/imx7-var-som-debian:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/imx7-var-som-debian:bookworm-run",
         "docker.io/balenalib/imx7-var-som-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/imx7-var-som-debian:bookworm",
+        "docker.io/balenalib/imx7-var-som-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/imx7-var-som-debian:latest-run",
+        "docker.io/balenalib/imx7-var-som-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/imx7-var-som-debian:latest",
+        "docker.io/balenalib/imx7-var-som-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/imx7-var-som-debian:run",
+        "docker.io/balenalib/imx7-var-som-debian:${DATESTAMP}",
         "docker.io/balenalib/imx7-var-som:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/imx7-var-som:bookworm-run",
         "docker.io/balenalib/imx7-var-som:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/imx7-var-som:bookworm"
+        "docker.io/balenalib/imx7-var-som:bookworm",
+        "docker.io/balenalib/imx7-var-som:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/imx7-var-som:latest-run",
+        "docker.io/balenalib/imx7-var-som:latest-${DATESTAMP}",
+        "docker.io/balenalib/imx7-var-som:latest",
+        "docker.io/balenalib/imx7-var-som:run-${DATESTAMP}",
+        "docker.io/balenalib/imx7-var-som:run",
+        "docker.io/balenalib/imx7-var-som:${DATESTAMP}"
       ]
     },
     "imx7-var-som-debian-sid-build": {

@@ -63,30 +63,14 @@
       "tags": [
         "docker.io/balenalib/ucm-imx93-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/ucm-imx93-debian:bullseye-build",
-        "docker.io/balenalib/ucm-imx93-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/ucm-imx93-debian:latest-build",
-        "docker.io/balenalib/ucm-imx93-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/ucm-imx93-debian:build",
         "docker.io/balenalib/ucm-imx93:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/ucm-imx93:bullseye-build",
-        "docker.io/balenalib/ucm-imx93:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/ucm-imx93:latest-build",
-        "docker.io/balenalib/ucm-imx93:build-${DATESTAMP}",
-        "docker.io/balenalib/ucm-imx93:build"
+        "docker.io/balenalib/ucm-imx93:bullseye-build"
       ],
       "cache_from": [
         "docker.io/balenalib/ucm-imx93-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/ucm-imx93-debian:bullseye-build",
-        "docker.io/balenalib/ucm-imx93-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/ucm-imx93-debian:latest-build",
-        "docker.io/balenalib/ucm-imx93-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/ucm-imx93-debian:build",
         "docker.io/balenalib/ucm-imx93:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/ucm-imx93:bullseye-build",
-        "docker.io/balenalib/ucm-imx93:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/ucm-imx93:latest-build",
-        "docker.io/balenalib/ucm-imx93:build-${DATESTAMP}",
-        "docker.io/balenalib/ucm-imx93:build"
+        "docker.io/balenalib/ucm-imx93:bullseye-build"
       ]
     },
     "ucm-imx93-debian-bullseye-run": {
@@ -98,48 +82,20 @@
         "docker.io/balenalib/ucm-imx93-debian:bullseye-run",
         "docker.io/balenalib/ucm-imx93-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/ucm-imx93-debian:bullseye",
-        "docker.io/balenalib/ucm-imx93-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/ucm-imx93-debian:latest-run",
-        "docker.io/balenalib/ucm-imx93-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/ucm-imx93-debian:latest",
-        "docker.io/balenalib/ucm-imx93-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/ucm-imx93-debian:run",
-        "docker.io/balenalib/ucm-imx93-debian:${DATESTAMP}",
         "docker.io/balenalib/ucm-imx93:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/ucm-imx93:bullseye-run",
         "docker.io/balenalib/ucm-imx93:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/ucm-imx93:bullseye",
-        "docker.io/balenalib/ucm-imx93:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/ucm-imx93:latest-run",
-        "docker.io/balenalib/ucm-imx93:latest-${DATESTAMP}",
-        "docker.io/balenalib/ucm-imx93:latest",
-        "docker.io/balenalib/ucm-imx93:run-${DATESTAMP}",
-        "docker.io/balenalib/ucm-imx93:run",
-        "docker.io/balenalib/ucm-imx93:${DATESTAMP}"
+        "docker.io/balenalib/ucm-imx93:bullseye"
       ],
       "cache_from": [
         "docker.io/balenalib/ucm-imx93-debian:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/ucm-imx93-debian:bullseye-run",
         "docker.io/balenalib/ucm-imx93-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/ucm-imx93-debian:bullseye",
-        "docker.io/balenalib/ucm-imx93-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/ucm-imx93-debian:latest-run",
-        "docker.io/balenalib/ucm-imx93-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/ucm-imx93-debian:latest",
-        "docker.io/balenalib/ucm-imx93-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/ucm-imx93-debian:run",
-        "docker.io/balenalib/ucm-imx93-debian:${DATESTAMP}",
         "docker.io/balenalib/ucm-imx93:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/ucm-imx93:bullseye-run",
         "docker.io/balenalib/ucm-imx93:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/ucm-imx93:bullseye",
-        "docker.io/balenalib/ucm-imx93:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/ucm-imx93:latest-run",
-        "docker.io/balenalib/ucm-imx93:latest-${DATESTAMP}",
-        "docker.io/balenalib/ucm-imx93:latest",
-        "docker.io/balenalib/ucm-imx93:run-${DATESTAMP}",
-        "docker.io/balenalib/ucm-imx93:run",
-        "docker.io/balenalib/ucm-imx93:${DATESTAMP}"
+        "docker.io/balenalib/ucm-imx93:bullseye"
       ]
     },
     "ucm-imx93-debian-bookworm-build": {
@@ -149,14 +105,30 @@
       "tags": [
         "docker.io/balenalib/ucm-imx93-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/ucm-imx93-debian:bookworm-build",
+        "docker.io/balenalib/ucm-imx93-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/ucm-imx93-debian:latest-build",
+        "docker.io/balenalib/ucm-imx93-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/ucm-imx93-debian:build",
         "docker.io/balenalib/ucm-imx93:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/ucm-imx93:bookworm-build"
+        "docker.io/balenalib/ucm-imx93:bookworm-build",
+        "docker.io/balenalib/ucm-imx93:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/ucm-imx93:latest-build",
+        "docker.io/balenalib/ucm-imx93:build-${DATESTAMP}",
+        "docker.io/balenalib/ucm-imx93:build"
       ],
       "cache_from": [
         "docker.io/balenalib/ucm-imx93-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/ucm-imx93-debian:bookworm-build",
+        "docker.io/balenalib/ucm-imx93-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/ucm-imx93-debian:latest-build",
+        "docker.io/balenalib/ucm-imx93-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/ucm-imx93-debian:build",
         "docker.io/balenalib/ucm-imx93:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/ucm-imx93:bookworm-build"
+        "docker.io/balenalib/ucm-imx93:bookworm-build",
+        "docker.io/balenalib/ucm-imx93:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/ucm-imx93:latest-build",
+        "docker.io/balenalib/ucm-imx93:build-${DATESTAMP}",
+        "docker.io/balenalib/ucm-imx93:build"
       ]
     },
     "ucm-imx93-debian-bookworm-run": {
@@ -168,20 +140,48 @@
         "docker.io/balenalib/ucm-imx93-debian:bookworm-run",
         "docker.io/balenalib/ucm-imx93-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/ucm-imx93-debian:bookworm",
+        "docker.io/balenalib/ucm-imx93-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/ucm-imx93-debian:latest-run",
+        "docker.io/balenalib/ucm-imx93-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/ucm-imx93-debian:latest",
+        "docker.io/balenalib/ucm-imx93-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/ucm-imx93-debian:run",
+        "docker.io/balenalib/ucm-imx93-debian:${DATESTAMP}",
         "docker.io/balenalib/ucm-imx93:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/ucm-imx93:bookworm-run",
         "docker.io/balenalib/ucm-imx93:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/ucm-imx93:bookworm"
+        "docker.io/balenalib/ucm-imx93:bookworm",
+        "docker.io/balenalib/ucm-imx93:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/ucm-imx93:latest-run",
+        "docker.io/balenalib/ucm-imx93:latest-${DATESTAMP}",
+        "docker.io/balenalib/ucm-imx93:latest",
+        "docker.io/balenalib/ucm-imx93:run-${DATESTAMP}",
+        "docker.io/balenalib/ucm-imx93:run",
+        "docker.io/balenalib/ucm-imx93:${DATESTAMP}"
       ],
       "cache_from": [
         "docker.io/balenalib/ucm-imx93-debian:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/ucm-imx93-debian:bookworm-run",
         "docker.io/balenalib/ucm-imx93-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/ucm-imx93-debian:bookworm",
+        "docker.io/balenalib/ucm-imx93-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/ucm-imx93-debian:latest-run",
+        "docker.io/balenalib/ucm-imx93-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/ucm-imx93-debian:latest",
+        "docker.io/balenalib/ucm-imx93-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/ucm-imx93-debian:run",
+        "docker.io/balenalib/ucm-imx93-debian:${DATESTAMP}",
         "docker.io/balenalib/ucm-imx93:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/ucm-imx93:bookworm-run",
         "docker.io/balenalib/ucm-imx93:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/ucm-imx93:bookworm"
+        "docker.io/balenalib/ucm-imx93:bookworm",
+        "docker.io/balenalib/ucm-imx93:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/ucm-imx93:latest-run",
+        "docker.io/balenalib/ucm-imx93:latest-${DATESTAMP}",
+        "docker.io/balenalib/ucm-imx93:latest",
+        "docker.io/balenalib/ucm-imx93:run-${DATESTAMP}",
+        "docker.io/balenalib/ucm-imx93:run",
+        "docker.io/balenalib/ucm-imx93:${DATESTAMP}"
       ]
     },
     "ucm-imx93-debian-sid-build": {

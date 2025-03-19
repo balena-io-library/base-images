@@ -63,30 +63,14 @@
       "tags": [
         "docker.io/balenalib/imx8m-var-dart-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/imx8m-var-dart-debian:bullseye-build",
-        "docker.io/balenalib/imx8m-var-dart-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/imx8m-var-dart-debian:latest-build",
-        "docker.io/balenalib/imx8m-var-dart-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/imx8m-var-dart-debian:build",
         "docker.io/balenalib/imx8m-var-dart:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/imx8m-var-dart:bullseye-build",
-        "docker.io/balenalib/imx8m-var-dart:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/imx8m-var-dart:latest-build",
-        "docker.io/balenalib/imx8m-var-dart:build-${DATESTAMP}",
-        "docker.io/balenalib/imx8m-var-dart:build"
+        "docker.io/balenalib/imx8m-var-dart:bullseye-build"
       ],
       "cache_from": [
         "docker.io/balenalib/imx8m-var-dart-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/imx8m-var-dart-debian:bullseye-build",
-        "docker.io/balenalib/imx8m-var-dart-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/imx8m-var-dart-debian:latest-build",
-        "docker.io/balenalib/imx8m-var-dart-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/imx8m-var-dart-debian:build",
         "docker.io/balenalib/imx8m-var-dart:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/imx8m-var-dart:bullseye-build",
-        "docker.io/balenalib/imx8m-var-dart:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/imx8m-var-dart:latest-build",
-        "docker.io/balenalib/imx8m-var-dart:build-${DATESTAMP}",
-        "docker.io/balenalib/imx8m-var-dart:build"
+        "docker.io/balenalib/imx8m-var-dart:bullseye-build"
       ]
     },
     "imx8m-var-dart-debian-bullseye-run": {
@@ -98,48 +82,20 @@
         "docker.io/balenalib/imx8m-var-dart-debian:bullseye-run",
         "docker.io/balenalib/imx8m-var-dart-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/imx8m-var-dart-debian:bullseye",
-        "docker.io/balenalib/imx8m-var-dart-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/imx8m-var-dart-debian:latest-run",
-        "docker.io/balenalib/imx8m-var-dart-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/imx8m-var-dart-debian:latest",
-        "docker.io/balenalib/imx8m-var-dart-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/imx8m-var-dart-debian:run",
-        "docker.io/balenalib/imx8m-var-dart-debian:${DATESTAMP}",
         "docker.io/balenalib/imx8m-var-dart:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/imx8m-var-dart:bullseye-run",
         "docker.io/balenalib/imx8m-var-dart:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/imx8m-var-dart:bullseye",
-        "docker.io/balenalib/imx8m-var-dart:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/imx8m-var-dart:latest-run",
-        "docker.io/balenalib/imx8m-var-dart:latest-${DATESTAMP}",
-        "docker.io/balenalib/imx8m-var-dart:latest",
-        "docker.io/balenalib/imx8m-var-dart:run-${DATESTAMP}",
-        "docker.io/balenalib/imx8m-var-dart:run",
-        "docker.io/balenalib/imx8m-var-dart:${DATESTAMP}"
+        "docker.io/balenalib/imx8m-var-dart:bullseye"
       ],
       "cache_from": [
         "docker.io/balenalib/imx8m-var-dart-debian:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/imx8m-var-dart-debian:bullseye-run",
         "docker.io/balenalib/imx8m-var-dart-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/imx8m-var-dart-debian:bullseye",
-        "docker.io/balenalib/imx8m-var-dart-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/imx8m-var-dart-debian:latest-run",
-        "docker.io/balenalib/imx8m-var-dart-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/imx8m-var-dart-debian:latest",
-        "docker.io/balenalib/imx8m-var-dart-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/imx8m-var-dart-debian:run",
-        "docker.io/balenalib/imx8m-var-dart-debian:${DATESTAMP}",
         "docker.io/balenalib/imx8m-var-dart:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/imx8m-var-dart:bullseye-run",
         "docker.io/balenalib/imx8m-var-dart:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/imx8m-var-dart:bullseye",
-        "docker.io/balenalib/imx8m-var-dart:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/imx8m-var-dart:latest-run",
-        "docker.io/balenalib/imx8m-var-dart:latest-${DATESTAMP}",
-        "docker.io/balenalib/imx8m-var-dart:latest",
-        "docker.io/balenalib/imx8m-var-dart:run-${DATESTAMP}",
-        "docker.io/balenalib/imx8m-var-dart:run",
-        "docker.io/balenalib/imx8m-var-dart:${DATESTAMP}"
+        "docker.io/balenalib/imx8m-var-dart:bullseye"
       ]
     },
     "imx8m-var-dart-debian-bookworm-build": {
@@ -149,14 +105,30 @@
       "tags": [
         "docker.io/balenalib/imx8m-var-dart-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/imx8m-var-dart-debian:bookworm-build",
+        "docker.io/balenalib/imx8m-var-dart-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/imx8m-var-dart-debian:latest-build",
+        "docker.io/balenalib/imx8m-var-dart-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/imx8m-var-dart-debian:build",
         "docker.io/balenalib/imx8m-var-dart:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/imx8m-var-dart:bookworm-build"
+        "docker.io/balenalib/imx8m-var-dart:bookworm-build",
+        "docker.io/balenalib/imx8m-var-dart:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/imx8m-var-dart:latest-build",
+        "docker.io/balenalib/imx8m-var-dart:build-${DATESTAMP}",
+        "docker.io/balenalib/imx8m-var-dart:build"
       ],
       "cache_from": [
         "docker.io/balenalib/imx8m-var-dart-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/imx8m-var-dart-debian:bookworm-build",
+        "docker.io/balenalib/imx8m-var-dart-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/imx8m-var-dart-debian:latest-build",
+        "docker.io/balenalib/imx8m-var-dart-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/imx8m-var-dart-debian:build",
         "docker.io/balenalib/imx8m-var-dart:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/imx8m-var-dart:bookworm-build"
+        "docker.io/balenalib/imx8m-var-dart:bookworm-build",
+        "docker.io/balenalib/imx8m-var-dart:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/imx8m-var-dart:latest-build",
+        "docker.io/balenalib/imx8m-var-dart:build-${DATESTAMP}",
+        "docker.io/balenalib/imx8m-var-dart:build"
       ]
     },
     "imx8m-var-dart-debian-bookworm-run": {
@@ -168,20 +140,48 @@
         "docker.io/balenalib/imx8m-var-dart-debian:bookworm-run",
         "docker.io/balenalib/imx8m-var-dart-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/imx8m-var-dart-debian:bookworm",
+        "docker.io/balenalib/imx8m-var-dart-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/imx8m-var-dart-debian:latest-run",
+        "docker.io/balenalib/imx8m-var-dart-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/imx8m-var-dart-debian:latest",
+        "docker.io/balenalib/imx8m-var-dart-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/imx8m-var-dart-debian:run",
+        "docker.io/balenalib/imx8m-var-dart-debian:${DATESTAMP}",
         "docker.io/balenalib/imx8m-var-dart:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/imx8m-var-dart:bookworm-run",
         "docker.io/balenalib/imx8m-var-dart:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/imx8m-var-dart:bookworm"
+        "docker.io/balenalib/imx8m-var-dart:bookworm",
+        "docker.io/balenalib/imx8m-var-dart:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/imx8m-var-dart:latest-run",
+        "docker.io/balenalib/imx8m-var-dart:latest-${DATESTAMP}",
+        "docker.io/balenalib/imx8m-var-dart:latest",
+        "docker.io/balenalib/imx8m-var-dart:run-${DATESTAMP}",
+        "docker.io/balenalib/imx8m-var-dart:run",
+        "docker.io/balenalib/imx8m-var-dart:${DATESTAMP}"
       ],
       "cache_from": [
         "docker.io/balenalib/imx8m-var-dart-debian:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/imx8m-var-dart-debian:bookworm-run",
         "docker.io/balenalib/imx8m-var-dart-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/imx8m-var-dart-debian:bookworm",
+        "docker.io/balenalib/imx8m-var-dart-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/imx8m-var-dart-debian:latest-run",
+        "docker.io/balenalib/imx8m-var-dart-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/imx8m-var-dart-debian:latest",
+        "docker.io/balenalib/imx8m-var-dart-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/imx8m-var-dart-debian:run",
+        "docker.io/balenalib/imx8m-var-dart-debian:${DATESTAMP}",
         "docker.io/balenalib/imx8m-var-dart:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/imx8m-var-dart:bookworm-run",
         "docker.io/balenalib/imx8m-var-dart:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/imx8m-var-dart:bookworm"
+        "docker.io/balenalib/imx8m-var-dart:bookworm",
+        "docker.io/balenalib/imx8m-var-dart:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/imx8m-var-dart:latest-run",
+        "docker.io/balenalib/imx8m-var-dart:latest-${DATESTAMP}",
+        "docker.io/balenalib/imx8m-var-dart:latest",
+        "docker.io/balenalib/imx8m-var-dart:run-${DATESTAMP}",
+        "docker.io/balenalib/imx8m-var-dart:run",
+        "docker.io/balenalib/imx8m-var-dart:${DATESTAMP}"
       ]
     },
     "imx8m-var-dart-debian-sid-build": {

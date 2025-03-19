@@ -63,30 +63,14 @@
       "tags": [
         "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:bullseye-build",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:latest-build",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:build",
         "docker.io/balenalib/jetson-orin-nano-seeed-j3010:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:bullseye-build",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:latest-build",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:build"
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:bullseye-build"
       ],
       "cache_from": [
         "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:bullseye-build",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:latest-build",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:build",
         "docker.io/balenalib/jetson-orin-nano-seeed-j3010:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:bullseye-build",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:latest-build",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:build"
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:bullseye-build"
       ]
     },
     "jetson-orin-nano-seeed-j3010-debian-bullseye-run": {
@@ -98,48 +82,20 @@
         "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:bullseye-run",
         "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:bullseye",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:latest-run",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:latest",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:run",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nano-seeed-j3010:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nano-seeed-j3010:bullseye-run",
         "docker.io/balenalib/jetson-orin-nano-seeed-j3010:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:bullseye",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:latest-run",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:latest-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:latest",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:run",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:${DATESTAMP}"
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:bullseye"
       ],
       "cache_from": [
         "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:bullseye-run",
         "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:bullseye",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:latest-run",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:latest",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:run",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nano-seeed-j3010:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nano-seeed-j3010:bullseye-run",
         "docker.io/balenalib/jetson-orin-nano-seeed-j3010:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:bullseye",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:latest-run",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:latest-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:latest",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:run",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:${DATESTAMP}"
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:bullseye"
       ]
     },
     "jetson-orin-nano-seeed-j3010-debian-bookworm-build": {
@@ -149,14 +105,30 @@
       "tags": [
         "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:bookworm-build",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:latest-build",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:build",
         "docker.io/balenalib/jetson-orin-nano-seeed-j3010:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:bookworm-build"
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:bookworm-build",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:latest-build",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:build"
       ],
       "cache_from": [
         "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:bookworm-build",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:latest-build",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:build",
         "docker.io/balenalib/jetson-orin-nano-seeed-j3010:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:bookworm-build"
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:bookworm-build",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:latest-build",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:build-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:build"
       ]
     },
     "jetson-orin-nano-seeed-j3010-debian-bookworm-run": {
@@ -168,20 +140,48 @@
         "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:bookworm-run",
         "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:bookworm",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:latest-run",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:latest",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:run",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nano-seeed-j3010:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nano-seeed-j3010:bookworm-run",
         "docker.io/balenalib/jetson-orin-nano-seeed-j3010:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:bookworm"
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:bookworm",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:latest-run",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:latest-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:latest",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:run",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:${DATESTAMP}"
       ],
       "cache_from": [
         "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:bookworm-run",
         "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:bookworm",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:latest-run",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:latest",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:run",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010-debian:${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nano-seeed-j3010:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/jetson-orin-nano-seeed-j3010:bookworm-run",
         "docker.io/balenalib/jetson-orin-nano-seeed-j3010:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:bookworm"
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:bookworm",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:latest-run",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:latest-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:latest",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:run-${DATESTAMP}",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:run",
+        "docker.io/balenalib/jetson-orin-nano-seeed-j3010:${DATESTAMP}"
       ]
     },
     "jetson-orin-nano-seeed-j3010-debian-sid-build": {

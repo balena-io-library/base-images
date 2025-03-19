@@ -63,30 +63,14 @@
       "tags": [
         "docker.io/balenalib/beaglebone-green-gateway-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-green-gateway-debian:bullseye-build",
-        "docker.io/balenalib/beaglebone-green-gateway-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-green-gateway-debian:latest-build",
-        "docker.io/balenalib/beaglebone-green-gateway-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-green-gateway-debian:build",
         "docker.io/balenalib/beaglebone-green-gateway:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-green-gateway:bullseye-build",
-        "docker.io/balenalib/beaglebone-green-gateway:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-green-gateway:latest-build",
-        "docker.io/balenalib/beaglebone-green-gateway:build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-green-gateway:build"
+        "docker.io/balenalib/beaglebone-green-gateway:bullseye-build"
       ],
       "cache_from": [
         "docker.io/balenalib/beaglebone-green-gateway-debian:bullseye-build-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-green-gateway-debian:bullseye-build",
-        "docker.io/balenalib/beaglebone-green-gateway-debian:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-green-gateway-debian:latest-build",
-        "docker.io/balenalib/beaglebone-green-gateway-debian:build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-green-gateway-debian:build",
         "docker.io/balenalib/beaglebone-green-gateway:bullseye-build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-green-gateway:bullseye-build",
-        "docker.io/balenalib/beaglebone-green-gateway:latest-build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-green-gateway:latest-build",
-        "docker.io/balenalib/beaglebone-green-gateway:build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-green-gateway:build"
+        "docker.io/balenalib/beaglebone-green-gateway:bullseye-build"
       ]
     },
     "beaglebone-green-gateway-debian-bullseye-run": {
@@ -98,48 +82,20 @@
         "docker.io/balenalib/beaglebone-green-gateway-debian:bullseye-run",
         "docker.io/balenalib/beaglebone-green-gateway-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-green-gateway-debian:bullseye",
-        "docker.io/balenalib/beaglebone-green-gateway-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-green-gateway-debian:latest-run",
-        "docker.io/balenalib/beaglebone-green-gateway-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-green-gateway-debian:latest",
-        "docker.io/balenalib/beaglebone-green-gateway-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-green-gateway-debian:run",
-        "docker.io/balenalib/beaglebone-green-gateway-debian:${DATESTAMP}",
         "docker.io/balenalib/beaglebone-green-gateway:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-green-gateway:bullseye-run",
         "docker.io/balenalib/beaglebone-green-gateway:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-green-gateway:bullseye",
-        "docker.io/balenalib/beaglebone-green-gateway:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-green-gateway:latest-run",
-        "docker.io/balenalib/beaglebone-green-gateway:latest-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-green-gateway:latest",
-        "docker.io/balenalib/beaglebone-green-gateway:run-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-green-gateway:run",
-        "docker.io/balenalib/beaglebone-green-gateway:${DATESTAMP}"
+        "docker.io/balenalib/beaglebone-green-gateway:bullseye"
       ],
       "cache_from": [
         "docker.io/balenalib/beaglebone-green-gateway-debian:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-green-gateway-debian:bullseye-run",
         "docker.io/balenalib/beaglebone-green-gateway-debian:bullseye-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-green-gateway-debian:bullseye",
-        "docker.io/balenalib/beaglebone-green-gateway-debian:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-green-gateway-debian:latest-run",
-        "docker.io/balenalib/beaglebone-green-gateway-debian:latest-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-green-gateway-debian:latest",
-        "docker.io/balenalib/beaglebone-green-gateway-debian:run-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-green-gateway-debian:run",
-        "docker.io/balenalib/beaglebone-green-gateway-debian:${DATESTAMP}",
         "docker.io/balenalib/beaglebone-green-gateway:bullseye-run-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-green-gateway:bullseye-run",
         "docker.io/balenalib/beaglebone-green-gateway:bullseye-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-green-gateway:bullseye",
-        "docker.io/balenalib/beaglebone-green-gateway:latest-run-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-green-gateway:latest-run",
-        "docker.io/balenalib/beaglebone-green-gateway:latest-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-green-gateway:latest",
-        "docker.io/balenalib/beaglebone-green-gateway:run-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-green-gateway:run",
-        "docker.io/balenalib/beaglebone-green-gateway:${DATESTAMP}"
+        "docker.io/balenalib/beaglebone-green-gateway:bullseye"
       ]
     },
     "beaglebone-green-gateway-debian-bookworm-build": {
@@ -149,14 +105,30 @@
       "tags": [
         "docker.io/balenalib/beaglebone-green-gateway-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-green-gateway-debian:bookworm-build",
+        "docker.io/balenalib/beaglebone-green-gateway-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-green-gateway-debian:latest-build",
+        "docker.io/balenalib/beaglebone-green-gateway-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-green-gateway-debian:build",
         "docker.io/balenalib/beaglebone-green-gateway:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-green-gateway:bookworm-build"
+        "docker.io/balenalib/beaglebone-green-gateway:bookworm-build",
+        "docker.io/balenalib/beaglebone-green-gateway:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-green-gateway:latest-build",
+        "docker.io/balenalib/beaglebone-green-gateway:build-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-green-gateway:build"
       ],
       "cache_from": [
         "docker.io/balenalib/beaglebone-green-gateway-debian:bookworm-build-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-green-gateway-debian:bookworm-build",
+        "docker.io/balenalib/beaglebone-green-gateway-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-green-gateway-debian:latest-build",
+        "docker.io/balenalib/beaglebone-green-gateway-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-green-gateway-debian:build",
         "docker.io/balenalib/beaglebone-green-gateway:bookworm-build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-green-gateway:bookworm-build"
+        "docker.io/balenalib/beaglebone-green-gateway:bookworm-build",
+        "docker.io/balenalib/beaglebone-green-gateway:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-green-gateway:latest-build",
+        "docker.io/balenalib/beaglebone-green-gateway:build-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-green-gateway:build"
       ]
     },
     "beaglebone-green-gateway-debian-bookworm-run": {
@@ -168,20 +140,48 @@
         "docker.io/balenalib/beaglebone-green-gateway-debian:bookworm-run",
         "docker.io/balenalib/beaglebone-green-gateway-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-green-gateway-debian:bookworm",
+        "docker.io/balenalib/beaglebone-green-gateway-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-green-gateway-debian:latest-run",
+        "docker.io/balenalib/beaglebone-green-gateway-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-green-gateway-debian:latest",
+        "docker.io/balenalib/beaglebone-green-gateway-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-green-gateway-debian:run",
+        "docker.io/balenalib/beaglebone-green-gateway-debian:${DATESTAMP}",
         "docker.io/balenalib/beaglebone-green-gateway:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-green-gateway:bookworm-run",
         "docker.io/balenalib/beaglebone-green-gateway:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-green-gateway:bookworm"
+        "docker.io/balenalib/beaglebone-green-gateway:bookworm",
+        "docker.io/balenalib/beaglebone-green-gateway:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-green-gateway:latest-run",
+        "docker.io/balenalib/beaglebone-green-gateway:latest-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-green-gateway:latest",
+        "docker.io/balenalib/beaglebone-green-gateway:run-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-green-gateway:run",
+        "docker.io/balenalib/beaglebone-green-gateway:${DATESTAMP}"
       ],
       "cache_from": [
         "docker.io/balenalib/beaglebone-green-gateway-debian:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-green-gateway-debian:bookworm-run",
         "docker.io/balenalib/beaglebone-green-gateway-debian:bookworm-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-green-gateway-debian:bookworm",
+        "docker.io/balenalib/beaglebone-green-gateway-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-green-gateway-debian:latest-run",
+        "docker.io/balenalib/beaglebone-green-gateway-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-green-gateway-debian:latest",
+        "docker.io/balenalib/beaglebone-green-gateway-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-green-gateway-debian:run",
+        "docker.io/balenalib/beaglebone-green-gateway-debian:${DATESTAMP}",
         "docker.io/balenalib/beaglebone-green-gateway:bookworm-run-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-green-gateway:bookworm-run",
         "docker.io/balenalib/beaglebone-green-gateway:bookworm-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-green-gateway:bookworm"
+        "docker.io/balenalib/beaglebone-green-gateway:bookworm",
+        "docker.io/balenalib/beaglebone-green-gateway:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-green-gateway:latest-run",
+        "docker.io/balenalib/beaglebone-green-gateway:latest-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-green-gateway:latest",
+        "docker.io/balenalib/beaglebone-green-gateway:run-${DATESTAMP}",
+        "docker.io/balenalib/beaglebone-green-gateway:run",
+        "docker.io/balenalib/beaglebone-green-gateway:${DATESTAMP}"
       ]
     },
     "beaglebone-green-gateway-debian-sid-build": {
