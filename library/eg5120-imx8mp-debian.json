@@ -1,0 +1,235 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "eg5120-imx8mp-debian-buster-build",
+        "eg5120-imx8mp-debian-buster-run",
+        "eg5120-imx8mp-debian-bullseye-build",
+        "eg5120-imx8mp-debian-bullseye-run",
+        "eg5120-imx8mp-debian-bookworm-build",
+        "eg5120-imx8mp-debian-bookworm-run",
+        "eg5120-imx8mp-debian-sid-build",
+        "eg5120-imx8mp-debian-sid-run"
+      ]
+    }
+  },
+  "target": {
+    "eg5120-imx8mp-debian-buster-build": {
+      "context": "device-base/eg5120-imx8mp/debian/buster/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/eg5120-imx8mp-debian:buster-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-debian:buster-build",
+        "docker.io/balenalib/eg5120-imx8mp:buster-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp:buster-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/eg5120-imx8mp-debian:buster-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-debian:buster-build",
+        "docker.io/balenalib/eg5120-imx8mp:buster-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp:buster-build"
+      ]
+    },
+    "eg5120-imx8mp-debian-buster-run": {
+      "context": "device-base/eg5120-imx8mp/debian/buster/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/eg5120-imx8mp-debian:buster-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-debian:buster-run",
+        "docker.io/balenalib/eg5120-imx8mp-debian:buster-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-debian:buster",
+        "docker.io/balenalib/eg5120-imx8mp:buster-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp:buster-run",
+        "docker.io/balenalib/eg5120-imx8mp:buster-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp:buster"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/eg5120-imx8mp-debian:buster-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-debian:buster-run",
+        "docker.io/balenalib/eg5120-imx8mp-debian:buster-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-debian:buster",
+        "docker.io/balenalib/eg5120-imx8mp:buster-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp:buster-run",
+        "docker.io/balenalib/eg5120-imx8mp:buster-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp:buster"
+      ]
+    },
+    "eg5120-imx8mp-debian-bullseye-build": {
+      "context": "device-base/eg5120-imx8mp/debian/bullseye/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/eg5120-imx8mp-debian:bullseye-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-debian:bullseye-build",
+        "docker.io/balenalib/eg5120-imx8mp-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-debian:latest-build",
+        "docker.io/balenalib/eg5120-imx8mp-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-debian:build",
+        "docker.io/balenalib/eg5120-imx8mp:bullseye-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp:bullseye-build",
+        "docker.io/balenalib/eg5120-imx8mp:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp:latest-build",
+        "docker.io/balenalib/eg5120-imx8mp:build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/eg5120-imx8mp-debian:bullseye-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-debian:bullseye-build",
+        "docker.io/balenalib/eg5120-imx8mp-debian:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-debian:latest-build",
+        "docker.io/balenalib/eg5120-imx8mp-debian:build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-debian:build",
+        "docker.io/balenalib/eg5120-imx8mp:bullseye-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp:bullseye-build",
+        "docker.io/balenalib/eg5120-imx8mp:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp:latest-build",
+        "docker.io/balenalib/eg5120-imx8mp:build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp:build"
+      ]
+    },
+    "eg5120-imx8mp-debian-bullseye-run": {
+      "context": "device-base/eg5120-imx8mp/debian/bullseye/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/eg5120-imx8mp-debian:bullseye-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-debian:bullseye-run",
+        "docker.io/balenalib/eg5120-imx8mp-debian:bullseye-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-debian:bullseye",
+        "docker.io/balenalib/eg5120-imx8mp-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-debian:latest-run",
+        "docker.io/balenalib/eg5120-imx8mp-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-debian:latest",
+        "docker.io/balenalib/eg5120-imx8mp-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-debian:run",
+        "docker.io/balenalib/eg5120-imx8mp-debian:${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp:bullseye-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp:bullseye-run",
+        "docker.io/balenalib/eg5120-imx8mp:bullseye-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp:bullseye",
+        "docker.io/balenalib/eg5120-imx8mp:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp:latest-run",
+        "docker.io/balenalib/eg5120-imx8mp:latest-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp:latest",
+        "docker.io/balenalib/eg5120-imx8mp:run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp:run",
+        "docker.io/balenalib/eg5120-imx8mp:${DATESTAMP}"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/eg5120-imx8mp-debian:bullseye-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-debian:bullseye-run",
+        "docker.io/balenalib/eg5120-imx8mp-debian:bullseye-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-debian:bullseye",
+        "docker.io/balenalib/eg5120-imx8mp-debian:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-debian:latest-run",
+        "docker.io/balenalib/eg5120-imx8mp-debian:latest-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-debian:latest",
+        "docker.io/balenalib/eg5120-imx8mp-debian:run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-debian:run",
+        "docker.io/balenalib/eg5120-imx8mp-debian:${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp:bullseye-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp:bullseye-run",
+        "docker.io/balenalib/eg5120-imx8mp:bullseye-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp:bullseye",
+        "docker.io/balenalib/eg5120-imx8mp:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp:latest-run",
+        "docker.io/balenalib/eg5120-imx8mp:latest-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp:latest",
+        "docker.io/balenalib/eg5120-imx8mp:run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp:run",
+        "docker.io/balenalib/eg5120-imx8mp:${DATESTAMP}"
+      ]
+    },
+    "eg5120-imx8mp-debian-bookworm-build": {
+      "context": "device-base/eg5120-imx8mp/debian/bookworm/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/eg5120-imx8mp-debian:bookworm-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-debian:bookworm-build",
+        "docker.io/balenalib/eg5120-imx8mp:bookworm-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp:bookworm-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/eg5120-imx8mp-debian:bookworm-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-debian:bookworm-build",
+        "docker.io/balenalib/eg5120-imx8mp:bookworm-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp:bookworm-build"
+      ]
+    },
+    "eg5120-imx8mp-debian-bookworm-run": {
+      "context": "device-base/eg5120-imx8mp/debian/bookworm/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/eg5120-imx8mp-debian:bookworm-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-debian:bookworm-run",
+        "docker.io/balenalib/eg5120-imx8mp-debian:bookworm-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-debian:bookworm",
+        "docker.io/balenalib/eg5120-imx8mp:bookworm-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp:bookworm-run",
+        "docker.io/balenalib/eg5120-imx8mp:bookworm-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp:bookworm"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/eg5120-imx8mp-debian:bookworm-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-debian:bookworm-run",
+        "docker.io/balenalib/eg5120-imx8mp-debian:bookworm-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-debian:bookworm",
+        "docker.io/balenalib/eg5120-imx8mp:bookworm-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp:bookworm-run",
+        "docker.io/balenalib/eg5120-imx8mp:bookworm-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp:bookworm"
+      ]
+    },
+    "eg5120-imx8mp-debian-sid-build": {
+      "context": "device-base/eg5120-imx8mp/debian/sid/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/eg5120-imx8mp-debian:sid-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-debian:sid-build",
+        "docker.io/balenalib/eg5120-imx8mp:sid-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp:sid-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/eg5120-imx8mp-debian:sid-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-debian:sid-build",
+        "docker.io/balenalib/eg5120-imx8mp:sid-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp:sid-build"
+      ]
+    },
+    "eg5120-imx8mp-debian-sid-run": {
+      "context": "device-base/eg5120-imx8mp/debian/sid/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/eg5120-imx8mp-debian:sid-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-debian:sid-run",
+        "docker.io/balenalib/eg5120-imx8mp-debian:sid-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-debian:sid",
+        "docker.io/balenalib/eg5120-imx8mp:sid-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp:sid-run",
+        "docker.io/balenalib/eg5120-imx8mp:sid-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp:sid"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/eg5120-imx8mp-debian:sid-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-debian:sid-run",
+        "docker.io/balenalib/eg5120-imx8mp-debian:sid-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-debian:sid",
+        "docker.io/balenalib/eg5120-imx8mp:sid-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp:sid-run",
+        "docker.io/balenalib/eg5120-imx8mp:sid-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp:sid"
+      ]
+    }
+  },
+  "variable": {
+    "DATESTAMP": {
+      "default": "$DATESTAMP"
+    }
+  }
+}

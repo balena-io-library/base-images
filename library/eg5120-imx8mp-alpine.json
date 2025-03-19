@@ -1,0 +1,389 @@
+{
+  "group": {
+    "default": {
+      "targets": [
+        "eg5120-imx8mp-alpine-edge-build",
+        "eg5120-imx8mp-alpine-edge-run",
+        "eg5120-imx8mp-alpine-3-12-build",
+        "eg5120-imx8mp-alpine-3-12-run",
+        "eg5120-imx8mp-alpine-3-13-build",
+        "eg5120-imx8mp-alpine-3-13-run",
+        "eg5120-imx8mp-alpine-3-14-build",
+        "eg5120-imx8mp-alpine-3-14-run",
+        "eg5120-imx8mp-alpine-3-15-build",
+        "eg5120-imx8mp-alpine-3-15-run",
+        "eg5120-imx8mp-alpine-3-16-build",
+        "eg5120-imx8mp-alpine-3-16-run",
+        "eg5120-imx8mp-alpine-3-17-build",
+        "eg5120-imx8mp-alpine-3-17-run",
+        "eg5120-imx8mp-alpine-3-18-build",
+        "eg5120-imx8mp-alpine-3-18-run",
+        "eg5120-imx8mp-alpine-3-19-build",
+        "eg5120-imx8mp-alpine-3-19-run",
+        "eg5120-imx8mp-alpine-3-20-build",
+        "eg5120-imx8mp-alpine-3-20-run",
+        "eg5120-imx8mp-alpine-3-21-build",
+        "eg5120-imx8mp-alpine-3-21-run"
+      ]
+    }
+  },
+  "target": {
+    "eg5120-imx8mp-alpine-edge-build": {
+      "context": "device-base/eg5120-imx8mp/alpine/edge/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:edge-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:edge-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:edge-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:edge-build"
+      ]
+    },
+    "eg5120-imx8mp-alpine-edge-run": {
+      "context": "device-base/eg5120-imx8mp/alpine/edge/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:edge-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:edge-run",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:edge-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:edge"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:edge-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:edge-run",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:edge-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:edge"
+      ]
+    },
+    "eg5120-imx8mp-alpine-3-12-build": {
+      "context": "device-base/eg5120-imx8mp/alpine/3.12/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.12-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.12-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.12-build"
+      ]
+    },
+    "eg5120-imx8mp-alpine-3-12-run": {
+      "context": "device-base/eg5120-imx8mp/alpine/3.12/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.12-run",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.12-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.12"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.12-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.12-run",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.12-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.12"
+      ]
+    },
+    "eg5120-imx8mp-alpine-3-13-build": {
+      "context": "device-base/eg5120-imx8mp/alpine/3.13/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.13-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.13-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.13-build"
+      ]
+    },
+    "eg5120-imx8mp-alpine-3-13-run": {
+      "context": "device-base/eg5120-imx8mp/alpine/3.13/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.13-run",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.13-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.13"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.13-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.13-run",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.13-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.13"
+      ]
+    },
+    "eg5120-imx8mp-alpine-3-14-build": {
+      "context": "device-base/eg5120-imx8mp/alpine/3.14/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.14-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.14-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.14-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.14-build"
+      ]
+    },
+    "eg5120-imx8mp-alpine-3-14-run": {
+      "context": "device-base/eg5120-imx8mp/alpine/3.14/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.14-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.14-run",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.14-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.14"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.14-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.14-run",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.14-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.14"
+      ]
+    },
+    "eg5120-imx8mp-alpine-3-15-build": {
+      "context": "device-base/eg5120-imx8mp/alpine/3.15/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.15-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.15-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.15-build"
+      ]
+    },
+    "eg5120-imx8mp-alpine-3-15-run": {
+      "context": "device-base/eg5120-imx8mp/alpine/3.15/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.15-run",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.15-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.15"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.15-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.15-run",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.15-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.15"
+      ]
+    },
+    "eg5120-imx8mp-alpine-3-16-build": {
+      "context": "device-base/eg5120-imx8mp/alpine/3.16/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.16-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.16-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.16-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.16-build"
+      ]
+    },
+    "eg5120-imx8mp-alpine-3-16-run": {
+      "context": "device-base/eg5120-imx8mp/alpine/3.16/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.16-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.16-run",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.16-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.16"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.16-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.16-run",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.16-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.16"
+      ]
+    },
+    "eg5120-imx8mp-alpine-3-17-build": {
+      "context": "device-base/eg5120-imx8mp/alpine/3.17/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.17-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.17-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.17-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.17-build"
+      ]
+    },
+    "eg5120-imx8mp-alpine-3-17-run": {
+      "context": "device-base/eg5120-imx8mp/alpine/3.17/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.17-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.17-run",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.17-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.17"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.17-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.17-run",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.17-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.17"
+      ]
+    },
+    "eg5120-imx8mp-alpine-3-18-build": {
+      "context": "device-base/eg5120-imx8mp/alpine/3.18/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.18-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.18-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.18-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.18-build"
+      ]
+    },
+    "eg5120-imx8mp-alpine-3-18-run": {
+      "context": "device-base/eg5120-imx8mp/alpine/3.18/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.18-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.18-run",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.18-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.18"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.18-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.18-run",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.18-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.18"
+      ]
+    },
+    "eg5120-imx8mp-alpine-3-19-build": {
+      "context": "device-base/eg5120-imx8mp/alpine/3.19/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.19-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.19-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.19-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.19-build"
+      ]
+    },
+    "eg5120-imx8mp-alpine-3-19-run": {
+      "context": "device-base/eg5120-imx8mp/alpine/3.19/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.19-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.19-run",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.19-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.19"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.19-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.19-run",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.19-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.19"
+      ]
+    },
+    "eg5120-imx8mp-alpine-3-20-build": {
+      "context": "device-base/eg5120-imx8mp/alpine/3.20/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.20-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.20-build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.20-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.20-build"
+      ]
+    },
+    "eg5120-imx8mp-alpine-3-20-run": {
+      "context": "device-base/eg5120-imx8mp/alpine/3.20/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.20-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.20-run",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.20-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.20"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.20-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.20-run",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.20-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.20"
+      ]
+    },
+    "eg5120-imx8mp-alpine-3-21-build": {
+      "context": "device-base/eg5120-imx8mp/alpine/3.21/build",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.21-build",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:latest-build",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:build"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.21-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.21-build",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:latest-build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:latest-build",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:build-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:build"
+      ]
+    },
+    "eg5120-imx8mp-alpine-3-21-run": {
+      "context": "device-base/eg5120-imx8mp/alpine/3.21/run",
+      "dockerfile": "Dockerfile",
+      "platform": "linux/arm64",
+      "tags": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.21-run",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.21-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.21",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:latest-run",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:latest-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:latest",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:run",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:${DATESTAMP}"
+      ],
+      "cache_from": [
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.21-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.21-run",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.21-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:3.21",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:latest-run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:latest-run",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:latest-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:latest",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:run-${DATESTAMP}",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:run",
+        "docker.io/balenalib/eg5120-imx8mp-alpine:${DATESTAMP}"
+      ]
+    }
+  },
+  "variable": {
+    "DATESTAMP": {
+      "default": "$DATESTAMP"
+    }
+  }
+}
