@@ -1,4 +1,28 @@
 - commits:
+    - subject: Update scripts/contracts digest to de98cd4
+      hash: e3c89f5498bd7b91514079c9c5744b509025d41d
+      body: |
+        Update scripts/contracts
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: Mark Bookworm as the default version for Debian
+              hash: a8bfdf9a34c4642608db6d3140fd95bbc629f477
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Thodoris Greasidis
+          version: contracts-2.0.129
+          title: ""
+          date: 2025-03-14T13:31:13.451Z
+  version: 2.11.28
+  title: ""
+  date: 2025-03-19T21:48:23.875Z
+- commits:
     - subject: Update actions/setup-node action to v4.3.0
       hash: 96a2efe10e5b477d890d5b73c8fcbd85175f27a2
       body: |

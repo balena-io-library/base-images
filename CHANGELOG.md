@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.11.28 - 2025-03-19
+
+
+<details>
+<summary> Update scripts/contracts digest to de98cd4 [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.129 - 2025-03-14
+> 
+> * Mark Bookworm as the default version for Debian [Thodoris Greasidis]
+> 
+
+</details>
+
 ## 2.11.27 - 2025-03-19
 
 * Update actions/setup-node action to v4.3.0 [Self-hosted Renovate Bot]
