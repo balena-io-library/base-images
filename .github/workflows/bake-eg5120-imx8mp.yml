@@ -1,8 +1,8 @@
-name: Bake armv7hf
+name: Bake eg5120-imx8mp
 'on':
   workflow_run:
     workflows:
-      - Bake all
+      - Bake aarch64
     types:
       - completed
   workflow_dispatch:
@@ -21,14 +21,1008 @@ concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: ${{ inputs.cancel-in-progress == true }}
 jobs:
-  prepare-armv7hf-alpine:
-    name: Prepare armv7hf-alpine
+  prepare-eg5120-imx8mp-alpine-golang:
+    name: Prepare eg5120-imx8mp-alpine-golang
+    runs-on: ubuntu-latest
+    needs: bake-eg5120-imx8mp-alpine
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/eg5120-imx8mp-alpine-golang.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-eg5120-imx8mp-alpine-golang:
+    name: Bake eg5120-imx8mp-alpine-golang
+    runs-on:
+      - self-hosted
+      - base-images
+      - ARM64
+    timeout-minutes: 240
+    needs: prepare-eg5120-imx8mp-alpine-golang
+    env:
+      LIBRARY: library/eg5120-imx8mp-alpine-golang.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-eg5120-imx8mp-alpine-golang.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Setup buildx
+        id: setup-buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v8.0.4-33
+        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm64') == false
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Set the DATESTAMP variable
+        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
+      - name: Docker bake
+        continue-on-error: false
+        id: docker_bake
+        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+  prepare-eg5120-imx8mp-alpine-node:
+    name: Prepare eg5120-imx8mp-alpine-node
+    runs-on: ubuntu-latest
+    needs: bake-eg5120-imx8mp-alpine
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/eg5120-imx8mp-alpine-node.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-eg5120-imx8mp-alpine-node:
+    name: Bake eg5120-imx8mp-alpine-node
+    runs-on:
+      - self-hosted
+      - base-images
+      - ARM64
+    timeout-minutes: 240
+    needs: prepare-eg5120-imx8mp-alpine-node
+    env:
+      LIBRARY: library/eg5120-imx8mp-alpine-node.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-eg5120-imx8mp-alpine-node.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Setup buildx
+        id: setup-buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v8.0.4-33
+        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm64') == false
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Set the DATESTAMP variable
+        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
+      - name: Docker bake
+        continue-on-error: false
+        id: docker_bake
+        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+  prepare-eg5120-imx8mp-alpine-python:
+    name: Prepare eg5120-imx8mp-alpine-python
+    runs-on: ubuntu-latest
+    needs: bake-eg5120-imx8mp-alpine
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/eg5120-imx8mp-alpine-python.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-eg5120-imx8mp-alpine-python:
+    name: Bake eg5120-imx8mp-alpine-python
+    runs-on:
+      - self-hosted
+      - base-images
+      - ARM64
+    timeout-minutes: 240
+    needs: prepare-eg5120-imx8mp-alpine-python
+    env:
+      LIBRARY: library/eg5120-imx8mp-alpine-python.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-eg5120-imx8mp-alpine-python.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Setup buildx
+        id: setup-buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v8.0.4-33
+        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm64') == false
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Set the DATESTAMP variable
+        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
+      - name: Docker bake
+        continue-on-error: false
+        id: docker_bake
+        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+  prepare-eg5120-imx8mp-debian-golang:
+    name: Prepare eg5120-imx8mp-debian-golang
+    runs-on: ubuntu-latest
+    needs: bake-eg5120-imx8mp-debian
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/eg5120-imx8mp-debian-golang.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-eg5120-imx8mp-debian-golang:
+    name: Bake eg5120-imx8mp-debian-golang
+    runs-on:
+      - self-hosted
+      - base-images
+      - ARM64
+    timeout-minutes: 240
+    needs: prepare-eg5120-imx8mp-debian-golang
+    env:
+      LIBRARY: library/eg5120-imx8mp-debian-golang.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-eg5120-imx8mp-debian-golang.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Setup buildx
+        id: setup-buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v8.0.4-33
+        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm64') == false
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Set the DATESTAMP variable
+        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
+      - name: Docker bake
+        continue-on-error: false
+        id: docker_bake
+        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+  prepare-eg5120-imx8mp-debian-node:
+    name: Prepare eg5120-imx8mp-debian-node
+    runs-on: ubuntu-latest
+    needs: bake-eg5120-imx8mp-debian
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/eg5120-imx8mp-debian-node.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-eg5120-imx8mp-debian-node:
+    name: Bake eg5120-imx8mp-debian-node
+    runs-on:
+      - self-hosted
+      - base-images
+      - ARM64
+    timeout-minutes: 240
+    needs: prepare-eg5120-imx8mp-debian-node
+    env:
+      LIBRARY: library/eg5120-imx8mp-debian-node.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-eg5120-imx8mp-debian-node.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Setup buildx
+        id: setup-buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v8.0.4-33
+        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm64') == false
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Set the DATESTAMP variable
+        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
+      - name: Docker bake
+        continue-on-error: false
+        id: docker_bake
+        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+  prepare-eg5120-imx8mp-debian-openjdk:
+    name: Prepare eg5120-imx8mp-debian-openjdk
+    runs-on: ubuntu-latest
+    needs: bake-eg5120-imx8mp-debian
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/eg5120-imx8mp-debian-openjdk.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-eg5120-imx8mp-debian-openjdk:
+    name: Bake eg5120-imx8mp-debian-openjdk
+    runs-on:
+      - self-hosted
+      - base-images
+      - ARM64
+    timeout-minutes: 240
+    needs: prepare-eg5120-imx8mp-debian-openjdk
+    env:
+      LIBRARY: library/eg5120-imx8mp-debian-openjdk.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-eg5120-imx8mp-debian-openjdk.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Setup buildx
+        id: setup-buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v8.0.4-33
+        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm64') == false
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Set the DATESTAMP variable
+        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
+      - name: Docker bake
+        continue-on-error: false
+        id: docker_bake
+        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+  prepare-eg5120-imx8mp-debian-python:
+    name: Prepare eg5120-imx8mp-debian-python
+    runs-on: ubuntu-latest
+    needs: bake-eg5120-imx8mp-debian
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/eg5120-imx8mp-debian-python.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-eg5120-imx8mp-debian-python:
+    name: Bake eg5120-imx8mp-debian-python
+    runs-on:
+      - self-hosted
+      - base-images
+      - ARM64
+    timeout-minutes: 240
+    needs: prepare-eg5120-imx8mp-debian-python
+    env:
+      LIBRARY: library/eg5120-imx8mp-debian-python.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-eg5120-imx8mp-debian-python.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Setup buildx
+        id: setup-buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v8.0.4-33
+        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm64') == false
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Set the DATESTAMP variable
+        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
+      - name: Docker bake
+        continue-on-error: false
+        id: docker_bake
+        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+  prepare-eg5120-imx8mp-fedora-golang:
+    name: Prepare eg5120-imx8mp-fedora-golang
+    runs-on: ubuntu-latest
+    needs: bake-eg5120-imx8mp-fedora
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/eg5120-imx8mp-fedora-golang.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-eg5120-imx8mp-fedora-golang:
+    name: Bake eg5120-imx8mp-fedora-golang
+    runs-on:
+      - self-hosted
+      - base-images
+      - ARM64
+    timeout-minutes: 240
+    needs: prepare-eg5120-imx8mp-fedora-golang
+    env:
+      LIBRARY: library/eg5120-imx8mp-fedora-golang.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-eg5120-imx8mp-fedora-golang.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Setup buildx
+        id: setup-buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v8.0.4-33
+        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm64') == false
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Set the DATESTAMP variable
+        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
+      - name: Docker bake
+        continue-on-error: false
+        id: docker_bake
+        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+  prepare-eg5120-imx8mp-fedora-node:
+    name: Prepare eg5120-imx8mp-fedora-node
+    runs-on: ubuntu-latest
+    needs: bake-eg5120-imx8mp-fedora
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/eg5120-imx8mp-fedora-node.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-eg5120-imx8mp-fedora-node:
+    name: Bake eg5120-imx8mp-fedora-node
+    runs-on:
+      - self-hosted
+      - base-images
+      - ARM64
+    timeout-minutes: 240
+    needs: prepare-eg5120-imx8mp-fedora-node
+    env:
+      LIBRARY: library/eg5120-imx8mp-fedora-node.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-eg5120-imx8mp-fedora-node.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Setup buildx
+        id: setup-buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v8.0.4-33
+        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm64') == false
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Set the DATESTAMP variable
+        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
+      - name: Docker bake
+        continue-on-error: false
+        id: docker_bake
+        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+  prepare-eg5120-imx8mp-fedora-python:
+    name: Prepare eg5120-imx8mp-fedora-python
+    runs-on: ubuntu-latest
+    needs: bake-eg5120-imx8mp-fedora
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/eg5120-imx8mp-fedora-python.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-eg5120-imx8mp-fedora-python:
+    name: Bake eg5120-imx8mp-fedora-python
+    runs-on:
+      - self-hosted
+      - base-images
+      - ARM64
+    timeout-minutes: 240
+    needs: prepare-eg5120-imx8mp-fedora-python
+    env:
+      LIBRARY: library/eg5120-imx8mp-fedora-python.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-eg5120-imx8mp-fedora-python.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Setup buildx
+        id: setup-buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v8.0.4-33
+        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm64') == false
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Set the DATESTAMP variable
+        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
+      - name: Docker bake
+        continue-on-error: false
+        id: docker_bake
+        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+  prepare-eg5120-imx8mp-ubuntu-golang:
+    name: Prepare eg5120-imx8mp-ubuntu-golang
+    runs-on: ubuntu-latest
+    needs: bake-eg5120-imx8mp-ubuntu
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/eg5120-imx8mp-ubuntu-golang.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-eg5120-imx8mp-ubuntu-golang:
+    name: Bake eg5120-imx8mp-ubuntu-golang
+    runs-on:
+      - self-hosted
+      - base-images
+      - ARM64
+    timeout-minutes: 240
+    needs: prepare-eg5120-imx8mp-ubuntu-golang
+    env:
+      LIBRARY: library/eg5120-imx8mp-ubuntu-golang.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-eg5120-imx8mp-ubuntu-golang.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Setup buildx
+        id: setup-buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v8.0.4-33
+        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm64') == false
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Set the DATESTAMP variable
+        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
+      - name: Docker bake
+        continue-on-error: false
+        id: docker_bake
+        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+  prepare-eg5120-imx8mp-ubuntu-node:
+    name: Prepare eg5120-imx8mp-ubuntu-node
+    runs-on: ubuntu-latest
+    needs: bake-eg5120-imx8mp-ubuntu
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/eg5120-imx8mp-ubuntu-node.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-eg5120-imx8mp-ubuntu-node:
+    name: Bake eg5120-imx8mp-ubuntu-node
+    runs-on:
+      - self-hosted
+      - base-images
+      - ARM64
+    timeout-minutes: 240
+    needs: prepare-eg5120-imx8mp-ubuntu-node
+    env:
+      LIBRARY: library/eg5120-imx8mp-ubuntu-node.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-eg5120-imx8mp-ubuntu-node.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Setup buildx
+        id: setup-buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v8.0.4-33
+        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm64') == false
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Set the DATESTAMP variable
+        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
+      - name: Docker bake
+        continue-on-error: false
+        id: docker_bake
+        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+  prepare-eg5120-imx8mp-ubuntu-python:
+    name: Prepare eg5120-imx8mp-ubuntu-python
+    runs-on: ubuntu-latest
+    needs: bake-eg5120-imx8mp-ubuntu
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/eg5120-imx8mp-ubuntu-python.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-eg5120-imx8mp-ubuntu-python:
+    name: Bake eg5120-imx8mp-ubuntu-python
+    runs-on:
+      - self-hosted
+      - base-images
+      - ARM64
+    timeout-minutes: 240
+    needs: prepare-eg5120-imx8mp-ubuntu-python
+    env:
+      LIBRARY: library/eg5120-imx8mp-ubuntu-python.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-eg5120-imx8mp-ubuntu-python.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Setup buildx
+        id: setup-buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v8.0.4-33
+        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm64') == false
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Set the DATESTAMP variable
+        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
+      - name: Docker bake
+        continue-on-error: false
+        id: docker_bake
+        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+  prepare-eg5120-imx8mp-ubuntu-openjdk:
+    name: Prepare eg5120-imx8mp-ubuntu-openjdk
+    runs-on: ubuntu-latest
+    needs: bake-eg5120-imx8mp-ubuntu
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/eg5120-imx8mp-ubuntu-openjdk.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-eg5120-imx8mp-ubuntu-openjdk:
+    name: Bake eg5120-imx8mp-ubuntu-openjdk
+    runs-on:
+      - self-hosted
+      - base-images
+      - ARM64
+    timeout-minutes: 240
+    needs: prepare-eg5120-imx8mp-ubuntu-openjdk
+    env:
+      LIBRARY: library/eg5120-imx8mp-ubuntu-openjdk.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-eg5120-imx8mp-ubuntu-openjdk.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Setup buildx
+        id: setup-buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v8.0.4-33
+        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm64') == false
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Set the DATESTAMP variable
+        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
+      - name: Docker bake
+        continue-on-error: false
+        id: docker_bake
+        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
+        with:
+          workdir: balena-base-images
+          files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          targets: ${{ matrix.target }}
+          push: ${{ inputs.no-push != true }}
+          provenance: false
+  prepare-eg5120-imx8mp-alpine:
+    name: Prepare eg5120-imx8mp-alpine
     runs-on: ubuntu-latest
     if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/armv7hf-alpine.json
+      LIBRARY: library/eg5120-imx8mp-alpine.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -41,20 +1035,20 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-armv7hf-alpine:
-    name: Bake armv7hf-alpine
+  bake-eg5120-imx8mp-alpine:
+    name: Bake eg5120-imx8mp-alpine
     runs-on:
       - self-hosted
       - base-images
       - ARM64
     timeout-minutes: 240
-    needs: prepare-armv7hf-alpine
+    needs: prepare-eg5120-imx8mp-alpine
     env:
-      LIBRARY: library/armv7hf-alpine.json
+      LIBRARY: library/eg5120-imx8mp-alpine.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-armv7hf-alpine.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-eg5120-imx8mp-alpine.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -63,7 +1057,7 @@ jobs:
           persist-credentials: false
       - name: Setup buildx
         id: setup-buildx
-        uses: docker/setup-buildx-action@988b5a0280414f521da01fcc63a27aeeb4b104db
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
         with:
           driver-opts: network=host
           install: true
@@ -72,7 +1066,7 @@ jobs:
         with:
           platforms: all
           image: tonistiigi/binfmt:qemu-v8.0.4-33
-        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm/v7') == false
+        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm64') == false
       - name: Login to DockerHub
         uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
         if: inputs.no-push != true
@@ -92,14 +1086,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-armv7hf-debian:
-    name: Prepare armv7hf-debian
+  prepare-eg5120-imx8mp-debian:
+    name: Prepare eg5120-imx8mp-debian
     runs-on: ubuntu-latest
     if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/armv7hf-debian.json
+      LIBRARY: library/eg5120-imx8mp-debian.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -112,20 +1106,20 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-armv7hf-debian:
-    name: Bake armv7hf-debian
+  bake-eg5120-imx8mp-debian:
+    name: Bake eg5120-imx8mp-debian
     runs-on:
       - self-hosted
       - base-images
       - ARM64
     timeout-minutes: 240
-    needs: prepare-armv7hf-debian
+    needs: prepare-eg5120-imx8mp-debian
     env:
-      LIBRARY: library/armv7hf-debian.json
+      LIBRARY: library/eg5120-imx8mp-debian.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-armv7hf-debian.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-eg5120-imx8mp-debian.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -134,7 +1128,7 @@ jobs:
           persist-credentials: false
       - name: Setup buildx
         id: setup-buildx
-        uses: docker/setup-buildx-action@988b5a0280414f521da01fcc63a27aeeb4b104db
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
         with:
           driver-opts: network=host
           install: true
@@ -143,7 +1137,7 @@ jobs:
         with:
           platforms: all
           image: tonistiigi/binfmt:qemu-v8.0.4-33
-        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm/v7') == false
+        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm64') == false
       - name: Login to DockerHub
         uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
         if: inputs.no-push != true
@@ -163,14 +1157,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-armv7hf-ubuntu:
-    name: Prepare armv7hf-ubuntu
+  prepare-eg5120-imx8mp-fedora:
+    name: Prepare eg5120-imx8mp-fedora
     runs-on: ubuntu-latest
     if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/armv7hf-ubuntu.json
+      LIBRARY: library/eg5120-imx8mp-fedora.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -183,20 +1177,20 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-armv7hf-ubuntu:
-    name: Bake armv7hf-ubuntu
+  bake-eg5120-imx8mp-fedora:
+    name: Bake eg5120-imx8mp-fedora
     runs-on:
       - self-hosted
       - base-images
       - ARM64
     timeout-minutes: 240
-    needs: prepare-armv7hf-ubuntu
+    needs: prepare-eg5120-imx8mp-fedora
     env:
-      LIBRARY: library/armv7hf-ubuntu.json
+      LIBRARY: library/eg5120-imx8mp-fedora.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-armv7hf-ubuntu.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-eg5120-imx8mp-fedora.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -205,7 +1199,7 @@ jobs:
           persist-credentials: false
       - name: Setup buildx
         id: setup-buildx
-        uses: docker/setup-buildx-action@988b5a0280414f521da01fcc63a27aeeb4b104db
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
         with:
           driver-opts: network=host
           install: true
@@ -214,7 +1208,7 @@ jobs:
         with:
           platforms: all
           image: tonistiigi/binfmt:qemu-v8.0.4-33
-        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm/v7') == false
+        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm64') == false
       - name: Login to DockerHub
         uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
         if: inputs.no-push != true
@@ -234,14 +1228,14 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
-  prepare-armv7hf-alpine-golang:
-    name: Prepare armv7hf-alpine-golang
+  prepare-eg5120-imx8mp-ubuntu:
+    name: Prepare eg5120-imx8mp-ubuntu
     runs-on: ubuntu-latest
-    needs: bake-armv7hf-alpine
+    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
     outputs:
       bake-targets: ${{ steps.bake-targets.outputs.matrix }}
     env:
-      LIBRARY: library/armv7hf-alpine-golang.json
+      LIBRARY: library/eg5120-imx8mp-ubuntu.json
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -254,20 +1248,20 @@ jobs:
           set -x
           targets="$(jq -cr '.group.default.targets' $LIBRARY)"
           echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-armv7hf-alpine-golang:
-    name: Bake armv7hf-alpine-golang
+  bake-eg5120-imx8mp-ubuntu:
+    name: Bake eg5120-imx8mp-ubuntu
     runs-on:
       - self-hosted
       - base-images
       - ARM64
     timeout-minutes: 240
-    needs: prepare-armv7hf-alpine-golang
+    needs: prepare-eg5120-imx8mp-ubuntu
     env:
-      LIBRARY: library/armv7hf-alpine-golang.json
+      LIBRARY: library/eg5120-imx8mp-ubuntu.json
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(needs.prepare-armv7hf-alpine-golang.outputs.bake-targets) }}
+        target: ${{ fromJSON(needs.prepare-eg5120-imx8mp-ubuntu.outputs.bake-targets) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
@@ -285,717 +1279,7 @@ jobs:
         with:
           platforms: all
           image: tonistiigi/binfmt:qemu-v8.0.4-33
-        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm/v7') == false
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Set the DATESTAMP variable
-        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
-  prepare-armv7hf-alpine-node:
-    name: Prepare armv7hf-alpine-node
-    runs-on: ubuntu-latest
-    needs: bake-armv7hf-alpine
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/armv7hf-alpine-node.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-          persist-credentials: false
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-armv7hf-alpine-node:
-    name: Bake armv7hf-alpine-node
-    runs-on:
-      - self-hosted
-      - base-images
-      - ARM64
-    timeout-minutes: 240
-    needs: prepare-armv7hf-alpine-node
-    env:
-      LIBRARY: library/armv7hf-alpine-node.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-armv7hf-alpine-node.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-          persist-credentials: false
-      - name: Setup buildx
-        id: setup-buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v8.0.4-33
-        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm/v7') == false
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Set the DATESTAMP variable
-        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
-  prepare-armv7hf-alpine-python:
-    name: Prepare armv7hf-alpine-python
-    runs-on: ubuntu-latest
-    needs: bake-armv7hf-alpine
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/armv7hf-alpine-python.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-          persist-credentials: false
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-armv7hf-alpine-python:
-    name: Bake armv7hf-alpine-python
-    runs-on:
-      - self-hosted
-      - base-images
-      - ARM64
-    timeout-minutes: 240
-    needs: prepare-armv7hf-alpine-python
-    env:
-      LIBRARY: library/armv7hf-alpine-python.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-armv7hf-alpine-python.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-          persist-credentials: false
-      - name: Setup buildx
-        id: setup-buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v8.0.4-33
-        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm/v7') == false
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Set the DATESTAMP variable
-        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
-  prepare-armv7hf-debian-golang:
-    name: Prepare armv7hf-debian-golang
-    runs-on: ubuntu-latest
-    needs: bake-armv7hf-debian
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/armv7hf-debian-golang.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-          persist-credentials: false
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-armv7hf-debian-golang:
-    name: Bake armv7hf-debian-golang
-    runs-on:
-      - self-hosted
-      - base-images
-      - ARM64
-    timeout-minutes: 240
-    needs: prepare-armv7hf-debian-golang
-    env:
-      LIBRARY: library/armv7hf-debian-golang.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-armv7hf-debian-golang.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-          persist-credentials: false
-      - name: Setup buildx
-        id: setup-buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v8.0.4-33
-        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm/v7') == false
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Set the DATESTAMP variable
-        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
-  prepare-armv7hf-debian-node:
-    name: Prepare armv7hf-debian-node
-    runs-on: ubuntu-latest
-    needs: bake-armv7hf-debian
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/armv7hf-debian-node.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-          persist-credentials: false
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-armv7hf-debian-node:
-    name: Bake armv7hf-debian-node
-    runs-on:
-      - self-hosted
-      - base-images
-      - ARM64
-    timeout-minutes: 240
-    needs: prepare-armv7hf-debian-node
-    env:
-      LIBRARY: library/armv7hf-debian-node.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-armv7hf-debian-node.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-          persist-credentials: false
-      - name: Setup buildx
-        id: setup-buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v8.0.4-33
-        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm/v7') == false
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Set the DATESTAMP variable
-        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
-  prepare-armv7hf-debian-openjdk:
-    name: Prepare armv7hf-debian-openjdk
-    runs-on: ubuntu-latest
-    needs: bake-armv7hf-debian
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/armv7hf-debian-openjdk.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-          persist-credentials: false
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-armv7hf-debian-openjdk:
-    name: Bake armv7hf-debian-openjdk
-    runs-on:
-      - self-hosted
-      - base-images
-      - ARM64
-    timeout-minutes: 240
-    needs: prepare-armv7hf-debian-openjdk
-    env:
-      LIBRARY: library/armv7hf-debian-openjdk.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-armv7hf-debian-openjdk.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-          persist-credentials: false
-      - name: Setup buildx
-        id: setup-buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v8.0.4-33
-        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm/v7') == false
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Set the DATESTAMP variable
-        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
-  prepare-armv7hf-debian-python:
-    name: Prepare armv7hf-debian-python
-    runs-on: ubuntu-latest
-    needs: bake-armv7hf-debian
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/armv7hf-debian-python.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-          persist-credentials: false
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-armv7hf-debian-python:
-    name: Bake armv7hf-debian-python
-    runs-on:
-      - self-hosted
-      - base-images
-      - ARM64
-    timeout-minutes: 240
-    needs: prepare-armv7hf-debian-python
-    env:
-      LIBRARY: library/armv7hf-debian-python.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-armv7hf-debian-python.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-          persist-credentials: false
-      - name: Setup buildx
-        id: setup-buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v8.0.4-33
-        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm/v7') == false
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Set the DATESTAMP variable
-        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
-  prepare-armv7hf-ubuntu-golang:
-    name: Prepare armv7hf-ubuntu-golang
-    runs-on: ubuntu-latest
-    needs: bake-armv7hf-ubuntu
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/armv7hf-ubuntu-golang.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-          persist-credentials: false
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-armv7hf-ubuntu-golang:
-    name: Bake armv7hf-ubuntu-golang
-    runs-on:
-      - self-hosted
-      - base-images
-      - ARM64
-    timeout-minutes: 240
-    needs: prepare-armv7hf-ubuntu-golang
-    env:
-      LIBRARY: library/armv7hf-ubuntu-golang.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-armv7hf-ubuntu-golang.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-          persist-credentials: false
-      - name: Setup buildx
-        id: setup-buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v8.0.4-33
-        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm/v7') == false
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Set the DATESTAMP variable
-        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
-  prepare-armv7hf-ubuntu-node:
-    name: Prepare armv7hf-ubuntu-node
-    runs-on: ubuntu-latest
-    needs: bake-armv7hf-ubuntu
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/armv7hf-ubuntu-node.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-          persist-credentials: false
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-armv7hf-ubuntu-node:
-    name: Bake armv7hf-ubuntu-node
-    runs-on:
-      - self-hosted
-      - base-images
-      - ARM64
-    timeout-minutes: 240
-    needs: prepare-armv7hf-ubuntu-node
-    env:
-      LIBRARY: library/armv7hf-ubuntu-node.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-armv7hf-ubuntu-node.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-          persist-credentials: false
-      - name: Setup buildx
-        id: setup-buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v8.0.4-33
-        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm/v7') == false
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Set the DATESTAMP variable
-        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
-  prepare-armv7hf-ubuntu-python:
-    name: Prepare armv7hf-ubuntu-python
-    runs-on: ubuntu-latest
-    needs: bake-armv7hf-ubuntu
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/armv7hf-ubuntu-python.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-          persist-credentials: false
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-armv7hf-ubuntu-python:
-    name: Bake armv7hf-ubuntu-python
-    runs-on:
-      - self-hosted
-      - base-images
-      - ARM64
-    timeout-minutes: 240
-    needs: prepare-armv7hf-ubuntu-python
-    env:
-      LIBRARY: library/armv7hf-ubuntu-python.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-armv7hf-ubuntu-python.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-          persist-credentials: false
-      - name: Setup buildx
-        id: setup-buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v8.0.4-33
-        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm/v7') == false
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Set the DATESTAMP variable
-        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
-  prepare-armv7hf-ubuntu-openjdk:
-    name: Prepare armv7hf-ubuntu-openjdk
-    runs-on: ubuntu-latest
-    needs: bake-armv7hf-ubuntu
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/armv7hf-ubuntu-openjdk.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-          persist-credentials: false
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-armv7hf-ubuntu-openjdk:
-    name: Bake armv7hf-ubuntu-openjdk
-    runs-on:
-      - self-hosted
-      - base-images
-      - ARM64
-    timeout-minutes: 240
-    needs: prepare-armv7hf-ubuntu-openjdk
-    env:
-      LIBRARY: library/armv7hf-ubuntu-openjdk.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-armv7hf-ubuntu-openjdk.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-          persist-credentials: false
-      - name: Setup buildx
-        id: setup-buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v8.0.4-33
-        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm/v7') == false
+        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm64') == false
       - name: Login to DockerHub
         uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
         if: inputs.no-push != true
