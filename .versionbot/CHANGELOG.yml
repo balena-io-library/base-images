@@ -1,4 +1,31 @@
 - commits:
+    - subject: Update scripts/contracts digest to d077818
+      hash: 31ca065b09d303b8ff51830cee2d6707cec4b12b
+      body: |
+        Update scripts/contracts
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: "hw.device-type: Update links to docs for UEFI version checking"
+              hash: cd8fa068d9e3a1a5d8aeda35829973963fc4e204
+              body: |
+                ... also include the L4T minor revision in the UEFI version
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+          version: contracts-2.0.130
+          title: ""
+          date: 2025-03-28T11:36:03.120Z
+  version: 2.11.33
+  title: ""
+  date: 2025-03-28T12:10:02.025Z
+- commits:
     - subject: Lock file maintenance
       hash: 2ef184f95e29ae7f0aba0088a6b901bfff9f9cbe
       body: |

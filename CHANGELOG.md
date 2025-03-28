@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.11.33 - 2025-03-28
+
+
+<details>
+<summary> Update scripts/contracts digest to d077818 [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.130 - 2025-03-28
+> 
+> * hw.device-type: Update links to docs for UEFI version checking [Alexandru Costache]
+> 
+
+</details>
+
 ## 2.11.32 - 2025-03-24
 
 * Lock file maintenance [Self-hosted Renovate Bot]
