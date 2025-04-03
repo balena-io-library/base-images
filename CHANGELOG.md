@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.11.36 - 2025-04-03
+
+
+<details>
+<summary> Update scripts/contracts digest to 34033e6 [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.131 - 2025-04-03
+> 
+> * Add EDATEC Sensing contract and logo [RayX123456]
+> 
+
+</details>
+
 ## 2.11.35 - 2025-04-03
 
 * Update scripts/contracts digest to cc4d48c [Self-hosted Renovate Bot]
