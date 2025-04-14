@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.11.38 - 2025-04-14
+
+* Lock file maintenance [Self-hosted Renovate Bot]
+
 ## 2.11.37 - 2025-04-07
 
 * Lock file maintenance [Self-hosted Renovate Bot]
