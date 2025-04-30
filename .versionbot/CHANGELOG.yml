@@ -1,4 +1,32 @@
 - commits:
+    - subject: Update scripts/contracts digest to a1e8b75
+      hash: 97c9f005825c8c18202057e00cb3e6bcdd22b7b4
+      body: |
+        Update scripts/contracts
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: "imx6ul-var-dart: Update provisioning instructions"
+              hash: acd08a8d8bfdc7bd93a2c7d1196ea158406df315
+              body: >
+                ... to take into account that SW1 and SW2 and switches and not
+                buttons.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru
+          version: contracts-2.0.132
+          title: ""
+          date: 2025-04-30T21:33:40.156Z
+  version: 2.11.42
+  title: ""
+  date: 2025-04-30T22:12:33.001Z
+- commits:
     - subject: Lock file maintenance
       hash: c81ee20889926ccbf1290e188ed6078f94507c1e
       body: |

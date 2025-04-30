@@ -5,6 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.11.42 - 2025-04-30
+
+
+<details>
+<summary> Update scripts/contracts digest to a1e8b75 [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.132 - Invalid date
+> 
+> * imx6ul-var-dart: Update provisioning instructions [Alexandru]
+> 
+
+</details>
+
 ## 2.11.41 - 2025-04-28
 
 * Lock file maintenance [Self-hosted Renovate Bot]
