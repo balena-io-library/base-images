@@ -32,7 +32,7 @@ This [guide][getting-started] can help you get started with using this base imag
 
 # Supported versions and respective `Dockerfile` links :
 
-[&#x60;noble (latest)&#x60;, &#x60;jammy&#x60;, &#x60;focal&#x60;, &#x60;xenial&#x60;, &#x60;bionic&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/beaglebone-green-wifi/ubuntu/)
+[&#x60;noble (latest)&#x60;, &#x60;jammy&#x60;](https://github.com/balena-io-library/base-images/tree/master/balena-base-images/device-base/beaglebone-green-wifi/ubuntu/)
 
 For more information about this image and its history, please see the [relevant manifest file (`beaglebone-green-wifi-ubuntu`)](https://github.com/balena-io-library/official-images/blob/master/library/beaglebone-green-wifi-ubuntu) in the [`balena-io-library/official-images` GitHub repo](https://github.com/balena-io-library/official-images).
 
