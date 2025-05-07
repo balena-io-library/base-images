@@ -5,13 +5,7 @@
         "eg5120-imx8mp-ubuntu-noble-build",
         "eg5120-imx8mp-ubuntu-noble-run",
         "eg5120-imx8mp-ubuntu-jammy-build",
-        "eg5120-imx8mp-ubuntu-jammy-run",
-        "eg5120-imx8mp-ubuntu-focal-build",
-        "eg5120-imx8mp-ubuntu-focal-run",
-        "eg5120-imx8mp-ubuntu-xenial-build",
-        "eg5120-imx8mp-ubuntu-xenial-run",
-        "eg5120-imx8mp-ubuntu-bionic-build",
-        "eg5120-imx8mp-ubuntu-bionic-run"
+        "eg5120-imx8mp-ubuntu-jammy-run"
       ]
     }
   },
@@ -96,96 +90,6 @@
         "docker.io/balenalib/eg5120-imx8mp-ubuntu:jammy-run",
         "docker.io/balenalib/eg5120-imx8mp-ubuntu:jammy-${DATESTAMP}",
         "docker.io/balenalib/eg5120-imx8mp-ubuntu:jammy"
-      ]
-    },
-    "eg5120-imx8mp-ubuntu-focal-build": {
-      "context": "device-base/eg5120-imx8mp/ubuntu/focal/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/eg5120-imx8mp-ubuntu:focal-build-${DATESTAMP}",
-        "docker.io/balenalib/eg5120-imx8mp-ubuntu:focal-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/eg5120-imx8mp-ubuntu:focal-build-${DATESTAMP}",
-        "docker.io/balenalib/eg5120-imx8mp-ubuntu:focal-build"
-      ]
-    },
-    "eg5120-imx8mp-ubuntu-focal-run": {
-      "context": "device-base/eg5120-imx8mp/ubuntu/focal/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/eg5120-imx8mp-ubuntu:focal-run-${DATESTAMP}",
-        "docker.io/balenalib/eg5120-imx8mp-ubuntu:focal-run",
-        "docker.io/balenalib/eg5120-imx8mp-ubuntu:focal-${DATESTAMP}",
-        "docker.io/balenalib/eg5120-imx8mp-ubuntu:focal"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/eg5120-imx8mp-ubuntu:focal-run-${DATESTAMP}",
-        "docker.io/balenalib/eg5120-imx8mp-ubuntu:focal-run",
-        "docker.io/balenalib/eg5120-imx8mp-ubuntu:focal-${DATESTAMP}",
-        "docker.io/balenalib/eg5120-imx8mp-ubuntu:focal"
-      ]
-    },
-    "eg5120-imx8mp-ubuntu-xenial-build": {
-      "context": "device-base/eg5120-imx8mp/ubuntu/xenial/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/eg5120-imx8mp-ubuntu:xenial-build-${DATESTAMP}",
-        "docker.io/balenalib/eg5120-imx8mp-ubuntu:xenial-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/eg5120-imx8mp-ubuntu:xenial-build-${DATESTAMP}",
-        "docker.io/balenalib/eg5120-imx8mp-ubuntu:xenial-build"
-      ]
-    },
-    "eg5120-imx8mp-ubuntu-xenial-run": {
-      "context": "device-base/eg5120-imx8mp/ubuntu/xenial/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/eg5120-imx8mp-ubuntu:xenial-run-${DATESTAMP}",
-        "docker.io/balenalib/eg5120-imx8mp-ubuntu:xenial-run",
-        "docker.io/balenalib/eg5120-imx8mp-ubuntu:xenial-${DATESTAMP}",
-        "docker.io/balenalib/eg5120-imx8mp-ubuntu:xenial"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/eg5120-imx8mp-ubuntu:xenial-run-${DATESTAMP}",
-        "docker.io/balenalib/eg5120-imx8mp-ubuntu:xenial-run",
-        "docker.io/balenalib/eg5120-imx8mp-ubuntu:xenial-${DATESTAMP}",
-        "docker.io/balenalib/eg5120-imx8mp-ubuntu:xenial"
-      ]
-    },
-    "eg5120-imx8mp-ubuntu-bionic-build": {
-      "context": "device-base/eg5120-imx8mp/ubuntu/bionic/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/eg5120-imx8mp-ubuntu:bionic-build-${DATESTAMP}",
-        "docker.io/balenalib/eg5120-imx8mp-ubuntu:bionic-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/eg5120-imx8mp-ubuntu:bionic-build-${DATESTAMP}",
-        "docker.io/balenalib/eg5120-imx8mp-ubuntu:bionic-build"
-      ]
-    },
-    "eg5120-imx8mp-ubuntu-bionic-run": {
-      "context": "device-base/eg5120-imx8mp/ubuntu/bionic/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/eg5120-imx8mp-ubuntu:bionic-run-${DATESTAMP}",
-        "docker.io/balenalib/eg5120-imx8mp-ubuntu:bionic-run",
-        "docker.io/balenalib/eg5120-imx8mp-ubuntu:bionic-${DATESTAMP}",
-        "docker.io/balenalib/eg5120-imx8mp-ubuntu:bionic"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/eg5120-imx8mp-ubuntu:bionic-run-${DATESTAMP}",
-        "docker.io/balenalib/eg5120-imx8mp-ubuntu:bionic-run",
-        "docker.io/balenalib/eg5120-imx8mp-ubuntu:bionic-${DATESTAMP}",
-        "docker.io/balenalib/eg5120-imx8mp-ubuntu:bionic"
       ]
     }
   },

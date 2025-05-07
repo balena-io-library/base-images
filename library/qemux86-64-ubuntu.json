@@ -5,13 +5,7 @@
         "qemux86-64-ubuntu-noble-build",
         "qemux86-64-ubuntu-noble-run",
         "qemux86-64-ubuntu-jammy-build",
-        "qemux86-64-ubuntu-jammy-run",
-        "qemux86-64-ubuntu-focal-build",
-        "qemux86-64-ubuntu-focal-run",
-        "qemux86-64-ubuntu-xenial-build",
-        "qemux86-64-ubuntu-xenial-run",
-        "qemux86-64-ubuntu-bionic-build",
-        "qemux86-64-ubuntu-bionic-run"
+        "qemux86-64-ubuntu-jammy-run"
       ]
     }
   },
@@ -96,96 +90,6 @@
         "docker.io/balenalib/qemux86-64-ubuntu:jammy-run",
         "docker.io/balenalib/qemux86-64-ubuntu:jammy-${DATESTAMP}",
         "docker.io/balenalib/qemux86-64-ubuntu:jammy"
-      ]
-    },
-    "qemux86-64-ubuntu-focal-build": {
-      "context": "device-base/qemux86-64/ubuntu/focal/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/amd64",
-      "tags": [
-        "docker.io/balenalib/qemux86-64-ubuntu:focal-build-${DATESTAMP}",
-        "docker.io/balenalib/qemux86-64-ubuntu:focal-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/qemux86-64-ubuntu:focal-build-${DATESTAMP}",
-        "docker.io/balenalib/qemux86-64-ubuntu:focal-build"
-      ]
-    },
-    "qemux86-64-ubuntu-focal-run": {
-      "context": "device-base/qemux86-64/ubuntu/focal/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/amd64",
-      "tags": [
-        "docker.io/balenalib/qemux86-64-ubuntu:focal-run-${DATESTAMP}",
-        "docker.io/balenalib/qemux86-64-ubuntu:focal-run",
-        "docker.io/balenalib/qemux86-64-ubuntu:focal-${DATESTAMP}",
-        "docker.io/balenalib/qemux86-64-ubuntu:focal"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/qemux86-64-ubuntu:focal-run-${DATESTAMP}",
-        "docker.io/balenalib/qemux86-64-ubuntu:focal-run",
-        "docker.io/balenalib/qemux86-64-ubuntu:focal-${DATESTAMP}",
-        "docker.io/balenalib/qemux86-64-ubuntu:focal"
-      ]
-    },
-    "qemux86-64-ubuntu-xenial-build": {
-      "context": "device-base/qemux86-64/ubuntu/xenial/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/amd64",
-      "tags": [
-        "docker.io/balenalib/qemux86-64-ubuntu:xenial-build-${DATESTAMP}",
-        "docker.io/balenalib/qemux86-64-ubuntu:xenial-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/qemux86-64-ubuntu:xenial-build-${DATESTAMP}",
-        "docker.io/balenalib/qemux86-64-ubuntu:xenial-build"
-      ]
-    },
-    "qemux86-64-ubuntu-xenial-run": {
-      "context": "device-base/qemux86-64/ubuntu/xenial/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/amd64",
-      "tags": [
-        "docker.io/balenalib/qemux86-64-ubuntu:xenial-run-${DATESTAMP}",
-        "docker.io/balenalib/qemux86-64-ubuntu:xenial-run",
-        "docker.io/balenalib/qemux86-64-ubuntu:xenial-${DATESTAMP}",
-        "docker.io/balenalib/qemux86-64-ubuntu:xenial"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/qemux86-64-ubuntu:xenial-run-${DATESTAMP}",
-        "docker.io/balenalib/qemux86-64-ubuntu:xenial-run",
-        "docker.io/balenalib/qemux86-64-ubuntu:xenial-${DATESTAMP}",
-        "docker.io/balenalib/qemux86-64-ubuntu:xenial"
-      ]
-    },
-    "qemux86-64-ubuntu-bionic-build": {
-      "context": "device-base/qemux86-64/ubuntu/bionic/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/amd64",
-      "tags": [
-        "docker.io/balenalib/qemux86-64-ubuntu:bionic-build-${DATESTAMP}",
-        "docker.io/balenalib/qemux86-64-ubuntu:bionic-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/qemux86-64-ubuntu:bionic-build-${DATESTAMP}",
-        "docker.io/balenalib/qemux86-64-ubuntu:bionic-build"
-      ]
-    },
-    "qemux86-64-ubuntu-bionic-run": {
-      "context": "device-base/qemux86-64/ubuntu/bionic/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/amd64",
-      "tags": [
-        "docker.io/balenalib/qemux86-64-ubuntu:bionic-run-${DATESTAMP}",
-        "docker.io/balenalib/qemux86-64-ubuntu:bionic-run",
-        "docker.io/balenalib/qemux86-64-ubuntu:bionic-${DATESTAMP}",
-        "docker.io/balenalib/qemux86-64-ubuntu:bionic"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/qemux86-64-ubuntu:bionic-run-${DATESTAMP}",
-        "docker.io/balenalib/qemux86-64-ubuntu:bionic-run",
-        "docker.io/balenalib/qemux86-64-ubuntu:bionic-${DATESTAMP}",
-        "docker.io/balenalib/qemux86-64-ubuntu:bionic"
       ]
     }
   },

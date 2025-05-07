@@ -5,13 +5,7 @@
         "photon-tx2-nx-ubuntu-noble-build",
         "photon-tx2-nx-ubuntu-noble-run",
         "photon-tx2-nx-ubuntu-jammy-build",
-        "photon-tx2-nx-ubuntu-jammy-run",
-        "photon-tx2-nx-ubuntu-focal-build",
-        "photon-tx2-nx-ubuntu-focal-run",
-        "photon-tx2-nx-ubuntu-xenial-build",
-        "photon-tx2-nx-ubuntu-xenial-run",
-        "photon-tx2-nx-ubuntu-bionic-build",
-        "photon-tx2-nx-ubuntu-bionic-run"
+        "photon-tx2-nx-ubuntu-jammy-run"
       ]
     }
   },
@@ -96,96 +90,6 @@
         "docker.io/balenalib/photon-tx2-nx-ubuntu:jammy-run",
         "docker.io/balenalib/photon-tx2-nx-ubuntu:jammy-${DATESTAMP}",
         "docker.io/balenalib/photon-tx2-nx-ubuntu:jammy"
-      ]
-    },
-    "photon-tx2-nx-ubuntu-focal-build": {
-      "context": "device-base/photon-tx2-nx/ubuntu/focal/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:focal-build-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:focal-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:focal-build-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:focal-build"
-      ]
-    },
-    "photon-tx2-nx-ubuntu-focal-run": {
-      "context": "device-base/photon-tx2-nx/ubuntu/focal/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:focal-run-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:focal-run",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:focal-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:focal"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:focal-run-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:focal-run",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:focal-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:focal"
-      ]
-    },
-    "photon-tx2-nx-ubuntu-xenial-build": {
-      "context": "device-base/photon-tx2-nx/ubuntu/xenial/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:xenial-build-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:xenial-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:xenial-build-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:xenial-build"
-      ]
-    },
-    "photon-tx2-nx-ubuntu-xenial-run": {
-      "context": "device-base/photon-tx2-nx/ubuntu/xenial/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:xenial-run-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:xenial-run",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:xenial-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:xenial"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:xenial-run-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:xenial-run",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:xenial-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:xenial"
-      ]
-    },
-    "photon-tx2-nx-ubuntu-bionic-build": {
-      "context": "device-base/photon-tx2-nx/ubuntu/bionic/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:bionic-build-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:bionic-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:bionic-build-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:bionic-build"
-      ]
-    },
-    "photon-tx2-nx-ubuntu-bionic-run": {
-      "context": "device-base/photon-tx2-nx/ubuntu/bionic/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:bionic-run-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:bionic-run",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:bionic-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:bionic"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:bionic-run-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:bionic-run",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:bionic-${DATESTAMP}",
-        "docker.io/balenalib/photon-tx2-nx-ubuntu:bionic"
       ]
     }
   },

@@ -5,13 +5,7 @@
         "orangepi-plus2-ubuntu-noble-build",
         "orangepi-plus2-ubuntu-noble-run",
         "orangepi-plus2-ubuntu-jammy-build",
-        "orangepi-plus2-ubuntu-jammy-run",
-        "orangepi-plus2-ubuntu-focal-build",
-        "orangepi-plus2-ubuntu-focal-run",
-        "orangepi-plus2-ubuntu-xenial-build",
-        "orangepi-plus2-ubuntu-xenial-run",
-        "orangepi-plus2-ubuntu-bionic-build",
-        "orangepi-plus2-ubuntu-bionic-run"
+        "orangepi-plus2-ubuntu-jammy-run"
       ]
     }
   },
@@ -96,96 +90,6 @@
         "docker.io/balenalib/orangepi-plus2-ubuntu:jammy-run",
         "docker.io/balenalib/orangepi-plus2-ubuntu:jammy-${DATESTAMP}",
         "docker.io/balenalib/orangepi-plus2-ubuntu:jammy"
-      ]
-    },
-    "orangepi-plus2-ubuntu-focal-build": {
-      "context": "device-base/orangepi-plus2/ubuntu/focal/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/orangepi-plus2-ubuntu:focal-build-${DATESTAMP}",
-        "docker.io/balenalib/orangepi-plus2-ubuntu:focal-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/orangepi-plus2-ubuntu:focal-build-${DATESTAMP}",
-        "docker.io/balenalib/orangepi-plus2-ubuntu:focal-build"
-      ]
-    },
-    "orangepi-plus2-ubuntu-focal-run": {
-      "context": "device-base/orangepi-plus2/ubuntu/focal/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/orangepi-plus2-ubuntu:focal-run-${DATESTAMP}",
-        "docker.io/balenalib/orangepi-plus2-ubuntu:focal-run",
-        "docker.io/balenalib/orangepi-plus2-ubuntu:focal-${DATESTAMP}",
-        "docker.io/balenalib/orangepi-plus2-ubuntu:focal"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/orangepi-plus2-ubuntu:focal-run-${DATESTAMP}",
-        "docker.io/balenalib/orangepi-plus2-ubuntu:focal-run",
-        "docker.io/balenalib/orangepi-plus2-ubuntu:focal-${DATESTAMP}",
-        "docker.io/balenalib/orangepi-plus2-ubuntu:focal"
-      ]
-    },
-    "orangepi-plus2-ubuntu-xenial-build": {
-      "context": "device-base/orangepi-plus2/ubuntu/xenial/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/orangepi-plus2-ubuntu:xenial-build-${DATESTAMP}",
-        "docker.io/balenalib/orangepi-plus2-ubuntu:xenial-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/orangepi-plus2-ubuntu:xenial-build-${DATESTAMP}",
-        "docker.io/balenalib/orangepi-plus2-ubuntu:xenial-build"
-      ]
-    },
-    "orangepi-plus2-ubuntu-xenial-run": {
-      "context": "device-base/orangepi-plus2/ubuntu/xenial/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/orangepi-plus2-ubuntu:xenial-run-${DATESTAMP}",
-        "docker.io/balenalib/orangepi-plus2-ubuntu:xenial-run",
-        "docker.io/balenalib/orangepi-plus2-ubuntu:xenial-${DATESTAMP}",
-        "docker.io/balenalib/orangepi-plus2-ubuntu:xenial"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/orangepi-plus2-ubuntu:xenial-run-${DATESTAMP}",
-        "docker.io/balenalib/orangepi-plus2-ubuntu:xenial-run",
-        "docker.io/balenalib/orangepi-plus2-ubuntu:xenial-${DATESTAMP}",
-        "docker.io/balenalib/orangepi-plus2-ubuntu:xenial"
-      ]
-    },
-    "orangepi-plus2-ubuntu-bionic-build": {
-      "context": "device-base/orangepi-plus2/ubuntu/bionic/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/orangepi-plus2-ubuntu:bionic-build-${DATESTAMP}",
-        "docker.io/balenalib/orangepi-plus2-ubuntu:bionic-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/orangepi-plus2-ubuntu:bionic-build-${DATESTAMP}",
-        "docker.io/balenalib/orangepi-plus2-ubuntu:bionic-build"
-      ]
-    },
-    "orangepi-plus2-ubuntu-bionic-run": {
-      "context": "device-base/orangepi-plus2/ubuntu/bionic/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/orangepi-plus2-ubuntu:bionic-run-${DATESTAMP}",
-        "docker.io/balenalib/orangepi-plus2-ubuntu:bionic-run",
-        "docker.io/balenalib/orangepi-plus2-ubuntu:bionic-${DATESTAMP}",
-        "docker.io/balenalib/orangepi-plus2-ubuntu:bionic"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/orangepi-plus2-ubuntu:bionic-run-${DATESTAMP}",
-        "docker.io/balenalib/orangepi-plus2-ubuntu:bionic-run",
-        "docker.io/balenalib/orangepi-plus2-ubuntu:bionic-${DATESTAMP}",
-        "docker.io/balenalib/orangepi-plus2-ubuntu:bionic"
       ]
     }
   },

@@ -5,13 +5,7 @@
         "beaglebone-pocket-ubuntu-noble-build",
         "beaglebone-pocket-ubuntu-noble-run",
         "beaglebone-pocket-ubuntu-jammy-build",
-        "beaglebone-pocket-ubuntu-jammy-run",
-        "beaglebone-pocket-ubuntu-focal-build",
-        "beaglebone-pocket-ubuntu-focal-run",
-        "beaglebone-pocket-ubuntu-xenial-build",
-        "beaglebone-pocket-ubuntu-xenial-run",
-        "beaglebone-pocket-ubuntu-bionic-build",
-        "beaglebone-pocket-ubuntu-bionic-run"
+        "beaglebone-pocket-ubuntu-jammy-run"
       ]
     }
   },
@@ -96,96 +90,6 @@
         "docker.io/balenalib/beaglebone-pocket-ubuntu:jammy-run",
         "docker.io/balenalib/beaglebone-pocket-ubuntu:jammy-${DATESTAMP}",
         "docker.io/balenalib/beaglebone-pocket-ubuntu:jammy"
-      ]
-    },
-    "beaglebone-pocket-ubuntu-focal-build": {
-      "context": "device-base/beaglebone-pocket/ubuntu/focal/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:focal-build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:focal-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:focal-build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:focal-build"
-      ]
-    },
-    "beaglebone-pocket-ubuntu-focal-run": {
-      "context": "device-base/beaglebone-pocket/ubuntu/focal/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:focal-run-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:focal-run",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:focal-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:focal"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:focal-run-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:focal-run",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:focal-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:focal"
-      ]
-    },
-    "beaglebone-pocket-ubuntu-xenial-build": {
-      "context": "device-base/beaglebone-pocket/ubuntu/xenial/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:xenial-build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:xenial-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:xenial-build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:xenial-build"
-      ]
-    },
-    "beaglebone-pocket-ubuntu-xenial-run": {
-      "context": "device-base/beaglebone-pocket/ubuntu/xenial/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:xenial-run-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:xenial-run",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:xenial-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:xenial"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:xenial-run-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:xenial-run",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:xenial-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:xenial"
-      ]
-    },
-    "beaglebone-pocket-ubuntu-bionic-build": {
-      "context": "device-base/beaglebone-pocket/ubuntu/bionic/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:bionic-build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:bionic-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:bionic-build-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:bionic-build"
-      ]
-    },
-    "beaglebone-pocket-ubuntu-bionic-run": {
-      "context": "device-base/beaglebone-pocket/ubuntu/bionic/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:bionic-run-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:bionic-run",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:bionic-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:bionic"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:bionic-run-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:bionic-run",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:bionic-${DATESTAMP}",
-        "docker.io/balenalib/beaglebone-pocket-ubuntu:bionic"
       ]
     }
   },

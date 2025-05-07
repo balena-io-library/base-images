@@ -5,13 +5,7 @@
         "bananapi-m1-plus-ubuntu-noble-build",
         "bananapi-m1-plus-ubuntu-noble-run",
         "bananapi-m1-plus-ubuntu-jammy-build",
-        "bananapi-m1-plus-ubuntu-jammy-run",
-        "bananapi-m1-plus-ubuntu-focal-build",
-        "bananapi-m1-plus-ubuntu-focal-run",
-        "bananapi-m1-plus-ubuntu-xenial-build",
-        "bananapi-m1-plus-ubuntu-xenial-run",
-        "bananapi-m1-plus-ubuntu-bionic-build",
-        "bananapi-m1-plus-ubuntu-bionic-run"
+        "bananapi-m1-plus-ubuntu-jammy-run"
       ]
     }
   },
@@ -96,96 +90,6 @@
         "docker.io/balenalib/bananapi-m1-plus-ubuntu:jammy-run",
         "docker.io/balenalib/bananapi-m1-plus-ubuntu:jammy-${DATESTAMP}",
         "docker.io/balenalib/bananapi-m1-plus-ubuntu:jammy"
-      ]
-    },
-    "bananapi-m1-plus-ubuntu-focal-build": {
-      "context": "device-base/bananapi-m1-plus/ubuntu/focal/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:focal-build-${DATESTAMP}",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:focal-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:focal-build-${DATESTAMP}",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:focal-build"
-      ]
-    },
-    "bananapi-m1-plus-ubuntu-focal-run": {
-      "context": "device-base/bananapi-m1-plus/ubuntu/focal/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:focal-run-${DATESTAMP}",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:focal-run",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:focal-${DATESTAMP}",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:focal"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:focal-run-${DATESTAMP}",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:focal-run",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:focal-${DATESTAMP}",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:focal"
-      ]
-    },
-    "bananapi-m1-plus-ubuntu-xenial-build": {
-      "context": "device-base/bananapi-m1-plus/ubuntu/xenial/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:xenial-build-${DATESTAMP}",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:xenial-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:xenial-build-${DATESTAMP}",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:xenial-build"
-      ]
-    },
-    "bananapi-m1-plus-ubuntu-xenial-run": {
-      "context": "device-base/bananapi-m1-plus/ubuntu/xenial/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:xenial-run-${DATESTAMP}",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:xenial-run",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:xenial-${DATESTAMP}",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:xenial"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:xenial-run-${DATESTAMP}",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:xenial-run",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:xenial-${DATESTAMP}",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:xenial"
-      ]
-    },
-    "bananapi-m1-plus-ubuntu-bionic-build": {
-      "context": "device-base/bananapi-m1-plus/ubuntu/bionic/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:bionic-build-${DATESTAMP}",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:bionic-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:bionic-build-${DATESTAMP}",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:bionic-build"
-      ]
-    },
-    "bananapi-m1-plus-ubuntu-bionic-run": {
-      "context": "device-base/bananapi-m1-plus/ubuntu/bionic/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:bionic-run-${DATESTAMP}",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:bionic-run",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:bionic-${DATESTAMP}",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:bionic"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:bionic-run-${DATESTAMP}",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:bionic-run",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:bionic-${DATESTAMP}",
-        "docker.io/balenalib/bananapi-m1-plus-ubuntu:bionic"
       ]
     }
   },

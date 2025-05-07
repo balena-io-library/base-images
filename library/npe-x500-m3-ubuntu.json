@@ -5,13 +5,7 @@
         "npe-x500-m3-ubuntu-noble-build",
         "npe-x500-m3-ubuntu-noble-run",
         "npe-x500-m3-ubuntu-jammy-build",
-        "npe-x500-m3-ubuntu-jammy-run",
-        "npe-x500-m3-ubuntu-focal-build",
-        "npe-x500-m3-ubuntu-focal-run",
-        "npe-x500-m3-ubuntu-xenial-build",
-        "npe-x500-m3-ubuntu-xenial-run",
-        "npe-x500-m3-ubuntu-bionic-build",
-        "npe-x500-m3-ubuntu-bionic-run"
+        "npe-x500-m3-ubuntu-jammy-run"
       ]
     }
   },
@@ -96,96 +90,6 @@
         "docker.io/balenalib/npe-x500-m3-ubuntu:jammy-run",
         "docker.io/balenalib/npe-x500-m3-ubuntu:jammy-${DATESTAMP}",
         "docker.io/balenalib/npe-x500-m3-ubuntu:jammy"
-      ]
-    },
-    "npe-x500-m3-ubuntu-focal-build": {
-      "context": "device-base/npe-x500-m3/ubuntu/focal/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/npe-x500-m3-ubuntu:focal-build-${DATESTAMP}",
-        "docker.io/balenalib/npe-x500-m3-ubuntu:focal-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/npe-x500-m3-ubuntu:focal-build-${DATESTAMP}",
-        "docker.io/balenalib/npe-x500-m3-ubuntu:focal-build"
-      ]
-    },
-    "npe-x500-m3-ubuntu-focal-run": {
-      "context": "device-base/npe-x500-m3/ubuntu/focal/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/npe-x500-m3-ubuntu:focal-run-${DATESTAMP}",
-        "docker.io/balenalib/npe-x500-m3-ubuntu:focal-run",
-        "docker.io/balenalib/npe-x500-m3-ubuntu:focal-${DATESTAMP}",
-        "docker.io/balenalib/npe-x500-m3-ubuntu:focal"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/npe-x500-m3-ubuntu:focal-run-${DATESTAMP}",
-        "docker.io/balenalib/npe-x500-m3-ubuntu:focal-run",
-        "docker.io/balenalib/npe-x500-m3-ubuntu:focal-${DATESTAMP}",
-        "docker.io/balenalib/npe-x500-m3-ubuntu:focal"
-      ]
-    },
-    "npe-x500-m3-ubuntu-xenial-build": {
-      "context": "device-base/npe-x500-m3/ubuntu/xenial/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/npe-x500-m3-ubuntu:xenial-build-${DATESTAMP}",
-        "docker.io/balenalib/npe-x500-m3-ubuntu:xenial-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/npe-x500-m3-ubuntu:xenial-build-${DATESTAMP}",
-        "docker.io/balenalib/npe-x500-m3-ubuntu:xenial-build"
-      ]
-    },
-    "npe-x500-m3-ubuntu-xenial-run": {
-      "context": "device-base/npe-x500-m3/ubuntu/xenial/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/npe-x500-m3-ubuntu:xenial-run-${DATESTAMP}",
-        "docker.io/balenalib/npe-x500-m3-ubuntu:xenial-run",
-        "docker.io/balenalib/npe-x500-m3-ubuntu:xenial-${DATESTAMP}",
-        "docker.io/balenalib/npe-x500-m3-ubuntu:xenial"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/npe-x500-m3-ubuntu:xenial-run-${DATESTAMP}",
-        "docker.io/balenalib/npe-x500-m3-ubuntu:xenial-run",
-        "docker.io/balenalib/npe-x500-m3-ubuntu:xenial-${DATESTAMP}",
-        "docker.io/balenalib/npe-x500-m3-ubuntu:xenial"
-      ]
-    },
-    "npe-x500-m3-ubuntu-bionic-build": {
-      "context": "device-base/npe-x500-m3/ubuntu/bionic/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/npe-x500-m3-ubuntu:bionic-build-${DATESTAMP}",
-        "docker.io/balenalib/npe-x500-m3-ubuntu:bionic-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/npe-x500-m3-ubuntu:bionic-build-${DATESTAMP}",
-        "docker.io/balenalib/npe-x500-m3-ubuntu:bionic-build"
-      ]
-    },
-    "npe-x500-m3-ubuntu-bionic-run": {
-      "context": "device-base/npe-x500-m3/ubuntu/bionic/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/npe-x500-m3-ubuntu:bionic-run-${DATESTAMP}",
-        "docker.io/balenalib/npe-x500-m3-ubuntu:bionic-run",
-        "docker.io/balenalib/npe-x500-m3-ubuntu:bionic-${DATESTAMP}",
-        "docker.io/balenalib/npe-x500-m3-ubuntu:bionic"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/npe-x500-m3-ubuntu:bionic-run-${DATESTAMP}",
-        "docker.io/balenalib/npe-x500-m3-ubuntu:bionic-run",
-        "docker.io/balenalib/npe-x500-m3-ubuntu:bionic-${DATESTAMP}",
-        "docker.io/balenalib/npe-x500-m3-ubuntu:bionic"
       ]
     }
   },

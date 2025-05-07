@@ -5,13 +5,7 @@
         "raspberrypicm4-ioboard-ubuntu-noble-build",
         "raspberrypicm4-ioboard-ubuntu-noble-run",
         "raspberrypicm4-ioboard-ubuntu-jammy-build",
-        "raspberrypicm4-ioboard-ubuntu-jammy-run",
-        "raspberrypicm4-ioboard-ubuntu-focal-build",
-        "raspberrypicm4-ioboard-ubuntu-focal-run",
-        "raspberrypicm4-ioboard-ubuntu-xenial-build",
-        "raspberrypicm4-ioboard-ubuntu-xenial-run",
-        "raspberrypicm4-ioboard-ubuntu-bionic-build",
-        "raspberrypicm4-ioboard-ubuntu-bionic-run"
+        "raspberrypicm4-ioboard-ubuntu-jammy-run"
       ]
     }
   },
@@ -96,96 +90,6 @@
         "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:jammy-run",
         "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:jammy-${DATESTAMP}",
         "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:jammy"
-      ]
-    },
-    "raspberrypicm4-ioboard-ubuntu-focal-build": {
-      "context": "device-base/raspberrypicm4-ioboard/ubuntu/focal/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:focal-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:focal-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:focal-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:focal-build"
-      ]
-    },
-    "raspberrypicm4-ioboard-ubuntu-focal-run": {
-      "context": "device-base/raspberrypicm4-ioboard/ubuntu/focal/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:focal-run-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:focal-run",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:focal-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:focal"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:focal-run-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:focal-run",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:focal-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:focal"
-      ]
-    },
-    "raspberrypicm4-ioboard-ubuntu-xenial-build": {
-      "context": "device-base/raspberrypicm4-ioboard/ubuntu/xenial/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:xenial-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:xenial-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:xenial-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:xenial-build"
-      ]
-    },
-    "raspberrypicm4-ioboard-ubuntu-xenial-run": {
-      "context": "device-base/raspberrypicm4-ioboard/ubuntu/xenial/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:xenial-run-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:xenial-run",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:xenial-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:xenial"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:xenial-run-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:xenial-run",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:xenial-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:xenial"
-      ]
-    },
-    "raspberrypicm4-ioboard-ubuntu-bionic-build": {
-      "context": "device-base/raspberrypicm4-ioboard/ubuntu/bionic/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:bionic-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:bionic-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:bionic-build-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:bionic-build"
-      ]
-    },
-    "raspberrypicm4-ioboard-ubuntu-bionic-run": {
-      "context": "device-base/raspberrypicm4-ioboard/ubuntu/bionic/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:bionic-run-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:bionic-run",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:bionic-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:bionic"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:bionic-run-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:bionic-run",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:bionic-${DATESTAMP}",
-        "docker.io/balenalib/raspberrypicm4-ioboard-ubuntu:bionic"
       ]
     }
   },

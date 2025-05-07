@@ -5,13 +5,7 @@
         "photon-nano-ubuntu-noble-build",
         "photon-nano-ubuntu-noble-run",
         "photon-nano-ubuntu-jammy-build",
-        "photon-nano-ubuntu-jammy-run",
-        "photon-nano-ubuntu-focal-build",
-        "photon-nano-ubuntu-focal-run",
-        "photon-nano-ubuntu-xenial-build",
-        "photon-nano-ubuntu-xenial-run",
-        "photon-nano-ubuntu-bionic-build",
-        "photon-nano-ubuntu-bionic-run"
+        "photon-nano-ubuntu-jammy-run"
       ]
     }
   },
@@ -96,96 +90,6 @@
         "docker.io/balenalib/photon-nano-ubuntu:jammy-run",
         "docker.io/balenalib/photon-nano-ubuntu:jammy-${DATESTAMP}",
         "docker.io/balenalib/photon-nano-ubuntu:jammy"
-      ]
-    },
-    "photon-nano-ubuntu-focal-build": {
-      "context": "device-base/photon-nano/ubuntu/focal/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/photon-nano-ubuntu:focal-build-${DATESTAMP}",
-        "docker.io/balenalib/photon-nano-ubuntu:focal-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/photon-nano-ubuntu:focal-build-${DATESTAMP}",
-        "docker.io/balenalib/photon-nano-ubuntu:focal-build"
-      ]
-    },
-    "photon-nano-ubuntu-focal-run": {
-      "context": "device-base/photon-nano/ubuntu/focal/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/photon-nano-ubuntu:focal-run-${DATESTAMP}",
-        "docker.io/balenalib/photon-nano-ubuntu:focal-run",
-        "docker.io/balenalib/photon-nano-ubuntu:focal-${DATESTAMP}",
-        "docker.io/balenalib/photon-nano-ubuntu:focal"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/photon-nano-ubuntu:focal-run-${DATESTAMP}",
-        "docker.io/balenalib/photon-nano-ubuntu:focal-run",
-        "docker.io/balenalib/photon-nano-ubuntu:focal-${DATESTAMP}",
-        "docker.io/balenalib/photon-nano-ubuntu:focal"
-      ]
-    },
-    "photon-nano-ubuntu-xenial-build": {
-      "context": "device-base/photon-nano/ubuntu/xenial/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/photon-nano-ubuntu:xenial-build-${DATESTAMP}",
-        "docker.io/balenalib/photon-nano-ubuntu:xenial-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/photon-nano-ubuntu:xenial-build-${DATESTAMP}",
-        "docker.io/balenalib/photon-nano-ubuntu:xenial-build"
-      ]
-    },
-    "photon-nano-ubuntu-xenial-run": {
-      "context": "device-base/photon-nano/ubuntu/xenial/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/photon-nano-ubuntu:xenial-run-${DATESTAMP}",
-        "docker.io/balenalib/photon-nano-ubuntu:xenial-run",
-        "docker.io/balenalib/photon-nano-ubuntu:xenial-${DATESTAMP}",
-        "docker.io/balenalib/photon-nano-ubuntu:xenial"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/photon-nano-ubuntu:xenial-run-${DATESTAMP}",
-        "docker.io/balenalib/photon-nano-ubuntu:xenial-run",
-        "docker.io/balenalib/photon-nano-ubuntu:xenial-${DATESTAMP}",
-        "docker.io/balenalib/photon-nano-ubuntu:xenial"
-      ]
-    },
-    "photon-nano-ubuntu-bionic-build": {
-      "context": "device-base/photon-nano/ubuntu/bionic/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/photon-nano-ubuntu:bionic-build-${DATESTAMP}",
-        "docker.io/balenalib/photon-nano-ubuntu:bionic-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/photon-nano-ubuntu:bionic-build-${DATESTAMP}",
-        "docker.io/balenalib/photon-nano-ubuntu:bionic-build"
-      ]
-    },
-    "photon-nano-ubuntu-bionic-run": {
-      "context": "device-base/photon-nano/ubuntu/bionic/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/photon-nano-ubuntu:bionic-run-${DATESTAMP}",
-        "docker.io/balenalib/photon-nano-ubuntu:bionic-run",
-        "docker.io/balenalib/photon-nano-ubuntu:bionic-${DATESTAMP}",
-        "docker.io/balenalib/photon-nano-ubuntu:bionic"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/photon-nano-ubuntu:bionic-run-${DATESTAMP}",
-        "docker.io/balenalib/photon-nano-ubuntu:bionic-run",
-        "docker.io/balenalib/photon-nano-ubuntu:bionic-${DATESTAMP}",
-        "docker.io/balenalib/photon-nano-ubuntu:bionic"
       ]
     }
   },

@@ -5,13 +5,7 @@
         "imx8mm-var-som-ubuntu-noble-build",
         "imx8mm-var-som-ubuntu-noble-run",
         "imx8mm-var-som-ubuntu-jammy-build",
-        "imx8mm-var-som-ubuntu-jammy-run",
-        "imx8mm-var-som-ubuntu-focal-build",
-        "imx8mm-var-som-ubuntu-focal-run",
-        "imx8mm-var-som-ubuntu-xenial-build",
-        "imx8mm-var-som-ubuntu-xenial-run",
-        "imx8mm-var-som-ubuntu-bionic-build",
-        "imx8mm-var-som-ubuntu-bionic-run"
+        "imx8mm-var-som-ubuntu-jammy-run"
       ]
     }
   },
@@ -96,96 +90,6 @@
         "docker.io/balenalib/imx8mm-var-som-ubuntu:jammy-run",
         "docker.io/balenalib/imx8mm-var-som-ubuntu:jammy-${DATESTAMP}",
         "docker.io/balenalib/imx8mm-var-som-ubuntu:jammy"
-      ]
-    },
-    "imx8mm-var-som-ubuntu-focal-build": {
-      "context": "device-base/imx8mm-var-som/ubuntu/focal/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/imx8mm-var-som-ubuntu:focal-build-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-var-som-ubuntu:focal-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/imx8mm-var-som-ubuntu:focal-build-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-var-som-ubuntu:focal-build"
-      ]
-    },
-    "imx8mm-var-som-ubuntu-focal-run": {
-      "context": "device-base/imx8mm-var-som/ubuntu/focal/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/imx8mm-var-som-ubuntu:focal-run-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-var-som-ubuntu:focal-run",
-        "docker.io/balenalib/imx8mm-var-som-ubuntu:focal-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-var-som-ubuntu:focal"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/imx8mm-var-som-ubuntu:focal-run-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-var-som-ubuntu:focal-run",
-        "docker.io/balenalib/imx8mm-var-som-ubuntu:focal-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-var-som-ubuntu:focal"
-      ]
-    },
-    "imx8mm-var-som-ubuntu-xenial-build": {
-      "context": "device-base/imx8mm-var-som/ubuntu/xenial/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/imx8mm-var-som-ubuntu:xenial-build-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-var-som-ubuntu:xenial-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/imx8mm-var-som-ubuntu:xenial-build-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-var-som-ubuntu:xenial-build"
-      ]
-    },
-    "imx8mm-var-som-ubuntu-xenial-run": {
-      "context": "device-base/imx8mm-var-som/ubuntu/xenial/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/imx8mm-var-som-ubuntu:xenial-run-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-var-som-ubuntu:xenial-run",
-        "docker.io/balenalib/imx8mm-var-som-ubuntu:xenial-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-var-som-ubuntu:xenial"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/imx8mm-var-som-ubuntu:xenial-run-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-var-som-ubuntu:xenial-run",
-        "docker.io/balenalib/imx8mm-var-som-ubuntu:xenial-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-var-som-ubuntu:xenial"
-      ]
-    },
-    "imx8mm-var-som-ubuntu-bionic-build": {
-      "context": "device-base/imx8mm-var-som/ubuntu/bionic/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/imx8mm-var-som-ubuntu:bionic-build-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-var-som-ubuntu:bionic-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/imx8mm-var-som-ubuntu:bionic-build-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-var-som-ubuntu:bionic-build"
-      ]
-    },
-    "imx8mm-var-som-ubuntu-bionic-run": {
-      "context": "device-base/imx8mm-var-som/ubuntu/bionic/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/imx8mm-var-som-ubuntu:bionic-run-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-var-som-ubuntu:bionic-run",
-        "docker.io/balenalib/imx8mm-var-som-ubuntu:bionic-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-var-som-ubuntu:bionic"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/imx8mm-var-som-ubuntu:bionic-run-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-var-som-ubuntu:bionic-run",
-        "docker.io/balenalib/imx8mm-var-som-ubuntu:bionic-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-var-som-ubuntu:bionic"
       ]
     }
   },

@@ -5,13 +5,7 @@
         "owa5x-ubuntu-noble-build",
         "owa5x-ubuntu-noble-run",
         "owa5x-ubuntu-jammy-build",
-        "owa5x-ubuntu-jammy-run",
-        "owa5x-ubuntu-focal-build",
-        "owa5x-ubuntu-focal-run",
-        "owa5x-ubuntu-xenial-build",
-        "owa5x-ubuntu-xenial-run",
-        "owa5x-ubuntu-bionic-build",
-        "owa5x-ubuntu-bionic-run"
+        "owa5x-ubuntu-jammy-run"
       ]
     }
   },
@@ -96,96 +90,6 @@
         "docker.io/balenalib/owa5x-ubuntu:jammy-run",
         "docker.io/balenalib/owa5x-ubuntu:jammy-${DATESTAMP}",
         "docker.io/balenalib/owa5x-ubuntu:jammy"
-      ]
-    },
-    "owa5x-ubuntu-focal-build": {
-      "context": "device-base/owa5x/ubuntu/focal/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/owa5x-ubuntu:focal-build-${DATESTAMP}",
-        "docker.io/balenalib/owa5x-ubuntu:focal-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/owa5x-ubuntu:focal-build-${DATESTAMP}",
-        "docker.io/balenalib/owa5x-ubuntu:focal-build"
-      ]
-    },
-    "owa5x-ubuntu-focal-run": {
-      "context": "device-base/owa5x/ubuntu/focal/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/owa5x-ubuntu:focal-run-${DATESTAMP}",
-        "docker.io/balenalib/owa5x-ubuntu:focal-run",
-        "docker.io/balenalib/owa5x-ubuntu:focal-${DATESTAMP}",
-        "docker.io/balenalib/owa5x-ubuntu:focal"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/owa5x-ubuntu:focal-run-${DATESTAMP}",
-        "docker.io/balenalib/owa5x-ubuntu:focal-run",
-        "docker.io/balenalib/owa5x-ubuntu:focal-${DATESTAMP}",
-        "docker.io/balenalib/owa5x-ubuntu:focal"
-      ]
-    },
-    "owa5x-ubuntu-xenial-build": {
-      "context": "device-base/owa5x/ubuntu/xenial/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/owa5x-ubuntu:xenial-build-${DATESTAMP}",
-        "docker.io/balenalib/owa5x-ubuntu:xenial-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/owa5x-ubuntu:xenial-build-${DATESTAMP}",
-        "docker.io/balenalib/owa5x-ubuntu:xenial-build"
-      ]
-    },
-    "owa5x-ubuntu-xenial-run": {
-      "context": "device-base/owa5x/ubuntu/xenial/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/owa5x-ubuntu:xenial-run-${DATESTAMP}",
-        "docker.io/balenalib/owa5x-ubuntu:xenial-run",
-        "docker.io/balenalib/owa5x-ubuntu:xenial-${DATESTAMP}",
-        "docker.io/balenalib/owa5x-ubuntu:xenial"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/owa5x-ubuntu:xenial-run-${DATESTAMP}",
-        "docker.io/balenalib/owa5x-ubuntu:xenial-run",
-        "docker.io/balenalib/owa5x-ubuntu:xenial-${DATESTAMP}",
-        "docker.io/balenalib/owa5x-ubuntu:xenial"
-      ]
-    },
-    "owa5x-ubuntu-bionic-build": {
-      "context": "device-base/owa5x/ubuntu/bionic/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/owa5x-ubuntu:bionic-build-${DATESTAMP}",
-        "docker.io/balenalib/owa5x-ubuntu:bionic-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/owa5x-ubuntu:bionic-build-${DATESTAMP}",
-        "docker.io/balenalib/owa5x-ubuntu:bionic-build"
-      ]
-    },
-    "owa5x-ubuntu-bionic-run": {
-      "context": "device-base/owa5x/ubuntu/bionic/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/owa5x-ubuntu:bionic-run-${DATESTAMP}",
-        "docker.io/balenalib/owa5x-ubuntu:bionic-run",
-        "docker.io/balenalib/owa5x-ubuntu:bionic-${DATESTAMP}",
-        "docker.io/balenalib/owa5x-ubuntu:bionic"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/owa5x-ubuntu:bionic-run-${DATESTAMP}",
-        "docker.io/balenalib/owa5x-ubuntu:bionic-run",
-        "docker.io/balenalib/owa5x-ubuntu:bionic-${DATESTAMP}",
-        "docker.io/balenalib/owa5x-ubuntu:bionic"
       ]
     }
   },

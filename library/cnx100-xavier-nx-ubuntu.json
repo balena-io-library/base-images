@@ -5,13 +5,7 @@
         "cnx100-xavier-nx-ubuntu-noble-build",
         "cnx100-xavier-nx-ubuntu-noble-run",
         "cnx100-xavier-nx-ubuntu-jammy-build",
-        "cnx100-xavier-nx-ubuntu-jammy-run",
-        "cnx100-xavier-nx-ubuntu-focal-build",
-        "cnx100-xavier-nx-ubuntu-focal-run",
-        "cnx100-xavier-nx-ubuntu-xenial-build",
-        "cnx100-xavier-nx-ubuntu-xenial-run",
-        "cnx100-xavier-nx-ubuntu-bionic-build",
-        "cnx100-xavier-nx-ubuntu-bionic-run"
+        "cnx100-xavier-nx-ubuntu-jammy-run"
       ]
     }
   },
@@ -96,96 +90,6 @@
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:jammy-run",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:jammy-${DATESTAMP}",
         "docker.io/balenalib/cnx100-xavier-nx-ubuntu:jammy"
-      ]
-    },
-    "cnx100-xavier-nx-ubuntu-focal-build": {
-      "context": "device-base/cnx100-xavier-nx/ubuntu/focal/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:focal-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:focal-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:focal-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:focal-build"
-      ]
-    },
-    "cnx100-xavier-nx-ubuntu-focal-run": {
-      "context": "device-base/cnx100-xavier-nx/ubuntu/focal/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:focal-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:focal-run",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:focal-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:focal"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:focal-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:focal-run",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:focal-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:focal"
-      ]
-    },
-    "cnx100-xavier-nx-ubuntu-xenial-build": {
-      "context": "device-base/cnx100-xavier-nx/ubuntu/xenial/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:xenial-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:xenial-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:xenial-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:xenial-build"
-      ]
-    },
-    "cnx100-xavier-nx-ubuntu-xenial-run": {
-      "context": "device-base/cnx100-xavier-nx/ubuntu/xenial/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:xenial-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:xenial-run",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:xenial-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:xenial"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:xenial-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:xenial-run",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:xenial-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:xenial"
-      ]
-    },
-    "cnx100-xavier-nx-ubuntu-bionic-build": {
-      "context": "device-base/cnx100-xavier-nx/ubuntu/bionic/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:bionic-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:bionic-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:bionic-build-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:bionic-build"
-      ]
-    },
-    "cnx100-xavier-nx-ubuntu-bionic-run": {
-      "context": "device-base/cnx100-xavier-nx/ubuntu/bionic/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:bionic-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:bionic-run",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:bionic-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:bionic"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:bionic-run-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:bionic-run",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:bionic-${DATESTAMP}",
-        "docker.io/balenalib/cnx100-xavier-nx-ubuntu:bionic"
       ]
     }
   },

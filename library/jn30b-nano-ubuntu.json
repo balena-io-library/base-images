@@ -5,13 +5,7 @@
         "jn30b-nano-ubuntu-noble-build",
         "jn30b-nano-ubuntu-noble-run",
         "jn30b-nano-ubuntu-jammy-build",
-        "jn30b-nano-ubuntu-jammy-run",
-        "jn30b-nano-ubuntu-focal-build",
-        "jn30b-nano-ubuntu-focal-run",
-        "jn30b-nano-ubuntu-xenial-build",
-        "jn30b-nano-ubuntu-xenial-run",
-        "jn30b-nano-ubuntu-bionic-build",
-        "jn30b-nano-ubuntu-bionic-run"
+        "jn30b-nano-ubuntu-jammy-run"
       ]
     }
   },
@@ -96,96 +90,6 @@
         "docker.io/balenalib/jn30b-nano-ubuntu:jammy-run",
         "docker.io/balenalib/jn30b-nano-ubuntu:jammy-${DATESTAMP}",
         "docker.io/balenalib/jn30b-nano-ubuntu:jammy"
-      ]
-    },
-    "jn30b-nano-ubuntu-focal-build": {
-      "context": "device-base/jn30b-nano/ubuntu/focal/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/jn30b-nano-ubuntu:focal-build-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano-ubuntu:focal-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/jn30b-nano-ubuntu:focal-build-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano-ubuntu:focal-build"
-      ]
-    },
-    "jn30b-nano-ubuntu-focal-run": {
-      "context": "device-base/jn30b-nano/ubuntu/focal/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/jn30b-nano-ubuntu:focal-run-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano-ubuntu:focal-run",
-        "docker.io/balenalib/jn30b-nano-ubuntu:focal-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano-ubuntu:focal"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/jn30b-nano-ubuntu:focal-run-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano-ubuntu:focal-run",
-        "docker.io/balenalib/jn30b-nano-ubuntu:focal-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano-ubuntu:focal"
-      ]
-    },
-    "jn30b-nano-ubuntu-xenial-build": {
-      "context": "device-base/jn30b-nano/ubuntu/xenial/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/jn30b-nano-ubuntu:xenial-build-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano-ubuntu:xenial-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/jn30b-nano-ubuntu:xenial-build-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano-ubuntu:xenial-build"
-      ]
-    },
-    "jn30b-nano-ubuntu-xenial-run": {
-      "context": "device-base/jn30b-nano/ubuntu/xenial/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/jn30b-nano-ubuntu:xenial-run-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano-ubuntu:xenial-run",
-        "docker.io/balenalib/jn30b-nano-ubuntu:xenial-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano-ubuntu:xenial"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/jn30b-nano-ubuntu:xenial-run-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano-ubuntu:xenial-run",
-        "docker.io/balenalib/jn30b-nano-ubuntu:xenial-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano-ubuntu:xenial"
-      ]
-    },
-    "jn30b-nano-ubuntu-bionic-build": {
-      "context": "device-base/jn30b-nano/ubuntu/bionic/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/jn30b-nano-ubuntu:bionic-build-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano-ubuntu:bionic-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/jn30b-nano-ubuntu:bionic-build-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano-ubuntu:bionic-build"
-      ]
-    },
-    "jn30b-nano-ubuntu-bionic-run": {
-      "context": "device-base/jn30b-nano/ubuntu/bionic/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/jn30b-nano-ubuntu:bionic-run-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano-ubuntu:bionic-run",
-        "docker.io/balenalib/jn30b-nano-ubuntu:bionic-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano-ubuntu:bionic"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/jn30b-nano-ubuntu:bionic-run-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano-ubuntu:bionic-run",
-        "docker.io/balenalib/jn30b-nano-ubuntu:bionic-${DATESTAMP}",
-        "docker.io/balenalib/jn30b-nano-ubuntu:bionic"
       ]
     }
   },

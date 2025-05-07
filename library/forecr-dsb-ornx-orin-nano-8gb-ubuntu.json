@@ -5,13 +5,7 @@
         "forecr-dsb-ornx-orin-nano-8gb-ubuntu-noble-build",
         "forecr-dsb-ornx-orin-nano-8gb-ubuntu-noble-run",
         "forecr-dsb-ornx-orin-nano-8gb-ubuntu-jammy-build",
-        "forecr-dsb-ornx-orin-nano-8gb-ubuntu-jammy-run",
-        "forecr-dsb-ornx-orin-nano-8gb-ubuntu-focal-build",
-        "forecr-dsb-ornx-orin-nano-8gb-ubuntu-focal-run",
-        "forecr-dsb-ornx-orin-nano-8gb-ubuntu-xenial-build",
-        "forecr-dsb-ornx-orin-nano-8gb-ubuntu-xenial-run",
-        "forecr-dsb-ornx-orin-nano-8gb-ubuntu-bionic-build",
-        "forecr-dsb-ornx-orin-nano-8gb-ubuntu-bionic-run"
+        "forecr-dsb-ornx-orin-nano-8gb-ubuntu-jammy-run"
       ]
     }
   },
@@ -96,96 +90,6 @@
         "docker.io/balenalib/forecr-dsb-ornx-orin-nano-8gb-ubuntu:jammy-run",
         "docker.io/balenalib/forecr-dsb-ornx-orin-nano-8gb-ubuntu:jammy-${DATESTAMP}",
         "docker.io/balenalib/forecr-dsb-ornx-orin-nano-8gb-ubuntu:jammy"
-      ]
-    },
-    "forecr-dsb-ornx-orin-nano-8gb-ubuntu-focal-build": {
-      "context": "device-base/forecr-dsb-ornx-orin-nano-8gb/ubuntu/focal/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/forecr-dsb-ornx-orin-nano-8gb-ubuntu:focal-build-${DATESTAMP}",
-        "docker.io/balenalib/forecr-dsb-ornx-orin-nano-8gb-ubuntu:focal-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/forecr-dsb-ornx-orin-nano-8gb-ubuntu:focal-build-${DATESTAMP}",
-        "docker.io/balenalib/forecr-dsb-ornx-orin-nano-8gb-ubuntu:focal-build"
-      ]
-    },
-    "forecr-dsb-ornx-orin-nano-8gb-ubuntu-focal-run": {
-      "context": "device-base/forecr-dsb-ornx-orin-nano-8gb/ubuntu/focal/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/forecr-dsb-ornx-orin-nano-8gb-ubuntu:focal-run-${DATESTAMP}",
-        "docker.io/balenalib/forecr-dsb-ornx-orin-nano-8gb-ubuntu:focal-run",
-        "docker.io/balenalib/forecr-dsb-ornx-orin-nano-8gb-ubuntu:focal-${DATESTAMP}",
-        "docker.io/balenalib/forecr-dsb-ornx-orin-nano-8gb-ubuntu:focal"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/forecr-dsb-ornx-orin-nano-8gb-ubuntu:focal-run-${DATESTAMP}",
-        "docker.io/balenalib/forecr-dsb-ornx-orin-nano-8gb-ubuntu:focal-run",
-        "docker.io/balenalib/forecr-dsb-ornx-orin-nano-8gb-ubuntu:focal-${DATESTAMP}",
-        "docker.io/balenalib/forecr-dsb-ornx-orin-nano-8gb-ubuntu:focal"
-      ]
-    },
-    "forecr-dsb-ornx-orin-nano-8gb-ubuntu-xenial-build": {
-      "context": "device-base/forecr-dsb-ornx-orin-nano-8gb/ubuntu/xenial/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/forecr-dsb-ornx-orin-nano-8gb-ubuntu:xenial-build-${DATESTAMP}",
-        "docker.io/balenalib/forecr-dsb-ornx-orin-nano-8gb-ubuntu:xenial-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/forecr-dsb-ornx-orin-nano-8gb-ubuntu:xenial-build-${DATESTAMP}",
-        "docker.io/balenalib/forecr-dsb-ornx-orin-nano-8gb-ubuntu:xenial-build"
-      ]
-    },
-    "forecr-dsb-ornx-orin-nano-8gb-ubuntu-xenial-run": {
-      "context": "device-base/forecr-dsb-ornx-orin-nano-8gb/ubuntu/xenial/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/forecr-dsb-ornx-orin-nano-8gb-ubuntu:xenial-run-${DATESTAMP}",
-        "docker.io/balenalib/forecr-dsb-ornx-orin-nano-8gb-ubuntu:xenial-run",
-        "docker.io/balenalib/forecr-dsb-ornx-orin-nano-8gb-ubuntu:xenial-${DATESTAMP}",
-        "docker.io/balenalib/forecr-dsb-ornx-orin-nano-8gb-ubuntu:xenial"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/forecr-dsb-ornx-orin-nano-8gb-ubuntu:xenial-run-${DATESTAMP}",
-        "docker.io/balenalib/forecr-dsb-ornx-orin-nano-8gb-ubuntu:xenial-run",
-        "docker.io/balenalib/forecr-dsb-ornx-orin-nano-8gb-ubuntu:xenial-${DATESTAMP}",
-        "docker.io/balenalib/forecr-dsb-ornx-orin-nano-8gb-ubuntu:xenial"
-      ]
-    },
-    "forecr-dsb-ornx-orin-nano-8gb-ubuntu-bionic-build": {
-      "context": "device-base/forecr-dsb-ornx-orin-nano-8gb/ubuntu/bionic/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/forecr-dsb-ornx-orin-nano-8gb-ubuntu:bionic-build-${DATESTAMP}",
-        "docker.io/balenalib/forecr-dsb-ornx-orin-nano-8gb-ubuntu:bionic-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/forecr-dsb-ornx-orin-nano-8gb-ubuntu:bionic-build-${DATESTAMP}",
-        "docker.io/balenalib/forecr-dsb-ornx-orin-nano-8gb-ubuntu:bionic-build"
-      ]
-    },
-    "forecr-dsb-ornx-orin-nano-8gb-ubuntu-bionic-run": {
-      "context": "device-base/forecr-dsb-ornx-orin-nano-8gb/ubuntu/bionic/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/forecr-dsb-ornx-orin-nano-8gb-ubuntu:bionic-run-${DATESTAMP}",
-        "docker.io/balenalib/forecr-dsb-ornx-orin-nano-8gb-ubuntu:bionic-run",
-        "docker.io/balenalib/forecr-dsb-ornx-orin-nano-8gb-ubuntu:bionic-${DATESTAMP}",
-        "docker.io/balenalib/forecr-dsb-ornx-orin-nano-8gb-ubuntu:bionic"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/forecr-dsb-ornx-orin-nano-8gb-ubuntu:bionic-run-${DATESTAMP}",
-        "docker.io/balenalib/forecr-dsb-ornx-orin-nano-8gb-ubuntu:bionic-run",
-        "docker.io/balenalib/forecr-dsb-ornx-orin-nano-8gb-ubuntu:bionic-${DATESTAMP}",
-        "docker.io/balenalib/forecr-dsb-ornx-orin-nano-8gb-ubuntu:bionic"
       ]
     }
   },

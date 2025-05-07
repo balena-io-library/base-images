@@ -5,13 +5,7 @@
         "genericx86-64-ext-ubuntu-noble-build",
         "genericx86-64-ext-ubuntu-noble-run",
         "genericx86-64-ext-ubuntu-jammy-build",
-        "genericx86-64-ext-ubuntu-jammy-run",
-        "genericx86-64-ext-ubuntu-focal-build",
-        "genericx86-64-ext-ubuntu-focal-run",
-        "genericx86-64-ext-ubuntu-xenial-build",
-        "genericx86-64-ext-ubuntu-xenial-run",
-        "genericx86-64-ext-ubuntu-bionic-build",
-        "genericx86-64-ext-ubuntu-bionic-run"
+        "genericx86-64-ext-ubuntu-jammy-run"
       ]
     }
   },
@@ -96,96 +90,6 @@
         "docker.io/balenalib/genericx86-64-ext-ubuntu:jammy-run",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:jammy-${DATESTAMP}",
         "docker.io/balenalib/genericx86-64-ext-ubuntu:jammy"
-      ]
-    },
-    "genericx86-64-ext-ubuntu-focal-build": {
-      "context": "device-base/genericx86-64-ext/ubuntu/focal/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/amd64",
-      "tags": [
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:focal-build-${DATESTAMP}",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:focal-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:focal-build-${DATESTAMP}",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:focal-build"
-      ]
-    },
-    "genericx86-64-ext-ubuntu-focal-run": {
-      "context": "device-base/genericx86-64-ext/ubuntu/focal/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/amd64",
-      "tags": [
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:focal-run-${DATESTAMP}",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:focal-run",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:focal-${DATESTAMP}",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:focal"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:focal-run-${DATESTAMP}",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:focal-run",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:focal-${DATESTAMP}",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:focal"
-      ]
-    },
-    "genericx86-64-ext-ubuntu-xenial-build": {
-      "context": "device-base/genericx86-64-ext/ubuntu/xenial/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/amd64",
-      "tags": [
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:xenial-build-${DATESTAMP}",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:xenial-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:xenial-build-${DATESTAMP}",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:xenial-build"
-      ]
-    },
-    "genericx86-64-ext-ubuntu-xenial-run": {
-      "context": "device-base/genericx86-64-ext/ubuntu/xenial/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/amd64",
-      "tags": [
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:xenial-run-${DATESTAMP}",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:xenial-run",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:xenial-${DATESTAMP}",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:xenial"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:xenial-run-${DATESTAMP}",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:xenial-run",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:xenial-${DATESTAMP}",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:xenial"
-      ]
-    },
-    "genericx86-64-ext-ubuntu-bionic-build": {
-      "context": "device-base/genericx86-64-ext/ubuntu/bionic/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/amd64",
-      "tags": [
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:bionic-build-${DATESTAMP}",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:bionic-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:bionic-build-${DATESTAMP}",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:bionic-build"
-      ]
-    },
-    "genericx86-64-ext-ubuntu-bionic-run": {
-      "context": "device-base/genericx86-64-ext/ubuntu/bionic/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/amd64",
-      "tags": [
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:bionic-run-${DATESTAMP}",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:bionic-run",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:bionic-${DATESTAMP}",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:bionic"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:bionic-run-${DATESTAMP}",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:bionic-run",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:bionic-${DATESTAMP}",
-        "docker.io/balenalib/genericx86-64-ext-ubuntu:bionic"
       ]
     }
   },

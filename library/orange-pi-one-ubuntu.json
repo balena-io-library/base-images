@@ -5,13 +5,7 @@
         "orange-pi-one-ubuntu-noble-build",
         "orange-pi-one-ubuntu-noble-run",
         "orange-pi-one-ubuntu-jammy-build",
-        "orange-pi-one-ubuntu-jammy-run",
-        "orange-pi-one-ubuntu-focal-build",
-        "orange-pi-one-ubuntu-focal-run",
-        "orange-pi-one-ubuntu-xenial-build",
-        "orange-pi-one-ubuntu-xenial-run",
-        "orange-pi-one-ubuntu-bionic-build",
-        "orange-pi-one-ubuntu-bionic-run"
+        "orange-pi-one-ubuntu-jammy-run"
       ]
     }
   },
@@ -96,96 +90,6 @@
         "docker.io/balenalib/orange-pi-one-ubuntu:jammy-run",
         "docker.io/balenalib/orange-pi-one-ubuntu:jammy-${DATESTAMP}",
         "docker.io/balenalib/orange-pi-one-ubuntu:jammy"
-      ]
-    },
-    "orange-pi-one-ubuntu-focal-build": {
-      "context": "device-base/orange-pi-one/ubuntu/focal/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/orange-pi-one-ubuntu:focal-build-${DATESTAMP}",
-        "docker.io/balenalib/orange-pi-one-ubuntu:focal-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/orange-pi-one-ubuntu:focal-build-${DATESTAMP}",
-        "docker.io/balenalib/orange-pi-one-ubuntu:focal-build"
-      ]
-    },
-    "orange-pi-one-ubuntu-focal-run": {
-      "context": "device-base/orange-pi-one/ubuntu/focal/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/orange-pi-one-ubuntu:focal-run-${DATESTAMP}",
-        "docker.io/balenalib/orange-pi-one-ubuntu:focal-run",
-        "docker.io/balenalib/orange-pi-one-ubuntu:focal-${DATESTAMP}",
-        "docker.io/balenalib/orange-pi-one-ubuntu:focal"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/orange-pi-one-ubuntu:focal-run-${DATESTAMP}",
-        "docker.io/balenalib/orange-pi-one-ubuntu:focal-run",
-        "docker.io/balenalib/orange-pi-one-ubuntu:focal-${DATESTAMP}",
-        "docker.io/balenalib/orange-pi-one-ubuntu:focal"
-      ]
-    },
-    "orange-pi-one-ubuntu-xenial-build": {
-      "context": "device-base/orange-pi-one/ubuntu/xenial/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/orange-pi-one-ubuntu:xenial-build-${DATESTAMP}",
-        "docker.io/balenalib/orange-pi-one-ubuntu:xenial-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/orange-pi-one-ubuntu:xenial-build-${DATESTAMP}",
-        "docker.io/balenalib/orange-pi-one-ubuntu:xenial-build"
-      ]
-    },
-    "orange-pi-one-ubuntu-xenial-run": {
-      "context": "device-base/orange-pi-one/ubuntu/xenial/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/orange-pi-one-ubuntu:xenial-run-${DATESTAMP}",
-        "docker.io/balenalib/orange-pi-one-ubuntu:xenial-run",
-        "docker.io/balenalib/orange-pi-one-ubuntu:xenial-${DATESTAMP}",
-        "docker.io/balenalib/orange-pi-one-ubuntu:xenial"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/orange-pi-one-ubuntu:xenial-run-${DATESTAMP}",
-        "docker.io/balenalib/orange-pi-one-ubuntu:xenial-run",
-        "docker.io/balenalib/orange-pi-one-ubuntu:xenial-${DATESTAMP}",
-        "docker.io/balenalib/orange-pi-one-ubuntu:xenial"
-      ]
-    },
-    "orange-pi-one-ubuntu-bionic-build": {
-      "context": "device-base/orange-pi-one/ubuntu/bionic/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/orange-pi-one-ubuntu:bionic-build-${DATESTAMP}",
-        "docker.io/balenalib/orange-pi-one-ubuntu:bionic-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/orange-pi-one-ubuntu:bionic-build-${DATESTAMP}",
-        "docker.io/balenalib/orange-pi-one-ubuntu:bionic-build"
-      ]
-    },
-    "orange-pi-one-ubuntu-bionic-run": {
-      "context": "device-base/orange-pi-one/ubuntu/bionic/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm/v7",
-      "tags": [
-        "docker.io/balenalib/orange-pi-one-ubuntu:bionic-run-${DATESTAMP}",
-        "docker.io/balenalib/orange-pi-one-ubuntu:bionic-run",
-        "docker.io/balenalib/orange-pi-one-ubuntu:bionic-${DATESTAMP}",
-        "docker.io/balenalib/orange-pi-one-ubuntu:bionic"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/orange-pi-one-ubuntu:bionic-run-${DATESTAMP}",
-        "docker.io/balenalib/orange-pi-one-ubuntu:bionic-run",
-        "docker.io/balenalib/orange-pi-one-ubuntu:bionic-${DATESTAMP}",
-        "docker.io/balenalib/orange-pi-one-ubuntu:bionic"
       ]
     }
   },

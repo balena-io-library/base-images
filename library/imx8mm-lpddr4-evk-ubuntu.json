@@ -5,13 +5,7 @@
         "imx8mm-lpddr4-evk-ubuntu-noble-build",
         "imx8mm-lpddr4-evk-ubuntu-noble-run",
         "imx8mm-lpddr4-evk-ubuntu-jammy-build",
-        "imx8mm-lpddr4-evk-ubuntu-jammy-run",
-        "imx8mm-lpddr4-evk-ubuntu-focal-build",
-        "imx8mm-lpddr4-evk-ubuntu-focal-run",
-        "imx8mm-lpddr4-evk-ubuntu-xenial-build",
-        "imx8mm-lpddr4-evk-ubuntu-xenial-run",
-        "imx8mm-lpddr4-evk-ubuntu-bionic-build",
-        "imx8mm-lpddr4-evk-ubuntu-bionic-run"
+        "imx8mm-lpddr4-evk-ubuntu-jammy-run"
       ]
     }
   },
@@ -96,96 +90,6 @@
         "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:jammy-run",
         "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:jammy-${DATESTAMP}",
         "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:jammy"
-      ]
-    },
-    "imx8mm-lpddr4-evk-ubuntu-focal-build": {
-      "context": "device-base/imx8mm-lpddr4-evk/ubuntu/focal/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:focal-build-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:focal-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:focal-build-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:focal-build"
-      ]
-    },
-    "imx8mm-lpddr4-evk-ubuntu-focal-run": {
-      "context": "device-base/imx8mm-lpddr4-evk/ubuntu/focal/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:focal-run-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:focal-run",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:focal-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:focal"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:focal-run-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:focal-run",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:focal-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:focal"
-      ]
-    },
-    "imx8mm-lpddr4-evk-ubuntu-xenial-build": {
-      "context": "device-base/imx8mm-lpddr4-evk/ubuntu/xenial/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:xenial-build-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:xenial-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:xenial-build-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:xenial-build"
-      ]
-    },
-    "imx8mm-lpddr4-evk-ubuntu-xenial-run": {
-      "context": "device-base/imx8mm-lpddr4-evk/ubuntu/xenial/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:xenial-run-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:xenial-run",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:xenial-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:xenial"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:xenial-run-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:xenial-run",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:xenial-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:xenial"
-      ]
-    },
-    "imx8mm-lpddr4-evk-ubuntu-bionic-build": {
-      "context": "device-base/imx8mm-lpddr4-evk/ubuntu/bionic/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:bionic-build-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:bionic-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:bionic-build-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:bionic-build"
-      ]
-    },
-    "imx8mm-lpddr4-evk-ubuntu-bionic-run": {
-      "context": "device-base/imx8mm-lpddr4-evk/ubuntu/bionic/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:bionic-run-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:bionic-run",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:bionic-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:bionic"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:bionic-run-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:bionic-run",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:bionic-${DATESTAMP}",
-        "docker.io/balenalib/imx8mm-lpddr4-evk-ubuntu:bionic"
       ]
     }
   },

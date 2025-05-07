@@ -5,13 +5,7 @@
         "jetson-xavier-ubuntu-noble-build",
         "jetson-xavier-ubuntu-noble-run",
         "jetson-xavier-ubuntu-jammy-build",
-        "jetson-xavier-ubuntu-jammy-run",
-        "jetson-xavier-ubuntu-focal-build",
-        "jetson-xavier-ubuntu-focal-run",
-        "jetson-xavier-ubuntu-xenial-build",
-        "jetson-xavier-ubuntu-xenial-run",
-        "jetson-xavier-ubuntu-bionic-build",
-        "jetson-xavier-ubuntu-bionic-run"
+        "jetson-xavier-ubuntu-jammy-run"
       ]
     }
   },
@@ -96,96 +90,6 @@
         "docker.io/balenalib/jetson-xavier-ubuntu:jammy-run",
         "docker.io/balenalib/jetson-xavier-ubuntu:jammy-${DATESTAMP}",
         "docker.io/balenalib/jetson-xavier-ubuntu:jammy"
-      ]
-    },
-    "jetson-xavier-ubuntu-focal-build": {
-      "context": "device-base/jetson-xavier/ubuntu/focal/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:focal-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-ubuntu:focal-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:focal-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-ubuntu:focal-build"
-      ]
-    },
-    "jetson-xavier-ubuntu-focal-run": {
-      "context": "device-base/jetson-xavier/ubuntu/focal/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:focal-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-ubuntu:focal-run",
-        "docker.io/balenalib/jetson-xavier-ubuntu:focal-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-ubuntu:focal"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:focal-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-ubuntu:focal-run",
-        "docker.io/balenalib/jetson-xavier-ubuntu:focal-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-ubuntu:focal"
-      ]
-    },
-    "jetson-xavier-ubuntu-xenial-build": {
-      "context": "device-base/jetson-xavier/ubuntu/xenial/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:xenial-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-ubuntu:xenial-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:xenial-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-ubuntu:xenial-build"
-      ]
-    },
-    "jetson-xavier-ubuntu-xenial-run": {
-      "context": "device-base/jetson-xavier/ubuntu/xenial/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:xenial-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-ubuntu:xenial-run",
-        "docker.io/balenalib/jetson-xavier-ubuntu:xenial-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-ubuntu:xenial"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:xenial-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-ubuntu:xenial-run",
-        "docker.io/balenalib/jetson-xavier-ubuntu:xenial-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-ubuntu:xenial"
-      ]
-    },
-    "jetson-xavier-ubuntu-bionic-build": {
-      "context": "device-base/jetson-xavier/ubuntu/bionic/build",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:bionic-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-ubuntu:bionic-build"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:bionic-build-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-ubuntu:bionic-build"
-      ]
-    },
-    "jetson-xavier-ubuntu-bionic-run": {
-      "context": "device-base/jetson-xavier/ubuntu/bionic/run",
-      "dockerfile": "Dockerfile",
-      "platform": "linux/arm64",
-      "tags": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:bionic-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-ubuntu:bionic-run",
-        "docker.io/balenalib/jetson-xavier-ubuntu:bionic-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-ubuntu:bionic"
-      ],
-      "cache_from": [
-        "docker.io/balenalib/jetson-xavier-ubuntu:bionic-run-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-ubuntu:bionic-run",
-        "docker.io/balenalib/jetson-xavier-ubuntu:bionic-${DATESTAMP}",
-        "docker.io/balenalib/jetson-xavier-ubuntu:bionic"
       ]
     }
   },
