@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.11.44 - 2025-05-07
+
+* Update dependency @balena/contrato to ^0.13.0 [Self-hosted Renovate Bot]
+
 ## 2.11.43 - 2025-05-05
 
 * Lock file maintenance [Self-hosted Renovate Bot]
