@@ -108,3 +108,14 @@ output:
               targets: ${{ matrix.target }}
               push: ${{ inputs.no-push != true }}
               provenance: false
+          # https://github.com/peter-evans/dockerhub-description
+          - name: Update DockerHub Description
+            if: inputs.no-push != true
+            continue-on-error: true
+            uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77 # v4.0.2
+            with:
+              username: ${{ secrets.BALENAIMAGES_USER }}
+              password: ${{ secrets.BALENAIMAGES_TOKEN }}
+              repository: "balenalib/{{this.children.arch.sw.slug}}-{{this.children.sw.os.slug}}"
+              readme-filepath: ./balena-base-images/docs/dockerhub/{{this.children.arch.sw.slug}}-{{this.children.sw.os.slug}}-full-description.md
+              short-description: "This image is part of the balena.io base image series for IoT devices."
