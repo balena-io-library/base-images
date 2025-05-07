@@ -5,6 +5,25 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.11.47 - 2025-05-07
+
+
+<details>
+<summary> Update scripts/contracts digest to f084a7c [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.134 - 2025-05-07
+> 
+> * Remove Ubuntu Lunar 23.04 leftovers from dotnet & python contracts [Thodoris Greasidis]
+> 
+> ### contracts-2.0.133 - 2025-05-07
+> 
+> * Remove Ubuntu Xenial from supported distros [Kyle Harding]
+> * Remove Ubuntu Bionic from supported distros [Kyle Harding]
+> * Remove Ubuntu Focal from supported distros [Kyle Harding]
+> 
+
+</details>
+
 ## 2.11.46 - 2025-05-07
 
 * Update npm to v11 [Self-hosted Renovate Bot]

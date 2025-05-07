@@ -1,4 +1,62 @@
 - commits:
+    - subject: Update scripts/contracts digest to f084a7c
+      hash: 8fc158fd37ae5ca3f52d325525f8aa59c26c3dac
+      body: |
+        Update scripts/contracts
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: Remove Ubuntu Lunar 23.04 leftovers from dotnet & python contracts
+              hash: 8e9731d45070064181f5d067e57c8989f6bea0e0
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Thodoris Greasidis
+          version: contracts-2.0.134
+          title: ""
+          date: 2025-05-07T16:11:10.480Z
+        - commits:
+            - subject: Remove Ubuntu Xenial from supported distros
+              hash: 85a8ac44d8b471148c248f648dfdfc0121e04384
+              body: |
+                Xenial was EOL in April 2021
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+            - subject: Remove Ubuntu Bionic from supported distros
+              hash: 5c57c75d04cccbaf8d68d09426797001ad7209ad
+              body: |
+                Bionic was EOL in May 2023
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+            - subject: Remove Ubuntu Focal from supported distros
+              hash: 3075e92e42e7d1dab622420058327a9bde8ea5cd
+              body: |
+                Focal is EOL in May 2025
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+          version: contracts-2.0.133
+          title: ""
+          date: 2025-05-07T15:57:44.077Z
+  version: 2.11.47
+  title: ""
+  date: 2025-05-07T17:18:41.813Z
+- commits:
     - subject: Update npm to v11
       hash: e8e4f3ca5569dc309871ff81b6c3eea227af06a9
       body: |
