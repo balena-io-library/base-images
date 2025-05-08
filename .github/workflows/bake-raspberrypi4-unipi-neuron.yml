@@ -92,6 +92,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/raspberrypi4-unipi-neuron-alpine-golang
+          readme-filepath: ./balena-base-images/docs/dockerhub/raspberrypi4-unipi-neuron-alpine-golang-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-raspberrypi4-unipi-neuron-alpine-node:
     name: Prepare raspberrypi4-unipi-neuron-alpine-node
     runs-on: ubuntu-latest
@@ -163,6 +173,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/raspberrypi4-unipi-neuron-alpine-node
+          readme-filepath: ./balena-base-images/docs/dockerhub/raspberrypi4-unipi-neuron-alpine-node-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-raspberrypi4-unipi-neuron-alpine-python:
     name: Prepare raspberrypi4-unipi-neuron-alpine-python
     runs-on: ubuntu-latest
@@ -234,6 +254,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/raspberrypi4-unipi-neuron-alpine-python
+          readme-filepath: ./balena-base-images/docs/dockerhub/raspberrypi4-unipi-neuron-alpine-python-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-raspberrypi4-unipi-neuron-debian-golang:
     name: Prepare raspberrypi4-unipi-neuron-debian-golang
     runs-on: ubuntu-latest
@@ -305,6 +335,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/raspberrypi4-unipi-neuron-debian-golang
+          readme-filepath: ./balena-base-images/docs/dockerhub/raspberrypi4-unipi-neuron-debian-golang-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-raspberrypi4-unipi-neuron-debian-node:
     name: Prepare raspberrypi4-unipi-neuron-debian-node
     runs-on: ubuntu-latest
@@ -376,6 +416,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/raspberrypi4-unipi-neuron-debian-node
+          readme-filepath: ./balena-base-images/docs/dockerhub/raspberrypi4-unipi-neuron-debian-node-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-raspberrypi4-unipi-neuron-debian-openjdk:
     name: Prepare raspberrypi4-unipi-neuron-debian-openjdk
     runs-on: ubuntu-latest
@@ -447,6 +497,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/raspberrypi4-unipi-neuron-debian-openjdk
+          readme-filepath: ./balena-base-images/docs/dockerhub/raspberrypi4-unipi-neuron-debian-openjdk-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-raspberrypi4-unipi-neuron-debian-python:
     name: Prepare raspberrypi4-unipi-neuron-debian-python
     runs-on: ubuntu-latest
@@ -518,6 +578,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/raspberrypi4-unipi-neuron-debian-python
+          readme-filepath: ./balena-base-images/docs/dockerhub/raspberrypi4-unipi-neuron-debian-python-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-raspberrypi4-unipi-neuron-fedora-golang:
     name: Prepare raspberrypi4-unipi-neuron-fedora-golang
     runs-on: ubuntu-latest
@@ -589,6 +659,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/raspberrypi4-unipi-neuron-fedora-golang
+          readme-filepath: ./balena-base-images/docs/dockerhub/raspberrypi4-unipi-neuron-fedora-golang-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-raspberrypi4-unipi-neuron-fedora-node:
     name: Prepare raspberrypi4-unipi-neuron-fedora-node
     runs-on: ubuntu-latest
@@ -660,6 +740,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/raspberrypi4-unipi-neuron-fedora-node
+          readme-filepath: ./balena-base-images/docs/dockerhub/raspberrypi4-unipi-neuron-fedora-node-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-raspberrypi4-unipi-neuron-fedora-python:
     name: Prepare raspberrypi4-unipi-neuron-fedora-python
     runs-on: ubuntu-latest
@@ -731,6 +821,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/raspberrypi4-unipi-neuron-fedora-python
+          readme-filepath: ./balena-base-images/docs/dockerhub/raspberrypi4-unipi-neuron-fedora-python-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-raspberrypi4-unipi-neuron-ubuntu-golang:
     name: Prepare raspberrypi4-unipi-neuron-ubuntu-golang
     runs-on: ubuntu-latest
@@ -802,6 +902,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/raspberrypi4-unipi-neuron-ubuntu-golang
+          readme-filepath: ./balena-base-images/docs/dockerhub/raspberrypi4-unipi-neuron-ubuntu-golang-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-raspberrypi4-unipi-neuron-ubuntu-node:
     name: Prepare raspberrypi4-unipi-neuron-ubuntu-node
     runs-on: ubuntu-latest
@@ -873,6 +983,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/raspberrypi4-unipi-neuron-ubuntu-node
+          readme-filepath: ./balena-base-images/docs/dockerhub/raspberrypi4-unipi-neuron-ubuntu-node-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-raspberrypi4-unipi-neuron-ubuntu-python:
     name: Prepare raspberrypi4-unipi-neuron-ubuntu-python
     runs-on: ubuntu-latest
@@ -944,6 +1064,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/raspberrypi4-unipi-neuron-ubuntu-python
+          readme-filepath: ./balena-base-images/docs/dockerhub/raspberrypi4-unipi-neuron-ubuntu-python-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-raspberrypi4-unipi-neuron-alpine:
     name: Prepare raspberrypi4-unipi-neuron-alpine
     runs-on: ubuntu-latest
@@ -1015,6 +1145,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/raspberrypi4-unipi-neuron-alpine
+          readme-filepath: ./balena-base-images/docs/dockerhub/raspberrypi4-unipi-neuron-alpine-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-raspberrypi4-unipi-neuron-debian:
     name: Prepare raspberrypi4-unipi-neuron-debian
     runs-on: ubuntu-latest
@@ -1086,6 +1226,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/raspberrypi4-unipi-neuron-debian
+          readme-filepath: ./balena-base-images/docs/dockerhub/raspberrypi4-unipi-neuron-debian-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-raspberrypi4-unipi-neuron-fedora:
     name: Prepare raspberrypi4-unipi-neuron-fedora
     runs-on: ubuntu-latest
@@ -1157,6 +1307,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/raspberrypi4-unipi-neuron-fedora
+          readme-filepath: ./balena-base-images/docs/dockerhub/raspberrypi4-unipi-neuron-fedora-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-raspberrypi4-unipi-neuron-ubuntu:
     name: Prepare raspberrypi4-unipi-neuron-ubuntu
     runs-on: ubuntu-latest
@@ -1228,3 +1388,13 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/raspberrypi4-unipi-neuron-ubuntu
+          readme-filepath: ./balena-base-images/docs/dockerhub/raspberrypi4-unipi-neuron-ubuntu-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.

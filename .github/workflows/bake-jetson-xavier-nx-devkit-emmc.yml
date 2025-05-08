@@ -92,6 +92,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/jetson-xavier-nx-devkit-emmc-alpine-golang
+          readme-filepath: ./balena-base-images/docs/dockerhub/jetson-xavier-nx-devkit-emmc-alpine-golang-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-jetson-xavier-nx-devkit-emmc-alpine-node:
     name: Prepare jetson-xavier-nx-devkit-emmc-alpine-node
     runs-on: ubuntu-latest
@@ -163,6 +173,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/jetson-xavier-nx-devkit-emmc-alpine-node
+          readme-filepath: ./balena-base-images/docs/dockerhub/jetson-xavier-nx-devkit-emmc-alpine-node-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-jetson-xavier-nx-devkit-emmc-alpine-python:
     name: Prepare jetson-xavier-nx-devkit-emmc-alpine-python
     runs-on: ubuntu-latest
@@ -234,6 +254,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/jetson-xavier-nx-devkit-emmc-alpine-python
+          readme-filepath: ./balena-base-images/docs/dockerhub/jetson-xavier-nx-devkit-emmc-alpine-python-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-jetson-xavier-nx-devkit-emmc-debian-golang:
     name: Prepare jetson-xavier-nx-devkit-emmc-debian-golang
     runs-on: ubuntu-latest
@@ -305,6 +335,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/jetson-xavier-nx-devkit-emmc-debian-golang
+          readme-filepath: ./balena-base-images/docs/dockerhub/jetson-xavier-nx-devkit-emmc-debian-golang-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-jetson-xavier-nx-devkit-emmc-debian-node:
     name: Prepare jetson-xavier-nx-devkit-emmc-debian-node
     runs-on: ubuntu-latest
@@ -376,6 +416,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/jetson-xavier-nx-devkit-emmc-debian-node
+          readme-filepath: ./balena-base-images/docs/dockerhub/jetson-xavier-nx-devkit-emmc-debian-node-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-jetson-xavier-nx-devkit-emmc-debian-openjdk:
     name: Prepare jetson-xavier-nx-devkit-emmc-debian-openjdk
     runs-on: ubuntu-latest
@@ -447,6 +497,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/jetson-xavier-nx-devkit-emmc-debian-openjdk
+          readme-filepath: ./balena-base-images/docs/dockerhub/jetson-xavier-nx-devkit-emmc-debian-openjdk-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-jetson-xavier-nx-devkit-emmc-debian-python:
     name: Prepare jetson-xavier-nx-devkit-emmc-debian-python
     runs-on: ubuntu-latest
@@ -518,6 +578,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/jetson-xavier-nx-devkit-emmc-debian-python
+          readme-filepath: ./balena-base-images/docs/dockerhub/jetson-xavier-nx-devkit-emmc-debian-python-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-jetson-xavier-nx-devkit-emmc-fedora-golang:
     name: Prepare jetson-xavier-nx-devkit-emmc-fedora-golang
     runs-on: ubuntu-latest
@@ -589,6 +659,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/jetson-xavier-nx-devkit-emmc-fedora-golang
+          readme-filepath: ./balena-base-images/docs/dockerhub/jetson-xavier-nx-devkit-emmc-fedora-golang-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-jetson-xavier-nx-devkit-emmc-fedora-node:
     name: Prepare jetson-xavier-nx-devkit-emmc-fedora-node
     runs-on: ubuntu-latest
@@ -660,6 +740,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/jetson-xavier-nx-devkit-emmc-fedora-node
+          readme-filepath: ./balena-base-images/docs/dockerhub/jetson-xavier-nx-devkit-emmc-fedora-node-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-jetson-xavier-nx-devkit-emmc-fedora-python:
     name: Prepare jetson-xavier-nx-devkit-emmc-fedora-python
     runs-on: ubuntu-latest
@@ -731,6 +821,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/jetson-xavier-nx-devkit-emmc-fedora-python
+          readme-filepath: ./balena-base-images/docs/dockerhub/jetson-xavier-nx-devkit-emmc-fedora-python-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-jetson-xavier-nx-devkit-emmc-ubuntu-golang:
     name: Prepare jetson-xavier-nx-devkit-emmc-ubuntu-golang
     runs-on: ubuntu-latest
@@ -802,6 +902,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/jetson-xavier-nx-devkit-emmc-ubuntu-golang
+          readme-filepath: ./balena-base-images/docs/dockerhub/jetson-xavier-nx-devkit-emmc-ubuntu-golang-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-jetson-xavier-nx-devkit-emmc-ubuntu-node:
     name: Prepare jetson-xavier-nx-devkit-emmc-ubuntu-node
     runs-on: ubuntu-latest
@@ -873,6 +983,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/jetson-xavier-nx-devkit-emmc-ubuntu-node
+          readme-filepath: ./balena-base-images/docs/dockerhub/jetson-xavier-nx-devkit-emmc-ubuntu-node-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-jetson-xavier-nx-devkit-emmc-ubuntu-python:
     name: Prepare jetson-xavier-nx-devkit-emmc-ubuntu-python
     runs-on: ubuntu-latest
@@ -944,6 +1064,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/jetson-xavier-nx-devkit-emmc-ubuntu-python
+          readme-filepath: ./balena-base-images/docs/dockerhub/jetson-xavier-nx-devkit-emmc-ubuntu-python-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-jetson-xavier-nx-devkit-emmc-alpine:
     name: Prepare jetson-xavier-nx-devkit-emmc-alpine
     runs-on: ubuntu-latest
@@ -1015,6 +1145,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/jetson-xavier-nx-devkit-emmc-alpine
+          readme-filepath: ./balena-base-images/docs/dockerhub/jetson-xavier-nx-devkit-emmc-alpine-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-jetson-xavier-nx-devkit-emmc-debian:
     name: Prepare jetson-xavier-nx-devkit-emmc-debian
     runs-on: ubuntu-latest
@@ -1086,6 +1226,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/jetson-xavier-nx-devkit-emmc-debian
+          readme-filepath: ./balena-base-images/docs/dockerhub/jetson-xavier-nx-devkit-emmc-debian-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-jetson-xavier-nx-devkit-emmc-fedora:
     name: Prepare jetson-xavier-nx-devkit-emmc-fedora
     runs-on: ubuntu-latest
@@ -1157,6 +1307,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/jetson-xavier-nx-devkit-emmc-fedora
+          readme-filepath: ./balena-base-images/docs/dockerhub/jetson-xavier-nx-devkit-emmc-fedora-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-jetson-xavier-nx-devkit-emmc-ubuntu:
     name: Prepare jetson-xavier-nx-devkit-emmc-ubuntu
     runs-on: ubuntu-latest
@@ -1228,3 +1388,13 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/jetson-xavier-nx-devkit-emmc-ubuntu
+          readme-filepath: ./balena-base-images/docs/dockerhub/jetson-xavier-nx-devkit-emmc-ubuntu-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.

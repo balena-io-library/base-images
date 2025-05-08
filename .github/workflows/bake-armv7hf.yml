@@ -92,6 +92,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/armv7hf-alpine
+          readme-filepath: ./balena-base-images/docs/dockerhub/armv7hf-alpine-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-armv7hf-debian:
     name: Prepare armv7hf-debian
     runs-on: ubuntu-latest
@@ -163,6 +173,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/armv7hf-debian
+          readme-filepath: ./balena-base-images/docs/dockerhub/armv7hf-debian-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-armv7hf-ubuntu:
     name: Prepare armv7hf-ubuntu
     runs-on: ubuntu-latest
@@ -234,6 +254,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/armv7hf-ubuntu
+          readme-filepath: ./balena-base-images/docs/dockerhub/armv7hf-ubuntu-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-armv7hf-alpine-golang:
     name: Prepare armv7hf-alpine-golang
     runs-on: ubuntu-latest
@@ -305,6 +335,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/armv7hf-alpine-golang
+          readme-filepath: ./balena-base-images/docs/dockerhub/armv7hf-alpine-golang-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-armv7hf-alpine-node:
     name: Prepare armv7hf-alpine-node
     runs-on: ubuntu-latest
@@ -376,6 +416,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/armv7hf-alpine-node
+          readme-filepath: ./balena-base-images/docs/dockerhub/armv7hf-alpine-node-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-armv7hf-alpine-python:
     name: Prepare armv7hf-alpine-python
     runs-on: ubuntu-latest
@@ -447,6 +497,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/armv7hf-alpine-python
+          readme-filepath: ./balena-base-images/docs/dockerhub/armv7hf-alpine-python-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-armv7hf-debian-golang:
     name: Prepare armv7hf-debian-golang
     runs-on: ubuntu-latest
@@ -518,6 +578,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/armv7hf-debian-golang
+          readme-filepath: ./balena-base-images/docs/dockerhub/armv7hf-debian-golang-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-armv7hf-debian-node:
     name: Prepare armv7hf-debian-node
     runs-on: ubuntu-latest
@@ -589,6 +659,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/armv7hf-debian-node
+          readme-filepath: ./balena-base-images/docs/dockerhub/armv7hf-debian-node-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-armv7hf-debian-openjdk:
     name: Prepare armv7hf-debian-openjdk
     runs-on: ubuntu-latest
@@ -660,6 +740,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/armv7hf-debian-openjdk
+          readme-filepath: ./balena-base-images/docs/dockerhub/armv7hf-debian-openjdk-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-armv7hf-debian-python:
     name: Prepare armv7hf-debian-python
     runs-on: ubuntu-latest
@@ -731,6 +821,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/armv7hf-debian-python
+          readme-filepath: ./balena-base-images/docs/dockerhub/armv7hf-debian-python-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-armv7hf-ubuntu-golang:
     name: Prepare armv7hf-ubuntu-golang
     runs-on: ubuntu-latest
@@ -802,6 +902,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/armv7hf-ubuntu-golang
+          readme-filepath: ./balena-base-images/docs/dockerhub/armv7hf-ubuntu-golang-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-armv7hf-ubuntu-node:
     name: Prepare armv7hf-ubuntu-node
     runs-on: ubuntu-latest
@@ -873,6 +983,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/armv7hf-ubuntu-node
+          readme-filepath: ./balena-base-images/docs/dockerhub/armv7hf-ubuntu-node-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-armv7hf-ubuntu-python:
     name: Prepare armv7hf-ubuntu-python
     runs-on: ubuntu-latest
@@ -944,3 +1064,13 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/armv7hf-ubuntu-python
+          readme-filepath: ./balena-base-images/docs/dockerhub/armv7hf-ubuntu-python-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.

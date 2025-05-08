@@ -92,6 +92,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/asus-tinker-edge-t-alpine-golang
+          readme-filepath: ./balena-base-images/docs/dockerhub/asus-tinker-edge-t-alpine-golang-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-asus-tinker-edge-t-alpine-node:
     name: Prepare asus-tinker-edge-t-alpine-node
     runs-on: ubuntu-latest
@@ -163,6 +173,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/asus-tinker-edge-t-alpine-node
+          readme-filepath: ./balena-base-images/docs/dockerhub/asus-tinker-edge-t-alpine-node-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-asus-tinker-edge-t-alpine-python:
     name: Prepare asus-tinker-edge-t-alpine-python
     runs-on: ubuntu-latest
@@ -234,6 +254,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/asus-tinker-edge-t-alpine-python
+          readme-filepath: ./balena-base-images/docs/dockerhub/asus-tinker-edge-t-alpine-python-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-asus-tinker-edge-t-debian-golang:
     name: Prepare asus-tinker-edge-t-debian-golang
     runs-on: ubuntu-latest
@@ -305,6 +335,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/asus-tinker-edge-t-debian-golang
+          readme-filepath: ./balena-base-images/docs/dockerhub/asus-tinker-edge-t-debian-golang-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-asus-tinker-edge-t-debian-node:
     name: Prepare asus-tinker-edge-t-debian-node
     runs-on: ubuntu-latest
@@ -376,6 +416,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/asus-tinker-edge-t-debian-node
+          readme-filepath: ./balena-base-images/docs/dockerhub/asus-tinker-edge-t-debian-node-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-asus-tinker-edge-t-debian-openjdk:
     name: Prepare asus-tinker-edge-t-debian-openjdk
     runs-on: ubuntu-latest
@@ -447,6 +497,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/asus-tinker-edge-t-debian-openjdk
+          readme-filepath: ./balena-base-images/docs/dockerhub/asus-tinker-edge-t-debian-openjdk-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-asus-tinker-edge-t-debian-python:
     name: Prepare asus-tinker-edge-t-debian-python
     runs-on: ubuntu-latest
@@ -518,6 +578,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/asus-tinker-edge-t-debian-python
+          readme-filepath: ./balena-base-images/docs/dockerhub/asus-tinker-edge-t-debian-python-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-asus-tinker-edge-t-fedora-golang:
     name: Prepare asus-tinker-edge-t-fedora-golang
     runs-on: ubuntu-latest
@@ -589,6 +659,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/asus-tinker-edge-t-fedora-golang
+          readme-filepath: ./balena-base-images/docs/dockerhub/asus-tinker-edge-t-fedora-golang-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-asus-tinker-edge-t-fedora-node:
     name: Prepare asus-tinker-edge-t-fedora-node
     runs-on: ubuntu-latest
@@ -660,6 +740,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/asus-tinker-edge-t-fedora-node
+          readme-filepath: ./balena-base-images/docs/dockerhub/asus-tinker-edge-t-fedora-node-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-asus-tinker-edge-t-fedora-python:
     name: Prepare asus-tinker-edge-t-fedora-python
     runs-on: ubuntu-latest
@@ -731,6 +821,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/asus-tinker-edge-t-fedora-python
+          readme-filepath: ./balena-base-images/docs/dockerhub/asus-tinker-edge-t-fedora-python-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-asus-tinker-edge-t-ubuntu-golang:
     name: Prepare asus-tinker-edge-t-ubuntu-golang
     runs-on: ubuntu-latest
@@ -802,6 +902,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/asus-tinker-edge-t-ubuntu-golang
+          readme-filepath: ./balena-base-images/docs/dockerhub/asus-tinker-edge-t-ubuntu-golang-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-asus-tinker-edge-t-ubuntu-node:
     name: Prepare asus-tinker-edge-t-ubuntu-node
     runs-on: ubuntu-latest
@@ -873,6 +983,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/asus-tinker-edge-t-ubuntu-node
+          readme-filepath: ./balena-base-images/docs/dockerhub/asus-tinker-edge-t-ubuntu-node-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-asus-tinker-edge-t-ubuntu-python:
     name: Prepare asus-tinker-edge-t-ubuntu-python
     runs-on: ubuntu-latest
@@ -944,6 +1064,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/asus-tinker-edge-t-ubuntu-python
+          readme-filepath: ./balena-base-images/docs/dockerhub/asus-tinker-edge-t-ubuntu-python-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-asus-tinker-edge-t-alpine:
     name: Prepare asus-tinker-edge-t-alpine
     runs-on: ubuntu-latest
@@ -1015,6 +1145,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/asus-tinker-edge-t-alpine
+          readme-filepath: ./balena-base-images/docs/dockerhub/asus-tinker-edge-t-alpine-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-asus-tinker-edge-t-debian:
     name: Prepare asus-tinker-edge-t-debian
     runs-on: ubuntu-latest
@@ -1086,6 +1226,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/asus-tinker-edge-t-debian
+          readme-filepath: ./balena-base-images/docs/dockerhub/asus-tinker-edge-t-debian-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-asus-tinker-edge-t-fedora:
     name: Prepare asus-tinker-edge-t-fedora
     runs-on: ubuntu-latest
@@ -1157,6 +1307,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/asus-tinker-edge-t-fedora
+          readme-filepath: ./balena-base-images/docs/dockerhub/asus-tinker-edge-t-fedora-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-asus-tinker-edge-t-ubuntu:
     name: Prepare asus-tinker-edge-t-ubuntu
     runs-on: ubuntu-latest
@@ -1228,3 +1388,13 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/asus-tinker-edge-t-ubuntu
+          readme-filepath: ./balena-base-images/docs/dockerhub/asus-tinker-edge-t-ubuntu-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.

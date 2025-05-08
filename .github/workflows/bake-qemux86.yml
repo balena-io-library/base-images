@@ -92,6 +92,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/qemux86-alpine-golang
+          readme-filepath: ./balena-base-images/docs/dockerhub/qemux86-alpine-golang-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-qemux86-alpine-python:
     name: Prepare qemux86-alpine-python
     runs-on: ubuntu-latest
@@ -163,6 +173,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/qemux86-alpine-python
+          readme-filepath: ./balena-base-images/docs/dockerhub/qemux86-alpine-python-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-qemux86-debian-golang:
     name: Prepare qemux86-debian-golang
     runs-on: ubuntu-latest
@@ -234,6 +254,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/qemux86-debian-golang
+          readme-filepath: ./balena-base-images/docs/dockerhub/qemux86-debian-golang-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-qemux86-debian-openjdk:
     name: Prepare qemux86-debian-openjdk
     runs-on: ubuntu-latest
@@ -305,6 +335,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/qemux86-debian-openjdk
+          readme-filepath: ./balena-base-images/docs/dockerhub/qemux86-debian-openjdk-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-qemux86-debian-python:
     name: Prepare qemux86-debian-python
     runs-on: ubuntu-latest
@@ -376,6 +416,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/qemux86-debian-python
+          readme-filepath: ./balena-base-images/docs/dockerhub/qemux86-debian-python-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-qemux86-alpine:
     name: Prepare qemux86-alpine
     runs-on: ubuntu-latest
@@ -447,6 +497,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/qemux86-alpine
+          readme-filepath: ./balena-base-images/docs/dockerhub/qemux86-alpine-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-qemux86-debian:
     name: Prepare qemux86-debian
     runs-on: ubuntu-latest
@@ -518,3 +578,13 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/qemux86-debian
+          readme-filepath: ./balena-base-images/docs/dockerhub/qemux86-debian-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.

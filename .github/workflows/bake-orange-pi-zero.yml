@@ -92,6 +92,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/orange-pi-zero-alpine-golang
+          readme-filepath: ./balena-base-images/docs/dockerhub/orange-pi-zero-alpine-golang-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-orange-pi-zero-alpine-node:
     name: Prepare orange-pi-zero-alpine-node
     runs-on: ubuntu-latest
@@ -163,6 +173,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/orange-pi-zero-alpine-node
+          readme-filepath: ./balena-base-images/docs/dockerhub/orange-pi-zero-alpine-node-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-orange-pi-zero-alpine-python:
     name: Prepare orange-pi-zero-alpine-python
     runs-on: ubuntu-latest
@@ -234,6 +254,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/orange-pi-zero-alpine-python
+          readme-filepath: ./balena-base-images/docs/dockerhub/orange-pi-zero-alpine-python-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-orange-pi-zero-debian-golang:
     name: Prepare orange-pi-zero-debian-golang
     runs-on: ubuntu-latest
@@ -305,6 +335,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/orange-pi-zero-debian-golang
+          readme-filepath: ./balena-base-images/docs/dockerhub/orange-pi-zero-debian-golang-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-orange-pi-zero-debian-node:
     name: Prepare orange-pi-zero-debian-node
     runs-on: ubuntu-latest
@@ -376,6 +416,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/orange-pi-zero-debian-node
+          readme-filepath: ./balena-base-images/docs/dockerhub/orange-pi-zero-debian-node-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-orange-pi-zero-debian-openjdk:
     name: Prepare orange-pi-zero-debian-openjdk
     runs-on: ubuntu-latest
@@ -447,6 +497,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/orange-pi-zero-debian-openjdk
+          readme-filepath: ./balena-base-images/docs/dockerhub/orange-pi-zero-debian-openjdk-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-orange-pi-zero-debian-python:
     name: Prepare orange-pi-zero-debian-python
     runs-on: ubuntu-latest
@@ -518,6 +578,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/orange-pi-zero-debian-python
+          readme-filepath: ./balena-base-images/docs/dockerhub/orange-pi-zero-debian-python-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-orange-pi-zero-ubuntu-golang:
     name: Prepare orange-pi-zero-ubuntu-golang
     runs-on: ubuntu-latest
@@ -589,6 +659,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/orange-pi-zero-ubuntu-golang
+          readme-filepath: ./balena-base-images/docs/dockerhub/orange-pi-zero-ubuntu-golang-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-orange-pi-zero-ubuntu-node:
     name: Prepare orange-pi-zero-ubuntu-node
     runs-on: ubuntu-latest
@@ -660,6 +740,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/orange-pi-zero-ubuntu-node
+          readme-filepath: ./balena-base-images/docs/dockerhub/orange-pi-zero-ubuntu-node-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-orange-pi-zero-ubuntu-python:
     name: Prepare orange-pi-zero-ubuntu-python
     runs-on: ubuntu-latest
@@ -731,6 +821,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/orange-pi-zero-ubuntu-python
+          readme-filepath: ./balena-base-images/docs/dockerhub/orange-pi-zero-ubuntu-python-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-orange-pi-zero-alpine:
     name: Prepare orange-pi-zero-alpine
     runs-on: ubuntu-latest
@@ -802,6 +902,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/orange-pi-zero-alpine
+          readme-filepath: ./balena-base-images/docs/dockerhub/orange-pi-zero-alpine-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-orange-pi-zero-debian:
     name: Prepare orange-pi-zero-debian
     runs-on: ubuntu-latest
@@ -873,6 +983,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/orange-pi-zero-debian
+          readme-filepath: ./balena-base-images/docs/dockerhub/orange-pi-zero-debian-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-orange-pi-zero-ubuntu:
     name: Prepare orange-pi-zero-ubuntu
     runs-on: ubuntu-latest
@@ -944,3 +1064,13 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/orange-pi-zero-ubuntu
+          readme-filepath: ./balena-base-images/docs/dockerhub/orange-pi-zero-ubuntu-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.

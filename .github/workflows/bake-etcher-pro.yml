@@ -92,6 +92,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/etcher-pro-alpine-golang
+          readme-filepath: ./balena-base-images/docs/dockerhub/etcher-pro-alpine-golang-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-etcher-pro-alpine-node:
     name: Prepare etcher-pro-alpine-node
     runs-on: ubuntu-latest
@@ -163,6 +173,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/etcher-pro-alpine-node
+          readme-filepath: ./balena-base-images/docs/dockerhub/etcher-pro-alpine-node-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-etcher-pro-alpine-python:
     name: Prepare etcher-pro-alpine-python
     runs-on: ubuntu-latest
@@ -234,6 +254,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/etcher-pro-alpine-python
+          readme-filepath: ./balena-base-images/docs/dockerhub/etcher-pro-alpine-python-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-etcher-pro-debian-golang:
     name: Prepare etcher-pro-debian-golang
     runs-on: ubuntu-latest
@@ -305,6 +335,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/etcher-pro-debian-golang
+          readme-filepath: ./balena-base-images/docs/dockerhub/etcher-pro-debian-golang-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-etcher-pro-debian-node:
     name: Prepare etcher-pro-debian-node
     runs-on: ubuntu-latest
@@ -376,6 +416,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/etcher-pro-debian-node
+          readme-filepath: ./balena-base-images/docs/dockerhub/etcher-pro-debian-node-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-etcher-pro-debian-openjdk:
     name: Prepare etcher-pro-debian-openjdk
     runs-on: ubuntu-latest
@@ -447,6 +497,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/etcher-pro-debian-openjdk
+          readme-filepath: ./balena-base-images/docs/dockerhub/etcher-pro-debian-openjdk-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-etcher-pro-debian-python:
     name: Prepare etcher-pro-debian-python
     runs-on: ubuntu-latest
@@ -518,6 +578,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/etcher-pro-debian-python
+          readme-filepath: ./balena-base-images/docs/dockerhub/etcher-pro-debian-python-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-etcher-pro-fedora-golang:
     name: Prepare etcher-pro-fedora-golang
     runs-on: ubuntu-latest
@@ -589,6 +659,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/etcher-pro-fedora-golang
+          readme-filepath: ./balena-base-images/docs/dockerhub/etcher-pro-fedora-golang-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-etcher-pro-fedora-node:
     name: Prepare etcher-pro-fedora-node
     runs-on: ubuntu-latest
@@ -660,6 +740,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/etcher-pro-fedora-node
+          readme-filepath: ./balena-base-images/docs/dockerhub/etcher-pro-fedora-node-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-etcher-pro-fedora-python:
     name: Prepare etcher-pro-fedora-python
     runs-on: ubuntu-latest
@@ -731,6 +821,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/etcher-pro-fedora-python
+          readme-filepath: ./balena-base-images/docs/dockerhub/etcher-pro-fedora-python-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-etcher-pro-ubuntu-golang:
     name: Prepare etcher-pro-ubuntu-golang
     runs-on: ubuntu-latest
@@ -802,6 +902,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/etcher-pro-ubuntu-golang
+          readme-filepath: ./balena-base-images/docs/dockerhub/etcher-pro-ubuntu-golang-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-etcher-pro-ubuntu-node:
     name: Prepare etcher-pro-ubuntu-node
     runs-on: ubuntu-latest
@@ -873,6 +983,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/etcher-pro-ubuntu-node
+          readme-filepath: ./balena-base-images/docs/dockerhub/etcher-pro-ubuntu-node-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-etcher-pro-ubuntu-python:
     name: Prepare etcher-pro-ubuntu-python
     runs-on: ubuntu-latest
@@ -944,6 +1064,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/etcher-pro-ubuntu-python
+          readme-filepath: ./balena-base-images/docs/dockerhub/etcher-pro-ubuntu-python-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-etcher-pro-alpine:
     name: Prepare etcher-pro-alpine
     runs-on: ubuntu-latest
@@ -1015,6 +1145,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/etcher-pro-alpine
+          readme-filepath: ./balena-base-images/docs/dockerhub/etcher-pro-alpine-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-etcher-pro-debian:
     name: Prepare etcher-pro-debian
     runs-on: ubuntu-latest
@@ -1086,6 +1226,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/etcher-pro-debian
+          readme-filepath: ./balena-base-images/docs/dockerhub/etcher-pro-debian-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-etcher-pro-fedora:
     name: Prepare etcher-pro-fedora
     runs-on: ubuntu-latest
@@ -1157,6 +1307,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/etcher-pro-fedora
+          readme-filepath: ./balena-base-images/docs/dockerhub/etcher-pro-fedora-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-etcher-pro-ubuntu:
     name: Prepare etcher-pro-ubuntu
     runs-on: ubuntu-latest
@@ -1228,3 +1388,13 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/etcher-pro-ubuntu
+          readme-filepath: ./balena-base-images/docs/dockerhub/etcher-pro-ubuntu-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.

@@ -92,6 +92,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/revpi-connect-s-alpine-golang
+          readme-filepath: ./balena-base-images/docs/dockerhub/revpi-connect-s-alpine-golang-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-revpi-connect-s-alpine-node:
     name: Prepare revpi-connect-s-alpine-node
     runs-on: ubuntu-latest
@@ -163,6 +173,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/revpi-connect-s-alpine-node
+          readme-filepath: ./balena-base-images/docs/dockerhub/revpi-connect-s-alpine-node-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-revpi-connect-s-alpine-python:
     name: Prepare revpi-connect-s-alpine-python
     runs-on: ubuntu-latest
@@ -234,6 +254,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/revpi-connect-s-alpine-python
+          readme-filepath: ./balena-base-images/docs/dockerhub/revpi-connect-s-alpine-python-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-revpi-connect-s-debian-golang:
     name: Prepare revpi-connect-s-debian-golang
     runs-on: ubuntu-latest
@@ -305,6 +335,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/revpi-connect-s-debian-golang
+          readme-filepath: ./balena-base-images/docs/dockerhub/revpi-connect-s-debian-golang-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-revpi-connect-s-debian-node:
     name: Prepare revpi-connect-s-debian-node
     runs-on: ubuntu-latest
@@ -376,6 +416,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/revpi-connect-s-debian-node
+          readme-filepath: ./balena-base-images/docs/dockerhub/revpi-connect-s-debian-node-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-revpi-connect-s-debian-openjdk:
     name: Prepare revpi-connect-s-debian-openjdk
     runs-on: ubuntu-latest
@@ -447,6 +497,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/revpi-connect-s-debian-openjdk
+          readme-filepath: ./balena-base-images/docs/dockerhub/revpi-connect-s-debian-openjdk-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-revpi-connect-s-debian-python:
     name: Prepare revpi-connect-s-debian-python
     runs-on: ubuntu-latest
@@ -518,6 +578,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/revpi-connect-s-debian-python
+          readme-filepath: ./balena-base-images/docs/dockerhub/revpi-connect-s-debian-python-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-revpi-connect-s-fedora-golang:
     name: Prepare revpi-connect-s-fedora-golang
     runs-on: ubuntu-latest
@@ -589,6 +659,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/revpi-connect-s-fedora-golang
+          readme-filepath: ./balena-base-images/docs/dockerhub/revpi-connect-s-fedora-golang-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-revpi-connect-s-fedora-node:
     name: Prepare revpi-connect-s-fedora-node
     runs-on: ubuntu-latest
@@ -660,6 +740,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/revpi-connect-s-fedora-node
+          readme-filepath: ./balena-base-images/docs/dockerhub/revpi-connect-s-fedora-node-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-revpi-connect-s-fedora-python:
     name: Prepare revpi-connect-s-fedora-python
     runs-on: ubuntu-latest
@@ -731,6 +821,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/revpi-connect-s-fedora-python
+          readme-filepath: ./balena-base-images/docs/dockerhub/revpi-connect-s-fedora-python-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-revpi-connect-s-ubuntu-golang:
     name: Prepare revpi-connect-s-ubuntu-golang
     runs-on: ubuntu-latest
@@ -802,6 +902,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/revpi-connect-s-ubuntu-golang
+          readme-filepath: ./balena-base-images/docs/dockerhub/revpi-connect-s-ubuntu-golang-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-revpi-connect-s-ubuntu-node:
     name: Prepare revpi-connect-s-ubuntu-node
     runs-on: ubuntu-latest
@@ -873,6 +983,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/revpi-connect-s-ubuntu-node
+          readme-filepath: ./balena-base-images/docs/dockerhub/revpi-connect-s-ubuntu-node-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-revpi-connect-s-ubuntu-python:
     name: Prepare revpi-connect-s-ubuntu-python
     runs-on: ubuntu-latest
@@ -944,6 +1064,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/revpi-connect-s-ubuntu-python
+          readme-filepath: ./balena-base-images/docs/dockerhub/revpi-connect-s-ubuntu-python-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-revpi-connect-s-alpine:
     name: Prepare revpi-connect-s-alpine
     runs-on: ubuntu-latest
@@ -1015,6 +1145,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/revpi-connect-s-alpine
+          readme-filepath: ./balena-base-images/docs/dockerhub/revpi-connect-s-alpine-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-revpi-connect-s-debian:
     name: Prepare revpi-connect-s-debian
     runs-on: ubuntu-latest
@@ -1086,6 +1226,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/revpi-connect-s-debian
+          readme-filepath: ./balena-base-images/docs/dockerhub/revpi-connect-s-debian-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-revpi-connect-s-fedora:
     name: Prepare revpi-connect-s-fedora
     runs-on: ubuntu-latest
@@ -1157,6 +1307,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/revpi-connect-s-fedora
+          readme-filepath: ./balena-base-images/docs/dockerhub/revpi-connect-s-fedora-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-revpi-connect-s-ubuntu:
     name: Prepare revpi-connect-s-ubuntu
     runs-on: ubuntu-latest
@@ -1228,3 +1388,13 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/revpi-connect-s-ubuntu
+          readme-filepath: ./balena-base-images/docs/dockerhub/revpi-connect-s-ubuntu-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.

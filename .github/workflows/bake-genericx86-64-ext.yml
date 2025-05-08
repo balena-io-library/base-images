@@ -92,6 +92,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/genericx86-64-ext-alpine-golang
+          readme-filepath: ./balena-base-images/docs/dockerhub/genericx86-64-ext-alpine-golang-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-genericx86-64-ext-alpine-node:
     name: Prepare genericx86-64-ext-alpine-node
     runs-on: ubuntu-latest
@@ -163,6 +173,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/genericx86-64-ext-alpine-node
+          readme-filepath: ./balena-base-images/docs/dockerhub/genericx86-64-ext-alpine-node-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-genericx86-64-ext-alpine-python:
     name: Prepare genericx86-64-ext-alpine-python
     runs-on: ubuntu-latest
@@ -234,6 +254,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/genericx86-64-ext-alpine-python
+          readme-filepath: ./balena-base-images/docs/dockerhub/genericx86-64-ext-alpine-python-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-genericx86-64-ext-debian-dotnet:
     name: Prepare genericx86-64-ext-debian-dotnet
     runs-on: ubuntu-latest
@@ -305,6 +335,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/genericx86-64-ext-debian-dotnet
+          readme-filepath: ./balena-base-images/docs/dockerhub/genericx86-64-ext-debian-dotnet-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-genericx86-64-ext-debian-golang:
     name: Prepare genericx86-64-ext-debian-golang
     runs-on: ubuntu-latest
@@ -376,6 +416,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/genericx86-64-ext-debian-golang
+          readme-filepath: ./balena-base-images/docs/dockerhub/genericx86-64-ext-debian-golang-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-genericx86-64-ext-debian-node:
     name: Prepare genericx86-64-ext-debian-node
     runs-on: ubuntu-latest
@@ -447,6 +497,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/genericx86-64-ext-debian-node
+          readme-filepath: ./balena-base-images/docs/dockerhub/genericx86-64-ext-debian-node-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-genericx86-64-ext-debian-openjdk:
     name: Prepare genericx86-64-ext-debian-openjdk
     runs-on: ubuntu-latest
@@ -518,6 +578,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/genericx86-64-ext-debian-openjdk
+          readme-filepath: ./balena-base-images/docs/dockerhub/genericx86-64-ext-debian-openjdk-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-genericx86-64-ext-debian-python:
     name: Prepare genericx86-64-ext-debian-python
     runs-on: ubuntu-latest
@@ -589,6 +659,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/genericx86-64-ext-debian-python
+          readme-filepath: ./balena-base-images/docs/dockerhub/genericx86-64-ext-debian-python-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-genericx86-64-ext-fedora-golang:
     name: Prepare genericx86-64-ext-fedora-golang
     runs-on: ubuntu-latest
@@ -660,6 +740,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/genericx86-64-ext-fedora-golang
+          readme-filepath: ./balena-base-images/docs/dockerhub/genericx86-64-ext-fedora-golang-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-genericx86-64-ext-fedora-node:
     name: Prepare genericx86-64-ext-fedora-node
     runs-on: ubuntu-latest
@@ -731,6 +821,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/genericx86-64-ext-fedora-node
+          readme-filepath: ./balena-base-images/docs/dockerhub/genericx86-64-ext-fedora-node-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-genericx86-64-ext-fedora-python:
     name: Prepare genericx86-64-ext-fedora-python
     runs-on: ubuntu-latest
@@ -802,6 +902,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/genericx86-64-ext-fedora-python
+          readme-filepath: ./balena-base-images/docs/dockerhub/genericx86-64-ext-fedora-python-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-genericx86-64-ext-ubuntu-dotnet:
     name: Prepare genericx86-64-ext-ubuntu-dotnet
     runs-on: ubuntu-latest
@@ -873,6 +983,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/genericx86-64-ext-ubuntu-dotnet
+          readme-filepath: ./balena-base-images/docs/dockerhub/genericx86-64-ext-ubuntu-dotnet-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-genericx86-64-ext-ubuntu-golang:
     name: Prepare genericx86-64-ext-ubuntu-golang
     runs-on: ubuntu-latest
@@ -944,6 +1064,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/genericx86-64-ext-ubuntu-golang
+          readme-filepath: ./balena-base-images/docs/dockerhub/genericx86-64-ext-ubuntu-golang-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-genericx86-64-ext-ubuntu-node:
     name: Prepare genericx86-64-ext-ubuntu-node
     runs-on: ubuntu-latest
@@ -1015,6 +1145,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/genericx86-64-ext-ubuntu-node
+          readme-filepath: ./balena-base-images/docs/dockerhub/genericx86-64-ext-ubuntu-node-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-genericx86-64-ext-ubuntu-python:
     name: Prepare genericx86-64-ext-ubuntu-python
     runs-on: ubuntu-latest
@@ -1086,6 +1226,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/genericx86-64-ext-ubuntu-python
+          readme-filepath: ./balena-base-images/docs/dockerhub/genericx86-64-ext-ubuntu-python-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-genericx86-64-ext-alpine:
     name: Prepare genericx86-64-ext-alpine
     runs-on: ubuntu-latest
@@ -1157,6 +1307,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/genericx86-64-ext-alpine
+          readme-filepath: ./balena-base-images/docs/dockerhub/genericx86-64-ext-alpine-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-genericx86-64-ext-debian:
     name: Prepare genericx86-64-ext-debian
     runs-on: ubuntu-latest
@@ -1228,6 +1388,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/genericx86-64-ext-debian
+          readme-filepath: ./balena-base-images/docs/dockerhub/genericx86-64-ext-debian-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-genericx86-64-ext-fedora:
     name: Prepare genericx86-64-ext-fedora
     runs-on: ubuntu-latest
@@ -1299,6 +1469,16 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/genericx86-64-ext-fedora
+          readme-filepath: ./balena-base-images/docs/dockerhub/genericx86-64-ext-fedora-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
   prepare-genericx86-64-ext-ubuntu:
     name: Prepare genericx86-64-ext-ubuntu
     runs-on: ubuntu-latest
@@ -1370,3 +1550,13 @@ jobs:
           targets: ${{ matrix.target }}
           push: ${{ inputs.no-push != true }}
           provenance: false
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/genericx86-64-ext-ubuntu
+          readme-filepath: ./balena-base-images/docs/dockerhub/genericx86-64-ext-ubuntu-full-description.md
+          short-description: This image is part of the balena.io base image series for IoT devices.
