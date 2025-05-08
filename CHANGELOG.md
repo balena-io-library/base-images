@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.12.0 - 2025-05-08
+
+* Update the DockerHub description after publishing [Kyle Harding]
+
 ## 2.11.47 - 2025-05-07
 
 
