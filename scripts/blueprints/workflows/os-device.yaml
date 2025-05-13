@@ -118,4 +118,4 @@ output:
               password: ${{ secrets.BALENAIMAGES_TOKEN }}
               repository: "balenalib/{{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}"
               readme-filepath: ./balena-base-images/docs/dockerhub/{{this.children.hw.device-type.slug}}-{{this.children.sw.os.slug}}-full-description.md
-              short-description: "This image is part of the balena.io base image series for IoT devices."
+              short-description: "Deprecated: This image is no longer receiving updates."
