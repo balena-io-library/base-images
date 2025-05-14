@@ -11,10 +11,17 @@
 		"**/tests//**",
 		"**/__fixtures__/**",
 		"balena-base-images/**",
-    "library/**",
+		"library/**",
 		".github/workflows/bake-*.yml"
 	],
 	"github-actions": {
 		"fileMatch": ["^scripts/workflows/.*\\.yml"]
-	}
+	},
+	"automerge": false,
+	"packageRules": [
+		{
+			"matchUpdateTypes": ["major", "minor", "patch", "digest"],
+			"automerge": false
+		}
+	]
 }
