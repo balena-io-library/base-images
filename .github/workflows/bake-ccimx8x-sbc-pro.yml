@@ -101,7 +101,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/ccimx8x-sbc-pro-alpine
           readme-filepath: ./balena-base-images/docs/dockerhub/ccimx8x-sbc-pro-alpine-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-ccimx8x-sbc-pro-debian:
     name: Prepare ccimx8x-sbc-pro-debian
     runs-on: ubuntu-latest
@@ -182,7 +182,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/ccimx8x-sbc-pro-debian
           readme-filepath: ./balena-base-images/docs/dockerhub/ccimx8x-sbc-pro-debian-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-ccimx8x-sbc-pro-fedora:
     name: Prepare ccimx8x-sbc-pro-fedora
     runs-on: ubuntu-latest
@@ -263,7 +263,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/ccimx8x-sbc-pro-fedora
           readme-filepath: ./balena-base-images/docs/dockerhub/ccimx8x-sbc-pro-fedora-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-ccimx8x-sbc-pro-ubuntu:
     name: Prepare ccimx8x-sbc-pro-ubuntu
     runs-on: ubuntu-latest
@@ -344,7 +344,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/ccimx8x-sbc-pro-ubuntu
           readme-filepath: ./balena-base-images/docs/dockerhub/ccimx8x-sbc-pro-ubuntu-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-ccimx8x-sbc-pro-alpine-golang:
     name: Prepare ccimx8x-sbc-pro-alpine-golang
     runs-on: ubuntu-latest
@@ -425,7 +425,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/ccimx8x-sbc-pro-alpine-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/ccimx8x-sbc-pro-alpine-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-ccimx8x-sbc-pro-alpine-node:
     name: Prepare ccimx8x-sbc-pro-alpine-node
     runs-on: ubuntu-latest
@@ -506,7 +506,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/ccimx8x-sbc-pro-alpine-node
           readme-filepath: ./balena-base-images/docs/dockerhub/ccimx8x-sbc-pro-alpine-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-ccimx8x-sbc-pro-alpine-python:
     name: Prepare ccimx8x-sbc-pro-alpine-python
     runs-on: ubuntu-latest
@@ -587,7 +587,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/ccimx8x-sbc-pro-alpine-python
           readme-filepath: ./balena-base-images/docs/dockerhub/ccimx8x-sbc-pro-alpine-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-ccimx8x-sbc-pro-debian-golang:
     name: Prepare ccimx8x-sbc-pro-debian-golang
     runs-on: ubuntu-latest
@@ -668,7 +668,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/ccimx8x-sbc-pro-debian-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/ccimx8x-sbc-pro-debian-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-ccimx8x-sbc-pro-debian-node:
     name: Prepare ccimx8x-sbc-pro-debian-node
     runs-on: ubuntu-latest
@@ -749,7 +749,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/ccimx8x-sbc-pro-debian-node
           readme-filepath: ./balena-base-images/docs/dockerhub/ccimx8x-sbc-pro-debian-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-ccimx8x-sbc-pro-debian-openjdk:
     name: Prepare ccimx8x-sbc-pro-debian-openjdk
     runs-on: ubuntu-latest
@@ -830,7 +830,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/ccimx8x-sbc-pro-debian-openjdk
           readme-filepath: ./balena-base-images/docs/dockerhub/ccimx8x-sbc-pro-debian-openjdk-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-ccimx8x-sbc-pro-debian-python:
     name: Prepare ccimx8x-sbc-pro-debian-python
     runs-on: ubuntu-latest
@@ -911,7 +911,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/ccimx8x-sbc-pro-debian-python
           readme-filepath: ./balena-base-images/docs/dockerhub/ccimx8x-sbc-pro-debian-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-ccimx8x-sbc-pro-fedora-golang:
     name: Prepare ccimx8x-sbc-pro-fedora-golang
     runs-on: ubuntu-latest
@@ -992,7 +992,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/ccimx8x-sbc-pro-fedora-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/ccimx8x-sbc-pro-fedora-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-ccimx8x-sbc-pro-fedora-node:
     name: Prepare ccimx8x-sbc-pro-fedora-node
     runs-on: ubuntu-latest
@@ -1073,7 +1073,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/ccimx8x-sbc-pro-fedora-node
           readme-filepath: ./balena-base-images/docs/dockerhub/ccimx8x-sbc-pro-fedora-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-ccimx8x-sbc-pro-fedora-python:
     name: Prepare ccimx8x-sbc-pro-fedora-python
     runs-on: ubuntu-latest
@@ -1154,7 +1154,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/ccimx8x-sbc-pro-fedora-python
           readme-filepath: ./balena-base-images/docs/dockerhub/ccimx8x-sbc-pro-fedora-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-ccimx8x-sbc-pro-ubuntu-golang:
     name: Prepare ccimx8x-sbc-pro-ubuntu-golang
     runs-on: ubuntu-latest
@@ -1235,7 +1235,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/ccimx8x-sbc-pro-ubuntu-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/ccimx8x-sbc-pro-ubuntu-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-ccimx8x-sbc-pro-ubuntu-node:
     name: Prepare ccimx8x-sbc-pro-ubuntu-node
     runs-on: ubuntu-latest
@@ -1316,7 +1316,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/ccimx8x-sbc-pro-ubuntu-node
           readme-filepath: ./balena-base-images/docs/dockerhub/ccimx8x-sbc-pro-ubuntu-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-ccimx8x-sbc-pro-ubuntu-python:
     name: Prepare ccimx8x-sbc-pro-ubuntu-python
     runs-on: ubuntu-latest
@@ -1397,4 +1397,4 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/ccimx8x-sbc-pro-ubuntu-python
           readme-filepath: ./balena-base-images/docs/dockerhub/ccimx8x-sbc-pro-ubuntu-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'

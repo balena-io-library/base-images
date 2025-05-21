@@ -101,7 +101,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/jetson-xavier-alpine
           readme-filepath: ./balena-base-images/docs/dockerhub/jetson-xavier-alpine-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-jetson-xavier-debian:
     name: Prepare jetson-xavier-debian
     runs-on: ubuntu-latest
@@ -182,7 +182,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/jetson-xavier-debian
           readme-filepath: ./balena-base-images/docs/dockerhub/jetson-xavier-debian-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-jetson-xavier-fedora:
     name: Prepare jetson-xavier-fedora
     runs-on: ubuntu-latest
@@ -263,7 +263,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/jetson-xavier-fedora
           readme-filepath: ./balena-base-images/docs/dockerhub/jetson-xavier-fedora-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-jetson-xavier-ubuntu:
     name: Prepare jetson-xavier-ubuntu
     runs-on: ubuntu-latest
@@ -344,7 +344,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/jetson-xavier-ubuntu
           readme-filepath: ./balena-base-images/docs/dockerhub/jetson-xavier-ubuntu-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-jetson-xavier-alpine-golang:
     name: Prepare jetson-xavier-alpine-golang
     runs-on: ubuntu-latest
@@ -425,7 +425,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/jetson-xavier-alpine-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/jetson-xavier-alpine-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-jetson-xavier-alpine-node:
     name: Prepare jetson-xavier-alpine-node
     runs-on: ubuntu-latest
@@ -506,7 +506,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/jetson-xavier-alpine-node
           readme-filepath: ./balena-base-images/docs/dockerhub/jetson-xavier-alpine-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-jetson-xavier-alpine-python:
     name: Prepare jetson-xavier-alpine-python
     runs-on: ubuntu-latest
@@ -587,7 +587,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/jetson-xavier-alpine-python
           readme-filepath: ./balena-base-images/docs/dockerhub/jetson-xavier-alpine-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-jetson-xavier-debian-golang:
     name: Prepare jetson-xavier-debian-golang
     runs-on: ubuntu-latest
@@ -668,7 +668,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/jetson-xavier-debian-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/jetson-xavier-debian-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-jetson-xavier-debian-node:
     name: Prepare jetson-xavier-debian-node
     runs-on: ubuntu-latest
@@ -749,7 +749,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/jetson-xavier-debian-node
           readme-filepath: ./balena-base-images/docs/dockerhub/jetson-xavier-debian-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-jetson-xavier-debian-openjdk:
     name: Prepare jetson-xavier-debian-openjdk
     runs-on: ubuntu-latest
@@ -830,7 +830,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/jetson-xavier-debian-openjdk
           readme-filepath: ./balena-base-images/docs/dockerhub/jetson-xavier-debian-openjdk-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-jetson-xavier-debian-python:
     name: Prepare jetson-xavier-debian-python
     runs-on: ubuntu-latest
@@ -911,7 +911,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/jetson-xavier-debian-python
           readme-filepath: ./balena-base-images/docs/dockerhub/jetson-xavier-debian-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-jetson-xavier-fedora-golang:
     name: Prepare jetson-xavier-fedora-golang
     runs-on: ubuntu-latest
@@ -992,7 +992,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/jetson-xavier-fedora-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/jetson-xavier-fedora-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-jetson-xavier-fedora-node:
     name: Prepare jetson-xavier-fedora-node
     runs-on: ubuntu-latest
@@ -1073,7 +1073,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/jetson-xavier-fedora-node
           readme-filepath: ./balena-base-images/docs/dockerhub/jetson-xavier-fedora-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-jetson-xavier-fedora-python:
     name: Prepare jetson-xavier-fedora-python
     runs-on: ubuntu-latest
@@ -1154,7 +1154,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/jetson-xavier-fedora-python
           readme-filepath: ./balena-base-images/docs/dockerhub/jetson-xavier-fedora-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-jetson-xavier-ubuntu-golang:
     name: Prepare jetson-xavier-ubuntu-golang
     runs-on: ubuntu-latest
@@ -1235,7 +1235,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/jetson-xavier-ubuntu-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/jetson-xavier-ubuntu-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-jetson-xavier-ubuntu-node:
     name: Prepare jetson-xavier-ubuntu-node
     runs-on: ubuntu-latest
@@ -1316,7 +1316,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/jetson-xavier-ubuntu-node
           readme-filepath: ./balena-base-images/docs/dockerhub/jetson-xavier-ubuntu-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-jetson-xavier-ubuntu-python:
     name: Prepare jetson-xavier-ubuntu-python
     runs-on: ubuntu-latest
@@ -1397,4 +1397,4 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/jetson-xavier-ubuntu-python
           readme-filepath: ./balena-base-images/docs/dockerhub/jetson-xavier-ubuntu-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'

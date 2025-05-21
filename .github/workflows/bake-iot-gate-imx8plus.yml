@@ -101,7 +101,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/iot-gate-imx8plus-alpine
           readme-filepath: ./balena-base-images/docs/dockerhub/iot-gate-imx8plus-alpine-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-iot-gate-imx8plus-debian:
     name: Prepare iot-gate-imx8plus-debian
     runs-on: ubuntu-latest
@@ -182,7 +182,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/iot-gate-imx8plus-debian
           readme-filepath: ./balena-base-images/docs/dockerhub/iot-gate-imx8plus-debian-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-iot-gate-imx8plus-fedora:
     name: Prepare iot-gate-imx8plus-fedora
     runs-on: ubuntu-latest
@@ -263,7 +263,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/iot-gate-imx8plus-fedora
           readme-filepath: ./balena-base-images/docs/dockerhub/iot-gate-imx8plus-fedora-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-iot-gate-imx8plus-ubuntu:
     name: Prepare iot-gate-imx8plus-ubuntu
     runs-on: ubuntu-latest
@@ -344,7 +344,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/iot-gate-imx8plus-ubuntu
           readme-filepath: ./balena-base-images/docs/dockerhub/iot-gate-imx8plus-ubuntu-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-iot-gate-imx8plus-alpine-golang:
     name: Prepare iot-gate-imx8plus-alpine-golang
     runs-on: ubuntu-latest
@@ -425,7 +425,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/iot-gate-imx8plus-alpine-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/iot-gate-imx8plus-alpine-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-iot-gate-imx8plus-alpine-node:
     name: Prepare iot-gate-imx8plus-alpine-node
     runs-on: ubuntu-latest
@@ -506,7 +506,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/iot-gate-imx8plus-alpine-node
           readme-filepath: ./balena-base-images/docs/dockerhub/iot-gate-imx8plus-alpine-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-iot-gate-imx8plus-alpine-python:
     name: Prepare iot-gate-imx8plus-alpine-python
     runs-on: ubuntu-latest
@@ -587,7 +587,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/iot-gate-imx8plus-alpine-python
           readme-filepath: ./balena-base-images/docs/dockerhub/iot-gate-imx8plus-alpine-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-iot-gate-imx8plus-debian-golang:
     name: Prepare iot-gate-imx8plus-debian-golang
     runs-on: ubuntu-latest
@@ -668,7 +668,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/iot-gate-imx8plus-debian-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/iot-gate-imx8plus-debian-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-iot-gate-imx8plus-debian-node:
     name: Prepare iot-gate-imx8plus-debian-node
     runs-on: ubuntu-latest
@@ -749,7 +749,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/iot-gate-imx8plus-debian-node
           readme-filepath: ./balena-base-images/docs/dockerhub/iot-gate-imx8plus-debian-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-iot-gate-imx8plus-debian-openjdk:
     name: Prepare iot-gate-imx8plus-debian-openjdk
     runs-on: ubuntu-latest
@@ -830,7 +830,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/iot-gate-imx8plus-debian-openjdk
           readme-filepath: ./balena-base-images/docs/dockerhub/iot-gate-imx8plus-debian-openjdk-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-iot-gate-imx8plus-debian-python:
     name: Prepare iot-gate-imx8plus-debian-python
     runs-on: ubuntu-latest
@@ -911,7 +911,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/iot-gate-imx8plus-debian-python
           readme-filepath: ./balena-base-images/docs/dockerhub/iot-gate-imx8plus-debian-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-iot-gate-imx8plus-fedora-golang:
     name: Prepare iot-gate-imx8plus-fedora-golang
     runs-on: ubuntu-latest
@@ -992,7 +992,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/iot-gate-imx8plus-fedora-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/iot-gate-imx8plus-fedora-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-iot-gate-imx8plus-fedora-node:
     name: Prepare iot-gate-imx8plus-fedora-node
     runs-on: ubuntu-latest
@@ -1073,7 +1073,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/iot-gate-imx8plus-fedora-node
           readme-filepath: ./balena-base-images/docs/dockerhub/iot-gate-imx8plus-fedora-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-iot-gate-imx8plus-fedora-python:
     name: Prepare iot-gate-imx8plus-fedora-python
     runs-on: ubuntu-latest
@@ -1154,7 +1154,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/iot-gate-imx8plus-fedora-python
           readme-filepath: ./balena-base-images/docs/dockerhub/iot-gate-imx8plus-fedora-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-iot-gate-imx8plus-ubuntu-golang:
     name: Prepare iot-gate-imx8plus-ubuntu-golang
     runs-on: ubuntu-latest
@@ -1235,7 +1235,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/iot-gate-imx8plus-ubuntu-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/iot-gate-imx8plus-ubuntu-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-iot-gate-imx8plus-ubuntu-node:
     name: Prepare iot-gate-imx8plus-ubuntu-node
     runs-on: ubuntu-latest
@@ -1316,7 +1316,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/iot-gate-imx8plus-ubuntu-node
           readme-filepath: ./balena-base-images/docs/dockerhub/iot-gate-imx8plus-ubuntu-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-iot-gate-imx8plus-ubuntu-python:
     name: Prepare iot-gate-imx8plus-ubuntu-python
     runs-on: ubuntu-latest
@@ -1397,4 +1397,4 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/iot-gate-imx8plus-ubuntu-python
           readme-filepath: ./balena-base-images/docs/dockerhub/iot-gate-imx8plus-ubuntu-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'

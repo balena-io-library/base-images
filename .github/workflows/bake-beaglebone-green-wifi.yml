@@ -101,7 +101,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beaglebone-green-wifi-alpine
           readme-filepath: ./balena-base-images/docs/dockerhub/beaglebone-green-wifi-alpine-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beaglebone-green-wifi-debian:
     name: Prepare beaglebone-green-wifi-debian
     runs-on: ubuntu-latest
@@ -182,7 +182,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beaglebone-green-wifi-debian
           readme-filepath: ./balena-base-images/docs/dockerhub/beaglebone-green-wifi-debian-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beaglebone-green-wifi-ubuntu:
     name: Prepare beaglebone-green-wifi-ubuntu
     runs-on: ubuntu-latest
@@ -263,7 +263,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beaglebone-green-wifi-ubuntu
           readme-filepath: ./balena-base-images/docs/dockerhub/beaglebone-green-wifi-ubuntu-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beaglebone-green-wifi-alpine-golang:
     name: Prepare beaglebone-green-wifi-alpine-golang
     runs-on: ubuntu-latest
@@ -344,7 +344,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beaglebone-green-wifi-alpine-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/beaglebone-green-wifi-alpine-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beaglebone-green-wifi-alpine-node:
     name: Prepare beaglebone-green-wifi-alpine-node
     runs-on: ubuntu-latest
@@ -425,7 +425,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beaglebone-green-wifi-alpine-node
           readme-filepath: ./balena-base-images/docs/dockerhub/beaglebone-green-wifi-alpine-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beaglebone-green-wifi-alpine-python:
     name: Prepare beaglebone-green-wifi-alpine-python
     runs-on: ubuntu-latest
@@ -506,7 +506,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beaglebone-green-wifi-alpine-python
           readme-filepath: ./balena-base-images/docs/dockerhub/beaglebone-green-wifi-alpine-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beaglebone-green-wifi-debian-golang:
     name: Prepare beaglebone-green-wifi-debian-golang
     runs-on: ubuntu-latest
@@ -587,7 +587,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beaglebone-green-wifi-debian-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/beaglebone-green-wifi-debian-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beaglebone-green-wifi-debian-node:
     name: Prepare beaglebone-green-wifi-debian-node
     runs-on: ubuntu-latest
@@ -668,7 +668,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beaglebone-green-wifi-debian-node
           readme-filepath: ./balena-base-images/docs/dockerhub/beaglebone-green-wifi-debian-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beaglebone-green-wifi-debian-openjdk:
     name: Prepare beaglebone-green-wifi-debian-openjdk
     runs-on: ubuntu-latest
@@ -749,7 +749,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beaglebone-green-wifi-debian-openjdk
           readme-filepath: ./balena-base-images/docs/dockerhub/beaglebone-green-wifi-debian-openjdk-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beaglebone-green-wifi-debian-python:
     name: Prepare beaglebone-green-wifi-debian-python
     runs-on: ubuntu-latest
@@ -830,7 +830,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beaglebone-green-wifi-debian-python
           readme-filepath: ./balena-base-images/docs/dockerhub/beaglebone-green-wifi-debian-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beaglebone-green-wifi-ubuntu-golang:
     name: Prepare beaglebone-green-wifi-ubuntu-golang
     runs-on: ubuntu-latest
@@ -911,7 +911,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beaglebone-green-wifi-ubuntu-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/beaglebone-green-wifi-ubuntu-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beaglebone-green-wifi-ubuntu-node:
     name: Prepare beaglebone-green-wifi-ubuntu-node
     runs-on: ubuntu-latest
@@ -992,7 +992,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beaglebone-green-wifi-ubuntu-node
           readme-filepath: ./balena-base-images/docs/dockerhub/beaglebone-green-wifi-ubuntu-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beaglebone-green-wifi-ubuntu-python:
     name: Prepare beaglebone-green-wifi-ubuntu-python
     runs-on: ubuntu-latest
@@ -1073,4 +1073,4 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beaglebone-green-wifi-ubuntu-python
           readme-filepath: ./balena-base-images/docs/dockerhub/beaglebone-green-wifi-ubuntu-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'

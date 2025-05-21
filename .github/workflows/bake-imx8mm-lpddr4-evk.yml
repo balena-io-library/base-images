@@ -101,7 +101,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx8mm-lpddr4-evk-alpine
           readme-filepath: ./balena-base-images/docs/dockerhub/imx8mm-lpddr4-evk-alpine-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx8mm-lpddr4-evk-debian:
     name: Prepare imx8mm-lpddr4-evk-debian
     runs-on: ubuntu-latest
@@ -182,7 +182,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx8mm-lpddr4-evk-debian
           readme-filepath: ./balena-base-images/docs/dockerhub/imx8mm-lpddr4-evk-debian-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx8mm-lpddr4-evk-fedora:
     name: Prepare imx8mm-lpddr4-evk-fedora
     runs-on: ubuntu-latest
@@ -263,7 +263,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx8mm-lpddr4-evk-fedora
           readme-filepath: ./balena-base-images/docs/dockerhub/imx8mm-lpddr4-evk-fedora-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx8mm-lpddr4-evk-ubuntu:
     name: Prepare imx8mm-lpddr4-evk-ubuntu
     runs-on: ubuntu-latest
@@ -344,7 +344,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx8mm-lpddr4-evk-ubuntu
           readme-filepath: ./balena-base-images/docs/dockerhub/imx8mm-lpddr4-evk-ubuntu-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx8mm-lpddr4-evk-alpine-golang:
     name: Prepare imx8mm-lpddr4-evk-alpine-golang
     runs-on: ubuntu-latest
@@ -425,7 +425,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx8mm-lpddr4-evk-alpine-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/imx8mm-lpddr4-evk-alpine-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx8mm-lpddr4-evk-alpine-node:
     name: Prepare imx8mm-lpddr4-evk-alpine-node
     runs-on: ubuntu-latest
@@ -506,7 +506,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx8mm-lpddr4-evk-alpine-node
           readme-filepath: ./balena-base-images/docs/dockerhub/imx8mm-lpddr4-evk-alpine-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx8mm-lpddr4-evk-alpine-python:
     name: Prepare imx8mm-lpddr4-evk-alpine-python
     runs-on: ubuntu-latest
@@ -587,7 +587,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx8mm-lpddr4-evk-alpine-python
           readme-filepath: ./balena-base-images/docs/dockerhub/imx8mm-lpddr4-evk-alpine-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx8mm-lpddr4-evk-debian-golang:
     name: Prepare imx8mm-lpddr4-evk-debian-golang
     runs-on: ubuntu-latest
@@ -668,7 +668,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx8mm-lpddr4-evk-debian-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/imx8mm-lpddr4-evk-debian-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx8mm-lpddr4-evk-debian-node:
     name: Prepare imx8mm-lpddr4-evk-debian-node
     runs-on: ubuntu-latest
@@ -749,7 +749,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx8mm-lpddr4-evk-debian-node
           readme-filepath: ./balena-base-images/docs/dockerhub/imx8mm-lpddr4-evk-debian-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx8mm-lpddr4-evk-debian-openjdk:
     name: Prepare imx8mm-lpddr4-evk-debian-openjdk
     runs-on: ubuntu-latest
@@ -830,7 +830,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx8mm-lpddr4-evk-debian-openjdk
           readme-filepath: ./balena-base-images/docs/dockerhub/imx8mm-lpddr4-evk-debian-openjdk-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx8mm-lpddr4-evk-debian-python:
     name: Prepare imx8mm-lpddr4-evk-debian-python
     runs-on: ubuntu-latest
@@ -911,7 +911,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx8mm-lpddr4-evk-debian-python
           readme-filepath: ./balena-base-images/docs/dockerhub/imx8mm-lpddr4-evk-debian-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx8mm-lpddr4-evk-fedora-golang:
     name: Prepare imx8mm-lpddr4-evk-fedora-golang
     runs-on: ubuntu-latest
@@ -992,7 +992,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx8mm-lpddr4-evk-fedora-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/imx8mm-lpddr4-evk-fedora-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx8mm-lpddr4-evk-fedora-node:
     name: Prepare imx8mm-lpddr4-evk-fedora-node
     runs-on: ubuntu-latest
@@ -1073,7 +1073,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx8mm-lpddr4-evk-fedora-node
           readme-filepath: ./balena-base-images/docs/dockerhub/imx8mm-lpddr4-evk-fedora-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx8mm-lpddr4-evk-fedora-python:
     name: Prepare imx8mm-lpddr4-evk-fedora-python
     runs-on: ubuntu-latest
@@ -1154,7 +1154,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx8mm-lpddr4-evk-fedora-python
           readme-filepath: ./balena-base-images/docs/dockerhub/imx8mm-lpddr4-evk-fedora-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx8mm-lpddr4-evk-ubuntu-golang:
     name: Prepare imx8mm-lpddr4-evk-ubuntu-golang
     runs-on: ubuntu-latest
@@ -1235,7 +1235,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx8mm-lpddr4-evk-ubuntu-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/imx8mm-lpddr4-evk-ubuntu-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx8mm-lpddr4-evk-ubuntu-node:
     name: Prepare imx8mm-lpddr4-evk-ubuntu-node
     runs-on: ubuntu-latest
@@ -1316,7 +1316,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx8mm-lpddr4-evk-ubuntu-node
           readme-filepath: ./balena-base-images/docs/dockerhub/imx8mm-lpddr4-evk-ubuntu-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx8mm-lpddr4-evk-ubuntu-python:
     name: Prepare imx8mm-lpddr4-evk-ubuntu-python
     runs-on: ubuntu-latest
@@ -1397,4 +1397,4 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx8mm-lpddr4-evk-ubuntu-python
           readme-filepath: ./balena-base-images/docs/dockerhub/imx8mm-lpddr4-evk-ubuntu-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'

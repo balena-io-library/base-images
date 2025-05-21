@@ -101,7 +101,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/iotdin-imx8p-alpine
           readme-filepath: ./balena-base-images/docs/dockerhub/iotdin-imx8p-alpine-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-iotdin-imx8p-debian:
     name: Prepare iotdin-imx8p-debian
     runs-on: ubuntu-latest
@@ -182,7 +182,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/iotdin-imx8p-debian
           readme-filepath: ./balena-base-images/docs/dockerhub/iotdin-imx8p-debian-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-iotdin-imx8p-fedora:
     name: Prepare iotdin-imx8p-fedora
     runs-on: ubuntu-latest
@@ -263,7 +263,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/iotdin-imx8p-fedora
           readme-filepath: ./balena-base-images/docs/dockerhub/iotdin-imx8p-fedora-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-iotdin-imx8p-ubuntu:
     name: Prepare iotdin-imx8p-ubuntu
     runs-on: ubuntu-latest
@@ -344,7 +344,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/iotdin-imx8p-ubuntu
           readme-filepath: ./balena-base-images/docs/dockerhub/iotdin-imx8p-ubuntu-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-iotdin-imx8p-alpine-golang:
     name: Prepare iotdin-imx8p-alpine-golang
     runs-on: ubuntu-latest
@@ -425,7 +425,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/iotdin-imx8p-alpine-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/iotdin-imx8p-alpine-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-iotdin-imx8p-alpine-node:
     name: Prepare iotdin-imx8p-alpine-node
     runs-on: ubuntu-latest
@@ -506,7 +506,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/iotdin-imx8p-alpine-node
           readme-filepath: ./balena-base-images/docs/dockerhub/iotdin-imx8p-alpine-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-iotdin-imx8p-alpine-python:
     name: Prepare iotdin-imx8p-alpine-python
     runs-on: ubuntu-latest
@@ -587,7 +587,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/iotdin-imx8p-alpine-python
           readme-filepath: ./balena-base-images/docs/dockerhub/iotdin-imx8p-alpine-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-iotdin-imx8p-debian-golang:
     name: Prepare iotdin-imx8p-debian-golang
     runs-on: ubuntu-latest
@@ -668,7 +668,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/iotdin-imx8p-debian-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/iotdin-imx8p-debian-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-iotdin-imx8p-debian-node:
     name: Prepare iotdin-imx8p-debian-node
     runs-on: ubuntu-latest
@@ -749,7 +749,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/iotdin-imx8p-debian-node
           readme-filepath: ./balena-base-images/docs/dockerhub/iotdin-imx8p-debian-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-iotdin-imx8p-debian-openjdk:
     name: Prepare iotdin-imx8p-debian-openjdk
     runs-on: ubuntu-latest
@@ -830,7 +830,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/iotdin-imx8p-debian-openjdk
           readme-filepath: ./balena-base-images/docs/dockerhub/iotdin-imx8p-debian-openjdk-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-iotdin-imx8p-debian-python:
     name: Prepare iotdin-imx8p-debian-python
     runs-on: ubuntu-latest
@@ -911,7 +911,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/iotdin-imx8p-debian-python
           readme-filepath: ./balena-base-images/docs/dockerhub/iotdin-imx8p-debian-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-iotdin-imx8p-fedora-golang:
     name: Prepare iotdin-imx8p-fedora-golang
     runs-on: ubuntu-latest
@@ -992,7 +992,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/iotdin-imx8p-fedora-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/iotdin-imx8p-fedora-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-iotdin-imx8p-fedora-node:
     name: Prepare iotdin-imx8p-fedora-node
     runs-on: ubuntu-latest
@@ -1073,7 +1073,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/iotdin-imx8p-fedora-node
           readme-filepath: ./balena-base-images/docs/dockerhub/iotdin-imx8p-fedora-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-iotdin-imx8p-fedora-python:
     name: Prepare iotdin-imx8p-fedora-python
     runs-on: ubuntu-latest
@@ -1154,7 +1154,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/iotdin-imx8p-fedora-python
           readme-filepath: ./balena-base-images/docs/dockerhub/iotdin-imx8p-fedora-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-iotdin-imx8p-ubuntu-golang:
     name: Prepare iotdin-imx8p-ubuntu-golang
     runs-on: ubuntu-latest
@@ -1235,7 +1235,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/iotdin-imx8p-ubuntu-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/iotdin-imx8p-ubuntu-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-iotdin-imx8p-ubuntu-node:
     name: Prepare iotdin-imx8p-ubuntu-node
     runs-on: ubuntu-latest
@@ -1316,7 +1316,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/iotdin-imx8p-ubuntu-node
           readme-filepath: ./balena-base-images/docs/dockerhub/iotdin-imx8p-ubuntu-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-iotdin-imx8p-ubuntu-python:
     name: Prepare iotdin-imx8p-ubuntu-python
     runs-on: ubuntu-latest
@@ -1397,4 +1397,4 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/iotdin-imx8p-ubuntu-python
           readme-filepath: ./balena-base-images/docs/dockerhub/iotdin-imx8p-ubuntu-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'

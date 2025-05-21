@@ -101,7 +101,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/bluechiptechnology-db1-alpine
           readme-filepath: ./balena-base-images/docs/dockerhub/bluechiptechnology-db1-alpine-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-bluechiptechnology-db1-debian:
     name: Prepare bluechiptechnology-db1-debian
     runs-on: ubuntu-latest
@@ -182,7 +182,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/bluechiptechnology-db1-debian
           readme-filepath: ./balena-base-images/docs/dockerhub/bluechiptechnology-db1-debian-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-bluechiptechnology-db1-fedora:
     name: Prepare bluechiptechnology-db1-fedora
     runs-on: ubuntu-latest
@@ -263,7 +263,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/bluechiptechnology-db1-fedora
           readme-filepath: ./balena-base-images/docs/dockerhub/bluechiptechnology-db1-fedora-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-bluechiptechnology-db1-ubuntu:
     name: Prepare bluechiptechnology-db1-ubuntu
     runs-on: ubuntu-latest
@@ -344,7 +344,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/bluechiptechnology-db1-ubuntu
           readme-filepath: ./balena-base-images/docs/dockerhub/bluechiptechnology-db1-ubuntu-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-bluechiptechnology-db1-alpine-golang:
     name: Prepare bluechiptechnology-db1-alpine-golang
     runs-on: ubuntu-latest
@@ -425,7 +425,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/bluechiptechnology-db1-alpine-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/bluechiptechnology-db1-alpine-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-bluechiptechnology-db1-alpine-node:
     name: Prepare bluechiptechnology-db1-alpine-node
     runs-on: ubuntu-latest
@@ -506,7 +506,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/bluechiptechnology-db1-alpine-node
           readme-filepath: ./balena-base-images/docs/dockerhub/bluechiptechnology-db1-alpine-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-bluechiptechnology-db1-alpine-python:
     name: Prepare bluechiptechnology-db1-alpine-python
     runs-on: ubuntu-latest
@@ -587,7 +587,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/bluechiptechnology-db1-alpine-python
           readme-filepath: ./balena-base-images/docs/dockerhub/bluechiptechnology-db1-alpine-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-bluechiptechnology-db1-debian-golang:
     name: Prepare bluechiptechnology-db1-debian-golang
     runs-on: ubuntu-latest
@@ -668,7 +668,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/bluechiptechnology-db1-debian-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/bluechiptechnology-db1-debian-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-bluechiptechnology-db1-debian-node:
     name: Prepare bluechiptechnology-db1-debian-node
     runs-on: ubuntu-latest
@@ -749,7 +749,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/bluechiptechnology-db1-debian-node
           readme-filepath: ./balena-base-images/docs/dockerhub/bluechiptechnology-db1-debian-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-bluechiptechnology-db1-debian-openjdk:
     name: Prepare bluechiptechnology-db1-debian-openjdk
     runs-on: ubuntu-latest
@@ -830,7 +830,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/bluechiptechnology-db1-debian-openjdk
           readme-filepath: ./balena-base-images/docs/dockerhub/bluechiptechnology-db1-debian-openjdk-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-bluechiptechnology-db1-debian-python:
     name: Prepare bluechiptechnology-db1-debian-python
     runs-on: ubuntu-latest
@@ -911,7 +911,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/bluechiptechnology-db1-debian-python
           readme-filepath: ./balena-base-images/docs/dockerhub/bluechiptechnology-db1-debian-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-bluechiptechnology-db1-fedora-golang:
     name: Prepare bluechiptechnology-db1-fedora-golang
     runs-on: ubuntu-latest
@@ -992,7 +992,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/bluechiptechnology-db1-fedora-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/bluechiptechnology-db1-fedora-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-bluechiptechnology-db1-fedora-node:
     name: Prepare bluechiptechnology-db1-fedora-node
     runs-on: ubuntu-latest
@@ -1073,7 +1073,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/bluechiptechnology-db1-fedora-node
           readme-filepath: ./balena-base-images/docs/dockerhub/bluechiptechnology-db1-fedora-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-bluechiptechnology-db1-fedora-python:
     name: Prepare bluechiptechnology-db1-fedora-python
     runs-on: ubuntu-latest
@@ -1154,7 +1154,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/bluechiptechnology-db1-fedora-python
           readme-filepath: ./balena-base-images/docs/dockerhub/bluechiptechnology-db1-fedora-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-bluechiptechnology-db1-ubuntu-golang:
     name: Prepare bluechiptechnology-db1-ubuntu-golang
     runs-on: ubuntu-latest
@@ -1235,7 +1235,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/bluechiptechnology-db1-ubuntu-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/bluechiptechnology-db1-ubuntu-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-bluechiptechnology-db1-ubuntu-node:
     name: Prepare bluechiptechnology-db1-ubuntu-node
     runs-on: ubuntu-latest
@@ -1316,7 +1316,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/bluechiptechnology-db1-ubuntu-node
           readme-filepath: ./balena-base-images/docs/dockerhub/bluechiptechnology-db1-ubuntu-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-bluechiptechnology-db1-ubuntu-python:
     name: Prepare bluechiptechnology-db1-ubuntu-python
     runs-on: ubuntu-latest
@@ -1397,4 +1397,4 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/bluechiptechnology-db1-ubuntu-python
           readme-filepath: ./balena-base-images/docs/dockerhub/bluechiptechnology-db1-ubuntu-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'

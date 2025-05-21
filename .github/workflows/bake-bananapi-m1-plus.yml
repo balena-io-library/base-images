@@ -101,7 +101,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/bananapi-m1-plus-alpine
           readme-filepath: ./balena-base-images/docs/dockerhub/bananapi-m1-plus-alpine-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-bananapi-m1-plus-debian:
     name: Prepare bananapi-m1-plus-debian
     runs-on: ubuntu-latest
@@ -182,7 +182,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/bananapi-m1-plus-debian
           readme-filepath: ./balena-base-images/docs/dockerhub/bananapi-m1-plus-debian-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-bananapi-m1-plus-ubuntu:
     name: Prepare bananapi-m1-plus-ubuntu
     runs-on: ubuntu-latest
@@ -263,7 +263,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/bananapi-m1-plus-ubuntu
           readme-filepath: ./balena-base-images/docs/dockerhub/bananapi-m1-plus-ubuntu-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-bananapi-m1-plus-alpine-golang:
     name: Prepare bananapi-m1-plus-alpine-golang
     runs-on: ubuntu-latest
@@ -344,7 +344,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/bananapi-m1-plus-alpine-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/bananapi-m1-plus-alpine-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-bananapi-m1-plus-alpine-node:
     name: Prepare bananapi-m1-plus-alpine-node
     runs-on: ubuntu-latest
@@ -425,7 +425,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/bananapi-m1-plus-alpine-node
           readme-filepath: ./balena-base-images/docs/dockerhub/bananapi-m1-plus-alpine-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-bananapi-m1-plus-alpine-python:
     name: Prepare bananapi-m1-plus-alpine-python
     runs-on: ubuntu-latest
@@ -506,7 +506,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/bananapi-m1-plus-alpine-python
           readme-filepath: ./balena-base-images/docs/dockerhub/bananapi-m1-plus-alpine-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-bananapi-m1-plus-debian-golang:
     name: Prepare bananapi-m1-plus-debian-golang
     runs-on: ubuntu-latest
@@ -587,7 +587,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/bananapi-m1-plus-debian-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/bananapi-m1-plus-debian-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-bananapi-m1-plus-debian-node:
     name: Prepare bananapi-m1-plus-debian-node
     runs-on: ubuntu-latest
@@ -668,7 +668,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/bananapi-m1-plus-debian-node
           readme-filepath: ./balena-base-images/docs/dockerhub/bananapi-m1-plus-debian-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-bananapi-m1-plus-debian-openjdk:
     name: Prepare bananapi-m1-plus-debian-openjdk
     runs-on: ubuntu-latest
@@ -749,7 +749,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/bananapi-m1-plus-debian-openjdk
           readme-filepath: ./balena-base-images/docs/dockerhub/bananapi-m1-plus-debian-openjdk-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-bananapi-m1-plus-debian-python:
     name: Prepare bananapi-m1-plus-debian-python
     runs-on: ubuntu-latest
@@ -830,7 +830,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/bananapi-m1-plus-debian-python
           readme-filepath: ./balena-base-images/docs/dockerhub/bananapi-m1-plus-debian-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-bananapi-m1-plus-ubuntu-golang:
     name: Prepare bananapi-m1-plus-ubuntu-golang
     runs-on: ubuntu-latest
@@ -911,7 +911,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/bananapi-m1-plus-ubuntu-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/bananapi-m1-plus-ubuntu-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-bananapi-m1-plus-ubuntu-node:
     name: Prepare bananapi-m1-plus-ubuntu-node
     runs-on: ubuntu-latest
@@ -992,7 +992,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/bananapi-m1-plus-ubuntu-node
           readme-filepath: ./balena-base-images/docs/dockerhub/bananapi-m1-plus-ubuntu-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-bananapi-m1-plus-ubuntu-python:
     name: Prepare bananapi-m1-plus-ubuntu-python
     runs-on: ubuntu-latest
@@ -1073,4 +1073,4 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/bananapi-m1-plus-ubuntu-python
           readme-filepath: ./balena-base-images/docs/dockerhub/bananapi-m1-plus-ubuntu-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'

@@ -101,7 +101,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx7-var-som-alpine
           readme-filepath: ./balena-base-images/docs/dockerhub/imx7-var-som-alpine-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx7-var-som-debian:
     name: Prepare imx7-var-som-debian
     runs-on: ubuntu-latest
@@ -182,7 +182,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx7-var-som-debian
           readme-filepath: ./balena-base-images/docs/dockerhub/imx7-var-som-debian-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx7-var-som-ubuntu:
     name: Prepare imx7-var-som-ubuntu
     runs-on: ubuntu-latest
@@ -263,7 +263,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx7-var-som-ubuntu
           readme-filepath: ./balena-base-images/docs/dockerhub/imx7-var-som-ubuntu-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx7-var-som-alpine-golang:
     name: Prepare imx7-var-som-alpine-golang
     runs-on: ubuntu-latest
@@ -344,7 +344,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx7-var-som-alpine-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/imx7-var-som-alpine-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx7-var-som-alpine-node:
     name: Prepare imx7-var-som-alpine-node
     runs-on: ubuntu-latest
@@ -425,7 +425,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx7-var-som-alpine-node
           readme-filepath: ./balena-base-images/docs/dockerhub/imx7-var-som-alpine-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx7-var-som-alpine-python:
     name: Prepare imx7-var-som-alpine-python
     runs-on: ubuntu-latest
@@ -506,7 +506,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx7-var-som-alpine-python
           readme-filepath: ./balena-base-images/docs/dockerhub/imx7-var-som-alpine-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx7-var-som-debian-golang:
     name: Prepare imx7-var-som-debian-golang
     runs-on: ubuntu-latest
@@ -587,7 +587,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx7-var-som-debian-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/imx7-var-som-debian-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx7-var-som-debian-node:
     name: Prepare imx7-var-som-debian-node
     runs-on: ubuntu-latest
@@ -668,7 +668,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx7-var-som-debian-node
           readme-filepath: ./balena-base-images/docs/dockerhub/imx7-var-som-debian-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx7-var-som-debian-openjdk:
     name: Prepare imx7-var-som-debian-openjdk
     runs-on: ubuntu-latest
@@ -749,7 +749,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx7-var-som-debian-openjdk
           readme-filepath: ./balena-base-images/docs/dockerhub/imx7-var-som-debian-openjdk-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx7-var-som-debian-python:
     name: Prepare imx7-var-som-debian-python
     runs-on: ubuntu-latest
@@ -830,7 +830,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx7-var-som-debian-python
           readme-filepath: ./balena-base-images/docs/dockerhub/imx7-var-som-debian-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx7-var-som-ubuntu-golang:
     name: Prepare imx7-var-som-ubuntu-golang
     runs-on: ubuntu-latest
@@ -911,7 +911,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx7-var-som-ubuntu-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/imx7-var-som-ubuntu-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx7-var-som-ubuntu-node:
     name: Prepare imx7-var-som-ubuntu-node
     runs-on: ubuntu-latest
@@ -992,7 +992,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx7-var-som-ubuntu-node
           readme-filepath: ./balena-base-images/docs/dockerhub/imx7-var-som-ubuntu-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx7-var-som-ubuntu-python:
     name: Prepare imx7-var-som-ubuntu-python
     runs-on: ubuntu-latest
@@ -1073,4 +1073,4 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx7-var-som-ubuntu-python
           readme-filepath: ./balena-base-images/docs/dockerhub/imx7-var-som-ubuntu-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'

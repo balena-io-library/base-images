@@ -101,7 +101,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx6ul-var-dart-alpine
           readme-filepath: ./balena-base-images/docs/dockerhub/imx6ul-var-dart-alpine-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx6ul-var-dart-debian:
     name: Prepare imx6ul-var-dart-debian
     runs-on: ubuntu-latest
@@ -182,7 +182,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx6ul-var-dart-debian
           readme-filepath: ./balena-base-images/docs/dockerhub/imx6ul-var-dart-debian-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx6ul-var-dart-ubuntu:
     name: Prepare imx6ul-var-dart-ubuntu
     runs-on: ubuntu-latest
@@ -263,7 +263,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx6ul-var-dart-ubuntu
           readme-filepath: ./balena-base-images/docs/dockerhub/imx6ul-var-dart-ubuntu-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx6ul-var-dart-alpine-golang:
     name: Prepare imx6ul-var-dart-alpine-golang
     runs-on: ubuntu-latest
@@ -344,7 +344,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx6ul-var-dart-alpine-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/imx6ul-var-dart-alpine-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx6ul-var-dart-alpine-node:
     name: Prepare imx6ul-var-dart-alpine-node
     runs-on: ubuntu-latest
@@ -425,7 +425,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx6ul-var-dart-alpine-node
           readme-filepath: ./balena-base-images/docs/dockerhub/imx6ul-var-dart-alpine-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx6ul-var-dart-alpine-python:
     name: Prepare imx6ul-var-dart-alpine-python
     runs-on: ubuntu-latest
@@ -506,7 +506,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx6ul-var-dart-alpine-python
           readme-filepath: ./balena-base-images/docs/dockerhub/imx6ul-var-dart-alpine-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx6ul-var-dart-debian-golang:
     name: Prepare imx6ul-var-dart-debian-golang
     runs-on: ubuntu-latest
@@ -587,7 +587,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx6ul-var-dart-debian-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/imx6ul-var-dart-debian-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx6ul-var-dart-debian-node:
     name: Prepare imx6ul-var-dart-debian-node
     runs-on: ubuntu-latest
@@ -668,7 +668,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx6ul-var-dart-debian-node
           readme-filepath: ./balena-base-images/docs/dockerhub/imx6ul-var-dart-debian-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx6ul-var-dart-debian-openjdk:
     name: Prepare imx6ul-var-dart-debian-openjdk
     runs-on: ubuntu-latest
@@ -749,7 +749,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx6ul-var-dart-debian-openjdk
           readme-filepath: ./balena-base-images/docs/dockerhub/imx6ul-var-dart-debian-openjdk-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx6ul-var-dart-debian-python:
     name: Prepare imx6ul-var-dart-debian-python
     runs-on: ubuntu-latest
@@ -830,7 +830,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx6ul-var-dart-debian-python
           readme-filepath: ./balena-base-images/docs/dockerhub/imx6ul-var-dart-debian-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx6ul-var-dart-ubuntu-golang:
     name: Prepare imx6ul-var-dart-ubuntu-golang
     runs-on: ubuntu-latest
@@ -911,7 +911,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx6ul-var-dart-ubuntu-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/imx6ul-var-dart-ubuntu-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx6ul-var-dart-ubuntu-node:
     name: Prepare imx6ul-var-dart-ubuntu-node
     runs-on: ubuntu-latest
@@ -992,7 +992,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx6ul-var-dart-ubuntu-node
           readme-filepath: ./balena-base-images/docs/dockerhub/imx6ul-var-dart-ubuntu-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-imx6ul-var-dart-ubuntu-python:
     name: Prepare imx6ul-var-dart-ubuntu-python
     runs-on: ubuntu-latest
@@ -1073,4 +1073,4 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/imx6ul-var-dart-ubuntu-python
           readme-filepath: ./balena-base-images/docs/dockerhub/imx6ul-var-dart-ubuntu-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'

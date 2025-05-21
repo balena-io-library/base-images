@@ -101,7 +101,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/lcbzu9-alpine
           readme-filepath: ./balena-base-images/docs/dockerhub/lcbzu9-alpine-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-lcbzu9-debian:
     name: Prepare lcbzu9-debian
     runs-on: ubuntu-latest
@@ -182,7 +182,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/lcbzu9-debian
           readme-filepath: ./balena-base-images/docs/dockerhub/lcbzu9-debian-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-lcbzu9-fedora:
     name: Prepare lcbzu9-fedora
     runs-on: ubuntu-latest
@@ -263,7 +263,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/lcbzu9-fedora
           readme-filepath: ./balena-base-images/docs/dockerhub/lcbzu9-fedora-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-lcbzu9-ubuntu:
     name: Prepare lcbzu9-ubuntu
     runs-on: ubuntu-latest
@@ -344,7 +344,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/lcbzu9-ubuntu
           readme-filepath: ./balena-base-images/docs/dockerhub/lcbzu9-ubuntu-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-lcbzu9-alpine-golang:
     name: Prepare lcbzu9-alpine-golang
     runs-on: ubuntu-latest
@@ -425,7 +425,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/lcbzu9-alpine-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/lcbzu9-alpine-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-lcbzu9-alpine-node:
     name: Prepare lcbzu9-alpine-node
     runs-on: ubuntu-latest
@@ -506,7 +506,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/lcbzu9-alpine-node
           readme-filepath: ./balena-base-images/docs/dockerhub/lcbzu9-alpine-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-lcbzu9-alpine-python:
     name: Prepare lcbzu9-alpine-python
     runs-on: ubuntu-latest
@@ -587,7 +587,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/lcbzu9-alpine-python
           readme-filepath: ./balena-base-images/docs/dockerhub/lcbzu9-alpine-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-lcbzu9-debian-golang:
     name: Prepare lcbzu9-debian-golang
     runs-on: ubuntu-latest
@@ -668,7 +668,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/lcbzu9-debian-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/lcbzu9-debian-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-lcbzu9-debian-node:
     name: Prepare lcbzu9-debian-node
     runs-on: ubuntu-latest
@@ -749,7 +749,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/lcbzu9-debian-node
           readme-filepath: ./balena-base-images/docs/dockerhub/lcbzu9-debian-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-lcbzu9-debian-openjdk:
     name: Prepare lcbzu9-debian-openjdk
     runs-on: ubuntu-latest
@@ -830,7 +830,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/lcbzu9-debian-openjdk
           readme-filepath: ./balena-base-images/docs/dockerhub/lcbzu9-debian-openjdk-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-lcbzu9-debian-python:
     name: Prepare lcbzu9-debian-python
     runs-on: ubuntu-latest
@@ -911,7 +911,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/lcbzu9-debian-python
           readme-filepath: ./balena-base-images/docs/dockerhub/lcbzu9-debian-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-lcbzu9-fedora-golang:
     name: Prepare lcbzu9-fedora-golang
     runs-on: ubuntu-latest
@@ -992,7 +992,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/lcbzu9-fedora-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/lcbzu9-fedora-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-lcbzu9-fedora-node:
     name: Prepare lcbzu9-fedora-node
     runs-on: ubuntu-latest
@@ -1073,7 +1073,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/lcbzu9-fedora-node
           readme-filepath: ./balena-base-images/docs/dockerhub/lcbzu9-fedora-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-lcbzu9-fedora-python:
     name: Prepare lcbzu9-fedora-python
     runs-on: ubuntu-latest
@@ -1154,7 +1154,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/lcbzu9-fedora-python
           readme-filepath: ./balena-base-images/docs/dockerhub/lcbzu9-fedora-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-lcbzu9-ubuntu-golang:
     name: Prepare lcbzu9-ubuntu-golang
     runs-on: ubuntu-latest
@@ -1235,7 +1235,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/lcbzu9-ubuntu-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/lcbzu9-ubuntu-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-lcbzu9-ubuntu-node:
     name: Prepare lcbzu9-ubuntu-node
     runs-on: ubuntu-latest
@@ -1316,7 +1316,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/lcbzu9-ubuntu-node
           readme-filepath: ./balena-base-images/docs/dockerhub/lcbzu9-ubuntu-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-lcbzu9-ubuntu-python:
     name: Prepare lcbzu9-ubuntu-python
     runs-on: ubuntu-latest
@@ -1397,4 +1397,4 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/lcbzu9-ubuntu-python
           readme-filepath: ./balena-base-images/docs/dockerhub/lcbzu9-ubuntu-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'

@@ -101,7 +101,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beaglebone-black-alpine
           readme-filepath: ./balena-base-images/docs/dockerhub/beaglebone-black-alpine-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beaglebone-black-debian:
     name: Prepare beaglebone-black-debian
     runs-on: ubuntu-latest
@@ -182,7 +182,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beaglebone-black-debian
           readme-filepath: ./balena-base-images/docs/dockerhub/beaglebone-black-debian-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beaglebone-black-ubuntu:
     name: Prepare beaglebone-black-ubuntu
     runs-on: ubuntu-latest
@@ -263,7 +263,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beaglebone-black-ubuntu
           readme-filepath: ./balena-base-images/docs/dockerhub/beaglebone-black-ubuntu-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beaglebone-black-alpine-golang:
     name: Prepare beaglebone-black-alpine-golang
     runs-on: ubuntu-latest
@@ -344,7 +344,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beaglebone-black-alpine-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/beaglebone-black-alpine-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beaglebone-black-alpine-node:
     name: Prepare beaglebone-black-alpine-node
     runs-on: ubuntu-latest
@@ -425,7 +425,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beaglebone-black-alpine-node
           readme-filepath: ./balena-base-images/docs/dockerhub/beaglebone-black-alpine-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beaglebone-black-alpine-python:
     name: Prepare beaglebone-black-alpine-python
     runs-on: ubuntu-latest
@@ -506,7 +506,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beaglebone-black-alpine-python
           readme-filepath: ./balena-base-images/docs/dockerhub/beaglebone-black-alpine-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beaglebone-black-debian-golang:
     name: Prepare beaglebone-black-debian-golang
     runs-on: ubuntu-latest
@@ -587,7 +587,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beaglebone-black-debian-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/beaglebone-black-debian-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beaglebone-black-debian-node:
     name: Prepare beaglebone-black-debian-node
     runs-on: ubuntu-latest
@@ -668,7 +668,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beaglebone-black-debian-node
           readme-filepath: ./balena-base-images/docs/dockerhub/beaglebone-black-debian-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beaglebone-black-debian-openjdk:
     name: Prepare beaglebone-black-debian-openjdk
     runs-on: ubuntu-latest
@@ -749,7 +749,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beaglebone-black-debian-openjdk
           readme-filepath: ./balena-base-images/docs/dockerhub/beaglebone-black-debian-openjdk-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beaglebone-black-debian-python:
     name: Prepare beaglebone-black-debian-python
     runs-on: ubuntu-latest
@@ -830,7 +830,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beaglebone-black-debian-python
           readme-filepath: ./balena-base-images/docs/dockerhub/beaglebone-black-debian-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beaglebone-black-ubuntu-golang:
     name: Prepare beaglebone-black-ubuntu-golang
     runs-on: ubuntu-latest
@@ -911,7 +911,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beaglebone-black-ubuntu-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/beaglebone-black-ubuntu-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beaglebone-black-ubuntu-node:
     name: Prepare beaglebone-black-ubuntu-node
     runs-on: ubuntu-latest
@@ -992,7 +992,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beaglebone-black-ubuntu-node
           readme-filepath: ./balena-base-images/docs/dockerhub/beaglebone-black-ubuntu-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beaglebone-black-ubuntu-python:
     name: Prepare beaglebone-black-ubuntu-python
     runs-on: ubuntu-latest
@@ -1073,4 +1073,4 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beaglebone-black-ubuntu-python
           readme-filepath: ./balena-base-images/docs/dockerhub/beaglebone-black-ubuntu-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'

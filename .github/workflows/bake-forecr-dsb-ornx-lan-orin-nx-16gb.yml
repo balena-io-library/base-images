@@ -101,7 +101,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-alpine
           readme-filepath: ./balena-base-images/docs/dockerhub/forecr-dsb-ornx-lan-orin-nx-16gb-alpine-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-forecr-dsb-ornx-lan-orin-nx-16gb-debian:
     name: Prepare forecr-dsb-ornx-lan-orin-nx-16gb-debian
     runs-on: ubuntu-latest
@@ -182,7 +182,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-debian
           readme-filepath: ./balena-base-images/docs/dockerhub/forecr-dsb-ornx-lan-orin-nx-16gb-debian-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-forecr-dsb-ornx-lan-orin-nx-16gb-fedora:
     name: Prepare forecr-dsb-ornx-lan-orin-nx-16gb-fedora
     runs-on: ubuntu-latest
@@ -263,7 +263,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-fedora
           readme-filepath: ./balena-base-images/docs/dockerhub/forecr-dsb-ornx-lan-orin-nx-16gb-fedora-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu:
     name: Prepare forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu
     runs-on: ubuntu-latest
@@ -344,7 +344,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu
           readme-filepath: ./balena-base-images/docs/dockerhub/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-forecr-dsb-ornx-lan-orin-nx-16gb-alpine-golang:
     name: Prepare forecr-dsb-ornx-lan-orin-nx-16gb-alpine-golang
     runs-on: ubuntu-latest
@@ -425,7 +425,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-alpine-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/forecr-dsb-ornx-lan-orin-nx-16gb-alpine-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-forecr-dsb-ornx-lan-orin-nx-16gb-alpine-node:
     name: Prepare forecr-dsb-ornx-lan-orin-nx-16gb-alpine-node
     runs-on: ubuntu-latest
@@ -506,7 +506,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-alpine-node
           readme-filepath: ./balena-base-images/docs/dockerhub/forecr-dsb-ornx-lan-orin-nx-16gb-alpine-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-forecr-dsb-ornx-lan-orin-nx-16gb-alpine-python:
     name: Prepare forecr-dsb-ornx-lan-orin-nx-16gb-alpine-python
     runs-on: ubuntu-latest
@@ -587,7 +587,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-alpine-python
           readme-filepath: ./balena-base-images/docs/dockerhub/forecr-dsb-ornx-lan-orin-nx-16gb-alpine-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-forecr-dsb-ornx-lan-orin-nx-16gb-debian-golang:
     name: Prepare forecr-dsb-ornx-lan-orin-nx-16gb-debian-golang
     runs-on: ubuntu-latest
@@ -668,7 +668,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-debian-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/forecr-dsb-ornx-lan-orin-nx-16gb-debian-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-forecr-dsb-ornx-lan-orin-nx-16gb-debian-node:
     name: Prepare forecr-dsb-ornx-lan-orin-nx-16gb-debian-node
     runs-on: ubuntu-latest
@@ -749,7 +749,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-debian-node
           readme-filepath: ./balena-base-images/docs/dockerhub/forecr-dsb-ornx-lan-orin-nx-16gb-debian-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-forecr-dsb-ornx-lan-orin-nx-16gb-debian-openjdk:
     name: Prepare forecr-dsb-ornx-lan-orin-nx-16gb-debian-openjdk
     runs-on: ubuntu-latest
@@ -830,7 +830,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-debian-openjdk
           readme-filepath: ./balena-base-images/docs/dockerhub/forecr-dsb-ornx-lan-orin-nx-16gb-debian-openjdk-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-forecr-dsb-ornx-lan-orin-nx-16gb-debian-python:
     name: Prepare forecr-dsb-ornx-lan-orin-nx-16gb-debian-python
     runs-on: ubuntu-latest
@@ -911,7 +911,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-debian-python
           readme-filepath: ./balena-base-images/docs/dockerhub/forecr-dsb-ornx-lan-orin-nx-16gb-debian-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-forecr-dsb-ornx-lan-orin-nx-16gb-fedora-golang:
     name: Prepare forecr-dsb-ornx-lan-orin-nx-16gb-fedora-golang
     runs-on: ubuntu-latest
@@ -992,7 +992,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-fedora-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/forecr-dsb-ornx-lan-orin-nx-16gb-fedora-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-forecr-dsb-ornx-lan-orin-nx-16gb-fedora-node:
     name: Prepare forecr-dsb-ornx-lan-orin-nx-16gb-fedora-node
     runs-on: ubuntu-latest
@@ -1073,7 +1073,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-fedora-node
           readme-filepath: ./balena-base-images/docs/dockerhub/forecr-dsb-ornx-lan-orin-nx-16gb-fedora-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-forecr-dsb-ornx-lan-orin-nx-16gb-fedora-python:
     name: Prepare forecr-dsb-ornx-lan-orin-nx-16gb-fedora-python
     runs-on: ubuntu-latest
@@ -1154,7 +1154,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-fedora-python
           readme-filepath: ./balena-base-images/docs/dockerhub/forecr-dsb-ornx-lan-orin-nx-16gb-fedora-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-golang:
     name: Prepare forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-golang
     runs-on: ubuntu-latest
@@ -1235,7 +1235,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-node:
     name: Prepare forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-node
     runs-on: ubuntu-latest
@@ -1316,7 +1316,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-node
           readme-filepath: ./balena-base-images/docs/dockerhub/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-python:
     name: Prepare forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-python
     runs-on: ubuntu-latest
@@ -1397,4 +1397,4 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-python
           readme-filepath: ./balena-base-images/docs/dockerhub/forecr-dsb-ornx-lan-orin-nx-16gb-ubuntu-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'

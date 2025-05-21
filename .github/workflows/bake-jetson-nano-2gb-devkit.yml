@@ -101,7 +101,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/jetson-nano-2gb-devkit-alpine
           readme-filepath: ./balena-base-images/docs/dockerhub/jetson-nano-2gb-devkit-alpine-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-jetson-nano-2gb-devkit-debian:
     name: Prepare jetson-nano-2gb-devkit-debian
     runs-on: ubuntu-latest
@@ -182,7 +182,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/jetson-nano-2gb-devkit-debian
           readme-filepath: ./balena-base-images/docs/dockerhub/jetson-nano-2gb-devkit-debian-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-jetson-nano-2gb-devkit-fedora:
     name: Prepare jetson-nano-2gb-devkit-fedora
     runs-on: ubuntu-latest
@@ -263,7 +263,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/jetson-nano-2gb-devkit-fedora
           readme-filepath: ./balena-base-images/docs/dockerhub/jetson-nano-2gb-devkit-fedora-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-jetson-nano-2gb-devkit-ubuntu:
     name: Prepare jetson-nano-2gb-devkit-ubuntu
     runs-on: ubuntu-latest
@@ -344,7 +344,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/jetson-nano-2gb-devkit-ubuntu
           readme-filepath: ./balena-base-images/docs/dockerhub/jetson-nano-2gb-devkit-ubuntu-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-jetson-nano-2gb-devkit-alpine-golang:
     name: Prepare jetson-nano-2gb-devkit-alpine-golang
     runs-on: ubuntu-latest
@@ -425,7 +425,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/jetson-nano-2gb-devkit-alpine-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/jetson-nano-2gb-devkit-alpine-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-jetson-nano-2gb-devkit-alpine-node:
     name: Prepare jetson-nano-2gb-devkit-alpine-node
     runs-on: ubuntu-latest
@@ -506,7 +506,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/jetson-nano-2gb-devkit-alpine-node
           readme-filepath: ./balena-base-images/docs/dockerhub/jetson-nano-2gb-devkit-alpine-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-jetson-nano-2gb-devkit-alpine-python:
     name: Prepare jetson-nano-2gb-devkit-alpine-python
     runs-on: ubuntu-latest
@@ -587,7 +587,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/jetson-nano-2gb-devkit-alpine-python
           readme-filepath: ./balena-base-images/docs/dockerhub/jetson-nano-2gb-devkit-alpine-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-jetson-nano-2gb-devkit-debian-golang:
     name: Prepare jetson-nano-2gb-devkit-debian-golang
     runs-on: ubuntu-latest
@@ -668,7 +668,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/jetson-nano-2gb-devkit-debian-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/jetson-nano-2gb-devkit-debian-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-jetson-nano-2gb-devkit-debian-node:
     name: Prepare jetson-nano-2gb-devkit-debian-node
     runs-on: ubuntu-latest
@@ -749,7 +749,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/jetson-nano-2gb-devkit-debian-node
           readme-filepath: ./balena-base-images/docs/dockerhub/jetson-nano-2gb-devkit-debian-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-jetson-nano-2gb-devkit-debian-openjdk:
     name: Prepare jetson-nano-2gb-devkit-debian-openjdk
     runs-on: ubuntu-latest
@@ -830,7 +830,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/jetson-nano-2gb-devkit-debian-openjdk
           readme-filepath: ./balena-base-images/docs/dockerhub/jetson-nano-2gb-devkit-debian-openjdk-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-jetson-nano-2gb-devkit-debian-python:
     name: Prepare jetson-nano-2gb-devkit-debian-python
     runs-on: ubuntu-latest
@@ -911,7 +911,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/jetson-nano-2gb-devkit-debian-python
           readme-filepath: ./balena-base-images/docs/dockerhub/jetson-nano-2gb-devkit-debian-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-jetson-nano-2gb-devkit-fedora-golang:
     name: Prepare jetson-nano-2gb-devkit-fedora-golang
     runs-on: ubuntu-latest
@@ -992,7 +992,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/jetson-nano-2gb-devkit-fedora-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/jetson-nano-2gb-devkit-fedora-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-jetson-nano-2gb-devkit-fedora-node:
     name: Prepare jetson-nano-2gb-devkit-fedora-node
     runs-on: ubuntu-latest
@@ -1073,7 +1073,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/jetson-nano-2gb-devkit-fedora-node
           readme-filepath: ./balena-base-images/docs/dockerhub/jetson-nano-2gb-devkit-fedora-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-jetson-nano-2gb-devkit-fedora-python:
     name: Prepare jetson-nano-2gb-devkit-fedora-python
     runs-on: ubuntu-latest
@@ -1154,7 +1154,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/jetson-nano-2gb-devkit-fedora-python
           readme-filepath: ./balena-base-images/docs/dockerhub/jetson-nano-2gb-devkit-fedora-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-jetson-nano-2gb-devkit-ubuntu-golang:
     name: Prepare jetson-nano-2gb-devkit-ubuntu-golang
     runs-on: ubuntu-latest
@@ -1235,7 +1235,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/jetson-nano-2gb-devkit-ubuntu-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/jetson-nano-2gb-devkit-ubuntu-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-jetson-nano-2gb-devkit-ubuntu-node:
     name: Prepare jetson-nano-2gb-devkit-ubuntu-node
     runs-on: ubuntu-latest
@@ -1316,7 +1316,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/jetson-nano-2gb-devkit-ubuntu-node
           readme-filepath: ./balena-base-images/docs/dockerhub/jetson-nano-2gb-devkit-ubuntu-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-jetson-nano-2gb-devkit-ubuntu-python:
     name: Prepare jetson-nano-2gb-devkit-ubuntu-python
     runs-on: ubuntu-latest
@@ -1397,4 +1397,4 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/jetson-nano-2gb-devkit-ubuntu-python
           readme-filepath: ./balena-base-images/docs/dockerhub/jetson-nano-2gb-devkit-ubuntu-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'

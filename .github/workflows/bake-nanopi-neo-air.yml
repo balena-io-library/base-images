@@ -101,7 +101,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/nanopi-neo-air-alpine
           readme-filepath: ./balena-base-images/docs/dockerhub/nanopi-neo-air-alpine-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-nanopi-neo-air-debian:
     name: Prepare nanopi-neo-air-debian
     runs-on: ubuntu-latest
@@ -182,7 +182,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/nanopi-neo-air-debian
           readme-filepath: ./balena-base-images/docs/dockerhub/nanopi-neo-air-debian-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-nanopi-neo-air-ubuntu:
     name: Prepare nanopi-neo-air-ubuntu
     runs-on: ubuntu-latest
@@ -263,7 +263,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/nanopi-neo-air-ubuntu
           readme-filepath: ./balena-base-images/docs/dockerhub/nanopi-neo-air-ubuntu-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-nanopi-neo-air-alpine-golang:
     name: Prepare nanopi-neo-air-alpine-golang
     runs-on: ubuntu-latest
@@ -344,7 +344,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/nanopi-neo-air-alpine-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/nanopi-neo-air-alpine-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-nanopi-neo-air-alpine-node:
     name: Prepare nanopi-neo-air-alpine-node
     runs-on: ubuntu-latest
@@ -425,7 +425,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/nanopi-neo-air-alpine-node
           readme-filepath: ./balena-base-images/docs/dockerhub/nanopi-neo-air-alpine-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-nanopi-neo-air-alpine-python:
     name: Prepare nanopi-neo-air-alpine-python
     runs-on: ubuntu-latest
@@ -506,7 +506,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/nanopi-neo-air-alpine-python
           readme-filepath: ./balena-base-images/docs/dockerhub/nanopi-neo-air-alpine-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-nanopi-neo-air-debian-golang:
     name: Prepare nanopi-neo-air-debian-golang
     runs-on: ubuntu-latest
@@ -587,7 +587,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/nanopi-neo-air-debian-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/nanopi-neo-air-debian-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-nanopi-neo-air-debian-node:
     name: Prepare nanopi-neo-air-debian-node
     runs-on: ubuntu-latest
@@ -668,7 +668,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/nanopi-neo-air-debian-node
           readme-filepath: ./balena-base-images/docs/dockerhub/nanopi-neo-air-debian-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-nanopi-neo-air-debian-openjdk:
     name: Prepare nanopi-neo-air-debian-openjdk
     runs-on: ubuntu-latest
@@ -749,7 +749,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/nanopi-neo-air-debian-openjdk
           readme-filepath: ./balena-base-images/docs/dockerhub/nanopi-neo-air-debian-openjdk-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-nanopi-neo-air-debian-python:
     name: Prepare nanopi-neo-air-debian-python
     runs-on: ubuntu-latest
@@ -830,7 +830,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/nanopi-neo-air-debian-python
           readme-filepath: ./balena-base-images/docs/dockerhub/nanopi-neo-air-debian-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-nanopi-neo-air-ubuntu-golang:
     name: Prepare nanopi-neo-air-ubuntu-golang
     runs-on: ubuntu-latest
@@ -911,7 +911,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/nanopi-neo-air-ubuntu-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/nanopi-neo-air-ubuntu-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-nanopi-neo-air-ubuntu-node:
     name: Prepare nanopi-neo-air-ubuntu-node
     runs-on: ubuntu-latest
@@ -992,7 +992,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/nanopi-neo-air-ubuntu-node
           readme-filepath: ./balena-base-images/docs/dockerhub/nanopi-neo-air-ubuntu-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-nanopi-neo-air-ubuntu-python:
     name: Prepare nanopi-neo-air-ubuntu-python
     runs-on: ubuntu-latest
@@ -1073,4 +1073,4 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/nanopi-neo-air-ubuntu-python
           readme-filepath: ./balena-base-images/docs/dockerhub/nanopi-neo-air-ubuntu-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'

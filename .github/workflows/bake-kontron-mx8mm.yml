@@ -101,7 +101,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/kontron-mx8mm-alpine
           readme-filepath: ./balena-base-images/docs/dockerhub/kontron-mx8mm-alpine-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-kontron-mx8mm-debian:
     name: Prepare kontron-mx8mm-debian
     runs-on: ubuntu-latest
@@ -182,7 +182,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/kontron-mx8mm-debian
           readme-filepath: ./balena-base-images/docs/dockerhub/kontron-mx8mm-debian-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-kontron-mx8mm-fedora:
     name: Prepare kontron-mx8mm-fedora
     runs-on: ubuntu-latest
@@ -263,7 +263,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/kontron-mx8mm-fedora
           readme-filepath: ./balena-base-images/docs/dockerhub/kontron-mx8mm-fedora-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-kontron-mx8mm-ubuntu:
     name: Prepare kontron-mx8mm-ubuntu
     runs-on: ubuntu-latest
@@ -344,7 +344,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/kontron-mx8mm-ubuntu
           readme-filepath: ./balena-base-images/docs/dockerhub/kontron-mx8mm-ubuntu-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-kontron-mx8mm-alpine-golang:
     name: Prepare kontron-mx8mm-alpine-golang
     runs-on: ubuntu-latest
@@ -425,7 +425,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/kontron-mx8mm-alpine-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/kontron-mx8mm-alpine-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-kontron-mx8mm-alpine-node:
     name: Prepare kontron-mx8mm-alpine-node
     runs-on: ubuntu-latest
@@ -506,7 +506,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/kontron-mx8mm-alpine-node
           readme-filepath: ./balena-base-images/docs/dockerhub/kontron-mx8mm-alpine-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-kontron-mx8mm-alpine-python:
     name: Prepare kontron-mx8mm-alpine-python
     runs-on: ubuntu-latest
@@ -587,7 +587,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/kontron-mx8mm-alpine-python
           readme-filepath: ./balena-base-images/docs/dockerhub/kontron-mx8mm-alpine-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-kontron-mx8mm-debian-golang:
     name: Prepare kontron-mx8mm-debian-golang
     runs-on: ubuntu-latest
@@ -668,7 +668,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/kontron-mx8mm-debian-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/kontron-mx8mm-debian-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-kontron-mx8mm-debian-node:
     name: Prepare kontron-mx8mm-debian-node
     runs-on: ubuntu-latest
@@ -749,7 +749,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/kontron-mx8mm-debian-node
           readme-filepath: ./balena-base-images/docs/dockerhub/kontron-mx8mm-debian-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-kontron-mx8mm-debian-openjdk:
     name: Prepare kontron-mx8mm-debian-openjdk
     runs-on: ubuntu-latest
@@ -830,7 +830,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/kontron-mx8mm-debian-openjdk
           readme-filepath: ./balena-base-images/docs/dockerhub/kontron-mx8mm-debian-openjdk-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-kontron-mx8mm-debian-python:
     name: Prepare kontron-mx8mm-debian-python
     runs-on: ubuntu-latest
@@ -911,7 +911,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/kontron-mx8mm-debian-python
           readme-filepath: ./balena-base-images/docs/dockerhub/kontron-mx8mm-debian-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-kontron-mx8mm-fedora-golang:
     name: Prepare kontron-mx8mm-fedora-golang
     runs-on: ubuntu-latest
@@ -992,7 +992,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/kontron-mx8mm-fedora-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/kontron-mx8mm-fedora-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-kontron-mx8mm-fedora-node:
     name: Prepare kontron-mx8mm-fedora-node
     runs-on: ubuntu-latest
@@ -1073,7 +1073,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/kontron-mx8mm-fedora-node
           readme-filepath: ./balena-base-images/docs/dockerhub/kontron-mx8mm-fedora-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-kontron-mx8mm-fedora-python:
     name: Prepare kontron-mx8mm-fedora-python
     runs-on: ubuntu-latest
@@ -1154,7 +1154,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/kontron-mx8mm-fedora-python
           readme-filepath: ./balena-base-images/docs/dockerhub/kontron-mx8mm-fedora-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-kontron-mx8mm-ubuntu-golang:
     name: Prepare kontron-mx8mm-ubuntu-golang
     runs-on: ubuntu-latest
@@ -1235,7 +1235,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/kontron-mx8mm-ubuntu-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/kontron-mx8mm-ubuntu-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-kontron-mx8mm-ubuntu-node:
     name: Prepare kontron-mx8mm-ubuntu-node
     runs-on: ubuntu-latest
@@ -1316,7 +1316,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/kontron-mx8mm-ubuntu-node
           readme-filepath: ./balena-base-images/docs/dockerhub/kontron-mx8mm-ubuntu-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-kontron-mx8mm-ubuntu-python:
     name: Prepare kontron-mx8mm-ubuntu-python
     runs-on: ubuntu-latest
@@ -1397,4 +1397,4 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/kontron-mx8mm-ubuntu-python
           readme-filepath: ./balena-base-images/docs/dockerhub/kontron-mx8mm-ubuntu-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'

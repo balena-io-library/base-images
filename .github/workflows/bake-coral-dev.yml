@@ -101,7 +101,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/coral-dev-alpine
           readme-filepath: ./balena-base-images/docs/dockerhub/coral-dev-alpine-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-coral-dev-debian:
     name: Prepare coral-dev-debian
     runs-on: ubuntu-latest
@@ -182,7 +182,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/coral-dev-debian
           readme-filepath: ./balena-base-images/docs/dockerhub/coral-dev-debian-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-coral-dev-fedora:
     name: Prepare coral-dev-fedora
     runs-on: ubuntu-latest
@@ -263,7 +263,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/coral-dev-fedora
           readme-filepath: ./balena-base-images/docs/dockerhub/coral-dev-fedora-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-coral-dev-ubuntu:
     name: Prepare coral-dev-ubuntu
     runs-on: ubuntu-latest
@@ -344,7 +344,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/coral-dev-ubuntu
           readme-filepath: ./balena-base-images/docs/dockerhub/coral-dev-ubuntu-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-coral-dev-alpine-golang:
     name: Prepare coral-dev-alpine-golang
     runs-on: ubuntu-latest
@@ -425,7 +425,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/coral-dev-alpine-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/coral-dev-alpine-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-coral-dev-alpine-node:
     name: Prepare coral-dev-alpine-node
     runs-on: ubuntu-latest
@@ -506,7 +506,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/coral-dev-alpine-node
           readme-filepath: ./balena-base-images/docs/dockerhub/coral-dev-alpine-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-coral-dev-alpine-python:
     name: Prepare coral-dev-alpine-python
     runs-on: ubuntu-latest
@@ -587,7 +587,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/coral-dev-alpine-python
           readme-filepath: ./balena-base-images/docs/dockerhub/coral-dev-alpine-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-coral-dev-debian-golang:
     name: Prepare coral-dev-debian-golang
     runs-on: ubuntu-latest
@@ -668,7 +668,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/coral-dev-debian-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/coral-dev-debian-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-coral-dev-debian-node:
     name: Prepare coral-dev-debian-node
     runs-on: ubuntu-latest
@@ -749,7 +749,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/coral-dev-debian-node
           readme-filepath: ./balena-base-images/docs/dockerhub/coral-dev-debian-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-coral-dev-debian-openjdk:
     name: Prepare coral-dev-debian-openjdk
     runs-on: ubuntu-latest
@@ -830,7 +830,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/coral-dev-debian-openjdk
           readme-filepath: ./balena-base-images/docs/dockerhub/coral-dev-debian-openjdk-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-coral-dev-debian-python:
     name: Prepare coral-dev-debian-python
     runs-on: ubuntu-latest
@@ -911,7 +911,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/coral-dev-debian-python
           readme-filepath: ./balena-base-images/docs/dockerhub/coral-dev-debian-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-coral-dev-fedora-golang:
     name: Prepare coral-dev-fedora-golang
     runs-on: ubuntu-latest
@@ -992,7 +992,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/coral-dev-fedora-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/coral-dev-fedora-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-coral-dev-fedora-node:
     name: Prepare coral-dev-fedora-node
     runs-on: ubuntu-latest
@@ -1073,7 +1073,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/coral-dev-fedora-node
           readme-filepath: ./balena-base-images/docs/dockerhub/coral-dev-fedora-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-coral-dev-fedora-python:
     name: Prepare coral-dev-fedora-python
     runs-on: ubuntu-latest
@@ -1154,7 +1154,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/coral-dev-fedora-python
           readme-filepath: ./balena-base-images/docs/dockerhub/coral-dev-fedora-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-coral-dev-ubuntu-golang:
     name: Prepare coral-dev-ubuntu-golang
     runs-on: ubuntu-latest
@@ -1235,7 +1235,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/coral-dev-ubuntu-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/coral-dev-ubuntu-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-coral-dev-ubuntu-node:
     name: Prepare coral-dev-ubuntu-node
     runs-on: ubuntu-latest
@@ -1316,7 +1316,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/coral-dev-ubuntu-node
           readme-filepath: ./balena-base-images/docs/dockerhub/coral-dev-ubuntu-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-coral-dev-ubuntu-python:
     name: Prepare coral-dev-ubuntu-python
     runs-on: ubuntu-latest
@@ -1397,4 +1397,4 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/coral-dev-ubuntu-python
           readme-filepath: ./balena-base-images/docs/dockerhub/coral-dev-ubuntu-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'

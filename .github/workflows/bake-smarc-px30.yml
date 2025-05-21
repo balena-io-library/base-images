@@ -101,7 +101,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/smarc-px30-alpine
           readme-filepath: ./balena-base-images/docs/dockerhub/smarc-px30-alpine-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-smarc-px30-debian:
     name: Prepare smarc-px30-debian
     runs-on: ubuntu-latest
@@ -182,7 +182,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/smarc-px30-debian
           readme-filepath: ./balena-base-images/docs/dockerhub/smarc-px30-debian-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-smarc-px30-fedora:
     name: Prepare smarc-px30-fedora
     runs-on: ubuntu-latest
@@ -263,7 +263,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/smarc-px30-fedora
           readme-filepath: ./balena-base-images/docs/dockerhub/smarc-px30-fedora-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-smarc-px30-ubuntu:
     name: Prepare smarc-px30-ubuntu
     runs-on: ubuntu-latest
@@ -344,7 +344,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/smarc-px30-ubuntu
           readme-filepath: ./balena-base-images/docs/dockerhub/smarc-px30-ubuntu-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-smarc-px30-alpine-golang:
     name: Prepare smarc-px30-alpine-golang
     runs-on: ubuntu-latest
@@ -425,7 +425,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/smarc-px30-alpine-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/smarc-px30-alpine-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-smarc-px30-alpine-node:
     name: Prepare smarc-px30-alpine-node
     runs-on: ubuntu-latest
@@ -506,7 +506,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/smarc-px30-alpine-node
           readme-filepath: ./balena-base-images/docs/dockerhub/smarc-px30-alpine-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-smarc-px30-alpine-python:
     name: Prepare smarc-px30-alpine-python
     runs-on: ubuntu-latest
@@ -587,7 +587,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/smarc-px30-alpine-python
           readme-filepath: ./balena-base-images/docs/dockerhub/smarc-px30-alpine-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-smarc-px30-debian-golang:
     name: Prepare smarc-px30-debian-golang
     runs-on: ubuntu-latest
@@ -668,7 +668,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/smarc-px30-debian-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/smarc-px30-debian-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-smarc-px30-debian-node:
     name: Prepare smarc-px30-debian-node
     runs-on: ubuntu-latest
@@ -749,7 +749,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/smarc-px30-debian-node
           readme-filepath: ./balena-base-images/docs/dockerhub/smarc-px30-debian-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-smarc-px30-debian-openjdk:
     name: Prepare smarc-px30-debian-openjdk
     runs-on: ubuntu-latest
@@ -830,7 +830,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/smarc-px30-debian-openjdk
           readme-filepath: ./balena-base-images/docs/dockerhub/smarc-px30-debian-openjdk-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-smarc-px30-debian-python:
     name: Prepare smarc-px30-debian-python
     runs-on: ubuntu-latest
@@ -911,7 +911,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/smarc-px30-debian-python
           readme-filepath: ./balena-base-images/docs/dockerhub/smarc-px30-debian-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-smarc-px30-fedora-golang:
     name: Prepare smarc-px30-fedora-golang
     runs-on: ubuntu-latest
@@ -992,7 +992,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/smarc-px30-fedora-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/smarc-px30-fedora-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-smarc-px30-fedora-node:
     name: Prepare smarc-px30-fedora-node
     runs-on: ubuntu-latest
@@ -1073,7 +1073,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/smarc-px30-fedora-node
           readme-filepath: ./balena-base-images/docs/dockerhub/smarc-px30-fedora-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-smarc-px30-fedora-python:
     name: Prepare smarc-px30-fedora-python
     runs-on: ubuntu-latest
@@ -1154,7 +1154,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/smarc-px30-fedora-python
           readme-filepath: ./balena-base-images/docs/dockerhub/smarc-px30-fedora-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-smarc-px30-ubuntu-golang:
     name: Prepare smarc-px30-ubuntu-golang
     runs-on: ubuntu-latest
@@ -1235,7 +1235,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/smarc-px30-ubuntu-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/smarc-px30-ubuntu-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-smarc-px30-ubuntu-node:
     name: Prepare smarc-px30-ubuntu-node
     runs-on: ubuntu-latest
@@ -1316,7 +1316,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/smarc-px30-ubuntu-node
           readme-filepath: ./balena-base-images/docs/dockerhub/smarc-px30-ubuntu-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-smarc-px30-ubuntu-python:
     name: Prepare smarc-px30-ubuntu-python
     runs-on: ubuntu-latest
@@ -1397,4 +1397,4 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/smarc-px30-ubuntu-python
           readme-filepath: ./balena-base-images/docs/dockerhub/smarc-px30-ubuntu-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'

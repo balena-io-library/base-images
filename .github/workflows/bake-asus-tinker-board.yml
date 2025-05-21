@@ -101,7 +101,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/asus-tinker-board-alpine
           readme-filepath: ./balena-base-images/docs/dockerhub/asus-tinker-board-alpine-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-asus-tinker-board-debian:
     name: Prepare asus-tinker-board-debian
     runs-on: ubuntu-latest
@@ -182,7 +182,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/asus-tinker-board-debian
           readme-filepath: ./balena-base-images/docs/dockerhub/asus-tinker-board-debian-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-asus-tinker-board-ubuntu:
     name: Prepare asus-tinker-board-ubuntu
     runs-on: ubuntu-latest
@@ -263,7 +263,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/asus-tinker-board-ubuntu
           readme-filepath: ./balena-base-images/docs/dockerhub/asus-tinker-board-ubuntu-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-asus-tinker-board-alpine-golang:
     name: Prepare asus-tinker-board-alpine-golang
     runs-on: ubuntu-latest
@@ -344,7 +344,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/asus-tinker-board-alpine-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/asus-tinker-board-alpine-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-asus-tinker-board-alpine-node:
     name: Prepare asus-tinker-board-alpine-node
     runs-on: ubuntu-latest
@@ -425,7 +425,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/asus-tinker-board-alpine-node
           readme-filepath: ./balena-base-images/docs/dockerhub/asus-tinker-board-alpine-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-asus-tinker-board-alpine-python:
     name: Prepare asus-tinker-board-alpine-python
     runs-on: ubuntu-latest
@@ -506,7 +506,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/asus-tinker-board-alpine-python
           readme-filepath: ./balena-base-images/docs/dockerhub/asus-tinker-board-alpine-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-asus-tinker-board-debian-golang:
     name: Prepare asus-tinker-board-debian-golang
     runs-on: ubuntu-latest
@@ -587,7 +587,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/asus-tinker-board-debian-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/asus-tinker-board-debian-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-asus-tinker-board-debian-node:
     name: Prepare asus-tinker-board-debian-node
     runs-on: ubuntu-latest
@@ -668,7 +668,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/asus-tinker-board-debian-node
           readme-filepath: ./balena-base-images/docs/dockerhub/asus-tinker-board-debian-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-asus-tinker-board-debian-openjdk:
     name: Prepare asus-tinker-board-debian-openjdk
     runs-on: ubuntu-latest
@@ -749,7 +749,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/asus-tinker-board-debian-openjdk
           readme-filepath: ./balena-base-images/docs/dockerhub/asus-tinker-board-debian-openjdk-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-asus-tinker-board-debian-python:
     name: Prepare asus-tinker-board-debian-python
     runs-on: ubuntu-latest
@@ -830,7 +830,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/asus-tinker-board-debian-python
           readme-filepath: ./balena-base-images/docs/dockerhub/asus-tinker-board-debian-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-asus-tinker-board-ubuntu-golang:
     name: Prepare asus-tinker-board-ubuntu-golang
     runs-on: ubuntu-latest
@@ -911,7 +911,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/asus-tinker-board-ubuntu-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/asus-tinker-board-ubuntu-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-asus-tinker-board-ubuntu-node:
     name: Prepare asus-tinker-board-ubuntu-node
     runs-on: ubuntu-latest
@@ -992,7 +992,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/asus-tinker-board-ubuntu-node
           readme-filepath: ./balena-base-images/docs/dockerhub/asus-tinker-board-ubuntu-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-asus-tinker-board-ubuntu-python:
     name: Prepare asus-tinker-board-ubuntu-python
     runs-on: ubuntu-latest
@@ -1073,4 +1073,4 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/asus-tinker-board-ubuntu-python
           readme-filepath: ./balena-base-images/docs/dockerhub/asus-tinker-board-ubuntu-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'

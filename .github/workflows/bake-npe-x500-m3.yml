@@ -101,7 +101,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/npe-x500-m3-alpine
           readme-filepath: ./balena-base-images/docs/dockerhub/npe-x500-m3-alpine-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-npe-x500-m3-debian:
     name: Prepare npe-x500-m3-debian
     runs-on: ubuntu-latest
@@ -182,7 +182,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/npe-x500-m3-debian
           readme-filepath: ./balena-base-images/docs/dockerhub/npe-x500-m3-debian-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-npe-x500-m3-ubuntu:
     name: Prepare npe-x500-m3-ubuntu
     runs-on: ubuntu-latest
@@ -263,7 +263,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/npe-x500-m3-ubuntu
           readme-filepath: ./balena-base-images/docs/dockerhub/npe-x500-m3-ubuntu-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-npe-x500-m3-alpine-golang:
     name: Prepare npe-x500-m3-alpine-golang
     runs-on: ubuntu-latest
@@ -344,7 +344,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/npe-x500-m3-alpine-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/npe-x500-m3-alpine-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-npe-x500-m3-alpine-node:
     name: Prepare npe-x500-m3-alpine-node
     runs-on: ubuntu-latest
@@ -425,7 +425,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/npe-x500-m3-alpine-node
           readme-filepath: ./balena-base-images/docs/dockerhub/npe-x500-m3-alpine-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-npe-x500-m3-alpine-python:
     name: Prepare npe-x500-m3-alpine-python
     runs-on: ubuntu-latest
@@ -506,7 +506,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/npe-x500-m3-alpine-python
           readme-filepath: ./balena-base-images/docs/dockerhub/npe-x500-m3-alpine-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-npe-x500-m3-debian-golang:
     name: Prepare npe-x500-m3-debian-golang
     runs-on: ubuntu-latest
@@ -587,7 +587,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/npe-x500-m3-debian-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/npe-x500-m3-debian-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-npe-x500-m3-debian-node:
     name: Prepare npe-x500-m3-debian-node
     runs-on: ubuntu-latest
@@ -668,7 +668,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/npe-x500-m3-debian-node
           readme-filepath: ./balena-base-images/docs/dockerhub/npe-x500-m3-debian-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-npe-x500-m3-debian-openjdk:
     name: Prepare npe-x500-m3-debian-openjdk
     runs-on: ubuntu-latest
@@ -749,7 +749,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/npe-x500-m3-debian-openjdk
           readme-filepath: ./balena-base-images/docs/dockerhub/npe-x500-m3-debian-openjdk-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-npe-x500-m3-debian-python:
     name: Prepare npe-x500-m3-debian-python
     runs-on: ubuntu-latest
@@ -830,7 +830,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/npe-x500-m3-debian-python
           readme-filepath: ./balena-base-images/docs/dockerhub/npe-x500-m3-debian-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-npe-x500-m3-ubuntu-golang:
     name: Prepare npe-x500-m3-ubuntu-golang
     runs-on: ubuntu-latest
@@ -911,7 +911,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/npe-x500-m3-ubuntu-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/npe-x500-m3-ubuntu-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-npe-x500-m3-ubuntu-node:
     name: Prepare npe-x500-m3-ubuntu-node
     runs-on: ubuntu-latest
@@ -992,7 +992,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/npe-x500-m3-ubuntu-node
           readme-filepath: ./balena-base-images/docs/dockerhub/npe-x500-m3-ubuntu-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-npe-x500-m3-ubuntu-python:
     name: Prepare npe-x500-m3-ubuntu-python
     runs-on: ubuntu-latest
@@ -1073,4 +1073,4 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/npe-x500-m3-ubuntu-python
           readme-filepath: ./balena-base-images/docs/dockerhub/npe-x500-m3-ubuntu-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'

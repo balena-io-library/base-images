@@ -101,7 +101,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beagleplay-alpine
           readme-filepath: ./balena-base-images/docs/dockerhub/beagleplay-alpine-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beagleplay-debian:
     name: Prepare beagleplay-debian
     runs-on: ubuntu-latest
@@ -182,7 +182,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beagleplay-debian
           readme-filepath: ./balena-base-images/docs/dockerhub/beagleplay-debian-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beagleplay-fedora:
     name: Prepare beagleplay-fedora
     runs-on: ubuntu-latest
@@ -263,7 +263,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beagleplay-fedora
           readme-filepath: ./balena-base-images/docs/dockerhub/beagleplay-fedora-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beagleplay-ubuntu:
     name: Prepare beagleplay-ubuntu
     runs-on: ubuntu-latest
@@ -344,7 +344,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beagleplay-ubuntu
           readme-filepath: ./balena-base-images/docs/dockerhub/beagleplay-ubuntu-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beagleplay-alpine-golang:
     name: Prepare beagleplay-alpine-golang
     runs-on: ubuntu-latest
@@ -425,7 +425,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beagleplay-alpine-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/beagleplay-alpine-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beagleplay-alpine-node:
     name: Prepare beagleplay-alpine-node
     runs-on: ubuntu-latest
@@ -506,7 +506,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beagleplay-alpine-node
           readme-filepath: ./balena-base-images/docs/dockerhub/beagleplay-alpine-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beagleplay-alpine-python:
     name: Prepare beagleplay-alpine-python
     runs-on: ubuntu-latest
@@ -587,7 +587,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beagleplay-alpine-python
           readme-filepath: ./balena-base-images/docs/dockerhub/beagleplay-alpine-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beagleplay-debian-golang:
     name: Prepare beagleplay-debian-golang
     runs-on: ubuntu-latest
@@ -668,7 +668,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beagleplay-debian-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/beagleplay-debian-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beagleplay-debian-node:
     name: Prepare beagleplay-debian-node
     runs-on: ubuntu-latest
@@ -749,7 +749,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beagleplay-debian-node
           readme-filepath: ./balena-base-images/docs/dockerhub/beagleplay-debian-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beagleplay-debian-openjdk:
     name: Prepare beagleplay-debian-openjdk
     runs-on: ubuntu-latest
@@ -830,7 +830,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beagleplay-debian-openjdk
           readme-filepath: ./balena-base-images/docs/dockerhub/beagleplay-debian-openjdk-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beagleplay-debian-python:
     name: Prepare beagleplay-debian-python
     runs-on: ubuntu-latest
@@ -911,7 +911,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beagleplay-debian-python
           readme-filepath: ./balena-base-images/docs/dockerhub/beagleplay-debian-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beagleplay-fedora-golang:
     name: Prepare beagleplay-fedora-golang
     runs-on: ubuntu-latest
@@ -992,7 +992,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beagleplay-fedora-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/beagleplay-fedora-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beagleplay-fedora-node:
     name: Prepare beagleplay-fedora-node
     runs-on: ubuntu-latest
@@ -1073,7 +1073,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beagleplay-fedora-node
           readme-filepath: ./balena-base-images/docs/dockerhub/beagleplay-fedora-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beagleplay-fedora-python:
     name: Prepare beagleplay-fedora-python
     runs-on: ubuntu-latest
@@ -1154,7 +1154,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beagleplay-fedora-python
           readme-filepath: ./balena-base-images/docs/dockerhub/beagleplay-fedora-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beagleplay-ubuntu-golang:
     name: Prepare beagleplay-ubuntu-golang
     runs-on: ubuntu-latest
@@ -1235,7 +1235,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beagleplay-ubuntu-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/beagleplay-ubuntu-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beagleplay-ubuntu-node:
     name: Prepare beagleplay-ubuntu-node
     runs-on: ubuntu-latest
@@ -1316,7 +1316,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beagleplay-ubuntu-node
           readme-filepath: ./balena-base-images/docs/dockerhub/beagleplay-ubuntu-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-beagleplay-ubuntu-python:
     name: Prepare beagleplay-ubuntu-python
     runs-on: ubuntu-latest
@@ -1397,4 +1397,4 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/beagleplay-ubuntu-python
           readme-filepath: ./balena-base-images/docs/dockerhub/beagleplay-ubuntu-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'

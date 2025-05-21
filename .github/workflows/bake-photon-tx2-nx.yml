@@ -101,7 +101,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/photon-tx2-nx-alpine
           readme-filepath: ./balena-base-images/docs/dockerhub/photon-tx2-nx-alpine-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-photon-tx2-nx-debian:
     name: Prepare photon-tx2-nx-debian
     runs-on: ubuntu-latest
@@ -182,7 +182,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/photon-tx2-nx-debian
           readme-filepath: ./balena-base-images/docs/dockerhub/photon-tx2-nx-debian-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-photon-tx2-nx-fedora:
     name: Prepare photon-tx2-nx-fedora
     runs-on: ubuntu-latest
@@ -263,7 +263,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/photon-tx2-nx-fedora
           readme-filepath: ./balena-base-images/docs/dockerhub/photon-tx2-nx-fedora-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-photon-tx2-nx-ubuntu:
     name: Prepare photon-tx2-nx-ubuntu
     runs-on: ubuntu-latest
@@ -344,7 +344,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/photon-tx2-nx-ubuntu
           readme-filepath: ./balena-base-images/docs/dockerhub/photon-tx2-nx-ubuntu-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-photon-tx2-nx-alpine-golang:
     name: Prepare photon-tx2-nx-alpine-golang
     runs-on: ubuntu-latest
@@ -425,7 +425,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/photon-tx2-nx-alpine-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/photon-tx2-nx-alpine-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-photon-tx2-nx-alpine-node:
     name: Prepare photon-tx2-nx-alpine-node
     runs-on: ubuntu-latest
@@ -506,7 +506,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/photon-tx2-nx-alpine-node
           readme-filepath: ./balena-base-images/docs/dockerhub/photon-tx2-nx-alpine-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-photon-tx2-nx-alpine-python:
     name: Prepare photon-tx2-nx-alpine-python
     runs-on: ubuntu-latest
@@ -587,7 +587,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/photon-tx2-nx-alpine-python
           readme-filepath: ./balena-base-images/docs/dockerhub/photon-tx2-nx-alpine-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-photon-tx2-nx-debian-golang:
     name: Prepare photon-tx2-nx-debian-golang
     runs-on: ubuntu-latest
@@ -668,7 +668,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/photon-tx2-nx-debian-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/photon-tx2-nx-debian-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-photon-tx2-nx-debian-node:
     name: Prepare photon-tx2-nx-debian-node
     runs-on: ubuntu-latest
@@ -749,7 +749,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/photon-tx2-nx-debian-node
           readme-filepath: ./balena-base-images/docs/dockerhub/photon-tx2-nx-debian-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-photon-tx2-nx-debian-openjdk:
     name: Prepare photon-tx2-nx-debian-openjdk
     runs-on: ubuntu-latest
@@ -830,7 +830,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/photon-tx2-nx-debian-openjdk
           readme-filepath: ./balena-base-images/docs/dockerhub/photon-tx2-nx-debian-openjdk-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-photon-tx2-nx-debian-python:
     name: Prepare photon-tx2-nx-debian-python
     runs-on: ubuntu-latest
@@ -911,7 +911,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/photon-tx2-nx-debian-python
           readme-filepath: ./balena-base-images/docs/dockerhub/photon-tx2-nx-debian-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-photon-tx2-nx-fedora-golang:
     name: Prepare photon-tx2-nx-fedora-golang
     runs-on: ubuntu-latest
@@ -992,7 +992,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/photon-tx2-nx-fedora-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/photon-tx2-nx-fedora-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-photon-tx2-nx-fedora-node:
     name: Prepare photon-tx2-nx-fedora-node
     runs-on: ubuntu-latest
@@ -1073,7 +1073,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/photon-tx2-nx-fedora-node
           readme-filepath: ./balena-base-images/docs/dockerhub/photon-tx2-nx-fedora-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-photon-tx2-nx-fedora-python:
     name: Prepare photon-tx2-nx-fedora-python
     runs-on: ubuntu-latest
@@ -1154,7 +1154,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/photon-tx2-nx-fedora-python
           readme-filepath: ./balena-base-images/docs/dockerhub/photon-tx2-nx-fedora-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-photon-tx2-nx-ubuntu-golang:
     name: Prepare photon-tx2-nx-ubuntu-golang
     runs-on: ubuntu-latest
@@ -1235,7 +1235,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/photon-tx2-nx-ubuntu-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/photon-tx2-nx-ubuntu-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-photon-tx2-nx-ubuntu-node:
     name: Prepare photon-tx2-nx-ubuntu-node
     runs-on: ubuntu-latest
@@ -1316,7 +1316,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/photon-tx2-nx-ubuntu-node
           readme-filepath: ./balena-base-images/docs/dockerhub/photon-tx2-nx-ubuntu-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-photon-tx2-nx-ubuntu-python:
     name: Prepare photon-tx2-nx-ubuntu-python
     runs-on: ubuntu-latest
@@ -1397,4 +1397,4 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/photon-tx2-nx-ubuntu-python
           readme-filepath: ./balena-base-images/docs/dockerhub/photon-tx2-nx-ubuntu-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'

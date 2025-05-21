@@ -101,7 +101,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/orange-pi-one-alpine
           readme-filepath: ./balena-base-images/docs/dockerhub/orange-pi-one-alpine-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-orange-pi-one-debian:
     name: Prepare orange-pi-one-debian
     runs-on: ubuntu-latest
@@ -182,7 +182,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/orange-pi-one-debian
           readme-filepath: ./balena-base-images/docs/dockerhub/orange-pi-one-debian-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-orange-pi-one-ubuntu:
     name: Prepare orange-pi-one-ubuntu
     runs-on: ubuntu-latest
@@ -263,7 +263,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/orange-pi-one-ubuntu
           readme-filepath: ./balena-base-images/docs/dockerhub/orange-pi-one-ubuntu-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-orange-pi-one-alpine-golang:
     name: Prepare orange-pi-one-alpine-golang
     runs-on: ubuntu-latest
@@ -344,7 +344,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/orange-pi-one-alpine-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/orange-pi-one-alpine-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-orange-pi-one-alpine-node:
     name: Prepare orange-pi-one-alpine-node
     runs-on: ubuntu-latest
@@ -425,7 +425,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/orange-pi-one-alpine-node
           readme-filepath: ./balena-base-images/docs/dockerhub/orange-pi-one-alpine-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-orange-pi-one-alpine-python:
     name: Prepare orange-pi-one-alpine-python
     runs-on: ubuntu-latest
@@ -506,7 +506,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/orange-pi-one-alpine-python
           readme-filepath: ./balena-base-images/docs/dockerhub/orange-pi-one-alpine-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-orange-pi-one-debian-golang:
     name: Prepare orange-pi-one-debian-golang
     runs-on: ubuntu-latest
@@ -587,7 +587,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/orange-pi-one-debian-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/orange-pi-one-debian-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-orange-pi-one-debian-node:
     name: Prepare orange-pi-one-debian-node
     runs-on: ubuntu-latest
@@ -668,7 +668,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/orange-pi-one-debian-node
           readme-filepath: ./balena-base-images/docs/dockerhub/orange-pi-one-debian-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-orange-pi-one-debian-openjdk:
     name: Prepare orange-pi-one-debian-openjdk
     runs-on: ubuntu-latest
@@ -749,7 +749,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/orange-pi-one-debian-openjdk
           readme-filepath: ./balena-base-images/docs/dockerhub/orange-pi-one-debian-openjdk-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-orange-pi-one-debian-python:
     name: Prepare orange-pi-one-debian-python
     runs-on: ubuntu-latest
@@ -830,7 +830,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/orange-pi-one-debian-python
           readme-filepath: ./balena-base-images/docs/dockerhub/orange-pi-one-debian-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-orange-pi-one-ubuntu-golang:
     name: Prepare orange-pi-one-ubuntu-golang
     runs-on: ubuntu-latest
@@ -911,7 +911,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/orange-pi-one-ubuntu-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/orange-pi-one-ubuntu-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-orange-pi-one-ubuntu-node:
     name: Prepare orange-pi-one-ubuntu-node
     runs-on: ubuntu-latest
@@ -992,7 +992,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/orange-pi-one-ubuntu-node
           readme-filepath: ./balena-base-images/docs/dockerhub/orange-pi-one-ubuntu-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-orange-pi-one-ubuntu-python:
     name: Prepare orange-pi-one-ubuntu-python
     runs-on: ubuntu-latest
@@ -1073,4 +1073,4 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/orange-pi-one-ubuntu-python
           readme-filepath: ./balena-base-images/docs/dockerhub/orange-pi-one-ubuntu-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'

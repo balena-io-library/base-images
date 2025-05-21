@@ -101,7 +101,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/raspberrypi0-2w-64-alpine
           readme-filepath: ./balena-base-images/docs/dockerhub/raspberrypi0-2w-64-alpine-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-raspberrypi0-2w-64-debian:
     name: Prepare raspberrypi0-2w-64-debian
     runs-on: ubuntu-latest
@@ -182,7 +182,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/raspberrypi0-2w-64-debian
           readme-filepath: ./balena-base-images/docs/dockerhub/raspberrypi0-2w-64-debian-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-raspberrypi0-2w-64-fedora:
     name: Prepare raspberrypi0-2w-64-fedora
     runs-on: ubuntu-latest
@@ -263,7 +263,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/raspberrypi0-2w-64-fedora
           readme-filepath: ./balena-base-images/docs/dockerhub/raspberrypi0-2w-64-fedora-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-raspberrypi0-2w-64-ubuntu:
     name: Prepare raspberrypi0-2w-64-ubuntu
     runs-on: ubuntu-latest
@@ -344,7 +344,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/raspberrypi0-2w-64-ubuntu
           readme-filepath: ./balena-base-images/docs/dockerhub/raspberrypi0-2w-64-ubuntu-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-raspberrypi0-2w-64-alpine-golang:
     name: Prepare raspberrypi0-2w-64-alpine-golang
     runs-on: ubuntu-latest
@@ -425,7 +425,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/raspberrypi0-2w-64-alpine-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/raspberrypi0-2w-64-alpine-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-raspberrypi0-2w-64-alpine-node:
     name: Prepare raspberrypi0-2w-64-alpine-node
     runs-on: ubuntu-latest
@@ -506,7 +506,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/raspberrypi0-2w-64-alpine-node
           readme-filepath: ./balena-base-images/docs/dockerhub/raspberrypi0-2w-64-alpine-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-raspberrypi0-2w-64-alpine-python:
     name: Prepare raspberrypi0-2w-64-alpine-python
     runs-on: ubuntu-latest
@@ -587,7 +587,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/raspberrypi0-2w-64-alpine-python
           readme-filepath: ./balena-base-images/docs/dockerhub/raspberrypi0-2w-64-alpine-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-raspberrypi0-2w-64-debian-golang:
     name: Prepare raspberrypi0-2w-64-debian-golang
     runs-on: ubuntu-latest
@@ -668,7 +668,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/raspberrypi0-2w-64-debian-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/raspberrypi0-2w-64-debian-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-raspberrypi0-2w-64-debian-node:
     name: Prepare raspberrypi0-2w-64-debian-node
     runs-on: ubuntu-latest
@@ -749,7 +749,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/raspberrypi0-2w-64-debian-node
           readme-filepath: ./balena-base-images/docs/dockerhub/raspberrypi0-2w-64-debian-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-raspberrypi0-2w-64-debian-openjdk:
     name: Prepare raspberrypi0-2w-64-debian-openjdk
     runs-on: ubuntu-latest
@@ -830,7 +830,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/raspberrypi0-2w-64-debian-openjdk
           readme-filepath: ./balena-base-images/docs/dockerhub/raspberrypi0-2w-64-debian-openjdk-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-raspberrypi0-2w-64-debian-python:
     name: Prepare raspberrypi0-2w-64-debian-python
     runs-on: ubuntu-latest
@@ -911,7 +911,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/raspberrypi0-2w-64-debian-python
           readme-filepath: ./balena-base-images/docs/dockerhub/raspberrypi0-2w-64-debian-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-raspberrypi0-2w-64-fedora-golang:
     name: Prepare raspberrypi0-2w-64-fedora-golang
     runs-on: ubuntu-latest
@@ -992,7 +992,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/raspberrypi0-2w-64-fedora-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/raspberrypi0-2w-64-fedora-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-raspberrypi0-2w-64-fedora-node:
     name: Prepare raspberrypi0-2w-64-fedora-node
     runs-on: ubuntu-latest
@@ -1073,7 +1073,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/raspberrypi0-2w-64-fedora-node
           readme-filepath: ./balena-base-images/docs/dockerhub/raspberrypi0-2w-64-fedora-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-raspberrypi0-2w-64-fedora-python:
     name: Prepare raspberrypi0-2w-64-fedora-python
     runs-on: ubuntu-latest
@@ -1154,7 +1154,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/raspberrypi0-2w-64-fedora-python
           readme-filepath: ./balena-base-images/docs/dockerhub/raspberrypi0-2w-64-fedora-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-raspberrypi0-2w-64-ubuntu-golang:
     name: Prepare raspberrypi0-2w-64-ubuntu-golang
     runs-on: ubuntu-latest
@@ -1235,7 +1235,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/raspberrypi0-2w-64-ubuntu-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/raspberrypi0-2w-64-ubuntu-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-raspberrypi0-2w-64-ubuntu-node:
     name: Prepare raspberrypi0-2w-64-ubuntu-node
     runs-on: ubuntu-latest
@@ -1316,7 +1316,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/raspberrypi0-2w-64-ubuntu-node
           readme-filepath: ./balena-base-images/docs/dockerhub/raspberrypi0-2w-64-ubuntu-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-raspberrypi0-2w-64-ubuntu-python:
     name: Prepare raspberrypi0-2w-64-ubuntu-python
     runs-on: ubuntu-latest
@@ -1397,4 +1397,4 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/raspberrypi0-2w-64-ubuntu-python
           readme-filepath: ./balena-base-images/docs/dockerhub/raspberrypi0-2w-64-ubuntu-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'

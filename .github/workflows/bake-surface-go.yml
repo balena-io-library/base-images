@@ -101,7 +101,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/surface-go-alpine
           readme-filepath: ./balena-base-images/docs/dockerhub/surface-go-alpine-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-surface-go-debian:
     name: Prepare surface-go-debian
     runs-on: ubuntu-latest
@@ -182,7 +182,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/surface-go-debian
           readme-filepath: ./balena-base-images/docs/dockerhub/surface-go-debian-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-surface-go-fedora:
     name: Prepare surface-go-fedora
     runs-on: ubuntu-latest
@@ -263,7 +263,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/surface-go-fedora
           readme-filepath: ./balena-base-images/docs/dockerhub/surface-go-fedora-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-surface-go-ubuntu:
     name: Prepare surface-go-ubuntu
     runs-on: ubuntu-latest
@@ -344,7 +344,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/surface-go-ubuntu
           readme-filepath: ./balena-base-images/docs/dockerhub/surface-go-ubuntu-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-surface-go-alpine-golang:
     name: Prepare surface-go-alpine-golang
     runs-on: ubuntu-latest
@@ -425,7 +425,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/surface-go-alpine-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/surface-go-alpine-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-surface-go-alpine-node:
     name: Prepare surface-go-alpine-node
     runs-on: ubuntu-latest
@@ -506,7 +506,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/surface-go-alpine-node
           readme-filepath: ./balena-base-images/docs/dockerhub/surface-go-alpine-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-surface-go-alpine-python:
     name: Prepare surface-go-alpine-python
     runs-on: ubuntu-latest
@@ -587,7 +587,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/surface-go-alpine-python
           readme-filepath: ./balena-base-images/docs/dockerhub/surface-go-alpine-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-surface-go-debian-dotnet:
     name: Prepare surface-go-debian-dotnet
     runs-on: ubuntu-latest
@@ -668,7 +668,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/surface-go-debian-dotnet
           readme-filepath: ./balena-base-images/docs/dockerhub/surface-go-debian-dotnet-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-surface-go-debian-golang:
     name: Prepare surface-go-debian-golang
     runs-on: ubuntu-latest
@@ -749,7 +749,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/surface-go-debian-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/surface-go-debian-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-surface-go-debian-node:
     name: Prepare surface-go-debian-node
     runs-on: ubuntu-latest
@@ -830,7 +830,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/surface-go-debian-node
           readme-filepath: ./balena-base-images/docs/dockerhub/surface-go-debian-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-surface-go-debian-openjdk:
     name: Prepare surface-go-debian-openjdk
     runs-on: ubuntu-latest
@@ -911,7 +911,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/surface-go-debian-openjdk
           readme-filepath: ./balena-base-images/docs/dockerhub/surface-go-debian-openjdk-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-surface-go-debian-python:
     name: Prepare surface-go-debian-python
     runs-on: ubuntu-latest
@@ -992,7 +992,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/surface-go-debian-python
           readme-filepath: ./balena-base-images/docs/dockerhub/surface-go-debian-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-surface-go-fedora-golang:
     name: Prepare surface-go-fedora-golang
     runs-on: ubuntu-latest
@@ -1073,7 +1073,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/surface-go-fedora-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/surface-go-fedora-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-surface-go-fedora-node:
     name: Prepare surface-go-fedora-node
     runs-on: ubuntu-latest
@@ -1154,7 +1154,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/surface-go-fedora-node
           readme-filepath: ./balena-base-images/docs/dockerhub/surface-go-fedora-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-surface-go-fedora-python:
     name: Prepare surface-go-fedora-python
     runs-on: ubuntu-latest
@@ -1235,7 +1235,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/surface-go-fedora-python
           readme-filepath: ./balena-base-images/docs/dockerhub/surface-go-fedora-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-surface-go-ubuntu-dotnet:
     name: Prepare surface-go-ubuntu-dotnet
     runs-on: ubuntu-latest
@@ -1316,7 +1316,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/surface-go-ubuntu-dotnet
           readme-filepath: ./balena-base-images/docs/dockerhub/surface-go-ubuntu-dotnet-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-surface-go-ubuntu-golang:
     name: Prepare surface-go-ubuntu-golang
     runs-on: ubuntu-latest
@@ -1397,7 +1397,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/surface-go-ubuntu-golang
           readme-filepath: ./balena-base-images/docs/dockerhub/surface-go-ubuntu-golang-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-surface-go-ubuntu-node:
     name: Prepare surface-go-ubuntu-node
     runs-on: ubuntu-latest
@@ -1478,7 +1478,7 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/surface-go-ubuntu-node
           readme-filepath: ./balena-base-images/docs/dockerhub/surface-go-ubuntu-node-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-surface-go-ubuntu-python:
     name: Prepare surface-go-ubuntu-python
     runs-on: ubuntu-latest
@@ -1559,4 +1559,4 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/surface-go-ubuntu-python
           readme-filepath: ./balena-base-images/docs/dockerhub/surface-go-ubuntu-python-full-description.md
-          short-description: This image is part of the balena.io base image series for IoT devices.
+          short-description: 'Deprecated: This image is no longer receiving updates.'
