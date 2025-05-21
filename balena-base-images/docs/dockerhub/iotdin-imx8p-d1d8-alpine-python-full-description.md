@@ -1,5 +1,9 @@
 <!-- THIS IS AUTO-GENERATED CONTENT. DO NOT MANUALLY EDIT. -->
 
+# ⚠️ DEPRECATED
+
+This base image is deprecated and will no longer receive updates. Read the [announcement post](https://blog.balena.io/deprecate-balenalib-images/) for migration guidance and suggested alternatives.
+
 This image is part of the [balena.io][balena] base image series for IoT devices. The image is optimized for use with [balena.io][balena] and [balenaOS][balena-os], but can be used in any Docker environment running on the appropriate architecture.
 
 ![balenalogo](https://avatars2.githubusercontent.com/u/6157842?s=200&v=4).
