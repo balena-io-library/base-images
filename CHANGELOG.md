@@ -5,6 +5,23 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.12.4 - 2025-05-21
+
+
+<details>
+<summary> Update scripts/contracts digest to 417aec2 [Self-hosted Renovate Bot] </summary>
+
+> ### contracts-2.0.136 - 2025-05-14
+> 
+> * patch: Add deprecation notice for balenalib base images [Vipul Gupta (@vipulgupta2048)]
+> 
+> ### contracts-2.0.135 - 2025-05-14
+> 
+> * patch: Add deprecation notice to balenalib readme [Vipul Gupta (@vipulgupta2048)]
+> 
+
+</details>
+
 ## 2.12.3 - 2025-05-19
 
 * Lock file maintenance [Self-hosted Renovate Bot]
