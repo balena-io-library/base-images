@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.12.5 - 2025-05-21
+
+* patch: Update short descriptions to mark balenalib base images as deprecated [Vipul Gupta (@vipulgupta2048)]
+
 ## 2.12.4 - 2025-05-21
 
 
