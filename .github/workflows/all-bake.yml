@@ -7,10 +7,6 @@ name: Bake all
         required: false
         type: boolean
         default: false
-  # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
-  schedule:
-    # run at 01:11 on the 1st day of the month
-    - cron: '11 1 1 * *'
 
 # A single bake workflow can generate hundreds of jobs once the matrixes are
 # expanded, so they are limited the same concurrency group even though
