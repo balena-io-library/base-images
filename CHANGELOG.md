@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.12.7 - 2025-05-24
+
+* Disable the bake-all schedule [Kyle Harding]
+
 ## 2.12.6 - 2025-05-21
 
 * Update dependency lint-staged to v16 [Self-hosted Renovate Bot]
