@@ -82,16 +82,6 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Set the DATESTAMP variable
         run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
       - name: Update DockerHub Description
         if: inputs.no-push != true
         continue-on-error: true
@@ -163,16 +153,6 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Set the DATESTAMP variable
         run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
       - name: Update DockerHub Description
         if: inputs.no-push != true
         continue-on-error: true
@@ -244,16 +224,6 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Set the DATESTAMP variable
         run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
       - name: Update DockerHub Description
         if: inputs.no-push != true
         continue-on-error: true
@@ -325,16 +295,6 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Set the DATESTAMP variable
         run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
       - name: Update DockerHub Description
         if: inputs.no-push != true
         continue-on-error: true
@@ -406,16 +366,6 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Set the DATESTAMP variable
         run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
       - name: Update DockerHub Description
         if: inputs.no-push != true
         continue-on-error: true
@@ -487,16 +437,6 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Set the DATESTAMP variable
         run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
       - name: Update DockerHub Description
         if: inputs.no-push != true
         continue-on-error: true
@@ -568,16 +508,6 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
       - name: Set the DATESTAMP variable
         run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
-      - name: Docker bake
-        continue-on-error: false
-        id: docker_bake
-        uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3
-        with:
-          workdir: balena-base-images
-          files: ${{ github.workspace }}/${{ env.LIBRARY }}
-          targets: ${{ matrix.target }}
-          push: ${{ inputs.no-push != true }}
-          provenance: false
       - name: Update DockerHub Description
         if: inputs.no-push != true
         continue-on-error: true
