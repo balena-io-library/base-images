@@ -98,16 +98,16 @@ output:
           - name: Set the DATESTAMP variable
             run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
           # https://github.com/docker/bake-action
-          - name: Docker bake
-            continue-on-error: false
-            id: docker_bake
-            uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3 # v4
-            with:
-              workdir: balena-base-images
-              files: ${{ github.workspace }}/${{ env.LIBRARY }}
-              targets: ${{ matrix.target }}
-              push: ${{ inputs.no-push != true }}
-              provenance: false
+          # - name: Docker bake
+          #   continue-on-error: false
+          #   id: docker_bake
+          #   uses: docker/bake-action@7a5dfed3550ca014665af2a27af8fc9d7284b9b3 # v4
+          #   with:
+          #     workdir: balena-base-images
+          #     files: ${{ github.workspace }}/${{ env.LIBRARY }}
+          #     targets: ${{ matrix.target }}
+          #     push: ${{ inputs.no-push != true }}
+          #     provenance: false
           # https://github.com/peter-evans/dockerhub-description
           - name: Update DockerHub Description
             if: inputs.no-push != true
