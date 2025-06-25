@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2023-03-28
 
+## 2.12.14 - 2025-06-25
+
+* patch: Comment Docker bake step to update descriptions [Vipul Gupta (@vipulgupta2048)]
+
 ## 2.12.13 - 2025-06-23
 
 * Lock file maintenance [Self-hosted Renovate Bot]
