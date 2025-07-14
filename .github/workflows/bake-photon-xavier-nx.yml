@@ -21,290 +21,6 @@ concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: ${{ inputs.cancel-in-progress == true }}
 jobs:
-  prepare-photon-xavier-nx-alpine:
-    name: Prepare photon-xavier-nx-alpine
-    runs-on: ubuntu-latest
-    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/photon-xavier-nx-alpine.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-          persist-credentials: false
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-photon-xavier-nx-alpine:
-    name: Bake photon-xavier-nx-alpine
-    runs-on:
-      - self-hosted
-      - base-images
-      - ARM64
-    timeout-minutes: 240
-    needs: prepare-photon-xavier-nx-alpine
-    env:
-      LIBRARY: library/photon-xavier-nx-alpine.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-photon-xavier-nx-alpine.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-          persist-credentials: false
-      - name: Setup buildx
-        id: setup-buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v8.0.4-33
-        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm64') == false
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Set the DATESTAMP variable
-        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
-      - name: Update DockerHub Description
-        if: inputs.no-push != true
-        continue-on-error: true
-        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
-        with:
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-          repository: balenalib/photon-xavier-nx-alpine
-          readme-filepath: ./balena-base-images/docs/dockerhub/photon-xavier-nx-alpine-full-description.md
-          short-description: 'Deprecated: This image is no longer receiving updates.'
-  prepare-photon-xavier-nx-debian:
-    name: Prepare photon-xavier-nx-debian
-    runs-on: ubuntu-latest
-    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/photon-xavier-nx-debian.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-          persist-credentials: false
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-photon-xavier-nx-debian:
-    name: Bake photon-xavier-nx-debian
-    runs-on:
-      - self-hosted
-      - base-images
-      - ARM64
-    timeout-minutes: 240
-    needs: prepare-photon-xavier-nx-debian
-    env:
-      LIBRARY: library/photon-xavier-nx-debian.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-photon-xavier-nx-debian.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-          persist-credentials: false
-      - name: Setup buildx
-        id: setup-buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v8.0.4-33
-        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm64') == false
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Set the DATESTAMP variable
-        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
-      - name: Update DockerHub Description
-        if: inputs.no-push != true
-        continue-on-error: true
-        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
-        with:
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-          repository: balenalib/photon-xavier-nx-debian
-          readme-filepath: ./balena-base-images/docs/dockerhub/photon-xavier-nx-debian-full-description.md
-          short-description: 'Deprecated: This image is no longer receiving updates.'
-  prepare-photon-xavier-nx-fedora:
-    name: Prepare photon-xavier-nx-fedora
-    runs-on: ubuntu-latest
-    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/photon-xavier-nx-fedora.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-          persist-credentials: false
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-photon-xavier-nx-fedora:
-    name: Bake photon-xavier-nx-fedora
-    runs-on:
-      - self-hosted
-      - base-images
-      - ARM64
-    timeout-minutes: 240
-    needs: prepare-photon-xavier-nx-fedora
-    env:
-      LIBRARY: library/photon-xavier-nx-fedora.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-photon-xavier-nx-fedora.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-          persist-credentials: false
-      - name: Setup buildx
-        id: setup-buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v8.0.4-33
-        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm64') == false
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Set the DATESTAMP variable
-        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
-      - name: Update DockerHub Description
-        if: inputs.no-push != true
-        continue-on-error: true
-        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
-        with:
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-          repository: balenalib/photon-xavier-nx-fedora
-          readme-filepath: ./balena-base-images/docs/dockerhub/photon-xavier-nx-fedora-full-description.md
-          short-description: 'Deprecated: This image is no longer receiving updates.'
-  prepare-photon-xavier-nx-ubuntu:
-    name: Prepare photon-xavier-nx-ubuntu
-    runs-on: ubuntu-latest
-    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/photon-xavier-nx-ubuntu.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-          persist-credentials: false
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-photon-xavier-nx-ubuntu:
-    name: Bake photon-xavier-nx-ubuntu
-    runs-on:
-      - self-hosted
-      - base-images
-      - ARM64
-    timeout-minutes: 240
-    needs: prepare-photon-xavier-nx-ubuntu
-    env:
-      LIBRARY: library/photon-xavier-nx-ubuntu.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-photon-xavier-nx-ubuntu.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-          persist-credentials: false
-      - name: Setup buildx
-        id: setup-buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v8.0.4-33
-        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm64') == false
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Set the DATESTAMP variable
-        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
-      - name: Update DockerHub Description
-        if: inputs.no-push != true
-        continue-on-error: true
-        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
-        with:
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-          repository: balenalib/photon-xavier-nx-ubuntu
-          readme-filepath: ./balena-base-images/docs/dockerhub/photon-xavier-nx-ubuntu-full-description.md
-          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-photon-xavier-nx-alpine-golang:
     name: Prepare photon-xavier-nx-alpine-golang
     runs-on: ubuntu-latest
@@ -1227,4 +943,288 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/photon-xavier-nx-ubuntu-python
           readme-filepath: ./balena-base-images/docs/dockerhub/photon-xavier-nx-ubuntu-python-full-description.md
+          short-description: 'Deprecated: This image is no longer receiving updates.'
+  prepare-photon-xavier-nx-alpine:
+    name: Prepare photon-xavier-nx-alpine
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/photon-xavier-nx-alpine.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-photon-xavier-nx-alpine:
+    name: Bake photon-xavier-nx-alpine
+    runs-on:
+      - self-hosted
+      - base-images
+      - ARM64
+    timeout-minutes: 240
+    needs: prepare-photon-xavier-nx-alpine
+    env:
+      LIBRARY: library/photon-xavier-nx-alpine.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-photon-xavier-nx-alpine.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Setup buildx
+        id: setup-buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v8.0.4-33
+        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm64') == false
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Set the DATESTAMP variable
+        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/photon-xavier-nx-alpine
+          readme-filepath: ./balena-base-images/docs/dockerhub/photon-xavier-nx-alpine-full-description.md
+          short-description: 'Deprecated: This image is no longer receiving updates.'
+  prepare-photon-xavier-nx-debian:
+    name: Prepare photon-xavier-nx-debian
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/photon-xavier-nx-debian.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-photon-xavier-nx-debian:
+    name: Bake photon-xavier-nx-debian
+    runs-on:
+      - self-hosted
+      - base-images
+      - ARM64
+    timeout-minutes: 240
+    needs: prepare-photon-xavier-nx-debian
+    env:
+      LIBRARY: library/photon-xavier-nx-debian.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-photon-xavier-nx-debian.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Setup buildx
+        id: setup-buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v8.0.4-33
+        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm64') == false
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Set the DATESTAMP variable
+        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/photon-xavier-nx-debian
+          readme-filepath: ./balena-base-images/docs/dockerhub/photon-xavier-nx-debian-full-description.md
+          short-description: 'Deprecated: This image is no longer receiving updates.'
+  prepare-photon-xavier-nx-fedora:
+    name: Prepare photon-xavier-nx-fedora
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/photon-xavier-nx-fedora.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-photon-xavier-nx-fedora:
+    name: Bake photon-xavier-nx-fedora
+    runs-on:
+      - self-hosted
+      - base-images
+      - ARM64
+    timeout-minutes: 240
+    needs: prepare-photon-xavier-nx-fedora
+    env:
+      LIBRARY: library/photon-xavier-nx-fedora.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-photon-xavier-nx-fedora.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Setup buildx
+        id: setup-buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v8.0.4-33
+        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm64') == false
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Set the DATESTAMP variable
+        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/photon-xavier-nx-fedora
+          readme-filepath: ./balena-base-images/docs/dockerhub/photon-xavier-nx-fedora-full-description.md
+          short-description: 'Deprecated: This image is no longer receiving updates.'
+  prepare-photon-xavier-nx-ubuntu:
+    name: Prepare photon-xavier-nx-ubuntu
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/photon-xavier-nx-ubuntu.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-photon-xavier-nx-ubuntu:
+    name: Bake photon-xavier-nx-ubuntu
+    runs-on:
+      - self-hosted
+      - base-images
+      - ARM64
+    timeout-minutes: 240
+    needs: prepare-photon-xavier-nx-ubuntu
+    env:
+      LIBRARY: library/photon-xavier-nx-ubuntu.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-photon-xavier-nx-ubuntu.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Setup buildx
+        id: setup-buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v8.0.4-33
+        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm64') == false
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Set the DATESTAMP variable
+        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/photon-xavier-nx-ubuntu
+          readme-filepath: ./balena-base-images/docs/dockerhub/photon-xavier-nx-ubuntu-full-description.md
           short-description: 'Deprecated: This image is no longer receiving updates.'
