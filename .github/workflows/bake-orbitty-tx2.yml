@@ -21,6 +21,290 @@ concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: ${{ inputs.cancel-in-progress == true }}
 jobs:
+  prepare-orbitty-tx2-alpine:
+    name: Prepare orbitty-tx2-alpine
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/orbitty-tx2-alpine.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-orbitty-tx2-alpine:
+    name: Bake orbitty-tx2-alpine
+    runs-on:
+      - self-hosted
+      - base-images
+      - ARM64
+    timeout-minutes: 240
+    needs: prepare-orbitty-tx2-alpine
+    env:
+      LIBRARY: library/orbitty-tx2-alpine.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-orbitty-tx2-alpine.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Setup buildx
+        id: setup-buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v8.0.4-33
+        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm64') == false
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Set the DATESTAMP variable
+        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/orbitty-tx2-alpine
+          readme-filepath: ./balena-base-images/docs/dockerhub/orbitty-tx2-alpine-full-description.md
+          short-description: 'Deprecated: This image is no longer receiving updates.'
+  prepare-orbitty-tx2-debian:
+    name: Prepare orbitty-tx2-debian
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/orbitty-tx2-debian.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-orbitty-tx2-debian:
+    name: Bake orbitty-tx2-debian
+    runs-on:
+      - self-hosted
+      - base-images
+      - ARM64
+    timeout-minutes: 240
+    needs: prepare-orbitty-tx2-debian
+    env:
+      LIBRARY: library/orbitty-tx2-debian.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-orbitty-tx2-debian.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Setup buildx
+        id: setup-buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v8.0.4-33
+        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm64') == false
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Set the DATESTAMP variable
+        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/orbitty-tx2-debian
+          readme-filepath: ./balena-base-images/docs/dockerhub/orbitty-tx2-debian-full-description.md
+          short-description: 'Deprecated: This image is no longer receiving updates.'
+  prepare-orbitty-tx2-fedora:
+    name: Prepare orbitty-tx2-fedora
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/orbitty-tx2-fedora.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-orbitty-tx2-fedora:
+    name: Bake orbitty-tx2-fedora
+    runs-on:
+      - self-hosted
+      - base-images
+      - ARM64
+    timeout-minutes: 240
+    needs: prepare-orbitty-tx2-fedora
+    env:
+      LIBRARY: library/orbitty-tx2-fedora.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-orbitty-tx2-fedora.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Setup buildx
+        id: setup-buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v8.0.4-33
+        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm64') == false
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Set the DATESTAMP variable
+        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/orbitty-tx2-fedora
+          readme-filepath: ./balena-base-images/docs/dockerhub/orbitty-tx2-fedora-full-description.md
+          short-description: 'Deprecated: This image is no longer receiving updates.'
+  prepare-orbitty-tx2-ubuntu:
+    name: Prepare orbitty-tx2-ubuntu
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
+    outputs:
+      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
+    env:
+      LIBRARY: library/orbitty-tx2-ubuntu.json
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Set matrix
+        id: bake-targets
+        run: |
+          set -x
+          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
+          echo "matrix=$targets" >> $GITHUB_OUTPUT
+  bake-orbitty-tx2-ubuntu:
+    name: Bake orbitty-tx2-ubuntu
+    runs-on:
+      - self-hosted
+      - base-images
+      - ARM64
+    timeout-minutes: 240
+    needs: prepare-orbitty-tx2-ubuntu
+    env:
+      LIBRARY: library/orbitty-tx2-ubuntu.json
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.prepare-orbitty-tx2-ubuntu.outputs.bake-targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Setup buildx
+        id: setup-buildx
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
+        with:
+          driver-opts: network=host
+          install: true
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
+        with:
+          platforms: all
+          image: tonistiigi/binfmt:qemu-v8.0.4-33
+        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm64') == false
+      - name: Login to DockerHub
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
+        if: inputs.no-push != true
+        with:
+          registry: docker.io
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+      - name: Set the DATESTAMP variable
+        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
+      - name: Update DockerHub Description
+        if: inputs.no-push != true
+        continue-on-error: true
+        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
+        with:
+          username: ${{ secrets.BALENAIMAGES_USER }}
+          password: ${{ secrets.BALENAIMAGES_TOKEN }}
+          repository: balenalib/orbitty-tx2-ubuntu
+          readme-filepath: ./balena-base-images/docs/dockerhub/orbitty-tx2-ubuntu-full-description.md
+          short-description: 'Deprecated: This image is no longer receiving updates.'
   prepare-orbitty-tx2-alpine-golang:
     name: Prepare orbitty-tx2-alpine-golang
     runs-on: ubuntu-latest
@@ -943,288 +1227,4 @@ jobs:
           password: ${{ secrets.BALENAIMAGES_TOKEN }}
           repository: balenalib/orbitty-tx2-ubuntu-python
           readme-filepath: ./balena-base-images/docs/dockerhub/orbitty-tx2-ubuntu-python-full-description.md
-          short-description: 'Deprecated: This image is no longer receiving updates.'
-  prepare-orbitty-tx2-alpine:
-    name: Prepare orbitty-tx2-alpine
-    runs-on: ubuntu-latest
-    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/orbitty-tx2-alpine.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-          persist-credentials: false
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-orbitty-tx2-alpine:
-    name: Bake orbitty-tx2-alpine
-    runs-on:
-      - self-hosted
-      - base-images
-      - ARM64
-    timeout-minutes: 240
-    needs: prepare-orbitty-tx2-alpine
-    env:
-      LIBRARY: library/orbitty-tx2-alpine.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-orbitty-tx2-alpine.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-          persist-credentials: false
-      - name: Setup buildx
-        id: setup-buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v8.0.4-33
-        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm64') == false
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Set the DATESTAMP variable
-        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
-      - name: Update DockerHub Description
-        if: inputs.no-push != true
-        continue-on-error: true
-        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
-        with:
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-          repository: balenalib/orbitty-tx2-alpine
-          readme-filepath: ./balena-base-images/docs/dockerhub/orbitty-tx2-alpine-full-description.md
-          short-description: 'Deprecated: This image is no longer receiving updates.'
-  prepare-orbitty-tx2-debian:
-    name: Prepare orbitty-tx2-debian
-    runs-on: ubuntu-latest
-    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/orbitty-tx2-debian.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-          persist-credentials: false
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-orbitty-tx2-debian:
-    name: Bake orbitty-tx2-debian
-    runs-on:
-      - self-hosted
-      - base-images
-      - ARM64
-    timeout-minutes: 240
-    needs: prepare-orbitty-tx2-debian
-    env:
-      LIBRARY: library/orbitty-tx2-debian.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-orbitty-tx2-debian.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-          persist-credentials: false
-      - name: Setup buildx
-        id: setup-buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v8.0.4-33
-        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm64') == false
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Set the DATESTAMP variable
-        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
-      - name: Update DockerHub Description
-        if: inputs.no-push != true
-        continue-on-error: true
-        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
-        with:
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-          repository: balenalib/orbitty-tx2-debian
-          readme-filepath: ./balena-base-images/docs/dockerhub/orbitty-tx2-debian-full-description.md
-          short-description: 'Deprecated: This image is no longer receiving updates.'
-  prepare-orbitty-tx2-fedora:
-    name: Prepare orbitty-tx2-fedora
-    runs-on: ubuntu-latest
-    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/orbitty-tx2-fedora.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-          persist-credentials: false
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-orbitty-tx2-fedora:
-    name: Bake orbitty-tx2-fedora
-    runs-on:
-      - self-hosted
-      - base-images
-      - ARM64
-    timeout-minutes: 240
-    needs: prepare-orbitty-tx2-fedora
-    env:
-      LIBRARY: library/orbitty-tx2-fedora.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-orbitty-tx2-fedora.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-          persist-credentials: false
-      - name: Setup buildx
-        id: setup-buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v8.0.4-33
-        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm64') == false
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Set the DATESTAMP variable
-        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
-      - name: Update DockerHub Description
-        if: inputs.no-push != true
-        continue-on-error: true
-        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
-        with:
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-          repository: balenalib/orbitty-tx2-fedora
-          readme-filepath: ./balena-base-images/docs/dockerhub/orbitty-tx2-fedora-full-description.md
-          short-description: 'Deprecated: This image is no longer receiving updates.'
-  prepare-orbitty-tx2-ubuntu:
-    name: Prepare orbitty-tx2-ubuntu
-    runs-on: ubuntu-latest
-    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
-    outputs:
-      bake-targets: ${{ steps.bake-targets.outputs.matrix }}
-    env:
-      LIBRARY: library/orbitty-tx2-ubuntu.json
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-          persist-credentials: false
-      - name: Set matrix
-        id: bake-targets
-        run: |
-          set -x
-          targets="$(jq -cr '.group.default.targets' $LIBRARY)"
-          echo "matrix=$targets" >> $GITHUB_OUTPUT
-  bake-orbitty-tx2-ubuntu:
-    name: Bake orbitty-tx2-ubuntu
-    runs-on:
-      - self-hosted
-      - base-images
-      - ARM64
-    timeout-minutes: 240
-    needs: prepare-orbitty-tx2-ubuntu
-    env:
-      LIBRARY: library/orbitty-tx2-ubuntu.json
-    strategy:
-      fail-fast: false
-      matrix:
-        target: ${{ fromJSON(needs.prepare-orbitty-tx2-ubuntu.outputs.bake-targets) }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-        with:
-          fetch-depth: 1
-          persist-credentials: false
-      - name: Setup buildx
-        id: setup-buildx
-        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb
-        with:
-          driver-opts: network=host
-          install: true
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
-        with:
-          platforms: all
-          image: tonistiigi/binfmt:qemu-v8.0.4-33
-        if: contains(steps.setup-buildx.outputs.platforms, 'linux/arm64') == false
-      - name: Login to DockerHub
-        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
-        if: inputs.no-push != true
-        with:
-          registry: docker.io
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-      - name: Set the DATESTAMP variable
-        run: echo "DATESTAMP=$(date +%Y%m%d)" >> "${GITHUB_ENV}"
-      - name: Update DockerHub Description
-        if: inputs.no-push != true
-        continue-on-error: true
-        uses: peter-evans/dockerhub-description@432a30c9e07499fd01da9f8a49f0faf9e0ca5b77
-        with:
-          username: ${{ secrets.BALENAIMAGES_USER }}
-          password: ${{ secrets.BALENAIMAGES_TOKEN }}
-          repository: balenalib/orbitty-tx2-ubuntu
-          readme-filepath: ./balena-base-images/docs/dockerhub/orbitty-tx2-ubuntu-full-description.md
           short-description: 'Deprecated: This image is no longer receiving updates.'
